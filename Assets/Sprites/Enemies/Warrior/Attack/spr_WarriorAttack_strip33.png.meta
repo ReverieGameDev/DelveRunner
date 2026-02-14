@@ -1,0 +1,1080 @@
+fileFormatVersion: 2
+guid: ef1581ba3bc40b34f9934d65130c0b46
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5723801620141583084
+    second: spr_WarriorAttack_strip33_0
+  - first:
+      213: 4745711045577517968
+    second: spr_WarriorAttack_strip33_1
+  - first:
+      213: 155066296474258966
+    second: spr_WarriorAttack_strip33_2
+  - first:
+      213: -8311006247122353007
+    second: spr_WarriorAttack_strip33_3
+  - first:
+      213: 7652083200952927405
+    second: spr_WarriorAttack_strip33_4
+  - first:
+      213: -5088058003222253389
+    second: spr_WarriorAttack_strip33_5
+  - first:
+      213: 8436458757712450056
+    second: spr_WarriorAttack_strip33_6
+  - first:
+      213: -8237211389094747226
+    second: spr_WarriorAttack_strip33_7
+  - first:
+      213: 8132881947690814610
+    second: spr_WarriorAttack_strip33_8
+  - first:
+      213: 560902491229192738
+    second: spr_WarriorAttack_strip33_9
+  - first:
+      213: -2384980348481371536
+    second: spr_WarriorAttack_strip33_10
+  - first:
+      213: 3153973955948403076
+    second: spr_WarriorAttack_strip33_11
+  - first:
+      213: 3846140036359983714
+    second: spr_WarriorAttack_strip33_12
+  - first:
+      213: 29467309926818943
+    second: spr_WarriorAttack_strip33_13
+  - first:
+      213: -8103705110248050658
+    second: spr_WarriorAttack_strip33_14
+  - first:
+      213: 5018559268391830938
+    second: spr_WarriorAttack_strip33_15
+  - first:
+      213: 7218720864363607539
+    second: spr_WarriorAttack_strip33_16
+  - first:
+      213: 934519685169489312
+    second: spr_WarriorAttack_strip33_17
+  - first:
+      213: 7552272040323086674
+    second: spr_WarriorAttack_strip33_18
+  - first:
+      213: 7402261350610622320
+    second: spr_WarriorAttack_strip33_19
+  - first:
+      213: 1321354332130148443
+    second: spr_WarriorAttack_strip33_20
+  - first:
+      213: 4453373904875639586
+    second: spr_WarriorAttack_strip33_21
+  - first:
+      213: 9162952037670575760
+    second: spr_WarriorAttack_strip33_22
+  - first:
+      213: -8685427758630799318
+    second: spr_WarriorAttack_strip33_23
+  - first:
+      213: 9046427284521189873
+    second: spr_WarriorAttack_strip33_24
+  - first:
+      213: -5373621711565067880
+    second: spr_WarriorAttack_strip33_25
+  - first:
+      213: -5814421454796432467
+    second: spr_WarriorAttack_strip33_26
+  - first:
+      213: 4928704883876512148
+    second: spr_WarriorAttack_strip33_27
+  - first:
+      213: 1012248181938936307
+    second: spr_WarriorAttack_strip33_28
+  - first:
+      213: -6054898083921611030
+    second: spr_WarriorAttack_strip33_29
+  - first:
+      213: 5329595462567972611
+    second: spr_WarriorAttack_strip33_30
+  - first:
+      213: -7391027866727416694
+    second: spr_WarriorAttack_strip33_31
+  - first:
+      213: 7719792602455901231
+    second: spr_WarriorAttack_strip33_32
+  - first:
+      213: 3016741938356904476
+    second: spr_WarriorAttack_strip33_33
+  - first:
+      213: 7799775519377398348
+    second: spr_WarriorAttack_strip33_34
+  - first:
+      213: 7934985645890450886
+    second: spr_WarriorAttack_strip33_35
+  - first:
+      213: 7330881165892885614
+    second: spr_WarriorAttack_strip33_36
+  - first:
+      213: -443329772328113249
+    second: spr_WarriorAttack_strip33_37
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: spr_WarriorAttack_strip33_0
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 31
+        width: 39
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 415d7a2a0c8f090b0800000000000000
+      internalID: -5723801620141583084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_WarriorAttack_strip33_1
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 31
+        width: 36
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 09bab465d072cd140800000000000000
+      internalID: 4745711045577517968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_WarriorAttack_strip33_2
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 31
+        width: 31
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 61ecbfd99f7e62200800000000000000
+      internalID: 155066296474258966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_WarriorAttack_strip33_3
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 31
+        width: 31
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 19448321adf59ac80800000000000000
+      internalID: -8311006247122353007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_WarriorAttack_strip33_4
+      rect:
+        serializedVersion: 2
+        x: 407
+        y: 31
+        width: 32
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da48888f029a13a60800000000000000
+      internalID: 7652083200952927405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_WarriorAttack_strip33_5
+      rect:
+        serializedVersion: 2
+        x: 502
+        y: 31
+        width: 33
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3b0ba5924369369b0800000000000000
+      internalID: -5088058003222253389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_WarriorAttack_strip33_6
+      rect:
+        serializedVersion: 2
+        x: 598
+        y: 31
+        width: 33
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8021fa7ba82541570800000000000000
+      internalID: 8436458757712450056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_WarriorAttack_strip33_7
+      rect:
+        serializedVersion: 2
+        x: 694
+        y: 31
+        width: 33
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a3a43d52eb8fad80800000000000000
+      internalID: -8237211389094747226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_WarriorAttack_strip33_8
+      rect:
+        serializedVersion: 2
+        x: 790
+        y: 31
+        width: 33
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 29c4c44aa0dcdd070800000000000000
+      internalID: 8132881947690814610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_WarriorAttack_strip33_9
+      rect:
+        serializedVersion: 2
+        x: 889
+        y: 31
+        width: 34
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 222095f08d9b8c700800000000000000
+      internalID: 560902491229192738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_WarriorAttack_strip33_10
+      rect:
+        serializedVersion: 2
+        x: 986
+        y: 31
+        width: 41
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0720b7c5209d6eed0800000000000000
+      internalID: -2384980348481371536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_WarriorAttack_strip33_11
+      rect:
+        serializedVersion: 2
+        x: 1083
+        y: 31
+        width: 51
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 489532b3a9a25cb20800000000000000
+      internalID: 3153973955948403076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_WarriorAttack_strip33_12
+      rect:
+        serializedVersion: 2
+        x: 1173
+        y: 31
+        width: 61
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26215af3cfb306530800000000000000
+      internalID: 3846140036359983714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_WarriorAttack_strip33_13
+      rect:
+        serializedVersion: 2
+        x: 1269
+        y: 31
+        width: 61
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f74acacbc50b86000800000000000000
+      internalID: 29467309926818943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_WarriorAttack_strip33_14
+      rect:
+        serializedVersion: 2
+        x: 1374
+        y: 31
+        width: 33
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e10b523332bd98f80800000000000000
+      internalID: -8103705110248050658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_WarriorAttack_strip33_15
+      rect:
+        serializedVersion: 2
+        x: 1381
+        y: 40
+        width: 45
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a954dbca01185a540800000000000000
+      internalID: 5018559268391830938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_WarriorAttack_strip33_16
+      rect:
+        serializedVersion: 2
+        x: 1476
+        y: 31
+        width: 27
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f5f715316c0e2460800000000000000
+      internalID: 7218720864363607539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_WarriorAttack_strip33_17
+      rect:
+        serializedVersion: 2
+        x: 1482
+        y: 42
+        width: 40
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a5232ec3b418fc00800000000000000
+      internalID: 934519685169489312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_WarriorAttack_strip33_18
+      rect:
+        serializedVersion: 2
+        x: 1572
+        y: 31
+        width: 27
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2597292386f0fc860800000000000000
+      internalID: 7552272040323086674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_WarriorAttack_strip33_19
+      rect:
+        serializedVersion: 2
+        x: 1668
+        y: 31
+        width: 26
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 077dfb1ca7d1ab660800000000000000
+      internalID: 7402261350610622320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_WarriorAttack_strip33_20
+      rect:
+        serializedVersion: 2
+        x: 1764
+        y: 31
+        width: 24
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b508a05a3c4665210800000000000000
+      internalID: 1321354332130148443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_WarriorAttack_strip33_21
+      rect:
+        serializedVersion: 2
+        x: 1860
+        y: 31
+        width: 22
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2235b14b8ff8dcd30800000000000000
+      internalID: 4453373904875639586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_WarriorAttack_strip33_22
+      rect:
+        serializedVersion: 2
+        x: 1956
+        y: 31
+        width: 22
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 09edb43b458592f70800000000000000
+      internalID: 9162952037670575760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_WarriorAttack_strip33_23
+      rect:
+        serializedVersion: 2
+        x: 2052
+        y: 31
+        width: 22
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a287e7c8879277780800000000000000
+      internalID: -8685427758630799318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_WarriorAttack_strip33_24
+      rect:
+        serializedVersion: 2
+        x: 2148
+        y: 31
+        width: 22
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f1894c6fad5b8d70800000000000000
+      internalID: 9046427284521189873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_WarriorAttack_strip33_25
+      rect:
+        serializedVersion: 2
+        x: 2244
+        y: 31
+        width: 24
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 89966d4268f0d65b0800000000000000
+      internalID: -5373621711565067880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_WarriorAttack_strip33_26
+      rect:
+        serializedVersion: 2
+        x: 2340
+        y: 31
+        width: 25
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dabd2743e760f4fa0800000000000000
+      internalID: -5814421454796432467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_WarriorAttack_strip33_27
+      rect:
+        serializedVersion: 2
+        x: 2436
+        y: 31
+        width: 42
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 491413e7af6466440800000000000000
+      internalID: 4928704883876512148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_WarriorAttack_strip33_28
+      rect:
+        serializedVersion: 2
+        x: 2532
+        y: 31
+        width: 46
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f9510dbb5a3c0e00800000000000000
+      internalID: 1012248181938936307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_WarriorAttack_strip33_29
+      rect:
+        serializedVersion: 2
+        x: 2628
+        y: 31
+        width: 33
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae6b8acd54ea8fba0800000000000000
+      internalID: -6054898083921611030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_WarriorAttack_strip33_30
+      rect:
+        serializedVersion: 2
+        x: 2662
+        y: 40
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 30fc5e6f5d686f940800000000000000
+      internalID: 5329595462567972611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_WarriorAttack_strip33_31
+      rect:
+        serializedVersion: 2
+        x: 2724
+        y: 31
+        width: 30
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8cf2b6805bcd6990800000000000000
+      internalID: -7391027866727416694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_WarriorAttack_strip33_32
+      rect:
+        serializedVersion: 2
+        x: 2761
+        y: 43
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f2482118876322b60800000000000000
+      internalID: 7719792602455901231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_WarriorAttack_strip33_33
+      rect:
+        serializedVersion: 2
+        x: 2820
+        y: 31
+        width: 30
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1269ce3fce9dd920800000000000000
+      internalID: 3016741938356904476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_WarriorAttack_strip33_34
+      rect:
+        serializedVersion: 2
+        x: 2860
+        y: 46
+        width: 13
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c4a1748828e5e3c60800000000000000
+      internalID: 7799775519377398348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_WarriorAttack_strip33_35
+      rect:
+        serializedVersion: 2
+        x: 2916
+        y: 31
+        width: 54
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c5bf11576bbe1e60800000000000000
+      internalID: 7934985645890450886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_WarriorAttack_strip33_36
+      rect:
+        serializedVersion: 2
+        x: 3012
+        y: 31
+        width: 53
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e6c95a764958cb560800000000000000
+      internalID: 7330881165892885614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_WarriorAttack_strip33_37
+      rect:
+        serializedVersion: 2
+        x: 3108
+        y: 31
+        width: 30
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f9b2702cbe9f8d9f0800000000000000
+      internalID: -443329772328113249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable: {}
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

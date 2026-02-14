@@ -1,0 +1,805 @@
+fileFormatVersion: 2
+guid: 8707dd0488526ac4cb9144449dcbfed3
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -490856955541781586
+    second: spr_SkeletonCatAttackNoSlash_strip27_0
+  - first:
+      213: 3448732928228346043
+    second: spr_SkeletonCatAttackNoSlash_strip27_1
+  - first:
+      213: 5687717601048551177
+    second: spr_SkeletonCatAttackNoSlash_strip27_2
+  - first:
+      213: -3415778426178643370
+    second: spr_SkeletonCatAttackNoSlash_strip27_3
+  - first:
+      213: -6614385398731868715
+    second: spr_SkeletonCatAttackNoSlash_strip27_4
+  - first:
+      213: -5357971251429373137
+    second: spr_SkeletonCatAttackNoSlash_strip27_5
+  - first:
+      213: -7037093286799529165
+    second: spr_SkeletonCatAttackNoSlash_strip27_6
+  - first:
+      213: -3527694467319739471
+    second: spr_SkeletonCatAttackNoSlash_strip27_7
+  - first:
+      213: 7732219504028108606
+    second: spr_SkeletonCatAttackNoSlash_strip27_8
+  - first:
+      213: -6301585320809247398
+    second: spr_SkeletonCatAttackNoSlash_strip27_9
+  - first:
+      213: -1123877658844978937
+    second: spr_SkeletonCatAttackNoSlash_strip27_10
+  - first:
+      213: 6984900423506356038
+    second: spr_SkeletonCatAttackNoSlash_strip27_11
+  - first:
+      213: -2395429644641282033
+    second: spr_SkeletonCatAttackNoSlash_strip27_12
+  - first:
+      213: -4371987463512119600
+    second: spr_SkeletonCatAttackNoSlash_strip27_13
+  - first:
+      213: 2185059842153011286
+    second: spr_SkeletonCatAttackNoSlash_strip27_14
+  - first:
+      213: -6209331081027811382
+    second: spr_SkeletonCatAttackNoSlash_strip27_15
+  - first:
+      213: 7387522344669382470
+    second: spr_SkeletonCatAttackNoSlash_strip27_16
+  - first:
+      213: 8063401190941763695
+    second: spr_SkeletonCatAttackNoSlash_strip27_17
+  - first:
+      213: 3947901460277951893
+    second: spr_SkeletonCatAttackNoSlash_strip27_18
+  - first:
+      213: -6949497781033828298
+    second: spr_SkeletonCatAttackNoSlash_strip27_19
+  - first:
+      213: 3207191473285702281
+    second: spr_SkeletonCatAttackNoSlash_strip27_20
+  - first:
+      213: 4596132549960429047
+    second: spr_SkeletonCatAttackNoSlash_strip27_21
+  - first:
+      213: -4665610996509798723
+    second: spr_SkeletonCatAttackNoSlash_strip27_22
+  - first:
+      213: 2983277225050260053
+    second: spr_SkeletonCatAttackNoSlash_strip27_23
+  - first:
+      213: -4211182671097943793
+    second: spr_SkeletonCatAttackNoSlash_strip27_24
+  - first:
+      213: 3028613582693076164
+    second: spr_SkeletonCatAttackNoSlash_strip27_25
+  - first:
+      213: -441023848059824754
+    second: spr_SkeletonCatAttackNoSlash_strip27_26
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: spr_SkeletonCatAttackNoSlash_strip27_0
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 31
+        width: 34
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea3076913302039f0800000000000000
+      internalID: -490856955541781586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_SkeletonCatAttackNoSlash_strip27_1
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 31
+        width: 35
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb84e38735c5cdf20800000000000000
+      internalID: 3448732928228346043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_SkeletonCatAttackNoSlash_strip27_2
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 31
+        width: 36
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 90f5c39f505deee40800000000000000
+      internalID: 5687717601048551177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_SkeletonCatAttackNoSlash_strip27_3
+      rect:
+        serializedVersion: 2
+        x: 310
+        y: 31
+        width: 41
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 65add247e97b890d0800000000000000
+      internalID: -3415778426178643370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_SkeletonCatAttackNoSlash_strip27_4
+      rect:
+        serializedVersion: 2
+        x: 406
+        y: 31
+        width: 41
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5d57e0d368bf434a0800000000000000
+      internalID: -6614385398731868715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_SkeletonCatAttackNoSlash_strip27_5
+      rect:
+        serializedVersion: 2
+        x: 502
+        y: 31
+        width: 41
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f2b0cc9d889a4a5b0800000000000000
+      internalID: -5357971251429373137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_SkeletonCatAttackNoSlash_strip27_6
+      rect:
+        serializedVersion: 2
+        x: 598
+        y: 31
+        width: 41
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33b270590f8375e90800000000000000
+      internalID: -7037093286799529165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_SkeletonCatAttackNoSlash_strip27_7
+      rect:
+        serializedVersion: 2
+        x: 694
+        y: 31
+        width: 41
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1bbcb4f829c1b0fc0800000000000000
+      internalID: -3527694467319739471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_SkeletonCatAttackNoSlash_strip27_8
+      rect:
+        serializedVersion: 2
+        x: 794
+        y: 31
+        width: 37
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e3741fefbac5e4b60800000000000000
+      internalID: 7732219504028108606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_SkeletonCatAttackNoSlash_strip27_9
+      rect:
+        serializedVersion: 2
+        x: 899
+        y: 31
+        width: 43
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a5d4957b9854c88a0800000000000000
+      internalID: -6301585320809247398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_SkeletonCatAttackNoSlash_strip27_10
+      rect:
+        serializedVersion: 2
+        x: 995
+        y: 31
+        width: 40
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7012c8d493f2760f0800000000000000
+      internalID: -1123877658844978937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_SkeletonCatAttackNoSlash_strip27_11
+      rect:
+        serializedVersion: 2
+        x: 1089
+        y: 31
+        width: 36
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 64762967de95fe060800000000000000
+      internalID: 6984900423506356038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_SkeletonCatAttackNoSlash_strip27_12
+      rect:
+        serializedVersion: 2
+        x: 1185
+        y: 31
+        width: 36
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f0857b20e69b1ced0800000000000000
+      internalID: -2395429644641282033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_SkeletonCatAttackNoSlash_strip27_13
+      rect:
+        serializedVersion: 2
+        x: 1281
+        y: 31
+        width: 36
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d626e2d0949353c0800000000000000
+      internalID: -4371987463512119600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_SkeletonCatAttackNoSlash_strip27_14
+      rect:
+        serializedVersion: 2
+        x: 1375
+        y: 31
+        width: 37
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 65850887954e25e10800000000000000
+      internalID: 2185059842153011286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_SkeletonCatAttackNoSlash_strip27_15
+      rect:
+        serializedVersion: 2
+        x: 1467
+        y: 31
+        width: 36
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac78b8eb74604d9a0800000000000000
+      internalID: -6209331081027811382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_SkeletonCatAttackNoSlash_strip27_16
+      rect:
+        serializedVersion: 2
+        x: 1558
+        y: 31
+        width: 37
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 64787448e60c58660800000000000000
+      internalID: 7387522344669382470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_SkeletonCatAttackNoSlash_strip27_17
+      rect:
+        serializedVersion: 2
+        x: 1654
+        y: 31
+        width: 37
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f68ab8359a4f6ef60800000000000000
+      internalID: 8063401190941763695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_SkeletonCatAttackNoSlash_strip27_18
+      rect:
+        serializedVersion: 2
+        x: 1750
+        y: 31
+        width: 37
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 59dfc141673c9c630800000000000000
+      internalID: 3947901460277951893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_SkeletonCatAttackNoSlash_strip27_19
+      rect:
+        serializedVersion: 2
+        x: 1846
+        y: 31
+        width: 37
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6300d12969c6e8f90800000000000000
+      internalID: -6949497781033828298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_SkeletonCatAttackNoSlash_strip27_20
+      rect:
+        serializedVersion: 2
+        x: 1942
+        y: 31
+        width: 37
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9822bdb07ab328c20800000000000000
+      internalID: 3207191473285702281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_SkeletonCatAttackNoSlash_strip27_21
+      rect:
+        serializedVersion: 2
+        x: 2042
+        y: 31
+        width: 34
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7fd600de33eb8cf30800000000000000
+      internalID: 4596132549960429047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_SkeletonCatAttackNoSlash_strip27_22
+      rect:
+        serializedVersion: 2
+        x: 2147
+        y: 31
+        width: 44
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dbe80e4a48b604fb0800000000000000
+      internalID: -4665610996509798723
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_SkeletonCatAttackNoSlash_strip27_23
+      rect:
+        serializedVersion: 2
+        x: 2243
+        y: 31
+        width: 42
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 55242a184dab66920800000000000000
+      internalID: 2983277225050260053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_SkeletonCatAttackNoSlash_strip27_24
+      rect:
+        serializedVersion: 2
+        x: 2337
+        y: 31
+        width: 37
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f092de42cafde85c0800000000000000
+      internalID: -4211182671097943793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_SkeletonCatAttackNoSlash_strip27_25
+      rect:
+        serializedVersion: 2
+        x: 2433
+        y: 31
+        width: 37
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4cc0856d10cc70a20800000000000000
+      internalID: 3028613582693076164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_SkeletonCatAttackNoSlash_strip27_26
+      rect:
+        serializedVersion: 2
+        x: 2529
+        y: 31
+        width: 37
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e851be6952b21e9f0800000000000000
+      internalID: -441023848059824754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable: {}
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,3588 @@
+fileFormatVersion: 2
+guid: 487a194eff86f2242b5a2d2549cf4158
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7475977776065959142
+    second: GUIV3 1_0
+  - first:
+      213: -727907026829057636
+    second: GUIV3 1_1
+  - first:
+      213: -3542909178366146799
+    second: GUIV3 1_2
+  - first:
+      213: 3235424147930009587
+    second: GUIV3 1_3
+  - first:
+      213: 4198051519433737977
+    second: GUIV3 1_4
+  - first:
+      213: 6057547234277387650
+    second: GUIV3 1_5
+  - first:
+      213: 6532590654168356203
+    second: GUIV3 1_6
+  - first:
+      213: -6876273183411364838
+    second: GUIV3 1_7
+  - first:
+      213: 2846462806812305625
+    second: GUIV3 1_8
+  - first:
+      213: 3376856608037337413
+    second: GUIV3 1_9
+  - first:
+      213: 1983172970858751703
+    second: GUIV3 1_10
+  - first:
+      213: -5088916543580915440
+    second: GUIV3 1_11
+  - first:
+      213: -2104030375055911864
+    second: GUIV3 1_12
+  - first:
+      213: -8307314895616858579
+    second: GUIV3 1_13
+  - first:
+      213: -805004536178452475
+    second: GUIV3 1_14
+  - first:
+      213: 3344256659775827004
+    second: GUIV3 1_15
+  - first:
+      213: 9154731031003709187
+    second: GUIV3 1_16
+  - first:
+      213: -7530845345487106975
+    second: GUIV3 1_17
+  - first:
+      213: 3349771101082705534
+    second: GUIV3 1_18
+  - first:
+      213: 7870834663286010172
+    second: GUIV3 1_19
+  - first:
+      213: -2429879378511862431
+    second: GUIV3 1_20
+  - first:
+      213: -1422599550484828799
+    second: GUIV3 1_21
+  - first:
+      213: -7376732114266784624
+    second: GUIV3 1_22
+  - first:
+      213: 8240126576885706710
+    second: GUIV3 1_23
+  - first:
+      213: -391410108406297832
+    second: GUIV3 1_24
+  - first:
+      213: -834428403518128946
+    second: GUIV3 1_25
+  - first:
+      213: -1178377102024424922
+    second: GUIV3 1_26
+  - first:
+      213: 3478633769517573066
+    second: GUIV3 1_27
+  - first:
+      213: 8756094921576401703
+    second: GUIV3 1_28
+  - first:
+      213: -5173619039093357504
+    second: GUIV3 1_29
+  - first:
+      213: 7082580410597133401
+    second: GUIV3 1_30
+  - first:
+      213: -7027132916348957211
+    second: GUIV3 1_31
+  - first:
+      213: -1526501506010576648
+    second: GUIV3 1_32
+  - first:
+      213: 1004408849091905174
+    second: GUIV3 1_33
+  - first:
+      213: -113982330793807523
+    second: GUIV3 1_34
+  - first:
+      213: -6962770457158785195
+    second: GUIV3 1_35
+  - first:
+      213: -7619395361811724710
+    second: GUIV3 1_36
+  - first:
+      213: -4385173447946115266
+    second: GUIV3 1_37
+  - first:
+      213: 867987779568400536
+    second: GUIV3 1_38
+  - first:
+      213: -7464388909546689639
+    second: GUIV3 1_39
+  - first:
+      213: -1026841481821663271
+    second: GUIV3 1_40
+  - first:
+      213: -4926790747997617553
+    second: GUIV3 1_41
+  - first:
+      213: -4400883735961162705
+    second: GUIV3 1_42
+  - first:
+      213: -2787137448399624328
+    second: GUIV3 1_43
+  - first:
+      213: 5359836629322395423
+    second: GUIV3 1_44
+  - first:
+      213: 3198667716397699441
+    second: GUIV3 1_45
+  - first:
+      213: 1960930376565742714
+    second: GUIV3 1_46
+  - first:
+      213: -3315204578557841690
+    second: GUIV3 1_47
+  - first:
+      213: -4617911015028561246
+    second: GUIV3 1_48
+  - first:
+      213: 5838894488300967421
+    second: GUIV3 1_49
+  - first:
+      213: -4117424704103080265
+    second: GUIV3 1_50
+  - first:
+      213: 1946909669244001266
+    second: GUIV3 1_51
+  - first:
+      213: -1329007046367631328
+    second: GUIV3 1_52
+  - first:
+      213: 3789506507287342681
+    second: GUIV3 1_53
+  - first:
+      213: -7635426993792167876
+    second: GUIV3 1_54
+  - first:
+      213: 7711500688370550028
+    second: GUIV3 1_55
+  - first:
+      213: -6930158035332777483
+    second: GUIV3 1_56
+  - first:
+      213: -5815640473271257590
+    second: GUIV3 1_57
+  - first:
+      213: -5116970233211527555
+    second: GUIV3 1_58
+  - first:
+      213: 185709301273928645
+    second: GUIV3 1_59
+  - first:
+      213: -1295340013975159497
+    second: GUIV3 1_60
+  - first:
+      213: -4078132679697843178
+    second: GUIV3 1_61
+  - first:
+      213: 3329483894917619846
+    second: GUIV3 1_62
+  - first:
+      213: -1964046980179604694
+    second: GUIV3 1_63
+  - first:
+      213: -399283049063442276
+    second: GUIV3 1_64
+  - first:
+      213: 3822184326580366666
+    second: GUIV3 1_65
+  - first:
+      213: -4846803803216173383
+    second: GUIV3 1_66
+  - first:
+      213: -2256295696392988323
+    second: GUIV3 1_67
+  - first:
+      213: -5823509264261915448
+    second: GUIV3 1_68
+  - first:
+      213: 4564532293062974990
+    second: GUIV3 1_69
+  - first:
+      213: 1742804907331985485
+    second: GUIV3 1_70
+  - first:
+      213: 210264460564764375
+    second: GUIV3 1_71
+  - first:
+      213: 532007486141873818
+    second: GUIV3 1_72
+  - first:
+      213: 6703090514366100101
+    second: GUIV3 1_73
+  - first:
+      213: -4079945081899235677
+    second: GUIV3 1_74
+  - first:
+      213: 187076317463545807
+    second: GUIV3 1_75
+  - first:
+      213: 8190329228505324385
+    second: GUIV3 1_76
+  - first:
+      213: -4884315258884316949
+    second: GUIV3 1_77
+  - first:
+      213: 3645465811432376716
+    second: GUIV3 1_78
+  - first:
+      213: 834830770170028432
+    second: GUIV3 1_79
+  - first:
+      213: -3374907422317211283
+    second: GUIV3 1_80
+  - first:
+      213: 2113520534733590429
+    second: GUIV3 1_81
+  - first:
+      213: -4705277911803521412
+    second: GUIV3 1_82
+  - first:
+      213: -1036817805912809347
+    second: GUIV3 1_83
+  - first:
+      213: 4166692607885974469
+    second: GUIV3 1_84
+  - first:
+      213: -4328643964864313805
+    second: GUIV3 1_85
+  - first:
+      213: 51400710499616103
+    second: GUIV3 1_86
+  - first:
+      213: 9033200404059285510
+    second: GUIV3 1_87
+  - first:
+      213: -8543980718926238904
+    second: GUIV3 1_88
+  - first:
+      213: 1062195900687896752
+    second: GUIV3 1_89
+  - first:
+      213: 2459076638591618217
+    second: GUIV3 1_90
+  - first:
+      213: 8379887087963838141
+    second: GUIV3 1_91
+  - first:
+      213: 4165842657036238902
+    second: GUIV3 1_92
+  - first:
+      213: -5550172424854555443
+    second: GUIV3 1_93
+  - first:
+      213: 5889534573163268799
+    second: GUIV3 1_94
+  - first:
+      213: 7472634898142653936
+    second: GUIV3 1_95
+  - first:
+      213: -7791142568445105227
+    second: GUIV3 1_96
+  - first:
+      213: -3613073245709927135
+    second: GUIV3 1_97
+  - first:
+      213: -3996017731481179184
+    second: GUIV3 1_98
+  - first:
+      213: 1841430288210058064
+    second: GUIV3 1_99
+  - first:
+      213: -3935082917420765091
+    second: GUIV3 1_100
+  - first:
+      213: -230808823547515550
+    second: GUIV3 1_101
+  - first:
+      213: 5035980948996532421
+    second: GUIV3 1_102
+  - first:
+      213: -7563710493111792448
+    second: GUIV3 1_103
+  - first:
+      213: -4557558530326062314
+    second: GUIV3 1_104
+  - first:
+      213: -6463648362956919276
+    second: GUIV3 1_105
+  - first:
+      213: -2768528260862830446
+    second: GUIV3 1_106
+  - first:
+      213: -7505775481029019694
+    second: GUIV3 1_107
+  - first:
+      213: 4825663349313704127
+    second: GUIV3 1_108
+  - first:
+      213: 273220575523608455
+    second: GUIV3 1_109
+  - first:
+      213: -2460554033571482069
+    second: GUIV3 1_110
+  - first:
+      213: 8147009955854182409
+    second: GUIV3 1_111
+  - first:
+      213: 419698208039449713
+    second: GUIV3 1_112
+  - first:
+      213: 4964007190731524129
+    second: GUIV3 1_113
+  - first:
+      213: 7654982876546948582
+    second: GUIV3 1_114
+  - first:
+      213: -7089129924284052856
+    second: GUIV3 1_115
+  - first:
+      213: 7702371736897760915
+    second: GUIV3 1_116
+  - first:
+      213: -3290562413916066872
+    second: GUIV3 1_117
+  - first:
+      213: -59785495401516105
+    second: GUIV3 1_118
+  - first:
+      213: -1449312984337347869
+    second: GUIV3 1_119
+  - first:
+      213: 1614742091624201803
+    second: GUIV3 1_120
+  - first:
+      213: 5779136497374200907
+    second: GUIV3 1_121
+  - first:
+      213: 3864296886838499313
+    second: GUIV3 1_122
+  - first:
+      213: 1993048070443464946
+    second: GUIV3 1_123
+  - first:
+      213: 5828415958448016831
+    second: GUIV3 1_124
+  - first:
+      213: 1767012172639617760
+    second: GUIV3 1_125
+  - first:
+      213: 819336061516260681
+    second: GUIV3 1_126
+  - first:
+      213: -5060329749416184306
+    second: GUIV3 1_127
+  - first:
+      213: -7593134099724399893
+    second: GUIV3 1_128
+  - first:
+      213: -8529192864196314650
+    second: GUIV3 1_129
+  - first:
+      213: -9110483770636638122
+    second: GUIV3 1_130
+  - first:
+      213: -5711974989241397627
+    second: GUIV3 1_131
+  - first:
+      213: -6849381941897451293
+    second: GUIV3 1_132
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: GUIV3 1_0
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 2062
+        width: 159
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a1bafd472ddff3890800000000000000
+      internalID: -7475977776065959142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUIV3 1_1
+      rect:
+        serializedVersion: 2
+        x: 239
+        y: 2047
+        width: 83
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c91e75c6a64f5e5f0800000000000000
+      internalID: -727907026829057636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUIV3 1_2
+      rect:
+        serializedVersion: 2
+        x: 367
+        y: 2047
+        width: 83
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 117c3089fde05dec0800000000000000
+      internalID: -3542909178366146799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUIV3 1_3
+      rect:
+        serializedVersion: 2
+        x: 515
+        y: 2116
+        width: 57
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ffc61bde1986ec20800000000000000
+      internalID: 3235424147930009587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUIV3 1_4
+      rect:
+        serializedVersion: 2
+        x: 599
+        y: 2116
+        width: 10
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f603ac5d99724a30800000000000000
+      internalID: 4198051519433737977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUIV3 1_5
+      rect:
+        serializedVersion: 2
+        x: 613
+        y: 2116
+        width: 22
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28de0458d1bb01450800000000000000
+      internalID: 6057547234277387650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUIV3 1_6
+      rect:
+        serializedVersion: 2
+        x: 639
+        y: 2116
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b65ddbcb69c68aa50800000000000000
+      internalID: 6532590654168356203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUIV3 1_7
+      rect:
+        serializedVersion: 2
+        x: 515
+        y: 2100
+        width: 57
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a1c9834c8f19290a0800000000000000
+      internalID: -6876273183411364838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUIV3 1_8
+      rect:
+        serializedVersion: 2
+        x: 599
+        y: 2100
+        width: 10
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d8a86277daa08720800000000000000
+      internalID: 2846462806812305625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUIV3 1_9
+      rect:
+        serializedVersion: 2
+        x: 613
+        y: 2100
+        width: 22
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 549fe7391310dde20800000000000000
+      internalID: 3376856608037337413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUIV3 1_10
+      rect:
+        serializedVersion: 2
+        x: 639
+        y: 2100
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d621384f45a58b10800000000000000
+      internalID: 1983172970858751703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUIV3 1_11
+      rect:
+        serializedVersion: 2
+        x: 515
+        y: 2084
+        width: 57
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0193048ad598069b0800000000000000
+      internalID: -5088916543580915440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUIV3 1_12
+      rect:
+        serializedVersion: 2
+        x: 599
+        y: 2084
+        width: 10
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8441922858bfcc2e0800000000000000
+      internalID: -2104030375055911864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUIV3 1_13
+      rect:
+        serializedVersion: 2
+        x: 613
+        y: 2084
+        width: 22
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d262271dd1d76bc80800000000000000
+      internalID: -8307314895616858579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUIV3 1_14
+      rect:
+        serializedVersion: 2
+        x: 639
+        y: 2084
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5085182b3ac04d4f0800000000000000
+      internalID: -805004536178452475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUIV3 1_15
+      rect:
+        serializedVersion: 2
+        x: 515
+        y: 2068
+        width: 57
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c3c2ca3a6bf296e20800000000000000
+      internalID: 3344256659775827004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUIV3 1_16
+      rect:
+        serializedVersion: 2
+        x: 599
+        y: 2068
+        width: 10
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 30fb83d6e532c0f70800000000000000
+      internalID: 9154731031003709187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUIV3 1_17
+      rect:
+        serializedVersion: 2
+        x: 613
+        y: 2068
+        width: 22
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 16c46d3fe001d7790800000000000000
+      internalID: -7530845345487106975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUIV3 1_18
+      rect:
+        serializedVersion: 2
+        x: 639
+        y: 2068
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e7e57ee8117cc7e20800000000000000
+      internalID: 3349771101082705534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUIV3 1_19
+      rect:
+        serializedVersion: 2
+        x: 515
+        y: 2052
+        width: 57
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c317efebc62da3d60800000000000000
+      internalID: 7870834663286010172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUIV3 1_20
+      rect:
+        serializedVersion: 2
+        x: 599
+        y: 2052
+        width: 36
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 165e0cc4495574ed0800000000000000
+      internalID: -2429879378511862431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUIV3 1_21
+      rect:
+        serializedVersion: 2
+        x: 639
+        y: 2052
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 18da8bffe39e14ce0800000000000000
+      internalID: -1422599550484828799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUIV3 1_22
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 1966
+        width: 159
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 09c79e5c93590a990800000000000000
+      internalID: -7376732114266784624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUIV3 1_23
+      rect:
+        serializedVersion: 2
+        x: 239
+        y: 1935
+        width: 83
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6df278fa67fca5270800000000000000
+      internalID: 8240126576885706710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUIV3 1_24
+      rect:
+        serializedVersion: 2
+        x: 495
+        y: 1999
+        width: 18
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 81b02f6849e619af0800000000000000
+      internalID: -391410108406297832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUIV3 1_25
+      rect:
+        serializedVersion: 2
+        x: 529
+        y: 1999
+        width: 14
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ecc3ec9b9c38b64f0800000000000000
+      internalID: -834428403518128946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUIV3 1_26
+      rect:
+        serializedVersion: 2
+        x: 561
+        y: 2001
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 622416ed44095afe0800000000000000
+      internalID: -1178377102024424922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUIV3 1_27
+      rect:
+        serializedVersion: 2
+        x: 591
+        y: 1999
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac3e5c79bf6964030800000000000000
+      internalID: 3478633769517573066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUIV3 1_28
+      rect:
+        serializedVersion: 2
+        x: 623
+        y: 1999
+        width: 18
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 72bc92c70f5e38970800000000000000
+      internalID: 8756094921576401703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUIV3 1_29
+      rect:
+        serializedVersion: 2
+        x: 655
+        y: 1999
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 04484ab15ec9338b0800000000000000
+      internalID: -5173619039093357504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUIV3 1_30
+      rect:
+        serializedVersion: 2
+        x: 495
+        y: 1967
+        width: 18
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 95c48cabb516a4260800000000000000
+      internalID: 7082580410597133401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUIV3 1_31
+      rect:
+        serializedVersion: 2
+        x: 527
+        y: 1967
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5edc09b08db9a7e90800000000000000
+      internalID: -7027132916348957211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUIV3 1_32
+      rect:
+        serializedVersion: 2
+        x: 559
+        y: 1967
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f80421d7f6c0dae0800000000000000
+      internalID: -1526501506010576648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUIV3 1_33
+      rect:
+        serializedVersion: 2
+        x: 591
+        y: 1967
+        width: 18
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 696c163d68060fd00800000000000000
+      internalID: 1004408849091905174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUIV3 1_34
+      rect:
+        serializedVersion: 2
+        x: 623
+        y: 1967
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d513d5e8cad0b6ef0800000000000000
+      internalID: -113982330793807523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUIV3 1_35
+      rect:
+        serializedVersion: 2
+        x: 656
+        y: 1968
+        width: 17
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5576778d8254f5f90800000000000000
+      internalID: -6962770457158785195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUIV3 1_36
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 1870
+        width: 159
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a5604f7a948724690800000000000000
+      internalID: -7619395361811724710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUIV3 1_37
+      rect:
+        serializedVersion: 2
+        x: 499
+        y: 1905
+        width: 26
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e3762b49bfbb423c0800000000000000
+      internalID: -4385173447946115266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUIV3 1_38
+      rect:
+        serializedVersion: 2
+        x: 551
+        y: 1911
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 898fd866946bb0c00800000000000000
+      internalID: 867987779568400536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUIV3 1_39
+      rect:
+        serializedVersion: 2
+        x: 583
+        y: 1911
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 99baa15b5d9296890800000000000000
+      internalID: -7464388909546689639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUIV3 1_40
+      rect:
+        serializedVersion: 2
+        x: 626
+        y: 1916
+        width: 7
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9df426bdc1defb1f0800000000000000
+      internalID: -1026841481821663271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUIV3 1_41
+      rect:
+        serializedVersion: 2
+        x: 634
+        y: 1916
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f62cbeefae580abb0800000000000000
+      internalID: -4926790747997617553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUIV3 1_42
+      rect:
+        serializedVersion: 2
+        x: 626
+        y: 1905
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f2cad3c1f8bece2c0800000000000000
+      internalID: -4400883735961162705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUIV3 1_43
+      rect:
+        serializedVersion: 2
+        x: 634
+        y: 1905
+        width: 34
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 877a3ffe1491259d0800000000000000
+      internalID: -2787137448399624328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUIV3 1_44
+      rect:
+        serializedVersion: 2
+        x: 503
+        y: 1860
+        width: 10
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1f63e84407f16a40800000000000000
+      internalID: 5359836629322395423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUIV3 1_45
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 1860
+        width: 42
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 171156e3753f36c20800000000000000
+      internalID: 3198667716397699441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUIV3 1_46
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 1771
+        width: 350
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a7c597cb9cf963b10800000000000000
+      internalID: 1960930376565742714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUIV3 1_47
+      rect:
+        serializedVersion: 2
+        x: 505
+        y: 1781
+        width: 83
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6eeaf4120070ef1d0800000000000000
+      internalID: -3315204578557841690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUIV3 1_48
+      rect:
+        serializedVersion: 2
+        x: 595
+        y: 1812
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2aaebd80662e9efb0800000000000000
+      internalID: -4617911015028561246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUIV3 1_49
+      rect:
+        serializedVersion: 2
+        x: 611
+        y: 1812
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df55a20f99be70150800000000000000
+      internalID: 5838894488300967421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUIV3 1_50
+      rect:
+        serializedVersion: 2
+        x: 627
+        y: 1810
+        width: 28
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7be9482fb08fbd6c0800000000000000
+      internalID: -4117424704103080265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUIV3 1_51
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 1699
+        width: 54
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2fbdf0d6700d40b10800000000000000
+      internalID: 1946909669244001266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUIV3 1_52
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 1697
+        width: 24
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0282449f12b6e8de0800000000000000
+      internalID: -1329007046367631328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUIV3 1_53
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 1697
+        width: 24
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 95ea4e83718079430800000000000000
+      internalID: 3789506507287342681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUIV3 1_54
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 1631
+        width: 152
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c30d6967a93890690800000000000000
+      internalID: -7635426993792167876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUIV3 1_55
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 1573
+        width: 35
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c05c18fc401c40b60800000000000000
+      internalID: 7711500688370550028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUIV3 1_56
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 1573
+        width: 36
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f9bba20cf123df90800000000000000
+      internalID: -6930158035332777483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUIV3 1_57
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 1334
+        width: 412
+        height: 149
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a0638495dc1ba4fa0800000000000000
+      internalID: -5815640473271257590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUIV3 1_58
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 1222
+        width: 67
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d7edd2b0faedcf8b0800000000000000
+      internalID: -5116970233211527555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUIV3 1_59
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 1288
+        width: 62
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c32be520a5c39200800000000000000
+      internalID: 185709301273928645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUIV3 1_60
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 1288
+        width: 14
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 73d39abce17060ee0800000000000000
+      internalID: -1295340013975159497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUIV3 1_61
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 1244
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 61cb2b74fef8767c0800000000000000
+      internalID: -4078132679697843178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUIV3 1_62
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 1236
+        width: 21
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 680e2f946f3b43e20800000000000000
+      internalID: 3329483894917619846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUIV3 1_63
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 1236
+        width: 21
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a2b47307dad4eb4e0800000000000000
+      internalID: -1964046980179604694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUIV3 1_64
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 1142
+        width: 111
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c981dbfae26757af0800000000000000
+      internalID: -399283049063442276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUIV3 1_65
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 759
+        width: 185
+        height: 282
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a4d63ebe4602b0530800000000000000
+      internalID: 3822184326580366666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUIV3 1_66
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 775
+        width: 161
+        height: 251
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b6a945de91bcbcb0800000000000000
+      internalID: -4846803803216173383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUIV3 1_67
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 1021
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d59d04cb40700b0e0800000000000000
+      internalID: -2256295696392988323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUIV3 1_68
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 1021
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ccd87dad2dbe2fa0800000000000000
+      internalID: -5823509264261915448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUIV3 1_69
+      rect:
+        serializedVersion: 2
+        x: 506
+        y: 1006
+        width: 27
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e0e51d5cfe9785f30800000000000000
+      internalID: 4564532293062974990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUIV3 1_70
+      rect:
+        serializedVersion: 2
+        x: 499
+        y: 942
+        width: 41
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d40a45654dfaf2810800000000000000
+      internalID: 1742804907331985485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUIV3 1_71
+      rect:
+        serializedVersion: 2
+        x: 494
+        y: 878
+        width: 51
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d61ad0b9620be200800000000000000
+      internalID: 210264460564764375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUIV3 1_72
+      rect:
+        serializedVersion: 2
+        x: 491
+        y: 814
+        width: 57
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a9eb55d6df1126700800000000000000
+      internalID: 532007486141873818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUIV3 1_73
+      rect:
+        serializedVersion: 2
+        x: 490
+        y: 750
+        width: 59
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 582f41eee49260d50800000000000000
+      internalID: 6703090514366100101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUIV3 1_74
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 693
+        width: 35
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a64b42809f1167c0800000000000000
+      internalID: -4079945081899235677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUIV3 1_75
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 693
+        width: 62
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fc78d486be0a89200800000000000000
+      internalID: 187076317463545807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUIV3 1_76
+      rect:
+        serializedVersion: 2
+        x: 281
+        y: 647
+        width: 175
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 16b1f820a05e9a170800000000000000
+      internalID: 8190329228505324385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUIV3 1_77
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 632
+        width: 19
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be02e27762d673cb0800000000000000
+      internalID: -4884315258884316949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUIV3 1_78
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 632
+        width: 19
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c89024b47db479230800000000000000
+      internalID: 3645465811432376716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUIV3 1_79
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 639
+        width: 14
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 091ec8f892ae59b00800000000000000
+      internalID: 834830770170028432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUIV3 1_80
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 639
+        width: 14
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d6114f6949be921d0800000000000000
+      internalID: -3374907422317211283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUIV3 1_81
+      rect:
+        serializedVersion: 2
+        x: 187
+        y: 639
+        width: 14
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d9f0a4a7abbb45d10800000000000000
+      internalID: 2113520534733590429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUIV3 1_82
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 639
+        width: 12
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c7695793bae73beb0800000000000000
+      internalID: -4705277911803521412
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUIV3 1_83
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 639
+        width: 12
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d7064c5e2bb7c91f0800000000000000
+      internalID: -1036817805912809347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUIV3 1_84
+      rect:
+        serializedVersion: 2
+        x: 498
+        y: 601
+        width: 42
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5cb1a4dc9d013d930800000000000000
+      internalID: 4166692607885974469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUIV3 1_85
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 580
+        width: 59
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 336cf138f319de3c0800000000000000
+      internalID: -4328643964864313805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUIV3 1_86
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 582
+        width: 59
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 76548828cac96b000800000000000000
+      internalID: 51400710499616103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUIV3 1_87
+      rect:
+        serializedVersion: 2
+        x: 285
+        y: 574
+        width: 168
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6086ed458ef5c5d70800000000000000
+      internalID: 9033200404059285510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUIV3 1_88
+      rect:
+        serializedVersion: 2
+        x: 501
+        y: 584
+        width: 92
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 84b6d98ddcead6980800000000000000
+      internalID: -8543980718926238904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUIV3 1_89
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 213
+        width: 250
+        height: 282
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b0d06e3b8dadbe00800000000000000
+      internalID: 1062195900687896752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUIV3 1_90
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 229
+        width: 226
+        height: 251
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ac07be8c25602220800000000000000
+      internalID: 2459076638591618217
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUIV3 1_91
+      rect:
+        serializedVersion: 2
+        x: 393
+        y: 475
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db697ff68e65b4470800000000000000
+      internalID: 8379887087963838141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUIV3 1_92
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 475
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 63080d233db00d930800000000000000
+      internalID: 4165842657036238902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUIV3 1_93
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 138
+        width: 14
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc4306ee593d9f2b0800000000000000
+      internalID: -5550172424854555443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUIV3 1_94
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 138
+        width: 10
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fba47cd7d74dbb150800000000000000
+      internalID: 5889534573163268799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUIV3 1_95
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 138
+        width: 12
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0fdeaff19d124b760800000000000000
+      internalID: 7472634898142653936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUIV3 1_96
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 138
+        width: 14
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5bba76dfc1d40e390800000000000000
+      internalID: -7791142568445105227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUIV3 1_97
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 138
+        width: 12
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 12dfdf1a609cbddc0800000000000000
+      internalID: -3613073245709927135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUIV3 1_98
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 138
+        width: 14
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0dbe6e68b0b4b88c0800000000000000
+      internalID: -3996017731481179184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUIV3 1_99
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 138
+        width: 14
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 05bd76f37131e8910800000000000000
+      internalID: 1841430288210058064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUIV3 1_100
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 138
+        width: 14
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d507d618fe6c369c0800000000000000
+      internalID: -3935082917420765091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUIV3 1_101
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 138
+        width: 14
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26dac6d09900cccf0800000000000000
+      internalID: -230808823547515550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUIV3 1_102
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 138
+        width: 14
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c8a298cdf563e540800000000000000
+      internalID: 5035980948996532421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUIV3 1_103
+      rect:
+        serializedVersion: 2
+        x: 251
+        y: 138
+        width: 10
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0cc4d2a716d480790800000000000000
+      internalID: -7563710493111792448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUIV3 1_104
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 138
+        width: 14
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 61b1dd4e9ac40c0c0800000000000000
+      internalID: -4557558530326062314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUIV3 1_105
+      rect:
+        serializedVersion: 2
+        x: 305
+        y: 138
+        width: 16
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 41eeaec4f028c46a0800000000000000
+      internalID: -6463648362956919276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUIV3 1_106
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 138
+        width: 10
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 29814ac07363499d0800000000000000
+      internalID: -2768528260862830446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUIV3 1_107
+      rect:
+        serializedVersion: 2
+        x: 331
+        y: 138
+        width: 14
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d7bd61a7f026d790800000000000000
+      internalID: -7505775481029019694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUIV3 1_108
+      rect:
+        serializedVersion: 2
+        x: 345
+        y: 138
+        width: 12
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb0177daf3338f240800000000000000
+      internalID: 4825663349313704127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUIV3 1_109
+      rect:
+        serializedVersion: 2
+        x: 357
+        y: 138
+        width: 14
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 78799657aacaac300800000000000000
+      internalID: 273220575523608455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUIV3 1_110
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 138
+        width: 12
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b26315e942b5addd0800000000000000
+      internalID: -2460554033571482069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUIV3 1_111
+      rect:
+        serializedVersion: 2
+        x: 409
+        y: 138
+        width: 14
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9086240e36eff0170800000000000000
+      internalID: 8147009955854182409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUIV3 1_112
+      rect:
+        serializedVersion: 2
+        x: 423
+        y: 138
+        width: 14
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1743f0beb4113d500800000000000000
+      internalID: 419698208039449713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUIV3 1_113
+      rect:
+        serializedVersion: 2
+        x: 437
+        y: 138
+        width: 14
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 12889025d32b3e440800000000000000
+      internalID: 4964007190731524129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUIV3 1_114
+      rect:
+        serializedVersion: 2
+        x: 451
+        y: 138
+        width: 14
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ed574e4e56fb3a60800000000000000
+      internalID: 7654982876546948582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUIV3 1_115
+      rect:
+        serializedVersion: 2
+        x: 465
+        y: 138
+        width: 14
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 88a0578c4e95e9d90800000000000000
+      internalID: -7089129924284052856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUIV3 1_116
+      rect:
+        serializedVersion: 2
+        x: 479
+        y: 138
+        width: 12
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39eacc9294254ea60800000000000000
+      internalID: 7702371736897760915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUIV3 1_117
+      rect:
+        serializedVersion: 2
+        x: 491
+        y: 138
+        width: 12
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8cbe74f2be29552d0800000000000000
+      internalID: -3290562413916066872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUIV3 1_118
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 97
+        width: 9
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b33fdf98699b2ff0800000000000000
+      internalID: -59785495401516105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUIV3 1_119
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 99
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ea0630058103ebe0800000000000000
+      internalID: -1449312984337347869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUIV3 1_120
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 98
+        width: 13
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4eb1278067b86610800000000000000
+      internalID: 1614742091624201803
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUIV3 1_121
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 97
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b440c72760e933050800000000000000
+      internalID: 5779136497374200907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUIV3 1_122
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 83
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f718ae6b8db0a530800000000000000
+      internalID: 3864296886838499313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUIV3 1_123
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 81
+        width: 13
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f87f0319aab8ab10800000000000000
+      internalID: 1993048070443464946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUIV3 1_124
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 81
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fbd03861f61b2e050800000000000000
+      internalID: 5828415958448016831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUIV3 1_125
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 52
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e2c9ff7530b58810800000000000000
+      internalID: 1767012172639617760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUIV3 1_126
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 52
+        width: 11
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94528529ecdde5b00800000000000000
+      internalID: 819336061516260681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUIV3 1_127
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 52
+        width: 11
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e06f4b757e816c9b0800000000000000
+      internalID: -5060329749416184306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUIV3 1_128
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 52
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bea850634c4cf9690800000000000000
+      internalID: -7593134099724399893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUIV3 1_129
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 36
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e938c4974832a980800000000000000
+      internalID: -8529192864196314650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUIV3 1_130
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 36
+        width: 11
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 658ed3fa74f019180800000000000000
+      internalID: -9110483770636638122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUIV3 1_131
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 36
+        width: 11
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 58ec958b20dfab0b0800000000000000
+      internalID: -5711974989241397627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUIV3 1_132
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 36
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e82a36d96b12f0a0800000000000000
+      internalID: -6849381941897451293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      GUIV3 1_0: -7475977776065959142
+      GUIV3 1_1: -727907026829057636
+      GUIV3 1_10: 1983172970858751703
+      GUIV3 1_100: -3935082917420765091
+      GUIV3 1_101: -230808823547515550
+      GUIV3 1_102: 5035980948996532421
+      GUIV3 1_103: -7563710493111792448
+      GUIV3 1_104: -4557558530326062314
+      GUIV3 1_105: -6463648362956919276
+      GUIV3 1_106: -2768528260862830446
+      GUIV3 1_107: -7505775481029019694
+      GUIV3 1_108: 4825663349313704127
+      GUIV3 1_109: 273220575523608455
+      GUIV3 1_11: -5088916543580915440
+      GUIV3 1_110: -2460554033571482069
+      GUIV3 1_111: 8147009955854182409
+      GUIV3 1_112: 419698208039449713
+      GUIV3 1_113: 4964007190731524129
+      GUIV3 1_114: 7654982876546948582
+      GUIV3 1_115: -7089129924284052856
+      GUIV3 1_116: 7702371736897760915
+      GUIV3 1_117: -3290562413916066872
+      GUIV3 1_118: -59785495401516105
+      GUIV3 1_119: -1449312984337347869
+      GUIV3 1_12: -2104030375055911864
+      GUIV3 1_120: 1614742091624201803
+      GUIV3 1_121: 5779136497374200907
+      GUIV3 1_122: 3864296886838499313
+      GUIV3 1_123: 1993048070443464946
+      GUIV3 1_124: 5828415958448016831
+      GUIV3 1_125: 1767012172639617760
+      GUIV3 1_126: 819336061516260681
+      GUIV3 1_127: -5060329749416184306
+      GUIV3 1_128: -7593134099724399893
+      GUIV3 1_129: -8529192864196314650
+      GUIV3 1_13: -8307314895616858579
+      GUIV3 1_130: -9110483770636638122
+      GUIV3 1_131: -5711974989241397627
+      GUIV3 1_132: -6849381941897451293
+      GUIV3 1_14: -805004536178452475
+      GUIV3 1_15: 3344256659775827004
+      GUIV3 1_16: 9154731031003709187
+      GUIV3 1_17: -7530845345487106975
+      GUIV3 1_18: 3349771101082705534
+      GUIV3 1_19: 7870834663286010172
+      GUIV3 1_2: -3542909178366146799
+      GUIV3 1_20: -2429879378511862431
+      GUIV3 1_21: -1422599550484828799
+      GUIV3 1_22: -7376732114266784624
+      GUIV3 1_23: 8240126576885706710
+      GUIV3 1_24: -391410108406297832
+      GUIV3 1_25: -834428403518128946
+      GUIV3 1_26: -1178377102024424922
+      GUIV3 1_27: 3478633769517573066
+      GUIV3 1_28: 8756094921576401703
+      GUIV3 1_29: -5173619039093357504
+      GUIV3 1_3: 3235424147930009587
+      GUIV3 1_30: 7082580410597133401
+      GUIV3 1_31: -7027132916348957211
+      GUIV3 1_32: -1526501506010576648
+      GUIV3 1_33: 1004408849091905174
+      GUIV3 1_34: -113982330793807523
+      GUIV3 1_35: -6962770457158785195
+      GUIV3 1_36: -7619395361811724710
+      GUIV3 1_37: -4385173447946115266
+      GUIV3 1_38: 867987779568400536
+      GUIV3 1_39: -7464388909546689639
+      GUIV3 1_4: 4198051519433737977
+      GUIV3 1_40: -1026841481821663271
+      GUIV3 1_41: -4926790747997617553
+      GUIV3 1_42: -4400883735961162705
+      GUIV3 1_43: -2787137448399624328
+      GUIV3 1_44: 5359836629322395423
+      GUIV3 1_45: 3198667716397699441
+      GUIV3 1_46: 1960930376565742714
+      GUIV3 1_47: -3315204578557841690
+      GUIV3 1_48: -4617911015028561246
+      GUIV3 1_49: 5838894488300967421
+      GUIV3 1_5: 6057547234277387650
+      GUIV3 1_50: -4117424704103080265
+      GUIV3 1_51: 1946909669244001266
+      GUIV3 1_52: -1329007046367631328
+      GUIV3 1_53: 3789506507287342681
+      GUIV3 1_54: -7635426993792167876
+      GUIV3 1_55: 7711500688370550028
+      GUIV3 1_56: -6930158035332777483
+      GUIV3 1_57: -5815640473271257590
+      GUIV3 1_58: -5116970233211527555
+      GUIV3 1_59: 185709301273928645
+      GUIV3 1_6: 6532590654168356203
+      GUIV3 1_60: -1295340013975159497
+      GUIV3 1_61: -4078132679697843178
+      GUIV3 1_62: 3329483894917619846
+      GUIV3 1_63: -1964046980179604694
+      GUIV3 1_64: -399283049063442276
+      GUIV3 1_65: 3822184326580366666
+      GUIV3 1_66: -4846803803216173383
+      GUIV3 1_67: -2256295696392988323
+      GUIV3 1_68: -5823509264261915448
+      GUIV3 1_69: 4564532293062974990
+      GUIV3 1_7: -6876273183411364838
+      GUIV3 1_70: 1742804907331985485
+      GUIV3 1_71: 210264460564764375
+      GUIV3 1_72: 532007486141873818
+      GUIV3 1_73: 6703090514366100101
+      GUIV3 1_74: -4079945081899235677
+      GUIV3 1_75: 187076317463545807
+      GUIV3 1_76: 8190329228505324385
+      GUIV3 1_77: -4884315258884316949
+      GUIV3 1_78: 3645465811432376716
+      GUIV3 1_79: 834830770170028432
+      GUIV3 1_8: 2846462806812305625
+      GUIV3 1_80: -3374907422317211283
+      GUIV3 1_81: 2113520534733590429
+      GUIV3 1_82: -4705277911803521412
+      GUIV3 1_83: -1036817805912809347
+      GUIV3 1_84: 4166692607885974469
+      GUIV3 1_85: -4328643964864313805
+      GUIV3 1_86: 51400710499616103
+      GUIV3 1_87: 9033200404059285510
+      GUIV3 1_88: -8543980718926238904
+      GUIV3 1_89: 1062195900687896752
+      GUIV3 1_9: 3376856608037337413
+      GUIV3 1_90: 2459076638591618217
+      GUIV3 1_91: 8379887087963838141
+      GUIV3 1_92: 4165842657036238902
+      GUIV3 1_93: -5550172424854555443
+      GUIV3 1_94: 5889534573163268799
+      GUIV3 1_95: 7472634898142653936
+      GUIV3 1_96: -7791142568445105227
+      GUIV3 1_97: -3613073245709927135
+      GUIV3 1_98: -3996017731481179184
+      GUIV3 1_99: 1841430288210058064
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

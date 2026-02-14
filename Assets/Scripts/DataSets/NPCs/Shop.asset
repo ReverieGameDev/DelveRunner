@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33f73cf8c0ccd15478dc44b431fcae37, type: 3}
+  m_Name: Shop
+  m_EditorClassIdentifier: 
+  npcName: Shop Keeper
+  portrait: {fileID: -8052851245750878578, guid: dd892fcd29ba8d84fa3bdd82cd99e665, type: 3}
+  lines:
+  - Welcome back to Aufburn Peaks!
+  - I've got a whole new selection this time around, browse and buy to your hearts
+    content!

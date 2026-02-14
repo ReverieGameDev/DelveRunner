@@ -1,0 +1,676 @@
+fileFormatVersion: 2
+guid: d9bc9a0d151fb494db0af68a998612fa
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8372662151288275037
+    second: spr_WarriorIdle_strip21_0
+  - first:
+      213: -6920846198511607521
+    second: spr_WarriorIdle_strip21_1
+  - first:
+      213: 1260340098253554269
+    second: spr_WarriorIdle_strip21_2
+  - first:
+      213: -3223107535171075354
+    second: spr_WarriorIdle_strip21_3
+  - first:
+      213: 8078489295161934854
+    second: spr_WarriorIdle_strip21_4
+  - first:
+      213: -6414232600022744125
+    second: spr_WarriorIdle_strip21_5
+  - first:
+      213: -2992095251970960823
+    second: spr_WarriorIdle_strip21_6
+  - first:
+      213: -6928217252118522884
+    second: spr_WarriorIdle_strip21_7
+  - first:
+      213: 1520540740200878648
+    second: spr_WarriorIdle_strip21_8
+  - first:
+      213: -700759980561262627
+    second: spr_WarriorIdle_strip21_9
+  - first:
+      213: 2102907501895797891
+    second: spr_WarriorIdle_strip21_10
+  - first:
+      213: -369814381237045498
+    second: spr_WarriorIdle_strip21_11
+  - first:
+      213: -4687145979634093381
+    second: spr_WarriorIdle_strip21_12
+  - first:
+      213: 4007623926635133189
+    second: spr_WarriorIdle_strip21_13
+  - first:
+      213: 7478338554305628194
+    second: spr_WarriorIdle_strip21_14
+  - first:
+      213: 11677062502196009
+    second: spr_WarriorIdle_strip21_15
+  - first:
+      213: 8639052489187464969
+    second: spr_WarriorIdle_strip21_16
+  - first:
+      213: 1888185769672108327
+    second: spr_WarriorIdle_strip21_17
+  - first:
+      213: -3850999403000530126
+    second: spr_WarriorIdle_strip21_18
+  - first:
+      213: -5291198091108025772
+    second: spr_WarriorIdle_strip21_19
+  - first:
+      213: 6303212635650756079
+    second: spr_WarriorIdle_strip21_20
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 12
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: spr_WarriorIdle_strip21_0
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 31
+        width: 39
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d5045e7cddba13470800000000000000
+      internalID: 8372662151288275037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_WarriorIdle_strip21_1
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 31
+        width: 39
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f116a98fc0734ff90800000000000000
+      internalID: -6920846198511607521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_WarriorIdle_strip21_2
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 31
+        width: 39
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d52859c44a0ad7110800000000000000
+      internalID: 1260340098253554269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_WarriorIdle_strip21_3
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 31
+        width: 39
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e24e3506c83543d0800000000000000
+      internalID: -3223107535171075354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_WarriorIdle_strip21_4
+      rect:
+        serializedVersion: 2
+        x: 412
+        y: 31
+        width: 39
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6044ce7563f8c1070800000000000000
+      internalID: 8078489295161934854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_WarriorIdle_strip21_5
+      rect:
+        serializedVersion: 2
+        x: 508
+        y: 31
+        width: 39
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c30ae03f611cf6a0800000000000000
+      internalID: -6414232600022744125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_WarriorIdle_strip21_6
+      rect:
+        serializedVersion: 2
+        x: 604
+        y: 31
+        width: 39
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 942532c9831f976d0800000000000000
+      internalID: -2992095251970960823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_WarriorIdle_strip21_7
+      rect:
+        serializedVersion: 2
+        x: 700
+        y: 31
+        width: 39
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf31eb0dd170adf90800000000000000
+      internalID: -6928217252118522884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_WarriorIdle_strip21_8
+      rect:
+        serializedVersion: 2
+        x: 796
+        y: 31
+        width: 39
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 832de2e3fbb0a1510800000000000000
+      internalID: 1520540740200878648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_WarriorIdle_strip21_9
+      rect:
+        serializedVersion: 2
+        x: 892
+        y: 31
+        width: 39
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd716dda2866646f0800000000000000
+      internalID: -700759980561262627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_WarriorIdle_strip21_10
+      rect:
+        serializedVersion: 2
+        x: 988
+        y: 31
+        width: 39
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38cc0063b370f2d10800000000000000
+      internalID: 2102907501895797891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_WarriorIdle_strip21_11
+      rect:
+        serializedVersion: 2
+        x: 1084
+        y: 31
+        width: 39
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 607f88597c72edaf0800000000000000
+      internalID: -369814381237045498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_WarriorIdle_strip21_12
+      rect:
+        serializedVersion: 2
+        x: 1180
+        y: 31
+        width: 39
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb27289a099e3feb0800000000000000
+      internalID: -4687145979634093381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_WarriorIdle_strip21_13
+      rect:
+        serializedVersion: 2
+        x: 1276
+        y: 31
+        width: 39
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 509717c5ab0fd9730800000000000000
+      internalID: 4007623926635133189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_WarriorIdle_strip21_14
+      rect:
+        serializedVersion: 2
+        x: 1372
+        y: 31
+        width: 39
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 228ce7f0b4568c760800000000000000
+      internalID: 7478338554305628194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_WarriorIdle_strip21_15
+      rect:
+        serializedVersion: 2
+        x: 1468
+        y: 31
+        width: 39
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 923a67af93c792000800000000000000
+      internalID: 11677062502196009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_WarriorIdle_strip21_16
+      rect:
+        serializedVersion: 2
+        x: 1564
+        y: 31
+        width: 39
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 90719fd977414e770800000000000000
+      internalID: 8639052489187464969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_WarriorIdle_strip21_17
+      rect:
+        serializedVersion: 2
+        x: 1660
+        y: 31
+        width: 39
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 729e04714fe243a10800000000000000
+      internalID: 1888185769672108327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_WarriorIdle_strip21_18
+      rect:
+        serializedVersion: 2
+        x: 1756
+        y: 31
+        width: 39
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 23b79e942708e8ac0800000000000000
+      internalID: -3850999403000530126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_WarriorIdle_strip21_19
+      rect:
+        serializedVersion: 2
+        x: 1852
+        y: 31
+        width: 39
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45af74fbe53e196b0800000000000000
+      internalID: -5291198091108025772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_WarriorIdle_strip21_20
+      rect:
+        serializedVersion: 2
+        x: 1948
+        y: 31
+        width: 39
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fed87bb0f72897750800000000000000
+      internalID: 6303212635650756079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      spr_WarriorIdle_strip21_0: 8372662151288275037
+      spr_WarriorIdle_strip21_1: -6920846198511607521
+      spr_WarriorIdle_strip21_10: 2102907501895797891
+      spr_WarriorIdle_strip21_11: -369814381237045498
+      spr_WarriorIdle_strip21_12: -4687145979634093381
+      spr_WarriorIdle_strip21_13: 4007623926635133189
+      spr_WarriorIdle_strip21_14: 7478338554305628194
+      spr_WarriorIdle_strip21_15: 11677062502196009
+      spr_WarriorIdle_strip21_16: 8639052489187464969
+      spr_WarriorIdle_strip21_17: 1888185769672108327
+      spr_WarriorIdle_strip21_18: -3850999403000530126
+      spr_WarriorIdle_strip21_19: -5291198091108025772
+      spr_WarriorIdle_strip21_2: 1260340098253554269
+      spr_WarriorIdle_strip21_20: 6303212635650756079
+      spr_WarriorIdle_strip21_3: -3223107535171075354
+      spr_WarriorIdle_strip21_4: 8078489295161934854
+      spr_WarriorIdle_strip21_5: -6414232600022744125
+      spr_WarriorIdle_strip21_6: -2992095251970960823
+      spr_WarriorIdle_strip21_7: -6928217252118522884
+      spr_WarriorIdle_strip21_8: 1520540740200878648
+      spr_WarriorIdle_strip21_9: -700759980561262627
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,841 @@
+fileFormatVersion: 2
+guid: 47d8767c7bf43db47895dacb24029c25
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 3723859115728375687
+    second: magical-monument-fx_0
+  - first:
+      213: -984224456537347842
+    second: magical-monument-fx_1
+  - first:
+      213: 7487720280372367138
+    second: magical-monument-fx_2
+  - first:
+      213: 7266473588520727651
+    second: magical-monument-fx_3
+  - first:
+      213: -6497091269415982198
+    second: magical-monument-fx_4
+  - first:
+      213: 6424094996567943088
+    second: magical-monument-fx_5
+  - first:
+      213: -2713580496263030592
+    second: magical-monument-fx_6
+  - first:
+      213: 696990456184774254
+    second: magical-monument-fx_7
+  - first:
+      213: 5066629531702214642
+    second: magical-monument-fx_8
+  - first:
+      213: -5133717249206975404
+    second: magical-monument-fx_9
+  - first:
+      213: -4655425244164628416
+    second: magical-monument-fx_10
+  - first:
+      213: -6053640225923481350
+    second: magical-monument-fx_11
+  - first:
+      213: 4221630235478401102
+    second: magical-monument-fx_12
+  - first:
+      213: -3297187374183014772
+    second: magical-monument-fx_13
+  - first:
+      213: -4096801494225021867
+    second: magical-monument-fx_14
+  - first:
+      213: -6474300070548651462
+    second: magical-monument-fx_15
+  - first:
+      213: 7538727933401347672
+    second: magical-monument-fx_16
+  - first:
+      213: 7327264901697538725
+    second: magical-monument-fx_17
+  - first:
+      213: 8475163007333125075
+    second: magical-monument-fx_18
+  - first:
+      213: -5726182098602365895
+    second: magical-monument-fx_19
+  - first:
+      213: -5839143256819223039
+    second: magical-monument-fx_20
+  - first:
+      213: 2257722450238835050
+    second: magical-monument-fx_21
+  - first:
+      213: -1982755674665380356
+    second: magical-monument-fx_22
+  - first:
+      213: 8524654805699859924
+    second: magical-monument-fx_23
+  - first:
+      213: 5188783480138556353
+    second: magical-monument-fx_24
+  - first:
+      213: -5109107393888939434
+    second: magical-monument-fx_25
+  - first:
+      213: 1130302861596476095
+    second: magical-monument-fx_26
+  - first:
+      213: 3569509209714517811
+    second: magical-monument-fx_27
+  - first:
+      213: -6434822331182369448
+    second: magical-monument-fx_28
+  - first:
+      213: 4623961600383685164
+    second: magical-monument-fx_29
+  - first:
+      213: 3145188407547651626
+    second: magical-monument-fx_30
+  - first:
+      213: 6661724486877117184
+    second: magical-monument-fx_31
+  - first:
+      213: 4580553412232746725
+    second: magical-monument-fx_32
+  - first:
+      213: -8249136210727979362
+    second: magical-monument-fx_33
+  - first:
+      213: 8334809165730673151
+    second: magical-monument-fx_34
+  - first:
+      213: -5312319162067723879
+    second: magical-monument-fx_35
+  - first:
+      213: -3549830149168754647
+    second: magical-monument-fx_36
+  - first:
+      213: -1413696834191449740
+    second: magical-monument-fx_37
+  - first:
+      213: -4948214593745213945
+    second: magical-monument-fx_38
+  - first:
+      213: 3713257743889638672
+    second: magical-monument-fx_39
+  - first:
+      213: -2099381272750864430
+    second: magical-monument-fx_40
+  - first:
+      213: -5112011267427341698
+    second: magical-monument-fx_41
+  - first:
+      213: -8193517656771357974
+    second: magical-monument-fx_42
+  - first:
+      213: -1464035805129738161
+    second: magical-monument-fx_43
+  - first:
+      213: -710830967643216767
+    second: magical-monument-fx_44
+  - first:
+      213: -6912085185100455118
+    second: magical-monument-fx_45
+  - first:
+      213: 1360220140627759107
+    second: magical-monument-fx_46
+  - first:
+      213: -737163448491536260
+    second: magical-monument-fx_47
+  - first:
+      213: 521295427525512284
+    second: magical-monument-fx_48
+  - first:
+      213: 331492639824101905
+    second: magical-monument-fx_49
+  - first:
+      213: -499621720108939038
+    second: magical-monument-fx_50
+  - first:
+      213: -2915145467002324712
+    second: magical-monument-fx_51
+  - first:
+      213: -421533589633259447
+    second: magical-monument-fx_52
+  - first:
+      213: 4534399772471867579
+    second: magical-monument-fx_53
+  - first:
+      213: 8313071693649768123
+    second: magical-monument-fx_54
+  - first:
+      213: -1674960366339853149
+    second: magical-monument-fx_55
+  - first:
+      213: 954694429099172234
+    second: magical-monument-fx_56
+  - first:
+      213: 5123722684840673395
+    second: magical-monument-fx_57
+  - first:
+      213: -2081240598228041686
+    second: magical-monument-fx_58
+  - first:
+      213: -7090520660118825326
+    second: magical-monument-fx_59
+  - first:
+      213: 5797343420944732373
+    second: magical-monument-fx_60
+  - first:
+      213: 6965133222401447109
+    second: magical-monument-fx_61
+  - first:
+      213: 7657818583968669746
+    second: magical-monument-fx_62
+  - first:
+      213: 5418464718616018630
+    second: magical-monument-fx_63
+  - first:
+      213: -8701765310116562156
+    second: magical-monument-fx_64
+  - first:
+      213: 925511421796894729
+    second: magical-monument-fx_65
+  - first:
+      213: -2767627798262424935
+    second: magical-monument-fx_66
+  - first:
+      213: -3009983421968722249
+    second: magical-monument-fx_67
+  - first:
+      213: -2209731864286632097
+    second: magical-monument-fx_68
+  - first:
+      213: 8821571920913260228
+    second: magical-monument-fx_69
+  - first:
+      213: 9115379425301242773
+    second: magical-monument-fx_70
+  - first:
+      213: 1705991830508828448
+    second: magical-monument-fx_71
+  - first:
+      213: 8441863383547980653
+    second: magical-monument-fx_72
+  - first:
+      213: -7708164445636584267
+    second: magical-monument-fx_73
+  - first:
+      213: -1445074973373292691
+    second: magical-monument-fx_74
+  - first:
+      213: -2081443885755176135
+    second: magical-monument-fx_75
+  - first:
+      213: -4302658149119428305
+    second: magical-monument-fx_76
+  - first:
+      213: 5347829275087141203
+    second: magical-monument-fx_77
+  - first:
+      213: -923491084697976575
+    second: magical-monument-fx_78
+  - first:
+      213: 7239131975914837230
+    second: magical-monument-fx_79
+  - first:
+      213: -1375141925192539991
+    second: magical-monument-fx_80
+  - first:
+      213: 3785340554801697662
+    second: magical-monument-fx_81
+  - first:
+      213: -305003465161690608
+    second: magical-monument-fx_82
+  - first:
+      213: 9202974297157988579
+    second: magical-monument-fx_83
+  - first:
+      213: -8625457229910376970
+    second: magical-monument-fx_84
+  - first:
+      213: 7129939876982634826
+    second: magical-monument-fx_85
+  - first:
+      213: -4972464715847862721
+    second: magical-monument-fx_86
+  - first:
+      213: 7685747312757940202
+    second: magical-monument-fx_87
+  - first:
+      213: -8380712153564284476
+    second: magical-monument-fx_88
+  - first:
+      213: -80551190211667475
+    second: magical-monument-fx_89
+  - first:
+      213: 8204937842915365278
+    second: magical-monument-fx_90
+  - first:
+      213: 719739564803188758
+    second: magical-monument-fx_91
+  - first:
+      213: 7936572597409455988
+    second: magical-monument-fx_92
+  - first:
+      213: -720650861717467887
+    second: magical-monument-fx_93
+  - first:
+      213: -1181836671491486872
+    second: magical-monument-fx_94
+  - first:
+      213: -763821976779537974
+    second: magical-monument-fx_95
+  - first:
+      213: 5127484311085275812
+    second: magical-monument-fx_96
+  - first:
+      213: 6961134300778502663
+    second: magical-monument-fx_97
+  - first:
+      213: -8942230230147893420
+    second: magical-monument-fx_98
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 18
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: magical-monument-fx_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 672
+        width: 224
+        height: 224
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 78f079ac22ecda330800000000000000
+      internalID: 3723859115728375687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: magical-monument-fx_1
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 672
+        width: 224
+        height: 224
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef8e6d842155752f0800000000000000
+      internalID: -984224456537347842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: magical-monument-fx_2
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 672
+        width: 224
+        height: 224
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22f45116ce9b9e760800000000000000
+      internalID: 7487720280372367138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: magical-monument-fx_3
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 672
+        width: 224
+        height: 224
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3643985ba33b7d460800000000000000
+      internalID: 7266473588520727651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: magical-monument-fx_4
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 672
+        width: 224
+        height: 224
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8b2b2dd9e1b5d5a0800000000000000
+      internalID: -6497091269415982198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: magical-monument-fx_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 448
+        width: 224
+        height: 224
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b7ebc1fc58f62950800000000000000
+      internalID: 6424094996567943088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: magical-monument-fx_6
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 448
+        width: 224
+        height: 224
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c850d27aec675ad0800000000000000
+      internalID: -2713580496263030592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: magical-monument-fx_7
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 448
+        width: 224
+        height: 224
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e6e1bb880253ca900800000000000000
+      internalID: 696990456184774254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: magical-monument-fx_8
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 448
+        width: 224
+        height: 224
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ff3d9507b8405640800000000000000
+      internalID: 5066629531702214642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: magical-monument-fx_9
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 448
+        width: 224
+        height: 224
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45409b78c5f51c8b0800000000000000
+      internalID: -5133717249206975404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: magical-monument-fx_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 224
+        width: 224
+        height: 224
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0406e2be76b946fb0800000000000000
+      internalID: -4655425244164628416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: magical-monument-fx_11
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 224
+        width: 224
+        height: 224
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af0c0dfb9462dfba0800000000000000
+      internalID: -6053640225923481350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: magical-monument-fx_12
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 224
+        width: 224
+        height: 224
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e402dbef45e369a30800000000000000
+      internalID: 4221630235478401102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: magical-monument-fx_13
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 224
+        width: 224
+        height: 224
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c8e1beb6d890e32d0800000000000000
+      internalID: -3297187374183014772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: magical-monument-fx_14
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 224
+        width: 224
+        height: 224
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5549d6d2fbc3527c0800000000000000
+      internalID: -4096801494225021867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: magical-monument-fx_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 224
+        height: 224
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a3249ad536aa626a0800000000000000
+      internalID: -6474300070548651462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: magical-monument-fx_16
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 0
+        width: 224
+        height: 224
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 856b3b01d11fe9860800000000000000
+      internalID: 7538727933401347672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: magical-monument-fx_17
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 0
+        width: 224
+        height: 224
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5aa8ed84b9cafa560800000000000000
+      internalID: 7327264901697538725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 97f9c3dd604b7114181bab74adb092f8
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      magical-monument-fx_0: 3723859115728375687
+      magical-monument-fx_1: -984224456537347842
+      magical-monument-fx_10: -4655425244164628416
+      magical-monument-fx_11: -6053640225923481350
+      magical-monument-fx_12: 4221630235478401102
+      magical-monument-fx_13: -3297187374183014772
+      magical-monument-fx_14: -4096801494225021867
+      magical-monument-fx_15: -6474300070548651462
+      magical-monument-fx_16: 7538727933401347672
+      magical-monument-fx_17: 7327264901697538725
+      magical-monument-fx_2: 7487720280372367138
+      magical-monument-fx_3: 7266473588520727651
+      magical-monument-fx_4: -6497091269415982198
+      magical-monument-fx_5: 6424094996567943088
+      magical-monument-fx_6: -2713580496263030592
+      magical-monument-fx_7: 696990456184774254
+      magical-monument-fx_8: 5066629531702214642
+      magical-monument-fx_9: -5133717249206975404
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

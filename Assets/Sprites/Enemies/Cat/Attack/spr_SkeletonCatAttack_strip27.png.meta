@@ -1,0 +1,805 @@
+fileFormatVersion: 2
+guid: 89828e0c36ffb504e91b329d5753c0ba
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8660178279312582242
+    second: spr_SkeletonCatAttack_strip27_0
+  - first:
+      213: -6036971720808326999
+    second: spr_SkeletonCatAttack_strip27_1
+  - first:
+      213: -3440773753667447417
+    second: spr_SkeletonCatAttack_strip27_2
+  - first:
+      213: 2625016991364063297
+    second: spr_SkeletonCatAttack_strip27_3
+  - first:
+      213: 6226996572990873847
+    second: spr_SkeletonCatAttack_strip27_4
+  - first:
+      213: -2808711617879888356
+    second: spr_SkeletonCatAttack_strip27_5
+  - first:
+      213: -8136677399891049686
+    second: spr_SkeletonCatAttack_strip27_6
+  - first:
+      213: -8059656658884067174
+    second: spr_SkeletonCatAttack_strip27_7
+  - first:
+      213: 6137551335928678125
+    second: spr_SkeletonCatAttack_strip27_8
+  - first:
+      213: -8750200941471719654
+    second: spr_SkeletonCatAttack_strip27_9
+  - first:
+      213: -8266607277211962485
+    second: spr_SkeletonCatAttack_strip27_10
+  - first:
+      213: 8508368751271269874
+    second: spr_SkeletonCatAttack_strip27_11
+  - first:
+      213: -856962007020414048
+    second: spr_SkeletonCatAttack_strip27_12
+  - first:
+      213: 3103287854470767847
+    second: spr_SkeletonCatAttack_strip27_13
+  - first:
+      213: -1218536235816279218
+    second: spr_SkeletonCatAttack_strip27_14
+  - first:
+      213: -6404071197500873303
+    second: spr_SkeletonCatAttack_strip27_15
+  - first:
+      213: 6313067714485276763
+    second: spr_SkeletonCatAttack_strip27_16
+  - first:
+      213: 7240160660047518664
+    second: spr_SkeletonCatAttack_strip27_17
+  - first:
+      213: 4976325968058599383
+    second: spr_SkeletonCatAttack_strip27_18
+  - first:
+      213: 3805977111449051728
+    second: spr_SkeletonCatAttack_strip27_19
+  - first:
+      213: 4434482109006696470
+    second: spr_SkeletonCatAttack_strip27_20
+  - first:
+      213: 2731213321500990776
+    second: spr_SkeletonCatAttack_strip27_21
+  - first:
+      213: 5838642652169774970
+    second: spr_SkeletonCatAttack_strip27_22
+  - first:
+      213: 6087590420924145033
+    second: spr_SkeletonCatAttack_strip27_23
+  - first:
+      213: -2437972463107034964
+    second: spr_SkeletonCatAttack_strip27_24
+  - first:
+      213: 5981366748754054184
+    second: spr_SkeletonCatAttack_strip27_25
+  - first:
+      213: -4989157535362500890
+    second: spr_SkeletonCatAttack_strip27_26
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: spr_SkeletonCatAttack_strip27_0
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 31
+        width: 34
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 266eafde2422f2870800000000000000
+      internalID: 8660178279312582242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_SkeletonCatAttack_strip27_1
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 31
+        width: 35
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a81426843e583ca0800000000000000
+      internalID: -6036971720808326999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_SkeletonCatAttack_strip27_2
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 31
+        width: 36
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7851a24408aef30d0800000000000000
+      internalID: -3440773753667447417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_SkeletonCatAttack_strip27_3
+      rect:
+        serializedVersion: 2
+        x: 310
+        y: 31
+        width: 41
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 140ae93bb0fed6420800000000000000
+      internalID: 2625016991364063297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_SkeletonCatAttack_strip27_4
+      rect:
+        serializedVersion: 2
+        x: 406
+        y: 31
+        width: 41
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f022be146cba6650800000000000000
+      internalID: 6226996572990873847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_SkeletonCatAttack_strip27_5
+      rect:
+        serializedVersion: 2
+        x: 502
+        y: 31
+        width: 41
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1ea1cb2aa37509d0800000000000000
+      internalID: -2808711617879888356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_SkeletonCatAttack_strip27_6
+      rect:
+        serializedVersion: 2
+        x: 598
+        y: 31
+        width: 41
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a238b87c307b41f80800000000000000
+      internalID: -8136677399891049686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_SkeletonCatAttack_strip27_7
+      rect:
+        serializedVersion: 2
+        x: 694
+        y: 31
+        width: 41
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a908a9b78f8562090800000000000000
+      internalID: -8059656658884067174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_SkeletonCatAttack_strip27_8
+      rect:
+        serializedVersion: 2
+        x: 794
+        y: 31
+        width: 37
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de6c0c00c66fc2550800000000000000
+      internalID: 6137551335928678125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_SkeletonCatAttack_strip27_9
+      rect:
+        serializedVersion: 2
+        x: 899
+        y: 31
+        width: 43
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a1f1a42ba9a019680800000000000000
+      internalID: -8750200941471719654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_SkeletonCatAttack_strip27_10
+      rect:
+        serializedVersion: 2
+        x: 995
+        y: 31
+        width: 45
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b833f10da7c174d80800000000000000
+      internalID: -8266607277211962485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_SkeletonCatAttack_strip27_11
+      rect:
+        serializedVersion: 2
+        x: 1089
+        y: 31
+        width: 48
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f5de8dcc4cc31670800000000000000
+      internalID: 8508368751271269874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_SkeletonCatAttack_strip27_12
+      rect:
+        serializedVersion: 2
+        x: 1185
+        y: 31
+        width: 36
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0abda8158957b14f0800000000000000
+      internalID: -856962007020414048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_SkeletonCatAttack_strip27_13
+      rect:
+        serializedVersion: 2
+        x: 1281
+        y: 31
+        width: 36
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7e4a3899cd7111b20800000000000000
+      internalID: 3103287854470767847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_SkeletonCatAttack_strip27_14
+      rect:
+        serializedVersion: 2
+        x: 1375
+        y: 31
+        width: 37
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e43aa36efb3e61fe0800000000000000
+      internalID: -1218536235816279218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_SkeletonCatAttack_strip27_15
+      rect:
+        serializedVersion: 2
+        x: 1467
+        y: 31
+        width: 36
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a566a41d2b2027a0800000000000000
+      internalID: -6404071197500873303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_SkeletonCatAttack_strip27_16
+      rect:
+        serializedVersion: 2
+        x: 1558
+        y: 31
+        width: 37
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b50d1e463a58c9750800000000000000
+      internalID: 6313067714485276763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_SkeletonCatAttack_strip27_17
+      rect:
+        serializedVersion: 2
+        x: 1654
+        y: 31
+        width: 37
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8cbd3e2a2c73a7460800000000000000
+      internalID: 7240160660047518664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_SkeletonCatAttack_strip27_18
+      rect:
+        serializedVersion: 2
+        x: 1750
+        y: 31
+        width: 37
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d74fac2a167f0540800000000000000
+      internalID: 4976325968058599383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_SkeletonCatAttack_strip27_19
+      rect:
+        serializedVersion: 2
+        x: 1846
+        y: 31
+        width: 37
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0522037940c81d430800000000000000
+      internalID: 3805977111449051728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_SkeletonCatAttack_strip27_20
+      rect:
+        serializedVersion: 2
+        x: 1942
+        y: 31
+        width: 37
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6105b26bbf17a8d30800000000000000
+      internalID: 4434482109006696470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_SkeletonCatAttack_strip27_21
+      rect:
+        serializedVersion: 2
+        x: 2042
+        y: 31
+        width: 34
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 83d91e99b0837e520800000000000000
+      internalID: 2731213321500990776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_SkeletonCatAttack_strip27_22
+      rect:
+        serializedVersion: 2
+        x: 2147
+        y: 31
+        width: 44
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a772605ce86070150800000000000000
+      internalID: 5838642652169774970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_SkeletonCatAttack_strip27_23
+      rect:
+        serializedVersion: 2
+        x: 2243
+        y: 31
+        width: 46
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 98d11410c377b7450800000000000000
+      internalID: 6087590420924145033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_SkeletonCatAttack_strip27_24
+      rect:
+        serializedVersion: 2
+        x: 2337
+        y: 31
+        width: 49
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca0325436f49a2ed0800000000000000
+      internalID: -2437972463107034964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_SkeletonCatAttack_strip27_25
+      rect:
+        serializedVersion: 2
+        x: 2433
+        y: 31
+        width: 37
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 82c81da0e55120350800000000000000
+      internalID: 5981366748754054184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_SkeletonCatAttack_strip27_26
+      rect:
+        serializedVersion: 2
+        x: 2529
+        y: 31
+        width: 37
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e63140c7a3f2cab0800000000000000
+      internalID: -4989157535362500890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable: {}
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
