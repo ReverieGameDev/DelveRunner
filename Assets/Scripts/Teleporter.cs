@@ -39,9 +39,9 @@ public class Teleporter : MonoBehaviour
 
     public void DelveDeeper()
     {
-        playerCombat.delveLevel++;
-        PlayerPrefs.SetInt("DelveLevel", playerCombat.delveLevel);
-        PlayerPrefs.SetInt("Gold", playerCombat.playerMoney); // save current gold too
+        playerCombat.delveLevel++;  // Increment first
+        PlayerPrefs.SetInt("DelveLevel", playerCombat.delveLevel);  // Now saves 1
+        PlayerPrefs.SetInt("Gold", playerCombat.playerMoney);
         PlayerPrefs.Save();
         SceneManager.LoadScene("SampleScene");
     }

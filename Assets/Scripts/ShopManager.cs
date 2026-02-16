@@ -139,7 +139,7 @@ public class ShopManager : MonoBehaviour
             case "Heal":
                 break;
             case "DamageUp":
-                playerCombat.attackDamage += 50f;
+                //playerCombat.attackDamage += 50f;
                 break;
         }
     }

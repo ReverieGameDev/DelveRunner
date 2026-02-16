@@ -2925,7 +2925,7 @@ MonoBehaviour:
   iFrames: 0
   playerXp: 0
   playerLevel: 1
-  delveLevel: 1
+  delveLevel: 0
 --- !u!50 &120251743
 Rigidbody2D:
   serializedVersion: 5

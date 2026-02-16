@@ -5,19 +5,30 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Linq;
 using UnityEditor.SceneManagement;
+using System.Drawing;
 
 public class AugmentManager : MonoBehaviour
 {
-    public Sprite AttackSpeed;
+    
     public Sprite Attack;
+    public Sprite AttackSpeed;
+    public Sprite CritChance;
+    public Sprite CritDamage;
     public Sprite Armor;
-    public Sprite MagicResist;
+    public Sprite MaxHealth;
+    public Sprite Dodge;
     public Sprite MovementSpeed;
-    public Sprite Size;
+    public Sprite XPGain;
+    public Sprite GoldGain;
 
     public Button augment1;
     public Button augment2;
     public Button augment3;
+
+    public GameObject augment1Icon;
+    public GameObject augment2Icon;
+    public GameObject augment3Icon;
+
     public TextMeshProUGUI augment1Text;
     public TextMeshProUGUI augment2Text;
     public TextMeshProUGUI augment3Text;
@@ -34,12 +45,16 @@ public class AugmentManager : MonoBehaviour
     void Start()
     {
         playerCombat = FindFirstObjectByType<PlayerCombat>();
-        augmentDictionary.Add("AttackSpeed", 0);
         augmentDictionary.Add("Attack", 0);
+        augmentDictionary.Add("AttackSpeed", 0);
+        augmentDictionary.Add("CritChance", 0);
+        augmentDictionary.Add("CritDamage", 0);
         augmentDictionary.Add("Armor", 0);
-        augmentDictionary.Add("MagicResist", 0);
+        augmentDictionary.Add("MaxHealth", 0);
+        augmentDictionary.Add("Dodge", 0);
         augmentDictionary.Add("MovementSpeed", 0);
-        augmentDictionary.Add("Size", 0);
+        augmentDictionary.Add("XPGain", 0);
+        augmentDictionary.Add("GoldGain", 0);
 
         augmentNames = augmentDictionary.Keys.ToList();
     }
@@ -55,12 +70,15 @@ public class AugmentManager : MonoBehaviour
 
         augmentHold1 = augmentNames[Random.Range(0, augmentNames.Count)];
         augment1Text.text = augmentHold1;
+        augment1Icon.GetComponent<Image>().sprite = GetAugmentSprite(augmentHold1);
         augmentNames.Remove(augmentHold1);
         augmentHold2 = augmentNames[Random.Range(0, augmentNames.Count)];
         augment2Text.text = augmentHold2;
+        augment2Icon.GetComponent<Image>().sprite = GetAugmentSprite(augmentHold2);
         augmentNames.Remove(augmentHold2);
         augmentHold3 = augmentNames[Random.Range(0, augmentNames.Count)];
         augment3Text.text = augmentHold3;
+        augment3Icon.GetComponent<Image>().sprite = GetAugmentSprite(augmentHold3);
         augmentNames.Remove(augmentHold3);
 
     }
@@ -109,12 +127,16 @@ public class AugmentManager : MonoBehaviour
     {
         switch (augmentName)
         {
-            case "AttackSpeed": return AttackSpeed;
             case "Attack": return Attack;
+            case "AttackSpeed": return AttackSpeed;
+            case "CritChance": return CritChance;
+            case "CritDamage": return CritDamage;
             case "Armor": return Armor;
-            case "MagicResist": return MagicResist;
+            case "MaxHealth": return MaxHealth;
+            case "Dodge": return Dodge;
             case "MovementSpeed": return MovementSpeed;
-            case "Size": return Size;
+            case "XPGain": return XPGain;
+            case "GoldGain": return GoldGain;
             default: return null;
         }
     }

@@ -23,12 +23,16 @@ public class PlayerCombat : MonoBehaviour
 
     // Stats
     private float currentPlayerHealth;
-    public float attackSpeed = 0.5f;
-    public float attackDamage = 25f;
+    public float attack = 1f;
+    public float attackSpeed = 1f;
+    public float critChance = 0f;
+    public float critDamage = 1.5f;
     public float armor = 0f;
-    public float magicResist = 0f;
+    public float maxHealth = 100f;
+    public float dodge = 0f;
     public float movementSpeed = 5f;
-    public float size = 1f;
+    public float xpGain = 1f;
+    public float goldGain = 1f;
 
     // UI
     public Slider playerHpBar;
@@ -40,16 +44,18 @@ public class PlayerCombat : MonoBehaviour
     public bool iFrames = false;
     public int playerXp;
     public int playerLevel = 1;
-    public int delveLevel = 1;
+    public int delveLevel = 0;
 
     void Start()
     {
+        Debug.Log("PlayerCombat Start - delveLevel: " + delveLevel);
         playerMovement = FindFirstObjectByType<PlayerMovement>();
         augmentManager = FindFirstObjectByType<AugmentManager>();
         attackManager = FindFirstObjectByType<AttackManager>();
         
         currentPlayerHealth = playerData.playerHp;
         playerHpBar.value = 1.0f;
+
     }
 
     void Update()
@@ -131,31 +137,26 @@ public class PlayerCombat : MonoBehaviour
 
     public void ApplyAugment(string selectedAugment)
     {
-        if (selectedAugment == "AttackSpeed")
-        {
-            attackSpeed -= 0.4f; // INSANE fire rate
-        }
-        else if (selectedAugment == "Attack")
-        {
-            attackDamage += 200f; // ONE SHOT EVERYTHING
-        }
+        if (selectedAugment == "Attack")
+            attack += 5f;
+        else if (selectedAugment == "AttackSpeed")
+            attackSpeed -= 0.1f;
+        else if (selectedAugment == "CritChance")
+            critChance += 5f;
+        else if (selectedAugment == "CritDamage")
+            critDamage += 15f;
         else if (selectedAugment == "Armor")
-        {
-            armor += 100f;
-        }
-        else if (selectedAugment == "MagicResist")
-        {
-            magicResist += 100f;
-        }
+            armor += 3f;
+        else if (selectedAugment == "MaxHealth")
+            maxHealth += 20f;
+        else if (selectedAugment == "Dodge")
+            dodge += 4f;
         else if (selectedAugment == "MovementSpeed")
-        {
-            movementSpeed += 10f; // ZOOM ZOOM
-        }
-        else if (selectedAugment == "Size")
-        {
-            size += 1.5f; // MASSIVE
-            transform.localScale = Vector3.one * size;
-        }
+            movementSpeed += 0.5f;
+        else if (selectedAugment == "XPGain")
+            xpGain += 10f;
+        else if (selectedAugment == "GoldGain")
+            goldGain += 10f;
     }
 
     public void GameOver()

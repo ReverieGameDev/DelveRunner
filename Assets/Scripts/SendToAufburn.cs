@@ -24,6 +24,7 @@ public class SendToAufburn : MonoBehaviour
 
     public IEnumerator SendBackToAufburn()
     {
+        
         PlayerPrefs.SetInt("Gold", playerCombat.playerMoney);
         PlayerPrefs.SetInt("Exp", playerCombat.playerXp);
         PlayerPrefs.SetInt("DelveLevel", playerCombat.delveLevel);

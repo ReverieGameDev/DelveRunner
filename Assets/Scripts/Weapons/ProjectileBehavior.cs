@@ -23,7 +23,7 @@ public class ProjectileBehavior : MonoBehaviour
         if (collision.CompareTag("Enemy"))
         {
             Enemy enemyHit = collision.GetComponent<Enemy>();
-            enemyHit.reduceHp(playerCombat.attackDamage);
+            enemyHit.reduceHp(playerCombat.attack);
             Destroy(gameObject);
         }
     }
