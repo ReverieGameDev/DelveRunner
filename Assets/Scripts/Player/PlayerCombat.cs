@@ -45,7 +45,7 @@ public class PlayerCombat : MonoBehaviour
     public int playerXp;
     public int playerLevel = 1;
     public int delveLevel = 0;
-
+    public int augmentsOwed = 0;
     void Start()
     {
         Debug.Log("PlayerCombat Start - delveLevel: " + delveLevel);
@@ -124,12 +124,17 @@ public class PlayerCombat : MonoBehaviour
         playerXp += 1;
         playerXpBar.value = playerXp / 100f;
 
-        if (playerXp >= 100)
+        while (playerXp >= 100)
         {
             playerLevel++;
-            playerXp = 0;
-            playerXpBar.value = 0;
+            playerXp -= 100;
+            augmentsOwed++;
+            playerXpBar.value = playerXp / 100f;
             playerLevelText.text = ("Level: " + playerLevel);
+        }
+
+        if (augmentsOwed > 0 && Time.timeScale != 0)
+        {
             Time.timeScale = 0;
             augmentManager.RandomAugmentGenerator();
         }

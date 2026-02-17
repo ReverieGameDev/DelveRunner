@@ -11,6 +11,11 @@ public class SkeletonArcher : MonoBehaviour
     private PlayerMovement playerMovement;
     private EnemyAttackIndicator enemyAttackIndicator;
     public Sprite arrowShotIcon;
+    public Sprite multiShotIcon;
+    public Sprite arrowVolleyIcon;
+    public Sprite arrowRainIcon; 
+    public float attackWindupTime;
+    private float attackSpeed = 1f;//placeholder, will actually grab skeleton's attack speed
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -36,12 +41,19 @@ public class SkeletonArcher : MonoBehaviour
     public IEnumerator SkeletonArcherAttackCycle()
     {
         string currentAttack = RandomSkeletonArcherAttack();
+        //first we send the icon and windup time to the enemyattackindicator and wait for the indicator to fill up
+        if (currentAttack == "arrowShot") { attackWindupTime = .75f; enemyAttackIndicator.SetIndicator(arrowShotIcon, attackWindupTime); }
+        if (currentAttack == "arrowVolley") { attackWindupTime = 1.5f; enemyAttackIndicator.SetIndicator(arrowVolleyIcon, attackWindupTime); }
+        if (currentAttack == "multiShot") { attackWindupTime = 1.25f; enemyAttackIndicator.SetIndicator(multiShotIcon, attackWindupTime); }
+        if (currentAttack == "arrowRain") { attackWindupTime = .75f; enemyAttackIndicator.SetIndicator(arrowRainIcon, attackWindupTime); }
+        yield return new WaitForSeconds(attackWindupTime); //waiting for indicator to fill
+        //now we actually execute the attack
         if (currentAttack == "arrowShot") { ArrowShot(); }
         if (currentAttack == "arrowVolley") { ArrowVolley(); }
         if (currentAttack == "multiShot") { MultiShot(); }
         if (currentAttack == "arrowRain") { ArrowRain(); }
-        yield return new WaitForSeconds(3.5f);
-        isReadyTofire = true;
+        yield return new WaitForSeconds(attackSpeed);//after exectuing the attack we put the skeleton's next attack on cooldown
+        isReadyTofire = true;//then we fire again.
     }
 
     public string RandomSkeletonArcherAttack()
@@ -51,9 +63,12 @@ public class SkeletonArcher : MonoBehaviour
         return currentAttack = attackList[randomAttack];
     }
 
+
+
     private void ArrowShot() 
     {
-        enemyAttackIndicator.SetIndicator(arrowShotIcon);
+        GameObject spawnedArrow = Instantiate(arrow, transform.position, Quaternion.identity);
+        spawnedArrow.GetComponent<ArrowBehaviour>().Arrow("arrowShot");
     }
     private void ArrowVolley()
     {

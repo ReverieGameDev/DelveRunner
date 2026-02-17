@@ -6,8 +6,8 @@ public class EnemyAttackIndicator : MonoBehaviour
 {
     public Image fillImage;
     public Image iconImage;
-    public float attackSpeed = 3.5f;
     public GameObject attackIndicatorUI;
+    private float attackWindup;
     public bool isAttacking = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -21,8 +21,9 @@ public class EnemyAttackIndicator : MonoBehaviour
         
     }
 
-    public void SetIndicator(Sprite indicatorIcon)
+    public void SetIndicator(Sprite indicatorIcon, float attackWindupTime)
     {
+        attackWindup = attackWindupTime;
         iconImage.sprite = indicatorIcon;
         attackIndicatorUI.SetActive(true);
         StartCoroutine(FillIndicator());
@@ -33,13 +34,12 @@ public class EnemyAttackIndicator : MonoBehaviour
         fillImage.fillAmount = 0;
         float elapsed = 0;
 
-        while (elapsed < attackSpeed)
+        while (elapsed < attackWindup)
         {
             elapsed += Time.deltaTime;
-            fillImage.fillAmount = elapsed / attackSpeed;
+            fillImage.fillAmount = elapsed / attackWindup;
             yield return null;
         }
-
         attackIndicatorUI.SetActive(false);
     }
 }

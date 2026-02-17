@@ -744,5 +744,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isReadyTofire: 1
-  arrow: {fileID: 0}
+  arrow: {fileID: 7962537265955379767, guid: 7d30ecf263fe3f742b3f33fed1e50475, type: 3}
   arrowShotIcon: {fileID: -1662906678379811785, guid: d8380dd5bd6036245afe58c7583a01a2, type: 3}
