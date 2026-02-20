@@ -7,6 +7,6 @@ public class EnvironmentYSort : MonoBehaviour
     void Start()
     {
         sr = GetComponent<SpriteRenderer>();
-        sr.sortingOrder = (int)((10000)-(transform.position.y * 100));
+        sr.sortingOrder = (int)((32000) - (transform.position.y * 100));
     }
 }

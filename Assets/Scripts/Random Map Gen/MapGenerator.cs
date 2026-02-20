@@ -1,14 +1,22 @@
 using UnityEngine;
 
+public class Room
+{
+    public int centerX;
+    public int centerY;
+    public int radius;
+    public string roomType; // "fightNode", "cache", "hidden", "spawn", "boss"
+}
 public class MapGenerator : MonoBehaviour
 {
-    public int mapHeight = 100;
-    public int mapWidth = 100;
+    public int mapHeight = 300;
+    public int mapWidth = 300;
     private float perlinNoiseObstacle = 0.2f;
     public int[,] mapArray;
     private MapRenderer mapRenderer;
     private float offsetX;
     private float offsetY;
+    
 
     void Start()
     {
@@ -18,62 +26,41 @@ public class MapGenerator : MonoBehaviour
 
     public void PopulateMap()
     {
-        offsetY = Random.Range(0f, 10000f);
-        offsetX = Random.Range(0f, 10000f);
         mapArray = new int[mapWidth, mapHeight];
 
-        // First noise pass
         for (int i = 0; i < mapHeight; i++)
         {
             for (int t = 0; t < mapWidth; t++)
             {
-                float noiseValue = Mathf.PerlinNoise((t + offsetX) * 0.04f, (i + offsetY) * 0.04f);
-                if (noiseValue <= perlinNoiseObstacle)
-                {
-                    mapArray[t, i] = 0; // obstacle
-                }
-                else
-                {
-                    mapArray[t, i] = 1; // floor
-                }
+                mapArray[t, i] = 0;
             }
         }
 
-        // Second noise pass — adds more holes
-        float offsetX2 = Random.Range(0f, 10000f);
-        float offsetY2 = Random.Range(0f, 10000f);
-        for (int i = 0; i < mapHeight; i++)
-        {
-            for (int t = 0; t < mapWidth; t++)
-            {
-                float noiseValue = Mathf.PerlinNoise((t + offsetX2) * 0.03f, (i + offsetY2) * 0.03f);
-                if (noiseValue <= 0.15f)
-                {
-                    mapArray[t, i] = 0; // obstacle
-                }
-            }
-        }
+        CarveRoom(150, 150, 30);
 
-        // Force floor buffer around edges
-        for (int i = 0; i < mapHeight; i++)
-        {
-            for (int t = 0; t < mapWidth; t++)
-            {
-                if (t <= 3 || t >= mapWidth - 4 || i <= 3 || i >= mapHeight - 4)
-                {
-                    mapArray[t, i] = 1; // floor
-                }
-            }
-        }
-
-        RemoveUnwantedTiles();
-        RemoveUnwantedTiles();
-
-        // Render once at the end
         mapRenderer.RenderMap();
-        mapRenderer.RenderBelowGround();
     }
+    public void CarveRoom(int centerX, int centerY, int radius)
+    {
+        float noiseOffset = Random.Range(0f, 10000f);
 
+        for (int y = centerY - radius - 3; y <= centerY + radius + 3; y++)
+        {
+            for (int x = centerX - radius - 3; x <= centerX + radius + 3; x++)
+            {
+                if (x < 0 || x >= mapWidth || y < 0 || y >= mapHeight) continue;
+
+                float distance = Vector2.Distance(new Vector2(x, y), new Vector2(centerX, centerY));
+                float noise = Mathf.PerlinNoise((x + noiseOffset) * 0.3f, (y + noiseOffset) * 0.3f);
+                float adjustedRadius = radius + (noise * 4f) - 2f;
+
+                if (distance < adjustedRadius)
+                {
+                    mapArray[x, y] = 1;
+                }
+            }
+        }
+    }
     public void RemoveUnwantedTiles()
     {
         for (int i = 0; i < mapHeight; i++)

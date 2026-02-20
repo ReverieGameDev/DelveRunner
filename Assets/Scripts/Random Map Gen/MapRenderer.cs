@@ -42,19 +42,12 @@ public class MapRenderer : MonoBehaviour
         {
             for (int t = 0; t < mapGenerator.mapWidth; t++)
             {
-                if (mapGenerator.mapArray[t, i] == 1)
-                {
-                    walkableTilemap.SetTile(new Vector3Int(t, i, 0), floorTile[UnityEngine.Random.Range(0, floorTile.Length)]);
-                }
-                else if (mapGenerator.mapArray[t, i] == 0)
-                {
-                    obstacleTilemap.SetTile(new Vector3Int(t, i, 0), obstacleTile);
-                }
+                // Grass everywhere
+                walkableTilemap.SetTile(new Vector3Int(t, i, 0), floorTile[UnityEngine.Random.Range(0, floorTile.Length)]);
             }
         }
         RenderRandomWalkableDecor();
         RenderRandomObstacleDecor();
-        RenderEdges();
     }
 
     public void ViableEnemySpawns()
@@ -102,7 +95,7 @@ public class MapRenderer : MonoBehaviour
             {
                 GameObject[] chosenObstacleArray;
                 int rngDecorArrayDecider = UnityEngine.Random.Range(1, 11);
-                if (rngDecorArrayDecider < 7)
+                if (rngDecorArrayDecider < 11)
                 {
                     chosenObstacleArray = obstacleDecorTile;
                 }
@@ -112,7 +105,7 @@ public class MapRenderer : MonoBehaviour
                 }
                 int rngObstacleDecider = UnityEngine.Random.Range(0, chosenObstacleArray.Length);
                 int rngIfObstacleShouldBePlaced = UnityEngine.Random.Range(0, 1001);
-                if (mapGenerator.mapArray[t, i] == 1 && rngIfObstacleShouldBePlaced < 9)
+                if (mapGenerator.mapArray[t, i] == 0 && rngIfObstacleShouldBePlaced < 200)
                 {
                     float yOffset = UnityEngine.Random.Range(0f, 0.01f);
                     Instantiate(chosenObstacleArray[rngObstacleDecider], new Vector3(t, i + yOffset, 0), Quaternion.identity);
