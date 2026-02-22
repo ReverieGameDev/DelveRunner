@@ -856,7 +856,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mapHeight: 300
-  mapWidth: 300
+  mapWidth: 600
+  leftBound: 30
+  rightBound: 570
+  bottomBound: 30
+  topBound: 270
 --- !u!4 &157763854
 Transform:
   m_ObjectHideFlags: 0
