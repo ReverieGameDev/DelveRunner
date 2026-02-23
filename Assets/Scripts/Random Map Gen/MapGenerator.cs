@@ -22,6 +22,23 @@ public class MapGenerator : MonoBehaviour
     public int topBound = 280;
     private Room lastViableSpawn;
 
+    // Room radii
+    public int spawnRadius = 15;
+    public int fightNodeRadius = 25;
+    public int cacheRadius = 10;
+    public int bossRadius = 30;
+
+    // Minimum distance from other rooms
+    public int fightNodeMinDistance = 40;
+    public int cacheMinDistance = 10;
+    public int bossMinDistance = 40;
+
+    // Room counts
+    public int fightNodeMin = 4;
+    public int fightNodeMax = 5;
+    public int cacheMin = 2;
+    public int cacheMax = 5;
+
     void Start()
     {
         mapRenderer = FindFirstObjectByType<MapRenderer>();
@@ -41,23 +58,113 @@ public class MapGenerator : MonoBehaviour
         }
 
         PlaceRooms();
+        PlaceCenterTilesCorridors();
         mapRenderer.RenderMap();
+    }
+
+    public void PlaceCenterTilesCorridors()
+    {
+        List<int> visited = new List<int>();
+        List<int> orderedRooms = new List<int>();
+
+        float closestDist = Mathf.Infinity;
+        int closestIndex = 0;
+        for (int i = 0; i < rooms.Count; i++)
+        {
+            if (rooms[i].roomType == "cache" || rooms[i].roomType == "boss") continue;
+            float dist = Vector2.Distance(Vector2.zero, new Vector2(rooms[i].centerX, rooms[i].centerY));
+            if (dist < closestDist)
+            {
+                closestDist = dist;
+                closestIndex = i;
+            }
+        }
+        visited.Add(closestIndex);
+        orderedRooms.Add(closestIndex);
+
+        for (int i = 0; i < rooms.Count - 1; i++)
+        {
+            float closestDistance = Mathf.Infinity;
+            int nearestIndex = -1;
+            for (int z = 0; z < rooms.Count; z++)
+            {
+                if (visited.Contains(z)) continue;
+                if (rooms[z].roomType == "cache" || rooms[z].roomType == "boss") continue;
+                float dist = Vector2.Distance(new Vector2(rooms[orderedRooms[i]].centerX, rooms[orderedRooms[i]].centerY), new Vector2(rooms[z].centerX, rooms[z].centerY));
+                if (dist < closestDistance)
+                {
+                    closestDistance = dist;
+                    nearestIndex = z;
+                }
+            }
+
+            if (nearestIndex == -1) break;
+
+            visited.Add(nearestIndex);
+            orderedRooms.Add(nearestIndex);
+        }
+
+        for (int i = 0; i < orderedRooms.Count - 1; i++)
+        {
+            CarveCorridor(rooms[orderedRooms[i]], rooms[orderedRooms[i + 1]]);
+        }
+
+        for (int i = 0; i < rooms.Count; i++)
+        {
+            if (rooms[i].roomType != "cache" && rooms[i].roomType != "boss") continue;
+
+            float closestDistance = Mathf.Infinity;
+            int nearestIndex = 0;
+            for (int z = 0; z < orderedRooms.Count; z++)
+            {
+                float dist = Vector2.Distance(new Vector2(rooms[i].centerX, rooms[i].centerY), new Vector2(rooms[orderedRooms[z]].centerX, rooms[orderedRooms[z]].centerY));
+                if (dist < closestDistance)
+                {
+                    closestDistance = dist;
+                    nearestIndex = orderedRooms[z];
+                }
+            }
+            CarveCorridor(rooms[i], rooms[nearestIndex]);
+        }
+    }
+
+    public void CarveCorridor(Room roomA, Room roomB)
+    {
+        float totalDistance = Vector2.Distance(new Vector2(roomA.centerX, roomA.centerY), new Vector2(roomB.centerX, roomB.centerY));
+
+        for (int i = 0; i <= totalDistance; i++)
+        {
+            float t = i / totalDistance;
+            int x = (int)Mathf.Lerp(roomA.centerX, roomB.centerX, t);
+            int y = (int)Mathf.Lerp(roomA.centerY, roomB.centerY, t);
+
+            for (int w = -3; w <= 3; w++)
+            {
+                for (int h = -3; h <= 3; h++)
+                {
+                    if (x + w >= 0 && x + w < mapWidth && y + h >= 0 && y + h < mapHeight)
+                    {
+                        mapArray[x + w, y + h] = 1;
+                    }
+                }
+            }
+        }
     }
 
     public void PlaceRooms()
     {
-        // Spawn room - center of map
+        // Spawn room
         int spawnX = (leftBound + rightBound) / 2;
         int spawnY = (bottomBound + topBound) / 2;
-        Room spawnRoom = new Room { centerX = spawnX, centerY = spawnY, radius = 15, roomType = "spawn" };
+        Room spawnRoom = new Room { centerX = spawnX, centerY = spawnY, radius = spawnRadius, roomType = "spawn" };
         rooms.Add(spawnRoom);
-        CarveRoom(spawnX, spawnY, 15);
+        CarveRoom(spawnX, spawnY, spawnRadius);
+        Debug.Log("Spawn room placed at: " + spawnX + ", " + spawnY);
 
         // Fight Nodes
-        for (int i = 0; i < Random.Range(2, 4); i++)
+        for (int i = 0; i < Random.Range(fightNodeMin, fightNodeMax); i++)
         {
             bool roomPlaced = false;
-
             do
             {
                 if (roomPlaced) { break; }
@@ -65,55 +172,52 @@ public class MapGenerator : MonoBehaviour
                 int roomX = Random.Range(leftBound, rightBound);
                 int roomY = Random.Range(bottomBound, topBound);
                 Vector2 newRoom = new Vector2(roomX, roomY);
-
                 for (int x = 0; x < rooms.Count; x++)
                 {
                     Vector2 roomToCheckAgainst = new Vector2(rooms[x].centerX, rooms[x].centerY);
-                    if (Vector2.Distance(newRoom, roomToCheckAgainst) > 40)
+                    if (Vector2.Distance(newRoom, roomToCheckAgainst) > fightNodeMinDistance)
                     {
-                        Room currentRoom = new Room { centerX = roomX, centerY = roomY, radius = 20, roomType = "fightNode" };
+                        Room currentRoom = new Room { centerX = roomX, centerY = roomY, radius = fightNodeRadius, roomType = "fightNode" };
                         lastViableSpawn = currentRoom;
                         viableSpawn++;
                     }
                 }
-
                 if (viableSpawn == rooms.Count)
                 {
                     rooms.Add(lastViableSpawn);
-                    CarveRoom(roomX, roomY, 20);
+                    CarveRoom(roomX, roomY, fightNodeRadius);
                     roomPlaced = true;
+                    Debug.Log("Fight node placed at: " + roomX + ", " + roomY);
                 }
             }
             while (!roomPlaced);
         }
 
         // Caches
-        for (int i = 0; i < Random.Range(1, 3); i++)
+        for (int i = 0; i < Random.Range(cacheMin, cacheMax); i++)
         {
             bool roomPlaced = false;
-
             do
             {
                 int viableSpawn = 0;
                 int roomX = Random.Range(leftBound, rightBound);
                 int roomY = Random.Range(bottomBound, topBound);
                 Vector2 newRoom = new Vector2(roomX, roomY);
-
                 for (int x = 0; x < rooms.Count; x++)
                 {
                     Vector2 roomToCheckAgainst = new Vector2(rooms[x].centerX, rooms[x].centerY);
-                    if (Vector2.Distance(newRoom, roomToCheckAgainst) > 10)
+                    if (Vector2.Distance(newRoom, roomToCheckAgainst) > cacheMinDistance)
                     {
                         viableSpawn++;
                     }
                 }
-
                 if (viableSpawn == rooms.Count)
                 {
-                    Room currentRoom = new Room { centerX = roomX, centerY = roomY, radius = 5, roomType = "cache" };
+                    Room currentRoom = new Room { centerX = roomX, centerY = roomY, radius = cacheRadius, roomType = "cache" };
                     rooms.Add(currentRoom);
-                    CarveRoom(roomX, roomY, 5);
+                    CarveRoom(roomX, roomY, cacheRadius);
                     roomPlaced = true;
+                    Debug.Log("Cache placed at: " + roomX + ", " + roomY);
                 }
             }
             while (!roomPlaced);
@@ -127,25 +231,26 @@ public class MapGenerator : MonoBehaviour
             int roomX = Random.Range(leftBound, rightBound);
             int roomY = Random.Range(bottomBound, topBound);
             Vector2 newRoom = new Vector2(roomX, roomY);
-
             for (int x = 0; x < rooms.Count; x++)
             {
                 Vector2 roomToCheckAgainst = new Vector2(rooms[x].centerX, rooms[x].centerY);
-                if (Vector2.Distance(newRoom, roomToCheckAgainst) > 30)
+                if (Vector2.Distance(newRoom, roomToCheckAgainst) > bossMinDistance)
                 {
                     viableSpawn++;
                 }
             }
-
             if (viableSpawn == rooms.Count)
             {
-                Room bossRoom = new Room { centerX = roomX, centerY = roomY, radius = 25, roomType = "boss" };
+                Room bossRoom = new Room { centerX = roomX, centerY = roomY, radius = bossRadius, roomType = "boss" };
                 rooms.Add(bossRoom);
-                CarveRoom(roomX, roomY, 25);
+                CarveRoom(roomX, roomY, bossRadius);
                 bossPlaced = true;
+                Debug.Log("Boss room placed at: " + roomX + ", " + roomY);
             }
         }
         while (!bossPlaced);
+
+        Debug.Log("Total rooms placed: " + rooms.Count);
     }
 
     public void CarveRoom(int centerX, int centerY, int radius)

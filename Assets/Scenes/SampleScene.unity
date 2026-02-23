@@ -856,11 +856,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mapHeight: 300
-  mapWidth: 600
-  leftBound: 30
-  rightBound: 570
-  bottomBound: 30
-  topBound: 270
+  mapWidth: 400
+  leftBound: 50
+  rightBound: 350
+  bottomBound: 50
+  topBound: 250
+  spawnRadius: 20
+  fightNodeRadius: 30
+  cacheRadius: 15
+  bossRadius: 35
+  fightNodeMinDistance: 40
+  cacheMinDistance: 10
+  bossMinDistance: 60
+  fightNodeMin: 4
+  fightNodeMax: 5
+  cacheMin: 2
+  cacheMax: 5
 --- !u!4 &157763854
 Transform:
   m_ObjectHideFlags: 0

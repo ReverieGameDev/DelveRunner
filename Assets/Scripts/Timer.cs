@@ -36,7 +36,7 @@ public class Timer : MonoBehaviour
 
     IEnumerator TimerTime()
     {
-        Debug.Log("During waves timer has begun");
+        
 
         if (hasSpawnedThisWave == false)
         {
@@ -77,7 +77,7 @@ public class Timer : MonoBehaviour
             }
             else if (duringWavesTimerCountdown <= 0 && waveManager.CountAliveEnemies() != 0)
             {
-                Debug.Log("OVERTIME HAS BEGUN");
+                
                 StartCoroutine("Overtime");
                 yield break;
             }
@@ -135,7 +135,7 @@ public class Timer : MonoBehaviour
 
                 hasSpawnedThisWave = false;
 
-                Debug.Log("waves timer should start now");
+                
                 StartCoroutine("TimerTime");
                 yield break; // ✅ stop this coroutine instance cleanly
             }
