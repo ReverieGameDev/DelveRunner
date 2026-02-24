@@ -5,145 +5,117 @@ using UnityEngine;
 
 public class Timer : MonoBehaviour
 {
-    public TextMeshProUGUI timerUI;
-    public bool betweenWavesTimer = false;
-    public bool duringWavesTimer = true;
-    public int betweenWavesTimerCountdownBase = 15;
-    public int betweenWavesTimerCountdown = 15;
-    public int duringWavesTimerCountdown = 120;
-    public int duringWavesTimerCountBase = 120;
-
-    public int spawnCounter = 0;
-
-    public int duringWavesTimerCountdownMinutes;
-    public int betweenWavesTimerCountdownMinutes;
-
-    public int waveNumber = 1;
-    public bool isWaveActive = false;
-
-    private bool hasSpawnedThisWave = false;
+    // ===== REFERENCES =====
     private SpawnManager spawnManager;
     private WaveManager waveManager;
     private SendToAufburn sendToAufburn;
+    private bool fightTimer = true;
+    private bool overtime = false;
+    private bool restTimer = false;
+    private int fightTimeBase = 120;
+    private int restTimeBase = 30;
+    private int fightTime = 10;
+    private int restTime = 5;
+    public int waveNumber = 1;
+    public TextMeshProUGUI timer;
+    private EnemySpawnDetector enemySpawnDetector;
+    public bool enemiesHaveSpawned = false;
+    private bool spawnManagerHasSpawned = false;
+    private float overtimeSpawnerBase = 5f;
+    private float overtimeSpawner = 5f;
 
     void Start()
     {
-        sendToAufburn = FindFirstObjectByType<SendToAufburn>();
         spawnManager = FindFirstObjectByType<SpawnManager>();
         waveManager = FindFirstObjectByType<WaveManager>();
-        StartCoroutine("TimerTime");
+        sendToAufburn = FindFirstObjectByType<SendToAufburn>();
+        enemySpawnDetector = FindAnyObjectByType<EnemySpawnDetector>();
+        TimeManager();
     }
 
-    IEnumerator TimerTime()
+    private void TimeManager()
     {
-        
-
-        if (hasSpawnedThisWave == false)
+        if (fightTimer == true)
         {
-            spawnManager.SpawnNextWave();
-            duringWavesTimerCountdown = duringWavesTimerCountBase;
-            hasSpawnedThisWave = true;
-
-            isWaveActive = true; // ✅ IMPORTANT
+            if (!spawnManagerHasSpawned)
+            {
+                spawnManager.GetRandomViableSpawn();
+                spawnManagerHasSpawned = true;
+            }
+            StartCoroutine("FightTimer");
         }
-
-        if (duringWavesTimer)
+        else if (restTimer == true)
         {
-            duringWavesTimerCountdown--;
+            StartCoroutine("RestTimer");
+        }
+        else if (overtime == true)
+        {
+            StartCoroutine("Overtime");
+        }
+    }
 
-            // ✅ FIX: minutes should come from countdown, not from itself
-            duringWavesTimerCountdownMinutes = duringWavesTimerCountdown / 60;
-
-            if (duringWavesTimerCountdown % 60 < 10)
+    public IEnumerator FightTimer()
+    {
+        if (fightTime <= 0)
+        {
+            if (enemiesHaveSpawned && waveManager.CountAliveEnemies() == 0)
             {
-                timerUI.text = (duringWavesTimerCountdown / 60 + " : 0" + duringWavesTimerCountdown % 60);
-            }
-            else
-            {
-                timerUI.text = (duringWavesTimerCountdown / 60 + " : " + duringWavesTimerCountdown % 60);
-            }
-
-            if (duringWavesTimerCountdown <= 0 && waveManager.CountAliveEnemies() == 0)
-            {
-                // Wave time ended -> go to between-waves
-                betweenWavesTimerCountdown = betweenWavesTimerCountdownBase;
-                betweenWavesTimer = true;
-                duringWavesTimer = false;
-
-                isWaveActive = false; // ✅ wave timer ended
-
-                StartCoroutine("BetweenWavesTimerTime");
-                yield break; // ✅ stop this coroutine instance cleanly
-            }
-            else if (duringWavesTimerCountdown <= 0 && waveManager.CountAliveEnemies() != 0)
-            {
-                
-                StartCoroutine("Overtime");
+                fightTimer = false;
+                restTimer = true;
+                overtime = false;
+                fightTime = fightTimeBase;
+                enemiesHaveSpawned = false;
+                TimeManager();
                 yield break;
             }
-            yield return new WaitForSeconds(1f);
-            StartCoroutine("TimerTime");
+            else if (!enemiesHaveSpawned || waveManager.CountAliveEnemies() != 0 && enemiesHaveSpawned)
+            {
+                fightTimer = false;
+                restTimer = false;
+                overtime = true;
+                fightTime = fightTimeBase;
+                TimeManager();
+                yield break;
+            }
         }
+        int secs = fightTime % 60;
+        timer.text = (fightTime / 60 + ":" + (secs < 10 ? "0" + secs : secs.ToString()));
+        fightTime--;
+        yield return new WaitForSeconds(1f);
+        TimeManager();
     }
+
+    public IEnumerator RestTimer()
+    {
+        if (restTime <= 0)
+        {
+            fightTimer = true;
+            restTimer = false;
+            restTime = restTimeBase;
+            waveNumber ++;
+            spawnManagerHasSpawned = false;
+            TimeManager();
+            yield break;
+        }
+        int secs = restTime % 60;
+        timer.text = (restTime / 60 + ":" + (secs < 10 ? "0" + secs : secs.ToString()));
+        restTime--;
+        yield return new WaitForSeconds(1f);
+        TimeManager();
+    }
+
     public IEnumerator Overtime()
     {
-        while (waveManager.CountAliveEnemies() != 0)
+        timer.text = "OVERTIME";
+        overtimeSpawner *= .8f;
+        if (enemiesHaveSpawned && waveManager.CountAliveEnemies() == 0)
         {
-            yield return new WaitForSeconds(1.5f);
-            spawnCounter++;
-            timerUI.color = Color.red;
-            timerUI.text = ("OVERTIME");
-            spawnManager.SpawnSwarm();
-            // TODO: spawn swarm enemies here based on spawnCounter
+            overtime = false;
+            restTimer = true;
+            overtimeSpawner = overtimeSpawnerBase;
         }
-
-        // Enemies cleared during overtime
-        betweenWavesTimerCountdown = betweenWavesTimerCountdownBase;
-        betweenWavesTimer = true;
-        duringWavesTimer = false;
-        isWaveActive = false;
-        timerUI.color = Color.white;
-        StartCoroutine("BetweenWavesTimerTime");
+        yield return new WaitForSeconds(overtimeSpawner);
+        TimeManager();
     }
-    public IEnumerator BetweenWavesTimerTime()
-    {
-        if (betweenWavesTimer)
-        {
-            betweenWavesTimerCountdown--;
 
-            if (betweenWavesTimerCountdown % 60 < 10)
-            {
-                timerUI.text = (betweenWavesTimerCountdown / 60 + " : 0" + betweenWavesTimerCountdown % 60);
-            }
-            else
-            {
-                timerUI.text = (betweenWavesTimerCountdown / 60 + " : " + betweenWavesTimerCountdown % 60);
-            }
-
-            if (betweenWavesTimerCountdown <= 0)
-            {
-                // Wave starts
-                waveNumber++;
-                if (waveNumber == 11)
-                {
-                    sendToAufburn.StartCoroutine("SendBackToAufburn");
-                }
-                duringWavesTimerCountdown = duringWavesTimerCountBase;
-
-                betweenWavesTimer = false;
-                duringWavesTimer = true;
-
-                hasSpawnedThisWave = false;
-
-                
-                StartCoroutine("TimerTime");
-                yield break; // ✅ stop this coroutine instance cleanly
-            }
-            else
-            {
-                yield return new WaitForSeconds(1f);
-                StartCoroutine("BetweenWavesTimerTime");
-            }
-        }
-    }
 }

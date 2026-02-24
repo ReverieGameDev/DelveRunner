@@ -12,6 +12,9 @@ public class SpawnManager : MonoBehaviour
     private PlayerCombat playerCombat;
     private Timer timer;
     public GameObject swarm;
+    private MapGenerator mapGenerator;
+    public Vector2 spawnPos;
+    public GameObject spawnEnemiesDetector;
     
     // ===== SPAWN LOCATIONS =====
     public int[,] viableSpawnCenters;  // Filled by MapRenderer, marks valid spawn points
@@ -59,9 +62,10 @@ public class SpawnManager : MonoBehaviour
 
     void Start()
     {
-        // Get references
+        //references
         mapRenderer = FindFirstObjectByType<MapRenderer>();
         waveManager = FindFirstObjectByType<WaveManager>();
+        mapGenerator = FindFirstObjectByType<MapGenerator>();
         playerCombat = FindFirstObjectByType<PlayerCombat>();
         timer = FindFirstObjectByType<Timer>();
         // Cache player position at start
@@ -76,9 +80,10 @@ public class SpawnManager : MonoBehaviour
 
     public void SpawnNextWave()
     {
+        Debug.Log("SpawnNextWave called at time: " + Time.time);
         int rngWave;
         Debug.Log("SpawnNextWave called, waveNumber: " + timer.waveNumber);
-        if (timer.waveNumber == 1)
+        if (timer.waveNumber == 1)//lol
         {
             rngWave = Random.Range(0, 2);
             if (rngWave == 0) { SpawnWave("1archer"); }
@@ -104,8 +109,7 @@ public class SpawnManager : MonoBehaviour
         // Clone formation from dictionary (so we don't modify original)
         spawnPosArray = (int[,])formations[waveFormation].Clone();
 
-        // Pick random valid spawn location
-        Vector2 spawnPos = GetRandomViableSpawn();
+
 
         // Calculate rotation based on player position
         CalculateRotation(spawnPos);
@@ -148,25 +152,21 @@ public class SpawnManager : MonoBehaviour
     }
 
     // ===== GET RANDOM SPAWN LOCATION =====
-    private Vector2 GetRandomViableSpawn()
+    public Vector2 GetRandomViableSpawn()
     {
-        List<Vector2> viablePositions = new List<Vector2>();
-        MapGenerator mapGen = FindFirstObjectByType<MapGenerator>();
-
-        // Collect all valid spawn centers
-        for (int i = 0; i < mapGen.mapHeight; i++)
+        List<Room> listOfFightNodes = new List<Room>();
+        for (int i = 0; i < mapGenerator.rooms.Count; i++)
         {
-            for (int t = 0; t < mapGen.mapWidth; t++)
+            if (mapGenerator.rooms[i].roomType == "fightNode")
             {
-                if (viableSpawnCenters[t, i] == 2)
-                {
-                    viablePositions.Add(new Vector2(t, i));
-                }
+                listOfFightNodes.Add(mapGenerator.rooms[i]);
             }
         }
-
-        // Return random position from list
-        return viablePositions[Random.Range(0, viablePositions.Count)];
+        int randomIndex = Random.Range(0, listOfFightNodes.Count);
+        Vector2 enemySpawnCoords = new Vector2(listOfFightNodes[randomIndex].centerX, listOfFightNodes[randomIndex].centerY);
+        Instantiate(spawnEnemiesDetector, enemySpawnCoords, Quaternion.identity);
+        return enemySpawnCoords;
+        
     }
 
     // ===== CALCULATE ROTATION =====
@@ -222,7 +222,7 @@ public class SpawnManager : MonoBehaviour
     private void NotifyWaveManager()
     {
         waveManager.FindAllEnemiesToDefeat();
-        timer.isWaveActive = true;
+        //timer.isWaveActive = true;
     }
 
     public void SpawnSwarm()

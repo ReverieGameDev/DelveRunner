@@ -1073,6 +1073,8 @@ MonoBehaviour:
   - {fileID: 4096997697643789573, guid: 25240def7b5b00a43b651ce41616989c, type: 3}
   BossArray: []
   swarm: {fileID: 1411848040320552327, guid: b69ccae370e8c2145ab3e6bf997fc10b, type: 3}
+  spawnPos: {x: 0, y: 0}
+  spawnEnemiesDetector: {fileID: 5981821731822304575, guid: b2a1a343a198bd34bb22aeb5e72366d6, type: 3}
   playerPos: {x: 0, y: 0, z: 0}
 --- !u!4 &309973204
 Transform:
@@ -7787,16 +7789,16 @@ MonoBehaviour:
   playerData: {fileID: 11400000, guid: 015cd50e4d403354bafaf27b1a2a2d9e, type: 2}
   attackManager: {fileID: 1509286737}
   closestCurrentEnemy: {fileID: 0}
-  autoAttackBullet: {fileID: 4267608673723377773, guid: 810345442f30f874f8690e54d4b49a97, type: 3}
-  playerMoney: 0
+  autoAttackBullet: {fileID: 0}
+  playerMoney: 53
   attack: 1
-  attackSpeed: 0.5
+  attackSpeed: 1
   critChance: 0
   critDamage: 1.5
   armor: 0
   maxHealth: 100
   dodge: 0
-  movementSpeed: 10
+  movementSpeed: 20
   xpGain: 1
   goldGain: 1
   playerHpBar: {fileID: 1382365147}
@@ -7806,7 +7808,7 @@ MonoBehaviour:
   iFrames: 0
   playerXp: 0
   playerLevel: 1
-  delveLevel: 1
+  delveLevel: 0
   augmentsOwed: 0
 --- !u!114 &1509286737
 MonoBehaviour:
@@ -8555,18 +8557,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4dbba7d388d60a843bcf1b2a522e785d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timerUI: {fileID: 665246054}
-  betweenWavesTimer: 0
-  duringWavesTimer: 1
-  betweenWavesTimerCountdownBase: 15
-  betweenWavesTimerCountdown: 15
-  duringWavesTimerCountdown: 100
-  duringWavesTimerCountBase: 100
-  spawnCounter: 0
-  duringWavesTimerCountdownMinutes: 0
-  betweenWavesTimerCountdownMinutes: 0
   waveNumber: 1
-  isWaveActive: 0
+  timer: {fileID: 665246054}
+  enemiesHaveSpawned: 0
 --- !u!4 &1603593172
 Transform:
   m_ObjectHideFlags: 0
