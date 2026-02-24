@@ -15,6 +15,8 @@ public class SpawnManager : MonoBehaviour
     private MapGenerator mapGenerator;
     public Vector2 spawnPos;
     public GameObject spawnEnemiesDetector;
+    private FightNodeIndicator fightNodeIndicator;
+    public bool isFightNodeActive = false;
     
     // ===== SPAWN LOCATIONS =====
     public int[,] viableSpawnCenters;  // Filled by MapRenderer, marks valid spawn points
@@ -67,6 +69,7 @@ public class SpawnManager : MonoBehaviour
         waveManager = FindFirstObjectByType<WaveManager>();
         mapGenerator = FindFirstObjectByType<MapGenerator>();
         playerCombat = FindFirstObjectByType<PlayerCombat>();
+        fightNodeIndicator = FindFirstObjectByType<FightNodeIndicator>();
         timer = FindFirstObjectByType<Timer>();
         // Cache player position at start
         playerPos = playerCombat.transform.position;
@@ -164,7 +167,9 @@ public class SpawnManager : MonoBehaviour
         }
         int randomIndex = Random.Range(0, listOfFightNodes.Count);
         Vector2 enemySpawnCoords = new Vector2(listOfFightNodes[randomIndex].centerX, listOfFightNodes[randomIndex].centerY);
+        fightNodeIndicator.currentActiveFightNodeCoords = enemySpawnCoords;
         Instantiate(spawnEnemiesDetector, enemySpawnCoords, Quaternion.identity);
+        isFightNodeActive = true;
         return enemySpawnCoords;
         
     }
@@ -228,7 +233,7 @@ public class SpawnManager : MonoBehaviour
     public void SpawnSwarm()
     {
         Vector2 playerPos = FindFirstObjectByType<PlayerCombat>().transform.position;
-        Vector2 randomOffset = Random.insideUnitCircle * 15f;
+        Vector2 randomOffset = Random.insideUnitCircle * 60f;
         Instantiate(swarm, playerPos + randomOffset, Quaternion.identity);
     }
     // ===== BOSS SPAWN =====

@@ -116,6 +116,7 @@ public class Timer : MonoBehaviour
         int secs = restTime % 60;
         timer.text = (restTime / 60 + ":" + (secs < 10 ? "0" + secs : secs.ToString()));
         restTime--;
+        spawnManager.isFightNodeActive = false;
         yield return new WaitForSeconds(1f);
         TimeManager();
     }
@@ -132,6 +133,7 @@ public class Timer : MonoBehaviour
             restTimer = true;
             enemiesHaveSpawned = false;
             overtimeSpawner = overtimeSpawnerBase;
+            spawnManager.isFightNodeActive = false;
             TimeManager();
             yield break;
         }
