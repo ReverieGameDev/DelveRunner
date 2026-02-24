@@ -227,7 +227,9 @@ public class SpawnManager : MonoBehaviour
 
     public void SpawnSwarm()
     {
-        Instantiate(swarm, GetRandomViableSpawn(), Quaternion.identity);
+        Vector2 playerPos = FindFirstObjectByType<PlayerCombat>().transform.position;
+        Vector2 randomOffset = Random.insideUnitCircle * 15f;
+        Instantiate(swarm, playerPos + randomOffset, Quaternion.identity);
     }
     // ===== BOSS SPAWN =====
     /*public void SpawnBoss()

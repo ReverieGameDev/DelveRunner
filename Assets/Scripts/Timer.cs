@@ -14,8 +14,8 @@ public class Timer : MonoBehaviour
     private bool restTimer = false;
     private int fightTimeBase = 120;
     private int restTimeBase = 30;
-    private int fightTime = 10;
-    private int restTime = 5;
+    private int fightTime = 11;
+    private int restTime = 30;
     public int waveNumber = 1;
     public TextMeshProUGUI timer;
     private EnemySpawnDetector enemySpawnDetector;
@@ -58,6 +58,7 @@ public class Timer : MonoBehaviour
     {
         if (fightTime <= 0)
         {
+            Debug.Log(enemiesHaveSpawned);
             if (enemiesHaveSpawned && waveManager.CountAliveEnemies() == 0)
             {
                 fightTimer = false;
@@ -78,6 +79,16 @@ public class Timer : MonoBehaviour
                 yield break;
             }
         }
+        if (waveManager.CountAliveEnemies() == 0 && enemiesHaveSpawned)
+        {
+            fightTimer = false;
+            restTimer = true;
+            overtime = false;
+            fightTime = fightTimeBase;
+            enemiesHaveSpawned = false;
+            TimeManager();
+            yield break;
+        }
         int secs = fightTime % 60;
         timer.text = (fightTime / 60 + ":" + (secs < 10 ? "0" + secs : secs.ToString()));
         fightTime--;
@@ -89,10 +100,15 @@ public class Timer : MonoBehaviour
     {
         if (restTime <= 0)
         {
+            waveNumber++;
+            if (waveNumber > 10)
+            {
+                sendToAufburn.StartCoroutine("SendBackToAufburn");
+                yield break;
+            }
             fightTimer = true;
             restTimer = false;
             restTime = restTimeBase;
-            waveNumber ++;
             spawnManagerHasSpawned = false;
             TimeManager();
             yield break;
@@ -108,11 +124,16 @@ public class Timer : MonoBehaviour
     {
         timer.text = "OVERTIME";
         overtimeSpawner *= .8f;
+        spawnManager.SpawnSwarm();
         if (enemiesHaveSpawned && waveManager.CountAliveEnemies() == 0)
         {
+            Debug.Log("ALL ENEMIES HAVE BEEN DEFEATED");
             overtime = false;
             restTimer = true;
+            enemiesHaveSpawned = false;
             overtimeSpawner = overtimeSpawnerBase;
+            TimeManager();
+            yield break;
         }
         yield return new WaitForSeconds(overtimeSpawner);
         TimeManager();
