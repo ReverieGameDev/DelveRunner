@@ -16,6 +16,7 @@ public class MapGenerator : MonoBehaviour
     public int[,] mapArray;
     private MapRenderer mapRenderer;
     public List<Room> rooms = new List<Room>();
+    public List<Vector2> corridorMidpoints = new List<Vector2>();
     public int leftBound = 20;
     public int rightBound = 280;
     public int bottomBound = 20;
@@ -38,11 +39,15 @@ public class MapGenerator : MonoBehaviour
     public int fightNodeMax = 5;
     public int cacheMin = 2;
     public int cacheMax = 5;
-
-    void Start()
+    private void Awake()
     {
         mapRenderer = FindFirstObjectByType<MapRenderer>();
+        
+    }
+    void Start()
+    {
         PopulateMap();
+
     }
 
     public void PopulateMap()
@@ -132,12 +137,17 @@ public class MapGenerator : MonoBehaviour
     {
         float totalDistance = Vector2.Distance(new Vector2(roomA.centerX, roomA.centerY), new Vector2(roomB.centerX, roomB.centerY));
 
+        // Pick one REE point per corridor
+        float randomREEPlacement = Random.Range(0.3f, 0.7f);
+        int reeX = (int)Mathf.Lerp(roomA.centerX, roomB.centerX, randomREEPlacement);
+        int reeY = (int)Mathf.Lerp(roomA.centerY, roomB.centerY, randomREEPlacement);
+        corridorMidpoints.Add(new Vector2(reeX, reeY));
+
         for (int i = 0; i <= totalDistance; i++)
         {
             float t = i / totalDistance;
             int x = (int)Mathf.Lerp(roomA.centerX, roomB.centerX, t);
             int y = (int)Mathf.Lerp(roomA.centerY, roomB.centerY, t);
-
             for (int w = -3; w <= 3; w++)
             {
                 for (int h = -3; h <= 3; h++)

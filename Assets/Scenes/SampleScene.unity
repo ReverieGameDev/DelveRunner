@@ -857,6 +857,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mapHeight: 300
   mapWidth: 400
+  corridorMidpoints: []
   leftBound: 50
   rightBound: 350
   bottomBound: 50
@@ -15207,6 +15208,7 @@ GameObject:
   - component: {fileID: 1937255399}
   - component: {fileID: 1937255400}
   - component: {fileID: 1937255401}
+  - component: {fileID: 1937255402}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -15328,6 +15330,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62c24313c6652c74eba03feddba9af59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1937255402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1937255396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df3b2042b0cbb3a459decbe7482d486c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  reePoints: []
+  filteredREEPoints: []
+  REEPoint: {fileID: 8325949224229418005, guid: db6a502eab326f94d80eabb4cde81881, type: 3}
 --- !u!1 &1976670468
 GameObject:
   m_ObjectHideFlags: 0

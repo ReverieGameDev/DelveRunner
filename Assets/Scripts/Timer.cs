@@ -14,7 +14,7 @@ public class Timer : MonoBehaviour
     private bool restTimer = false;
     private int fightTimeBase = 120;
     private int restTimeBase = 30;
-    private int fightTime = 11;
+    private int fightTime = 120;
     private int restTime = 30;
     public int waveNumber = 1;
     public TextMeshProUGUI timer;
