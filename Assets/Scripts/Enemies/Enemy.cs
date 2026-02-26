@@ -20,6 +20,7 @@ public class Enemy : MonoBehaviour
     private DeathBossScript deathBossScript;
     private bool isDead;
     public bool isMinion = false;
+    private EnemyAI enemyAI;
 
     
     
@@ -30,6 +31,7 @@ public class Enemy : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         waveManager = FindFirstObjectByType<WaveManager>();
         deathBossScript = FindFirstObjectByType<DeathBossScript>();
+        enemyAI = GetComponent<EnemyAI>();
         enemyHealth = enemyData.health;
         enemyDamage = enemyData.damage;
         enemyName = enemyData.mobName;
@@ -66,9 +68,8 @@ public class Enemy : MonoBehaviour
         if (enemyHealth <= 0 && bossMonster == false && isMinion == false)
         {
             Instantiate(xpDrop, transform.position, Quaternion.identity);
-            Destroy(gameObject);
-            
             GoldRandomizer();
+            enemyAI.currentState = EnemyState.Death;
         }
         else if (enemyHealth <= 0 && bossMonster == true && enemyName == "DeathBoss")
         {
@@ -79,6 +80,7 @@ public class Enemy : MonoBehaviour
         }
         else if (enemyHealth <= 0 && isMinion == true)
         {
+            
             Destroy(gameObject);
         }
 
