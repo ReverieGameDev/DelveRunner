@@ -1077,6 +1077,7 @@ MonoBehaviour:
   spawnPos: {x: 0, y: 0}
   spawnEnemiesDetector: {fileID: 5981821731822304575, guid: b2a1a343a198bd34bb22aeb5e72366d6, type: 3}
   isFightNodeActive: 0
+  spawnAnchor: {fileID: 3805302138129635065, guid: 1ecccea2753af5748a06182bea9f15ec, type: 3}
   playerPos: {x: 0, y: 0, z: 0}
 --- !u!4 &309973204
 Transform:

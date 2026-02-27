@@ -17,6 +17,7 @@ public class SpawnManager : MonoBehaviour
     public GameObject spawnEnemiesDetector;
     private FightNodeIndicator fightNodeIndicator;
     public bool isFightNodeActive = false;
+    public GameObject spawnAnchor;
     
     // ===== SPAWN LOCATIONS =====
     public int[,] viableSpawnCenters;  // Filled by MapRenderer, marks valid spawn points
@@ -88,14 +89,14 @@ public class SpawnManager : MonoBehaviour
         Debug.Log("SpawnNextWave called, waveNumber: " + timer.waveNumber);
         if (timer.waveNumber == 1)//lol
         {
-            rngWave = Random.Range(0, 2);
+            rngWave = Random.Range(1, 2);
             if (rngWave == 0) { SpawnWave("1archer"); }
             if (rngWave == 1) { SpawnWave("1tank"); }
             Debug.Log("we should be spawning rn");
         }
         if (timer.waveNumber == 2)
         {
-            rngWave = Random.Range(0, 2);
+            rngWave = Random.Range(1, 2);
             if (rngWave == 0) { SpawnWave("1archer"); }
             if (rngWave == 1) { SpawnWave("1tank"); }
             Debug.Log("we should be spawning rn");
@@ -128,6 +129,7 @@ public class SpawnManager : MonoBehaviour
     private void SpawnFormation(Vector2 spawnPos)
     {
         // Loop through 3x3 grid
+        GameObject currentSpawnAnchor = Instantiate(spawnAnchor, spawnPos, Quaternion.identity);
         for (int row = 0; row < 3; row++)
         {
             for (int col = 0; col < 3; col++)
@@ -145,7 +147,7 @@ public class SpawnManager : MonoBehaviour
 
                 // Spawn enemy (enemyType - 1 because array is 0-indexed)
                 Vector3 worldPos = new Vector3(spawnPos.x + offsetX, spawnPos.y + offsetY);
-                Instantiate(EnemyArray[enemyType - 1], worldPos, Quaternion.identity);
+                Instantiate(EnemyArray[enemyType - 1], worldPos, Quaternion.identity).GetComponent<EnemyAI>().assignedSpawnAnchor = currentSpawnAnchor;
 
                 Debug.Log("Spawning enemy type " + enemyType + " at: " + worldPos);
             }
