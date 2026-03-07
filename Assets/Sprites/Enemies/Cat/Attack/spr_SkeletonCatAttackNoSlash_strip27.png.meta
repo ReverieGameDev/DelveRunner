@@ -797,7 +797,34 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      spr_SkeletonCatAttackNoSlash_strip27_0: -490856955541781586
+      spr_SkeletonCatAttackNoSlash_strip27_1: 3448732928228346043
+      spr_SkeletonCatAttackNoSlash_strip27_10: -1123877658844978937
+      spr_SkeletonCatAttackNoSlash_strip27_11: 6984900423506356038
+      spr_SkeletonCatAttackNoSlash_strip27_12: -2395429644641282033
+      spr_SkeletonCatAttackNoSlash_strip27_13: -4371987463512119600
+      spr_SkeletonCatAttackNoSlash_strip27_14: 2185059842153011286
+      spr_SkeletonCatAttackNoSlash_strip27_15: -6209331081027811382
+      spr_SkeletonCatAttackNoSlash_strip27_16: 7387522344669382470
+      spr_SkeletonCatAttackNoSlash_strip27_17: 8063401190941763695
+      spr_SkeletonCatAttackNoSlash_strip27_18: 3947901460277951893
+      spr_SkeletonCatAttackNoSlash_strip27_19: -6949497781033828298
+      spr_SkeletonCatAttackNoSlash_strip27_2: 5687717601048551177
+      spr_SkeletonCatAttackNoSlash_strip27_20: 3207191473285702281
+      spr_SkeletonCatAttackNoSlash_strip27_21: 4596132549960429047
+      spr_SkeletonCatAttackNoSlash_strip27_22: -4665610996509798723
+      spr_SkeletonCatAttackNoSlash_strip27_23: 2983277225050260053
+      spr_SkeletonCatAttackNoSlash_strip27_24: -4211182671097943793
+      spr_SkeletonCatAttackNoSlash_strip27_25: 3028613582693076164
+      spr_SkeletonCatAttackNoSlash_strip27_26: -441023848059824754
+      spr_SkeletonCatAttackNoSlash_strip27_3: -3415778426178643370
+      spr_SkeletonCatAttackNoSlash_strip27_4: -6614385398731868715
+      spr_SkeletonCatAttackNoSlash_strip27_5: -5357971251429373137
+      spr_SkeletonCatAttackNoSlash_strip27_6: -7037093286799529165
+      spr_SkeletonCatAttackNoSlash_strip27_7: -3527694467319739471
+      spr_SkeletonCatAttackNoSlash_strip27_8: 7732219504028108606
+      spr_SkeletonCatAttackNoSlash_strip27_9: -6301585320809247398
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

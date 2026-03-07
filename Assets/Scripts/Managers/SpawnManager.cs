@@ -44,9 +44,9 @@ public class SpawnManager : MonoBehaviour
             { 0, 1, 0 },   
             { 0, 0, 0 } } },
         { "1tank", new int[,] {
-            { 0, 0, 0 },
-            { 0, 0, 0 },
-            { 0, 0, 2 } } },
+            { 2, 2, 2 },
+            { 0, 1, 0 },
+            { 0, 0, 0 } } },
         { "vformation", new int[,] {
             { 2, 0, 2 },
             { 0, 1, 0 },
@@ -87,7 +87,7 @@ public class SpawnManager : MonoBehaviour
         Debug.Log("SpawnNextWave called at time: " + Time.time);
         int rngWave;
         Debug.Log("SpawnNextWave called, waveNumber: " + timer.waveNumber);
-        if (timer.waveNumber == 1)//lol
+        if (timer.waveNumber == 1)
         {
             rngWave = Random.Range(1, 2);
             if (rngWave == 0) { SpawnWave("1archer"); }

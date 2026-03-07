@@ -272,7 +272,13 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      portal-village-deactivating_0: -8280170543672249633
+      portal-village-deactivating_1: -6365940106632371395
+      portal-village-deactivating_2: 6639570226749443729
+      portal-village-deactivating_3: 7092574919520735719
+      portal-village-deactivating_4: -5594373568753964075
+      portal-village-deactivating_5: -1977519097863181986
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

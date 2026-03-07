@@ -322,7 +322,15 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      portal-sewers-activated-loop_0: -7827218187811376395
+      portal-sewers-activated-loop_1: 1843308029801459211
+      portal-sewers-activated-loop_2: -1852338632798713432
+      portal-sewers-activated-loop_3: -8719544932608171331
+      portal-sewers-activated-loop_4: -3056899430021590038
+      portal-sewers-activated-loop_5: -1052168664135904512
+      portal-sewers-activated-loop_6: 5550016368211651923
+      portal-sewers-activated-loop_7: -8335530059161806342
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

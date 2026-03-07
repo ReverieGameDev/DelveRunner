@@ -797,7 +797,34 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      spr_SkeletonCatAttack_strip27_0: 8660178279312582242
+      spr_SkeletonCatAttack_strip27_1: -6036971720808326999
+      spr_SkeletonCatAttack_strip27_10: -8266607277211962485
+      spr_SkeletonCatAttack_strip27_11: 8508368751271269874
+      spr_SkeletonCatAttack_strip27_12: -856962007020414048
+      spr_SkeletonCatAttack_strip27_13: 3103287854470767847
+      spr_SkeletonCatAttack_strip27_14: -1218536235816279218
+      spr_SkeletonCatAttack_strip27_15: -6404071197500873303
+      spr_SkeletonCatAttack_strip27_16: 6313067714485276763
+      spr_SkeletonCatAttack_strip27_17: 7240160660047518664
+      spr_SkeletonCatAttack_strip27_18: 4976325968058599383
+      spr_SkeletonCatAttack_strip27_19: 3805977111449051728
+      spr_SkeletonCatAttack_strip27_2: -3440773753667447417
+      spr_SkeletonCatAttack_strip27_20: 4434482109006696470
+      spr_SkeletonCatAttack_strip27_21: 2731213321500990776
+      spr_SkeletonCatAttack_strip27_22: 5838642652169774970
+      spr_SkeletonCatAttack_strip27_23: 6087590420924145033
+      spr_SkeletonCatAttack_strip27_24: -2437972463107034964
+      spr_SkeletonCatAttack_strip27_25: 5981366748754054184
+      spr_SkeletonCatAttack_strip27_26: -4989157535362500890
+      spr_SkeletonCatAttack_strip27_3: 2625016991364063297
+      spr_SkeletonCatAttack_strip27_4: 6226996572990873847
+      spr_SkeletonCatAttack_strip27_5: -2808711617879888356
+      spr_SkeletonCatAttack_strip27_6: -8136677399891049686
+      spr_SkeletonCatAttack_strip27_7: -8059656658884067174
+      spr_SkeletonCatAttack_strip27_8: 6137551335928678125
+      spr_SkeletonCatAttack_strip27_9: -8750200941471719654
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

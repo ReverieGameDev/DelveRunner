@@ -272,7 +272,13 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      portal-ancient-ruins-deactivating_0: 2354999980698827859
+      portal-ancient-ruins-deactivating_1: 4322227278720647429
+      portal-ancient-ruins-deactivating_2: 1895237391642616809
+      portal-ancient-ruins-deactivating_3: 7914623374748257584
+      portal-ancient-ruins-deactivating_4: -5288271769367218985
+      portal-ancient-ruins-deactivating_5: 3206843119747670518
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

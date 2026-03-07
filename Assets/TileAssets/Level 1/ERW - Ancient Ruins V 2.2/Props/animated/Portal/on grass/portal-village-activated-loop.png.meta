@@ -322,7 +322,15 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      portal-village-activated-loop_0: 8429026647046920018
+      portal-village-activated-loop_1: -4356034600259017417
+      portal-village-activated-loop_2: -4808016258244553608
+      portal-village-activated-loop_3: -1953248702761712731
+      portal-village-activated-loop_4: -3151441219389205475
+      portal-village-activated-loop_5: 8072335909382189186
+      portal-village-activated-loop_6: 2777664680839789454
+      portal-village-activated-loop_7: -6751738623163510278
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

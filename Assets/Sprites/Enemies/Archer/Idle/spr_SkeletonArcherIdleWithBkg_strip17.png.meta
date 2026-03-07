@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      spr_SkeletonArcherIdleWithBkg_strip17_0: 3580134532689400186
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

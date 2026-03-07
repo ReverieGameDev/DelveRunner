@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Galaxy Background_0: 2452511883164736435
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      spr_SkeletonCatRunWithBkg_strip8_0: -5802212935781978311
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

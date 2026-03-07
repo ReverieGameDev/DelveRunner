@@ -397,7 +397,18 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      spr_WarriorWalk_strip11_0: -6554028277713524748
+      spr_WarriorWalk_strip11_1: -2271966392791531191
+      spr_WarriorWalk_strip11_10: 1797457827449931086
+      spr_WarriorWalk_strip11_2: 4363515418070683995
+      spr_WarriorWalk_strip11_3: 3321960604005064987
+      spr_WarriorWalk_strip11_4: -1803952804899293772
+      spr_WarriorWalk_strip11_5: 6831798783731989534
+      spr_WarriorWalk_strip11_6: 2901426209217441049
+      spr_WarriorWalk_strip11_7: 8529717625009055943
+      spr_WarriorWalk_strip11_8: -808925470536717026
+      spr_WarriorWalk_strip11_9: 7399467836961413561
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

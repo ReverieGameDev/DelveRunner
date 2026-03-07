@@ -272,7 +272,13 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      portal-sewers-deactivating_0: 8400577065762077085
+      portal-sewers-deactivating_1: -8019823372740180641
+      portal-sewers-deactivating_2: 6767342781798672754
+      portal-sewers-deactivating_3: -5563312131920014611
+      portal-sewers-deactivating_4: -2900433021780479692
+      portal-sewers-deactivating_5: -4320248077152796013
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -322,7 +322,15 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      portal-crypt-activating_0: -8645878490207547654
+      portal-crypt-activating_1: -6957784019985231067
+      portal-crypt-activating_2: -8549295481646053482
+      portal-crypt-activating_3: -2455402231181691759
+      portal-crypt-activating_4: -721752152562665351
+      portal-crypt-activating_5: -91327858965084054
+      portal-crypt-activating_6: -1253240195961272733
+      portal-crypt-activating_7: -5021066755249533288
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

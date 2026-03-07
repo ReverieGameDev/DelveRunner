@@ -272,7 +272,13 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      portal-cemetery-deactivating_0: -7838141769177346457
+      portal-cemetery-deactivating_1: -2304750113769988570
+      portal-cemetery-deactivating_2: 2916830544421358780
+      portal-cemetery-deactivating_3: 9166909892445960782
+      portal-cemetery-deactivating_4: 4628335961776474622
+      portal-cemetery-deactivating_5: 2564722525555983952
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

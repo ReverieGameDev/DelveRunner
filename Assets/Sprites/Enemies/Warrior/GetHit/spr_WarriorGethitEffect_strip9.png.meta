@@ -222,7 +222,11 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      spr_WarriorGethitEffect_strip9_0: 4124524111718442544
+      spr_WarriorGethitEffect_strip9_1: -1312848461991694081
+      spr_WarriorGethitEffect_strip9_2: -7910105606892766646
+      spr_WarriorGethitEffect_strip9_3: 2821010568433056266
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

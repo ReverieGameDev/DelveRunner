@@ -322,7 +322,15 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      portal-old-prison-activated-loop_0: -8050194681553893418
+      portal-old-prison-activated-loop_1: 2131375990539948979
+      portal-old-prison-activated-loop_2: -8964043888303700313
+      portal-old-prison-activated-loop_3: 368140547783066323
+      portal-old-prison-activated-loop_4: 7135977150553882963
+      portal-old-prison-activated-loop_5: 2227812463735503139
+      portal-old-prison-activated-loop_6: 8107430820830261999
+      portal-old-prison-activated-loop_7: 5233052400102412573
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

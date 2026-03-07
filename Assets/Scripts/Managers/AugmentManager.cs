@@ -4,7 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using System.Linq;
-using UnityEditor.SceneManagement;
+using UnityEngine.SceneManagement;
 using System.Drawing;
 
 public class AugmentManager : MonoBehaviour

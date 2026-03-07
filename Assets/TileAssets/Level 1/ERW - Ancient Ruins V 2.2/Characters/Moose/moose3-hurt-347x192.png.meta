@@ -272,7 +272,13 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      moose3-hurt-347x192_0: -329731996839384095
+      moose3-hurt-347x192_1: 6418814161101382671
+      moose3-hurt-347x192_2: -4449876465230145622
+      moose3-hurt-347x192_3: -7074725376673975808
+      moose3-hurt-347x192_4: -4813278389179135196
+      moose3-hurt-347x192_5: 7036890783265515327
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

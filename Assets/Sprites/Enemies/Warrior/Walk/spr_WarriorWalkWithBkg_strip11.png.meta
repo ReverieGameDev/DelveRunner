@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      spr_WarriorWalkWithBkg_strip11_0: -3340086280154879128
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

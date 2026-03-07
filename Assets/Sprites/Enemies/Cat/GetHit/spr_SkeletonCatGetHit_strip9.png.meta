@@ -347,7 +347,16 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      spr_SkeletonCatGetHit_strip9_0: 8128109538704090271
+      spr_SkeletonCatGetHit_strip9_1: 1931707554208218540
+      spr_SkeletonCatGetHit_strip9_2: 3878381018983958103
+      spr_SkeletonCatGetHit_strip9_3: 6548571215755613129
+      spr_SkeletonCatGetHit_strip9_4: 4219440366385719959
+      spr_SkeletonCatGetHit_strip9_5: 2513330749842946322
+      spr_SkeletonCatGetHit_strip9_6: 3422302201453954430
+      spr_SkeletonCatGetHit_strip9_7: -3248350610179418523
+      spr_SkeletonCatGetHit_strip9_8: -7601910638041662701
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

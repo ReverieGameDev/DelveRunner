@@ -172,7 +172,9 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      spr_SkeletonCatSlash_strip27_0: 3521088688722843403
+      spr_SkeletonCatSlash_strip27_1: -6546602141829655299
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

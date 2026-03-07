@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      spr_WarriorGethitNoEffectWithBkg_strip9_0: -3331433219842448667
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1097,7 +1097,46 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      spr_SkeletonArcherAttackWithArrow_strip34_0: -7319443754464586102
+      spr_SkeletonArcherAttackWithArrow_strip34_1: 5705710406590037945
+      spr_SkeletonArcherAttackWithArrow_strip34_10: -3903378369152310688
+      spr_SkeletonArcherAttackWithArrow_strip34_11: 4601749662272459525
+      spr_SkeletonArcherAttackWithArrow_strip34_12: 1278610665348662841
+      spr_SkeletonArcherAttackWithArrow_strip34_13: 1269813780741645825
+      spr_SkeletonArcherAttackWithArrow_strip34_14: -2948504741231268105
+      spr_SkeletonArcherAttackWithArrow_strip34_15: -3032650997124401661
+      spr_SkeletonArcherAttackWithArrow_strip34_16: -1826160667702924876
+      spr_SkeletonArcherAttackWithArrow_strip34_17: 8590184991696897248
+      spr_SkeletonArcherAttackWithArrow_strip34_18: -1403121769150268698
+      spr_SkeletonArcherAttackWithArrow_strip34_19: -7190781290812052549
+      spr_SkeletonArcherAttackWithArrow_strip34_2: -8874881289952044044
+      spr_SkeletonArcherAttackWithArrow_strip34_20: 1277014761758684708
+      spr_SkeletonArcherAttackWithArrow_strip34_21: -1792056172723798972
+      spr_SkeletonArcherAttackWithArrow_strip34_22: -9025956931302201341
+      spr_SkeletonArcherAttackWithArrow_strip34_23: -756790786013019899
+      spr_SkeletonArcherAttackWithArrow_strip34_24: -662850866807561202
+      spr_SkeletonArcherAttackWithArrow_strip34_25: -8542231549061360605
+      spr_SkeletonArcherAttackWithArrow_strip34_26: -9074264943393394524
+      spr_SkeletonArcherAttackWithArrow_strip34_27: -5744740290015534829
+      spr_SkeletonArcherAttackWithArrow_strip34_28: 1848743572431468582
+      spr_SkeletonArcherAttackWithArrow_strip34_29: -3867820907507038879
+      spr_SkeletonArcherAttackWithArrow_strip34_3: 1745065352467544728
+      spr_SkeletonArcherAttackWithArrow_strip34_30: -2389878560757534322
+      spr_SkeletonArcherAttackWithArrow_strip34_31: -2195845494940558203
+      spr_SkeletonArcherAttackWithArrow_strip34_32: -7106856828213366260
+      spr_SkeletonArcherAttackWithArrow_strip34_33: -3968144907252946725
+      spr_SkeletonArcherAttackWithArrow_strip34_34: 3495553917554742079
+      spr_SkeletonArcherAttackWithArrow_strip34_35: 4821859918634652075
+      spr_SkeletonArcherAttackWithArrow_strip34_36: -275022374671341125
+      spr_SkeletonArcherAttackWithArrow_strip34_37: -5579481914943105532
+      spr_SkeletonArcherAttackWithArrow_strip34_38: 109112533753068295
+      spr_SkeletonArcherAttackWithArrow_strip34_4: 7221292853982993839
+      spr_SkeletonArcherAttackWithArrow_strip34_5: 6764466069633277135
+      spr_SkeletonArcherAttackWithArrow_strip34_6: -4886940663104084885
+      spr_SkeletonArcherAttackWithArrow_strip34_7: -1599988909122661966
+      spr_SkeletonArcherAttackWithArrow_strip34_8: -1683764988275742497
+      spr_SkeletonArcherAttackWithArrow_strip34_9: -3178154831216777781
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

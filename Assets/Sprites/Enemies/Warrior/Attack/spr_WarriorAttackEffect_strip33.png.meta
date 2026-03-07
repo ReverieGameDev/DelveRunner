@@ -547,7 +547,24 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      spr_WarriorAttackEffect_strip33_0: -931421528004914451
+      spr_WarriorAttackEffect_strip33_1: -8299839180105972847
+      spr_WarriorAttackEffect_strip33_10: -1772436885689859484
+      spr_WarriorAttackEffect_strip33_11: -7030383251247336254
+      spr_WarriorAttackEffect_strip33_12: -3146690029568299931
+      spr_WarriorAttackEffect_strip33_13: -1534414415021205737
+      spr_WarriorAttackEffect_strip33_14: 2638651189318329489
+      spr_WarriorAttackEffect_strip33_15: 1756749718196333698
+      spr_WarriorAttackEffect_strip33_16: -2254611276943690908
+      spr_WarriorAttackEffect_strip33_2: -4792393520845064285
+      spr_WarriorAttackEffect_strip33_3: 8936308785592706646
+      spr_WarriorAttackEffect_strip33_4: -3126204345992272495
+      spr_WarriorAttackEffect_strip33_5: 2499943902837604256
+      spr_WarriorAttackEffect_strip33_6: 688934273119771345
+      spr_WarriorAttackEffect_strip33_7: -4407288680354309289
+      spr_WarriorAttackEffect_strip33_8: 1180784958917366498
+      spr_WarriorAttackEffect_strip33_9: -4875717230238705474
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

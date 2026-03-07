@@ -272,7 +272,13 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      portal-highlands-deactivating_0: 2415163324406103989
+      portal-highlands-deactivating_1: -3270134115550878167
+      portal-highlands-deactivating_2: 9040858921291638493
+      portal-highlands-deactivating_3: -8381841232801923143
+      portal-highlands-deactivating_4: -448735624069132650
+      portal-highlands-deactivating_5: 4641651508425182032
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

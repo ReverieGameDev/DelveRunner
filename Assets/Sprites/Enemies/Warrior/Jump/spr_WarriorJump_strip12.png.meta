@@ -422,7 +422,19 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      spr_WarriorJump_strip12_0: -3483762759298930507
+      spr_WarriorJump_strip12_1: 3084608098026640854
+      spr_WarriorJump_strip12_10: 6838441311594951439
+      spr_WarriorJump_strip12_11: 1706051075183345171
+      spr_WarriorJump_strip12_2: -7827864014170421954
+      spr_WarriorJump_strip12_3: -5270028607740363315
+      spr_WarriorJump_strip12_4: 2512497268620559139
+      spr_WarriorJump_strip12_5: -7344392341545809381
+      spr_WarriorJump_strip12_6: -3514913577102938036
+      spr_WarriorJump_strip12_7: -704458226143389150
+      spr_WarriorJump_strip12_8: -6086944656895421362
+      spr_WarriorJump_strip12_9: 7867111024735479388
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

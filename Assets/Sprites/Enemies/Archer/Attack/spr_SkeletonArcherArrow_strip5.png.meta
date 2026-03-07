@@ -247,7 +247,12 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      spr_SkeletonArcherArrow_strip5_0: -3904128420701226354
+      spr_SkeletonArcherArrow_strip5_1: -5877871068309689249
+      spr_SkeletonArcherArrow_strip5_2: -1188345701325601539
+      spr_SkeletonArcherArrow_strip5_3: -4398083608881556973
+      spr_SkeletonArcherArrow_strip5_4: -5796195615482420797
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

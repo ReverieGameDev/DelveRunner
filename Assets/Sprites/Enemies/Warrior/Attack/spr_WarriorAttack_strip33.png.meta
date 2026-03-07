@@ -1072,7 +1072,45 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      spr_WarriorAttack_strip33_0: -5723801620141583084
+      spr_WarriorAttack_strip33_1: 4745711045577517968
+      spr_WarriorAttack_strip33_10: -2384980348481371536
+      spr_WarriorAttack_strip33_11: 3153973955948403076
+      spr_WarriorAttack_strip33_12: 3846140036359983714
+      spr_WarriorAttack_strip33_13: 29467309926818943
+      spr_WarriorAttack_strip33_14: -8103705110248050658
+      spr_WarriorAttack_strip33_15: 5018559268391830938
+      spr_WarriorAttack_strip33_16: 7218720864363607539
+      spr_WarriorAttack_strip33_17: 934519685169489312
+      spr_WarriorAttack_strip33_18: 7552272040323086674
+      spr_WarriorAttack_strip33_19: 7402261350610622320
+      spr_WarriorAttack_strip33_2: 155066296474258966
+      spr_WarriorAttack_strip33_20: 1321354332130148443
+      spr_WarriorAttack_strip33_21: 4453373904875639586
+      spr_WarriorAttack_strip33_22: 9162952037670575760
+      spr_WarriorAttack_strip33_23: -8685427758630799318
+      spr_WarriorAttack_strip33_24: 9046427284521189873
+      spr_WarriorAttack_strip33_25: -5373621711565067880
+      spr_WarriorAttack_strip33_26: -5814421454796432467
+      spr_WarriorAttack_strip33_27: 4928704883876512148
+      spr_WarriorAttack_strip33_28: 1012248181938936307
+      spr_WarriorAttack_strip33_29: -6054898083921611030
+      spr_WarriorAttack_strip33_3: -8311006247122353007
+      spr_WarriorAttack_strip33_30: 5329595462567972611
+      spr_WarriorAttack_strip33_31: -7391027866727416694
+      spr_WarriorAttack_strip33_32: 7719792602455901231
+      spr_WarriorAttack_strip33_33: 3016741938356904476
+      spr_WarriorAttack_strip33_34: 7799775519377398348
+      spr_WarriorAttack_strip33_35: 7934985645890450886
+      spr_WarriorAttack_strip33_36: 7330881165892885614
+      spr_WarriorAttack_strip33_37: -443329772328113249
+      spr_WarriorAttack_strip33_4: 7652083200952927405
+      spr_WarriorAttack_strip33_5: -5088058003222253389
+      spr_WarriorAttack_strip33_6: 8436458757712450056
+      spr_WarriorAttack_strip33_7: -8237211389094747226
+      spr_WarriorAttack_strip33_8: 8132881947690814610
+      spr_WarriorAttack_strip33_9: 560902491229192738
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

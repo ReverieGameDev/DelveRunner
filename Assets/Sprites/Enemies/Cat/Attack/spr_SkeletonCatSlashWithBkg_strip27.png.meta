@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      spr_SkeletonCatSlashWithBkg_strip27_0: 1133782297917817450
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

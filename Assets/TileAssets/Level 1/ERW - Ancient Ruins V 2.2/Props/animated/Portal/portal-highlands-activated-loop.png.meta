@@ -322,7 +322,15 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      portal-highlands-activated-loop_0: 3172086990933506139
+      portal-highlands-activated-loop_1: 8168306462905837892
+      portal-highlands-activated-loop_2: -5834314855049267722
+      portal-highlands-activated-loop_3: -5166585325248412890
+      portal-highlands-activated-loop_4: 3047664584895437265
+      portal-highlands-activated-loop_5: -3783691785089768478
+      portal-highlands-activated-loop_6: 7971924081417992485
+      portal-highlands-activated-loop_7: -2789676080228683147
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

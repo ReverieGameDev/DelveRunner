@@ -347,7 +347,16 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      spr_WarriorGethitNoEffect_strip9_0: 8083781594672352190
+      spr_WarriorGethitNoEffect_strip9_1: 9215353374891155625
+      spr_WarriorGethitNoEffect_strip9_2: -1608428309831939644
+      spr_WarriorGethitNoEffect_strip9_3: 147605372080215981
+      spr_WarriorGethitNoEffect_strip9_4: 3249573356259045436
+      spr_WarriorGethitNoEffect_strip9_5: 2687051281850950191
+      spr_WarriorGethitNoEffect_strip9_6: -4268472561475848585
+      spr_WarriorGethitNoEffect_strip9_7: -9017680798909147998
+      spr_WarriorGethitNoEffect_strip9_8: 3961930939893740679
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

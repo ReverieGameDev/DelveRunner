@@ -322,7 +322,15 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      portal-volcano-activated-loop_0: -7570871393157095845
+      portal-volcano-activated-loop_1: 5055027656379343442
+      portal-volcano-activated-loop_2: -9130713296107413589
+      portal-volcano-activated-loop_3: -1636798535138040621
+      portal-volcano-activated-loop_4: 4152556717916942830
+      portal-volcano-activated-loop_5: 8083127845748376861
+      portal-volcano-activated-loop_6: 3362523676702912358
+      portal-volcano-activated-loop_7: -5984503436667903709
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

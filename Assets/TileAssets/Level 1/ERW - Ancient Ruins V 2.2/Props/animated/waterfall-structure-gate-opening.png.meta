@@ -422,7 +422,19 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      waterfall-structure-gate-opening_0: -4735086897928230931
+      waterfall-structure-gate-opening_1: 441052297551968660
+      waterfall-structure-gate-opening_10: 4341489017049868059
+      waterfall-structure-gate-opening_11: -4694252943916638863
+      waterfall-structure-gate-opening_2: 5330911289719797472
+      waterfall-structure-gate-opening_3: 3092156418745231619
+      waterfall-structure-gate-opening_4: -5042600794262019715
+      waterfall-structure-gate-opening_5: -4571818662777939545
+      waterfall-structure-gate-opening_6: -8138383189063455073
+      waterfall-structure-gate-opening_7: -3586365751830897896
+      waterfall-structure-gate-opening_8: 2609345325868629312
+      waterfall-structure-gate-opening_9: -4140370472592210472
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

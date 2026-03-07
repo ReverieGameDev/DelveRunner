@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Data;
 using UnityEngine;
 
 public class EnemyAI : MonoBehaviour
@@ -9,72 +8,88 @@ public class EnemyAI : MonoBehaviour
     private Rigidbody2D rb;
     private float speed = 12f;
     private SpawnManager spawnManager;
-    private Vector2 centerFormationTile;
     public GameObject assignedSpawnAnchor;
-    Vector2 anchorPlayerAngle;
-    Vector2 guardPos;
-    Vector2 directionToGuard;
-    Vector2 retreatPos;
-    Vector2 directionToRetreat;
-    Vector2 retreatStartPos;
-    private float retreatSpeed = .5f;
-    private bool hasStartedRetreating = false;
     public EnemyRoles role;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+
+    // Offset and rotation
+    private Vector2 positionOffset;
+    private Vector2 originalOffset;
+    private float offsetDistance;
+    private float initialAngle;
+
+    // Movement helpers
+    private Vector2 anchorPlayerAngle;
+    private Vector2 currentPos;
+    private Vector2 anchorPos;
+    private Vector2 anchorDirection;
+
+    // Retreat
+    private Vector2 directionToRetreat;
+    private Vector2 retreatStartPos;
+    private bool hasStartedRetreating = false;
+
     void Start()
     {
         spawnManager = FindFirstObjectByType<SpawnManager>();
-        currentState = EnemyState.Chase;
         rb = GetComponent<Rigidbody2D>();
         player = GameObject.FindWithTag("Player").transform;
-        centerFormationTile = spawnManager.spawnPos;
+        currentState = EnemyState.Attack;
+
+        positionOffset = new Vector2(transform.position.x - assignedSpawnAnchor.transform.position.x, transform.position.y - assignedSpawnAnchor.transform.position.y);
+        originalOffset = positionOffset;
+        offsetDistance = positionOffset.magnitude;
+
+        Vector2 toPlayer = (Vector2)player.position - (Vector2)assignedSpawnAnchor.transform.position;
+        initialAngle = Mathf.Atan2(toPlayer.y, toPlayer.x);
     }
 
-    // Update is called once per frame
     void FixedUpdate()
     {
-        anchorPlayerAngle = (player.transform.position - assignedSpawnAnchor.transform.position).normalized;
-        guardPos = (Vector2)assignedSpawnAnchor.transform.position + anchorPlayerAngle * 4f;
-        directionToGuard = (guardPos - (Vector2)transform.position).normalized;
+        anchorPlayerAngle = ((Vector2)player.position - (Vector2)assignedSpawnAnchor.transform.position).normalized;
+
+        // Rotate offset when player flanks past threshold
+        float currentAngle = Mathf.Atan2(anchorPlayerAngle.y, anchorPlayerAngle.x);
+        float angleDiff = currentAngle - initialAngle;
+
+        if (Mathf.Abs(angleDiff) > 0.65f)
+        {
+            originalOffset = new Vector2(
+                originalOffset.x * Mathf.Cos(angleDiff) - originalOffset.y * Mathf.Sin(angleDiff),
+                originalOffset.x * Mathf.Sin(angleDiff) + originalOffset.y * Mathf.Cos(angleDiff)
+            );
+            initialAngle = currentAngle;
+        }
+
+        positionOffset = originalOffset;
+
+        // State machine
         switch (currentState)
         {
             case EnemyState.Attack:
                 Attack();
                 break;
-
-            case EnemyState.Chase:
-                Chase();
-                break;
-
             case EnemyState.Death:
                 Death();
                 break;
-
-            case EnemyState.Reposition:
-                Reposition();
-                break;
-
             case EnemyState.Retreat:
                 Retreat();
                 break;
+        }
+
+        // Follow anchor + offset
+        currentPos = transform.position;
+        anchorPos = assignedSpawnAnchor.transform.position;
+        if (Vector2.Distance(currentPos, anchorPos + positionOffset) >= .25f)
+        {
+            anchorDirection = new Vector2(anchorPos.x + positionOffset.x - currentPos.x, anchorPos.y + positionOffset.y - currentPos.y).normalized;
+            rb.MovePosition((Vector2)transform.position + anchorDirection * speed * Time.fixedDeltaTime);
         }
     }
 
     private void Attack()
     {
-        if (Vector2.Distance((Vector2)transform.position, player.position) >= 18)
-        {
-            currentState = EnemyState.Chase;
-        }
-
         switch (role)
         {
-            case EnemyRoles.Warrior:
-                if (Vector2.Distance((Vector2)transform.position, guardPos) >= 3f)
-                {
-                    currentState = EnemyState.Reposition;
-                }
-                break;
             case EnemyRoles.Archer:
                 if (Vector2.Distance((Vector2)transform.position, player.position) <= 5f)
                 {
@@ -83,33 +98,12 @@ public class EnemyAI : MonoBehaviour
                 break;
         }
     }
-    private void Chase()
-    {
-        
-        Vector2 chaseDirection = new Vector2(player.position.x - transform.position.x, player.position.y - transform.position.y).normalized;
-        rb.MovePosition((Vector2)transform.position + chaseDirection * speed * Time.fixedDeltaTime);
-        if (Vector2.Distance((Vector2)transform.position,player.position) <= 12)
-        {
-            currentState = EnemyState.Attack;
-        }
-    }
+
     private void Death()
     {
-        //play death anim
         Destroy(gameObject);
     }
-    private void Reposition()
-    {
 
-        anchorPlayerAngle = (player.transform.position - assignedSpawnAnchor.transform.position).normalized;
-        guardPos = (Vector2)assignedSpawnAnchor.transform.position + anchorPlayerAngle * 4f;
-        directionToGuard = (guardPos - (Vector2)transform.position).normalized;
-        rb.MovePosition((Vector2)transform.position + directionToGuard * speed * Time.fixedDeltaTime);
-        if (Vector2.Distance((Vector2)transform.position,guardPos) <= .5f)
-        {
-            currentState = EnemyState.Attack;
-        }
-    }
     private void Retreat()
     {
         if (hasStartedRetreating == false)
@@ -117,20 +111,12 @@ public class EnemyAI : MonoBehaviour
             retreatStartPos = transform.position;
             hasStartedRetreating = true;
         }
-        Vector2 anchorPlayerAngle = (assignedSpawnAnchor.transform.position - player.transform.position).normalized;
-        retreatPos = (Vector2)assignedSpawnAnchor.transform.position + anchorPlayerAngle * 4f;
-        directionToRetreat = ((Vector2)transform.position - retreatPos).normalized;
+        directionToRetreat = ((Vector2)transform.position - (Vector2)player.position).normalized;
         rb.MovePosition((Vector2)transform.position + directionToRetreat * speed * Time.fixedDeltaTime);
-        if (Vector2.Distance(retreatStartPos,transform.position) >= 3)
+        if (Vector2.Distance(retreatStartPos, transform.position) >= 7)
         {
             currentState = EnemyState.Attack;
             hasStartedRetreating = false;
         }
-        
-    }
-
-    private void AnchorChase()
-    {
-
     }
 }

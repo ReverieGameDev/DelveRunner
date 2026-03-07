@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      spr_SkeletonArcherDeathWithBkg_strip15_0: -3149356001217039025
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

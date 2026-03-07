@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      spr_SkeletonCatJumpWithBkg_strip11_0: 650397562887364359
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

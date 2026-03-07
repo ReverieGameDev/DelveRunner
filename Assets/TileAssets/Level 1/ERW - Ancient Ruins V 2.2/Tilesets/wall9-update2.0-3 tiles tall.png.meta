@@ -547,7 +547,24 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      wall9-update2.0-3 tiles tall_0: -4403490251708497899
+      wall9-update2.0-3 tiles tall_1: 3830622545468124563
+      wall9-update2.0-3 tiles tall_10: -5212289511151345759
+      wall9-update2.0-3 tiles tall_11: 3375820978947644815
+      wall9-update2.0-3 tiles tall_12: -7142300628382232249
+      wall9-update2.0-3 tiles tall_13: 6226732206601922106
+      wall9-update2.0-3 tiles tall_14: 2069623196801019337
+      wall9-update2.0-3 tiles tall_15: -8737224660305292508
+      wall9-update2.0-3 tiles tall_16: 7346869199857811024
+      wall9-update2.0-3 tiles tall_2: 5660138312161291106
+      wall9-update2.0-3 tiles tall_3: -4324628344815337871
+      wall9-update2.0-3 tiles tall_4: -3949601009909908501
+      wall9-update2.0-3 tiles tall_5: 8984314932362845388
+      wall9-update2.0-3 tiles tall_6: 9007048198887390879
+      wall9-update2.0-3 tiles tall_7: 3167481459793188401
+      wall9-update2.0-3 tiles tall_8: -8188157585034435639
+      wall9-update2.0-3 tiles tall_9: 7355624989896228279
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

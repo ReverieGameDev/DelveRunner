@@ -272,7 +272,13 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      portal-old-prison-deactivating_0: -8244002860293075972
+      portal-old-prison-deactivating_1: -1533983529961258100
+      portal-old-prison-deactivating_2: 4494282030585853856
+      portal-old-prison-deactivating_3: 6104706731643454806
+      portal-old-prison-deactivating_4: -181420035378708001
+      portal-old-prison-deactivating_5: 7623582413190649562
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

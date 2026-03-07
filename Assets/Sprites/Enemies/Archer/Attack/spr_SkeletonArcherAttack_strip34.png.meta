@@ -972,7 +972,41 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      spr_SkeletonArcherAttack_strip34_0: 7419721153297792820
+      spr_SkeletonArcherAttack_strip34_1: -5175950206762259350
+      spr_SkeletonArcherAttack_strip34_10: 6024552145305070227
+      spr_SkeletonArcherAttack_strip34_11: -7447904025646411404
+      spr_SkeletonArcherAttack_strip34_12: -466047310840411399
+      spr_SkeletonArcherAttack_strip34_13: 7800643778989838901
+      spr_SkeletonArcherAttack_strip34_14: 2765778967188049254
+      spr_SkeletonArcherAttack_strip34_15: -8051033791377011610
+      spr_SkeletonArcherAttack_strip34_16: 5616832947018005558
+      spr_SkeletonArcherAttack_strip34_17: -3947295054553468558
+      spr_SkeletonArcherAttack_strip34_18: -2538748856950416136
+      spr_SkeletonArcherAttack_strip34_19: 6977904328403267673
+      spr_SkeletonArcherAttack_strip34_2: -6354186325330672439
+      spr_SkeletonArcherAttack_strip34_20: -4610846136630163936
+      spr_SkeletonArcherAttack_strip34_21: 1318833935480544362
+      spr_SkeletonArcherAttack_strip34_22: 7671657636818026759
+      spr_SkeletonArcherAttack_strip34_23: -7251760804323369649
+      spr_SkeletonArcherAttack_strip34_24: -7177771465677770591
+      spr_SkeletonArcherAttack_strip34_25: -3431077463581886991
+      spr_SkeletonArcherAttack_strip34_26: -7820909438648580492
+      spr_SkeletonArcherAttack_strip34_27: 1704753778333787284
+      spr_SkeletonArcherAttack_strip34_28: -2371583148765859384
+      spr_SkeletonArcherAttack_strip34_29: 945835462338915221
+      spr_SkeletonArcherAttack_strip34_3: 8920583173688104404
+      spr_SkeletonArcherAttack_strip34_30: 2775856549867917375
+      spr_SkeletonArcherAttack_strip34_31: -8320409289934652516
+      spr_SkeletonArcherAttack_strip34_32: 6590289447262140287
+      spr_SkeletonArcherAttack_strip34_33: -1754102402584535413
+      spr_SkeletonArcherAttack_strip34_4: 633800718463464852
+      spr_SkeletonArcherAttack_strip34_5: -1090634863708155074
+      spr_SkeletonArcherAttack_strip34_6: -7055516086256702779
+      spr_SkeletonArcherAttack_strip34_7: 7126761225806396963
+      spr_SkeletonArcherAttack_strip34_8: 6285644980454874846
+      spr_SkeletonArcherAttack_strip34_9: 8800790649131041099
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

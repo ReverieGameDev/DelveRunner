@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      spr_SkeletonCatDeathWithBkg_strip18_0: 5555485222304142083
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

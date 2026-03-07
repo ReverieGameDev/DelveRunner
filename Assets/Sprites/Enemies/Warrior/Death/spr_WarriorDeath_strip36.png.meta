@@ -1272,7 +1272,53 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      spr_WarriorDeath_strip36_0: -8262993593644749383
+      spr_WarriorDeath_strip36_1: 1984559648363200554
+      spr_WarriorDeath_strip36_10: 5253847898775394806
+      spr_WarriorDeath_strip36_11: -9049744725642954223
+      spr_WarriorDeath_strip36_12: 6846073644556071604
+      spr_WarriorDeath_strip36_13: -5143302844623085338
+      spr_WarriorDeath_strip36_14: 2539311229317665035
+      spr_WarriorDeath_strip36_15: -694258595344535153
+      spr_WarriorDeath_strip36_16: -6373421291288732796
+      spr_WarriorDeath_strip36_17: 8731324272568976022
+      spr_WarriorDeath_strip36_18: -839346691704353772
+      spr_WarriorDeath_strip36_19: -42671779842880320
+      spr_WarriorDeath_strip36_2: 4360537581459717266
+      spr_WarriorDeath_strip36_20: 1432282437659125166
+      spr_WarriorDeath_strip36_21: -6461408307221686979
+      spr_WarriorDeath_strip36_22: 197640889713822030
+      spr_WarriorDeath_strip36_23: -1524534304053129327
+      spr_WarriorDeath_strip36_24: -1709445024165996616
+      spr_WarriorDeath_strip36_25: 8116945192631810394
+      spr_WarriorDeath_strip36_26: 6271062652439893102
+      spr_WarriorDeath_strip36_27: 4256511571623958311
+      spr_WarriorDeath_strip36_28: 2673691422933544203
+      spr_WarriorDeath_strip36_29: 6019529515981856645
+      spr_WarriorDeath_strip36_3: 1470552428661963445
+      spr_WarriorDeath_strip36_30: 3478417849759530132
+      spr_WarriorDeath_strip36_31: 47256737795468684
+      spr_WarriorDeath_strip36_32: -2551665525473284119
+      spr_WarriorDeath_strip36_33: 618065752900568964
+      spr_WarriorDeath_strip36_34: 7380024098743911016
+      spr_WarriorDeath_strip36_35: -4885791728298686239
+      spr_WarriorDeath_strip36_36: 7023828925255439656
+      spr_WarriorDeath_strip36_37: 2844927710981719360
+      spr_WarriorDeath_strip36_38: -2667716972494604129
+      spr_WarriorDeath_strip36_39: 8209882735767358523
+      spr_WarriorDeath_strip36_4: 6249503892478325286
+      spr_WarriorDeath_strip36_40: -8544597132957905424
+      spr_WarriorDeath_strip36_41: -7388042504559860528
+      spr_WarriorDeath_strip36_42: -1861061478439158315
+      spr_WarriorDeath_strip36_43: -4365514848164074919
+      spr_WarriorDeath_strip36_44: 8647887073489182161
+      spr_WarriorDeath_strip36_45: 994314939171699652
+      spr_WarriorDeath_strip36_5: 4220448194884665615
+      spr_WarriorDeath_strip36_6: 3495466995897949341
+      spr_WarriorDeath_strip36_7: -5278044918050224799
+      spr_WarriorDeath_strip36_8: 1557875878246589922
+      spr_WarriorDeath_strip36_9: -6696346587269717464
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

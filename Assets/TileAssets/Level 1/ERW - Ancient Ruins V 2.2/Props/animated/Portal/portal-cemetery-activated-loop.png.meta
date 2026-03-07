@@ -322,7 +322,15 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      portal-cemetery-activated-loop_0: 113708837860820435
+      portal-cemetery-activated-loop_1: 3760438938973865541
+      portal-cemetery-activated-loop_2: -8889275579123036557
+      portal-cemetery-activated-loop_3: -4300185629634471293
+      portal-cemetery-activated-loop_4: 4828761666911684726
+      portal-cemetery-activated-loop_5: -118543741408257164
+      portal-cemetery-activated-loop_6: 6702958384094132541
+      portal-cemetery-activated-loop_7: -2359329876737966031
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

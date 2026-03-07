@@ -322,7 +322,15 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      portal-inactive-loop_0: 8106985876338508954
+      portal-inactive-loop_1: -4318741607643300545
+      portal-inactive-loop_2: -1991196080163053055
+      portal-inactive-loop_3: -658360891115249184
+      portal-inactive-loop_4: 1056251566099649163
+      portal-inactive-loop_5: 970316132335940377
+      portal-inactive-loop_6: 4027063213594444737
+      portal-inactive-loop_7: 4194279635582749167
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

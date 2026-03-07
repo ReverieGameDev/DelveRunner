@@ -322,7 +322,15 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      spr_SkeletonArcherWalk_strip8_0: 4429452647066316307
+      spr_SkeletonArcherWalk_strip8_1: 2522784778713132664
+      spr_SkeletonArcherWalk_strip8_2: -5458491434004675630
+      spr_SkeletonArcherWalk_strip8_3: 9175944521081465377
+      spr_SkeletonArcherWalk_strip8_4: -4093577762652776291
+      spr_SkeletonArcherWalk_strip8_5: 8075840559990307545
+      spr_SkeletonArcherWalk_strip8_6: 4778025988557617746
+      spr_SkeletonArcherWalk_strip8_7: 78606339759799084
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

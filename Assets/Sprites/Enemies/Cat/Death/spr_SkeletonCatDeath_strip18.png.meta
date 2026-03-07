@@ -572,7 +572,25 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      spr_SkeletonCatDeath_strip18_0: -6580848067820268164
+      spr_SkeletonCatDeath_strip18_1: 861794722367532731
+      spr_SkeletonCatDeath_strip18_10: -7388167024831627301
+      spr_SkeletonCatDeath_strip18_11: -554358265588001211
+      spr_SkeletonCatDeath_strip18_12: 663918216436533855
+      spr_SkeletonCatDeath_strip18_13: -8452505234851625273
+      spr_SkeletonCatDeath_strip18_14: 5508431737842232312
+      spr_SkeletonCatDeath_strip18_15: 3258998209970624402
+      spr_SkeletonCatDeath_strip18_16: 7385117150791411566
+      spr_SkeletonCatDeath_strip18_17: 8591135591409423735
+      spr_SkeletonCatDeath_strip18_2: 6778158301873086179
+      spr_SkeletonCatDeath_strip18_3: -6785176165090613624
+      spr_SkeletonCatDeath_strip18_4: 5095159204599472063
+      spr_SkeletonCatDeath_strip18_5: -369615215936401152
+      spr_SkeletonCatDeath_strip18_6: 2440550717759574360
+      spr_SkeletonCatDeath_strip18_7: 7586454533367695895
+      spr_SkeletonCatDeath_strip18_8: 3373947213835444772
+      spr_SkeletonCatDeath_strip18_9: 1721233588897887626
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      spr_SkeletonArcherGetHitEffectWithBkg_strip9_0: -7953808501562489868
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

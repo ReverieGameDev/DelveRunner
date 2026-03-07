@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      spr_WarriorJumpWithBkg_strip12_0: -4794177007135309478
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

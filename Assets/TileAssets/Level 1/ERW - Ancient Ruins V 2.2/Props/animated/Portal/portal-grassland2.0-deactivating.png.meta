@@ -272,7 +272,13 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      portal-grassland2.0-deactivating_0: -1197736148813718431
+      portal-grassland2.0-deactivating_1: 784193171498671114
+      portal-grassland2.0-deactivating_2: 7143810475152538635
+      portal-grassland2.0-deactivating_3: 4875825992042162944
+      portal-grassland2.0-deactivating_4: -31553322632618028
+      portal-grassland2.0-deactivating_5: 1490171242638652098
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

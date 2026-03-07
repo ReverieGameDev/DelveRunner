@@ -322,7 +322,15 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      portal-ancient-ruins-activated-loop_0: -8633416572394427019
+      portal-ancient-ruins-activated-loop_1: 5697366053227330221
+      portal-ancient-ruins-activated-loop_2: -5493196803150534517
+      portal-ancient-ruins-activated-loop_3: 9096508166281138202
+      portal-ancient-ruins-activated-loop_4: 3346036739353681465
+      portal-ancient-ruins-activated-loop_5: 5985194406272031919
+      portal-ancient-ruins-activated-loop_6: -6227914191936510583
+      portal-ancient-ruins-activated-loop_7: 1323703107023809206
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

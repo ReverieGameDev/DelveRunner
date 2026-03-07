@@ -347,7 +347,16 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      spr_SkeletonArcherGetHitWithoutEffect_strip9_0: 2630923689314391418
+      spr_SkeletonArcherGetHitWithoutEffect_strip9_1: 1247072236310447985
+      spr_SkeletonArcherGetHitWithoutEffect_strip9_2: -6755151239057999644
+      spr_SkeletonArcherGetHitWithoutEffect_strip9_3: -2173662041507610397
+      spr_SkeletonArcherGetHitWithoutEffect_strip9_4: -3663021716494423
+      spr_SkeletonArcherGetHitWithoutEffect_strip9_5: 784659431030126115
+      spr_SkeletonArcherGetHitWithoutEffect_strip9_6: 8836109948118811223
+      spr_SkeletonArcherGetHitWithoutEffect_strip9_7: 3346657639380638826
+      spr_SkeletonArcherGetHitWithoutEffect_strip9_8: 7845081665201932231
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
