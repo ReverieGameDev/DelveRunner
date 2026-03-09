@@ -4,5 +4,6 @@ public enum EnemyState
     Attack,
     Death,
     Reposition,
-    Retreat
+    Retreat,
+    Charge
 }

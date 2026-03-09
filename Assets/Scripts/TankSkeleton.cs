@@ -1,6 +1,7 @@
 using NUnit.Framework;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -28,16 +29,23 @@ public class TankSkeleton : MonoBehaviour
     private GameObject tempAttackIndicator;
     private Vector2 warriorToPlayerAngle;
     private float warriorToPlayerFloat;
+    private FormationAnchorBehaviour formationAnchorBehaviour;
+    private Rigidbody2D rb;
+    private bool isCharging;
+    private Vector2 playerPosStartCharge;
+    private float chargeSpeed = 10f;
+    private Vector2 chargeStartPos;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        rb = GetComponent<Rigidbody2D>();
         attackList.Add("slash");
         attackList.Add("regenerate");
         attackList.Add("charge");
         enemyAttackIndicator = GetComponentInChildren<EnemyAttackIndicator>();
         enemyAI = GetComponentInChildren<EnemyAI>();
         playerMovement = FindFirstObjectByType<PlayerMovement>();
-        
+        formationAnchorBehaviour = enemyAI.assignedSpawnAnchor.GetComponent<FormationAnchorBehaviour>();
     }
 
     // Update is called once per frame
@@ -50,12 +58,12 @@ public class TankSkeleton : MonoBehaviour
                 slashCheckCooldownBool = true;
                 StartCoroutine("WarriorSlashCheck");
             }
-            /*if (Vector2.Distance(transform.position, playerMovement.transform.position) < Vector2.Distance(playerMovement.transform.position, enemyAI.assignedSpawnAnchor.transform.position))
+            if (formationAnchorBehaviour.chargeAttack)
             {
                 isAttacking = true;
                 currentAttack = "charge";
                 StartCoroutine("WarriorIndicatorActivation");
-            }*/
+            }
             /*if (is missing health, hasn't been hit in at least 5s))
             {
                 isAttacking = true;
@@ -78,7 +86,18 @@ public class TankSkeleton : MonoBehaviour
             tempAttackIndicator.transform.rotation = Quaternion.Euler(0, 0, warriorToPlayerFloat);
 
         }
-
+        if (isCharging)
+        {
+            Debug.Log("CHAAAAAAAAAAARGE");
+            Vector2 warriorToPlayerAngle = new Vector2(playerMovement.transform.position.x - transform.position.x, playerMovement.transform.position.y - transform.position.y).normalized;
+            rb.MovePosition(warriorToPlayerAngle * chargeSpeed * Time.fixedDeltaTime);
+            if (Vector2.Distance(playerPosStartCharge,chargeStartPos) < Vector2.Distance(transform.position, chargeStartPos))
+            {
+                isCharging = false;
+                enemyAI.isCharging = false;
+            }
+        }
+        
     }
 
     IEnumerator WarriorSlashCheck()
@@ -158,6 +177,8 @@ public class TankSkeleton : MonoBehaviour
     private void ChargeAttack()
     {
         indicatorActive = false;
-        
+        chargeStartPos = transform.position;
+        isCharging = true;
+        enemyAI.isCharging = true;
     }
 }

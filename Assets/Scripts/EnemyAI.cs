@@ -6,7 +6,7 @@ public class EnemyAI : MonoBehaviour
     public EnemyState currentState;
     private Transform player;
     private Rigidbody2D rb;
-    private float speed = 12f;
+    private float speed = 8f;
     private SpawnManager spawnManager;
     public GameObject assignedSpawnAnchor;
     public EnemyRoles role;
@@ -27,6 +27,7 @@ public class EnemyAI : MonoBehaviour
     private Vector2 directionToRetreat;
     private Vector2 retreatStartPos;
     private bool hasStartedRetreating = false;
+    public bool isCharging;
 
     void Start()
     {
@@ -77,20 +78,31 @@ public class EnemyAI : MonoBehaviour
         }
 
         // Follow anchor + offset
-        currentPos = transform.position;
-        anchorPos = assignedSpawnAnchor.transform.position;
-        if (Vector2.Distance(currentPos, anchorPos + positionOffset) >= .25f)
+        if (!isCharging)
         {
-            anchorDirection = new Vector2(anchorPos.x + positionOffset.x - currentPos.x, anchorPos.y + positionOffset.y - currentPos.y).normalized;
-            rb.MovePosition((Vector2)transform.position + anchorDirection * speed * Time.fixedDeltaTime);
+            currentPos = transform.position;
+            anchorPos = assignedSpawnAnchor.transform.position;
+            if (Vector2.Distance(currentPos, anchorPos + positionOffset) >= .25f)
+            {
+                anchorDirection = new Vector2(anchorPos.x + positionOffset.x - currentPos.x, anchorPos.y + positionOffset.y - currentPos.y).normalized;
+                rb.MovePosition((Vector2)transform.position + anchorDirection * speed * Time.fixedDeltaTime);
+            }
         }
+
     }
+
 
     private void Attack()
     {
         switch (role)
         {
             case EnemyRoles.Archer:
+                if (Vector2.Distance((Vector2)transform.position, player.position) <= 5f)
+                {
+                    currentState = EnemyState.Retreat;
+                }
+                break;
+            case EnemyRoles.Summoner:
                 if (Vector2.Distance((Vector2)transform.position, player.position) <= 5f)
                 {
                     currentState = EnemyState.Retreat;
