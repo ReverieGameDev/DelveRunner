@@ -25,6 +25,7 @@ public class EnemyAI : MonoBehaviour
     private Vector2 anchorDirection;
     private Vector2 targetPos;
     private float targetAngle;
+    
 
     // Retreat
     private Vector2 directionToRetreat;
@@ -33,6 +34,9 @@ public class EnemyAI : MonoBehaviour
     public bool isCharging;
 
     // Ring formation
+    private int originalRingIndex;
+    private int currentRingIndex;
+    private int stepsToMove = 0;
     private int positionInRingOrder;
     private bool isCenter = false;
     private Vector2[] ringOrder = {
@@ -77,7 +81,8 @@ public class EnemyAI : MonoBehaviour
                 }
             }
         }
-
+        originalRingIndex = positionInRingOrder;
+        currentRingIndex = positionInRingOrder;
         // Save starting angle from anchor to player
         Vector2 toPlayer = (Vector2)player.position - anchorPos;
         initialAngle = Mathf.Atan2(toPlayer.y, toPlayer.x);
@@ -88,23 +93,6 @@ public class EnemyAI : MonoBehaviour
         anchorPos = assignedSpawnAnchor.transform.position;
         anchorPlayerAngle = ((Vector2)player.position - anchorPos).normalized;
 
-        // Rotate offset when player flanks past threshold
-        float currentAngle = Mathf.Atan2(anchorPlayerAngle.y, anchorPlayerAngle.x);
-        float angleDiff = Mathf.DeltaAngle(initialAngle * Mathf.Rad2Deg, currentAngle * Mathf.Rad2Deg);
-
-        if (!isCenter)
-        {
-            if (angleDiff > 45f)
-            {
-                initialAngle = currentAngle;
-                positionInRingOrder = (positionInRingOrder + 7) % 8; // was +1
-            }
-            else if (angleDiff < -45f)
-            {
-                initialAngle = currentAngle;
-                positionInRingOrder = (positionInRingOrder + 1) % 8; // was +7
-            }
-        }
         // State machine
         switch (currentState)
         {
@@ -118,7 +106,7 @@ public class EnemyAI : MonoBehaviour
                 Retreat();
                 break;
         }
-        // Move toward assigned ring position (or center)
+
         if (!isCharging)
         {
             Vector2 targetPos;
@@ -128,7 +116,24 @@ public class EnemyAI : MonoBehaviour
             }
             else
             {
-                targetPos = anchorPos + ringOrder[positionInRingOrder];
+                // Where SHOULD this enemy be based on player angle?
+                float currentAngle = Mathf.Atan2(anchorPlayerAngle.y, anchorPlayerAngle.x);
+                float angleDiff = Mathf.DeltaAngle(initialAngle * Mathf.Rad2Deg, currentAngle * Mathf.Rad2Deg);
+                int rotationSteps = Mathf.RoundToInt(angleDiff / 45f);
+                int targetRingIndex = ((originalRingIndex - rotationSteps) % 8 + 8) % 8;
+
+                // Walk toward current ring slot
+                targetPos = anchorPos + ringOrder[currentRingIndex];
+
+                // When arrived, step one slot closer around the ring
+                if (Vector2.Distance((Vector2)transform.position, targetPos) < 0.25f && currentRingIndex != targetRingIndex)
+                {
+                    int diff = (targetRingIndex - currentRingIndex + 8) % 8;
+                    if (diff <= 4)
+                        currentRingIndex = (currentRingIndex + 1) % 8;
+                    else
+                        currentRingIndex = (currentRingIndex + 7) % 8;
+                }
             }
 
             if (Vector2.Distance((Vector2)transform.position, targetPos) >= 0.25f)
@@ -137,7 +142,6 @@ public class EnemyAI : MonoBehaviour
                 transform.position = ((Vector2)transform.position + direction * speed * Time.fixedDeltaTime);
             }
         }
-
     }
 
 

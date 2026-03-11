@@ -90,11 +90,12 @@ public class TankSkeleton : MonoBehaviour
         {
             Debug.Log("CHAAAAAAAAAAARGE");
             Vector2 warriorToPlayerAngle = new Vector2(playerMovement.transform.position.x - transform.position.x, playerMovement.transform.position.y - transform.position.y).normalized;
-            rb.MovePosition(warriorToPlayerAngle * chargeSpeed * Time.fixedDeltaTime);
-            if (Vector2.Distance(playerPosStartCharge,chargeStartPos) < Vector2.Distance(transform.position, chargeStartPos))
+            rb.MovePosition((Vector2)transform.position + warriorToPlayerAngle * chargeSpeed * Time.fixedDeltaTime);
+            if (Vector2.Distance(playerPosStartCharge, chargeStartPos) < Vector2.Distance(transform.position, chargeStartPos))
             {
                 isCharging = false;
                 enemyAI.isCharging = false;
+                formationAnchorBehaviour.chargeAttack = false;
             }
         }
         
@@ -178,6 +179,7 @@ public class TankSkeleton : MonoBehaviour
     {
         indicatorActive = false;
         chargeStartPos = transform.position;
+        playerPosStartCharge = playerMovement.transform.position; 
         isCharging = true;
         enemyAI.isCharging = true;
     }
