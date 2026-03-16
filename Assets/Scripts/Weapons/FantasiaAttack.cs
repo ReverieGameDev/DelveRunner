@@ -1,4 +1,4 @@
-using System.Collections;
+/*using System.Collections;
 using UnityEngine;
 
 public class FantasiaAttack : MonoBehaviour
@@ -50,4 +50,4 @@ public class FantasiaAttack : MonoBehaviour
         findAllEnemies();
         Destroy(gameObject);
     }
-}
+}*/

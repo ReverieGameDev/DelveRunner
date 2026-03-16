@@ -77,7 +77,7 @@ public class PlayerMovement : MonoBehaviour
                 Rigidbody2D enemyCollisionRb = collision.GetComponent<Rigidbody2D>();
                 Vector2 enemyCollisionPosition = enemyCollisionRb.transform.position;
                 playerRb.AddForce(((playerPosition - enemyCollisionPosition).normalized)*50, ForceMode2D.Impulse);
-                playerCombat.DamagePlayer();
+                playerCombat.DamagePlayer(15f);
             }
         }
 }

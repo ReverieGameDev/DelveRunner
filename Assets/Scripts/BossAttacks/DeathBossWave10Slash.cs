@@ -1,4 +1,4 @@
-using UnityEngine;
+/*using UnityEngine;
 
 public class DeathBossWave10Slash : MonoBehaviour
 {
@@ -37,3 +37,4 @@ public class DeathBossWave10Slash : MonoBehaviour
         }
     }
 }
+*/

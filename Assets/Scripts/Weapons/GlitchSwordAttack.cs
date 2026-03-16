@@ -9,9 +9,11 @@ public class GlitchSwordAttack : MonoBehaviour
     private int maxEnemiesHit = 1;
     private AttackManager attackManager;
     private Vector3 trajectory;
+    private PlayerCombat playerCombat;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        playerCombat = FindFirstObjectByType<PlayerCombat>();
         attackManager = FindFirstObjectByType<AttackManager>();
         trajectory = attackManager.mousePos - attackManager.playerPos;
 
@@ -30,7 +32,7 @@ public class GlitchSwordAttack : MonoBehaviour
         if (collision.CompareTag("Enemy"))
         {
             enemy = collision.GetComponent<Enemy>();
-            enemy.reduceHp(glitchSwordDamage);
+            enemy.reduceHp(playerCombat.CalcWeaponDamage(glitchSwordDamage));
             enemiesHit++;
             if (enemiesHit >= maxEnemiesHit)
             {

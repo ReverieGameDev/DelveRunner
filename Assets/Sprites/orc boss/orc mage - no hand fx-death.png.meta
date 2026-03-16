@@ -1,0 +1,644 @@
+fileFormatVersion: 2
+guid: 37708c6cccee22847a84c906b9f10779
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 3993276936489251562
+    second: orc mage - no hand fx-death_0
+  - first:
+      213: 4147602908475313127
+    second: orc mage - no hand fx-death_1
+  - first:
+      213: -8221837597786645493
+    second: orc mage - no hand fx-death_2
+  - first:
+      213: -5902292813877885697
+    second: orc mage - no hand fx-death_3
+  - first:
+      213: -1196038020828002069
+    second: orc mage - no hand fx-death_4
+  - first:
+      213: -4981229608553378972
+    second: orc mage - no hand fx-death_5
+  - first:
+      213: -1857639015750593914
+    second: orc mage - no hand fx-death_6
+  - first:
+      213: 8134491916971295679
+    second: orc mage - no hand fx-death_7
+  - first:
+      213: 4180114437335749882
+    second: orc mage - no hand fx-death_8
+  - first:
+      213: -4497940090143997778
+    second: orc mage - no hand fx-death_9
+  - first:
+      213: 6167167483905817780
+    second: orc mage - no hand fx-death_10
+  - first:
+      213: 1624105454821284779
+    second: orc mage - no hand fx-death_11
+  - first:
+      213: 1211054701170323876
+    second: orc mage - no hand fx-death_12
+  - first:
+      213: -2258532564683116380
+    second: orc mage - no hand fx-death_13
+  - first:
+      213: 3649617111186215403
+    second: orc mage - no hand fx-death_14
+  - first:
+      213: 816172655357175711
+    second: orc mage - no hand fx-death_15
+  - first:
+      213: -8385922683001930244
+    second: orc mage - no hand fx-death_16
+  - first:
+      213: -7212103069363246449
+    second: orc mage - no hand fx-death_17
+  - first:
+      213: 7682349465629536969
+    second: orc mage - no hand fx-death_18
+  - first:
+      213: 5043248949113358134
+    second: orc mage - no hand fx-death_19
+  - first:
+      213: -369012987552025127
+    second: orc mage - no hand fx-death_20
+  - first:
+      213: 8008070242086606689
+    second: orc mage - no hand fx-death_21
+  - first:
+      213: -5180546059662073247
+    second: orc mage - no hand fx-death_22
+  - first:
+      213: 5430010965126111954
+    second: orc mage - no hand fx-death_23
+  - first:
+      213: -39099405281465160
+    second: orc mage - no hand fx-death_24
+  - first:
+      213: -3050252761844912783
+    second: orc mage - no hand fx-death_25
+  - first:
+      213: 1294384477058143284
+    second: orc mage - no hand fx-death_26
+  - first:
+      213: -7884962342557617904
+    second: orc mage - no hand fx-death_27
+  - first:
+      213: 3173349116577713600
+    second: orc mage - no hand fx-death_28
+  - first:
+      213: -3897776606915097462
+    second: orc mage - no hand fx-death_29
+  - first:
+      213: -426516199862570250
+    second: orc mage - no hand fx-death_30
+  - first:
+      213: -6821731361710968091
+    second: orc mage - no hand fx-death_31
+  - first:
+      213: -8140336686083999210
+    second: orc mage - no hand fx-death_32
+  - first:
+      213: -2286845507282270906
+    second: orc mage - no hand fx-death_33
+  - first:
+      213: 9091834323751882027
+    second: orc mage - no hand fx-death_34
+  - first:
+      213: 5332435119256194371
+    second: orc mage - no hand fx-death_35
+  - first:
+      213: -2906344703342088361
+    second: orc mage - no hand fx-death_36
+  - first:
+      213: -505787231421230678
+    second: orc mage - no hand fx-death_37
+  - first:
+      213: -7295658417184274326
+    second: orc mage - no hand fx-death_38
+  - first:
+      213: -8627064497071462256
+    second: orc mage - no hand fx-death_39
+  - first:
+      213: 3078998102923940758
+    second: orc mage - no hand fx-death_40
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 10
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: orc mage - no hand fx-death_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae2b3396738fa6730800000000000000
+      internalID: 3993276936489251562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: orc mage - no hand fx-death_1
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7eb4c0dcede3f8930800000000000000
+      internalID: 4147602908475313127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: orc mage - no hand fx-death_2
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b0cd9f6144a26ed80800000000000000
+      internalID: -8221837597786645493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: orc mage - no hand fx-death_3
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff4c77c15f7d61ea0800000000000000
+      internalID: -5902292813877885697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: orc mage - no hand fx-death_4
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be88fa6c1c1d66fe0800000000000000
+      internalID: -1196038020828002069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: orc mage - no hand fx-death_5
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 46b848d001e1fdab0800000000000000
+      internalID: -4981229608553378972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: orc mage - no hand fx-death_6
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 682974948275836e0800000000000000
+      internalID: -1857639015750593914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: orc mage - no hand fx-death_7
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb34c53dc4583e070800000000000000
+      internalID: 8134491916971295679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: orc mage - no hand fx-death_8
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af411edfeefb20a30800000000000000
+      internalID: 4180114437335749882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: orc mage - no hand fx-death_9
+      rect:
+        serializedVersion: 2
+        x: 2304
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea08af1b15b1491c0800000000000000
+      internalID: -4497940090143997778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: orc mage - no hand fx-death_10
+      rect:
+        serializedVersion: 2
+        x: 2560
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4bcbb8cc62e269550800000000000000
+      internalID: 6167167483905817780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: orc mage - no hand fx-death_11
+      rect:
+        serializedVersion: 2
+        x: 2816
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bab95686e4bf98610800000000000000
+      internalID: 1624105454821284779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: orc mage - no hand fx-death_12
+      rect:
+        serializedVersion: 2
+        x: 3072
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a1f2d295d78ec010800000000000000
+      internalID: 1211054701170323876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: orc mage - no hand fx-death_13
+      rect:
+        serializedVersion: 2
+        x: 3328
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a03960499418a0e0800000000000000
+      internalID: -2258532564683116380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: orc mage - no hand fx-death_14
+      rect:
+        serializedVersion: 2
+        x: 3584
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be111761d6b06a230800000000000000
+      internalID: 3649617111186215403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: orc mage - no hand fx-death_15
+      rect:
+        serializedVersion: 2
+        x: 3840
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f97a3fda4b0a35b00800000000000000
+      internalID: 816172655357175711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: orc mage - no hand fx-death_16
+      rect:
+        serializedVersion: 2
+        x: 4096
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cfd77c510c73f9b80800000000000000
+      internalID: -8385922683001930244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: e4d6c3e0eb9e1af45b39b1df4fb25d14
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      orc mage - no hand fx-death_0: 3993276936489251562
+      orc mage - no hand fx-death_1: 4147602908475313127
+      orc mage - no hand fx-death_10: 6167167483905817780
+      orc mage - no hand fx-death_11: 1624105454821284779
+      orc mage - no hand fx-death_12: 1211054701170323876
+      orc mage - no hand fx-death_13: -2258532564683116380
+      orc mage - no hand fx-death_14: 3649617111186215403
+      orc mage - no hand fx-death_15: 816172655357175711
+      orc mage - no hand fx-death_16: -8385922683001930244
+      orc mage - no hand fx-death_2: -8221837597786645493
+      orc mage - no hand fx-death_3: -5902292813877885697
+      orc mage - no hand fx-death_4: -1196038020828002069
+      orc mage - no hand fx-death_5: -4981229608553378972
+      orc mage - no hand fx-death_6: -1857639015750593914
+      orc mage - no hand fx-death_7: 8134491916971295679
+      orc mage - no hand fx-death_8: 4180114437335749882
+      orc mage - no hand fx-death_9: -4497940090143997778
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,13 +1,13 @@
-using UnityEngine;
-using System.Collections.Generic;
-using System.Linq;
 using System.Collections;
+using UnityEngine;
 using UnityEngine.UI;
-using Unity.VisualScripting;
 using TMPro;
 
 public class PlayerCombat : MonoBehaviour
 {
+    public static PlayerCombat Instance;
+
+
     // References
     public PlayerData playerData;
     private PlayerMovement playerMovement;
@@ -16,16 +16,15 @@ public class PlayerCombat : MonoBehaviour
 
     // Combat
     public GameObject closestCurrentEnemy;
-    public GameObject autoAttackBullet;
 
     //Money
-    public int playerMoney = 53;
+    public int playerMoney = 0;
 
     // Stats
-    private float currentPlayerHealth;
+    private int currentPlayerHealth;
     public float attack = 1f;
     public float attackSpeed = 1f;
-    public float critChance = 0f;
+    public int critChance = 5;
     public float critDamage = 1.5f;
     public float armor = 0f;
     public float maxHealth = 100f;
@@ -46,23 +45,40 @@ public class PlayerCombat : MonoBehaviour
     public int playerLevel = 1;
     public int delveLevel = 0;
     public int augmentsOwed = 0;
+
+    void Awake()
+    {
+        Instance = this;
+    }
     void Start()
     {
-        Debug.Log("PlayerCombat Start - delveLevel: " + delveLevel);
         playerMovement = FindFirstObjectByType<PlayerMovement>();
         augmentManager = FindFirstObjectByType<AugmentManager>();
         attackManager = FindFirstObjectByType<AttackManager>();
-        
-        currentPlayerHealth = playerData.playerHp;
-        playerHpBar.value = 1.0f;
 
+        currentPlayerHealth = (int)playerData.playerHp;
+        playerHpBar.value = 1.0f;
     }
 
     void Update()
     {
         FindClosestEnemy();
     }
+    public int CalcWeaponDamage(float damage)
+    {
+        int critRoll = Random.Range(0, 101);
+        int processedDamage = 0;
 
+        if (critRoll < critChance)
+        {
+            processedDamage = (int)(Mathf.Round(damage * attack * critDamage));
+        }
+        else
+        {
+            processedDamage = (int)(Mathf.Round(damage * attack));
+        }
+        return processedDamage;
+    }
     private void FindClosestEnemy()
     {
         foreach (GameObject enemy in GameObject.FindGameObjectsWithTag("Enemy"))
@@ -83,15 +99,17 @@ public class PlayerCombat : MonoBehaviour
     {
         if (collision.CompareTag("Money1"))
         {
-
             playerMoney++;
             moneyText.text = ": " + playerMoney;
         }
     }
-    public void DamagePlayer()
+
+    public void DamagePlayer(float damageTaken)
     {
+        int damageTakenInt = (int)Mathf.Round(damageTaken);
+        if (iFrames) return;
         StartCoroutine("IFrames");
-        currentPlayerHealth -= 10f;
+        currentPlayerHealth -= damageTakenInt;
         playerHpBar.value = currentPlayerHealth / playerData.playerHp;
 
         if (currentPlayerHealth <= 0)
@@ -104,7 +122,7 @@ public class PlayerCombat : MonoBehaviour
     {
         iFrames = true;
         StartCoroutine("IFrameAnimation");
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(.66f);
         iFrames = false;
     }
 
@@ -147,7 +165,7 @@ public class PlayerCombat : MonoBehaviour
         else if (selectedAugment == "AttackSpeed")
             attackSpeed -= 0.1f;
         else if (selectedAugment == "CritChance")
-            critChance += 5f;
+            critChance += 5;
         else if (selectedAugment == "CritDamage")
             critDamage += 15f;
         else if (selectedAugment == "Armor")

@@ -1,50 +1,32 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
-
 public class Enemy : MonoBehaviour
 {
     public EnemyData enemyData;
     public GameObject xpDrop;
-    private float enemyHealth;
+    public float enemyHealth;
     private float enemyDamage;
     public float enemySpeed;
     private Slider hpBar;
-    private WaveManager waveManager;
     public GameObject money1;
     private PlayerCombat playerCombat;
     private SpriteRenderer spriteRenderer;
-    private string enemyName;
-    public bool inExplosionRange;
-    public bool bossMonster = false;
-    private DeathBossScript deathBossScript;
-    private bool isDead;
-    public bool isMinion = false;
     private EnemyAI enemyAI;
 
-    
-    
 
     void Start()
     {
         playerCombat = FindFirstObjectByType<PlayerCombat>();
         spriteRenderer = GetComponent<SpriteRenderer>();
-        waveManager = FindFirstObjectByType<WaveManager>();
-        deathBossScript = FindFirstObjectByType<DeathBossScript>();
         enemyAI = GetComponent<EnemyAI>();
         enemyHealth = enemyData.health;
         enemyDamage = enemyData.damage;
-        enemyName = enemyData.mobName;
         enemySpeed = enemyData.speed;
-
         hpBar = GetComponentInChildren<Slider>();
+        if (hpBar != null) hpBar.value = 1f;
         hpBar.value = 1f;
-        if (enemyName == "DeathSummon")
-        {
-            isMinion = true;
-        }
     }
-
     private void Update()
     {
         float playerX = playerCombat.transform.position.x;
@@ -57,67 +39,59 @@ public class Enemy : MonoBehaviour
             spriteRenderer.flipX = false;
         }
 
-        
     }
-
     public void reduceHp(float damageTaken)
     {
-        if (bossMonster && isDead) return;
-        enemyHealth -= damageTaken;
-
-        if (enemyHealth <= 0 && bossMonster == false && isMinion == false)
+        if (enemyHealth <= 0) return;
+        int damageTakenInt = (int)Mathf.Round(damageTaken);
+        enemyHealth -= damageTakenInt;
+        if (enemyHealth <= 0)
         {
-            Instantiate(xpDrop, transform.position, Quaternion.identity);
-            GoldRandomizer();
-            enemyAI.currentState = EnemyState.Death;
+            if (enemyAI != null)
+            {
+                StartCoroutine("GoldAndExpRandomizer");
+            }
+            else
+            {
+                // Boss path — drop gold instantly, no coroutine
+                GoldRandomizerBoss();
+            }
         }
-        else if (enemyHealth <= 0 && bossMonster == true && enemyName == "DeathBoss")
-        {
-            isDead = true;
-            Debug.Log("death boss should die here");
-            deathBossScript.StopAllCoroutines();
-            deathBossScript.StartCoroutine("DeathBossDeath");
-        }
-        else if (enemyHealth <= 0 && isMinion == true)
-        {
-            
-            Destroy(gameObject);
-        }
-
-            hpBar.value = enemyHealth / enemyData.health;
+        if (hpBar != null) hpBar.value = enemyHealth / enemyData.health;
     }
-
-    private void GoldRandomizer()
+    IEnumerator GoldAndExpRandomizer()
     {
-        int goldRandomizer = (Random.Range(0, 101));
-        if (goldRandomizer < 10)
+        int goldChance = Random.Range(0, 101);
+        int xpRandomizer = Random.Range(0, 4);
+        int goldRandomizer = Random.Range(0, 6);
+        if (goldChance < 40)
         {
-            Instantiate(money1, new Vector3(transform.position.x+3, transform.position.y), Quaternion.identity);
+            for (int i = 0; i < goldRandomizer; i++)
+            {
+                int randomX = Random.Range(-5, 4);
+                int randomY = Random.Range(-5, 4);
+                Instantiate(money1, new Vector2(transform.position.x + randomX, transform.position.y + randomY), Quaternion.identity);
+                yield return new WaitForSeconds(.1f);
+            }
         }
+
+        for(int i =0; i < xpRandomizer; i++)
+        {
+            int randomX = Random.Range(-5, 4);
+            int randomY = Random.Range(-5, 4);
+            Instantiate(xpDrop, new Vector2(transform.position.x + randomX, transform.position.y + randomY), Quaternion.identity);
+            yield return new WaitForSeconds(.05f);
+        }
+        enemyAI.currentState = EnemyState.Death;
     }
-
-
-    IEnumerator MushroomExplode()
+    public void GoldRandomizerBoss()
     {
-        Color originalColor = spriteRenderer.color;
-
-        for (int i = 0; i < 4; i++)
+        int goldRandomizer = Random.Range(0, 6);
+        for (int i = 0; i < goldRandomizer; i++)
         {
-            spriteRenderer.color = Color.red;
-            yield return new WaitForSeconds(0.25f);
-            spriteRenderer.color = originalColor;
-            yield return new WaitForSeconds(0.25f);
+            int randomX = Random.Range(-5, 4);
+            int randomY = Random.Range(-5, 4);
+            Instantiate(money1, new Vector2(transform.position.x + randomX, transform.position.y + randomY), Quaternion.identity);
         }
-
-        if (inExplosionRange)
-        {
-            playerCombat.DamagePlayer();
-        }
-        GetComponent<Animator>().SetTrigger("Explode");
-        yield return new WaitForSeconds(0.5f);
-        Destroy(gameObject);
     }
-
 }
-
-
