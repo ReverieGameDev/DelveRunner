@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.InputSystem.Processors;
 using UnityEngine.UI;
 
 public class SkeletonArcher : MonoBehaviour
@@ -14,144 +16,177 @@ public class SkeletonArcher : MonoBehaviour
     public Sprite arrowShotIcon;
     public Sprite multiShotIcon;
     public Sprite arrowVolleyIcon;
-    public Sprite arrowRainIcon; 
+    public Sprite arrowRainIcon;
+    public GameObject arrowTrajectory;
     public float attackWindupTime;
-    private float attackSpeed = 1f;//placeholder, will actually grab skeleton's attack speed
-    private LineRenderer lineRenderer;
+    private float attackSpeed = 1f;
     private bool isIndicatorActive = false;
     private string currentAttack;
     private Vector2 archerToPlayerAngle;
     public float indicatorLength = 20f;
     private int multiShotCount = 0;
     public List<GameObject> arrowVolleyList = new List<GameObject>();
+    private List<GameObject> volleyIndicators = new List<GameObject>();
     public int arrowVolleyAmount = 5;
+    private GameObject currentIndicator;
+    private bool indicatorShown = false;
+    private Animator anim;
+    private EnemyAI enemyAI;
+    private Enemy enemy;
+    private bool isDead = false;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        lineRenderer = GetComponent<LineRenderer>();
-        lineRenderer.numCornerVertices = 0;
+        enemy = GetComponentInChildren<Enemy>();
+        anim = GetComponentInChildren<Animator>();
         enemyAttackIndicator = GetComponentInChildren<EnemyAttackIndicator>();
+        enemyAI = GetComponentInChildren<EnemyAI>();
         playerMovement = FindFirstObjectByType<PlayerMovement>();
-        attackList.Add("arrowShot");//single highspeed arrow
-        attackList.Add("arrowVolley");//literally ashe w from league
-        attackList.Add("multiShot");//shoots 3 times with a break between each
-        attackList.Add("arrowRain");//aoe circle around the player
-        
+        attackList.Add("arrowShot");
+        attackList.Add("arrowVolley");
+        attackList.Add("multiShot");
+        attackList.Add("arrowRain");
     }
 
-    // Update is called once per frame
     void FixedUpdate()
     {
-        
+        if (enemy.isDead && !isDead)
+        { 
+            enemy.isDead = true;
+            isDead = true;
+            DeathSequence();
+        }
         if (isReadyTofire)
         {
             isReadyTofire = false;
             StartCoroutine("SkeletonArcherAttackCycle");
         }
-        if (isIndicatorActive && currentAttack == "arrowShot")
+        if (currentAttack == "arrowShot")
         {
-            archerToPlayerAngle = new Vector2(playerMovement.transform.position.x - transform.position.x, playerMovement.transform.position.y - transform.position.y).normalized;
-            lineRenderer.SetPosition(0, transform.position);
-            lineRenderer.SetPosition(1, transform.position + (Vector3)archerToPlayerAngle * indicatorLength*3);
-            lineRenderer.startColor = Color.red;
-            lineRenderer.endColor = Color.green;
-            lineRenderer.startWidth = 1f;
-            lineRenderer.endWidth = 1f;
-        }
-        if (isIndicatorActive && currentAttack == "multiShot")
-        {
-            archerToPlayerAngle = new Vector2(playerMovement.transform.position.x - transform.position.x, playerMovement.transform.position.y - transform.position.y).normalized;
-            lineRenderer.SetPosition(0, transform.position);
-            lineRenderer.SetPosition(1, transform.position + (Vector3)archerToPlayerAngle * indicatorLength*3);
-            lineRenderer.startColor = Color.red;
-            lineRenderer.endColor = Color.green;
-            lineRenderer.startWidth = 1f;
-            lineRenderer.endWidth = 1f;
-        }
-        if (isIndicatorActive && currentAttack == "arrowVolley")
-        {
-            lineRenderer.SetPosition(0, transform.position);
-            for (int i = 0; i< arrowVolleyAmount; i++)
+            if (!indicatorShown)
             {
-                archerToPlayerAngle = new Vector2(playerMovement.transform.position.x - transform.position.x, playerMovement.transform.position.y - transform.position.y).normalized;
-                float arrowAngle = Mathf.Rad2Deg * Mathf.Atan2(archerToPlayerAngle.y, archerToPlayerAngle.x) + 30 - (15 * i);
-                arrowAngle = Mathf.Deg2Rad * arrowAngle;
-                archerToPlayerAngle = new Vector2(Mathf.Cos(arrowAngle), Mathf.Sin(arrowAngle));
-                lineRenderer.SetPosition(i * 2 + 1, transform.position + (Vector3)archerToPlayerAngle * indicatorLength*4);
-                lineRenderer.SetPosition(i * 2 + 2, transform.position);
-                lineRenderer.startColor = Color.red;
-                lineRenderer.endColor = Color.red;
-                lineRenderer.startWidth = 1f;
-                lineRenderer.endWidth = 1f;
+                indicatorShown = true;
+                currentIndicator = Instantiate(arrowTrajectory, transform.position, Quaternion.identity);
+                //currentIndicator.transform.localScale = new Vector3(0,3,0);
             }
+            currentIndicator.transform.position = transform.position;
+            archerToPlayerAngle = new Vector2(playerMovement.transform.position.x - transform.position.x, playerMovement.transform.position.y - transform.position.y);
+            float angle = Mathf.Rad2Deg*(Mathf.Atan2(archerToPlayerAngle.y, archerToPlayerAngle.x));
+            currentIndicator.transform.rotation = Quaternion.Euler(0, 0, angle-90);
         }
-        else if (!isIndicatorActive)
+        if (currentAttack == "arrowVolley")
         {
-            lineRenderer.enabled = false;
+            if (!indicatorShown)
+            {
+                indicatorShown = true;
+                for (int i = 0; i < arrowVolleyAmount; i++)
+                {
+                    int offset = 30 - (15 * i);
+                    archerToPlayerAngle = new Vector2(playerMovement.transform.position.x - transform.position.x, playerMovement.transform.position.y - transform.position.y);
+                    float angle = Mathf.Rad2Deg * (Mathf.Atan2(archerToPlayerAngle.y, archerToPlayerAngle.x));
+                    volleyIndicators.Add(Instantiate(arrowTrajectory, transform.position, Quaternion.Euler(0,0,angle-90 +offset)));
+                }
+
+            }
+            for (int i = 0; i < arrowVolleyAmount; i++)
+            {
+                int offset = 30 - (15 * i);
+                archerToPlayerAngle = new Vector2(playerMovement.transform.position.x - transform.position.x, playerMovement.transform.position.y - transform.position.y);
+                float angle = Mathf.Rad2Deg * (Mathf.Atan2(archerToPlayerAngle.y, archerToPlayerAngle.x));
+                volleyIndicators[i].transform.position = new Vector3(transform.position.x, transform.position.y);
+                volleyIndicators[i].transform.rotation = Quaternion.Euler(0, 0, angle - 90 + offset);
+            }
+
         }
+        if (currentAttack == "multiShot")
+        {
+            if (!indicatorShown)
+            {
+                indicatorShown = true;
+                currentIndicator = Instantiate(arrowTrajectory, transform.position, Quaternion.identity);
+                //currentIndicator.transform.localScale = new Vector3(0,3,0);
+            }
+            currentIndicator.transform.position = transform.position;
+            archerToPlayerAngle = new Vector2(playerMovement.transform.position.x - transform.position.x, playerMovement.transform.position.y - transform.position.y);
+            float angle = Mathf.Rad2Deg * (Mathf.Atan2(archerToPlayerAngle.y, archerToPlayerAngle.x));
+            currentIndicator.transform.rotation = Quaternion.Euler(0, 0, angle - 90);
+        }
+
+
     }
 
     public IEnumerator SkeletonArcherAttackCycle()
     {
         currentAttack = RandomSkeletonArcherAttack();
-        //first we send the icon and windup time to the enemyattackindicator and wait for the indicator to fill up
-        if (currentAttack == "arrowShot") 
+        if (currentAttack == "arrowShot")
         {
-            lineRenderer.enabled = true;
-            lineRenderer.positionCount = 2;
-            isIndicatorActive = true;
-            attackWindupTime = .75f; 
-            enemyAttackIndicator.SetIndicator(arrowShotIcon, attackWindupTime); 
-        
-        }
-        if (currentAttack == "arrowVolley") 
-            {
-            lineRenderer.enabled = true;
-            lineRenderer.positionCount = (arrowVolleyAmount*2)+1;
-            isIndicatorActive = true;
-            attackWindupTime = 2.5f; 
-                enemyAttackIndicator.SetIndicator(arrowVolleyIcon, attackWindupTime); 
-            }
-        if (currentAttack == "multiShot") 
-        {
-            lineRenderer.enabled = true;
-            lineRenderer.positionCount = 2;
             isIndicatorActive = true;
             attackWindupTime = 1.25f;
-            enemyAttackIndicator.SetIndicator(multiShotIcon, attackWindupTime); 
+            enemyAttackIndicator.SetIndicator(arrowShotIcon, attackWindupTime);
+            enemyAI.animOverride = true;
+            anim.SetInteger("ArcherInt", 2);
+            anim.speed = 2.5f;
+        }
+        if (currentAttack == "arrowVolley")
+        {
+            isIndicatorActive = true;
+            attackWindupTime = 2.5f;
+            enemyAttackIndicator.SetIndicator(arrowVolleyIcon, attackWindupTime);
+            enemyAI.animOverride = true;
+            anim.SetInteger("ArcherInt", 2);
+        }
+        if (currentAttack == "multiShot")
+        {
+            isIndicatorActive = true;
+            attackWindupTime = 1.25f;
+            enemyAttackIndicator.SetIndicator(multiShotIcon, attackWindupTime);
+            enemyAI.animOverride = true;
+            anim.SetInteger("ArcherInt", 2);
+            anim.speed = 2.5f;
         }
         if (currentAttack == "arrowRain") { attackWindupTime = .75f; enemyAttackIndicator.SetIndicator(arrowRainIcon, attackWindupTime); }
-        yield return new WaitForSeconds(attackWindupTime); //waiting for indicator to fill
-        //now we actually execute the attack
-        if (currentAttack == "arrowShot") { ArrowShot(); }
-        if (currentAttack == "arrowVolley") { ArrowVolley(); }
-        if (currentAttack == "multiShot") { MultiShot(); }
-        if (currentAttack == "arrowRain") { ArrowRain(); }
-        yield return new WaitForSeconds(attackSpeed);//after exectuing the attack we put the skeleton's next attack on cooldown
-        
-        isReadyTofire = true;//then we fire again.
+        yield return new WaitForSeconds(attackWindupTime);
+        if (currentAttack == "arrowShot") { StartCoroutine("ArrowShot"); }
+        if (currentAttack == "arrowVolley") {StartCoroutine("ArrowVolley"); }
+        if (currentAttack == "multiShot") {StartCoroutine("MultiShot"); }
+        if (currentAttack == "arrowRain") {StartCoroutine("ArrowRain"); }
+        yield return new WaitForSeconds(attackSpeed);
+        isReadyTofire = true;
     }
 
     public string RandomSkeletonArcherAttack()
     {
-
-        int randomAttack = Random.Range(0, attackList.Count-1);
+        int randomAttack = UnityEngine.Random.Range(0, attackList.Count - 1);
         string currentAttack;
         return currentAttack = attackList[randomAttack];
     }
 
-
-
-    private void ArrowShot() 
+    IEnumerator ArrowShot()
     {
+        ResumeShot();
+        currentAttack = "";
+        indicatorShown = false;
+        Destroy(currentIndicator);
         isIndicatorActive = false;
-        
         GameObject spawnedArrow = Instantiate(arrow, transform.position, Quaternion.identity);
-        spawnedArrow.GetComponent<ArrowBehaviour>().AttackName("arrowShot",0);
+        spawnedArrow.GetComponent<ArrowBehaviour>().AttackName("arrowShot", 0);
+        enemyAI.animOverride = false;
+        anim.speed = 1f;
+        return null;
     }
-    private void ArrowVolley()
+    IEnumerator ArrowVolley()
     {
+        currentAttack = "";
+        ResumeShot();
+        for (int i = 0; i < arrowVolleyAmount; i++)
+        {
+            Destroy(volleyIndicators[i]);
+        }
+        volleyIndicators.Clear();
+        
+        
+        indicatorShown = false;
+        Destroy(currentIndicator);
         arrowVolleyList.Clear();
         isIndicatorActive = false;
         for (int i = 0; i < arrowVolleyAmount; i++)
@@ -160,39 +195,76 @@ public class SkeletonArcher : MonoBehaviour
             GameObject spawnedArrow = Instantiate(arrow, transform.position, Quaternion.identity);
             spawnedArrow.GetComponent<ArrowBehaviour>().AttackName("arrowVolley", offset);
             arrowVolleyList.Add(spawnedArrow);
-            
         }
+        enemyAI.animOverride = false;
+        anim.speed = 1f;
+        return null;
     }
-    private void MultiShot()
+    IEnumerator MultiShot()
     {
+        ResumeShot();
+        currentAttack = "";
+        indicatorShown = false;
+        Destroy(currentIndicator);
         isIndicatorActive = false;
         GameObject spawnedArrow = Instantiate(arrow, transform.position, Quaternion.identity);
-        spawnedArrow.GetComponent<ArrowBehaviour>().AttackName("arrowShot",0);
+        spawnedArrow.GetComponent<ArrowBehaviour>().AttackName("arrowShot", 0);
         multiShotCount++;
         StartCoroutine("MultiShotDelay");
+        enemyAI.animOverride = false;
+        anim.speed = 1f;
+        return null;
     }
-    private void ArrowRain()
+    IEnumerator ArrowRain()
     {
-
+        return null;
     }
 
     IEnumerator MultiShotDelay()
     {
+        
         multiShotCount++;
         yield return new WaitForSeconds(.3f);
         GameObject spawnedArrow = Instantiate(arrow, transform.position, Quaternion.identity);
-        spawnedArrow.GetComponent<ArrowBehaviour>().AttackName("arrowShot",0);
+        spawnedArrow.GetComponent<ArrowBehaviour>().AttackName("arrowShot", 0);
         if (multiShotCount < 3)
         {
-            
             StartCoroutine("MultiShotDelay");
         }
-        else if(multiShotCount >= 3)
+        else if (multiShotCount >= 3)
         {
-            lineRenderer.enabled = false;
             isIndicatorActive = false;
             multiShotCount = 0;
             StopCoroutine("MultiShotDelay");
         }
+    }
+    public void DeathSequence()
+    {
+        currentAttack = "";
+        enemyAI.animOverride = true;
+        isReadyTofire = false;
+        for (int i = 0; i < volleyIndicators.Count; i++)
+        {
+            Destroy(volleyIndicators[i]);
+        }
+        anim.speed = 1f;
+        anim.SetInteger("ArcherInt", 3);
+        Destroy(currentIndicator);
+        arrowVolleyList.Clear();
+        GetComponent<Collider2D>().enabled = false;
+        StopAllCoroutines();
+        
+    }
+    public void DestroyArcher()
+    {
+        Destroy(gameObject);
+    }
+    public void PauseKnock()
+    {
+        anim.speed = 0f;
+    }
+    public void ResumeShot()
+    {
+        anim.speed = 1f;
     }
 }

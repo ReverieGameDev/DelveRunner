@@ -175,7 +175,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -189,7 +189,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 18
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -210,10 +210,10 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 16384
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -254,10 +254,10 @@ TextureImporter:
       name: spr_NecromancerAttackWithoutEffect_strip47_0
       rect:
         serializedVersion: 2
-        x: 53
-        y: 47
-        width: 30
-        height: 51
+        x: 0
+        y: 0
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -276,10 +276,10 @@ TextureImporter:
       name: spr_NecromancerAttackWithoutEffect_strip47_1
       rect:
         serializedVersion: 2
-        x: 181
-        y: 47
-        width: 30
-        height: 51
+        x: 128
+        y: 0
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -298,10 +298,10 @@ TextureImporter:
       name: spr_NecromancerAttackWithoutEffect_strip47_2
       rect:
         serializedVersion: 2
-        x: 310
-        y: 47
-        width: 29
-        height: 51
+        x: 256
+        y: 0
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -320,10 +320,10 @@ TextureImporter:
       name: spr_NecromancerAttackWithoutEffect_strip47_3
       rect:
         serializedVersion: 2
-        x: 438
-        y: 47
-        width: 29
-        height: 51
+        x: 384
+        y: 0
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -342,10 +342,10 @@ TextureImporter:
       name: spr_NecromancerAttackWithoutEffect_strip47_4
       rect:
         serializedVersion: 2
-        x: 566
-        y: 47
-        width: 29
-        height: 51
+        x: 512
+        y: 0
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -364,10 +364,10 @@ TextureImporter:
       name: spr_NecromancerAttackWithoutEffect_strip47_5
       rect:
         serializedVersion: 2
-        x: 694
-        y: 47
-        width: 29
-        height: 51
+        x: 640
+        y: 0
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -386,10 +386,10 @@ TextureImporter:
       name: spr_NecromancerAttackWithoutEffect_strip47_6
       rect:
         serializedVersion: 2
-        x: 822
-        y: 47
-        width: 29
-        height: 51
+        x: 768
+        y: 0
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -408,10 +408,10 @@ TextureImporter:
       name: spr_NecromancerAttackWithoutEffect_strip47_7
       rect:
         serializedVersion: 2
-        x: 950
-        y: 47
-        width: 29
-        height: 51
+        x: 896
+        y: 0
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -430,10 +430,10 @@ TextureImporter:
       name: spr_NecromancerAttackWithoutEffect_strip47_8
       rect:
         serializedVersion: 2
-        x: 1078
-        y: 47
-        width: 29
-        height: 51
+        x: 1024
+        y: 0
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -452,10 +452,10 @@ TextureImporter:
       name: spr_NecromancerAttackWithoutEffect_strip47_9
       rect:
         serializedVersion: 2
-        x: 1206
-        y: 47
-        width: 29
-        height: 51
+        x: 1152
+        y: 0
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -474,10 +474,10 @@ TextureImporter:
       name: spr_NecromancerAttackWithoutEffect_strip47_10
       rect:
         serializedVersion: 2
-        x: 1334
-        y: 47
-        width: 29
-        height: 51
+        x: 1280
+        y: 0
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -496,10 +496,10 @@ TextureImporter:
       name: spr_NecromancerAttackWithoutEffect_strip47_11
       rect:
         serializedVersion: 2
-        x: 1462
-        y: 47
-        width: 29
-        height: 51
+        x: 1408
+        y: 0
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -518,10 +518,10 @@ TextureImporter:
       name: spr_NecromancerAttackWithoutEffect_strip47_12
       rect:
         serializedVersion: 2
-        x: 1590
-        y: 47
-        width: 29
-        height: 51
+        x: 1536
+        y: 0
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -540,10 +540,10 @@ TextureImporter:
       name: spr_NecromancerAttackWithoutEffect_strip47_13
       rect:
         serializedVersion: 2
-        x: 1716
-        y: 47
-        width: 30
-        height: 51
+        x: 1664
+        y: 0
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -562,10 +562,10 @@ TextureImporter:
       name: spr_NecromancerAttackWithoutEffect_strip47_14
       rect:
         serializedVersion: 2
-        x: 1840
-        y: 47
-        width: 32
-        height: 51
+        x: 1792
+        y: 0
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -584,10 +584,10 @@ TextureImporter:
       name: spr_NecromancerAttackWithoutEffect_strip47_15
       rect:
         serializedVersion: 2
-        x: 1968
-        y: 47
-        width: 32
-        height: 51
+        x: 1920
+        y: 0
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -606,10 +606,10 @@ TextureImporter:
       name: spr_NecromancerAttackWithoutEffect_strip47_16
       rect:
         serializedVersion: 2
-        x: 2096
-        y: 47
-        width: 32
-        height: 51
+        x: 2048
+        y: 0
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -628,10 +628,10 @@ TextureImporter:
       name: spr_NecromancerAttackWithoutEffect_strip47_17
       rect:
         serializedVersion: 2
-        x: 2224
-        y: 47
-        width: 32
-        height: 51
+        x: 2176
+        y: 0
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -650,10 +650,10 @@ TextureImporter:
       name: spr_NecromancerAttackWithoutEffect_strip47_18
       rect:
         serializedVersion: 2
-        x: 2352
-        y: 47
-        width: 32
-        height: 51
+        x: 2304
+        y: 0
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -672,10 +672,10 @@ TextureImporter:
       name: spr_NecromancerAttackWithoutEffect_strip47_19
       rect:
         serializedVersion: 2
-        x: 2480
-        y: 47
-        width: 32
-        height: 51
+        x: 2432
+        y: 0
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -694,10 +694,10 @@ TextureImporter:
       name: spr_NecromancerAttackWithoutEffect_strip47_20
       rect:
         serializedVersion: 2
-        x: 2608
-        y: 47
-        width: 32
-        height: 51
+        x: 2560
+        y: 0
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -716,10 +716,10 @@ TextureImporter:
       name: spr_NecromancerAttackWithoutEffect_strip47_21
       rect:
         serializedVersion: 2
-        x: 2736
-        y: 47
-        width: 32
-        height: 51
+        x: 2688
+        y: 0
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -738,10 +738,10 @@ TextureImporter:
       name: spr_NecromancerAttackWithoutEffect_strip47_22
       rect:
         serializedVersion: 2
-        x: 2864
-        y: 47
-        width: 32
-        height: 51
+        x: 2816
+        y: 0
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -760,10 +760,10 @@ TextureImporter:
       name: spr_NecromancerAttackWithoutEffect_strip47_23
       rect:
         serializedVersion: 2
-        x: 2992
-        y: 47
-        width: 32
-        height: 53
+        x: 2944
+        y: 0
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -782,10 +782,10 @@ TextureImporter:
       name: spr_NecromancerAttackWithoutEffect_strip47_24
       rect:
         serializedVersion: 2
-        x: 3120
-        y: 47
-        width: 32
-        height: 59
+        x: 3072
+        y: 0
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -804,10 +804,10 @@ TextureImporter:
       name: spr_NecromancerAttackWithoutEffect_strip47_25
       rect:
         serializedVersion: 2
-        x: 3248
-        y: 47
-        width: 32
-        height: 63
+        x: 3200
+        y: 0
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -826,10 +826,10 @@ TextureImporter:
       name: spr_NecromancerAttackWithoutEffect_strip47_26
       rect:
         serializedVersion: 2
-        x: 3376
-        y: 47
-        width: 32
-        height: 63
+        x: 3328
+        y: 0
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -848,10 +848,10 @@ TextureImporter:
       name: spr_NecromancerAttackWithoutEffect_strip47_27
       rect:
         serializedVersion: 2
-        x: 3504
-        y: 47
-        width: 32
-        height: 63
+        x: 3456
+        y: 0
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -870,10 +870,10 @@ TextureImporter:
       name: spr_NecromancerAttackWithoutEffect_strip47_28
       rect:
         serializedVersion: 2
-        x: 3632
-        y: 47
-        width: 32
-        height: 63
+        x: 3584
+        y: 0
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -892,10 +892,10 @@ TextureImporter:
       name: spr_NecromancerAttackWithoutEffect_strip47_29
       rect:
         serializedVersion: 2
-        x: 3760
-        y: 47
-        width: 32
-        height: 63
+        x: 3712
+        y: 0
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -914,10 +914,10 @@ TextureImporter:
       name: spr_NecromancerAttackWithoutEffect_strip47_30
       rect:
         serializedVersion: 2
-        x: 3888
-        y: 47
-        width: 32
-        height: 61
+        x: 3840
+        y: 0
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -936,10 +936,10 @@ TextureImporter:
       name: spr_NecromancerAttackWithoutEffect_strip47_31
       rect:
         serializedVersion: 2
-        x: 4016
-        y: 47
-        width: 32
-        height: 49
+        x: 3968
+        y: 0
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -958,10 +958,10 @@ TextureImporter:
       name: spr_NecromancerAttackWithoutEffect_strip47_32
       rect:
         serializedVersion: 2
-        x: 4144
-        y: 47
-        width: 32
-        height: 50
+        x: 4096
+        y: 0
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -980,10 +980,10 @@ TextureImporter:
       name: spr_NecromancerAttackWithoutEffect_strip47_33
       rect:
         serializedVersion: 2
-        x: 4272
-        y: 47
-        width: 32
-        height: 51
+        x: 4224
+        y: 0
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1002,10 +1002,10 @@ TextureImporter:
       name: spr_NecromancerAttackWithoutEffect_strip47_34
       rect:
         serializedVersion: 2
-        x: 4400
-        y: 47
-        width: 32
-        height: 51
+        x: 4352
+        y: 0
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1024,10 +1024,10 @@ TextureImporter:
       name: spr_NecromancerAttackWithoutEffect_strip47_35
       rect:
         serializedVersion: 2
-        x: 4528
-        y: 47
-        width: 32
-        height: 51
+        x: 4480
+        y: 0
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1046,10 +1046,10 @@ TextureImporter:
       name: spr_NecromancerAttackWithoutEffect_strip47_36
       rect:
         serializedVersion: 2
-        x: 4656
-        y: 47
-        width: 32
-        height: 51
+        x: 4608
+        y: 0
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1068,10 +1068,10 @@ TextureImporter:
       name: spr_NecromancerAttackWithoutEffect_strip47_37
       rect:
         serializedVersion: 2
-        x: 4784
-        y: 47
-        width: 32
-        height: 51
+        x: 4736
+        y: 0
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1090,10 +1090,10 @@ TextureImporter:
       name: spr_NecromancerAttackWithoutEffect_strip47_38
       rect:
         serializedVersion: 2
-        x: 4912
-        y: 47
-        width: 32
-        height: 51
+        x: 4864
+        y: 0
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1112,10 +1112,10 @@ TextureImporter:
       name: spr_NecromancerAttackWithoutEffect_strip47_39
       rect:
         serializedVersion: 2
-        x: 5040
-        y: 47
-        width: 32
-        height: 51
+        x: 4992
+        y: 0
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1134,10 +1134,10 @@ TextureImporter:
       name: spr_NecromancerAttackWithoutEffect_strip47_40
       rect:
         serializedVersion: 2
-        x: 5168
-        y: 47
-        width: 32
-        height: 51
+        x: 5120
+        y: 0
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1156,10 +1156,10 @@ TextureImporter:
       name: spr_NecromancerAttackWithoutEffect_strip47_41
       rect:
         serializedVersion: 2
-        x: 5296
-        y: 47
-        width: 32
-        height: 51
+        x: 5248
+        y: 0
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1178,10 +1178,10 @@ TextureImporter:
       name: spr_NecromancerAttackWithoutEffect_strip47_42
       rect:
         serializedVersion: 2
-        x: 5424
-        y: 47
-        width: 32
-        height: 51
+        x: 5376
+        y: 0
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1200,10 +1200,10 @@ TextureImporter:
       name: spr_NecromancerAttackWithoutEffect_strip47_43
       rect:
         serializedVersion: 2
-        x: 5552
-        y: 47
-        width: 32
-        height: 51
+        x: 5504
+        y: 0
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1222,10 +1222,10 @@ TextureImporter:
       name: spr_NecromancerAttackWithoutEffect_strip47_44
       rect:
         serializedVersion: 2
-        x: 5680
-        y: 47
-        width: 32
-        height: 51
+        x: 5632
+        y: 0
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1244,10 +1244,10 @@ TextureImporter:
       name: spr_NecromancerAttackWithoutEffect_strip47_45
       rect:
         serializedVersion: 2
-        x: 5808
-        y: 47
-        width: 32
-        height: 51
+        x: 5760
+        y: 0
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1266,10 +1266,10 @@ TextureImporter:
       name: spr_NecromancerAttackWithoutEffect_strip47_46
       rect:
         serializedVersion: 2
-        x: 5936
-        y: 47
-        width: 32
-        height: 51
+        x: 5888
+        y: 0
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1288,7 +1288,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: df33eb7b9429ae64bb985981435927d8
     internalID: 0
     vertices: []
     indices: 

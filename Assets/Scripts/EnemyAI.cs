@@ -3,7 +3,6 @@ using UnityEngine;
 
 public class EnemyAI : MonoBehaviour
 {
-
     public EnemyState currentState;
     private Transform player;
     private Rigidbody2D rb;
@@ -11,21 +10,13 @@ public class EnemyAI : MonoBehaviour
     private SpawnManager spawnManager;
     public GameObject assignedSpawnAnchor;
     public EnemyRoles role;
-
-    // Offset and rotation
-    private Vector2 positionOffset;
-    private Vector2 originalOffset;
-    private float offsetDistance;
-    private float initialAngle;
+    private Animator anim;
+    public bool animOverride = false;
 
     // Movement helpers
     private Vector2 anchorPlayerAngle;
-    private Vector2 currentPos;
     private Vector2 anchorPos;
-    private Vector2 anchorDirection;
-    private Vector2 targetPos;
-    private float targetAngle;
-    
+    private float initialAngle;
 
     // Retreat
     private Vector2 directionToRetreat;
@@ -36,7 +27,6 @@ public class EnemyAI : MonoBehaviour
     // Ring formation
     private int originalRingIndex;
     private int currentRingIndex;
-    private int stepsToMove = 0;
     private int positionInRingOrder;
     private bool isCenter = false;
     private Vector2[] ringOrder = {
@@ -52,26 +42,24 @@ public class EnemyAI : MonoBehaviour
 
     void Start()
     {
+        anim = GetComponent<Animator>();
         spawnManager = FindFirstObjectByType<SpawnManager>();
         rb = GetComponent<Rigidbody2D>();
         player = GameObject.FindWithTag("Player").transform;
         currentState = EnemyState.Attack;
         anchorPos = assignedSpawnAnchor.transform.position;
 
-        // Figure out which ring slot this enemy spawned in
         Vector2 spawnOffset = new Vector2(
             Mathf.Round(transform.position.x - anchorPos.x),
             Mathf.Round(transform.position.y - anchorPos.y)
         );
 
-        // Check if this enemy is in the center (like the archer)
         if (spawnOffset == Vector2.zero)
         {
             isCenter = true;
         }
         else
         {
-            // Find matching ring position
             for (int i = 0; i < ringOrder.Length; i++)
             {
                 if (spawnOffset == ringOrder[i])
@@ -83,7 +71,6 @@ public class EnemyAI : MonoBehaviour
         }
         originalRingIndex = positionInRingOrder;
         currentRingIndex = positionInRingOrder;
-        // Save starting angle from anchor to player
         Vector2 toPlayer = (Vector2)player.position - anchorPos;
         initialAngle = Mathf.Atan2(toPlayer.y, toPlayer.x);
     }
@@ -93,7 +80,6 @@ public class EnemyAI : MonoBehaviour
         anchorPos = assignedSpawnAnchor.transform.position;
         anchorPlayerAngle = ((Vector2)player.position - anchorPos).normalized;
 
-        // State machine
         switch (currentState)
         {
             case EnemyState.Attack:
@@ -116,17 +102,14 @@ public class EnemyAI : MonoBehaviour
             }
             else
             {
-                // Where SHOULD this enemy be based on player angle?
                 float currentAngle = Mathf.Atan2(anchorPlayerAngle.y, anchorPlayerAngle.x);
                 float angleDiff = Mathf.DeltaAngle(initialAngle * Mathf.Rad2Deg, currentAngle * Mathf.Rad2Deg);
                 int rotationSteps = Mathf.RoundToInt(angleDiff / 45f);
                 int targetRingIndex = ((originalRingIndex - rotationSteps) % 8 + 8) % 8;
 
-                // Walk toward current ring slot
                 targetPos = anchorPos + ringOrder[currentRingIndex];
 
-                // When arrived, step one slot closer around the ring
-                if (Vector2.Distance((Vector2)transform.position, targetPos) < 0.25f && currentRingIndex != targetRingIndex)
+                if (Vector2.Distance((Vector2)transform.position, targetPos) < 0.5f && currentRingIndex != targetRingIndex)
                 {
                     int diff = (targetRingIndex - currentRingIndex + 8) % 8;
                     if (diff <= 4)
@@ -136,14 +119,37 @@ public class EnemyAI : MonoBehaviour
                 }
             }
 
-            if (Vector2.Distance((Vector2)transform.position, targetPos) >= 0.25f)
+            if (Vector2.Distance((Vector2)transform.position, targetPos) >= 0.5f)
             {
                 Vector2 direction = (targetPos - (Vector2)transform.position).normalized;
-                transform.position = ((Vector2)transform.position + direction * speed * Time.fixedDeltaTime);
+                transform.position = (Vector2)transform.position + direction * speed * Time.fixedDeltaTime;
+                SetWalkAnim(1);
+            }
+            else
+            {
+                transform.position = (Vector3)targetPos;
+                SetWalkAnim(0);
             }
         }
     }
 
+    private void SetWalkAnim(int value)
+    {
+        if (animOverride) return;
+
+        switch (role)
+        {
+            case EnemyRoles.Archer:
+                anim.SetInteger("ArcherInt", value);
+                break;
+            case EnemyRoles.Warrior:
+                anim.SetInteger("WarriorInt", value);
+                break;
+            case EnemyRoles.Summoner:
+                anim.SetInteger("NecromancerInt", value);
+                break;
+        }
+    }
 
     private void Attack()
     {
@@ -166,11 +172,12 @@ public class EnemyAI : MonoBehaviour
 
     private void Death()
     {
-        Destroy(gameObject);
+        speed = 0;
     }
 
     private void Retreat()
     {
+        SetWalkAnim(1);
         if (hasStartedRetreating == false)
         {
             retreatStartPos = transform.position;
@@ -184,4 +191,6 @@ public class EnemyAI : MonoBehaviour
             hasStartedRetreating = false;
         }
     }
+
+   
 }

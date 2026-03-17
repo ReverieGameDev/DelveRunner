@@ -148,7 +148,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -162,7 +162,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 12
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -183,10 +183,10 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 16384
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -227,10 +227,10 @@ TextureImporter:
       name: spr_WarriorAttack_strip33_0
       rect:
         serializedVersion: 2
-        x: 28
-        y: 31
-        width: 39
-        height: 34
+        x: 0
+        y: 0
+        width: 96
+        height: 96
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -249,10 +249,10 @@ TextureImporter:
       name: spr_WarriorAttack_strip33_1
       rect:
         serializedVersion: 2
-        x: 124
-        y: 31
-        width: 36
-        height: 34
+        x: 96
+        y: 0
+        width: 96
+        height: 96
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -271,10 +271,10 @@ TextureImporter:
       name: spr_WarriorAttack_strip33_2
       rect:
         serializedVersion: 2
-        x: 219
-        y: 31
-        width: 31
-        height: 33
+        x: 192
+        y: 0
+        width: 96
+        height: 96
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -293,10 +293,10 @@ TextureImporter:
       name: spr_WarriorAttack_strip33_3
       rect:
         serializedVersion: 2
-        x: 312
-        y: 31
-        width: 31
-        height: 30
+        x: 288
+        y: 0
+        width: 96
+        height: 96
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -315,10 +315,10 @@ TextureImporter:
       name: spr_WarriorAttack_strip33_4
       rect:
         serializedVersion: 2
-        x: 407
-        y: 31
-        width: 32
-        height: 30
+        x: 384
+        y: 0
+        width: 96
+        height: 96
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -337,10 +337,10 @@ TextureImporter:
       name: spr_WarriorAttack_strip33_5
       rect:
         serializedVersion: 2
-        x: 502
-        y: 31
-        width: 33
-        height: 30
+        x: 480
+        y: 0
+        width: 96
+        height: 96
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -359,10 +359,10 @@ TextureImporter:
       name: spr_WarriorAttack_strip33_6
       rect:
         serializedVersion: 2
-        x: 598
-        y: 31
-        width: 33
-        height: 30
+        x: 576
+        y: 0
+        width: 96
+        height: 96
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -381,10 +381,10 @@ TextureImporter:
       name: spr_WarriorAttack_strip33_7
       rect:
         serializedVersion: 2
-        x: 694
-        y: 31
-        width: 33
-        height: 30
+        x: 672
+        y: 0
+        width: 96
+        height: 96
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -403,10 +403,10 @@ TextureImporter:
       name: spr_WarriorAttack_strip33_8
       rect:
         serializedVersion: 2
-        x: 790
-        y: 31
-        width: 33
-        height: 30
+        x: 768
+        y: 0
+        width: 96
+        height: 96
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -425,10 +425,10 @@ TextureImporter:
       name: spr_WarriorAttack_strip33_9
       rect:
         serializedVersion: 2
-        x: 889
-        y: 31
-        width: 34
-        height: 30
+        x: 864
+        y: 0
+        width: 96
+        height: 96
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -447,10 +447,10 @@ TextureImporter:
       name: spr_WarriorAttack_strip33_10
       rect:
         serializedVersion: 2
-        x: 986
-        y: 31
-        width: 41
-        height: 29
+        x: 960
+        y: 0
+        width: 96
+        height: 96
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -469,10 +469,10 @@ TextureImporter:
       name: spr_WarriorAttack_strip33_11
       rect:
         serializedVersion: 2
-        x: 1083
-        y: 31
-        width: 51
-        height: 33
+        x: 1056
+        y: 0
+        width: 96
+        height: 96
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -491,10 +491,10 @@ TextureImporter:
       name: spr_WarriorAttack_strip33_12
       rect:
         serializedVersion: 2
-        x: 1173
-        y: 31
-        width: 61
-        height: 35
+        x: 1152
+        y: 0
+        width: 96
+        height: 96
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -513,10 +513,10 @@ TextureImporter:
       name: spr_WarriorAttack_strip33_13
       rect:
         serializedVersion: 2
-        x: 1269
-        y: 31
-        width: 61
-        height: 35
+        x: 1248
+        y: 0
+        width: 96
+        height: 96
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -535,10 +535,10 @@ TextureImporter:
       name: spr_WarriorAttack_strip33_14
       rect:
         serializedVersion: 2
-        x: 1374
-        y: 31
-        width: 33
-        height: 33
+        x: 1344
+        y: 0
+        width: 96
+        height: 96
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -557,10 +557,10 @@ TextureImporter:
       name: spr_WarriorAttack_strip33_15
       rect:
         serializedVersion: 2
-        x: 1381
-        y: 40
-        width: 45
-        height: 26
+        x: 1440
+        y: 0
+        width: 96
+        height: 96
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -579,10 +579,10 @@ TextureImporter:
       name: spr_WarriorAttack_strip33_16
       rect:
         serializedVersion: 2
-        x: 1476
-        y: 31
-        width: 27
-        height: 31
+        x: 1536
+        y: 0
+        width: 96
+        height: 96
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -601,10 +601,10 @@ TextureImporter:
       name: spr_WarriorAttack_strip33_17
       rect:
         serializedVersion: 2
-        x: 1482
-        y: 42
-        width: 40
-        height: 24
+        x: 1632
+        y: 0
+        width: 96
+        height: 96
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -623,10 +623,10 @@ TextureImporter:
       name: spr_WarriorAttack_strip33_18
       rect:
         serializedVersion: 2
-        x: 1572
-        y: 31
-        width: 27
-        height: 31
+        x: 1728
+        y: 0
+        width: 96
+        height: 96
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -645,10 +645,10 @@ TextureImporter:
       name: spr_WarriorAttack_strip33_19
       rect:
         serializedVersion: 2
-        x: 1668
-        y: 31
-        width: 26
-        height: 33
+        x: 1824
+        y: 0
+        width: 96
+        height: 96
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -667,10 +667,10 @@ TextureImporter:
       name: spr_WarriorAttack_strip33_20
       rect:
         serializedVersion: 2
-        x: 1764
-        y: 31
-        width: 24
-        height: 38
+        x: 1920
+        y: 0
+        width: 96
+        height: 96
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -689,10 +689,10 @@ TextureImporter:
       name: spr_WarriorAttack_strip33_21
       rect:
         serializedVersion: 2
-        x: 1860
-        y: 31
-        width: 22
-        height: 40
+        x: 2016
+        y: 0
+        width: 96
+        height: 96
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -711,10 +711,10 @@ TextureImporter:
       name: spr_WarriorAttack_strip33_22
       rect:
         serializedVersion: 2
-        x: 1956
-        y: 31
-        width: 22
-        height: 40
+        x: 2112
+        y: 0
+        width: 96
+        height: 96
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -733,10 +733,10 @@ TextureImporter:
       name: spr_WarriorAttack_strip33_23
       rect:
         serializedVersion: 2
-        x: 2052
-        y: 31
-        width: 22
-        height: 40
+        x: 2208
+        y: 0
+        width: 96
+        height: 96
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -755,10 +755,10 @@ TextureImporter:
       name: spr_WarriorAttack_strip33_24
       rect:
         serializedVersion: 2
-        x: 2148
-        y: 31
-        width: 22
-        height: 40
+        x: 2304
+        y: 0
+        width: 96
+        height: 96
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -777,10 +777,10 @@ TextureImporter:
       name: spr_WarriorAttack_strip33_25
       rect:
         serializedVersion: 2
-        x: 2244
-        y: 31
-        width: 24
-        height: 39
+        x: 2400
+        y: 0
+        width: 96
+        height: 96
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -799,10 +799,10 @@ TextureImporter:
       name: spr_WarriorAttack_strip33_26
       rect:
         serializedVersion: 2
-        x: 2340
-        y: 31
-        width: 25
-        height: 40
+        x: 2496
+        y: 0
+        width: 96
+        height: 96
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -821,10 +821,10 @@ TextureImporter:
       name: spr_WarriorAttack_strip33_27
       rect:
         serializedVersion: 2
-        x: 2436
-        y: 31
-        width: 42
-        height: 44
+        x: 2592
+        y: 0
+        width: 96
+        height: 96
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -843,10 +843,10 @@ TextureImporter:
       name: spr_WarriorAttack_strip33_28
       rect:
         serializedVersion: 2
-        x: 2532
-        y: 31
-        width: 46
-        height: 41
+        x: 2688
+        y: 0
+        width: 96
+        height: 96
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -865,10 +865,10 @@ TextureImporter:
       name: spr_WarriorAttack_strip33_29
       rect:
         serializedVersion: 2
-        x: 2628
-        y: 31
-        width: 33
-        height: 29
+        x: 2784
+        y: 0
+        width: 96
+        height: 96
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -887,10 +887,10 @@ TextureImporter:
       name: spr_WarriorAttack_strip33_30
       rect:
         serializedVersion: 2
-        x: 2662
-        y: 40
-        width: 16
-        height: 16
+        x: 2880
+        y: 0
+        width: 96
+        height: 96
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -909,10 +909,10 @@ TextureImporter:
       name: spr_WarriorAttack_strip33_31
       rect:
         serializedVersion: 2
-        x: 2724
-        y: 31
-        width: 30
-        height: 29
+        x: 2976
+        y: 0
+        width: 96
+        height: 96
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -931,10 +931,10 @@ TextureImporter:
       name: spr_WarriorAttack_strip33_32
       rect:
         serializedVersion: 2
-        x: 2761
-        y: 43
-        width: 15
-        height: 15
+        x: 3072
+        y: 0
+        width: 96
+        height: 96
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -949,121 +949,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: spr_WarriorAttack_strip33_33
-      rect:
-        serializedVersion: 2
-        x: 2820
-        y: 31
-        width: 30
-        height: 29
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: c1269ce3fce9dd920800000000000000
-      internalID: 3016741938356904476
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: spr_WarriorAttack_strip33_34
-      rect:
-        serializedVersion: 2
-        x: 2860
-        y: 46
-        width: 13
-        height: 13
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: c4a1748828e5e3c60800000000000000
-      internalID: 7799775519377398348
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: spr_WarriorAttack_strip33_35
-      rect:
-        serializedVersion: 2
-        x: 2916
-        y: 31
-        width: 54
-        height: 29
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 6c5bf11576bbe1e60800000000000000
-      internalID: 7934985645890450886
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: spr_WarriorAttack_strip33_36
-      rect:
-        serializedVersion: 2
-        x: 3012
-        y: 31
-        width: 53
-        height: 29
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e6c95a764958cb560800000000000000
-      internalID: 7330881165892885614
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: spr_WarriorAttack_strip33_37
-      rect:
-        serializedVersion: 2
-        x: 3108
-        y: 31
-        width: 30
-        height: 29
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: f9b2702cbe9f8d9f0800000000000000
-      internalID: -443329772328113249
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: e9b405a04eb335d4abc87a0a5876eafc
     internalID: 0
     vertices: []
     indices: 
@@ -1100,11 +990,6 @@ TextureImporter:
       spr_WarriorAttack_strip33_30: 5329595462567972611
       spr_WarriorAttack_strip33_31: -7391027866727416694
       spr_WarriorAttack_strip33_32: 7719792602455901231
-      spr_WarriorAttack_strip33_33: 3016741938356904476
-      spr_WarriorAttack_strip33_34: 7799775519377398348
-      spr_WarriorAttack_strip33_35: 7934985645890450886
-      spr_WarriorAttack_strip33_36: 7330881165892885614
-      spr_WarriorAttack_strip33_37: -443329772328113249
       spr_WarriorAttack_strip33_4: 7652083200952927405
       spr_WarriorAttack_strip33_5: -5088058003222253389
       spr_WarriorAttack_strip33_6: 8436458757712450056

@@ -1,8 +1,5 @@
-using NUnit.Framework;
 using System.Collections;
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class TankSkeleton : MonoBehaviour
@@ -35,9 +32,14 @@ public class TankSkeleton : MonoBehaviour
     private Vector2 playerPosStartCharge;
     private float chargeSpeed = 10f;
     private Vector2 chargeStartPos;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    private Animator anim;
+    private Enemy enemy;
+    private bool isDead = false;
+
     void Start()
     {
+        enemy = GetComponentInChildren<Enemy>();
+        anim = GetComponentInChildren<Animator>();
         rb = GetComponent<Rigidbody2D>();
         attackList.Add("slash");
         attackList.Add("regenerate");
@@ -45,52 +47,42 @@ public class TankSkeleton : MonoBehaviour
         enemyAttackIndicator = GetComponentInChildren<EnemyAttackIndicator>();
         enemyAI = GetComponentInChildren<EnemyAI>();
         playerMovement = FindFirstObjectByType<PlayerMovement>();
-        formationAnchorBehaviour = enemyAI.assignedSpawnAnchor.GetComponent<FormationAnchorBehaviour>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if (isAttacking == false)
+        if (enemy.isDead && !isDead)
+        {
+            isDead = true;
+            DeathSequence();
+        }
+
+        if (isAttacking == false && !isDead)
         {
             if (Vector2.Distance(transform.position, playerMovement.transform.position) < 4 && !slashCheckCooldownBool)
             {
                 slashCheckCooldownBool = true;
                 StartCoroutine("WarriorSlashCheck");
             }
-            if (formationAnchorBehaviour.chargeAttack)
-            {
-                isAttacking = true;
-                currentAttack = "charge";
-                StartCoroutine("WarriorIndicatorActivation");
-            }
-            /*if (is missing health, hasn't been hit in at least 5s))
-            {
-                isAttacking = true;
-                currentAttack = "charge";
-                StartCoroutine("WarriorRegenerationCheck");
-            }*/
         }
+
         if (indicatorActive && currentAttack == "slash")
         {
             if (!attackIndicator)
             {
-
                 attackIndicator = true;
                 tempAttackIndicator = Instantiate(slashAttackIndicator, transform.position, Quaternion.identity);
             }
-            
             tempAttackIndicator.transform.position = transform.position;
             warriorToPlayerAngle = new Vector2(playerMovement.transform.position.x - transform.position.x, playerMovement.transform.position.y - transform.position.y);
-            warriorToPlayerFloat = Mathf.Rad2Deg*(Mathf.Atan2(warriorToPlayerAngle.y, warriorToPlayerAngle.x));
+            warriorToPlayerFloat = Mathf.Rad2Deg * (Mathf.Atan2(warriorToPlayerAngle.y, warriorToPlayerAngle.x));
             tempAttackIndicator.transform.rotation = Quaternion.Euler(0, 0, warriorToPlayerFloat);
-
         }
+
         if (isCharging)
         {
-            Debug.Log("CHAAAAAAAAAAARGE");
-            Vector2 warriorToPlayerAngle = new Vector2(playerMovement.transform.position.x - transform.position.x, playerMovement.transform.position.y - transform.position.y).normalized;
-            rb.MovePosition((Vector2)transform.position + warriorToPlayerAngle * chargeSpeed * Time.fixedDeltaTime);
+            Vector2 dir = new Vector2(playerMovement.transform.position.x - transform.position.x, playerMovement.transform.position.y - transform.position.y).normalized;
+            rb.MovePosition((Vector2)transform.position + dir * chargeSpeed * Time.fixedDeltaTime);
             if (Vector2.Distance(playerPosStartCharge, chargeStartPos) < Vector2.Distance(transform.position, chargeStartPos))
             {
                 isCharging = false;
@@ -98,7 +90,6 @@ public class TankSkeleton : MonoBehaviour
                 formationAnchorBehaviour.chargeAttack = false;
             }
         }
-        
     }
 
     IEnumerator WarriorSlashCheck()
@@ -117,7 +108,6 @@ public class TankSkeleton : MonoBehaviour
 
     IEnumerator WarriorRegenerationCheck()
     {
-        
         int chanceToAttack = Random.Range(0, 100);
         if (chanceToAttack <= 20)
         {
@@ -132,9 +122,10 @@ public class TankSkeleton : MonoBehaviour
 
     IEnumerator WarriorIndicatorActivation()
     {
-        
         if (currentAttack == "slash")
         {
+            enemyAI.animOverride = true;
+            anim.SetInteger("WarriorInt", 2);
             attackWindupTime = .75f;
             enemyAttackIndicator.SetIndicator(slashIcon, attackWindupTime);
             indicatorActive = true;
@@ -155,32 +146,55 @@ public class TankSkeleton : MonoBehaviour
         yield return new WaitForSeconds(attackWindupTime);
         indicatorActive = false;
         attackIndicator = false;
-        
-        if (currentAttack == "slash") { SlashAttack(); }
-        if (currentAttack == "regenerate") { RegenerateAttack(); }
-        if (currentAttack == "charge") { ChargeAttack(); }
-        GameObject.Destroy(tempAttackIndicator);
+
+        if (currentAttack == "slash") { StartCoroutine("SlashAttack"); }
+        if (currentAttack == "regenerate") { StartCoroutine("RegenerateAttack"); }
+        if (currentAttack == "charge") { StartCoroutine("ChargeAttack"); }
+        Destroy(tempAttackIndicator);
         yield return new WaitForSeconds(attackSpeed);
         slashCheckCooldownBool = false;
         isAttacking = false;
     }
-    private void SlashAttack()
+
+    IEnumerator SlashAttack()
     {
-        Instantiate(slashAttackPrefab, transform.position, Quaternion.Euler(0,0, warriorToPlayerFloat -180));
+        Instantiate(slashAttackPrefab, transform.position, Quaternion.Euler(0, 0, warriorToPlayerFloat - 180));
         indicatorActive = false;
-        
+        currentAttack = "";
+        enemyAI.animOverride = false;
+        yield return null;
     }
-    private void RegenerateAttack()
+
+    IEnumerator RegenerateAttack()
     {
         indicatorActive = false;
-       
+        currentAttack = "";
+        yield return null;
     }
-    private void ChargeAttack()
+
+    IEnumerator ChargeAttack()
     {
         indicatorActive = false;
+        currentAttack = "";
         chargeStartPos = transform.position;
-        playerPosStartCharge = playerMovement.transform.position; 
+        playerPosStartCharge = playerMovement.transform.position;
         isCharging = true;
         enemyAI.isCharging = true;
+        yield return null;
+    }
+
+    private void DeathSequence()
+    {
+        enemyAI.animOverride = true;
+        currentAttack = "";
+        anim.SetInteger("WarriorInt", 3);
+        Destroy(tempAttackIndicator);
+        GetComponent<Collider2D>().enabled = false;
+        StopAllCoroutines();
+    }
+
+    public void WarriorDeath()
+    {
+        Destroy(gameObject);
     }
 }

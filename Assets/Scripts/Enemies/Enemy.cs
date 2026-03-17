@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.InputSystem.Processors;
 using UnityEngine.UI;
 public class Enemy : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class Enemy : MonoBehaviour
     private PlayerCombat playerCombat;
     private SpriteRenderer spriteRenderer;
     private EnemyAI enemyAI;
+    public bool isDead = false;
 
 
     void Start()
@@ -49,6 +51,7 @@ public class Enemy : MonoBehaviour
         {
             if (enemyAI != null)
             {
+                isDead = true;
                 StartCoroutine("GoldAndExpRandomizer");
             }
             else
@@ -71,7 +74,7 @@ public class Enemy : MonoBehaviour
                 int randomX = Random.Range(-5, 4);
                 int randomY = Random.Range(-5, 4);
                 Instantiate(money1, new Vector2(transform.position.x + randomX, transform.position.y + randomY), Quaternion.identity);
-                yield return new WaitForSeconds(.1f);
+                
             }
         }
 
@@ -80,9 +83,10 @@ public class Enemy : MonoBehaviour
             int randomX = Random.Range(-5, 4);
             int randomY = Random.Range(-5, 4);
             Instantiate(xpDrop, new Vector2(transform.position.x + randomX, transform.position.y + randomY), Quaternion.identity);
-            yield return new WaitForSeconds(.05f);
+           
         }
         enemyAI.currentState = EnemyState.Death;
+        return null;
     }
     public void GoldRandomizerBoss()
     {

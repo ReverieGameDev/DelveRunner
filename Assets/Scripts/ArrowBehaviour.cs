@@ -1,4 +1,5 @@
 using NUnit.Framework.Constraints;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ArrowBehaviour : MonoBehaviour
@@ -60,4 +61,11 @@ public class ArrowBehaviour : MonoBehaviour
         isReadyToFire = true;
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            PlayerCombat.Instance.DamagePlayer(15f);
+        }
+    }
 }

@@ -29,10 +29,16 @@ public class SkeletonSummoner : MonoBehaviour
     private bool hasCircleSpawned = false;
     private MapGenerator mapGenerator;
     private GameObject spawnedProjectile;
-    
+    private EnemyAI enemyAI;
+    private Animator anim;
+    private Enemy enemy;
+    private bool isDead = false;
 
     void Start()
     {
+        enemy = GetComponentInChildren<Enemy>();
+        anim = GetComponentInChildren<Animator>();
+        enemyAI = GetComponentInChildren<EnemyAI>();
         mapGenerator = FindFirstObjectByType<MapGenerator>();
         enemyAttackIndicator = GetComponentInChildren<EnemyAttackIndicator>();
         playerMovement = FindFirstObjectByType<PlayerMovement>();
@@ -44,14 +50,16 @@ public class SkeletonSummoner : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (isReadyTofire)
+        if (enemy.isDead && !isDead)
+        {
+            isDead = true;
+            DeathSequence();
+        }
+
+        if (isReadyTofire && !isDead)
         {
             isReadyTofire = false;
             StartCoroutine("SkeletonSummonerAttackCycle");
-        }
-        if (isIndicatorActive && currentAttack == "homingAttack")
-        {
-            //no indicator as this will simply follow the player.
         }
         if (isIndicatorActive && currentAttack == "aoeCircleAttack")
         {
@@ -61,11 +69,6 @@ public class SkeletonSummoner : MonoBehaviour
                 hasCircleSpawned = true;
             }
             aoeCircleIndicatorTBD.transform.position = transform.position;
-            //no math necessary here, it will be donut shaped with the summoner/formation in the center
-        }
-        if (isIndicatorActive && currentAttack == "summonAttack")
-        {
-            //need math done for where summon will be here (cant spawn oob)
         }
     }
 
@@ -74,67 +77,90 @@ public class SkeletonSummoner : MonoBehaviour
         currentAttack = RandomAttack();
         if (currentAttack == "homingAttack")
         {
+            enemyAI.animOverride = true;
+            anim.SetInteger("NecromancerInt", 2);
             isIndicatorActive = true;
             attackWindupTime = .5f;
             enemyAttackIndicator.SetIndicator(homingAttackIcon, attackWindupTime);
         }
         if (currentAttack == "aoeCircleAttack")
         {
+            enemyAI.animOverride = true;
+            anim.SetInteger("NecromancerInt", 2);
             isIndicatorActive = true;
             attackWindupTime = 2.5f;
             enemyAttackIndicator.SetIndicator(aoeCircleIcon, attackWindupTime);
         }
         if (currentAttack == "summonAttack")
         {
+            enemyAI.animOverride = true;
+            anim.SetInteger("NecromancerInt", 2);
             isIndicatorActive = true;
             attackWindupTime = 1.25f;
             enemyAttackIndicator.SetIndicator(summonIcon, attackWindupTime);
         }
-        if (currentAttack == "skipAttack")// added new attack, basically a null attack, this will allow me to scale difficulty
+        if (currentAttack == "skipAttack")
         {
             StartCoroutine("SkipAttack");
-            StopCoroutine("SkeletonSummonerAttackCycle");
+            yield break;
         }
         yield return new WaitForSeconds(attackWindupTime);
-        if (currentAttack == "homingAttack") { HomingAttack(); }
-        if (currentAttack == "aoeCircleAttack") { AoeCircleAttack(); }
-        if (currentAttack == "summonAttack") { SummonAttack(); }
-        
+        if (currentAttack == "homingAttack") { StartCoroutine("HomingAttack"); }
+        if (currentAttack == "aoeCircleAttack") { StartCoroutine("AoeCircleAttack"); }
+        if (currentAttack == "summonAttack") { StartCoroutine("SummonAttack"); }
+
         yield return new WaitForSeconds(attackSpeed);
         isReadyTofire = true;
     }
 
     public string RandomAttack()
     {
-        int randomAttack = Random.Range(0, attackList.Count);
-        string currentAttack;
-        return currentAttack = attackList[randomAttack];
+        int attackChance = Random.Range(0, 2);
+        if (attackChance == 0)
+        {
+            int randomAttack = Random.Range(0, 3);
+            return attackList[randomAttack];
+        }
+        else
+        {
+            return attackList[3];
+        }
     }
+
     IEnumerator SkipAttack()
     {
         yield return new WaitForSeconds(3f);
         isReadyTofire = true;
     }
-    private void HomingAttack()
+
+    IEnumerator HomingAttack()
     {
         isIndicatorActive = false;
+        currentAttack = "";
         spawnedProjectile = Instantiate(homingProjectile, transform.position, Quaternion.identity);
-        Debug.Log(spawnedProjectile);
+        enemyAI.animOverride = false;
+        yield return null;
     }
-    private void AoeCircleAttack()
+
+    IEnumerator AoeCircleAttack()
     {
         isIndicatorActive = false;
-        hasCircleSpawned = false;//turn this off here to have it ready for the next round
+        currentAttack = "";
+        hasCircleSpawned = false;
         Destroy(aoeCircleIndicatorTBD);
         Instantiate(aoeCircleAttack, transform.position, Quaternion.identity);
+        enemyAI.animOverride = false;
+        yield return null;
     }
-    private void SummonAttack()
+
+    IEnumerator SummonAttack()
     {
         isIndicatorActive = false;
-        for(int i = 0; i< summonCount; i++)
+        currentAttack = "";
+        for (int i = 0; i < summonCount; i++)
         {
             Vector2 randomSummonSpace = new Vector2(Random.Range(transform.position.x + 10, transform.position.x + 30), Random.Range(transform.position.y + 10, transform.position.y + 30));
-            if (mapGenerator.mapArray[(int)randomSummonSpace.x,(int)randomSummonSpace.y] == 1)
+            if (mapGenerator.mapArray[(int)randomSummonSpace.x, (int)randomSummonSpace.y] == 1)
             {
                 Instantiate(catSummon, randomSummonSpace, Quaternion.identity);
             }
@@ -143,5 +169,23 @@ public class SkeletonSummoner : MonoBehaviour
                 i--;
             }
         }
+        enemyAI.animOverride = false;
+        yield return null;
+    }
+
+    private void DeathSequence()
+    {
+        enemyAI.animOverride = true;
+        currentAttack = "";
+        isReadyTofire = false;
+        anim.SetInteger("NecromancerInt", 3);
+        Destroy(aoeCircleIndicatorTBD);
+        GetComponent<Collider2D>().enabled = false;
+        StopAllCoroutines();
+    }
+
+    public void NecromancerDeath()
+    {
+        Destroy(gameObject);
     }
 }

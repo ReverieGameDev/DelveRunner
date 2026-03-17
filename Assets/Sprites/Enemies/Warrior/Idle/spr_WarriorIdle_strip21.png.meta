@@ -176,10 +176,10 @@ TextureImporter:
       name: spr_WarriorIdle_strip21_0
       rect:
         serializedVersion: 2
-        x: 28
-        y: 31
-        width: 39
-        height: 34
+        x: 0
+        y: 0
+        width: 96
+        height: 96
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -198,10 +198,10 @@ TextureImporter:
       name: spr_WarriorIdle_strip21_1
       rect:
         serializedVersion: 2
-        x: 124
-        y: 31
-        width: 39
-        height: 34
+        x: 96
+        y: 0
+        width: 96
+        height: 96
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -220,10 +220,10 @@ TextureImporter:
       name: spr_WarriorIdle_strip21_2
       rect:
         serializedVersion: 2
-        x: 220
-        y: 31
-        width: 39
-        height: 33
+        x: 192
+        y: 0
+        width: 96
+        height: 96
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -242,10 +242,10 @@ TextureImporter:
       name: spr_WarriorIdle_strip21_3
       rect:
         serializedVersion: 2
-        x: 316
-        y: 31
-        width: 39
-        height: 32
+        x: 288
+        y: 0
+        width: 96
+        height: 96
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -264,10 +264,10 @@ TextureImporter:
       name: spr_WarriorIdle_strip21_4
       rect:
         serializedVersion: 2
-        x: 412
-        y: 31
-        width: 39
-        height: 31
+        x: 384
+        y: 0
+        width: 96
+        height: 96
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -286,10 +286,10 @@ TextureImporter:
       name: spr_WarriorIdle_strip21_5
       rect:
         serializedVersion: 2
-        x: 508
-        y: 31
-        width: 39
-        height: 31
+        x: 480
+        y: 0
+        width: 96
+        height: 96
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -308,10 +308,10 @@ TextureImporter:
       name: spr_WarriorIdle_strip21_6
       rect:
         serializedVersion: 2
-        x: 604
-        y: 31
-        width: 39
-        height: 31
+        x: 576
+        y: 0
+        width: 96
+        height: 96
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -330,10 +330,10 @@ TextureImporter:
       name: spr_WarriorIdle_strip21_7
       rect:
         serializedVersion: 2
-        x: 700
-        y: 31
-        width: 39
-        height: 31
+        x: 672
+        y: 0
+        width: 96
+        height: 96
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -352,10 +352,10 @@ TextureImporter:
       name: spr_WarriorIdle_strip21_8
       rect:
         serializedVersion: 2
-        x: 796
-        y: 31
-        width: 39
-        height: 31
+        x: 768
+        y: 0
+        width: 96
+        height: 96
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -374,10 +374,10 @@ TextureImporter:
       name: spr_WarriorIdle_strip21_9
       rect:
         serializedVersion: 2
-        x: 892
-        y: 31
-        width: 39
-        height: 32
+        x: 864
+        y: 0
+        width: 96
+        height: 96
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -396,10 +396,10 @@ TextureImporter:
       name: spr_WarriorIdle_strip21_10
       rect:
         serializedVersion: 2
-        x: 988
-        y: 31
-        width: 39
-        height: 33
+        x: 960
+        y: 0
+        width: 96
+        height: 96
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -418,10 +418,10 @@ TextureImporter:
       name: spr_WarriorIdle_strip21_11
       rect:
         serializedVersion: 2
-        x: 1084
-        y: 31
-        width: 39
-        height: 34
+        x: 1056
+        y: 0
+        width: 96
+        height: 96
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -440,10 +440,10 @@ TextureImporter:
       name: spr_WarriorIdle_strip21_12
       rect:
         serializedVersion: 2
-        x: 1180
-        y: 31
-        width: 39
-        height: 34
+        x: 1152
+        y: 0
+        width: 96
+        height: 96
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -462,10 +462,10 @@ TextureImporter:
       name: spr_WarriorIdle_strip21_13
       rect:
         serializedVersion: 2
-        x: 1276
-        y: 31
-        width: 39
-        height: 34
+        x: 1248
+        y: 0
+        width: 96
+        height: 96
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -484,10 +484,10 @@ TextureImporter:
       name: spr_WarriorIdle_strip21_14
       rect:
         serializedVersion: 2
-        x: 1372
-        y: 31
-        width: 39
-        height: 34
+        x: 1344
+        y: 0
+        width: 96
+        height: 96
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -506,10 +506,10 @@ TextureImporter:
       name: spr_WarriorIdle_strip21_15
       rect:
         serializedVersion: 2
-        x: 1468
-        y: 31
-        width: 39
-        height: 34
+        x: 1440
+        y: 0
+        width: 96
+        height: 96
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -528,10 +528,10 @@ TextureImporter:
       name: spr_WarriorIdle_strip21_16
       rect:
         serializedVersion: 2
-        x: 1564
-        y: 31
-        width: 39
-        height: 34
+        x: 1536
+        y: 0
+        width: 96
+        height: 96
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -550,10 +550,10 @@ TextureImporter:
       name: spr_WarriorIdle_strip21_17
       rect:
         serializedVersion: 2
-        x: 1660
-        y: 31
-        width: 39
-        height: 34
+        x: 1632
+        y: 0
+        width: 96
+        height: 96
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -572,10 +572,10 @@ TextureImporter:
       name: spr_WarriorIdle_strip21_18
       rect:
         serializedVersion: 2
-        x: 1756
-        y: 31
-        width: 39
-        height: 34
+        x: 1728
+        y: 0
+        width: 96
+        height: 96
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -594,10 +594,10 @@ TextureImporter:
       name: spr_WarriorIdle_strip21_19
       rect:
         serializedVersion: 2
-        x: 1852
-        y: 31
-        width: 39
-        height: 34
+        x: 1824
+        y: 0
+        width: 96
+        height: 96
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -616,10 +616,10 @@ TextureImporter:
       name: spr_WarriorIdle_strip21_20
       rect:
         serializedVersion: 2
-        x: 1948
-        y: 31
-        width: 39
-        height: 34
+        x: 1920
+        y: 0
+        width: 96
+        height: 96
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -638,7 +638,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 02e95f27eff095e4e95238c6d723aae6
     internalID: 0
     vertices: []
     indices: 

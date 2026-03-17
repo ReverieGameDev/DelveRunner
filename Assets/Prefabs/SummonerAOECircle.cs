@@ -4,9 +4,11 @@ using UnityEngine;
 public class SummonerAOECircle : MonoBehaviour
 {
     public float circleActiveTime = .5f;
+    private PlayerCombat playerCombat;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        playerCombat = FindFirstObjectByType<PlayerCombat>();
         StartCoroutine("DestroyCircle");
     }
 
@@ -20,7 +22,7 @@ public class SummonerAOECircle : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            //deal damage to player
+            playerCombat.DamagePlayer(30f);
         }
     }
     IEnumerator DestroyCircle()

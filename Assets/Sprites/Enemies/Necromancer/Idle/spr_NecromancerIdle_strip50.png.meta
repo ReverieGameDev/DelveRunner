@@ -198,7 +198,7 @@ TextureImporter:
   spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 16
+  spritePixelsToUnits: 18
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -263,10 +263,10 @@ TextureImporter:
       name: spr_NecromancerIdle_strip50_0
       rect:
         serializedVersion: 2
-        x: 37
-        y: 31
-        width: 30
-        height: 51
+        x: 0
+        y: 0
+        width: 96
+        height: 96
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -285,10 +285,10 @@ TextureImporter:
       name: spr_NecromancerIdle_strip50_1
       rect:
         serializedVersion: 2
-        x: 133
-        y: 31
-        width: 30
-        height: 51
+        x: 96
+        y: 0
+        width: 96
+        height: 96
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -307,10 +307,10 @@ TextureImporter:
       name: spr_NecromancerIdle_strip50_2
       rect:
         serializedVersion: 2
-        x: 229
-        y: 31
-        width: 30
-        height: 51
+        x: 192
+        y: 0
+        width: 96
+        height: 96
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -329,10 +329,10 @@ TextureImporter:
       name: spr_NecromancerIdle_strip50_3
       rect:
         serializedVersion: 2
-        x: 325
-        y: 31
-        width: 30
-        height: 51
+        x: 288
+        y: 0
+        width: 96
+        height: 96
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -351,10 +351,10 @@ TextureImporter:
       name: spr_NecromancerIdle_strip50_4
       rect:
         serializedVersion: 2
-        x: 421
-        y: 31
-        width: 30
-        height: 51
+        x: 384
+        y: 0
+        width: 96
+        height: 96
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -373,10 +373,10 @@ TextureImporter:
       name: spr_NecromancerIdle_strip50_5
       rect:
         serializedVersion: 2
-        x: 517
-        y: 31
-        width: 30
-        height: 51
+        x: 480
+        y: 0
+        width: 96
+        height: 96
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -395,10 +395,10 @@ TextureImporter:
       name: spr_NecromancerIdle_strip50_6
       rect:
         serializedVersion: 2
-        x: 613
-        y: 31
-        width: 30
-        height: 51
+        x: 576
+        y: 0
+        width: 96
+        height: 96
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -417,10 +417,10 @@ TextureImporter:
       name: spr_NecromancerIdle_strip50_7
       rect:
         serializedVersion: 2
-        x: 709
-        y: 31
-        width: 30
-        height: 51
+        x: 672
+        y: 0
+        width: 96
+        height: 96
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -439,10 +439,10 @@ TextureImporter:
       name: spr_NecromancerIdle_strip50_8
       rect:
         serializedVersion: 2
-        x: 805
-        y: 31
-        width: 30
-        height: 51
+        x: 768
+        y: 0
+        width: 96
+        height: 96
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -461,10 +461,10 @@ TextureImporter:
       name: spr_NecromancerIdle_strip50_9
       rect:
         serializedVersion: 2
-        x: 901
-        y: 31
-        width: 30
-        height: 51
+        x: 864
+        y: 0
+        width: 96
+        height: 96
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -483,10 +483,10 @@ TextureImporter:
       name: spr_NecromancerIdle_strip50_10
       rect:
         serializedVersion: 2
-        x: 997
-        y: 31
-        width: 30
-        height: 51
+        x: 960
+        y: 0
+        width: 96
+        height: 96
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -505,10 +505,10 @@ TextureImporter:
       name: spr_NecromancerIdle_strip50_11
       rect:
         serializedVersion: 2
-        x: 1093
-        y: 31
-        width: 30
-        height: 51
+        x: 1056
+        y: 0
+        width: 96
+        height: 96
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -527,10 +527,10 @@ TextureImporter:
       name: spr_NecromancerIdle_strip50_12
       rect:
         serializedVersion: 2
-        x: 1189
-        y: 31
-        width: 30
-        height: 51
+        x: 1152
+        y: 0
+        width: 96
+        height: 96
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -549,10 +549,10 @@ TextureImporter:
       name: spr_NecromancerIdle_strip50_13
       rect:
         serializedVersion: 2
-        x: 1285
-        y: 31
-        width: 30
-        height: 51
+        x: 1248
+        y: 0
+        width: 96
+        height: 96
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -571,10 +571,10 @@ TextureImporter:
       name: spr_NecromancerIdle_strip50_14
       rect:
         serializedVersion: 2
-        x: 1381
-        y: 31
-        width: 30
-        height: 51
+        x: 1344
+        y: 0
+        width: 96
+        height: 96
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -593,10 +593,10 @@ TextureImporter:
       name: spr_NecromancerIdle_strip50_15
       rect:
         serializedVersion: 2
-        x: 1477
-        y: 31
-        width: 30
-        height: 51
+        x: 1440
+        y: 0
+        width: 96
+        height: 96
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -615,10 +615,10 @@ TextureImporter:
       name: spr_NecromancerIdle_strip50_16
       rect:
         serializedVersion: 2
-        x: 1573
-        y: 31
-        width: 30
-        height: 51
+        x: 1536
+        y: 0
+        width: 96
+        height: 96
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -637,10 +637,10 @@ TextureImporter:
       name: spr_NecromancerIdle_strip50_17
       rect:
         serializedVersion: 2
-        x: 1669
-        y: 31
-        width: 30
-        height: 51
+        x: 1632
+        y: 0
+        width: 96
+        height: 96
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -659,10 +659,10 @@ TextureImporter:
       name: spr_NecromancerIdle_strip50_18
       rect:
         serializedVersion: 2
-        x: 1765
-        y: 31
-        width: 30
-        height: 51
+        x: 1728
+        y: 0
+        width: 96
+        height: 96
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -681,10 +681,10 @@ TextureImporter:
       name: spr_NecromancerIdle_strip50_19
       rect:
         serializedVersion: 2
-        x: 1861
-        y: 31
-        width: 30
-        height: 51
+        x: 1824
+        y: 0
+        width: 96
+        height: 96
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -703,10 +703,10 @@ TextureImporter:
       name: spr_NecromancerIdle_strip50_20
       rect:
         serializedVersion: 2
-        x: 1957
-        y: 31
-        width: 30
-        height: 51
+        x: 1920
+        y: 0
+        width: 96
+        height: 96
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -725,10 +725,10 @@ TextureImporter:
       name: spr_NecromancerIdle_strip50_21
       rect:
         serializedVersion: 2
-        x: 2053
-        y: 31
-        width: 30
-        height: 51
+        x: 2016
+        y: 0
+        width: 96
+        height: 96
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -747,10 +747,10 @@ TextureImporter:
       name: spr_NecromancerIdle_strip50_22
       rect:
         serializedVersion: 2
-        x: 2148
-        y: 31
-        width: 31
-        height: 51
+        x: 2112
+        y: 0
+        width: 96
+        height: 96
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -769,10 +769,10 @@ TextureImporter:
       name: spr_NecromancerIdle_strip50_23
       rect:
         serializedVersion: 2
-        x: 2243
-        y: 31
-        width: 32
-        height: 51
+        x: 2208
+        y: 0
+        width: 96
+        height: 96
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -791,10 +791,10 @@ TextureImporter:
       name: spr_NecromancerIdle_strip50_24
       rect:
         serializedVersion: 2
-        x: 2336
-        y: 31
-        width: 35
-        height: 51
+        x: 2304
+        y: 0
+        width: 96
+        height: 96
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -813,10 +813,10 @@ TextureImporter:
       name: spr_NecromancerIdle_strip50_25
       rect:
         serializedVersion: 2
-        x: 2435
-        y: 31
-        width: 32
-        height: 51
+        x: 2400
+        y: 0
+        width: 96
+        height: 96
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -835,10 +835,10 @@ TextureImporter:
       name: spr_NecromancerIdle_strip50_26
       rect:
         serializedVersion: 2
-        x: 2532
-        y: 31
-        width: 31
-        height: 51
+        x: 2496
+        y: 0
+        width: 96
+        height: 96
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -857,10 +857,10 @@ TextureImporter:
       name: spr_NecromancerIdle_strip50_27
       rect:
         serializedVersion: 2
-        x: 2627
-        y: 31
-        width: 32
-        height: 51
+        x: 2592
+        y: 0
+        width: 96
+        height: 96
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -879,10 +879,10 @@ TextureImporter:
       name: spr_NecromancerIdle_strip50_28
       rect:
         serializedVersion: 2
-        x: 2720
-        y: 31
-        width: 35
-        height: 51
+        x: 2688
+        y: 0
+        width: 96
+        height: 96
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -901,10 +901,10 @@ TextureImporter:
       name: spr_NecromancerIdle_strip50_29
       rect:
         serializedVersion: 2
-        x: 2819
-        y: 31
-        width: 32
-        height: 51
+        x: 2784
+        y: 0
+        width: 96
+        height: 96
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -923,10 +923,10 @@ TextureImporter:
       name: spr_NecromancerIdle_strip50_30
       rect:
         serializedVersion: 2
-        x: 2916
-        y: 31
-        width: 31
-        height: 51
+        x: 2880
+        y: 0
+        width: 96
+        height: 96
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -945,10 +945,10 @@ TextureImporter:
       name: spr_NecromancerIdle_strip50_31
       rect:
         serializedVersion: 2
-        x: 3011
-        y: 31
-        width: 32
-        height: 51
+        x: 2976
+        y: 0
+        width: 96
+        height: 96
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -967,10 +967,10 @@ TextureImporter:
       name: spr_NecromancerIdle_strip50_32
       rect:
         serializedVersion: 2
-        x: 3104
-        y: 31
-        width: 35
-        height: 51
+        x: 3072
+        y: 0
+        width: 96
+        height: 96
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -989,10 +989,10 @@ TextureImporter:
       name: spr_NecromancerIdle_strip50_33
       rect:
         serializedVersion: 2
-        x: 3203
-        y: 31
-        width: 32
-        height: 51
+        x: 3168
+        y: 0
+        width: 96
+        height: 96
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1011,10 +1011,10 @@ TextureImporter:
       name: spr_NecromancerIdle_strip50_34
       rect:
         serializedVersion: 2
-        x: 3300
-        y: 31
-        width: 31
-        height: 51
+        x: 3264
+        y: 0
+        width: 96
+        height: 96
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1033,10 +1033,10 @@ TextureImporter:
       name: spr_NecromancerIdle_strip50_35
       rect:
         serializedVersion: 2
-        x: 3395
-        y: 31
-        width: 32
-        height: 51
+        x: 3360
+        y: 0
+        width: 96
+        height: 96
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1055,10 +1055,10 @@ TextureImporter:
       name: spr_NecromancerIdle_strip50_36
       rect:
         serializedVersion: 2
-        x: 3488
-        y: 31
-        width: 35
-        height: 51
+        x: 3456
+        y: 0
+        width: 96
+        height: 96
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1077,10 +1077,10 @@ TextureImporter:
       name: spr_NecromancerIdle_strip50_37
       rect:
         serializedVersion: 2
-        x: 3587
-        y: 31
-        width: 32
-        height: 51
+        x: 3552
+        y: 0
+        width: 96
+        height: 96
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1099,10 +1099,10 @@ TextureImporter:
       name: spr_NecromancerIdle_strip50_38
       rect:
         serializedVersion: 2
-        x: 3684
-        y: 31
-        width: 31
-        height: 51
+        x: 3648
+        y: 0
+        width: 96
+        height: 96
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1121,10 +1121,10 @@ TextureImporter:
       name: spr_NecromancerIdle_strip50_39
       rect:
         serializedVersion: 2
-        x: 3779
-        y: 31
-        width: 32
-        height: 51
+        x: 3744
+        y: 0
+        width: 96
+        height: 96
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1143,10 +1143,10 @@ TextureImporter:
       name: spr_NecromancerIdle_strip50_40
       rect:
         serializedVersion: 2
-        x: 3872
-        y: 31
-        width: 35
-        height: 51
+        x: 3840
+        y: 0
+        width: 96
+        height: 96
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1165,10 +1165,10 @@ TextureImporter:
       name: spr_NecromancerIdle_strip50_41
       rect:
         serializedVersion: 2
-        x: 3971
-        y: 31
-        width: 32
-        height: 51
+        x: 3936
+        y: 0
+        width: 96
+        height: 96
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1187,10 +1187,10 @@ TextureImporter:
       name: spr_NecromancerIdle_strip50_42
       rect:
         serializedVersion: 2
-        x: 4065
-        y: 31
-        width: 34
-        height: 51
+        x: 4032
+        y: 0
+        width: 96
+        height: 96
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1209,10 +1209,10 @@ TextureImporter:
       name: spr_NecromancerIdle_strip50_43
       rect:
         serializedVersion: 2
-        x: 4162
-        y: 31
-        width: 33
-        height: 51
+        x: 4128
+        y: 0
+        width: 96
+        height: 96
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1231,10 +1231,10 @@ TextureImporter:
       name: spr_NecromancerIdle_strip50_44
       rect:
         serializedVersion: 2
-        x: 4261
-        y: 31
-        width: 30
-        height: 51
+        x: 4224
+        y: 0
+        width: 96
+        height: 96
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1253,10 +1253,10 @@ TextureImporter:
       name: spr_NecromancerIdle_strip50_45
       rect:
         serializedVersion: 2
-        x: 4357
-        y: 31
-        width: 30
-        height: 51
+        x: 4320
+        y: 0
+        width: 96
+        height: 96
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1275,10 +1275,10 @@ TextureImporter:
       name: spr_NecromancerIdle_strip50_46
       rect:
         serializedVersion: 2
-        x: 4453
-        y: 31
-        width: 30
-        height: 51
+        x: 4416
+        y: 0
+        width: 96
+        height: 96
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1297,10 +1297,10 @@ TextureImporter:
       name: spr_NecromancerIdle_strip50_47
       rect:
         serializedVersion: 2
-        x: 4549
-        y: 31
-        width: 30
-        height: 51
+        x: 4512
+        y: 0
+        width: 96
+        height: 96
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1319,10 +1319,10 @@ TextureImporter:
       name: spr_NecromancerIdle_strip50_48
       rect:
         serializedVersion: 2
-        x: 4645
-        y: 31
-        width: 30
-        height: 51
+        x: 4608
+        y: 0
+        width: 96
+        height: 96
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1341,10 +1341,10 @@ TextureImporter:
       name: spr_NecromancerIdle_strip50_49
       rect:
         serializedVersion: 2
-        x: 4741
-        y: 31
-        width: 30
-        height: 51
+        x: 4704
+        y: 0
+        width: 96
+        height: 96
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1363,7 +1363,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: c41a99bcd4071f24bb25044f28f5a089
     internalID: 0
     vertices: []
     indices: 
