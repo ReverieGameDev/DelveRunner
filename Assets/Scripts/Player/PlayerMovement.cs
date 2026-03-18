@@ -21,10 +21,12 @@ public class PlayerMovement : MonoBehaviour
     private float lastYInput;
     private Vector2 dashDirection;
     private float dashSpeed = 45f;
+    private Animator anim;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        anim = GetComponent<Animator>();
         dialogueManager = FindFirstObjectByType<DialogueManager>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         playerRb = GetComponent<Rigidbody2D>();
@@ -39,6 +41,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.LeftShift) && !isDashing)
         {
+            anim.SetTrigger("Dash");
             isDashing = true;
             dashDirection = new Vector2(xInput, yInput).normalized;
             StartCoroutine(DashTimer());

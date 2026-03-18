@@ -13,6 +13,7 @@ public class PlayerCombat : MonoBehaviour
     private PlayerMovement playerMovement;
     private AugmentManager augmentManager;
     public AttackManager attackManager;
+    private Animator anim;
 
     // Combat
     public GameObject closestCurrentEnemy;
@@ -52,6 +53,7 @@ public class PlayerCombat : MonoBehaviour
     }
     void Start()
     {
+        anim = GetComponent<Animator>();
         playerMovement = FindFirstObjectByType<PlayerMovement>();
         augmentManager = FindFirstObjectByType<AugmentManager>();
         attackManager = FindFirstObjectByType<AttackManager>();
@@ -114,6 +116,7 @@ public class PlayerCombat : MonoBehaviour
 
         if (currentPlayerHealth <= 0)
         {
+            anim.SetTrigger("Death");
             GameOver();
         }
     }
@@ -128,13 +131,8 @@ public class PlayerCombat : MonoBehaviour
 
     IEnumerator IFrameAnimation()
     {
-        for (int i = 0; i < 9; i++)
-        {
-            GetComponent<SpriteRenderer>().enabled = false;
-            yield return new WaitForSeconds(0.06f);
-            GetComponent<SpriteRenderer>().enabled = true;
-            yield return new WaitForSeconds(0.06f);
-        }
+        anim.SetTrigger("Hurt");
+        return null;
     }
 
     public void addExp()

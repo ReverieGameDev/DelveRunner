@@ -29,6 +29,7 @@ public class AttackManager : MonoBehaviour
     public Vector3 mousePos;
     public Vector3 playerPos;
 
+
     private WeaponManager weaponManager;
     public enum WeaponType
     {
@@ -51,6 +52,7 @@ public class AttackManager : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0) && isFiring == false && weaponManager.switchingWeapons == false)
         {
+            playerCombat.GetComponent<Animator>().SetTrigger("Attack");
             isFiring = true;
             mouseAndPlayerPositionsATOF();//gets mouse and player position at the time the player fires
             Debug.Log("Firing: " + weaponManager.currentWeapon.ToString());
