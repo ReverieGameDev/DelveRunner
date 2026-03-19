@@ -1,4 +1,3 @@
-using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
@@ -6,20 +5,26 @@ public class MapRenderer : MonoBehaviour
 {
     private MapGenerator mapGenerator;
     private SpawnManager spawnManager;
+
+    // Tilemaps
     public Tilemap walkableTilemap;
     public Tilemap obstacleTilemap;
     public Tilemap walkableDecorTilemap;
-    public Tilemap belowFloor;
-    public TileBase[] floorTile;
-    public TileBase[] walkableDecorTile;
-    public Tilemap outOfBounds;
-    public Tilemap obstacleDecorTilemap;
-    public GameObject[] obstacleDecorTile;
-    public GameObject[] obstacleDecorTile2;
-    public GameObject[] belowFloorTile;
     public Tilemap oobTileMap;
+
+    // Floor tiles
+    public TileBase[] floorTile;
+    public TileBase[] darkGrassTile;
+    public TileBase[] walkableDecorTile;
     public TileBase oobTile;
     public TileBase obstacleTile;
+
+    // Obstacle decor
+    public GameObject[] obstacleDecorTile;
+    public TileBase[] obstacleDecorTile2;
+    public TileBase[] obstacleDecorTile3;
+
+    // Edge tiles
     public TileBase leftEdge;
     public TileBase downEdge;
     public TileBase rightEdge;
@@ -28,6 +33,7 @@ public class MapRenderer : MonoBehaviour
     public TileBase topLeftEdge;
     public TileBase bottomRightEdge;
     public TileBase topRightEdge;
+
     public int oobTileLimit = 45;
 
     void Awake()
@@ -38,22 +44,160 @@ public class MapRenderer : MonoBehaviour
 
     public void RenderMap()
     {
+        // 1. Floor tiles — light grass in rooms, dark grass outside
         for (int i = 0; i < mapGenerator.mapHeight; i++)
         {
             for (int t = 0; t < mapGenerator.mapWidth; t++)
             {
-                // Grass everywhere
-                walkableTilemap.SetTile(new Vector3Int(t, i, 0), floorTile[UnityEngine.Random.Range(0, floorTile.Length)]);
+                if (mapGenerator.mapArray[t, i] == 1)
+                {
+                    walkableTilemap.SetTile(new Vector3Int(t, i, 0), floorTile[Random.Range(0, floorTile.Length)]);
+                }
+                else
+                {
+                    walkableTilemap.SetTile(new Vector3Int(t, i, 0), darkGrassTile[Random.Range(0, darkGrassTile.Length)]);
+                }
             }
         }
+
+        // 2. Rule tile edges where dark meets light
+        RenderObstacleGround();
+
+        // 3. Small decor on walkable tiles
         RenderRandomWalkableDecor();
+
+        // 4. Trees and decor on obstacle tiles
         RenderRandomObstacleDecor();
+        RenderEdgeDecor();
+    }
+
+
+    public void RenderObstacleGround()
+    {
+        for (int i = 0; i < mapGenerator.mapHeight; i++)
+        {
+            for (int t = 0; t < mapGenerator.mapWidth; t++)
+            {
+                if (mapGenerator.mapArray[t, i] == 0)
+                {
+                    obstacleTilemap.SetTile(new Vector3Int(t, i, 0), obstacleTile);
+                }
+            }
+        }
+    }
+
+    public void RenderRandomWalkableDecor()
+    {
+        for (int i = 1; i < mapGenerator.mapHeight - 1; i++)
+        {
+            for (int t = 1; t < mapGenerator.mapWidth - 1; t++)
+            {
+                if (mapGenerator.mapArray[t, i] == 1 && Random.Range(0, 101) < 10)
+                {
+                    walkableDecorTilemap.SetTile(new Vector3Int(t, i, 0), walkableDecorTile[Random.Range(0, walkableDecorTile.Length)]);
+                }
+            }
+        }
+    }
+
+    public void RenderRandomObstacleDecor()
+    {
+        for (int i = 3; i < mapGenerator.mapHeight - 3; i++)
+        {
+            for (int t = 3; t < mapGenerator.mapWidth - 3; t++)
+            {
+                if (mapGenerator.mapArray[t, i] == 0 && Random.Range(0, 1001) < 200)
+                {
+                    walkableDecorTilemap.SetTile(new Vector3Int(t, i, 0), obstacleDecorTile2[Random.Range(0, obstacleDecorTile2.Length)]);
+                }
+                if (mapGenerator.mapArray[t, i] == 0 && Random.Range(0, 1001) < 25)
+                {
+                    bool tooClose = false;
+                    for (int y = -5; y <= 5 && !tooClose; y++)
+                    {
+                        for (int x = -5; x <= 5 && !tooClose; x++)
+                        {
+                            int checkX = t + x;
+                            int checkY = i + y;
+                            if (checkX >= 0 && checkX < mapGenerator.mapWidth && checkY >= 0 && checkY < mapGenerator.mapHeight)
+                            {
+                                if (mapGenerator.mapArray[checkX, checkY] == 1)
+                                    tooClose = true;
+                            }
+                        }
+                    }
+                    if (tooClose) continue;
+
+                    float yOffset = Random.Range(0f, 0.01f);
+                    Instantiate(obstacleDecorTile[Random.Range(0, obstacleDecorTile.Length)], new Vector3(t, i + yOffset, 0), Quaternion.identity);
+                }
+            }
+        }
+    }
+    public void RenderEdgeDecor()
+    {
+        for (int i = 3; i < mapGenerator.mapHeight - 3; i++)
+        {
+            for (int t = 3; t < mapGenerator.mapWidth - 3; t++)
+            {
+                if (mapGenerator.mapArray[t, i] == 0 && Random.Range(0, 101) < 40)
+                {
+                    bool nearWalkable = false;
+                    for (int y = -3; y <= 3 && !nearWalkable; y++)
+                    {
+                        for (int x = -3; x <= 3 && !nearWalkable; x++)
+                        {
+                            int checkX = t + x;
+                            int checkY = i + y;
+                            if (checkX >= 0 && checkX < mapGenerator.mapWidth && checkY >= 0 && checkY < mapGenerator.mapHeight)
+                            {
+                                if (mapGenerator.mapArray[checkX, checkY] == 1)
+                                    nearWalkable = true;
+                            }
+                        }
+                    }
+                    if (!nearWalkable) continue;
+
+                    walkableDecorTilemap.SetTile(new Vector3Int(t, i, 0), obstacleDecorTile3[Random.Range(0, obstacleDecorTile2.Length)]);
+                }
+            }
+        }
+    }
+    public void RenderEdges()
+    {
+        for (int i = 0; i < mapGenerator.mapHeight; i++)
+        {
+            obstacleTilemap.SetTile(new Vector3Int(0, i, 0), leftEdge);
+            obstacleTilemap.SetTile(new Vector3Int(mapGenerator.mapWidth, i, 0), rightEdge);
+        }
+        for (int i = 0; i < mapGenerator.mapWidth; i++)
+        {
+            obstacleTilemap.SetTile(new Vector3Int(i, 0, 0), downEdge);
+            obstacleTilemap.SetTile(new Vector3Int(i, mapGenerator.mapHeight, 0), upEdge);
+        }
+        obstacleTilemap.SetTile(new Vector3Int(0, 0, 0), bottomLeftEdge);
+        obstacleTilemap.SetTile(new Vector3Int(0, mapGenerator.mapHeight, 0), topLeftEdge);
+        obstacleTilemap.SetTile(new Vector3Int(mapGenerator.mapWidth, mapGenerator.mapHeight, 0), topRightEdge);
+        obstacleTilemap.SetTile(new Vector3Int(mapGenerator.mapWidth, 0, 0), bottomRightEdge);
+    }
+
+    public void RenderWaterOutOfBounds()
+    {
+        for (int i = -oobTileLimit; i < mapGenerator.mapHeight + oobTileLimit; i++)
+        {
+            for (int t = -oobTileLimit; t < mapGenerator.mapWidth + oobTileLimit + 1; t++)
+            {
+                if (t < 1 || t > mapGenerator.mapWidth - 1 || i < 1 || i > mapGenerator.mapHeight - 1)
+                {
+                    oobTileMap.SetTile(new Vector3Int(t, i, 0), oobTile);
+                }
+            }
+        }
     }
 
     public void ViableEnemySpawns()
     {
         spawnManager.viableSpawnCenters = new int[mapGenerator.mapWidth, mapGenerator.mapHeight];
-
         for (int i = 3; i < mapGenerator.mapHeight - 3; i++)
         {
             for (int t = 3; t < mapGenerator.mapWidth - 3; t++)
@@ -68,113 +212,6 @@ public class MapRenderer : MonoBehaviour
                         spawnManager.viableSpawnCenters[t, i] = 2;
                     }
                 }
-            }
-        }
-    }
-
-    public void RenderRandomWalkableDecor()
-    {
-        for (int i = 1; i < mapGenerator.mapHeight - 1; i++)
-        {
-            for (int t = 1; t < mapGenerator.mapWidth - 1; t++)
-            {
-                int rngIfDecorShouldBePlaced = UnityEngine.Random.Range(0, 101);
-                if (mapGenerator.mapArray[t, i] == 1 && rngIfDecorShouldBePlaced < 10)
-                {
-                    walkableDecorTilemap.SetTile(new Vector3Int(t, i, 0), walkableDecorTile[UnityEngine.Random.Range(0, walkableDecorTile.Length)]);
-                }
-            }
-        }
-    }
-
-    public void RenderRandomObstacleDecor()
-    {
-        for (int i = 3; i < mapGenerator.mapHeight - 3; i++)
-        {
-            for (int t = 3; t < mapGenerator.mapWidth - 3; t++)
-            {
-                GameObject[] chosenObstacleArray;
-                int rngDecorArrayDecider = UnityEngine.Random.Range(1, 11);
-                if (rngDecorArrayDecider < 11)
-                {
-                    chosenObstacleArray = obstacleDecorTile;
-                }
-                else
-                {
-                    chosenObstacleArray = obstacleDecorTile2;
-                }
-                int rngObstacleDecider = UnityEngine.Random.Range(0, chosenObstacleArray.Length);
-                int rngIfObstacleShouldBePlaced = UnityEngine.Random.Range(0, 1001);
-                if (mapGenerator.mapArray[t, i] == 0 && rngIfObstacleShouldBePlaced < 200)
-                {
-                    float yOffset = UnityEngine.Random.Range(0f, 0.01f);
-                    Instantiate(chosenObstacleArray[rngObstacleDecider], new Vector3(t, i + yOffset, 0), Quaternion.identity);
-                }
-            }
-        }
-    }
-
-    public void RenderEdges()
-    {
-        for (int i = 0; i < mapGenerator.mapHeight; i++)
-        {
-            obstacleTilemap.SetTile(new Vector3Int(0, i, 0), leftEdge);
-        }
-        for (int i = 0; i < mapGenerator.mapWidth; i++)
-        {
-            obstacleTilemap.SetTile(new Vector3Int(i, 0, 0), downEdge);
-        }
-        for (int i = 0; i < mapGenerator.mapHeight; i++)
-        {
-            obstacleTilemap.SetTile(new Vector3Int(mapGenerator.mapWidth, i, 0), rightEdge);
-        }
-        for (int i = 0; i < mapGenerator.mapWidth; i++)
-        {
-            obstacleTilemap.SetTile(new Vector3Int(i, mapGenerator.mapHeight, 0), upEdge);
-        }
-        obstacleTilemap.SetTile(new Vector3Int(0, 0, 0), bottomLeftEdge);
-        obstacleTilemap.SetTile(new Vector3Int(0, mapGenerator.mapHeight, 0), topLeftEdge);
-        obstacleTilemap.SetTile(new Vector3Int(mapGenerator.mapWidth, mapGenerator.mapHeight, 0), topRightEdge);
-        obstacleTilemap.SetTile(new Vector3Int(mapGenerator.mapWidth, 0, 0), bottomRightEdge);
-    }
-
-    public void RenderBelowGround()
-    {
-        for (int i = 0; i < mapGenerator.mapHeight; i++)
-        {
-            for (int t = 0; t < mapGenerator.mapWidth; t++)
-            {
-                if (mapGenerator.mapArray[t, i] == 0)
-                {
-                    int randomWaterTile = UnityEngine.Random.Range(0, belowFloorTile.Length);
-                    GameObject water = Instantiate(belowFloorTile[randomWaterTile], new Vector3Int(t, i, 0), Quaternion.identity, transform);
-                    Animator anim = water.GetComponent<Animator>();
-                    if (anim != null && anim.runtimeAnimatorController != null)
-                    {
-                        anim.Play(0, 0, UnityEngine.Random.Range(0f, 1f));
-                    }
-                }
-            }
-        }
-        RenderWaterOutOfBounds();
-    }
-    public void RenderWaterOutOfBounds()
-    {
-        for (int i = -oobTileLimit; i < mapGenerator.mapHeight+ oobTileLimit; i++)
-        {
-            for (int t = -oobTileLimit; t < mapGenerator.mapWidth + oobTileLimit + 1; t++)
-            {
-                if(t <1 || t> mapGenerator.mapWidth-1)
-                {
-                    
-                    oobTileMap.SetTile(new Vector3Int(t, i, 0), oobTile);
-                }
-                else if(i < 1 || i > mapGenerator.mapHeight-1)
-                    {
-                        
-                        oobTileMap.SetTile(new Vector3Int(t, i, 0), oobTile);
-                    }
-
             }
         }
     }

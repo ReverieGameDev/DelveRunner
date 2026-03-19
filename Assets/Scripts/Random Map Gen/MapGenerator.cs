@@ -64,9 +64,36 @@ public class MapGenerator : MonoBehaviour
 
         PlaceRooms();
         PlaceCenterTilesCorridors();
+        SmoothEdges();
+        RemoveIsolatedObstacles();
+        RemoveUnwantedTiles();
         mapRenderer.RenderMap();
     }
-
+    public void RemoveIsolatedObstacles()
+    {
+        int[,] tempMap = (int[,])mapArray.Clone();
+        for (int i = 1; i < mapHeight - 1; i++)
+        {
+            for (int t = 1; t < mapWidth - 1; t++)
+            {
+                if (mapArray[t, i] == 0)
+                {
+                    int obstacleNeighbors = 0;
+                    for (int y = -1; y <= 1; y++)
+                    {
+                        for (int x = -1; x <= 1; x++)
+                        {
+                            if (mapArray[t + x, i + y] == 0)
+                                obstacleNeighbors++;
+                        }
+                    }
+                    if (obstacleNeighbors < 3)
+                        tempMap[t, i] = 1;
+                }
+            }
+        }
+        mapArray = tempMap;
+    }
     public void PlaceCenterTilesCorridors()
     {
         List<int> visited = new List<int>();
@@ -283,8 +310,34 @@ public class MapGenerator : MonoBehaviour
                 }
             }
         }
+        SmoothEdges();
     }
-
+    public void SmoothEdges()
+    {
+        for (int passes = 0; passes < 3; passes++)
+        {
+            int[,] tempMap = (int[,])mapArray.Clone();
+            for (int i = 1; i < mapHeight - 1; i++)
+            {
+                for (int t = 1; t < mapWidth - 1; t++)
+                {
+                    int walkableNeighbors = 0;
+                    for (int y = -1; y <= 1; y++)
+                    {
+                        for (int x = -1; x <= 1; x++)
+                        {
+                            if (mapArray[t + x, i + y] == 1)
+                                walkableNeighbors++;
+                        }
+                    }
+                    // If 5+ of 9 neighbors (including self) are walkable, make it walkable
+                    if (walkableNeighbors >= 5)
+                        tempMap[t, i] = 1;
+                }
+            }
+            mapArray = tempMap;
+        }
+    }
     public void RemoveUnwantedTiles()
     {
         for (int i = 0; i < mapHeight; i++)

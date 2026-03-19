@@ -27,7 +27,6 @@ public class Enemy : MonoBehaviour
         enemySpeed = enemyData.speed;
         hpBar = GetComponentInChildren<Slider>();
         if (hpBar != null) hpBar.value = 1f;
-        hpBar.value = 1f;
     }
     private void Update()
     {
@@ -50,6 +49,12 @@ public class Enemy : MonoBehaviour
         if (enemyHealth <= 0)
         {
             if (enemyAI != null)
+            {
+                isDead = true;
+                enemyAI.currentState = EnemyState.Death;
+                StartCoroutine("GoldAndExpRandomizer");
+            }
+            else if (enemyData.isREE)
             {
                 isDead = true;
                 StartCoroutine("GoldAndExpRandomizer");
@@ -85,7 +90,7 @@ public class Enemy : MonoBehaviour
             Instantiate(xpDrop, new Vector2(transform.position.x + randomX, transform.position.y + randomY), Quaternion.identity);
            
         }
-        enemyAI.currentState = EnemyState.Death;
+        
         return null;
     }
     public void GoldRandomizerBoss()
