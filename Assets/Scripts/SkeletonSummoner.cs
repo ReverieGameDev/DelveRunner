@@ -155,10 +155,15 @@ public class SkeletonSummoner : MonoBehaviour
 
     IEnumerator SummonAttack()
     {
+        int maxAttempts = 100;
+        int attempts = 0;
         isIndicatorActive = false;
         currentAttack = "";
         for (int i = 0; i < summonCount; i++)
         {
+            attempts++;
+            if (attempts > maxAttempts) break;
+
             Vector2 randomSummonSpace = new Vector2(Random.Range(transform.position.x + 10, transform.position.x + 30), Random.Range(transform.position.y + 10, transform.position.y + 30));
             if (mapGenerator.mapArray[(int)randomSummonSpace.x, (int)randomSummonSpace.y] == 1)
             {

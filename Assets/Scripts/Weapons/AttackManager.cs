@@ -11,15 +11,18 @@ public class AttackManager : MonoBehaviour
     public GameObject chakramPrefab;
     public GameObject shatterFrostPrefab;
     public GameObject fantasiaPrefab;
+    public GameObject starDaggerPrefab;
 
     private bool isEchoSwordActive = true;
     private bool isBlackHoleActive = true;
     private bool isChakramActive = true;
     private bool isShatterFrostActive = true;
     private bool isFantasiaActive = true;
+    private bool isStarDaggerActive = true;
 
     private bool isFiring = false;
 
+    private float starDaggerAS = 1f;
     private float glitchSwordAS = .75f;
     private float blackHoleAS = 4f;
     private float chakramAS = 2f;
@@ -34,7 +37,7 @@ public class AttackManager : MonoBehaviour
     public enum WeaponType
     {
         GlitchSword,
-        BlackHole,
+        StarDagger,
         ShatterFrost
     }
     void Start()
@@ -84,6 +87,15 @@ public class AttackManager : MonoBehaviour
         GameObject spawnedBlackHole = Instantiate(blackHolePrefab, playerCombat.transform.position, Quaternion.identity);
         Destroy(spawnedBlackHole, 7f);
         yield return new WaitForSeconds(blackHoleAS);
+        isFiring = false;
+    }
+
+    IEnumerator StarDagger()
+    {
+
+        GameObject spawnedBlackHole = Instantiate(starDaggerPrefab, playerCombat.transform.position, Quaternion.identity);
+        
+        yield return new WaitForSeconds(starDaggerAS);
         isFiring = false;
     }
 

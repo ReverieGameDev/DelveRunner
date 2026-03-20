@@ -10,7 +10,7 @@ public class WeaponManager : MonoBehaviour
     public int weaponIndex = 0;
     public bool switchingWeapons = false;
     public Sprite glitchSwordIcon;
-    public Sprite blackHoleIcon;
+    public Sprite starDaggerIcon;
     public Sprite shatterFrostIcon;
     public Image weaponSlot1;
     public Image weaponSlot2;
@@ -21,7 +21,7 @@ public class WeaponManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        currentWeapon = heldWeapons[weaponIndex];
         UpdateWeaponUI();
     }
     private Sprite GetWeaponSprite(WeaponType weapon)
@@ -29,7 +29,7 @@ public class WeaponManager : MonoBehaviour
         switch (weapon)
         {
             case WeaponType.GlitchSword: return glitchSwordIcon;
-            case WeaponType.BlackHole: return blackHoleIcon;
+            case WeaponType.StarDagger: return starDaggerIcon;
             case WeaponType.ShatterFrost: return shatterFrostIcon;
             default: return null;
         }

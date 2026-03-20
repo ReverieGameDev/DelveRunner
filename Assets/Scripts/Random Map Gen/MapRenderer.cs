@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
@@ -23,7 +24,7 @@ public class MapRenderer : MonoBehaviour
     public GameObject[] obstacleDecorTile;
     public TileBase[] obstacleDecorTile2;
     public TileBase[] obstacleDecorTile3;
-
+    public GameObject[] edgeDecorObjects;
     // Edge tiles
     public TileBase leftEdge;
     public TileBase downEdge;
@@ -69,6 +70,7 @@ public class MapRenderer : MonoBehaviour
         // 4. Trees and decor on obstacle tiles
         RenderRandomObstacleDecor();
         RenderEdgeDecor();
+        RenderEdgeDecorObjects();
     }
 
 
@@ -158,7 +160,7 @@ public class MapRenderer : MonoBehaviour
                     }
                     if (!nearWalkable) continue;
 
-                    walkableDecorTilemap.SetTile(new Vector3Int(t, i, 0), obstacleDecorTile3[Random.Range(0, obstacleDecorTile2.Length)]);
+                    walkableDecorTilemap.SetTile(new Vector3Int(t, i, 0), obstacleDecorTile3[Random.Range(0, obstacleDecorTile3.Length)]);
                 }
             }
         }
@@ -195,6 +197,70 @@ public class MapRenderer : MonoBehaviour
         }
     }
 
+
+    public void RenderEdgeDecorObjects()
+    {
+        List<Vector2> spawnedPositions = new List<Vector2>();
+
+        for (int i = 3; i < mapGenerator.mapHeight - 3; i++)
+        {
+            for (int t = 3; t < mapGenerator.mapWidth - 3; t++)
+            {
+                if (mapGenerator.mapArray[t, i] == 0 && Random.Range(0, 101) < 15)
+                {
+                    bool nearWalkable = false;
+                    bool tooClose = false;
+
+                    for (int y = -3; y <= 3 && !tooClose; y++)
+                    {
+                        for (int x = -3; x <= 3 && !tooClose; x++)
+                        {
+                            int checkX = t + x;
+                            int checkY = i + y;
+                            if (checkX >= 0 && checkX < mapGenerator.mapWidth && checkY >= 0 && checkY < mapGenerator.mapHeight)
+                            {
+                                if (mapGenerator.mapArray[checkX, checkY] == 1)
+                                    tooClose = true;
+                            }
+                        }
+                    }
+                    if (tooClose) continue;
+
+                    for (int y = -10; y <= 10 && !nearWalkable; y++)
+                    {
+                        for (int x = -10; x <= 10 && !nearWalkable; x++)
+                        {
+                            int checkX = t + x;
+                            int checkY = i + y;
+                            if (checkX >= 0 && checkX < mapGenerator.mapWidth && checkY >= 0 && checkY < mapGenerator.mapHeight)
+                            {
+                                if (mapGenerator.mapArray[checkX, checkY] == 1)
+                                    nearWalkable = true;
+                            }
+                        }
+                    }
+                    if (!nearWalkable) continue;
+
+                    // Check distance from other spawned objects
+                    Vector2 thisPos = new Vector2(t, i);
+                    bool tooCloseToOther = false;
+                    for (int s = 0; s < spawnedPositions.Count; s++)
+                    {
+                        if (Vector2.Distance(thisPos, spawnedPositions[s]) < 3)
+                        {
+                            tooCloseToOther = true;
+                            break;
+                        }
+                    }
+                    if (tooCloseToOther) continue;
+
+                    spawnedPositions.Add(thisPos);
+                    float yOffset = Random.Range(0f, 0.01f);
+                    Instantiate(edgeDecorObjects[Random.Range(0, edgeDecorObjects.Length)], new Vector3(t, i + yOffset, 0), Quaternion.identity);
+                }
+            }
+        }
+    }
     public void ViableEnemySpawns()
     {
         spawnManager.viableSpawnCenters = new int[mapGenerator.mapWidth, mapGenerator.mapHeight];

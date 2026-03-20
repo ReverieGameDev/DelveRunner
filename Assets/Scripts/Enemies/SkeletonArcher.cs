@@ -53,6 +53,7 @@ public class SkeletonArcher : MonoBehaviour
     {
         if (enemy.isDead && !isDead)
         {
+            anim.speed = 1f;
             enemy.isDead = true;
             isDead = true;
             DeathSequence();
