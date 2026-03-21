@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: GlitchSlash
+  m_Name: BloodMaceAnim
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -21,21 +21,25 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: 2699220344719237613, guid: 26e02767de812bd4fba7aa755b577a0a, type: 3}
+      value: {fileID: -5277493111350708348, guid: 22f1dcce5e32efc4f9d9be8454459d55, type: 3}
     - time: 0.083333336
-      value: {fileID: -3305467382550620002, guid: 26e02767de812bd4fba7aa755b577a0a, type: 3}
-    - time: 0.21666667
-      value: {fileID: 2247486472816963697, guid: 26e02767de812bd4fba7aa755b577a0a, type: 3}
+      value: {fileID: 5949706055020290445, guid: 22f1dcce5e32efc4f9d9be8454459d55, type: 3}
+    - time: 0.16666667
+      value: {fileID: -1641168282415328195, guid: 22f1dcce5e32efc4f9d9be8454459d55, type: 3}
+    - time: 0.25
+      value: {fileID: 4295804085324216902, guid: 22f1dcce5e32efc4f9d9be8454459d55, type: 3}
     - time: 0.33333334
-      value: {fileID: 2502548260873428091, guid: 26e02767de812bd4fba7aa755b577a0a, type: 3}
+      value: {fileID: -5915789332341830992, guid: 22f1dcce5e32efc4f9d9be8454459d55, type: 3}
     - time: 0.41666666
-      value: {fileID: -4970081003323430720, guid: 26e02767de812bd4fba7aa755b577a0a, type: 3}
+      value: {fileID: 5954394026336621118, guid: 22f1dcce5e32efc4f9d9be8454459d55, type: 3}
+    - time: 0.5
+      value: {fileID: -2954806920969471563, guid: 22f1dcce5e32efc4f9d9be8454459d55, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
     script: {fileID: 0}
     flags: 2
-  m_SampleRate: 60
+  m_SampleRate: 12
   m_WrapMode: 0
   m_Bounds:
     m_Center: {x: 0, y: 0, z: 0}
@@ -52,17 +56,19 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
-    - {fileID: 2699220344719237613, guid: 26e02767de812bd4fba7aa755b577a0a, type: 3}
-    - {fileID: -3305467382550620002, guid: 26e02767de812bd4fba7aa755b577a0a, type: 3}
-    - {fileID: 2247486472816963697, guid: 26e02767de812bd4fba7aa755b577a0a, type: 3}
-    - {fileID: 2502548260873428091, guid: 26e02767de812bd4fba7aa755b577a0a, type: 3}
-    - {fileID: -4970081003323430720, guid: 26e02767de812bd4fba7aa755b577a0a, type: 3}
+    - {fileID: -5277493111350708348, guid: 22f1dcce5e32efc4f9d9be8454459d55, type: 3}
+    - {fileID: 5949706055020290445, guid: 22f1dcce5e32efc4f9d9be8454459d55, type: 3}
+    - {fileID: -1641168282415328195, guid: 22f1dcce5e32efc4f9d9be8454459d55, type: 3}
+    - {fileID: 4295804085324216902, guid: 22f1dcce5e32efc4f9d9be8454459d55, type: 3}
+    - {fileID: -5915789332341830992, guid: 22f1dcce5e32efc4f9d9be8454459d55, type: 3}
+    - {fileID: 5954394026336621118, guid: 22f1dcce5e32efc4f9d9be8454459d55, type: 3}
+    - {fileID: -2954806920969471563, guid: 22f1dcce5e32efc4f9d9be8454459d55, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.43333334
+    m_StopTime: 0.5833333
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -81,4 +87,11 @@ AnimationClip:
   m_EulerEditorCurves: []
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
-  m_Events: []
+  m_Events:
+  - time: 0.5
+    functionName: DestroyBloodMace
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0

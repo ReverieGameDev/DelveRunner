@@ -7,7 +7,7 @@ public class PlayerCombat : MonoBehaviour
 {
     public static PlayerCombat Instance;
 
-
+    public GameObject bloodHealPrefab;
     // References
     public PlayerData playerData;
     private PlayerMovement playerMovement;
@@ -118,6 +118,21 @@ public class PlayerCombat : MonoBehaviour
         {
             anim.SetTrigger("Death");
             GameOver();
+        }
+    }
+
+    public void BloodHeal(int damageHealed)
+    {
+        Instantiate(bloodHealPrefab, transform.position, Quaternion.identity);
+        HealPlayer(damageHealed);
+    }
+    public void HealPlayer(float damageHealed)
+    {
+        if (currentPlayerHealth > 0 && currentPlayerHealth < (int)playerData.playerHp)
+        {
+            int damageHealedInt = (int)Mathf.Round(damageHealed);
+            currentPlayerHealth = Mathf.Min(currentPlayerHealth + damageHealedInt, (int)playerData.playerHp);
+            playerHpBar.value = currentPlayerHealth / playerData.playerHp;
         }
     }
 

@@ -12,6 +12,8 @@ public class AttackManager : MonoBehaviour
     public GameObject shatterFrostPrefab;
     public GameObject fantasiaPrefab;
     public GameObject starDaggerPrefab;
+    public GameObject bloodMacePrefab;
+    public GameObject twinShadowsPrefab;
 
     private bool isEchoSwordActive = true;
     private bool isBlackHoleActive = true;
@@ -19,6 +21,8 @@ public class AttackManager : MonoBehaviour
     private bool isShatterFrostActive = true;
     private bool isFantasiaActive = true;
     private bool isStarDaggerActive = true;
+    private bool isBloodMaceActive = true;
+    private bool isTwinShadowsActive = true;
 
     private bool isFiring = false;
 
@@ -28,6 +32,8 @@ public class AttackManager : MonoBehaviour
     private float chakramAS = 2f;
     private float shatterFrostAS = 2.5f;
     private float fantasiaAS = 10f;
+    private float bloodMaceAS = 6f;
+    private float twinShadowsAS = .75f;
 
     public Vector3 mousePos;
     public Vector3 playerPos;
@@ -36,9 +42,9 @@ public class AttackManager : MonoBehaviour
     private WeaponManager weaponManager;
     public enum WeaponType
     {
-        GlitchSword,
+        TwinShadows,
         StarDagger,
-        ShatterFrost
+        BloodMace
     }
     void Start()
     {
@@ -75,9 +81,13 @@ public class AttackManager : MonoBehaviour
     IEnumerator GlitchSword()
     {
         Instantiate(glitchSwordPrefab, playerCombat.transform.position, Quaternion.identity);
-        Instantiate(glitchSwordEchoPrefab, playerCombat.transform.position, Quaternion.identity);
-        
         yield return new WaitForSeconds(glitchSwordAS);
+        isFiring = false;
+    }
+    IEnumerator TwinShadows()
+    {
+        Instantiate(twinShadowsPrefab, playerCombat.transform.position, Quaternion.identity);
+        yield return new WaitForSeconds(twinShadowsAS);
         isFiring = false;
     }
 
@@ -90,6 +100,12 @@ public class AttackManager : MonoBehaviour
         isFiring = false;
     }
 
+    IEnumerator BloodMace()
+    {
+        Instantiate(bloodMacePrefab, playerCombat.transform.position, Quaternion.identity);
+        yield return new WaitForSeconds(bloodMaceAS);
+        isFiring = false;
+    }
     IEnumerator StarDagger()
     {
 

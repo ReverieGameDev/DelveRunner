@@ -41,6 +41,10 @@ public class ArrowBehaviour : MonoBehaviour
             rb.MovePosition((Vector2)transform.position + archerToPlayerPos * speed * Time.fixedDeltaTime);
             
         }
+        if (Vector2.Distance(transform.position, playerMovement.transform.position) > 30)
+        {
+            Destroy(gameObject);
+        }
     }
 
     public void AttackName(string attack, int offset)
@@ -55,7 +59,6 @@ public class ArrowBehaviour : MonoBehaviour
             arrowAngle = Mathf.Deg2Rad * arrowAngle;
 
             archerToPlayerPos = new Vector2(Mathf.Cos(arrowAngle), Mathf.Sin(arrowAngle));
-            Debug.Log(archerToPlayerPos.x + "x " + archerToPlayerPos.y);
             
         }
         isReadyToFire = true;

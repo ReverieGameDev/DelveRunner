@@ -51,8 +51,25 @@ public class SkeletonArcher : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (isREE && Vector2.Distance(transform.position, playerMovement.transform.position) > 40f)
+        {
+            currentAttack = "";
+            isReadyTofire = false;
+            for (int i = 0; i < volleyIndicators.Count; i++)
+            {
+                Destroy(volleyIndicators[i]);
+            }
+            anim.speed = 1f;
+            anim.SetInteger("ArcherInt", 3);
+            Destroy(currentIndicator);
+            arrowVolleyList.Clear();
+            GetComponent<Collider2D>().enabled = false;
+            StopAllCoroutines();
+            Destroy(gameObject);
+        }
         if (enemy.isDead && !isDead)
         {
+            Debug.Log(gameObject.name + " DeathSequence fired");
             anim.speed = 1f;
             enemy.isDead = true;
             isDead = true;

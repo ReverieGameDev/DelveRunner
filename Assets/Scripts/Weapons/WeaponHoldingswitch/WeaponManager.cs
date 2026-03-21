@@ -9,9 +9,9 @@ public class WeaponManager : MonoBehaviour
     public AttackManager.WeaponType currentWeapon;
     public int weaponIndex = 0;
     public bool switchingWeapons = false;
-    public Sprite glitchSwordIcon;
+    public Sprite twinShadowsIcon;
     public Sprite starDaggerIcon;
-    public Sprite shatterFrostIcon;
+    public Sprite bloodMaceIcon;
     public Image weaponSlot1;
     public Image weaponSlot2;
     public Image weaponSlot3;
@@ -28,9 +28,9 @@ public class WeaponManager : MonoBehaviour
     {
         switch (weapon)
         {
-            case WeaponType.GlitchSword: return glitchSwordIcon;
+            case WeaponType.TwinShadows: return twinShadowsIcon;
             case WeaponType.StarDagger: return starDaggerIcon;
-            case WeaponType.ShatterFrost: return shatterFrostIcon;
+            case WeaponType.BloodMace: return bloodMaceIcon;
             default: return null;
         }
     }

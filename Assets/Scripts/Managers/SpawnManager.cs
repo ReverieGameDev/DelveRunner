@@ -27,33 +27,42 @@ public class SpawnManager : MonoBehaviour
     // Values: 0 = empty, 1 = archer, 2 = warrior (match EnemyArray indices)
     private Dictionary<string, int[,]> formations = new Dictionary<string, int[,]>()
     {
-        { "3archers", new int[,] {
-            { 0, 0, 0 },
-            { 1, 1, 1 },
-            { 0, 0, 0 } } },
-        { "3warriors", new int[,] {
-            { 0, 0, 0 },
-            { 2, 2, 2 },
-            { 0, 0, 0 } } },
-        { "frontline", new int[,] {
-            { 2, 2, 2 },   // warriors in front (top row faces player)
-            { 1, 1, 1 },   // archers behind
-            { 0, 0, 0 } } },
-        { "1archer", new int[,] {
-            { 0, 0, 0 },   
-            { 0, 1, 0 },   
-            { 0, 0, 0 } } },
-        { "1tank", new int[,] {
-            { 0, 2, 0 },
-            { 0, 1, 0 },
-            { 0, 4, 0 } } },
-        { "vformation", new int[,] {
-            { 2, 0, 2 },
-            { 0, 1, 0 },
-            { 2, 0, 2 } } 
-        
-        
-        }
+    { "wave1", new int[,] {           // tank archer
+        { 0, 2, 0 },
+        { 0, 1, 0 },
+        { 0, 0, 0 } } },
+    { "wave2", new int[,] {           // tank archer archer
+        { 0, 2, 0 },
+        { 1, 0, 1 },
+        { 0, 0, 0 } } },
+    { "wave3", new int[,] {           // tank tank archer archer
+        { 2, 0, 2 },
+        { 0, 0, 0 },
+        { 1, 0, 1 } } },
+    { "wave4", new int[,] {           // tank summoner
+        { 0, 2, 0 },
+        { 0, 4, 0 },
+        { 0, 0, 0 } } },
+    { "wave5", new int[,] {           // tank archer summoner
+        { 0, 2, 0 },
+        { 0, 1, 0 },
+        { 0, 4, 0 } } },
+    { "wave6", new int[,] {           // tank tank tank archer summoner
+        { 2, 2, 2 },
+        { 0, 1, 0 },
+        { 0, 4, 0 } } },
+    { "wave7", new int[,] {           // tank tank tank archer archer archer
+        { 2, 2, 2 },
+        { 1, 1, 1 },
+        { 0, 0, 0 } } },
+    { "wave8", new int[,] {           // tank tank tank tank tank summoner archer archer
+        { 2, 2, 2 },
+        { 2, 4, 2 },
+        { 1, 0, 1 } } },
+    { "wave9", new int[,] {           // tank tank tank summoner summoner archer
+        { 2, 2, 2 },
+        { 4, 1, 4 },
+        { 0, 1, 0 } } },
     };
 
     // ===== ROTATION =====
@@ -84,24 +93,20 @@ public class SpawnManager : MonoBehaviour
 
     public void SpawnNextWave()
     {
-        Debug.Log("SpawnNextWave called at time: " + Time.time);
-        int rngWave;
         Debug.Log("SpawnNextWave called, waveNumber: " + timer.waveNumber);
-        if (timer.waveNumber == 1)
+
+        if (timer.waveNumber == 10)
         {
-            rngWave = Random.Range(1, 2);
-            if (rngWave == 0) { SpawnWave("1archer"); }
-            if (rngWave == 1) { SpawnWave("1tank"); }
-            Debug.Log("we should be spawning rn");
-        }
-        if (timer.waveNumber == 2)
-        {
-            rngWave = Random.Range(1, 2);
-            if (rngWave == 0) { SpawnWave("1archer"); }
-            if (rngWave == 1) { SpawnWave("1tank"); }
-            Debug.Log("we should be spawning rn");
+            SpawnBoss();
+            return;
         }
 
+        SpawnWave("wave" + timer.waveNumber);
+
+        // RNG wave variants for later:
+        // int rngWave = Random.Range(0, 2);
+        // if (rngWave == 0) { SpawnWave("wave1variantA"); }
+        // if (rngWave == 1) { SpawnWave("wave1variantB"); }
     }
 
     // ===== MAIN SPAWN METHOD =====
@@ -159,6 +164,20 @@ public class SpawnManager : MonoBehaviour
     // ===== GET RANDOM SPAWN LOCATION =====
     public Vector2 GetRandomViableSpawn()
     {
+        if (timer.waveNumber == 10)
+        {
+            for (int i = 0; i < mapGenerator.rooms.Count; i++)
+            {
+                if (mapGenerator.rooms[i].roomType == "boss")
+                {
+                    Vector2 bossSpawnCoords = new Vector2(mapGenerator.rooms[i].centerX, mapGenerator.rooms[i].centerY);
+                    fightNodeIndicator.currentActiveFightNodeCoords = bossSpawnCoords;
+                    Instantiate(spawnEnemiesDetector, bossSpawnCoords, Quaternion.identity);
+                    isFightNodeActive = true;
+                    return bossSpawnCoords;
+                }
+            }
+        }
         List<Room> listOfFightNodes = new List<Room>();
         for (int i = 0; i < mapGenerator.rooms.Count; i++)
         {
@@ -238,11 +257,18 @@ public class SpawnManager : MonoBehaviour
         Vector2 randomOffset = Random.insideUnitCircle * 60f;
         Instantiate(swarm, playerPos + randomOffset, Quaternion.identity);
     }
-    // ===== BOSS SPAWN =====
-    /*public void SpawnBoss()
+    public void SpawnBoss()
     {
-        Instantiate(BossArray[waveManager.currentLevel - 1],
-            new Vector3(transform.position.x, transform.position.y + 10),
-            Quaternion.identity);
-    }*/
+        Room bossRoom = null;
+        for (int i = 0; i < mapGenerator.rooms.Count; i++)
+        {
+            if (mapGenerator.rooms[i].roomType == "boss")
+            {
+                bossRoom = mapGenerator.rooms[i];
+                break;
+            }
+        }
+        Instantiate(BossArray[0], new Vector2(bossRoom.centerX, bossRoom.centerY), Quaternion.identity);
+        NotifyWaveManager();
+    }
 }
