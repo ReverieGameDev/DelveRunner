@@ -15,6 +15,7 @@ public class Enemy : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private EnemyAI enemyAI;
     public bool isDead = false;
+    public GameObject emberPickup;
 
 
     void Start()
@@ -53,11 +54,13 @@ public class Enemy : MonoBehaviour
                 isDead = true;
                 enemyAI.currentState = EnemyState.Death;
                 StartCoroutine("GoldAndExpRandomizer");
+                StartCoroutine("DropEmber");
             }
             else if (enemyData.isREE)
             {
                 isDead = true;
                 StartCoroutine("GoldAndExpRandomizer");
+                StartCoroutine("DropEmber");
             }
             else
             {
@@ -66,6 +69,15 @@ public class Enemy : MonoBehaviour
             }
         }
         if (hpBar != null) hpBar.value = enemyHealth / enemyData.health;
+    }
+    IEnumerator DropEmber()
+    {
+        int emberChance = Random.Range(0, 101);
+        if (emberChance < 20)
+        {
+            Instantiate(emberPickup, transform.position, Quaternion.identity);
+        }
+        return null;
     }
     IEnumerator GoldAndExpRandomizer()
     {

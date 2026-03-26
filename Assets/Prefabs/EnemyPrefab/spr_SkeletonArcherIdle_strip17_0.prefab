@@ -698,6 +698,7 @@ MonoBehaviour:
   enemySpeed: 0
   money1: {fileID: 1932543559876745157, guid: 91e32193b603d804c8db355aa0cc2034, type: 3}
   isDead: 0
+  emberPickup: {fileID: 7187405047775818436, guid: 9041a98763e3eb046a3ba1609185608a, type: 3}
 --- !u!50 &5398702058119664678
 Rigidbody2D:
   serializedVersion: 5
@@ -784,6 +785,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isReadyTofire: 1
+  isREE: 0
   arrow: {fileID: 7962537265955379767, guid: 7d30ecf263fe3f742b3f33fed1e50475, type: 3}
   arrowShotIcon: {fileID: 6704524096746570771, guid: 770a84bf0c14ed248a4ea5422758fabd, type: 3}
   multiShotIcon: {fileID: 4856430760170829019, guid: 1bf0072f6f0188046bc56a2529c952b0, type: 3}

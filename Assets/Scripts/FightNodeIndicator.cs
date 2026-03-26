@@ -11,7 +11,6 @@ public class FightNodeIndicator : MonoBehaviour
     private Vector3 indicatorPosition;
     private Vector3 activeFightNodeCoords;
     private Timer timer;
-    public Sprite[] torchFrames;
     private Image torchImage;
     public float frameRate = 0.1f;
     private int currentFrame = 0;
@@ -21,9 +20,6 @@ public class FightNodeIndicator : MonoBehaviour
         timer = FindFirstObjectByType<Timer>();
         spawnManager = FindFirstObjectByType<SpawnManager>();
         playerMovement = FindFirstObjectByType<PlayerMovement>();
-      
-            torchImage = GetComponent<Image>();
-            StartCoroutine("AnimateTorch");
     }
 
     // Update is called once per frame
@@ -44,13 +40,5 @@ public class FightNodeIndicator : MonoBehaviour
         }
     }
 
-    IEnumerator AnimateTorch()
-    {
-        while (true)
-        {
-            torchImage.sprite = torchFrames[currentFrame];
-            currentFrame = (currentFrame + 1) % torchFrames.Length;
-            yield return new WaitForSeconds(frameRate);
-        }
-    }
+
 }

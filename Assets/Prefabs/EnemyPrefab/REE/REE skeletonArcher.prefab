@@ -546,6 +546,7 @@ MonoBehaviour:
   enemySpeed: 0
   money1: {fileID: 1932543559876745157, guid: 91e32193b603d804c8db355aa0cc2034, type: 3}
   isDead: 0
+  emberPickup: {fileID: 7187405047775818436, guid: 9041a98763e3eb046a3ba1609185608a, type: 3}
 --- !u!50 &4771121501443939898
 Rigidbody2D:
   serializedVersion: 5

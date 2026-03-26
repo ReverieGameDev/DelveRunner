@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7337d422b75799143ae4d07615c3b36c, type: 3}
   m_Name: ExplodingMushroom
   m_EditorClassIdentifier: 
-  health: 30
+  health: 100
   speed: 2
   damage: 30
   mobName: ExplodingMushroom
