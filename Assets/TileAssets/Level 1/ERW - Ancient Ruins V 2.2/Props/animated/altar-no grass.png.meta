@@ -151,7 +151,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -165,7 +165,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 20
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -186,10 +186,10 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 8192
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -230,10 +230,10 @@ TextureImporter:
       name: altar-no grass_0
       rect:
         serializedVersion: 2
-        x: 16
-        y: 3
-        width: 189
-        height: 248
+        x: 0
+        y: 0
+        width: 224
+        height: 288
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -252,10 +252,10 @@ TextureImporter:
       name: altar-no grass_1
       rect:
         serializedVersion: 2
-        x: 240
-        y: 3
-        width: 189
-        height: 248
+        x: 224
+        y: 0
+        width: 224
+        height: 288
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -274,10 +274,10 @@ TextureImporter:
       name: altar-no grass_2
       rect:
         serializedVersion: 2
-        x: 464
-        y: 3
-        width: 189
-        height: 248
+        x: 448
+        y: 0
+        width: 224
+        height: 288
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -296,10 +296,10 @@ TextureImporter:
       name: altar-no grass_3
       rect:
         serializedVersion: 2
-        x: 688
-        y: 3
-        width: 189
-        height: 248
+        x: 672
+        y: 0
+        width: 224
+        height: 288
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -318,10 +318,10 @@ TextureImporter:
       name: altar-no grass_4
       rect:
         serializedVersion: 2
-        x: 912
-        y: 3
-        width: 189
-        height: 248
+        x: 896
+        y: 0
+        width: 224
+        height: 288
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -340,10 +340,10 @@ TextureImporter:
       name: altar-no grass_5
       rect:
         serializedVersion: 2
-        x: 1136
-        y: 3
-        width: 189
-        height: 248
+        x: 1120
+        y: 0
+        width: 224
+        height: 288
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -362,10 +362,10 @@ TextureImporter:
       name: altar-no grass_6
       rect:
         serializedVersion: 2
-        x: 1360
-        y: 3
-        width: 189
-        height: 248
+        x: 1344
+        y: 0
+        width: 224
+        height: 288
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -384,10 +384,10 @@ TextureImporter:
       name: altar-no grass_7
       rect:
         serializedVersion: 2
-        x: 1584
-        y: 3
-        width: 189
-        height: 248
+        x: 1568
+        y: 0
+        width: 224
+        height: 288
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -406,10 +406,10 @@ TextureImporter:
       name: altar-no grass_8
       rect:
         serializedVersion: 2
-        x: 1808
-        y: 3
-        width: 189
-        height: 248
+        x: 1792
+        y: 0
+        width: 224
+        height: 288
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -428,10 +428,10 @@ TextureImporter:
       name: altar-no grass_9
       rect:
         serializedVersion: 2
-        x: 2032
-        y: 3
-        width: 189
-        height: 248
+        x: 2016
+        y: 0
+        width: 224
+        height: 288
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -450,10 +450,10 @@ TextureImporter:
       name: altar-no grass_10
       rect:
         serializedVersion: 2
-        x: 2256
-        y: 3
-        width: 189
-        height: 248
+        x: 2240
+        y: 0
+        width: 224
+        height: 288
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -472,10 +472,10 @@ TextureImporter:
       name: altar-no grass_11
       rect:
         serializedVersion: 2
-        x: 2480
-        y: 3
-        width: 189
-        height: 248
+        x: 2464
+        y: 0
+        width: 224
+        height: 288
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -494,10 +494,10 @@ TextureImporter:
       name: altar-no grass_12
       rect:
         serializedVersion: 2
-        x: 2704
-        y: 3
-        width: 189
-        height: 248
+        x: 2688
+        y: 0
+        width: 224
+        height: 288
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -516,10 +516,10 @@ TextureImporter:
       name: altar-no grass_13
       rect:
         serializedVersion: 2
-        x: 2928
-        y: 3
-        width: 189
-        height: 248
+        x: 2912
+        y: 0
+        width: 224
+        height: 288
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -538,10 +538,10 @@ TextureImporter:
       name: altar-no grass_14
       rect:
         serializedVersion: 2
-        x: 3152
-        y: 3
-        width: 189
-        height: 248
+        x: 3136
+        y: 0
+        width: 224
+        height: 288
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -560,10 +560,10 @@ TextureImporter:
       name: altar-no grass_15
       rect:
         serializedVersion: 2
-        x: 3376
-        y: 3
-        width: 189
-        height: 248
+        x: 3360
+        y: 0
+        width: 224
+        height: 288
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -582,10 +582,10 @@ TextureImporter:
       name: altar-no grass_16
       rect:
         serializedVersion: 2
-        x: 3600
-        y: 3
-        width: 189
-        height: 248
+        x: 3584
+        y: 0
+        width: 224
+        height: 288
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -604,10 +604,10 @@ TextureImporter:
       name: altar-no grass_17
       rect:
         serializedVersion: 2
-        x: 3824
-        y: 3
-        width: 189
-        height: 248
+        x: 3808
+        y: 0
+        width: 224
+        height: 288
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -626,10 +626,10 @@ TextureImporter:
       name: altar-no grass_18
       rect:
         serializedVersion: 2
-        x: 4048
-        y: 3
-        width: 189
-        height: 248
+        x: 4032
+        y: 0
+        width: 224
+        height: 288
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -648,10 +648,10 @@ TextureImporter:
       name: altar-no grass_19
       rect:
         serializedVersion: 2
-        x: 4272
-        y: 3
-        width: 189
-        height: 248
+        x: 4256
+        y: 0
+        width: 224
+        height: 288
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -670,10 +670,10 @@ TextureImporter:
       name: altar-no grass_20
       rect:
         serializedVersion: 2
-        x: 4496
-        y: 3
-        width: 189
-        height: 248
+        x: 4480
+        y: 0
+        width: 224
+        height: 288
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -692,10 +692,10 @@ TextureImporter:
       name: altar-no grass_21
       rect:
         serializedVersion: 2
-        x: 4720
-        y: 3
-        width: 189
-        height: 248
+        x: 4704
+        y: 0
+        width: 224
+        height: 288
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -714,10 +714,10 @@ TextureImporter:
       name: altar-no grass_22
       rect:
         serializedVersion: 2
-        x: 4944
-        y: 3
-        width: 189
-        height: 248
+        x: 4928
+        y: 0
+        width: 224
+        height: 288
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -736,10 +736,10 @@ TextureImporter:
       name: altar-no grass_23
       rect:
         serializedVersion: 2
-        x: 5168
-        y: 3
-        width: 189
-        height: 248
+        x: 5152
+        y: 0
+        width: 224
+        height: 288
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -758,10 +758,10 @@ TextureImporter:
       name: altar-no grass_24
       rect:
         serializedVersion: 2
-        x: 5392
-        y: 3
-        width: 189
-        height: 248
+        x: 5376
+        y: 0
+        width: 224
+        height: 288
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -780,10 +780,10 @@ TextureImporter:
       name: altar-no grass_25
       rect:
         serializedVersion: 2
-        x: 5616
-        y: 3
-        width: 189
-        height: 248
+        x: 5600
+        y: 0
+        width: 224
+        height: 288
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -802,10 +802,10 @@ TextureImporter:
       name: altar-no grass_26
       rect:
         serializedVersion: 2
-        x: 5840
-        y: 3
-        width: 189
-        height: 248
+        x: 5824
+        y: 0
+        width: 224
+        height: 288
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -824,10 +824,10 @@ TextureImporter:
       name: altar-no grass_27
       rect:
         serializedVersion: 2
-        x: 6064
-        y: 3
-        width: 189
-        height: 248
+        x: 6048
+        y: 0
+        width: 224
+        height: 288
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -846,10 +846,10 @@ TextureImporter:
       name: altar-no grass_28
       rect:
         serializedVersion: 2
-        x: 6288
-        y: 3
-        width: 189
-        height: 248
+        x: 6272
+        y: 0
+        width: 224
+        height: 288
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -868,10 +868,10 @@ TextureImporter:
       name: altar-no grass_29
       rect:
         serializedVersion: 2
-        x: 6512
-        y: 3
-        width: 189
-        height: 248
+        x: 6496
+        y: 0
+        width: 224
+        height: 288
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -890,10 +890,10 @@ TextureImporter:
       name: altar-no grass_30
       rect:
         serializedVersion: 2
-        x: 6736
-        y: 3
-        width: 189
-        height: 248
+        x: 6720
+        y: 0
+        width: 224
+        height: 288
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -912,10 +912,10 @@ TextureImporter:
       name: altar-no grass_31
       rect:
         serializedVersion: 2
-        x: 6960
-        y: 3
-        width: 189
-        height: 248
+        x: 6944
+        y: 0
+        width: 224
+        height: 288
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -934,10 +934,10 @@ TextureImporter:
       name: altar-no grass_32
       rect:
         serializedVersion: 2
-        x: 7184
-        y: 3
-        width: 189
-        height: 248
+        x: 7168
+        y: 0
+        width: 224
+        height: 288
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -956,10 +956,10 @@ TextureImporter:
       name: altar-no grass_33
       rect:
         serializedVersion: 2
-        x: 7408
-        y: 3
-        width: 189
-        height: 248
+        x: 7392
+        y: 0
+        width: 224
+        height: 288
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -978,10 +978,10 @@ TextureImporter:
       name: altar-no grass_34
       rect:
         serializedVersion: 2
-        x: 7632
-        y: 3
-        width: 189
-        height: 248
+        x: 7616
+        y: 0
+        width: 224
+        height: 288
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1000,10 +1000,10 @@ TextureImporter:
       name: altar-no grass_35
       rect:
         serializedVersion: 2
-        x: 7856
-        y: 3
-        width: 189
-        height: 248
+        x: 7840
+        y: 0
+        width: 224
+        height: 288
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1022,10 +1022,10 @@ TextureImporter:
       name: altar-no grass_36
       rect:
         serializedVersion: 2
-        x: 8080
-        y: 3
-        width: 189
-        height: 248
+        x: 8064
+        y: 0
+        width: 224
+        height: 288
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1044,10 +1044,10 @@ TextureImporter:
       name: altar-no grass_37
       rect:
         serializedVersion: 2
-        x: 8304
-        y: 3
-        width: 189
-        height: 248
+        x: 8288
+        y: 0
+        width: 224
+        height: 288
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1066,10 +1066,10 @@ TextureImporter:
       name: altar-no grass_38
       rect:
         serializedVersion: 2
-        x: 8528
-        y: 3
-        width: 189
-        height: 248
+        x: 8512
+        y: 0
+        width: 224
+        height: 288
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1088,7 +1088,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 87c962384cf67f34b85d4fabc88da6ea
     internalID: 0
     vertices: []
     indices: 

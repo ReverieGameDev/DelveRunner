@@ -11,8 +11,8 @@ public class Room
 
 public class MapGenerator : MonoBehaviour
 {
-    public int mapHeight = 500;
-    public int mapWidth = 500;
+    public int mapHeight = 250;
+    public int mapWidth = 350;
     public int[,] mapArray;
     private MapRenderer mapRenderer;
     public List<Room> rooms = new List<Room>();
@@ -25,7 +25,7 @@ public class MapGenerator : MonoBehaviour
 
     // Room radii
     public int spawnRadius = 15;
-    public int fightNodeRadius = 25;
+    public int fightNodeRadius = 22;
     public int cacheRadius = 10;
     public int bossRadius = 30;
 
@@ -37,8 +37,8 @@ public class MapGenerator : MonoBehaviour
     // Room counts
     public int fightNodeMin = 4;
     public int fightNodeMax = 5;
-    public int cacheMin = 2;
-    public int cacheMax = 5;
+    public int cacheMin = 5;
+    public int cacheMax = 8;
     private void Awake()
     {
         mapRenderer = FindFirstObjectByType<MapRenderer>();
@@ -224,6 +224,7 @@ public class MapGenerator : MonoBehaviour
                     rooms.Add(lastViableSpawn);
                     CarveRoom(roomX, roomY, fightNodeRadius);
                     roomPlaced = true;
+                    mapRenderer.RenderFightNodePrefab(new Vector2(roomX, roomY));
                     Debug.Log("Fight node placed at: " + roomX + ", " + roomY);
                 }
             }
@@ -254,6 +255,8 @@ public class MapGenerator : MonoBehaviour
                     rooms.Add(currentRoom);
                     CarveRoom(roomX, roomY, cacheRadius);
                     roomPlaced = true;
+                    mapRenderer.RenderChests(new Vector2(roomX,roomY));
+                    mapRenderer.RenderCachePrefab(new Vector2(roomX, roomY));
                     Debug.Log("Cache placed at: " + roomX + ", " + roomY);
                 }
             }

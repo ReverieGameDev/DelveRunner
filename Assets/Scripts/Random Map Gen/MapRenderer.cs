@@ -35,6 +35,11 @@ public class MapRenderer : MonoBehaviour
     public TileBase bottomRightEdge;
     public TileBase topRightEdge;
 
+    public List<GameObject> chests = new List<GameObject>();
+
+    public GameObject cachePrefab; //make this into a list later, you need 3 minimum
+    public GameObject fightNodePrefab;//make this into a list later, you need 3 minimum
+
     public int oobTileLimit = 45;
 
     void Awake()
@@ -71,9 +76,22 @@ public class MapRenderer : MonoBehaviour
         RenderRandomObstacleDecor();
         RenderEdgeDecor();
         RenderEdgeDecorObjects();
+
     }
-
-
+    public void RenderChests(Vector2 cacheCenter)
+    {
+        int randomChest = Random.Range(0, chests.Count);
+        Instantiate(chests[randomChest], cacheCenter, Quaternion.identity);
+    }
+    public void RenderCachePrefab(Vector2 cacheCenter)
+    {
+        Debug.Log("Rendering Caches");
+        Instantiate(cachePrefab, cacheCenter, Quaternion.identity);
+    }
+    public void RenderFightNodePrefab(Vector2 fightNodeCenter)
+    {
+        Instantiate(fightNodePrefab, fightNodeCenter, Quaternion.identity);
+    }
     public void RenderObstacleGround()
     {
         for (int i = 0; i < mapGenerator.mapHeight; i++)

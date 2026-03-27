@@ -270,10 +270,18 @@ public class SkeletonArcher : MonoBehaviour
     }
     public void PauseKnock()
     {
-        anim.speed = 0f;
+        if (!enemy.isDead)
+        {
+            anim.speed = 0f;
+        }
+       
     }
     public void ResumeShot()
     {
-        anim.speed = 1f;
+        if (!enemy.isDead)
+        {
+            anim.speed = 1f;
+        }
+        
     }
 }

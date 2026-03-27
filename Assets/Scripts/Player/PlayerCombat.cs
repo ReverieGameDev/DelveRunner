@@ -22,7 +22,7 @@ public class PlayerCombat : MonoBehaviour
     public int playerMoney = 0;
 
     // Stats
-    private int currentPlayerHealth;
+    public int currentPlayerHealth;
     public float attack = 1f;
     public float attackSpeed = 1f;
     public int critChance = 5;
