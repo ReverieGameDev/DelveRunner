@@ -16,6 +16,7 @@ public class OrcBoss : MonoBehaviour
     private Enemy enemy;
     private bool isDead = false;
     private bool spikeTrapIndicatorOver = false;
+    public GameObject portalSpawnAura;
 
     // Attack icons
     public Sprite acidRainIcon;
@@ -192,6 +193,7 @@ public class OrcBoss : MonoBehaviour
     }
     public void DestroyOrcBoss()
     {
+        Instantiate(portalSpawnAura, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
 }

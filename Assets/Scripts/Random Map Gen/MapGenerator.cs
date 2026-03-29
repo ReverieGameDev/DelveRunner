@@ -284,6 +284,7 @@ public class MapGenerator : MonoBehaviour
                 Room bossRoom = new Room { centerX = roomX, centerY = roomY, radius = bossRadius, roomType = "boss" };
                 rooms.Add(bossRoom);
                 CarveRoom(roomX, roomY, bossRadius);
+                mapRenderer.RenderBossNodePrefab(new Vector2(roomX-5, roomY-6));
                 bossPlaced = true;
                 Debug.Log("Boss room placed at: " + roomX + ", " + roomY);
             }

@@ -39,6 +39,7 @@ public class MapRenderer : MonoBehaviour
 
     public GameObject cachePrefab; //make this into a list later, you need 3 minimum
     public GameObject fightNodePrefab;//make this into a list later, you need 3 minimum
+    public GameObject bossNodePrefab;
 
     public int oobTileLimit = 45;
 
@@ -91,6 +92,10 @@ public class MapRenderer : MonoBehaviour
     public void RenderFightNodePrefab(Vector2 fightNodeCenter)
     {
         Instantiate(fightNodePrefab, fightNodeCenter, Quaternion.identity);
+    }
+    public void RenderBossNodePrefab(Vector2 bossNodeCenter)
+    {
+        Instantiate(bossNodePrefab, bossNodeCenter, Quaternion.identity);
     }
     public void RenderObstacleGround()
     {

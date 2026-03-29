@@ -84,6 +84,15 @@ public class Timer : MonoBehaviour
             fightTimer = false;
             restTimer = true;
             overtime = false;
+
+            foreach (GameObject barrier in GameObject.FindGameObjectsWithTag("Barrier"))
+            {
+                barrier.GetComponent<BarrierBehaviour>().RetractSpikesBarrierAnim();
+            }
+            foreach (GameObject anchor in GameObject.FindGameObjectsWithTag("Anchor"))
+            {
+                anchor.GetComponent<FormationAnchorBehaviour>().DestroyAnchor();
+            }
             fightTime = fightTimeBase;
             enemiesHaveSpawned = false;
             TimeManager();
@@ -128,7 +137,14 @@ public class Timer : MonoBehaviour
         spawnManager.SpawnSwarm();
         if (enemiesHaveSpawned && waveManager.CountAliveEnemies() == 0)
         {
-            Debug.Log("ALL ENEMIES HAVE BEEN DEFEATED");
+            foreach (GameObject barrier in GameObject.FindGameObjectsWithTag("Barrier"))
+            {
+                barrier.GetComponent<BarrierBehaviour>().RetractSpikesBarrierAnim();
+            }
+            foreach (GameObject anchor in GameObject.FindGameObjectsWithTag("Anchor"))
+            {
+                anchor.GetComponent<FormationAnchorBehaviour>().DestroyAnchor();
+            }
             overtime = false;
             restTimer = true;
             enemiesHaveSpawned = false;

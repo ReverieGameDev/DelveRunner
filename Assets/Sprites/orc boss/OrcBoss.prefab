@@ -52,6 +52,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spikeStripAmount: 0
+  portalSpawnAura: {fileID: 364250871844397856, guid: b582bd6c009d4104d91556198e84a933, type: 3}
   acidRainIcon: {fileID: -4594003751095946042, guid: 6f78b3d92efe7db45b475ee622f70a27, type: 3}
   magicMissileIcon: {fileID: 5722001103532407400, guid: 0797e9b2a6c75d846b1332827461a6fd, type: 3}
   spikeStripIcon: {fileID: -5705063170648736755, guid: 1f6afe81005c200439bf3d73604c490b, type: 3}
@@ -145,7 +146,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_Sprite: {fileID: 2070011001598549461, guid: 17ec1706135ebdb44b5aa26e24861d8e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -174,6 +175,8 @@ MonoBehaviour:
   enemyHealth: 0
   enemySpeed: 0
   money1: {fileID: 1932543559876745157, guid: 91e32193b603d804c8db355aa0cc2034, type: 3}
+  isDead: 0
+  emberPickup: {fileID: 0}
 --- !u!60 &3037839440245961798
 PolygonCollider2D:
   m_ObjectHideFlags: 0

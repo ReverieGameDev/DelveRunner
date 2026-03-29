@@ -30,6 +30,8 @@ public class WaveManager : MonoBehaviour
                 count++;
             }
         }
+
         return count;
+
     }
 }

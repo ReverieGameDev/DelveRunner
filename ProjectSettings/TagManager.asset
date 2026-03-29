@@ -12,6 +12,8 @@ TagManager:
   - Shop
   - Wizard
   - QuestBoard
+  - Barrier
+  - Anchor
   layers:
   - Default
   - TransparentFX

@@ -80,5 +80,10 @@ public class FormationAnchorBehaviour : MonoBehaviour
             chargeAttack = true;
         }
     }
+
+    public void DestroyAnchor()
+    {
+        Destroy(gameObject);
+    }
 }
 
