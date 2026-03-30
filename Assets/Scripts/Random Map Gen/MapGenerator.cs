@@ -17,11 +17,14 @@ public class MapGenerator : MonoBehaviour
     private MapRenderer mapRenderer;
     public List<Room> rooms = new List<Room>();
     public List<Vector2> corridorMidpoints = new List<Vector2>();
+    public List<Vector2> rerPositions = new List<Vector2>();
+    public List<Vector2> rERList = new List<Vector2>();
     public int leftBound = 20;
     public int rightBound = 280;
     public int bottomBound = 20;
     public int topBound = 280;
     private Room lastViableSpawn;
+    private RERManager rerManager;
 
     // Room radii
     public int spawnRadius = 15;
@@ -39,10 +42,11 @@ public class MapGenerator : MonoBehaviour
     public int fightNodeMax = 5;
     public int cacheMin = 5;
     public int cacheMax = 8;
+    public int rerFrequency = 6; //from 0-10, 0 being non 10 being rers wherever available
     private void Awake()
     {
         mapRenderer = FindFirstObjectByType<MapRenderer>();
-        
+        rerManager = FindFirstObjectByType<RERManager>();
     }
     void Start()
     {
@@ -64,6 +68,7 @@ public class MapGenerator : MonoBehaviour
 
         PlaceRooms();
         PlaceCenterTilesCorridors();
+        PlaceRER();
         SmoothEdges();
         RemoveIsolatedObstacles();
         RemoveUnwantedTiles();
@@ -173,6 +178,7 @@ public class MapGenerator : MonoBehaviour
         for (int i = 0; i <= totalDistance; i++)
         {
             float t = i / totalDistance;
+
             int x = (int)Mathf.Lerp(roomA.centerX, roomB.centerX, t);
             int y = (int)Mathf.Lerp(roomA.centerY, roomB.centerY, t);
             for (int w = -3; w <= 3; w++)
@@ -186,8 +192,26 @@ public class MapGenerator : MonoBehaviour
                 }
             }
         }
+        if (totalDistance > 30)
+        {
+            rerPositions.Add(new Vector2(reeX, reeY));
+        }
+
     }
 
+    public void PlaceRER()
+    {
+
+            for (int i = 0; i < rerPositions.Count; i++)
+            {
+                if (Random.Range(0, 10) < rerFrequency)
+                {
+                    rERList.Add(rerPositions[i]);
+                    CarveRoom((int)rerPositions[i].x, (int)rerPositions[i].y, 10);
+                }
+            }
+            rerManager.RERSelection();
+    }
     public void PlaceRooms()
     {
         // Spawn room

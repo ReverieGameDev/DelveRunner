@@ -2,6 +2,8 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using NUnit.Framework;
+using System.Collections.Generic;
 
 public class PlayerCombat : MonoBehaviour
 {
@@ -20,7 +22,7 @@ public class PlayerCombat : MonoBehaviour
 
     //Money
     public int playerMoney = 0;
-
+    public TextMeshProUGUI playerGold;
     // Stats
     public int currentPlayerHealth;
     public float attack = 1f;
@@ -33,6 +35,9 @@ public class PlayerCombat : MonoBehaviour
     public float movementSpeed = 5f;
     public float xpGain = 1f;
     public float goldGain = 1f;
+    private string statueStatToMod;
+
+    public List<string> playerStats = new List<string>();
 
     // UI
     public Slider playerHpBar;
@@ -50,9 +55,21 @@ public class PlayerCombat : MonoBehaviour
     void Awake()
     {
         Instance = this;
+        playerStats.Add("attack");
+        playerStats.Add("attack speed");
+        playerStats.Add("crit chance");
+        playerStats.Add("crit damage");
+        playerStats.Add("armor");
+        playerStats.Add("max health");
+        playerStats.Add("dodge");
+        playerStats.Add("movement speed");
+        playerStats.Add("xp gain");
+        playerStats.Add("gold gain");
     }
+   
     void Start()
     {
+        playerGold.text = ": " + playerMoney;
         anim = GetComponent<Animator>();
         playerMovement = FindFirstObjectByType<PlayerMovement>();
         augmentManager = FindFirstObjectByType<AugmentManager>();
@@ -198,5 +215,149 @@ public class PlayerCombat : MonoBehaviour
     public void GameOver()
     {
         Debug.Log("Game over");
+    }
+    public void OfferingStatueMods(string statToMod, int goldOffered)
+    {
+        playerMoney -= goldOffered;
+        moneyText.text = ": " + playerMoney;
+        switch (statToMod)
+        {
+            case "attack":
+                attack *= 1.15f;
+                break;
+            case "attack speed":
+                attackSpeed *= 1.15f;
+                break;
+            case "crit chance":
+                critChance = (int)(critChance * 1.15f);
+                break;
+            case "crit damage":
+                critDamage *= 1.15f;
+                break;
+            case "armor":
+                armor *= 1.15f;
+                break;
+            case "max health":
+                maxHealth *= 1.15f;
+                break;
+            case "dodge":
+                dodge *= 1.15f;
+                break;
+            case "movement speed":
+                movementSpeed *= 1.15f;
+                break;
+            case "xp gain":
+                xpGain *= 1.15f;
+                break;
+            case "gold gain":
+                goldGain *= 1.15f;
+                break;
+        }
+    }
+    public void CurseStatueMods(string blessedStat, string cursedStat)
+    {
+        switch (blessedStat)
+        {
+            case "attack":
+                attack *= 1.3f;
+                break;
+            case "attack speed":
+                attackSpeed *= 1.3f;
+                break;
+            case "crit chance":
+                critChance = (int)(critChance*1.3f);
+                break;
+            case "crit damage":
+                critDamage *= 1.3f;
+                break;
+            case "armor":
+                armor *= 1.3f;
+                break;
+            case "max health":
+                maxHealth *= 1.3f;
+                break;
+            case "dodge":
+                dodge *= 1.3f;
+                break;
+            case "movement speed":
+                movementSpeed *= 1.3f;
+                break;
+            case "xp gain":
+                xpGain *= 1.3f;
+                break;
+            case "gold gain":
+                goldGain *= 1.3f;
+                break;
+        }
+        switch (cursedStat)
+        {
+            case "attack":
+                attack *= .8f;
+                break;
+            case "attack speed":
+                attackSpeed *= .8f;
+                break;
+            case "crit chance":
+                critChance = (int)(critChance * .8f);
+                break;
+            case "crit damage":
+                critDamage *= .8f;
+                break;
+            case "armor":
+                armor *= .8f;
+                break;
+            case "max health":
+                maxHealth *= .8f;
+                break;
+            case "dodge":
+                dodge *= .8f;
+                break;
+            case "movement speed":
+                movementSpeed *= .8f;
+                break;
+            case "xp gain":
+                xpGain *= .8f;
+                break;
+            case "gold gain":
+                goldGain *= .8f;
+                break;
+        }
+    }
+
+    public void StatueStatMods(string statToMod, float statMod)
+    {
+        switch (statToMod)
+        {
+            case "attack":
+                attack += statMod;
+                break;
+            case "attack speed":
+                attackSpeed -= statMod;
+                break;
+            case "crit chance":
+                critChance += (int)statMod;
+                break;
+            case "crit damage":
+                critDamage += statMod;
+                break;
+            case "armor":
+                armor += statMod;
+                break;
+            case "max health":
+                maxHealth += statMod;
+                break;
+            case "dodge":
+                dodge += statMod;
+                break;
+            case "movement speed":
+                movementSpeed += statMod;
+                break;
+            case "xp gain":
+                xpGain += statMod;
+                break;
+            case "gold gain":
+                goldGain += statMod;
+                break;
+        }
     }
 }
