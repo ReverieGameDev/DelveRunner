@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d5ef8ecc7ad13d4087a515d0ad1d0d2, type: 3}
   m_Name: Teleport
   m_EditorClassIdentifier: 
-  abilityName: Teleport
+  abilityName: Time Dilation
   abilitySprite: {fileID: 0}
   abilityCost: 60
-  abilityDescription: Periodically teleports you in the direction you're walking,
-    deals massive damage on teleport location scaling with intelligence
+  abilityDescription: A toggle ability to slow time down by 25%. Has an activation
+    cost.

@@ -17,6 +17,7 @@ public class Timer : MonoBehaviour
     private int fightTime = 120;
     private int restTime = 30;
     public int waveNumber = 1;
+    public int aliveEnemies;
     public TextMeshProUGUI timer;
     private EnemySpawnDetector enemySpawnDetector;
     public bool enemiesHaveSpawned = false;
@@ -59,7 +60,7 @@ public class Timer : MonoBehaviour
         if (fightTime <= 0)
         {
             Debug.Log(enemiesHaveSpawned);
-            if (enemiesHaveSpawned && waveManager.CountAliveEnemies() == 0)
+            if (enemiesHaveSpawned && aliveEnemies == 0)
             {
                 fightTimer = false;
                 restTimer = true;
@@ -69,7 +70,7 @@ public class Timer : MonoBehaviour
                 TimeManager();
                 yield break;
             }
-            else if (!enemiesHaveSpawned || waveManager.CountAliveEnemies() != 0 && enemiesHaveSpawned)
+            else if (!enemiesHaveSpawned || aliveEnemies != 0 && enemiesHaveSpawned)
             {
                 fightTimer = false;
                 restTimer = false;
@@ -79,7 +80,7 @@ public class Timer : MonoBehaviour
                 yield break;
             }
         }
-        if (waveManager.CountAliveEnemies() == 0 && enemiesHaveSpawned)
+        if (aliveEnemies == 0 && enemiesHaveSpawned)
         {
             fightTimer = false;
             restTimer = true;
@@ -135,7 +136,7 @@ public class Timer : MonoBehaviour
         timer.text = "OVERTIME";
         overtimeSpawner *= .8f;
         spawnManager.SpawnSwarm();
-        if (enemiesHaveSpawned && waveManager.CountAliveEnemies() == 0)
+        if (enemiesHaveSpawned && aliveEnemies == 0)
         {
             foreach (GameObject barrier in GameObject.FindGameObjectsWithTag("Barrier"))
             {

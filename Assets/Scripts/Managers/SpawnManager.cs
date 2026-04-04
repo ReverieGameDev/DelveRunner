@@ -7,7 +7,6 @@ public class SpawnManager : MonoBehaviour
     // ===== REFERENCES =====
     public GameObject[] EnemyArray;  // 0 = archer, 1 = warrior, etc.
     public GameObject[] BossArray;
-    private WaveManager waveManager;
     private MapRenderer mapRenderer;
     private PlayerCombat playerCombat;
     private Timer timer;
@@ -76,7 +75,6 @@ public class SpawnManager : MonoBehaviour
     {
         //references
         mapRenderer = FindFirstObjectByType<MapRenderer>();
-        waveManager = FindFirstObjectByType<WaveManager>();
         mapGenerator = FindFirstObjectByType<MapGenerator>();
         playerCombat = FindFirstObjectByType<PlayerCombat>();
         fightNodeIndicator = FindFirstObjectByType<FightNodeIndicator>();
@@ -157,8 +155,6 @@ public class SpawnManager : MonoBehaviour
                 Debug.Log("Spawning enemy type " + enemyType + " at: " + worldPos);
             }
         }
-        Invoke("NotifyWaveManager", 0.1f);
-       
     }
 
     // ===== GET RANDOM SPAWN LOCATION =====
@@ -245,11 +241,7 @@ public class SpawnManager : MonoBehaviour
             spawnPosArray[1, 0] + spawnPosArray[1, 1] + spawnPosArray[1, 2] + " | " +
             spawnPosArray[2, 0] + spawnPosArray[2, 1] + spawnPosArray[2, 2]);
     }
-    private void NotifyWaveManager()
-    {
-        waveManager.FindAllEnemiesToDefeat();
-        //timer.isWaveActive = true;
-    }
+
 
     public void SpawnSwarm()
     {
@@ -269,6 +261,5 @@ public class SpawnManager : MonoBehaviour
             }
         }
         Instantiate(BossArray[0], new Vector2(bossRoom.centerX, bossRoom.centerY), Quaternion.identity);
-        NotifyWaveManager();
     }
 }

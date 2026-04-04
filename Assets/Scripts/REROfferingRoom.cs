@@ -15,9 +15,11 @@ public class REROfferingRoom : MonoBehaviour
     public GameObject declineButton;
     private bool playerInRange = false;
     private int goldOffering = 25;
+    private ParticleSystem ps;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        ps = GetComponent<ParticleSystem>();
         playerCombat = FindFirstObjectByType<PlayerCombat>();
         chosenStat = Random.Range(0, playerCombat.playerStats.Count);
         List<string> remaining = new List<string>(playerCombat.playerStats);
@@ -109,6 +111,7 @@ public class REROfferingRoom : MonoBehaviour
         yield return new WaitForSecondsRealtime(2f);
         playerCombat.OfferingStatueMods(chosenStatueStat, goldOffering);
         Time.timeScale = 1;
+        ps.Stop();
         statueDialogue.SetActive(false);
     }
 }

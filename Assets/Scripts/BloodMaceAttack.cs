@@ -7,6 +7,7 @@ public class BloodMaceAttack : MonoBehaviour
     private AttackManager attackManager;
     private Vector3 trajectory;
     private PlayerCombat playerCombat;
+    public float damageMultiplier = 1f;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -30,8 +31,8 @@ public class BloodMaceAttack : MonoBehaviour
         if (collision.CompareTag("Enemy"))
         {
             enemy = collision.GetComponent<Enemy>();
-            enemy.reduceHp(playerCombat.CalcWeaponDamage(bloodMaceDamage));
-            playerCombat.BloodHeal(5);
+            enemy.reduceHp(playerCombat.CalcWeaponDamage(bloodMaceDamage * damageMultiplier));
+            playerCombat.BloodHeal((int)(5*damageMultiplier));
         }
     }
 

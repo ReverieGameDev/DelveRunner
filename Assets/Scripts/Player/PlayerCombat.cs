@@ -35,12 +35,15 @@ public class PlayerCombat : MonoBehaviour
     public float movementSpeed = 5f;
     public float xpGain = 1f;
     public float goldGain = 1f;
+    public float playerManaBase = 100;
+    public float currentPlayerMana = 100f;
     private string statueStatToMod;
 
     public List<string> playerStats = new List<string>();
 
     // UI
     public Slider playerHpBar;
+    public Slider playerManaBar;
     public Slider playerXpBar;
     public TextMeshProUGUI playerLevelText;
     public TextMeshProUGUI moneyText;
@@ -76,12 +79,8 @@ public class PlayerCombat : MonoBehaviour
         attackManager = FindFirstObjectByType<AttackManager>();
 
         currentPlayerHealth = (int)playerData.playerHp;
+        playerManaBar.value = 1.0f;
         playerHpBar.value = 1.0f;
-    }
-
-    void Update()
-    {
-        FindClosestEnemy();
     }
     public int CalcWeaponDamage(float damage)
     {
@@ -98,21 +97,6 @@ public class PlayerCombat : MonoBehaviour
         }
         return processedDamage;
     }
-    private void FindClosestEnemy()
-    {
-        foreach (GameObject enemy in GameObject.FindGameObjectsWithTag("Enemy"))
-        {
-            Vector2 currentEnemy = enemy.transform.position;
-            if (closestCurrentEnemy == null)
-            {
-                closestCurrentEnemy = enemy;
-            }
-            else if ((playerMovement.playerPosition - currentEnemy).magnitude < (playerMovement.playerPosition - (Vector2)closestCurrentEnemy.transform.position).magnitude)
-            {
-                closestCurrentEnemy = enemy;
-            }
-        }
-    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -122,7 +106,10 @@ public class PlayerCombat : MonoBehaviour
             moneyText.text = ": " + playerMoney;
         }
     }
-
+    private void Update()
+    {
+        playerManaBar.value = currentPlayerMana / playerManaBase;
+    }
     public void DamagePlayer(float damageTaken)
     {
         int damageTakenInt = (int)Mathf.Round(damageTaken);

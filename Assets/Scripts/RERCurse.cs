@@ -16,9 +16,11 @@ public class RERCurse : MonoBehaviour
     public float maxHealthPenalty = .8f;
     private string cursedStat;
     private bool playerInRange = false;
+    private ParticleSystem ps;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        ps = GetComponent<ParticleSystem>();
         playerCombat = FindFirstObjectByType<PlayerCombat>();
         chosenStat = Random.Range(0, playerCombat.playerStats.Count);
         List<string> remaining = new List<string>(playerCombat.playerStats);
@@ -109,6 +111,7 @@ public class RERCurse : MonoBehaviour
         yield return new WaitForSecondsRealtime(2f);
         playerCombat.CurseStatueMods(chosenStatueStat, cursedStat);
         Time.timeScale = 1;
+        ps.Stop();
         statueDialogue.SetActive(false);
     }
 }

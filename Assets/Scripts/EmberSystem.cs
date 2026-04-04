@@ -42,7 +42,7 @@ public class EmberSystem : MonoBehaviour
         {
             if (emberAmount > 0)
             {
-                yield return new WaitForSeconds(.025f);
+                yield return new WaitForSeconds(.1f);
                 emberAmount -= .1f;
                 if (emberAmount < 0) emberAmount = 0;
             }

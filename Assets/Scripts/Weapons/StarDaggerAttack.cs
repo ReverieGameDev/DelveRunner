@@ -9,6 +9,7 @@ public class StarDaggerAttack : MonoBehaviour
     private AttackManager attackManager;
     private Vector3 trajectory;
     private PlayerCombat playerCombat;
+    public float damageMultiplier = 1f;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -31,7 +32,7 @@ public class StarDaggerAttack : MonoBehaviour
         if (collision.CompareTag("Enemy"))
         {
             enemy = collision.GetComponent<Enemy>();
-            enemy.reduceHp(playerCombat.CalcWeaponDamage(starDaggerDamage));
+            enemy.reduceHp(playerCombat.CalcWeaponDamage(starDaggerDamage * damageMultiplier));
         }
     }
 

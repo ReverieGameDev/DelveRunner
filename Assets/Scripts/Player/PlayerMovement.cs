@@ -12,15 +12,15 @@ public class PlayerMovement : MonoBehaviour
     private PlayerCombat playerCombat;
     private SpriteRenderer spriteRenderer;
     private DialogueManager dialogueManager;
-    private bool isDashing = false;
+    public bool isDashing = false;
     private Vector2 dashStartingPos;
     private bool dashingTimer = false;
     private float xInputSteer;
     private float yInputSteer;
     private float lastXInput;
     private float lastYInput;
-    private Vector2 dashDirection;
-    private float dashSpeed = 45f;
+    public Vector2 dashDirection;
+    private float dashSpeed = 30f;
     private Animator anim;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -39,14 +39,6 @@ public class PlayerMovement : MonoBehaviour
         xInput = Input.GetAxis("Horizontal");
         yInput = Input.GetAxis("Vertical");
 
-        if (Input.GetKeyDown(KeyCode.LeftShift) && !isDashing)
-        {
-            anim.SetTrigger("Dash");
-            isDashing = true;
-            dashDirection = new Vector2(xInput, yInput).normalized;
-            StartCoroutine(DashTimer());
-        }
-
         if (isDashing)
         {
             float steerX = Input.GetAxis("Horizontal") * 0.6f;
@@ -56,7 +48,7 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
-            GetComponent<Animator>().SetFloat("IsMoving", Mathf.Abs(xInput) + Mathf.Abs(yInput));
+            anim.SetFloat("IsMoving", Mathf.Abs(xInput) + Mathf.Abs(yInput));
             if (xInput <= 0) spriteRenderer.flipX = true;
             if (xInput >= 0) spriteRenderer.flipX = false;
             playerRb.linearVelocity = new Vector2(xInput, yInput) * playerCombat.movementSpeed;

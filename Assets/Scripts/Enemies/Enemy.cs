@@ -16,10 +16,17 @@ public class Enemy : MonoBehaviour
     private EnemyAI enemyAI;
     public bool isDead = false;
     public GameObject emberPickup;
+    private Timer timer;
 
 
     void Start()
     {
+        timer = FindFirstObjectByType<Timer>();
+        if (!enemyData.isREE)
+        {
+            timer.aliveEnemies++;
+        }
+        
         playerCombat = FindFirstObjectByType<PlayerCombat>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         enemyAI = GetComponent<EnemyAI>();
@@ -51,6 +58,7 @@ public class Enemy : MonoBehaviour
         {
             if (enemyAI != null)
             {
+                timer.aliveEnemies--;
                 isDead = true;
                 enemyAI.currentState = EnemyState.Death;
                 StartCoroutine("GoldAndExpRandomizer");
@@ -64,6 +72,7 @@ public class Enemy : MonoBehaviour
             }
             else
             {
+                timer.aliveEnemies--;
                 // Boss path — drop gold instantly, no coroutine
                 GoldRandomizerBoss();
             }

@@ -11,6 +11,7 @@ public class Room
 
 public class MapGenerator : MonoBehaviour
 {
+    public List<Vector2Int> corridorTiles = new List<Vector2Int>();
     public int mapHeight = 250;
     public int mapWidth = 350;
     public int[,] mapArray;
@@ -33,7 +34,7 @@ public class MapGenerator : MonoBehaviour
     public int bossRadius = 30;
 
     // Minimum distance from other rooms
-    public int fightNodeMinDistance = 40;
+    public int fightNodeMinDistance = 80;
     public int cacheMinDistance = 10;
     public int bossMinDistance = 40;
 
@@ -101,86 +102,120 @@ public class MapGenerator : MonoBehaviour
     }
     public void PlaceCenterTilesCorridors()
     {
-        List<int> visited = new List<int>();
-        List<int> orderedRooms = new List<int>();
+        int roomCount = rooms.Count;
+        int[] connectionCount = new int[roomCount];
+        int[] maxConnections = new int[roomCount];
+        HashSet<string> existingCorridors = new HashSet<string>();
 
-        float closestDist = Mathf.Infinity;
-        int closestIndex = 0;
-        for (int i = 0; i < rooms.Count; i++)
+        for (int i = 0; i < roomCount; i++)
         {
-            if (rooms[i].roomType == "cache" || rooms[i].roomType == "boss") continue;
-            float dist = Vector2.Distance(Vector2.zero, new Vector2(rooms[i].centerX, rooms[i].centerY));
-            if (dist < closestDist)
+            switch (rooms[i].roomType)
             {
-                closestDist = dist;
-                closestIndex = i;
+                case "spawn": maxConnections[i] = 4; break;
+                case "fightNode": maxConnections[i] = Random.Range(2, 4); break;
+                case "cache": maxConnections[i] = 2; break;
+                case "boss": maxConnections[i] = 2; break;
+                default: maxConnections[i] = 2; break;
             }
         }
-        visited.Add(closestIndex);
-        orderedRooms.Add(closestIndex);
 
-        for (int i = 0; i < rooms.Count - 1; i++)
+        // Pass 1: Minimum spanning tree (Prim's) — guarantees all rooms connected
+        bool[] inTree = new bool[roomCount];
+        inTree[0] = true;
+
+        for (int added = 1; added < roomCount; added++)
         {
-            float closestDistance = Mathf.Infinity;
-            int nearestIndex = -1;
-            for (int z = 0; z < rooms.Count; z++)
+            float bestDist = Mathf.Infinity;
+            int bestFrom = -1;
+            int bestTo = -1;
+
+            for (int i = 0; i < roomCount; i++)
             {
-                if (visited.Contains(z)) continue;
-                if (rooms[z].roomType == "cache" || rooms[z].roomType == "boss") continue;
-                float dist = Vector2.Distance(new Vector2(rooms[orderedRooms[i]].centerX, rooms[orderedRooms[i]].centerY), new Vector2(rooms[z].centerX, rooms[z].centerY));
-                if (dist < closestDistance)
+                if (!inTree[i]) continue;
+                for (int j = 0; j < roomCount; j++)
                 {
-                    closestDistance = dist;
-                    nearestIndex = z;
+                    if (inTree[j]) continue;
+                    float dist = Vector2.Distance(
+                        new Vector2(rooms[i].centerX, rooms[i].centerY),
+                        new Vector2(rooms[j].centerX, rooms[j].centerY));
+                    if (dist < bestDist)
+                    {
+                        bestDist = dist;
+                        bestFrom = i;
+                        bestTo = j;
+                    }
                 }
             }
 
-            if (nearestIndex == -1) break;
+            if (bestTo == -1) break;
 
-            visited.Add(nearestIndex);
-            orderedRooms.Add(nearestIndex);
+            inTree[bestTo] = true;
+            string key = Mathf.Min(bestFrom, bestTo) + "-" + Mathf.Max(bestFrom, bestTo);
+            existingCorridors.Add(key);
+            connectionCount[bestFrom]++;
+            connectionCount[bestTo]++;
+            CarveCorridor(rooms[bestFrom], rooms[bestTo]);
         }
 
-        for (int i = 0; i < orderedRooms.Count - 1; i++)
+        // Pass 2: Add extra corridors to hit target connection counts
+        for (int i = 0; i < roomCount; i++)
         {
-            CarveCorridor(rooms[orderedRooms[i]], rooms[orderedRooms[i + 1]]);
-        }
+            if (connectionCount[i] >= maxConnections[i]) continue;
 
-        for (int i = 0; i < rooms.Count; i++)
-        {
-            if (rooms[i].roomType != "cache" && rooms[i].roomType != "boss") continue;
-
-            float closestDistance = Mathf.Infinity;
-            int nearestIndex = 0;
-            for (int z = 0; z < orderedRooms.Count; z++)
+            List<int> nearest = new List<int>();
+            for (int j = 0; j < roomCount; j++)
             {
-                float dist = Vector2.Distance(new Vector2(rooms[i].centerX, rooms[i].centerY), new Vector2(rooms[orderedRooms[z]].centerX, rooms[orderedRooms[z]].centerY));
-                if (dist < closestDistance)
-                {
-                    closestDistance = dist;
-                    nearestIndex = orderedRooms[z];
-                }
+                if (j != i) nearest.Add(j);
             }
-            CarveCorridor(rooms[i], rooms[nearestIndex]);
+            nearest.Sort((a, b) =>
+            {
+                float distA = Vector2.Distance(new Vector2(rooms[i].centerX, rooms[i].centerY), new Vector2(rooms[a].centerX, rooms[a].centerY));
+                float distB = Vector2.Distance(new Vector2(rooms[i].centerX, rooms[i].centerY), new Vector2(rooms[b].centerX, rooms[b].centerY));
+                return distA.CompareTo(distB);
+            });
+
+            foreach (int j in nearest)
+            {
+                if (connectionCount[i] >= maxConnections[i]) break;
+                if (connectionCount[j] >= maxConnections[j]) continue;
+
+                string key = Mathf.Min(i, j) + "-" + Mathf.Max(i, j);
+                if (existingCorridors.Contains(key)) continue;
+
+                existingCorridors.Add(key);
+                connectionCount[i]++;
+                connectionCount[j]++;
+                CarveCorridor(rooms[i], rooms[j]);
+            }
         }
     }
 
     public void CarveCorridor(Room roomA, Room roomB)
     {
-        float totalDistance = Vector2.Distance(new Vector2(roomA.centerX, roomA.centerY), new Vector2(roomB.centerX, roomB.centerY));
+        Vector2 centerA = new Vector2(roomA.centerX, roomA.centerY);
+        Vector2 centerB = new Vector2(roomB.centerX, roomB.centerY);
+        Vector2 direction = (centerB - centerA).normalized;
 
-        // Pick one REE point per corridor
+        Vector2 edgeA = centerA + direction * (roomA.radius - 3);
+        Vector2 edgeB = centerB - direction * (roomB.radius - 3);
+
+        float totalDistance = Vector2.Distance(edgeA, edgeB);
+
+        if (totalDistance <= 0) return;
+
         float randomREEPlacement = Random.Range(0.3f, 0.7f);
-        int reeX = (int)Mathf.Lerp(roomA.centerX, roomB.centerX, randomREEPlacement);
-        int reeY = (int)Mathf.Lerp(roomA.centerY, roomB.centerY, randomREEPlacement);
+        int reeX = (int)Mathf.Lerp(edgeA.x, edgeB.x, randomREEPlacement);
+        int reeY = (int)Mathf.Lerp(edgeA.y, edgeB.y, randomREEPlacement);
         corridorMidpoints.Add(new Vector2(reeX, reeY));
 
         for (int i = 0; i <= totalDistance; i++)
         {
             float t = i / totalDistance;
 
-            int x = (int)Mathf.Lerp(roomA.centerX, roomB.centerX, t);
-            int y = (int)Mathf.Lerp(roomA.centerY, roomB.centerY, t);
+            int x = (int)Mathf.Lerp(edgeA.x, edgeB.x, t);
+            int y = (int)Mathf.Lerp(edgeA.y, edgeB.y, t);
+
+            // Wide carve for walkable ground
             for (int w = -3; w <= 3; w++)
             {
                 for (int h = -3; h <= 3; h++)
@@ -191,12 +226,25 @@ public class MapGenerator : MonoBehaviour
                     }
                 }
             }
+
+            // Narrow cobblestone path
+            for (int w = -2; w <= 1; w++)
+            {
+                for (int h = -2; h <= 1; h++)
+                {
+                    int cx = x + w;
+                    int cy = y + h;
+                    if (cx >= 0 && cx < mapWidth && cy >= 0 && cy < mapHeight)
+                    {
+                        corridorTiles.Add(new Vector2Int(cx, cy));
+                    }
+                }
+            }
         }
         if (totalDistance > 30)
         {
             rerPositions.Add(new Vector2(reeX, reeY));
         }
-
     }
 
     public void PlaceRER()

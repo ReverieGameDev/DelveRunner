@@ -17,9 +17,11 @@ public class StatueDialogue : MonoBehaviour
     public GameObject acceptButton;
     public GameObject declineButton;
     private bool playerInRange = false;
+    private ParticleSystem ps;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        ps = GetComponent<ParticleSystem>();
         playerCombat = FindFirstObjectByType<PlayerCombat>();
         rerGamble = GetComponent<RERGamble>();
     }
@@ -99,13 +101,13 @@ public class StatueDialogue : MonoBehaviour
         
         if (gambleInt < 3)
         {
-            statueText.text = "You rolled higher than a 3, the jester raises your " + rerGamble.chosenStatueStat + " by 5%, the statue goes dormant";
+            statueText.text = "You rolled less than a 3, the jester lowers your " + rerGamble.chosenStatueStat + " by 5%, the statue goes dormant";
             playerCombat.StatueStatMods(rerGamble.chosenStatueStat, -0.05f);
 
         }
         else if (gambleInt > 3)
         {
-            statueText.text = "You rolled less than a 3. The jester lowers your " + rerGamble.chosenStatueStat + " by 5%, the statue goes dormant";
+            statueText.text = "You rolled higher than a 3. The jester raises your " + rerGamble.chosenStatueStat + " by 5%, the statue goes dormant";
             playerCombat.StatueStatMods(rerGamble.chosenStatueStat, 0.05f);
         }
         else if (gambleInt == 3)
@@ -113,6 +115,7 @@ public class StatueDialogue : MonoBehaviour
             statueText.text = "You rolled a 3, the jester does nothing, the statue goes dormant.";
         }
         yield return new WaitForSecondsRealtime(2f);
+        ps.Stop();
         Time.timeScale = 1;
         statueDialogue.SetActive(false);
     }

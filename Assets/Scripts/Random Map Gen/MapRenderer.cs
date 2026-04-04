@@ -6,12 +6,14 @@ public class MapRenderer : MonoBehaviour
 {
     private MapGenerator mapGenerator;
     private SpawnManager spawnManager;
+    public RuleTile cobbleRuleTile;
 
     // Tilemaps
     public Tilemap walkableTilemap;
     public Tilemap obstacleTilemap;
     public Tilemap walkableDecorTilemap;
     public Tilemap oobTileMap;
+    public Tilemap cobbleTilemap;
 
     // Floor tiles
     public TileBase[] floorTile;
@@ -51,7 +53,6 @@ public class MapRenderer : MonoBehaviour
 
     public void RenderMap()
     {
-        // 1. Floor tiles — light grass in rooms, dark grass outside
         for (int i = 0; i < mapGenerator.mapHeight; i++)
         {
             for (int t = 0; t < mapGenerator.mapWidth; t++)
@@ -66,18 +67,13 @@ public class MapRenderer : MonoBehaviour
                 }
             }
         }
-
-        // 2. Rule tile edges where dark meets light
+        RenderCorridorPath();
         RenderObstacleGround();
-
-        // 3. Small decor on walkable tiles
         RenderRandomWalkableDecor();
-
-        // 4. Trees and decor on obstacle tiles
         RenderRandomObstacleDecor();
         RenderEdgeDecor();
         RenderEdgeDecorObjects();
-
+        RenderCorridorPath();
     }
     public void RenderChests(Vector2 cacheCenter)
     {
@@ -117,7 +113,7 @@ public class MapRenderer : MonoBehaviour
         {
             for (int t = 1; t < mapGenerator.mapWidth - 1; t++)
             {
-                if (mapGenerator.mapArray[t, i] == 1 && Random.Range(0, 101) < 10)
+                if (mapGenerator.mapArray[t, i] == 1 && Random.Range(0, 101) < 4)
                 {
                     walkableDecorTilemap.SetTile(new Vector3Int(t, i, 0), walkableDecorTile[Random.Range(0, walkableDecorTile.Length)]);
                 }
@@ -131,7 +127,7 @@ public class MapRenderer : MonoBehaviour
         {
             for (int t = 3; t < mapGenerator.mapWidth - 3; t++)
             {
-                if (mapGenerator.mapArray[t, i] == 0 && Random.Range(0, 1001) < 200)
+                if (mapGenerator.mapArray[t, i] == 0 && Random.Range(0, 1001) < 800)
                 {
                     walkableDecorTilemap.SetTile(new Vector3Int(t, i, 0), obstacleDecorTile2[Random.Range(0, obstacleDecorTile2.Length)]);
                 }
@@ -165,7 +161,7 @@ public class MapRenderer : MonoBehaviour
         {
             for (int t = 3; t < mapGenerator.mapWidth - 3; t++)
             {
-                if (mapGenerator.mapArray[t, i] == 0 && Random.Range(0, 101) < 40)
+                if (mapGenerator.mapArray[t, i] == 0 && Random.Range(0, 101) < 80)
                 {
                     bool nearWalkable = false;
                     for (int y = -3; y <= 3 && !nearWalkable; y++)
@@ -186,6 +182,15 @@ public class MapRenderer : MonoBehaviour
                     walkableDecorTilemap.SetTile(new Vector3Int(t, i, 0), obstacleDecorTile3[Random.Range(0, obstacleDecorTile3.Length)]);
                 }
             }
+        }
+    }
+    public TileBase[] cobbleTiles;
+
+    public void RenderCorridorPath()
+    {
+        foreach (Vector2Int pos in mapGenerator.corridorTiles)
+        {
+            cobbleTilemap.SetTile(new Vector3Int(pos.x, pos.y, 0), cobbleRuleTile);
         }
     }
     public void RenderEdges()
@@ -229,14 +234,14 @@ public class MapRenderer : MonoBehaviour
         {
             for (int t = 3; t < mapGenerator.mapWidth - 3; t++)
             {
-                if (mapGenerator.mapArray[t, i] == 0 && Random.Range(0, 101) < 15)
+                if (mapGenerator.mapArray[t, i] == 0 && Random.Range(0, 101) < 80)
                 {
                     bool nearWalkable = false;
                     bool tooClose = false;
 
-                    for (int y = -3; y <= 3 && !tooClose; y++)
+                    for (int y = -1; y <= 1 && !tooClose; y++)
                     {
-                        for (int x = -3; x <= 3 && !tooClose; x++)
+                        for (int x = -2; x <= 2 && !tooClose; x++)
                         {
                             int checkX = t + x;
                             int checkY = i + y;
