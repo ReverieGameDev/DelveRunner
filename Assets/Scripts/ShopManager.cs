@@ -13,6 +13,8 @@ public class ShopManager : MonoBehaviour
     public GameObject abilityDescription;
     public GameObject questDescription;
 
+    private Teleporter teleporter;
+
     // Item Description UI
     public TextMeshProUGUI itemDescriptionName;
     public TextMeshProUGUI itemDescriptionPrice;
@@ -51,6 +53,7 @@ public class ShopManager : MonoBehaviour
 
     void Start()
     {
+        teleporter = FindFirstObjectByType<Teleporter>();
         playerCombat = FindFirstObjectByType<PlayerCombat>();
     }
 
@@ -257,6 +260,7 @@ public class ShopManager : MonoBehaviour
         if (playerCombat.playerMoney >= ability.abilityCost)
         {
             playerCombat.playerMoney -= ability.abilityCost;
+            teleporter.currentAbility = ability.abilityName;
             ApplyAbilityEffect(ability.abilityName);
             totalMoneyWizardShop.text = ": " + playerCombat.playerMoney;
         }

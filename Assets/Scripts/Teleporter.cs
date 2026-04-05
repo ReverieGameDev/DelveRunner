@@ -6,6 +6,7 @@ public class Teleporter : MonoBehaviour
 {
     private PlayerCombat playerCombat;
     public GameObject delveDeeperScreen;
+    public string currentAbility;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -42,6 +43,11 @@ public class Teleporter : MonoBehaviour
         playerCombat.delveLevel++;  // Increment first
         PlayerPrefs.SetInt("DelveLevel", playerCombat.delveLevel);  // Now saves 1
         PlayerPrefs.SetInt("Gold", playerCombat.playerMoney);
+        PlayerPrefs.SetString("CurrentAbility", currentAbility);
+        if (PlayerPrefs.GetString("CurrentAbility") == "")
+        {
+            PlayerPrefs.SetString("CurrentAbility", "Dash");
+        }
         PlayerPrefs.Save();
         SceneManager.LoadScene("SampleScene");
     }

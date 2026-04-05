@@ -7,7 +7,7 @@ public class MapRenderer : MonoBehaviour
     private MapGenerator mapGenerator;
     private SpawnManager spawnManager;
     public RuleTile cobbleRuleTile;
-
+    public GameObject[] obeliskPrefabs;
     // Tilemaps
     public Tilemap walkableTilemap;
     public Tilemap obstacleTilemap;
@@ -68,12 +68,55 @@ public class MapRenderer : MonoBehaviour
             }
         }
         RenderCorridorPath();
+        RenderCorridorObelisks();
         RenderObstacleGround();
         RenderRandomWalkableDecor();
         RenderRandomObstacleDecor();
         RenderEdgeDecor();
         RenderEdgeDecorObjects();
         RenderCorridorPath();
+    }
+
+    public void RenderCorridorObelisks()
+    {
+        List<Vector2> placedPositions = new List<Vector2>();
+        int step = 35;
+
+        for (int i = 0; i < mapGenerator.corridorCenterline.Count - 1; i += step)
+        {
+            Vector2Int pos = mapGenerator.corridorCenterline[i];
+            Vector2Int next = mapGenerator.corridorCenterline[Mathf.Min(i + 1, mapGenerator.corridorCenterline.Count - 1)];
+            Vector2 checkPos = new Vector2(pos.x, pos.y);
+            bool insideRoom = false;
+            bool tooClose = false;
+            for (int r = 0; r < mapGenerator.rooms.Count; r++)
+            {
+                float dist = Vector2.Distance(checkPos, new Vector2(mapGenerator.rooms[r].centerX, mapGenerator.rooms[r].centerY));
+                if (dist < mapGenerator.rooms[r].radius + 15)
+                {
+                    insideRoom = true;
+                    break;
+                }
+            }
+            if (insideRoom) continue;
+            for (int s = 0; s < placedPositions.Count; s++)
+            {
+                if (Vector2.Distance(checkPos, placedPositions[s]) < 8)
+                {
+                    tooClose = true;
+                    break;
+                }
+            }
+            if (tooClose) continue;
+
+            Vector2 dir = new Vector2(next.x - pos.x, next.y - pos.y).normalized;
+            Vector2 perp = new Vector2(-dir.y, dir.x);
+            if (Random.value > 0.5f) perp = -perp;
+
+            Vector2 spawnPos = checkPos + perp * 5f;
+            placedPositions.Add(checkPos);
+            Instantiate(obeliskPrefabs[Random.Range(0, obeliskPrefabs.Length)], new Vector3(spawnPos.x, spawnPos.y, 0), Quaternion.identity);
+        }
     }
     public void RenderChests(Vector2 cacheCenter)
     {

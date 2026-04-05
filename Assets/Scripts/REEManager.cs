@@ -23,7 +23,7 @@ public class REEManager : MonoBehaviour
 
     private void FilterAndSpawnREEs()
     {
-        for (int i = 0; i < 4; i++)
+        for (int i = 0; i < 10; i++)
         {
             int pointAdd = Random.Range(0, reePoints.Count);
             filteredREEPoints.Add(reePoints[pointAdd]);

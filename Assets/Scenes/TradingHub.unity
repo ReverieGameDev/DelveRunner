@@ -2907,18 +2907,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38f10b667e7184f4bbf0e601a0fb6633, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bloodHealPrefab: {fileID: 0}
   playerData: {fileID: 11400000, guid: 015cd50e4d403354bafaf27b1a2a2d9e, type: 2}
   attackManager: {fileID: 0}
+  gameOverScreen: {fileID: 0}
   closestCurrentEnemy: {fileID: 0}
-  autoAttackBullet: {fileID: 4267608673723377773, guid: 810345442f30f874f8690e54d4b49a97, type: 3}
-  playerMoney: 0
+  playerMoney: 100
+  playerGold: {fileID: 0}
+  currentPlayerHealth: 0
+  attack: 1
   attackSpeed: 0.5
-  attackDamage: 25
+  critChance: 5
+  critDamage: 1.5
   armor: 0
-  magicResist: 0
+  maxHealth: 100
+  dodge: 0
   movementSpeed: 10
-  size: 1
+  xpGain: 1
+  goldGain: 1
+  playerManaBase: 100
+  currentPlayerMana: 100
+  playerStats: []
   playerHpBar: {fileID: 256339777}
+  playerManaBar: {fileID: 0}
   playerXpBar: {fileID: 0}
   playerLevelText: {fileID: 0}
   moneyText: {fileID: 0}
@@ -2926,6 +2937,7 @@ MonoBehaviour:
   playerXp: 0
   playerLevel: 1
   delveLevel: 0
+  augmentsOwed: 0
 --- !u!50 &120251743
 Rigidbody2D:
   serializedVersion: 5
@@ -2969,6 +2981,8 @@ MonoBehaviour:
   yInput: 0
   knockback: 10
   playerPosition: {x: 0, y: 0}
+  isDashing: 0
+  dashDirection: {x: 0, y: 0}
 --- !u!212 &120251745
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -54936,6 +54950,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   delveDeeperScreen: {fileID: 788093327}
+  currentAbility: 
 --- !u!61 &1730182109
 BoxCollider2D:
   m_ObjectHideFlags: 0

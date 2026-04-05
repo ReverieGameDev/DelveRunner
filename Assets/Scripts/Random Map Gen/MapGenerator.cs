@@ -26,6 +26,7 @@ public class MapGenerator : MonoBehaviour
     public int topBound = 280;
     private Room lastViableSpawn;
     private RERManager rerManager;
+    public List<Vector2Int> corridorCenterline = new List<Vector2Int>();
 
     // Room radii
     public int spawnRadius = 15;
@@ -43,7 +44,7 @@ public class MapGenerator : MonoBehaviour
     public int fightNodeMax = 5;
     public int cacheMin = 5;
     public int cacheMax = 8;
-    public int rerFrequency = 6; //from 0-10, 0 being non 10 being rers wherever available
+    public int rerFrequency = 6;
     private void Awake()
     {
         mapRenderer = FindFirstObjectByType<MapRenderer>();
@@ -52,7 +53,6 @@ public class MapGenerator : MonoBehaviour
     void Start()
     {
         PopulateMap();
-
     }
 
     public void PopulateMap()
@@ -119,7 +119,6 @@ public class MapGenerator : MonoBehaviour
             }
         }
 
-        // Pass 1: Minimum spanning tree (Prim's) — guarantees all rooms connected
         bool[] inTree = new bool[roomCount];
         inTree[0] = true;
 
@@ -157,7 +156,6 @@ public class MapGenerator : MonoBehaviour
             CarveCorridor(rooms[bestFrom], rooms[bestTo]);
         }
 
-        // Pass 2: Add extra corridors to hit target connection counts
         for (int i = 0; i < roomCount; i++)
         {
             if (connectionCount[i] >= maxConnections[i]) continue;
@@ -208,12 +206,18 @@ public class MapGenerator : MonoBehaviour
         int reeY = (int)Mathf.Lerp(edgeA.y, edgeB.y, randomREEPlacement);
         corridorMidpoints.Add(new Vector2(reeX, reeY));
 
+        // Separate RER position from midpoint
+        float randomRERPlacement = Random.Range(0.15f, 0.85f);
+        int rerX = (int)Mathf.Lerp(edgeA.x, edgeB.x, randomRERPlacement);
+        int rerY = (int)Mathf.Lerp(edgeA.y, edgeB.y, randomRERPlacement);
+
         for (int i = 0; i <= totalDistance; i++)
         {
             float t = i / totalDistance;
 
             int x = (int)Mathf.Lerp(edgeA.x, edgeB.x, t);
             int y = (int)Mathf.Lerp(edgeA.y, edgeB.y, t);
+            corridorCenterline.Add(new Vector2Int(x, y));
 
             // Wide carve for walkable ground
             for (int w = -3; w <= 3; w++)
@@ -243,26 +247,37 @@ public class MapGenerator : MonoBehaviour
         }
         if (totalDistance > 30)
         {
-            rerPositions.Add(new Vector2(reeX, reeY));
+            bool insideRoom = false;
+            for (int r = 0; r < rooms.Count; r++)
+            {
+                float dist = Vector2.Distance(new Vector2(rerX, rerY), new Vector2(rooms[r].centerX, rooms[r].centerY));
+                if (dist < rooms[r].radius + 15)
+                {
+                    insideRoom = true;
+                    break;
+                }
+            }
+            if (!insideRoom)
+            {
+                rerPositions.Add(new Vector2(rerX, rerY));
+            }
         }
     }
 
     public void PlaceRER()
     {
-
-            for (int i = 0; i < rerPositions.Count; i++)
+        for (int i = 0; i < rerPositions.Count; i++)
+        {
+            if (Random.Range(0, 10) < rerFrequency)
             {
-                if (Random.Range(0, 10) < rerFrequency)
-                {
-                    rERList.Add(rerPositions[i]);
-                    CarveRoom((int)rerPositions[i].x, (int)rerPositions[i].y, 10);
-                }
+                rERList.Add(rerPositions[i]);
+                CarveRoom((int)rerPositions[i].x, (int)rerPositions[i].y, 10);
             }
-            rerManager.RERSelection();
+        }
+        rerManager.RERSelection();
     }
     public void PlaceRooms()
     {
-        // Spawn room
         int spawnX = (leftBound + rightBound) / 2;
         int spawnY = (bottomBound + topBound) / 2;
         Room spawnRoom = new Room { centerX = spawnX, centerY = spawnY, radius = spawnRadius, roomType = "spawn" };
@@ -270,7 +285,6 @@ public class MapGenerator : MonoBehaviour
         CarveRoom(spawnX, spawnY, spawnRadius);
         Debug.Log("Spawn room placed at: " + spawnX + ", " + spawnY);
 
-        // Fight Nodes
         for (int i = 0; i < Random.Range(fightNodeMin, fightNodeMax); i++)
         {
             bool roomPlaced = false;
@@ -303,7 +317,6 @@ public class MapGenerator : MonoBehaviour
             while (!roomPlaced);
         }
 
-        // Caches
         for (int i = 0; i < Random.Range(cacheMin, cacheMax); i++)
         {
             bool roomPlaced = false;
@@ -327,7 +340,7 @@ public class MapGenerator : MonoBehaviour
                     rooms.Add(currentRoom);
                     CarveRoom(roomX, roomY, cacheRadius);
                     roomPlaced = true;
-                    mapRenderer.RenderChests(new Vector2(roomX,roomY));
+                    mapRenderer.RenderChests(new Vector2(roomX, roomY));
                     mapRenderer.RenderCachePrefab(new Vector2(roomX, roomY));
                     Debug.Log("Cache placed at: " + roomX + ", " + roomY);
                 }
@@ -335,7 +348,6 @@ public class MapGenerator : MonoBehaviour
             while (!roomPlaced);
         }
 
-        // Boss room
         bool bossPlaced = false;
         do
         {
@@ -356,7 +368,7 @@ public class MapGenerator : MonoBehaviour
                 Room bossRoom = new Room { centerX = roomX, centerY = roomY, radius = bossRadius, roomType = "boss" };
                 rooms.Add(bossRoom);
                 CarveRoom(roomX, roomY, bossRadius);
-                mapRenderer.RenderBossNodePrefab(new Vector2(roomX-5, roomY-6));
+                mapRenderer.RenderBossNodePrefab(new Vector2(roomX - 5, roomY - 6));
                 bossPlaced = true;
                 Debug.Log("Boss room placed at: " + roomX + ", " + roomY);
             }
@@ -406,7 +418,6 @@ public class MapGenerator : MonoBehaviour
                                 walkableNeighbors++;
                         }
                     }
-                    // If 5+ of 9 neighbors (including self) are walkable, make it walkable
                     if (walkableNeighbors >= 5)
                         tempMap[t, i] = 1;
                 }

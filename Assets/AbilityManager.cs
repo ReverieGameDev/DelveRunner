@@ -37,7 +37,7 @@ public class AbilityManager : MonoBehaviour
     void Start()
     {
         playerMovement = FindFirstObjectByType<PlayerMovement>();
-        SwitchAbility("Dash");
+        SwitchAbility(PlayerPrefs.GetString("CurrentAbility", currentAbility));
     }
 
     void Update()
@@ -49,10 +49,10 @@ public class AbilityManager : MonoBehaviour
                 case "Dash":
                     AbilityDash();
                     break;
-                case "ShadowEcho":
+                case "Shadow Echo":
                     AbilityShadowEcho();
                     break;
-                case "TimeDilation":
+                case "Time Dilation":
                     AbilityTimeDilation();
                     break;
             }
@@ -133,14 +133,14 @@ public class AbilityManager : MonoBehaviour
         {
             switch (currentAbility)
             {
-                case "TimeDilation":
+                case "Time Dilation":
                     timeDilation = false;
                     timeDilationPrefab.SetActive(false);
                     Time.timeScale = 1f;
                     initialManaPaid = false;
                     StartCoroutine(Cooldown(timeDilationRecastCD));
                     yield break;
-                case "ShadowEcho":
+                case "Shadow Echo":
                     shadowEchoActive = false;
                     shadowEchoPrefab.SetActive(false);
                     initialManaPaid = false;
@@ -166,7 +166,7 @@ public class AbilityManager : MonoBehaviour
             case "TimeDilation":
                 canTimeDilation = true;
                 yield break;
-            case "ShadowEcho":
+            case "Shadow Echo":
                 canShadowEcho = true;
                 yield break;
             case "Dash":
@@ -182,10 +182,10 @@ public class AbilityManager : MonoBehaviour
         yield return new WaitForSecondsRealtime(initialRecastCooldown);
         switch (currentAbility)
         {
-            case "TimeDilation":
+            case "Time Dilation":
                 canTimeDilation = true;
                 yield break;
-            case "ShadowEcho":
+            case "Shadow Echo":
                 canShadowEcho = true;
                 yield break;
             case "Dash":

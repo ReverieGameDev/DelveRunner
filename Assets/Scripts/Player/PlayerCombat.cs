@@ -4,6 +4,7 @@ using UnityEngine.UI;
 using TMPro;
 using NUnit.Framework;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 
 public class PlayerCombat : MonoBehaviour
 {
@@ -17,11 +18,13 @@ public class PlayerCombat : MonoBehaviour
     public AttackManager attackManager;
     private Animator anim;
 
+    public GameObject gameOverScreen;
+
     // Combat
     public GameObject closestCurrentEnemy;
 
     //Money
-    public int playerMoney = 0;
+    public int playerMoney = 100;
     public TextMeshProUGUI playerGold;
     // Stats
     public int currentPlayerHealth;
@@ -72,15 +75,15 @@ public class PlayerCombat : MonoBehaviour
    
     void Start()
     {
-        playerGold.text = ": " + playerMoney;
+        if (playerGold != null) playerGold.text = ": " + playerMoney;
         anim = GetComponent<Animator>();
         playerMovement = FindFirstObjectByType<PlayerMovement>();
         augmentManager = FindFirstObjectByType<AugmentManager>();
         attackManager = FindFirstObjectByType<AttackManager>();
 
         currentPlayerHealth = (int)playerData.playerHp;
-        playerManaBar.value = 1.0f;
-        playerHpBar.value = 1.0f;
+        if (playerManaBar != null) playerManaBar.value = 1.0f;
+        if (playerHpBar != null) playerHpBar.value = 1.0f;
     }
     public int CalcWeaponDamage(float damage)
     {
@@ -108,7 +111,7 @@ public class PlayerCombat : MonoBehaviour
     }
     private void Update()
     {
-        playerManaBar.value = currentPlayerMana / playerManaBase;
+        if (playerManaBar != null) playerManaBar.value = currentPlayerMana / playerManaBase;
     }
     public void DamagePlayer(float damageTaken)
     {
@@ -121,6 +124,7 @@ public class PlayerCombat : MonoBehaviour
         if (currentPlayerHealth <= 0)
         {
             anim.SetTrigger("Death");
+            
             GameOver();
         }
     }
@@ -201,7 +205,14 @@ public class PlayerCombat : MonoBehaviour
 
     public void GameOver()
     {
-        Debug.Log("Game over");
+        PlayerPrefs.DeleteAll();
+        Time.timeScale = 0;
+        gameOverScreen.SetActive(true);
+    }
+    public void ResetGame()
+    {
+        SceneManager.LoadScene("TradingHub");
+        Time.timeScale = 1;
     }
     public void OfferingStatueMods(string statToMod, int goldOffered)
     {
