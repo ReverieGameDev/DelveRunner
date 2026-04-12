@@ -1,47 +1,52 @@
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
 public class Teleporter : MonoBehaviour
 {
     private PlayerCombat playerCombat;
     public GameObject delveDeeperScreen;
     public string currentAbility;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    private bool playerInRange = false;
+
     void Start()
     {
         playerCombat = FindFirstObjectByType<PlayerCombat>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
-    }
-
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-        Debug.Log("player entered teleporter");
-        if (collision.CompareTag("Player"))
+        if (playerInRange && Input.GetKeyDown(KeyCode.E))
         {
-            if (Input.GetKey(KeyCode.E))
-            {
-                Debug.Log("Player attempting to access teleporter UI");
-                DelveDeeperMenu();
-            }
-
+            DelveDeeperMenu();
         }
     }
 
-    private void DelveDeeperMenu()//menu that says "delve deeper?"
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+            playerInRange = true;
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+            playerInRange = false;
+    }
+
+    private void DelveDeeperMenu()
     {
         delveDeeperScreen.SetActive(true);
     }
-
+    public void SkipToBoss()
+    {
+        PlayerPrefs.SetInt("StartWave", 10);
+        PlayerPrefs.Save();
+        SceneManager.LoadScene("SampleScene");
+    }
     public void DelveDeeper()
     {
-        playerCombat.delveLevel++;  // Increment first
-        PlayerPrefs.SetInt("DelveLevel", playerCombat.delveLevel);  // Now saves 1
+        playerCombat.delveLevel++;
+        PlayerPrefs.SetInt("DelveLevel", playerCombat.delveLevel);
         PlayerPrefs.SetInt("Gold", playerCombat.playerMoney);
         PlayerPrefs.SetString("CurrentAbility", currentAbility);
         if (PlayerPrefs.GetString("CurrentAbility") == "")
@@ -51,8 +56,7 @@ public class Teleporter : MonoBehaviour
         PlayerPrefs.Save();
         SceneManager.LoadScene("SampleScene");
     }
-
-    public void DontDelveDeeper()//if player hits no
+    public void DontDelveDeeper()
     {
         delveDeeperScreen.SetActive(false);
     }

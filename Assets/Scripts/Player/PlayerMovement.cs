@@ -22,6 +22,7 @@ public class PlayerMovement : MonoBehaviour
     public Vector2 dashDirection;
     private float dashSpeed = 30f;
     private Animator anim;
+    public bool playerFrozen = false;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -36,8 +37,10 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        xInput = Input.GetAxis("Horizontal");
-        yInput = Input.GetAxis("Vertical");
+        if (!playerFrozen)
+        {
+            xInput = Input.GetAxis("Horizontal");
+            yInput = Input.GetAxis("Vertical");
 
         if (isDashing)
         {
@@ -46,13 +49,18 @@ public class PlayerMovement : MonoBehaviour
             Vector2 dashVelocity = (dashDirection + new Vector2(steerX, steerY)).normalized;
             playerRb.linearVelocity = dashVelocity * dashSpeed;
         }
-        else
+        else 
         {
             anim.SetFloat("IsMoving", Mathf.Abs(xInput) + Mathf.Abs(yInput));
             if (xInput <= 0) spriteRenderer.flipX = true;
             if (xInput >= 0) spriteRenderer.flipX = false;
             playerRb.linearVelocity = new Vector2(xInput, yInput) * playerCombat.movementSpeed;
             playerPosition = transform.position;
+        }
+        }
+        else
+        {
+            playerRb.linearVelocity = Vector2.zero;
         }
     }
 

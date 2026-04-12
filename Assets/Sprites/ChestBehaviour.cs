@@ -24,45 +24,44 @@ public class ChestBehaviour : MonoBehaviour
     void Start()
     {
         lootTable.Add("HPSmall", 20);
-        lootTable.Add("XP", 20);
         lootTable.Add("HPMedium", 10);
         lootTable.Add("HPLarge", 5);
+        lootTable.Add("ManaSmall", 20);
+        lootTable.Add("ManaMedium", 10);
+        lootTable.Add("ManaLarge", 5);
         lootTable.Add("LargeEmber", 20);
-        //lootTable.Add("hiddenVaultKey", 1);
 
         if (chestRarity == "uncommon")
         {
             lootTable["HPSmall"] *= 1;
-            lootTable["XP"] *= 1;
             lootTable["HPMedium"] *= 2;
             lootTable["HPLarge"] *= 2;
+            lootTable["ManaSmall"] *= 1;
+            lootTable["ManaMedium"] *= 2;
+            lootTable["ManaLarge"] *= 2;
         }
         if (chestRarity == "rare")
         {
             lootTable["HPSmall"] *= 1;
-            lootTable["XP"] *= 1;
             lootTable["HPMedium"] *= 3;
             lootTable["HPLarge"] *= 4;
-            //lootTable["fullLevelUp"] *= 2;
+            lootTable["ManaSmall"] *= 1;
+            lootTable["ManaMedium"] *= 3;
+            lootTable["ManaLarge"] *= 4;
         }
+
         switch (chestRarity)
         {
             case "common":
                 chestRolls = 1;
-                break; 
-
+                break;
             case "uncommon":
                 chestRolls = 2;
                 break;
-
             case "rare":
                 chestRolls = 3;
                 break;
-
         }
-
-
-
     }
 
     // Update is called once per frame

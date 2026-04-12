@@ -9,7 +9,7 @@ public class SpawnManager : MonoBehaviour
     public GameObject[] BossArray;
     private MapRenderer mapRenderer;
     private PlayerCombat playerCombat;
-    private Timer timer;
+    private EmberSystem emberSystem;
     public GameObject swarm;
     private MapGenerator mapGenerator;
     public Vector2 spawnPos;
@@ -17,7 +17,9 @@ public class SpawnManager : MonoBehaviour
     private FightNodeIndicator fightNodeIndicator;
     public bool isFightNodeActive = false;
     public GameObject spawnAnchor;
-    
+    private List<Room> listOfFightNodes = new List<Room>();
+    private Room lastFNPicked;
+
     // ===== SPAWN LOCATIONS =====
     public int[,] viableSpawnCenters;  // Filled by MapRenderer, marks valid spawn points
 
@@ -78,7 +80,7 @@ public class SpawnManager : MonoBehaviour
         mapGenerator = FindFirstObjectByType<MapGenerator>();
         playerCombat = FindFirstObjectByType<PlayerCombat>();
         fightNodeIndicator = FindFirstObjectByType<FightNodeIndicator>();
-        timer = FindFirstObjectByType<Timer>();
+        emberSystem = FindFirstObjectByType<EmberSystem>();
         // Cache player position at start
         playerPos = playerCombat.transform.position;
 
@@ -91,15 +93,15 @@ public class SpawnManager : MonoBehaviour
 
     public void SpawnNextWave()
     {
-        Debug.Log("SpawnNextWave called, waveNumber: " + timer.waveNumber);
+        Debug.Log("SpawnNextWave called, waveNumber: " + emberSystem.waveNumber);
 
-        if (timer.waveNumber == 10)
+        if (emberSystem.waveNumber == 10)
         {
             SpawnBoss();
             return;
         }
 
-        SpawnWave("wave" + timer.waveNumber);
+        SpawnWave("wave" + emberSystem.waveNumber);
 
         // RNG wave variants for later:
         // int rngWave = Random.Range(0, 2);
@@ -160,7 +162,7 @@ public class SpawnManager : MonoBehaviour
     // ===== GET RANDOM SPAWN LOCATION =====
     public Vector2 GetRandomViableSpawn()
     {
-        if (timer.waveNumber == 10)
+        if (emberSystem.waveNumber == 10)
         {
             for (int i = 0; i < mapGenerator.rooms.Count; i++)
             {
@@ -174,18 +176,28 @@ public class SpawnManager : MonoBehaviour
                 }
             }
         }
-        List<Room> listOfFightNodes = new List<Room>();
-        for (int i = 0; i < mapGenerator.rooms.Count; i++)
+
+        if (listOfFightNodes.Count == 0)
         {
-            if (mapGenerator.rooms[i].roomType == "fightNode")
+            for (int i = 0; i < mapGenerator.rooms.Count; i++)
             {
-                listOfFightNodes.Add(mapGenerator.rooms[i]);
+                if (mapGenerator.rooms[i].roomType == "fightNode")
+                {
+                    listOfFightNodes.Add(mapGenerator.rooms[i]);
+                }
+            }
+            if (lastFNPicked != null)
+            {
+                listOfFightNodes.Remove(lastFNPicked);
             }
         }
+
         int randomIndex = Random.Range(0, listOfFightNodes.Count);
         Vector2 enemySpawnCoords = new Vector2(listOfFightNodes[randomIndex].centerX, listOfFightNodes[randomIndex].centerY);
         fightNodeIndicator.currentActiveFightNodeCoords = enemySpawnCoords;
         Instantiate(spawnEnemiesDetector, enemySpawnCoords, Quaternion.identity);
+        lastFNPicked = listOfFightNodes[randomIndex];
+        listOfFightNodes.RemoveAt(randomIndex);
         isFightNodeActive = true;
         return enemySpawnCoords;
         

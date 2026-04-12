@@ -14,5 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 10
   speed: 15
-  damage: 4
+  damage: 20
   mobName: DeathSummon
+  isREE: 0
+  isBoss: 0
+  goldValue: 0
+  xpValue: 0

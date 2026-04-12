@@ -16,3 +16,7 @@ MonoBehaviour:
   speed: 7
   damage: 5
   mobName: Bat
+  isREE: 1
+  isBoss: 0
+  goldValue: 0
+  xpValue: 0

@@ -4,6 +4,7 @@ using System.Collections;
 public class AttackManager : MonoBehaviour
 {
     private PlayerCombat playerCombat;
+    private PlayerMovement playerMovement;
     public GameObject starDaggerPrefab;
     public GameObject bloodMacePrefab;
     public GameObject twinShadowsPrefab;
@@ -27,13 +28,14 @@ public class AttackManager : MonoBehaviour
     }
     void Start()
     {
+        playerMovement = FindFirstObjectByType<PlayerMovement>();
         playerCombat = FindFirstObjectByType<PlayerCombat>();
         weaponManager = FindFirstObjectByType<WeaponManager>();
     }
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0) && isFiring == false && weaponManager.switchingWeapons == false)
+        if (Input.GetMouseButtonDown(0) && isFiring == false && weaponManager.switchingWeapons == false && !playerMovement.playerFrozen)
         {
             playerCombat.GetComponent<Animator>().SetTrigger("Attack");
             isFiring = true;
@@ -46,7 +48,7 @@ public class AttackManager : MonoBehaviour
     {
         Instantiate(twinShadowsPrefab, playerCombat.transform.position, Quaternion.identity);
         if (shadowEcho.activeInHierarchy) shadowEcho.GetComponent<ShadowEcho>().ShadowAttack(twinShadowsPrefab, "TwinShadows");
-        yield return new WaitForSeconds(twinShadowsAS);
+        yield return new WaitForSeconds(twinShadowsAS * playerCombat.attackSpeed);
         isFiring = false;
     }
 
@@ -54,7 +56,7 @@ public class AttackManager : MonoBehaviour
     {
         Instantiate(bloodMacePrefab, playerCombat.transform.position, Quaternion.identity);
         if (shadowEcho.activeInHierarchy) shadowEcho.GetComponent<ShadowEcho>().ShadowAttack(bloodMacePrefab, "BloodMace");
-        yield return new WaitForSeconds(bloodMaceAS);
+        yield return new WaitForSeconds(bloodMaceAS * playerCombat.attackSpeed);
         isFiring = false;
     }
 
@@ -62,7 +64,7 @@ public class AttackManager : MonoBehaviour
     {
         Instantiate(starDaggerPrefab, playerCombat.transform.position, Quaternion.identity);
         if (shadowEcho.activeInHierarchy) shadowEcho.GetComponent<ShadowEcho>().ShadowAttack(starDaggerPrefab, "StarDagger");
-        yield return new WaitForSeconds(starDaggerAS);
+        yield return new WaitForSeconds(starDaggerAS * playerCombat.attackSpeed);
         isFiring = false;
     }
 

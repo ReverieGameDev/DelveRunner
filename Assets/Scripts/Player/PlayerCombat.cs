@@ -17,6 +17,7 @@ public class PlayerCombat : MonoBehaviour
     private AugmentManager augmentManager;
     public AttackManager attackManager;
     private Animator anim;
+    private EmberSystem emberSystem;
 
     public GameObject gameOverScreen;
 
@@ -32,9 +33,9 @@ public class PlayerCombat : MonoBehaviour
     public float attackSpeed = 1f;
     public int critChance = 5;
     public float critDamage = 1.5f;
-    public float armor = 0f;
+    public float armor = 1f;
     public float maxHealth = 100f;
-    public float dodge = 0f;
+    public float dodge = 1f;
     public float movementSpeed = 5f;
     public float xpGain = 1f;
     public float goldGain = 1f;
@@ -72,7 +73,7 @@ public class PlayerCombat : MonoBehaviour
         playerStats.Add("xp gain");
         playerStats.Add("gold gain");
     }
-   
+
     void Start()
     {
         if (playerGold != null) playerGold.text = ": " + playerMoney;
@@ -80,6 +81,7 @@ public class PlayerCombat : MonoBehaviour
         playerMovement = FindFirstObjectByType<PlayerMovement>();
         augmentManager = FindFirstObjectByType<AugmentManager>();
         attackManager = FindFirstObjectByType<AttackManager>();
+        emberSystem = FindFirstObjectByType<EmberSystem>();
 
         currentPlayerHealth = (int)playerData.playerHp;
         if (playerManaBar != null) playerManaBar.value = 1.0f;
@@ -98,6 +100,8 @@ public class PlayerCombat : MonoBehaviour
         {
             processedDamage = (int)(Mathf.Round(damage * attack));
         }
+        if (emberSystem != null && emberSystem.emberAmount <= 0)
+            processedDamage = (int)(processedDamage * 0.85f);
         return processedDamage;
     }
 
@@ -115,16 +119,23 @@ public class PlayerCombat : MonoBehaviour
     }
     public void DamagePlayer(float damageTaken)
     {
+        int dodgeChance = Random.Range(0, 101);
+        if (dodgeChance <= dodge)
+        {
+            return;
+        }
         int damageTakenInt = (int)Mathf.Round(damageTaken);
+        if (emberSystem != null && emberSystem.emberAmount <= 0)
+            damageTakenInt = (int)(damageTakenInt * 1.15f);
         if (iFrames) return;
         StartCoroutine("IFrames");
-        currentPlayerHealth -= damageTakenInt;
+        currentPlayerHealth -= (int)(damageTakenInt * armor);
         playerHpBar.value = currentPlayerHealth / playerData.playerHp;
 
         if (currentPlayerHealth <= 0)
         {
             anim.SetTrigger("Death");
-            
+
             GameOver();
         }
     }
@@ -182,25 +193,25 @@ public class PlayerCombat : MonoBehaviour
     public void ApplyAugment(string selectedAugment)
     {
         if (selectedAugment == "Attack")
-            attack += 5f;
+            attack *= 1.05f;
         else if (selectedAugment == "AttackSpeed")
-            attackSpeed -= 0.1f;
+            attackSpeed *= 0.95f;
         else if (selectedAugment == "CritChance")
-            critChance += 5;
+            critChance += 10;
         else if (selectedAugment == "CritDamage")
-            critDamage += 15f;
+            critDamage *= 1.10f;
         else if (selectedAugment == "Armor")
-            armor += 3f;
+            armor *= 0.95f;
         else if (selectedAugment == "MaxHealth")
-            maxHealth += 20f;
+            maxHealth *= 1.05f;
         else if (selectedAugment == "Dodge")
             dodge += 4f;
         else if (selectedAugment == "MovementSpeed")
-            movementSpeed += 0.5f;
+            movementSpeed *= 1.05f;
         else if (selectedAugment == "XPGain")
-            xpGain += 10f;
+            xpGain *= 1.05f;
         else if (selectedAugment == "GoldGain")
-            goldGain += 10f;
+            goldGain *= 1.10f;
     }
 
     public void GameOver()
@@ -221,103 +232,104 @@ public class PlayerCombat : MonoBehaviour
         switch (statToMod)
         {
             case "attack":
-                attack *= 1.15f;
+                attack *= 1.10f;
                 break;
             case "attack speed":
-                attackSpeed *= 1.15f;
+                attackSpeed *= 0.90f;
                 break;
             case "crit chance":
-                critChance = (int)(critChance * 1.15f);
+                critChance += 10;
                 break;
             case "crit damage":
-                critDamage *= 1.15f;
+                critDamage *= 1.10f;
                 break;
             case "armor":
-                armor *= 1.15f;
+                armor *= 0.90f;
                 break;
             case "max health":
-                maxHealth *= 1.15f;
+                maxHealth *= 1.10f;
                 break;
             case "dodge":
-                dodge *= 1.15f;
+                dodge += 5f;
                 break;
             case "movement speed":
-                movementSpeed *= 1.15f;
+                movementSpeed *= 1.10f;
                 break;
             case "xp gain":
-                xpGain *= 1.15f;
+                xpGain *= 1.10f;
                 break;
             case "gold gain":
-                goldGain *= 1.15f;
+                goldGain *= 1.10f;
                 break;
         }
     }
+
     public void CurseStatueMods(string blessedStat, string cursedStat)
     {
         switch (blessedStat)
         {
             case "attack":
-                attack *= 1.3f;
+                attack *= 1.04f;
                 break;
             case "attack speed":
-                attackSpeed *= 1.3f;
+                attackSpeed *= 0.96f;
                 break;
             case "crit chance":
-                critChance = (int)(critChance*1.3f);
+                critChance += 4;
                 break;
             case "crit damage":
-                critDamage *= 1.3f;
+                critDamage *= 1.04f;
                 break;
             case "armor":
-                armor *= 1.3f;
+                armor *= 0.96f;
                 break;
             case "max health":
-                maxHealth *= 1.3f;
+                maxHealth *= 1.04f;
                 break;
             case "dodge":
-                dodge *= 1.3f;
+                dodge += 2f;
                 break;
             case "movement speed":
-                movementSpeed *= 1.3f;
+                movementSpeed *= 1.04f;
                 break;
             case "xp gain":
-                xpGain *= 1.3f;
+                xpGain *= 1.04f;
                 break;
             case "gold gain":
-                goldGain *= 1.3f;
+                goldGain *= 1.04f;
                 break;
         }
         switch (cursedStat)
         {
             case "attack":
-                attack *= .8f;
+                attack *= 0.96f;
                 break;
             case "attack speed":
-                attackSpeed *= .8f;
+                attackSpeed *= 1.04f;
                 break;
             case "crit chance":
-                critChance = (int)(critChance * .8f);
+                critChance -= 4;
                 break;
             case "crit damage":
-                critDamage *= .8f;
+                critDamage *= 0.96f;
                 break;
             case "armor":
-                armor *= .8f;
+                armor *= 1.04f;
                 break;
             case "max health":
-                maxHealth *= .8f;
+                maxHealth *= 0.96f;
                 break;
             case "dodge":
-                dodge *= .8f;
+                dodge -= 2f;
                 break;
             case "movement speed":
-                movementSpeed *= .8f;
+                movementSpeed *= 0.96f;
                 break;
             case "xp gain":
-                xpGain *= .8f;
+                xpGain *= 0.96f;
                 break;
             case "gold gain":
-                goldGain *= .8f;
+                goldGain *= 0.96f;
                 break;
         }
     }
@@ -327,34 +339,34 @@ public class PlayerCombat : MonoBehaviour
         switch (statToMod)
         {
             case "attack":
-                attack += statMod;
+                attack *= (statMod > 0) ? 1.07f : 0.93f;
                 break;
             case "attack speed":
-                attackSpeed -= statMod;
+                attackSpeed *= (statMod > 0) ? 0.93f : 1.07f;
                 break;
             case "crit chance":
-                critChance += (int)statMod;
+                critChance += (statMod > 0) ? 7 : -7;
                 break;
             case "crit damage":
-                critDamage += statMod;
+                critDamage *= (statMod > 0) ? 1.07f : 0.93f;
                 break;
             case "armor":
-                armor += statMod;
+                armor *= (statMod > 0) ? 0.93f : 1.07f;
                 break;
             case "max health":
-                maxHealth += statMod;
+                maxHealth *= (statMod > 0) ? 1.07f : 0.93f;
                 break;
             case "dodge":
-                dodge += statMod;
+                dodge += (statMod > 0) ? 4f : -4f;
                 break;
             case "movement speed":
-                movementSpeed += statMod;
+                movementSpeed *= (statMod > 0) ? 1.07f : 0.93f;
                 break;
             case "xp gain":
-                xpGain += statMod;
+                xpGain *= (statMod > 0) ? 1.07f : 0.93f;
                 break;
             case "gold gain":
-                goldGain += statMod;
+                goldGain *= (statMod > 0) ? 1.07f : 0.93f;
                 break;
         }
     }

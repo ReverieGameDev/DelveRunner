@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   abilityName: Dash
   abilitySprite: {fileID: 0}
-  abilityCost: 75
+  abilityCost: 1
   abilityDescription: Enables dashing \nDash distance scales with agility \nDash
     damage scales with strength

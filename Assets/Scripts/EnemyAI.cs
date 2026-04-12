@@ -77,6 +77,7 @@ public class EnemyAI : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (assignedSpawnAnchor == null) return;
         anchorPos = assignedSpawnAnchor.transform.position;
         anchorPlayerAngle = ((Vector2)player.position - anchorPos).normalized;
 
@@ -122,12 +123,12 @@ public class EnemyAI : MonoBehaviour
             if (Vector2.Distance((Vector2)transform.position, targetPos) >= 0.5f)
             {
                 Vector2 direction = (targetPos - (Vector2)transform.position).normalized;
-                transform.position = (Vector2)transform.position + direction * speed * Time.fixedDeltaTime;
+                rb.MovePosition((Vector2)transform.position + direction * speed * Time.fixedDeltaTime);
                 SetWalkAnim(1);
             }
             else
             {
-                transform.position = (Vector3)targetPos;
+                rb.MovePosition(targetPos);
                 SetWalkAnim(0);
             }
         }

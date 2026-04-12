@@ -9,11 +9,12 @@ public class ArrowBehaviour : MonoBehaviour
     private PlayerMovement playerMovement;
     private Rigidbody2D rb;
     private Vector2 currentPos;
-    private float speed = 25f;
+    private float speed = 17f;
     public int arrowOffset;
     private float arrowAngle;
     private bool isReadyToFire = false;
     private Vector2 fanAngle;
+    private EmberSystem emberSystem;
     
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -26,6 +27,11 @@ public class ArrowBehaviour : MonoBehaviour
         archerToPlayerPos = new Vector2(playerMovement.transform.position.x - currentPos.x, playerMovement.transform.position.y - currentPos.y).normalized;
         transform.rotation = Quaternion.Euler(0, 0, Mathf.Rad2Deg*Mathf.Atan2(archerToPlayerPos.y,archerToPlayerPos.x));
         
+    }
+    private void Start()
+    {
+        emberSystem = FindFirstObjectByType<EmberSystem>();
+        speed += 0.5f * emberSystem.waveNumber;
     }
 
     // Update is called once per frame
@@ -68,7 +74,7 @@ public class ArrowBehaviour : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            PlayerCombat.Instance.DamagePlayer(15f);
+            PlayerCombat.Instance.DamagePlayer(12f);
         }
     }
 }

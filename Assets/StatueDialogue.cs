@@ -98,23 +98,22 @@ public class StatueDialogue : MonoBehaviour
 
         dice.GetComponent<UnityEngine.UI.Image>().sprite = diceFaces[gambleInt - 1];
 
-        
-        if (gambleInt < 3)
-        {
-            statueText.text = "You rolled less than a 3, the jester lowers your " + rerGamble.chosenStatueStat + " by 5%, the statue goes dormant";
-            playerCombat.StatueStatMods(rerGamble.chosenStatueStat, -0.05f);
 
-        }
-        else if (gambleInt > 3)
+        if (gambleInt > 3)
         {
-            statueText.text = "You rolled higher than a 3. The jester raises your " + rerGamble.chosenStatueStat + " by 5%, the statue goes dormant";
-            playerCombat.StatueStatMods(rerGamble.chosenStatueStat, 0.05f);
+            statueText.text = "You rolled higher than 3, the jester raises your " + rerGamble.chosenStatueStat + " by 7%, the statue goes dormant";
+            playerCombat.StatueStatMods(rerGamble.chosenStatueStat, 1f);
+        }
+        else if (gambleInt < 3)
+        {
+            statueText.text = "You rolled less than 3. The jester lowers your " + rerGamble.chosenStatueStat + " by 7%, the statue goes dormant";
+            playerCombat.StatueStatMods(rerGamble.chosenStatueStat, -1f);
         }
         else if (gambleInt == 3)
         {
             statueText.text = "You rolled a 3, the jester does nothing, the statue goes dormant.";
         }
-        yield return new WaitForSecondsRealtime(2f);
+        yield return new WaitForSecondsRealtime(1f);
         ps.Stop();
         Time.timeScale = 1;
         statueDialogue.SetActive(false);

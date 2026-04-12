@@ -3,7 +3,7 @@ using UnityEngine;
 public class BloodMaceAttack : MonoBehaviour
 {
     private Enemy enemy;
-    private float bloodMaceDamage = 20f;
+    private float bloodMaceDamage = 38f;
     private AttackManager attackManager;
     private Vector3 trajectory;
     private PlayerCombat playerCombat;

@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   abilityName: Shadow Echo
   abilitySprite: {fileID: 0}
-  abilityCost: 70
+  abilityCost: 1
   abilityDescription: The player creates a shadow, echoing each attack with 25% effectiveness

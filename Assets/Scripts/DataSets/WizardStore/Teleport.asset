@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   abilityName: Time Dilation
   abilitySprite: {fileID: 0}
-  abilityCost: 60
+  abilityCost: 1
   abilityDescription: A toggle ability to slow time down by 25%. Has an activation
     cost.

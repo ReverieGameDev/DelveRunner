@@ -7,6 +7,7 @@ public class AbilityManager : MonoBehaviour
     public string currentAbility = "Dash";
     private PlayerMovement playerMovement;
     private bool initialManaPaid = false;
+    public float currentTimeScale = 1f;
 
     // Dash
     public float dashManaCost = 10f;
@@ -33,6 +34,7 @@ public class AbilityManager : MonoBehaviour
     public GameObject shadowEchoPrefab;
     public bool shadowEchoActive = false;
     private bool canShadowEcho = true;
+    public float updatedTimeScale;
 
     void Start()
     {
@@ -42,7 +44,7 @@ public class AbilityManager : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.LeftShift))
+        if (Input.GetKeyDown(KeyCode.LeftShift) && !playerMovement.playerFrozen)
         {
             switch (currentAbility)
             {
@@ -107,6 +109,7 @@ public class AbilityManager : MonoBehaviour
             canTimeDilation = false;
             timeDilationPrefab.SetActive(true);
             Time.timeScale = timeDilationTimeScale;
+            currentTimeScale = timeDilationTimeScale;
             StartCoroutine(InitialCooldown(timeDilationInitialCD));
             StartCoroutine(ManaDrainAbility(timeDilationActivationCost, timeDilationDrainCost, timeDilationTickRate));
         }
@@ -116,6 +119,7 @@ public class AbilityManager : MonoBehaviour
             timeDilationPrefab.SetActive(false);
             Time.timeScale = 1;
             initialManaPaid = false;
+            currentTimeScale = 1f;
             StopAllCoroutines();
             StartCoroutine(Cooldown(timeDilationRecastCD));
         }
@@ -138,6 +142,7 @@ public class AbilityManager : MonoBehaviour
                     timeDilationPrefab.SetActive(false);
                     Time.timeScale = 1f;
                     initialManaPaid = false;
+                    currentTimeScale = 1f;
                     StartCoroutine(Cooldown(timeDilationRecastCD));
                     yield break;
                 case "Shadow Echo":
@@ -193,4 +198,6 @@ public class AbilityManager : MonoBehaviour
                 yield break;
         }
     }
+
+
 }

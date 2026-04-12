@@ -9,6 +9,7 @@ public class SummonerSkeletonGhostAttack : MonoBehaviour
     private Vector2 missleToPlayerAngle;
     private float missleAngle;
     private float missleDuration = 4f;
+
     public bool isReadyToDamage = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -32,7 +33,7 @@ public class SummonerSkeletonGhostAttack : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            PlayerCombat.Instance.DamagePlayer(10f);
+            PlayerCombat.Instance.DamagePlayer(20f);
             DestroyMagicMissile();
         }
     }

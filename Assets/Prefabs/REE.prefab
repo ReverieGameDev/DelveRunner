@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5731692989313438329}
   m_Layer: 0
   m_Name: REE
-  m_TagString: Untagged
+  m_TagString: REE
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -45,8 +45,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32dbd6cf6f718a341b10cd93a8a2ec94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skeletonArcher: {fileID: 3207597751485716074, guid: 915ccc2b44e3b1b4eb01a5692cd661e5, type: 3}
-  skeletonWarrior: {fileID: 0}
+  reeEncounterList:
+  - {fileID: 3207597751485716074, guid: 915ccc2b44e3b1b4eb01a5692cd661e5, type: 3}
 --- !u!58 &5731692989313438329
 CircleCollider2D:
   m_ObjectHideFlags: 0

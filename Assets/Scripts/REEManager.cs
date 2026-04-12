@@ -4,34 +4,38 @@ using UnityEngine;
 
 public class REEManager : MonoBehaviour
 {
-    public List<Vector2> reePoints = new List<Vector2>();
-    public List<Vector2> filteredREEPoints = new List<Vector2>();
-    public GameObject REEPoint;
+    public List<Vector2> availableSpawnPoints = new List<Vector2>();
+    public List<Vector2> activeSpawnPoints = new List<Vector2>();
+    public GameObject encounterPrefab;
 
     void Start()
     {
-        StartCoroutine(DelayedSetup());
+        StartCoroutine("InitializeSpawnPoints");
     }
 
-    IEnumerator DelayedSetup()
+    IEnumerator InitializeSpawnPoints()
     {
-        yield return null; // wait one frame
+        yield return null;
         MapGenerator mapGen = FindFirstObjectByType<MapGenerator>();
-        reePoints = new List<Vector2>(mapGen.corridorMidpoints);
-        FilterAndSpawnREEs();
+        availableSpawnPoints = new List<Vector2>(mapGen.corridorMidpoints);
+        SelectAndSpawnEncounters();
     }
 
-    private void FilterAndSpawnREEs()
+    private void SelectAndSpawnEncounters()
     {
-        for (int i = 0; i < 10; i++)
+        MapGenerator mapGen = FindFirstObjectByType<MapGenerator>();
+        availableSpawnPoints = new List<Vector2>(mapGen.corridorMidpoints);
+        for (int i = 0; i < 6; i++)
         {
-            int pointAdd = Random.Range(0, reePoints.Count);
-            filteredREEPoints.Add(reePoints[pointAdd]);
-            reePoints.RemoveAt(pointAdd);
+            int randomIndex = Random.Range(0, availableSpawnPoints.Count);
+            activeSpawnPoints.Add(availableSpawnPoints[randomIndex]);
+            availableSpawnPoints.RemoveAt(randomIndex);
         }
-        for (int i = 0; i < filteredREEPoints.Count; i++)
+        for (int i = 0; i < activeSpawnPoints.Count; i++)
         {
-            Instantiate(REEPoint, filteredREEPoints[i], Quaternion.identity);
+            Instantiate(encounterPrefab, activeSpawnPoints[i], Quaternion.identity);
         }
+        activeSpawnPoints.Clear();
+        availableSpawnPoints.Clear();
     }
 }

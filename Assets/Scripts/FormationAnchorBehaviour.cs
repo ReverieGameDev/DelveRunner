@@ -27,13 +27,13 @@ public class FormationAnchorBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Vector2.Distance((Vector2)transform.position, player.position) >= 16)
+        if (Vector2.Distance((Vector2)transform.position, player.position) >= 25)
         {
             chaseDirection = new Vector2(player.position.x - transform.position.x, player.position.y - transform.position.y).normalized;
             transform.position = (Vector2)transform.position + chaseDirection;
         }
 
-        else if (Vector2.Distance((Vector2)transform.position, player.position) <= 7)
+        else if (Vector2.Distance((Vector2)transform.position, player.position) <= 6)
         {
             retreatDirection = new Vector2(transform.position.x - player.position.x, transform.position.y - player.position.y).normalized*2;
             transform.position = (Vector2)transform.position + retreatDirection;
