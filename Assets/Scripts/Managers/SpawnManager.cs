@@ -25,6 +25,7 @@ public class SpawnManager : MonoBehaviour
     private int[] formationsPerWave = { 2, 2, 2, 2, 3, 3, 3, 3, 4 };
     private List<Vector2> formationDirectionalOffset = new List<Vector2>();
     private Vector2 spawnPosOffset;
+    private int randomDirection;
 
     // ===== SPAWN LOCATIONS =====
     public int[,] viableSpawnCenters;  // Filled by MapRenderer, marks valid spawn points
@@ -40,12 +41,12 @@ public class SpawnManager : MonoBehaviour
         { 0, 1, 0 },
         { 0, 0, 0 } } },
     { "2", new int[,] {
-        { 0, 1, 0 },
         { 0, 2, 0 },
+        { 0, 1, 0 },
         { 0, 0, 0 } } },
     { "3", new int[,] {
-        { 0, 0, 0 },
-        { 1, 0, 2 },
+        { 0, 2, 0 },
+        { 0, 1, 0 },
         { 0, 0, 0 } } },
 
     // === FIGHT NODE 2 (waves 4-6) ===
@@ -219,7 +220,7 @@ public class SpawnManager : MonoBehaviour
 
     private void FormationDirectionOffset()
     {
-        int randomDirection = Random.Range(0, formationDirectionalOffset.Count);
+        randomDirection = Random.Range(0, formationDirectionalOffset.Count);
         fightNodeCenterOffsetted = new Vector2(fightNodeCenter.x + formationDirectionalOffset[randomDirection].x, fightNodeCenter.y + formationDirectionalOffset[randomDirection].y);
         formationDirectionalOffset.RemoveAt(randomDirection);
         
@@ -232,6 +233,10 @@ public class SpawnManager : MonoBehaviour
         spawnPosArray = (int[,])formations[waveFormation].Clone();
         CalculateRotation(fightNodeCenterOffsetted);
         RotateSpawnPos();
+        Debug.Log("Final formation: " +
+    spawnPosArray[0, 0] + spawnPosArray[0, 1] + spawnPosArray[0, 2] + " | " +
+    spawnPosArray[1, 0] + spawnPosArray[1, 1] + spawnPosArray[1, 2] + " | " +
+    spawnPosArray[2, 0] + spawnPosArray[2, 1] + spawnPosArray[2, 2]);
         SpawnFormation(new Vector2(fightNodeCenterOffsetted.x, fightNodeCenterOffsetted.y));
     }
 
@@ -309,6 +314,7 @@ public class SpawnManager : MonoBehaviour
     // Determines how many 45-degree rotations needed to face player
     private void CalculateRotation(Vector2 spawnPos)
     {
+        /* 
         // Get angle from spawn point looking at player
         float angle = Mathf.Atan2(playerPos.y - spawnPos.y, playerPos.x - spawnPos.x) * Mathf.Rad2Deg;
 
@@ -316,7 +322,7 @@ public class SpawnManager : MonoBehaviour
 
         // 8 directions, 45 degrees each
         // Formation default faces UP (toward player when angle is 67.5 to 112.5)
-        if (angle >= 67.5f && angle < 112.5f) rotations = 0;  // UP
+       if (angle >= 67.5f && angle < 112.5f) rotations = 0;  // UP
         else if (angle >= 22.5f && angle < 67.5f) rotations = 1;  // UP-RIGHT
         else if (angle >= -22.5f && angle < 22.5f) rotations = 2;  // RIGHT
         else if (angle >= -67.5f && angle < -22.5f) rotations = 3;  // DOWN-RIGHT
@@ -324,7 +330,18 @@ public class SpawnManager : MonoBehaviour
         else if (angle >= -157.5f && angle < -112.5f) rotations = 5; // DOWN-LEFT
         else if (angle >= 157.5f || angle < -157.5f) rotations = 6; // LEFT
         else if (angle >= 112.5f && angle < 157.5f) rotations = 7;  // UP-LEFT
-        Debug.Log(spawnPos + "<-spawn pos playerpos-> " + playerPos);
+       */
+        switch (randomDirection)
+        {
+            case 0: rotations = 4; break; // north
+            case 1: rotations = 3; break; // northeast
+            case 2: rotations = 2; break; // east
+            case 3: rotations = 1; break; // southeast
+            case 4: rotations = 0; break; // south
+            case 5: rotations = 7; break; // southwest
+            case 6: rotations = 6; break; // west
+            case 7: rotations = 5; break; // northwest
+        }
     }
 
     // ===== ROTATE FORMATION =====
