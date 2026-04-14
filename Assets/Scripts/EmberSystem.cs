@@ -11,7 +11,7 @@ public class EmberSystem : MonoBehaviour
     public GameObject emberUI;
     private PlayerMovement playerMovement;
     private int lightRadius = 45;
-    private Light2D emberComp;
+    public Light2D emberComp;
     public bool isEmberActive = true; // true = ember alive, false = ember depleted
     public int waveNumber = 0;
     private SpawnManager spawnManager;
@@ -24,7 +24,7 @@ public class EmberSystem : MonoBehaviour
     {
         spawnManager = FindFirstObjectByType<SpawnManager>();
         playerMovement = FindFirstObjectByType<PlayerMovement>();
-        emberComp = playerMovement.GetComponent<Light2D>();
+        //emberComp = playerMovement.GetComponent<Light2D>();
         StartCoroutine("DepleteEmber");
         NewWave();
     }

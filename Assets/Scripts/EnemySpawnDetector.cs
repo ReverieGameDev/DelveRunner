@@ -66,7 +66,7 @@ public class EnemySpawnDetector : MonoBehaviour
 
     public void StartFightNode()
     {
-        spawnManager.spawnPos = transform.position;
+        spawnManager.fightNodeCenter = transform.position;
         Instantiate(barrier, new Vector2(transform.position.x + 4.5f, transform.position.y + 2.5f), Quaternion.identity);
         spawnManager.SpawnNextWave();
         emberSystem.isFightNodeActive = true;

@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Rendering;
 
 public class SpawnManager : MonoBehaviour
 {
@@ -12,13 +13,18 @@ public class SpawnManager : MonoBehaviour
     private EmberSystem emberSystem;
     public GameObject swarm;
     private MapGenerator mapGenerator;
-    public Vector2 spawnPos;
+    public Vector2 fightNodeCenter;
+    private Vector2 fightNodeCenterOffsetted;
     public GameObject spawnEnemiesDetector;
     private FightNodeIndicator fightNodeIndicator;
     public bool isFightNodeActive = false;
     public GameObject spawnAnchor;
     private List<Room> listOfFightNodes = new List<Room>();
     private Room lastFNPicked;
+    private int oneOf3Waves;
+    private int[] formationsPerWave = { 2, 2, 2, 2, 3, 3, 3, 3, 4 };
+    private List<Vector2> formationDirectionalOffset = new List<Vector2>();
+    private Vector2 spawnPosOffset;
 
     // ===== SPAWN LOCATIONS =====
     public int[,] viableSpawnCenters;  // Filled by MapRenderer, marks valid spawn points
@@ -27,44 +33,133 @@ public class SpawnManager : MonoBehaviour
     // Dictionary holds all formations by name
     // Values: 0 = empty, 1 = archer, 2 = warrior (match EnemyArray indices)
     private Dictionary<string, int[,]> formations = new Dictionary<string, int[,]>()
-    {
-    { "wave1", new int[,] {           // tank archer
+{
+    // === FIGHT NODE 1 (waves 1-3) ===
+    { "1", new int[,] {
         { 0, 2, 0 },
         { 0, 1, 0 },
         { 0, 0, 0 } } },
-    { "wave2", new int[,] {           // tank archer archer
+    { "2", new int[,] {
+        { 0, 1, 0 },
+        { 0, 2, 0 },
+        { 0, 0, 0 } } },
+    { "3", new int[,] {
+        { 0, 0, 0 },
+        { 1, 0, 2 },
+        { 0, 0, 0 } } },
+
+    // === FIGHT NODE 2 (waves 4-6) ===
+    { "4", new int[,] {
         { 0, 2, 0 },
         { 1, 0, 1 },
         { 0, 0, 0 } } },
-    { "wave3", new int[,] {           // tank tank archer archer
+    { "5", new int[,] {
+        { 1, 0, 1 },
+        { 0, 2, 0 },
+        { 0, 0, 0 } } },
+    { "6", new int[,] {
+        { 0, 2, 0 },
+        { 0, 0, 0 },
+        { 1, 0, 1 } } },
+
+    // === FIGHT NODE 3 (waves 7-9) ===
+    { "7", new int[,] {
         { 2, 0, 2 },
         { 0, 0, 0 },
         { 1, 0, 1 } } },
-    { "wave4", new int[,] {           // tank summoner
+    { "8", new int[,] {
+        { 1, 0, 1 },
+        { 0, 0, 0 },
+        { 2, 0, 2 } } },
+    { "9", new int[,] {
+        { 2, 0, 1 },
+        { 0, 0, 0 },
+        { 1, 0, 2 } } },
+
+    // === FIGHT NODE 4 (waves 10-12) ===
+    { "10", new int[,] {
         { 0, 2, 0 },
         { 0, 4, 0 },
         { 0, 0, 0 } } },
-    { "wave5", new int[,] {           // tank archer summoner
+    { "11", new int[,] {
+        { 0, 4, 0 },
+        { 0, 2, 0 },
+        { 0, 0, 0 } } },
+    { "12", new int[,] {
+        { 0, 0, 0 },
+        { 2, 0, 4 },
+        { 0, 0, 0 } } },
+
+    // === FIGHT NODE 5 (waves 13-15) ===
+    { "13", new int[,] {
         { 0, 2, 0 },
         { 0, 1, 0 },
         { 0, 4, 0 } } },
-    { "wave6", new int[,] {           // tank tank tank archer summoner
+    { "14", new int[,] {
+        { 0, 4, 0 },
+        { 0, 1, 0 },
+        { 0, 2, 0 } } },
+    { "15", new int[,] {
+        { 0, 2, 0 },
+        { 4, 0, 1 },
+        { 0, 0, 0 } } },
+
+    // === FIGHT NODE 6 (waves 16-18) ===
+    { "16", new int[,] {
         { 2, 2, 2 },
         { 0, 1, 0 },
         { 0, 4, 0 } } },
-    { "wave7", new int[,] {           // tank tank tank archer archer archer
+    { "17", new int[,] {
+        { 0, 4, 0 },
+        { 0, 1, 0 },
+        { 2, 2, 2 } } },
+    { "18", new int[,] {
+        { 2, 0, 4 },
+        { 2, 1, 0 },
+        { 2, 0, 0 } } },
+
+    // === FIGHT NODE 7 (waves 19-21) ===
+    { "19", new int[,] {
         { 2, 2, 2 },
         { 1, 1, 1 },
         { 0, 0, 0 } } },
-    { "wave8", new int[,] {           // tank tank tank tank tank summoner archer archer
+    { "20", new int[,] {
+        { 1, 1, 1 },
+        { 0, 0, 0 },
+        { 2, 2, 2 } } },
+    { "21", new int[,] {
+        { 2, 1, 0 },
+        { 2, 1, 0 },
+        { 2, 1, 0 } } },
+
+    // === FIGHT NODE 8 (waves 22-24) ===
+    { "22", new int[,] {
         { 2, 2, 2 },
         { 2, 4, 2 },
         { 1, 0, 1 } } },
-    { "wave9", new int[,] {           // tank tank tank summoner summoner archer
+    { "23", new int[,] {
+        { 1, 0, 1 },
+        { 2, 4, 2 },
+        { 2, 2, 2 } } },
+    { "24", new int[,] {
+        { 2, 2, 1 },
+        { 2, 4, 0 },
+        { 2, 2, 1 } } },
+
+    // === FIGHT NODE 9 (waves 25-27) ===
+    { "25", new int[,] {
         { 2, 2, 2 },
         { 4, 1, 4 },
         { 0, 1, 0 } } },
-    };
+    { "26", new int[,] {
+        { 0, 1, 0 },
+        { 4, 1, 4 },
+        { 2, 2, 2 } } },
+    { "27", new int[,] {
+        { 2, 4, 0 },
+        { 2, 1, 1 },
+        { 2, 4, 0 } } },
+};
 
     // ===== ROTATION =====
     private int[,] spawnPosArray = new int[3, 3];  // Working array for current spawn
@@ -75,6 +170,7 @@ public class SpawnManager : MonoBehaviour
 
     void Start()
     {
+
         //references
         mapRenderer = FindFirstObjectByType<MapRenderer>();
         mapGenerator = FindFirstObjectByType<MapGenerator>();
@@ -83,7 +179,6 @@ public class SpawnManager : MonoBehaviour
         emberSystem = FindFirstObjectByType<EmberSystem>();
         // Cache player position at start
         playerPos = playerCombat.transform.position;
-
         // Build viable spawn locations
         mapRenderer.ViableEnemySpawns();
 
@@ -94,47 +189,56 @@ public class SpawnManager : MonoBehaviour
     public void SpawnNextWave()
     {
         Debug.Log("SpawnNextWave called, waveNumber: " + emberSystem.waveNumber);
-
+        formationDirectionalOffset.Clear();
+        formationDirectionalOffset.Add(new Vector2(0, 24));             // north
+        formationDirectionalOffset.Add(new Vector2(16.97f, 16.97f));    // northeast
+        formationDirectionalOffset.Add(new Vector2(24, 0));             // east
+        formationDirectionalOffset.Add(new Vector2(16.97f, -16.97f));   // southeast
+        formationDirectionalOffset.Add(new Vector2(0, -24));            // south
+        formationDirectionalOffset.Add(new Vector2(-16.97f, -16.97f));  // southwest
+        formationDirectionalOffset.Add(new Vector2(-24, 0));            // west
+        formationDirectionalOffset.Add(new Vector2(-16.97f, 16.97f));   // northwest
         if (emberSystem.waveNumber == 10)
         {
             SpawnBoss();
             return;
         }
+        int amountOfFormations = formationsPerWave[emberSystem.waveNumber-1];
+        for (int i = 0; i< amountOfFormations; i++)
+        {
+            PickfromPossibleWaveFormationPools();
+            FormationDirectionOffset();
+            SpawnWave(oneOf3Waves.ToString());
+        }
+    }
 
-        SpawnWave("wave" + emberSystem.waveNumber);
+    private void PickfromPossibleWaveFormationPools()
+    {
+        oneOf3Waves = (emberSystem.waveNumber * 3) + Random.Range(-2, 1);
+    }
 
-        // RNG wave variants for later:
-        // int rngWave = Random.Range(0, 2);
-        // if (rngWave == 0) { SpawnWave("wave1variantA"); }
-        // if (rngWave == 1) { SpawnWave("wave1variantB"); }
+    private void FormationDirectionOffset()
+    {
+        int randomDirection = Random.Range(0, formationDirectionalOffset.Count);
+        fightNodeCenterOffsetted = new Vector2(fightNodeCenter.x + formationDirectionalOffset[randomDirection].x, fightNodeCenter.y + formationDirectionalOffset[randomDirection].y);
+        formationDirectionalOffset.RemoveAt(randomDirection);
+        
     }
 
     // ===== MAIN SPAWN METHOD =====
     public void SpawnWave(string waveFormation)
     {
-        // Update player position for rotation calculation
         playerPos = playerCombat.transform.position;
-
-        // Clone formation from dictionary (so we don't modify original)
         spawnPosArray = (int[,])formations[waveFormation].Clone();
-
-
-
-        // Calculate rotation based on player position
-        CalculateRotation(spawnPos);
-
-        // Apply rotation to formation
+        CalculateRotation(fightNodeCenterOffsetted);
         RotateSpawnPos();
-
-        // Spawn all enemies in formation
-        SpawnFormation(spawnPos);
+        SpawnFormation(new Vector2(fightNodeCenterOffsetted.x, fightNodeCenterOffsetted.y));
     }
 
     // ===== SPAWN FORMATION =====
     private void SpawnFormation(Vector2 spawnPos)
     {
-        // Loop through 3x3 grid
-        GameObject currentSpawnAnchor = Instantiate(spawnAnchor, spawnPos, Quaternion.identity);
+        GameObject currentSpawnAnchor = Instantiate(spawnAnchor, new Vector2(spawnPos.x, spawnPos.y), Quaternion.identity);
         for (int row = 0; row < 3; row++)
         {
             for (int col = 0; col < 3; col++)
@@ -153,9 +257,8 @@ public class SpawnManager : MonoBehaviour
                 // Spawn enemy (enemyType - 1 because array is 0-indexed)
                 Vector3 worldPos = new Vector3(spawnPos.x + offsetX, spawnPos.y + offsetY);
                 Instantiate(EnemyArray[enemyType - 1], worldPos, Quaternion.identity).GetComponent<EnemyAI>().assignedSpawnAnchor = currentSpawnAnchor;
-
-                Debug.Log("Spawning enemy type " + enemyType + " at: " + worldPos);
-            }
+          
+        }
         }
     }
 
@@ -200,7 +303,6 @@ public class SpawnManager : MonoBehaviour
         listOfFightNodes.RemoveAt(randomIndex);
         isFightNodeActive = true;
         return enemySpawnCoords;
-        
     }
 
     // ===== CALCULATE ROTATION =====
@@ -222,6 +324,7 @@ public class SpawnManager : MonoBehaviour
         else if (angle >= -157.5f && angle < -112.5f) rotations = 5; // DOWN-LEFT
         else if (angle >= 157.5f || angle < -157.5f) rotations = 6; // LEFT
         else if (angle >= 112.5f && angle < 157.5f) rotations = 7;  // UP-LEFT
+        Debug.Log(spawnPos + "<-spawn pos playerpos-> " + playerPos);
     }
 
     // ===== ROTATE FORMATION =====
@@ -234,24 +337,18 @@ public class SpawnManager : MonoBehaviour
 
             // 45-degree clockwise rotation pattern:
             // Each position shifts one step around the edge
-            newArray[0, 1] = spawnPosArray[0, 0];  // top-left -> top-center
-            newArray[0, 2] = spawnPosArray[0, 1];  // top-center -> top-right
-            newArray[1, 2] = spawnPosArray[0, 2];  // top-right -> middle-right
-            newArray[2, 2] = spawnPosArray[1, 2];  // middle-right -> bottom-right
-            newArray[2, 1] = spawnPosArray[2, 2];  // bottom-right -> bottom-center
-            newArray[2, 0] = spawnPosArray[2, 1];  // bottom-center -> bottom-left
-            newArray[1, 0] = spawnPosArray[2, 0];  // bottom-left -> middle-left
-            newArray[0, 0] = spawnPosArray[1, 0];  // middle-left -> top-left
-            newArray[1, 1] = spawnPosArray[1, 1];  // center stays
+            newArray[0, 0] = spawnPosArray[0, 1];  // reverse direction
+            newArray[0, 1] = spawnPosArray[0, 2];
+            newArray[0, 2] = spawnPosArray[1, 2];
+            newArray[1, 2] = spawnPosArray[2, 2];
+            newArray[2, 2] = spawnPosArray[2, 1];
+            newArray[2, 1] = spawnPosArray[2, 0];
+            newArray[2, 0] = spawnPosArray[1, 0];
+            newArray[1, 0] = spawnPosArray[0, 0];
+            newArray[1, 1] = spawnPosArray[1, 1];
 
             spawnPosArray = newArray;
         }
-
-        Debug.Log("Rotations applied: " + rotations);
-        Debug.Log("Formation after rotation: " +
-            spawnPosArray[0, 0] + spawnPosArray[0, 1] + spawnPosArray[0, 2] + " | " +
-            spawnPosArray[1, 0] + spawnPosArray[1, 1] + spawnPosArray[1, 2] + " | " +
-            spawnPosArray[2, 0] + spawnPosArray[2, 1] + spawnPosArray[2, 2]);
     }
 
 
