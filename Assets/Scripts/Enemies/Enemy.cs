@@ -73,6 +73,7 @@ public class Enemy : MonoBehaviour
                 }
                 isDead = true;
                 enemyAI.currentState = EnemyState.Death;
+                if (enemyAI.isBackline) { enemyAI.ReduceFromBackline(); }
                 StartCoroutine("GoldAndExpRandomizer");
                 StartCoroutine("DropEmber");
             }

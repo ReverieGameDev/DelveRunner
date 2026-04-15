@@ -35,13 +35,15 @@ public class SkeletonArcher : MonoBehaviour
     private EnemyAI enemyAI;
     private Enemy enemy;
     private bool isDead = false;
+    
 
     void Start()
     {
+        
         enemy = GetComponentInChildren<Enemy>();
         anim = GetComponentInChildren<Animator>();
         enemyAttackIndicator = GetComponentInChildren<EnemyAttackIndicator>();
-        if (!isREE) enemyAI = GetComponentInChildren<EnemyAI>();
+        if (!isREE) { enemyAI = GetComponentInChildren<EnemyAI>(); enemyAI.isBackline = true; }
         playerMovement = FindFirstObjectByType<PlayerMovement>();
         attackList.Add("arrowShot");
         attackList.Add("arrowVolley");
