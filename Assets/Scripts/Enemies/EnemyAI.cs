@@ -24,6 +24,7 @@ public class EnemyAI : MonoBehaviour
     private bool hasStartedRetreating = false;
     public bool isCharging;
     public bool isBackline = false;
+    public bool backlineDead = false;
 
     // Ring formation
     private int originalRingIndex;
@@ -88,7 +89,7 @@ public class EnemyAI : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (assignedSpawnAnchor == null) return;
+        if (assignedSpawnAnchor == null || assignedSpawnAnchor.GetComponent<FormationAnchorBehaviour>().canWarriorLeap == true) return;
         anchorPos = assignedSpawnAnchor.transform.position;
         anchorPlayerAngle = ((Vector2)player.position - anchorPos).normalized;
 

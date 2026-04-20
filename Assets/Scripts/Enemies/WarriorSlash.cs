@@ -18,7 +18,7 @@ public class WarriorSlash : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            PlayerCombat.Instance.DamagePlayer(40f);
+            PlayerCombat.Instance.DamagePlayer(30f);
         }
     }
 }
