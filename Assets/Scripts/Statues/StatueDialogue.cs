@@ -117,5 +117,6 @@ public class StatueDialogue : MonoBehaviour
         ps.Stop();
         Time.timeScale = 1;
         statueDialogue.SetActive(false);
+        GetComponent<SpriteRenderer>().color = new Color(0.3f, 0.3f, 0.3f, 1f);
     }
 }

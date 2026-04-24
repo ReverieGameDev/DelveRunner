@@ -113,5 +113,6 @@ public class RERCurse : MonoBehaviour
         Time.timeScale = 1;
         ps.Stop();
         statueDialogue.SetActive(false);
+        GetComponent<SpriteRenderer>().color = new Color(0.3f, 0.3f, 0.3f, 1f);
     }
 }

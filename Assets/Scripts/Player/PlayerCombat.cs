@@ -51,6 +51,8 @@ public class PlayerCombat : MonoBehaviour
     public Slider playerXpBar;
     public TextMeshProUGUI playerLevelText;
     public TextMeshProUGUI moneyText;
+    public TextMeshProUGUI playerHpBarNumber;
+    public TextMeshProUGUI playerManaBarNumber;
 
     // State
     public bool iFrames = false;
@@ -77,6 +79,7 @@ public class PlayerCombat : MonoBehaviour
     void Start()
     {
         if (playerGold != null) playerGold.text = ": " + playerMoney;
+        
         anim = GetComponent<Animator>();
         playerMovement = FindFirstObjectByType<PlayerMovement>();
         augmentManager = FindFirstObjectByType<AugmentManager>();
@@ -84,8 +87,11 @@ public class PlayerCombat : MonoBehaviour
         emberSystem = FindFirstObjectByType<EmberSystem>();
 
         currentPlayerHealth = (int)playerData.playerHp;
+        currentPlayerMana = playerManaBase;
+        playerHpBarNumber.text = currentPlayerHealth + " / " + playerData.playerHp;
+        playerManaBarNumber.text = currentPlayerMana + " / " + playerManaBase;
         if (playerManaBar != null) playerManaBar.value = 1.0f;
-        if (playerHpBar != null) playerHpBar.value = 1.0f;
+        if (playerHpBar != null) playerHpBar.value = 1.0f; 
     }
     public int CalcWeaponDamage(float damage)
     {
@@ -131,7 +137,7 @@ public class PlayerCombat : MonoBehaviour
         StartCoroutine("IFrames");
         currentPlayerHealth -= (int)(damageTakenInt * armor);
         playerHpBar.value = currentPlayerHealth / playerData.playerHp;
-
+        playerHpBarNumber.text = currentPlayerHealth + " / " + playerData.playerHp;
         if (currentPlayerHealth <= 0)
         {
             anim.SetTrigger("Death");
