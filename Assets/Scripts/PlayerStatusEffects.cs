@@ -3,15 +3,21 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class PlayerStatusEffects : MonoBehaviour
 {
-    private bool isStunned = false;
+    public bool isStunned = false;
     public List<GameObject> statusHudSlots = new List<GameObject>();
+    public bool isPoisoned = false;
+    private PlayerMovement playerMovement;
+    public GameObject statusSlot;
+    public Transform statusHudContainer;
+    public Sprite stunIcon;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        playerMovement = FindFirstObjectByType<PlayerMovement>();
     }
 
     // Update is called once per frame
@@ -20,11 +26,12 @@ public class PlayerStatusEffects : MonoBehaviour
         
     }
 
-    public void ApplyStatus(string effect, float duration)
+    public void ApplyStatus(string effect, float duration, float damage)
     {
         switch (effect)
         {
-            case "stun": StunPlayer(duration); break;
+            case "stun": StartCoroutine(StunPlayer(duration)); break;
+            case "poison": StartCoroutine(PoisonPlayer(duration,damage)); break;
         }
             
     }
@@ -33,8 +40,21 @@ public class PlayerStatusEffects : MonoBehaviour
     {
         if (!isStunned)
         {
+            playerMovement.anim.SetFloat("IsMoving", 0);
             isStunned = true;
-            yield return new WaitForSecondsRealtime(duration);
+            GameObject slot = Instantiate(statusSlot, statusHudContainer);
+            StatusSlotScript slotScript = slot.GetComponent<StatusSlotScript>();
+            slotScript.statusIcon.sprite = stunIcon;
+            slotScript.effectName.text = "Stunned";
+            slotScript.timerText.text = "0:"+ "0"+duration;
+            int timeLeftStunned = (int)duration;
+            for (int i = 0; i<duration; i++)
+            {
+                yield return new WaitForSeconds(1f);
+                timeLeftStunned-=1;
+                slotScript.timerText.text = "0:" + "0" + timeLeftStunned;
+            }
+            Destroy(slot);
             isStunned = false;
         }
         else
@@ -43,13 +63,20 @@ public class PlayerStatusEffects : MonoBehaviour
         }
         
     }
-
-   /* IEnumerator UpdateHUD(string effect, float duration)
+    IEnumerator PoisonPlayer(float duration, float damage)
     {
-        if (statusHudSlots.Count > 6) //idk how to break out of the coroutine;
-        switch (effect)
+        if (!isPoisoned)
         {
-            case "stun": break;
+            isPoisoned = true;
+            yield return new WaitForSecondsRealtime(duration);
+            isPoisoned = false;
         }
-    }*/
+        else
+        {
+            yield break;
+        }
+
+    }
+
+
 }

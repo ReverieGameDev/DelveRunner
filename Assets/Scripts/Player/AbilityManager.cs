@@ -35,16 +35,17 @@ public class AbilityManager : MonoBehaviour
     public bool shadowEchoActive = false;
     private bool canShadowEcho = true;
     public float updatedTimeScale;
-
+    private PlayerStatusEffects playerStatusEffects;
     void Start()
     {
+        playerStatusEffects = FindFirstObjectByType<PlayerStatusEffects>();
         playerMovement = FindFirstObjectByType<PlayerMovement>();
         SwitchAbility(PlayerPrefs.GetString("CurrentAbility", currentAbility));
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.LeftShift) && !playerMovement.playerFrozen)
+        if (Input.GetKeyDown(KeyCode.LeftShift) && !playerMovement.playerFrozen && !playerStatusEffects.isStunned)
         {
             switch (currentAbility)
             {

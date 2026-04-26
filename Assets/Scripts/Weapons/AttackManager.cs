@@ -19,6 +19,8 @@ public class AttackManager : MonoBehaviour
     public Vector3 mousePos;
     public Vector3 playerPos;
 
+    private PlayerStatusEffects playerStatusEffects;
+
     private WeaponManager weaponManager;
     public enum WeaponType
     {
@@ -28,6 +30,7 @@ public class AttackManager : MonoBehaviour
     }
     void Start()
     {
+        playerStatusEffects = FindAnyObjectByType<PlayerStatusEffects>();
         playerMovement = FindFirstObjectByType<PlayerMovement>();
         playerCombat = FindFirstObjectByType<PlayerCombat>();
         weaponManager = FindFirstObjectByType<WeaponManager>();
@@ -35,7 +38,7 @@ public class AttackManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0) && isFiring == false && weaponManager.switchingWeapons == false && !playerMovement.playerFrozen)
+        if (playerStatusEffects.isStunned == false && Input.GetMouseButtonDown(0) && isFiring == false && weaponManager.switchingWeapons == false && !playerMovement.playerFrozen)
         {
             playerCombat.GetComponent<Animator>().SetTrigger("Attack");
             isFiring = true;

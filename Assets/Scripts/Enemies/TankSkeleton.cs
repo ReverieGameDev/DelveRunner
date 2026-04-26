@@ -50,9 +50,12 @@ public class TankSkeleton : MonoBehaviour
     public float leapDamage = 15f;
     public bool canLeapDamage = false;
     public GameObject leapHitboxPrefab;
-    
+    private PlayerStatusEffects playerStatusEffects;
+
+
     void Start()
     {
+        playerStatusEffects = FindFirstObjectByType<PlayerStatusEffects>();
         enemy = GetComponentInChildren<Enemy>();
         anim = GetComponentInChildren<Animator>();
         rb = GetComponent<Rigidbody2D>();

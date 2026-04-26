@@ -21,9 +21,10 @@ public class PlayerMovement : MonoBehaviour
     private float lastYInput;
     public Vector2 dashDirection;
     private float dashSpeed = 30f;
-    private Animator anim;
+    public Animator anim;
     public bool playerFrozen = false;
-    
+    private PlayerStatusEffects playerStatusEffects;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -32,12 +33,13 @@ public class PlayerMovement : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         playerRb = GetComponent<Rigidbody2D>();
         playerCombat = FindFirstObjectByType<PlayerCombat>();
+        playerStatusEffects = FindAnyObjectByType<PlayerStatusEffects>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (!playerFrozen)
+        if (!playerFrozen && (playerStatusEffects == null || !playerStatusEffects.isStunned))
         {
             xInput = Input.GetAxis("Horizontal");
             yInput = Input.GetAxis("Vertical");
