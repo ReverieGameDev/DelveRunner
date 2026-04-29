@@ -190,7 +190,7 @@ public class PlayerCombat : MonoBehaviour
             playerXp -= 100;
             augmentsOwed++;
             playerXpBar.value = playerXp / 100f;
-            playerLevelText.text = ("Level: " + playerLevel);
+            playerLevelText.text = (""+playerLevel);
         }
 
         if (augmentsOwed > 0 && Time.timeScale != 0)

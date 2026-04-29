@@ -8,7 +8,6 @@ public class EmberSystem : MonoBehaviour
 {
     public float emberAmount = 100;
     public int baseEmber = 100;
-    public GameObject emberUI;
     private PlayerMovement playerMovement;
     private int lightRadius = 45;
     public Light2D emberComp;
@@ -45,7 +44,6 @@ public class EmberSystem : MonoBehaviour
             }
         }
         emberComp.pointLightOuterRadius = ((float)emberAmount / baseEmber) * lightRadius;
-        emberUI.transform.localScale = new Vector3((float)emberAmount / baseEmber, (float)emberAmount / baseEmber, 0);
     }
 
     IEnumerator DepleteEmber()
