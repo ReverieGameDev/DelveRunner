@@ -40925,10 +40925,10 @@ MonoBehaviour:
   - {fileID: 349541849}
   - {fileID: 718239235}
   - {fileID: 373498533}
-  hpSmall: {fileID: 11400000, guid: 0e2e2a689bf9cea41bddaaf0c4d95a0f, type: 2}
-  manaSmall: {fileID: 11400000, guid: 5bf1aa9ef99f54a45b5a60b1fe3c7614, type: 2}
-  hpLarge: {fileID: 11400000, guid: 15ec457116d242544ba1dbd49dbfa03e, type: 2}
-  manaMedium: {fileID: 11400000, guid: 5f235f75d0d9a20479d5681997abc1c9, type: 2}
+  hpSmall: {fileID: 11400000, guid: bf23972877a96bf458a5f39cd10614dc, type: 2}
+  manaSmall: {fileID: 11400000, guid: 12866d39566abcd498522dbbf6e4260f, type: 2}
+  hpLarge: {fileID: 11400000, guid: 9eb83285f564c6f45b7d1f4b8d892760, type: 2}
+  manaMedium: {fileID: 0}
   noItemSprite: {fileID: -925295769392734769, guid: e9e99825334dbfc49b621cbf267abcd1, type: 3}
 --- !u!1 &1966975990
 GameObject:

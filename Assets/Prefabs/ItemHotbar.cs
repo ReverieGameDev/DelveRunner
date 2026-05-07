@@ -22,12 +22,9 @@ public class ItemHotbar : MonoBehaviour
     private bool usingItem = false;
     public Sprite noItemSprite;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
+
     void Start()
     {
-        hotbarItems.Add(new InventorySlot { item = hpSmall, count = 1 });
-        hotbarItems.Add(new InventorySlot { item = manaSmall, count = 1 });
-        hotbarItems.Add(new InventorySlot { item = hpLarge, count = 1 });
-        hotbarItems.Add(new InventorySlot { item = manaMedium, count = 1 });
         InitialHotbarSetup();
     }
 
@@ -76,6 +73,9 @@ public class ItemHotbar : MonoBehaviour
 
     private void HotbarScroll(bool falseDownTrueUp) //which way the hotbar will go 
     {
+        if (hotbarItems.Count > 0)
+        {
+
         if (falseDownTrueUp)
         {
             InventorySlot hotBarHolder = hotbarItems[0];
@@ -90,5 +90,28 @@ public class ItemHotbar : MonoBehaviour
             hotbarItems.Insert(0, hotBarHolder);
             InitialHotbarSetup();
         }
+
+        }
+    }
+    public void AddToHotbar(InventoryItemData itemAdded)
+    {
+        bool itemHasBeenAdded = false;
+        foreach (InventorySlot item in hotbarItems)
+        {
+            if (item.item.id == itemAdded.id && item.count <4 && !itemHasBeenAdded)
+            {
+                item.count++;
+                itemHasBeenAdded = true;
+            }
+
+        }
+
+        if (hotbarItems.Count < 4 && !itemHasBeenAdded)
+        {
+            InventorySlot newItem = new InventorySlot { item = itemAdded, count = 1 };
+            hotbarItems.Add(newItem);
+            itemHasBeenAdded = true;
+        }
+        InitialHotbarSetup();
     }
 }

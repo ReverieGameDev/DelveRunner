@@ -148,3 +148,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   typeOfMana: medium
+  manaSmall: {fileID: 11400000, guid: 8cccbdbed348109409bd2fcefab703c4, type: 2}
+  manaMedium: {fileID: 11400000, guid: d8704c07609b3a049b7c8db0a08d8c51, type: 2}
+  manaLarge: {fileID: 11400000, guid: 2e40f9fd28d824843809c1f468d12ef6, type: 2}

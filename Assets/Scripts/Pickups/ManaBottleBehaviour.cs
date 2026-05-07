@@ -5,26 +5,29 @@ public class ManaBottleBehaviour : MonoBehaviour
     private PlayerCombat playerCombat;
     private bool manaTowardsPlayer = false;
     private int manaSpeed = 10;
-    private float manaFactor = 20;
     public string typeOfMana;
-
+    private ItemHotbar itemHotbar;
+    public InventoryItemData manaSmall;
+    public InventoryItemData manaMedium;
+    public InventoryItemData manaLarge;
+    private InventoryItemData itemObtained;
     void Start()
     {
         playerCombat = FindFirstObjectByType<PlayerCombat>();
+        itemHotbar = FindFirstObjectByType<ItemHotbar>();
         switch (typeOfMana)
         {
             case "small":
-                manaFactor = 20;
+                itemObtained = manaSmall;
                 break;
             case "medium":
-                manaFactor = 40;
+                itemObtained = manaMedium;
                 break;
             case "large":
-                manaFactor = 60;
+                itemObtained = manaLarge;
                 break;
         }
     }
-
     void Update()
     {
         if (manaTowardsPlayer == true)
@@ -32,12 +35,11 @@ public class ManaBottleBehaviour : MonoBehaviour
             transform.Translate((playerCombat.transform.position - transform.position).normalized * manaSpeed * Time.deltaTime);
             if (Vector3.Distance(transform.position, playerCombat.transform.position) < 0.5f)
             {
-                playerCombat.currentPlayerMana = Mathf.Min(playerCombat.currentPlayerMana + manaFactor, playerCombat.playerManaBase);
                 Destroy(gameObject);
+                itemHotbar.AddToHotbar(itemObtained);
             }
         }
     }
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
