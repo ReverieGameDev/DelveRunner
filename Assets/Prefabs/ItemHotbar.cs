@@ -21,10 +21,12 @@ public class ItemHotbar : MonoBehaviour
     public InventoryItemData manaMedium;
     private bool usingItem = false;
     public Sprite noItemSprite;
+    private ItemInventory itemInventory;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
     void Start()
     {
+        itemInventory = FindFirstObjectByType<ItemInventory>();
         InitialHotbarSetup();
     }
 
@@ -56,7 +58,7 @@ public class ItemHotbar : MonoBehaviour
         usingItem = false;
         InitialHotbarSetup();
     }
-    private void InitialHotbarSetup()
+    public void InitialHotbarSetup()
     {
         for (int i = 0; i < 4; i++)
         {
@@ -111,6 +113,10 @@ public class ItemHotbar : MonoBehaviour
             InventorySlot newItem = new InventorySlot { item = itemAdded, count = 1 };
             hotbarItems.Add(newItem);
             itemHasBeenAdded = true;
+        }
+        if (hotbarItems.Count == 4 && !itemHasBeenAdded)
+        {
+            itemInventory.AddToInventory(itemAdded);
         }
         InitialHotbarSetup();
     }
