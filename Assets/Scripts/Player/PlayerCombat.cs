@@ -42,6 +42,7 @@ public class PlayerCombat : MonoBehaviour
     public float playerManaBase = 100;
     public float currentPlayerMana = 100f;
     private string statueStatToMod;
+    
 
     public List<string> playerStats = new List<string>();
 
@@ -93,21 +94,24 @@ public class PlayerCombat : MonoBehaviour
         if (playerManaBar != null) playerManaBar.value = 1.0f;
         if (playerHpBar != null) playerHpBar.value = 1.0f; 
     }
-    public int CalcWeaponDamage(float damage)
+    public int CalcWeaponDamage(float damage, out bool crit)
     {
         int critRoll = Random.Range(0, 101);
         int processedDamage = 0;
+       
 
         if (critRoll < critChance)
         {
             processedDamage = (int)(Mathf.Round(damage * attack * critDamage));
+            crit = true;
         }
         else
         {
+            crit = false;
             processedDamage = (int)(Mathf.Round(damage * attack));
         }
         if (emberSystem != null && emberSystem.emberAmount <= 0)
-            processedDamage = (int)(processedDamage * 0.85f);
+        processedDamage = (int)(processedDamage * 0.85f);
         return processedDamage;
     }
 

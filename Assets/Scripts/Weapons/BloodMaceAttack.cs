@@ -31,7 +31,7 @@ public class BloodMaceAttack : MonoBehaviour
         if (collision.CompareTag("Enemy"))
         {
             enemy = collision.GetComponent<Enemy>();
-            enemy.reduceHp(playerCombat.CalcWeaponDamage(bloodMaceDamage * damageMultiplier));
+            enemy.reduceHp(playerCombat.CalcWeaponDamage(bloodMaceDamage * damageMultiplier, out bool wasCrit));
             playerCombat.BloodHeal((int)(5*damageMultiplier));
         }
     }

@@ -19,6 +19,7 @@ public class ItemHotbar : MonoBehaviour
     public InventoryItemData manaSmall;
     public InventoryItemData hpLarge;
     public InventoryItemData manaMedium;
+    public InventoryItemData emptySlotItem;
     private bool usingItem = false;
     public Sprite noItemSprite;
     private ItemInventory itemInventory;
@@ -28,6 +29,8 @@ public class ItemHotbar : MonoBehaviour
     {
         itemInventory = FindFirstObjectByType<ItemInventory>();
         InitialHotbarSetup();
+        InventorySlot emptySlot = new InventorySlot {item = emptySlotItem, count = 1 };
+        hotbarItems.Add(emptySlot);
     }
 
     // Update is called once per frame

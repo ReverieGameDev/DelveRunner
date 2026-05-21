@@ -597,6 +597,7 @@ MonoBehaviour:
   isDead: 0
   emberPickup: {fileID: 7187405047775818436, guid: 9041a98763e3eb046a3ba1609185608a, type: 3}
   hptext: {fileID: 2700340121261321504}
+  damageText: {fileID: 3387354775039598578, guid: 50cacda3beffc074fad27b29e0df1126, type: 3}
 --- !u!61 &7394682032219271510
 BoxCollider2D:
   m_ObjectHideFlags: 0

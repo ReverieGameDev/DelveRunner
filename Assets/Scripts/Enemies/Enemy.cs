@@ -20,6 +20,7 @@ public class Enemy : MonoBehaviour
     private EmberSystem emberSystem;
     private float maxEnemyHealth;
     public TextMeshProUGUI hptext;
+    public GameObject damageText;
 
 
     void Start()
@@ -55,10 +56,10 @@ public class Enemy : MonoBehaviour
         }
 
     }
-    public void reduceHp(float damageTaken)
+    public void reduceHp(float damageTaken, bool isCrit = false)
     {
-        if (enemyHealth <= 0) return;
 
+        if (enemyHealth <= 0) return;
         int damageTakenInt = (int)Mathf.Round(damageTaken);
         enemyHealth -= damageTakenInt;
         hptext.text = (int)enemyHealth + " / " + (int)maxEnemyHealth;
@@ -100,6 +101,8 @@ public class Enemy : MonoBehaviour
             }
         }
         if (hpBar != null) hpBar.value = enemyHealth / maxEnemyHealth;
+        GameObject popup = Instantiate(damageText, transform.position, Quaternion.identity);
+        popup.GetComponent<EnemyDamageNumbers>().DamageNumberSetup(damageTakenInt, isCrit);
     }
     IEnumerator DropEmber()
     {

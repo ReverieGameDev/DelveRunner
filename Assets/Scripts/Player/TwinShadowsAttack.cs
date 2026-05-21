@@ -36,7 +36,7 @@ public class TwinShadowsAttack : MonoBehaviour
         if (collision.CompareTag("Enemy"))
         {
             enemy = collision.GetComponent<Enemy>();
-            enemy.reduceHp(playerCombat.CalcWeaponDamage(glitchSwordDamage* damageMultiplier));
+            enemy.reduceHp(playerCombat.CalcWeaponDamage(glitchSwordDamage* damageMultiplier, out bool wasCrit));
             enemiesHit++;
             if (enemiesHit >= maxEnemiesHit)
             {

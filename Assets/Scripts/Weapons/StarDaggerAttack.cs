@@ -32,7 +32,9 @@ public class StarDaggerAttack : MonoBehaviour
         if (collision.CompareTag("Enemy"))
         {
             enemy = collision.GetComponent<Enemy>();
-            enemy.reduceHp(playerCombat.CalcWeaponDamage(starDaggerDamage * damageMultiplier));
+            int dmg = playerCombat.CalcWeaponDamage(starDaggerDamage * damageMultiplier, out bool wasCrit);
+            enemy.reduceHp(dmg, wasCrit);
+
         }
     }
 

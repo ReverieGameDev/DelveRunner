@@ -32,7 +32,7 @@ public class GlitchSwordAttack : MonoBehaviour
         if (collision.CompareTag("Enemy"))
         {
             enemy = collision.GetComponent<Enemy>();
-            enemy.reduceHp(playerCombat.CalcWeaponDamage(glitchSwordDamage));
+            enemy.reduceHp(playerCombat.CalcWeaponDamage(glitchSwordDamage, out bool wasCrit));
             enemiesHit++;
             if (enemiesHit >= maxEnemiesHit)
             {
