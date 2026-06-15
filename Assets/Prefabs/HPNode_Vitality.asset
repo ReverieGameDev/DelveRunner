@@ -9,9 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ecb1cba75227534b98032f10f852b0b, type: 3}
-  m_Name: EmptySlot
+  m_Script: {fileID: 11500000, guid: 8a77380565e3e7c4ca45fb085f7f987c, type: 3}
+  m_Name: HPNode_Vitality
   m_EditorClassIdentifier: 
-  id: emptySlot
-  icon: {fileID: -694885652187321331, guid: cbc413c41dff6104389be38be3995591, type: 3}
-  amount: 1
+  id: hp
+  nodeName: Vitality
+  maxLevel: 5
+  affectedStat: 
+  bonusEffect: 
+  icon: {fileID: 0}
+  hpPerLevel: 20

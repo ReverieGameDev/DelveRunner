@@ -1,7 +1,6 @@
-
 using System;
 using System.Collections.Generic;
-using UnityEditor.Rendering;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -23,14 +22,24 @@ public class ItemHotbar : MonoBehaviour
     private bool usingItem = false;
     public Sprite noItemSprite;
     private ItemInventory itemInventory;
+    public InventorySlot emptySlot;
+    public TextMeshProUGUI slot0Count;
+    public TextMeshProUGUI slot1Count;
+    public TextMeshProUGUI slot2Count;
+    public TextMeshProUGUI slot3Count;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
     void Start()
     {
         itemInventory = FindFirstObjectByType<ItemInventory>();
-        InitialHotbarSetup();
-        InventorySlot emptySlot = new InventorySlot {item = emptySlotItem, count = 1 };
+        
+        emptySlot = new InventorySlot {item = emptySlotItem, count = 1 };
         hotbarItems.Add(emptySlot);
+        hotbarItems.Add(emptySlot);
+        hotbarItems.Add(emptySlot);
+        hotbarItems.Add(emptySlot);
+        InitialHotbarSetup();
+        InitialCountHotbarSetup();
     }
 
     // Update is called once per frame
@@ -51,15 +60,32 @@ public class ItemHotbar : MonoBehaviour
         }
 
     }
+    public void CompactHotbar()
+    {
+        List<InventorySlot> tempHotbar = new List<InventorySlot>();
+        foreach (InventorySlot item in hotbarItems)
+        {
+            if (item.item.id != "emptySlot") tempHotbar.Add(item);
+        }
+        hotbarItems = tempHotbar;
+        while (hotbarItems.Count < 4) hotbarItems.Add(emptySlot);
+    }
     private void ConsumeItem()
     {
-        hotbarItems[0].count--;
-        if (hotbarItems[0].count <= 0)
+        if (hotbarItems[0].item != emptySlotItem)
         {
-            hotbarItems.RemoveAt(0);
+            hotbarItems[0].count--;
+
+            if (hotbarItems[0].count <= 0)
+            {
+                hotbarItems.RemoveAt(0);
+                hotbarItems.Add(emptySlot);
+            }
+            usingItem = false;
+            InitialHotbarSetup();
+            InitialCountHotbarSetup();
         }
-        usingItem = false;
-        InitialHotbarSetup();
+        //else, popup message = no item selected
     }
     public void InitialHotbarSetup()
     {
@@ -76,27 +102,62 @@ public class ItemHotbar : MonoBehaviour
         }
     }
 
+    public void InitialCountHotbarSetup()
+    {
+        if (hotbarItems[0].item.id != "emptySlot")
+        {
+            slot0Count.text = "" + hotbarItems[0].count;
+        }
+        else slot0Count.text = "";
+        if (hotbarItems[1].item.id != "emptySlot")
+        {
+            slot1Count.text = "" + hotbarItems[1].count;
+        }
+        else slot1Count.text = "";
+        if (hotbarItems[2].item.id != "emptySlot")
+        {
+            slot2Count.text = "" + hotbarItems[2].count;
+        }
+        else slot2Count.text = "";
+        if (hotbarItems[3].item.id != "emptySlot")
+        {
+            slot3Count.text = "" + hotbarItems[3].count;
+        }
+        else slot3Count.text = "";
+    }
+
     private void HotbarScroll(bool falseDownTrueUp) //which way the hotbar will go 
     {
-        if (hotbarItems.Count > 0)
+        List<InventorySlot> tempHotbar = new List<InventorySlot>();
+        foreach (InventorySlot item in hotbarItems)
         {
-
+            if (item.item.id != "emptySlot")
+            {
+                tempHotbar.Add(item);
+            }
+        }
+        if (tempHotbar.Count <= 1) return;
         if (falseDownTrueUp)
         {
-            InventorySlot hotBarHolder = hotbarItems[0];
-            hotbarItems.RemoveAt(0);
-            hotbarItems.Add(hotBarHolder);
+            InventorySlot hotBarHolder = tempHotbar[0];
+            tempHotbar.RemoveAt(0);
+            tempHotbar.Add(hotBarHolder);
+            hotbarItems = tempHotbar;
+            while (hotbarItems.Count < 4) hotbarItems.Add(emptySlot);
             InitialHotbarSetup();
+            InitialCountHotbarSetup();
         }
         else
         {
-            InventorySlot hotBarHolder = hotbarItems[hotbarItems.Count - 1];
-            hotbarItems.RemoveAt(hotbarItems.Count - 1);
-            hotbarItems.Insert(0, hotBarHolder);
+            InventorySlot hotBarHolder = tempHotbar[tempHotbar.Count - 1];
+            tempHotbar.RemoveAt(tempHotbar.Count - 1);
+            tempHotbar.Insert(0, hotBarHolder);
+            hotbarItems = tempHotbar;
+            while (hotbarItems.Count < 4) hotbarItems.Add(emptySlot);
             InitialHotbarSetup();
+            InitialCountHotbarSetup();
         }
 
-        }
     }
     public void AddToHotbar(InventoryItemData itemAdded)
     {
@@ -108,19 +169,27 @@ public class ItemHotbar : MonoBehaviour
                 item.count++;
                 itemHasBeenAdded = true;
             }
-
         }
-
-        if (hotbarItems.Count < 4 && !itemHasBeenAdded)
+        if (!itemHasBeenAdded)
         {
-            InventorySlot newItem = new InventorySlot { item = itemAdded, count = 1 };
-            hotbarItems.Add(newItem);
-            itemHasBeenAdded = true;
+            for (int i = 0; i < 4; i++)
+            {
+                if (hotbarItems[i].item.id == "emptySlot" && !itemHasBeenAdded)
+                {
+
+                    InventorySlot newItem = new InventorySlot { item = itemAdded, count = 1 };
+                    hotbarItems.RemoveAt(i);
+                    hotbarItems.Insert(i, newItem);
+                    itemHasBeenAdded = true;
+                }
+            }
         }
-        if (hotbarItems.Count == 4 && !itemHasBeenAdded)
+
+        if (!itemHasBeenAdded)
         {
             itemInventory.AddToInventory(itemAdded);
         }
         InitialHotbarSetup();
+        InitialCountHotbarSetup();
     }
 }

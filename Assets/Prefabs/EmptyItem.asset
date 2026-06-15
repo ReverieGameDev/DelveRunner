@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4ecb1cba75227534b98032f10f852b0b, type: 3}
-  m_Name: EmptySlot
+  m_Name: EmptyItem
   m_EditorClassIdentifier: 
-  id: emptySlot
-  icon: {fileID: -694885652187321331, guid: cbc413c41dff6104389be38be3995591, type: 3}
+  id: EmptySlot
+  icon: {fileID: 4764081960791798808, guid: e4b43f4cbe2460a4f88d2757a8a6ad7e, type: 3}
   amount: 1

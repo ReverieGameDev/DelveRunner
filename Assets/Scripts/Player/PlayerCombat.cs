@@ -34,7 +34,7 @@ public class PlayerCombat : MonoBehaviour
     public int critChance = 5;
     public float critDamage = 1.5f;
     public float armor = 1f;
-    public float maxHealth = 100f;
+    public float maxHealth = 100f;// max health DURING delves
     public float dodge = 1f;
     public float movementSpeed = 5f;
     public float xpGain = 1f;
@@ -42,7 +42,11 @@ public class PlayerCombat : MonoBehaviour
     public float playerManaBase = 100;
     public float currentPlayerMana = 100f;
     private string statueStatToMod;
-    
+    public float baseMaxHealth; // max health BETWEEN delves, after soul mix calcs.
+
+    public int totalSiphonKills;
+    public int siphonCounter;
+    public int soulSiphonLevel;
 
     public List<string> playerStats = new List<string>();
 
@@ -94,6 +98,25 @@ public class PlayerCombat : MonoBehaviour
         if (playerManaBar != null) playerManaBar.value = 1.0f;
         if (playerHpBar != null) playerHpBar.value = 1.0f; 
     }
+
+    public void OnEnemyKilled()
+    {
+        if (soulSiphonLevel > 0)
+        {
+            if (siphonCounter < 3)
+            {
+                siphonCounter++;
+            }
+            if (siphonCounter >= 3)
+            {
+                siphonCounter = 0;
+                totalSiphonKills++;
+                maxHealth++;
+                currentPlayerHealth++;
+            }
+        }
+    }
+
     public int CalcWeaponDamage(float damage, out bool crit)
     {
         int critRoll = Random.Range(0, 101);
