@@ -5,6 +5,7 @@ using TMPro;
 using NUnit.Framework;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
+using Unity.VisualScripting;
 
 public class PlayerCombat : MonoBehaviour
 {
@@ -43,6 +44,8 @@ public class PlayerCombat : MonoBehaviour
     public float currentPlayerMana = 100f;
     private string statueStatToMod;
     public float baseMaxHealth; // max health BETWEEN delves, after soul mix calcs.
+    public float hpRegen;
+    private bool hpIsRegenning = false;
 
     public int totalSiphonKills;
     public int siphonCounter;
@@ -65,6 +68,7 @@ public class PlayerCombat : MonoBehaviour
     public int playerLevel = 1;
     public int delveLevel = 0;
     public int augmentsOwed = 0;
+    public bool hpRegenActive = false;
 
     void Awake()
     {
@@ -99,6 +103,32 @@ public class PlayerCombat : MonoBehaviour
         if (playerHpBar != null) playerHpBar.value = 1.0f; 
     }
 
+    private void Update()
+    {
+        if (emberSystem.aliveEnemies > 0 && hpRegenActive && !hpIsRegenning)
+        {
+            StartCoroutine("HpRegen");
+            hpIsRegenning = true;
+        }
+        if (playerManaBar != null) playerManaBar.value = currentPlayerMana / playerManaBase;
+        if (Input.GetKeyDown(KeyCode.F1))
+        {
+            transform.position = FindFirstObjectByType<EnemySpawnDetector>().transform.position;
+        }
+    }
+
+    IEnumerator HpRegen()
+    {
+        currentPlayerHealth += (int)hpRegen;
+        yield return new WaitForSeconds(5f);
+        hpIsRegenning = false;
+        if (emberSystem.aliveEnemies > 0 && hpRegenActive)
+        {
+            StartCoroutine("HpRegen");
+        }
+        hpIsRegenning = true;
+    }
+
     public void OnEnemyKilled()
     {
         if (soulSiphonLevel > 0)
@@ -113,6 +143,8 @@ public class PlayerCombat : MonoBehaviour
                 totalSiphonKills++;
                 maxHealth++;
                 currentPlayerHealth++;
+                Debug.Log("health should be added, soul siphon level: " + soulSiphonLevel);
+                playerHpBarNumber.text = currentPlayerHealth + " / " + maxHealth;
             }
         }
     }
@@ -146,14 +178,7 @@ public class PlayerCombat : MonoBehaviour
             moneyText.text = ": " + playerMoney;
         }
     }
-    private void Update()
-    {
-        if (playerManaBar != null) playerManaBar.value = currentPlayerMana / playerManaBase;
-        if (Input.GetKeyDown(KeyCode.F1))
-        {
-            transform.position = FindFirstObjectByType<EnemySpawnDetector>().transform.position;
-        }
-    }
+
     public void DamagePlayer(float damageTaken)
     {
         int dodgeChance = Random.Range(0, 101);

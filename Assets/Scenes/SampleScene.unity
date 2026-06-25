@@ -32876,6 +32876,10 @@ MonoBehaviour:
   goldGain: 1
   playerManaBase: 100
   currentPlayerMana: 100
+  baseMaxHealth: 0
+  totalSiphonKills: 0
+  siphonCounter: 0
+  soulSiphonLevel: 0
   playerStats: []
   playerHpBar: {fileID: 871908412}
   playerManaBar: {fileID: 847342436}
@@ -42620,9 +42624,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5409f4067f507674484c286fb7c7cefb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  testNode: {fileID: 11400000, guid: 5e3c18ee89d8f404c98e484029b99a54, type: 2}
+  testNode: {fileID: 11400000, guid: 7f005be4e1d088c4da89c954fee705aa, type: 2}
   player: {fileID: 1509286736}
-  testLevel: 3
+  testLevel: 1
 --- !u!4 &1993950469
 Transform:
   m_ObjectHideFlags: 0
