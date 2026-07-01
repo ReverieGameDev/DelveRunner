@@ -75,7 +75,15 @@ public class ItemHotbar : MonoBehaviour
         if (hotbarItems[0].item != emptySlotItem)
         {
             hotbarItems[0].count--;
-
+            hotbarItems[0].item.Use(PlayerCombat.Instance);
+            if (PlayerCombat.Instance.isSchrodingersCatActive && PlayerCombat.Instance.SchrodingersCat())
+            {
+                hotbarItems[0].item.Use(PlayerCombat.Instance);
+            }
+            if (PlayerCombat.Instance.isInsiderTradingActive && PlayerCombat.Instance.InsiderTrading())
+            {
+                PlayerCombat.Instance.ModifyGoldValue("pickup",PlayerCombat.Instance.insiderTradingGoldAmount);
+            }
             if (hotbarItems[0].count <= 0)
             {
                 hotbarItems.RemoveAt(0);

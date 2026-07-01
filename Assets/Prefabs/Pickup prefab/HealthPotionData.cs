@@ -5,6 +5,6 @@ public class HealthPotionData : InventoryItemData
 {
     public override void Use(PlayerCombat player)
     {
-        player.HealPlayer(amount);
+        player.HealPlayer(amount*player.consumableEffectiveness);
     }
 }

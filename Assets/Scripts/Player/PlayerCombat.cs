@@ -1,11 +1,12 @@
-using System.Collections;
-using UnityEngine;
-using UnityEngine.UI;
-using TMPro;
 using NUnit.Framework;
+using System.Collections;
 using System.Collections.Generic;
-using UnityEngine.SceneManagement;
 using System.Runtime.CompilerServices;
+using TMPro;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using static UnityEngine.Rendering.DebugUI;
 
 public class PlayerCombat : MonoBehaviour
 {
@@ -75,6 +76,11 @@ public class PlayerCombat : MonoBehaviour
     public float statusResistBonus = 0f;
     public float statusResistBase = 1f;
 
+    //Consumable effectiveness
+    public float consumableEffectiveness = 1f;
+    public float consumableEffectivenessBonus = 0f;
+    public float consumableEffectivenessBase = 1f;
+
     public int currentPlayerHealth;
     public float maxHealth = 100f;       // max health DURING delves
     public float baseMaxHealth = 100f;          // max health BETWEEN delves, after soul mix calcs.
@@ -133,10 +139,19 @@ public class PlayerCombat : MonoBehaviour
     public float runAndHitDamage;
     public float runAndHitCap;
     private int runAndHitCurrentStacks;
+
+    public bool isSchrodingersCatActive = false;
+    public int schrodingersCatCurrentLevel;
+
+    public bool isClinicalTrialsActive = false;
+
+    public bool isInsiderTradingActive = false;
+    public int insiderTradingPercent;
+    public int insiderTradingGoldAmount;
     #endregion
 
     #region Progression & State
-    public int playerMoney = 100;
+    public float playerMoney = 100;
     public bool iFrames = false;
     public int playerXp;
     public int playerLevel = 1;
@@ -172,12 +187,13 @@ public class PlayerCombat : MonoBehaviour
         playerStats.Add("xp gain");
         playerStats.Add("gold gain");
         playerStats.Add("status resist");
+        playerStats.Add("consumable effectiveness");
     }
 
     void Start()
     {
         abilityManager = FindFirstObjectByType<AbilityManager>();
-        if (playerGold != null) playerGold.text = ": " + playerMoney;
+        if (playerGold != null) playerGold.text = ": " + (int)playerMoney;
 
         anim = GetComponent<Animator>();
         playerMovement = FindFirstObjectByType<PlayerMovement>();
@@ -274,8 +290,36 @@ public class PlayerCombat : MonoBehaviour
                     currentPlayerHealth = (int)maxHealth;
                 }
                 break;
+            case "consumable effectiveness":
+                consumableEffectivenessBonus += (consumableEffectivenessBase * statmod);
+                consumableEffectiveness = consumableEffectivenessBase + consumableEffectivenessBonus;
+                break;
         }
         
+    }
+    public bool InsiderTrading()
+    {
+        int rng = Random.Range(1, 101);
+        if (rng <= insiderTradingPercent)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+    public bool SchrodingersCat()
+    {
+        int rng = Random.Range(1, 101);
+        if (rng <= schrodingersCatCurrentLevel)
+        {
+            return true;
+        }
+        else 
+        {
+            return false;
+        }
     }
 
     public void FlowState()
@@ -297,17 +341,21 @@ public class PlayerCombat : MonoBehaviour
         }
         isEvasiveClimbing = false;   
     }
-    public void ModifyGoldValue(string transactionType,int goldValue)
+    public void ModifyGoldValue(string transactionType,float goldValue)
     {
         if (transactionType == "shop")
         {
             playerMoney -= goldValue;
-            moneyText.text = ": " + playerMoney;
+            moneyText.text = ": " + (int)playerMoney;
         }
         if (transactionType == "pickup")
         {
+            if (isSchrodingersCatActive && SchrodingersCat() == true)
+            {
+                goldValue *= 2;
+            }
             playerMoney += (int)(Mathf.Floor(goldValue * goldGain));
-            moneyText.text = ": " + playerMoney;
+            moneyText.text = ": " + (int)playerMoney;
         }
     }
 
@@ -568,6 +616,10 @@ public class PlayerCombat : MonoBehaviour
     #region Experience & Leveling
     public void AddXp(int xpValue)
     {
+        if (isSchrodingersCatActive && SchrodingersCat() == true)
+        {
+            xpValue *= 2;
+        }
         xpValue = (int)(Mathf.Floor(xpValue*xpGain));
         playerXp += xpValue;
         playerXpBar.value = playerXp / 100f;

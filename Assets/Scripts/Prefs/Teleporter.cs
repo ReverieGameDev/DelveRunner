@@ -47,7 +47,7 @@ public class Teleporter : MonoBehaviour
     {
         playerCombat.delveLevel++;
         PlayerPrefs.SetInt("DelveLevel", playerCombat.delveLevel);
-        PlayerPrefs.SetInt("Gold", playerCombat.playerMoney);
+        PlayerPrefs.SetFloat("Gold", playerCombat.playerMoney);
         PlayerPrefs.SetString("CurrentAbility", currentAbility);
         if (PlayerPrefs.GetString("CurrentAbility") == "")
         {
