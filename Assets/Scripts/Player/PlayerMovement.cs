@@ -69,6 +69,7 @@ public class PlayerMovement : MonoBehaviour
     IEnumerator DashTimer()
     {
         yield return new WaitForSeconds(.5f);
+        PlayerCombat.Instance.FlowState();
         isDashing = false;
         playerRb.linearVelocity = Vector2.zero;
     }

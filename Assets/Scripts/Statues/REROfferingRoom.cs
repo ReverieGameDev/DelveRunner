@@ -13,19 +13,21 @@ public class REROfferingRoom : MonoBehaviour
     private bool hasAccepted = false;
     public GameObject acceptButton;
     public GameObject declineButton;
+    public GameObject leaveButton;
     private bool playerInRange = false;
     private int goldOffering = 25;
     private ParticleSystem ps;
+    private PlayerMovement playerMovement;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         ps = GetComponent<ParticleSystem>();
+        playerMovement = FindFirstObjectByType<PlayerMovement>();
         playerCombat = FindFirstObjectByType<PlayerCombat>();
         chosenStat = Random.Range(0, playerCombat.playerStats.Count);
         List<string> remaining = new List<string>(playerCombat.playerStats);
         chosenStatueStat = playerCombat.playerStats[chosenStat];
         remaining.Remove(chosenStatueStat);
-        
     }
 
 
@@ -36,9 +38,17 @@ public class REROfferingRoom : MonoBehaviour
         if (playerInRange && Input.GetKeyDown(KeyCode.E) && !hasAccepted)
         {
             Time.timeScale = 0;
+            playerMovement.playerFrozen = true;
             statueDialogue.SetActive(true);
             int randomDialogue = Random.Range(0, 5);
-
+            if (playerCombat.playerMoney < goldOffering)
+            {
+                NotEnoughMoney();
+                return;
+            }
+            acceptButton.SetActive(true);
+            declineButton.SetActive(true);
+            leaveButton.SetActive(false);
             switch (randomDialogue)
             {
                 case 0:
@@ -75,6 +85,14 @@ public class REROfferingRoom : MonoBehaviour
     {
         Time.timeScale = 1;
         statueDialogue.SetActive(false);
+        playerMovement.playerFrozen = false;
+    }
+    public void LeaveButton()
+    {
+        hasAccepted = false;
+        Time.timeScale = 1;
+        statueDialogue.SetActive(false);
+        playerMovement.playerFrozen = false;
     }
     public void AcceptButton()
     {
@@ -114,5 +132,14 @@ public class REROfferingRoom : MonoBehaviour
         ps.Stop();
         statueDialogue.SetActive(false);
         GetComponent<SpriteRenderer>().color = new Color(0.3f, 0.3f, 0.3f, 1f);
+        playerMovement.playerFrozen = false;
+    }
+
+    private void NotEnoughMoney()
+    {
+        statueText.text = "This shrine requires an offering of <color=#FFD700>" + goldOffering + " gold</color>. You don't have enough.";
+        leaveButton.SetActive(true);
+        acceptButton.SetActive(false);
+        declineButton.SetActive(false);
     }
 }

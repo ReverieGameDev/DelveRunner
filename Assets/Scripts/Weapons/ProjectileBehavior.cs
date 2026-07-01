@@ -9,7 +9,6 @@ public class ProjectileBehavior : MonoBehaviour
     void Start()
     {
         playerCombat = FindFirstObjectByType<PlayerCombat>();
-        bulletTrajectory = playerCombat.closestCurrentEnemy.transform.position - playerCombat.transform.position;
     }
 
     // Update is called once per frame

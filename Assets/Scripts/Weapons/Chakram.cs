@@ -14,7 +14,6 @@ public class Chakram : MonoBehaviour
     void Start()
     {
         playerCombat = FindFirstObjectByType<PlayerCombat>();
-        currentTarget = playerCombat.closestCurrentEnemy;
     }
 
     void Update()

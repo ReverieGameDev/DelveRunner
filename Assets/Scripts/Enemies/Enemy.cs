@@ -56,9 +56,11 @@ public class Enemy : MonoBehaviour
         }
 
     }
+
     public void reduceHp(float damageTaken, bool isCrit = false)
     {
         if (enemyHealth <= 0) return;
+
         int damageTakenInt = (int)Mathf.Round(damageTaken);
         enemyHealth -= damageTakenInt;
         hptext.text = (int)enemyHealth + " / " + (int)maxEnemyHealth;

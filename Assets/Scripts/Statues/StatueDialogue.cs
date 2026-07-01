@@ -18,9 +18,11 @@ public class StatueDialogue : MonoBehaviour
     public GameObject declineButton;
     private bool playerInRange = false;
     private ParticleSystem ps;
+    private PlayerMovement playerMovement;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        playerMovement = FindFirstObjectByType<PlayerMovement>();
         ps = GetComponent<ParticleSystem>();
         playerCombat = FindFirstObjectByType<PlayerCombat>();
         rerGamble = GetComponent<RERGamble>();
@@ -32,6 +34,7 @@ public class StatueDialogue : MonoBehaviour
         if (playerInRange && Input.GetKeyDown(KeyCode.E) && !hasAccepted)
         {
             Time.timeScale = 0;
+            playerMovement.playerFrozen = true;
             statueDialogue.SetActive(true);
             int randomDialogue = Random.Range(0, 5);
 
@@ -71,6 +74,7 @@ public class StatueDialogue : MonoBehaviour
     public void DeclineButton()
     {
         Time.timeScale = 1;
+        playerMovement.playerFrozen = false;
         statueDialogue.SetActive(false);
     }
     public void AcceptButton()
@@ -91,7 +95,7 @@ public class StatueDialogue : MonoBehaviour
         
         for (int i = 0; i < 100; i++)
         {
-            yield return new WaitForSecondsRealtime(.05f);
+            yield return new WaitForSecondsRealtime(.02f);
             dice.GetComponent<UnityEngine.UI.Image>().sprite = diceFacesRolling[i % 6];
             
         }
@@ -118,5 +122,6 @@ public class StatueDialogue : MonoBehaviour
         Time.timeScale = 1;
         statueDialogue.SetActive(false);
         GetComponent<SpriteRenderer>().color = new Color(0.3f, 0.3f, 0.3f, 1f);
+        playerMovement.playerFrozen = false;
     }
 }

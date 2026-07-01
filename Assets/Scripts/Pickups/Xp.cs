@@ -5,6 +5,7 @@ public class Xp : MonoBehaviour
     private PlayerCombat playerCombat;
     private bool xpTowardsPlayer = false;
     private int xpSpeed = 14;
+    public int xpValue;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -20,8 +21,7 @@ public class Xp : MonoBehaviour
             if (Vector3.Distance(transform.position, playerCombat.transform.position) < 0.5f)
             {
                 Destroy(gameObject);
-                playerCombat.playerXp += 10;
-                playerCombat.addExp();
+                playerCombat.AddXp(xpValue);
             }
         }
     }

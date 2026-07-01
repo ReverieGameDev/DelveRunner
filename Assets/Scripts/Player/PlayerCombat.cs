@@ -5,56 +5,149 @@ using TMPro;
 using NUnit.Framework;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
+using System.Runtime.CompilerServices;
 
 public class PlayerCombat : MonoBehaviour
 {
+    #region References
     public static PlayerCombat Instance;
 
     public GameObject bloodHealPrefab;
-    // References
+    public GameObject gameOverScreen;
+
     public PlayerData playerData;
     private PlayerMovement playerMovement;
     private AugmentManager augmentManager;
     public AttackManager attackManager;
     private Animator anim;
     private EmberSystem emberSystem;
+    private GameObject closestEnemy;
+    private AbilityManager abilityManager;
+    #endregion
 
-    public GameObject gameOverScreen;
+    #region Stats
+    // Attack
+    public float attackBase = 1f;
+    public float attackBonus = 0f;
+    public float attack = 1f;            // current
 
-    // Combat
-    public GameObject closestCurrentEnemy;
+    // Attack Speed
+    public float attackSpeedBase = 1f;
+    public float attackSpeedBonus = 0f;
+    public float attackSpeed = 1f;       // current
 
-    //Money
-    public int playerMoney = 100;
-    public TextMeshProUGUI playerGold;
-    // Stats
+    // Crit Chance
+    public int critChanceBase = 5;
+    public int critChanceBonus = 0;
+    public int critChance = 5;           // current
+
+    // Crit Damage
+    public float critDamageBase = 1.5f;
+    public float critDamageBonus = 0f;
+    public float critDamage = 1.5f;      // current
+
+    // Armor
+    public float armorBase = 0f;
+    public float armorBonus = 0f;
+    public float armor = 0f;             // current
+
+    // Dodge
+    public float dodgeBase = 1f;
+    public float dodgeBonus = 0f;
+    public float dodge = 1f;             // current
+
+    // Movement Speed
+    public float movementSpeedBase = 16f;
+    public float movementSpeedBonus = 0f;
+    public float movementSpeed = 16f;     // current
+
+    // XP Gain
+    public float xpGainBase = 1f;
+    public float xpGainBonus = 0f;
+    public float xpGain = 1f;            // current
+
+    // Gold Gain
+    public float goldGainBase = 1f;
+    public float goldGainBonus = 0f;
+    public float goldGain = 1f;          // current
+
+    public float statusResist = 1f;
+    public float statusResistBonus = 0f;
+    public float statusResistBase = 1f;
+
     public int currentPlayerHealth;
-    public float attack = 1f;
-    public float attackSpeed = 1f;
-    public int critChance = 5;
-    public float critDamage = 1.5f;
-    public float armor = 0f;
-    public float maxHealth = 100f;// max health DURING delves
-    public float dodge = 1f;
-    public float movementSpeed = 5f;
-    public float xpGain = 1f;
-    public float goldGain = 1f;
+    public float maxHealth = 100f;       // max health DURING delves
+    public float baseMaxHealth = 100f;          // max health BETWEEN delves, after soul mix calcs.
+    public float hpRegen;
     public float playerManaBase = 100;
     public float currentPlayerMana = 100f;
-    private string statueStatToMod;
-    public float baseMaxHealth; // max health BETWEEN delves, after soul mix calcs.
-    public float hpRegen;
+
+    public List<string> playerStats = new List<string>();
+    #endregion
+
+    #region Soul Coin State
     private bool hpIsRegenning = false;
+    public bool hpRegenActive = false;
+    public bool rampingRegenActive = false;
+    public float rampingRegenValue;
+    private float rampingRegenCounter = 1;
+
+    public bool isSovereignImmunityActive = false;
+    public int sovereignImmunityCooldown;
+
+    public bool bloodSoulBarrierActive = false;
+    public int bloodSoulBarrierValue;
+
+    public bool isMADDoctrineActive = false;
+    public int mADDoctrineCooldown;
+    public float mADDoctrineReflectDamage;
+
+    public int hindsightBiasReturnTime;
+    public int hindsightBiasHealthReturn;
+    public bool isHindsightBiasActive = false;
+
+    public float hitandRunValue;
+    public bool isHitandRunActive = false;
+    public float hitandRunTime;
+    private bool hitandRunBool = false;
+
+    public bool isDynamicDensityActive = false;
+    public bool dynamicDensity = false;
+
+    public float evasiveManeuversValue;
+    public bool isEvasiveManeuversActive = false;
+    private bool isEvasiveClimbing = false;
+
+    public bool isSurvivorshipBiasActive = false;
+    public int survivorshipBiasXP;
 
     public int totalSiphonKills;
     public int siphonCounter;
     public int soulSiphonLevel;
-    public float rampingRegenValue;
-    private float rampingRegenCounter = 1;
 
-    public List<string> playerStats = new List<string>();
+    public bool isFlowStateActive = false;
+    public float flowStateDamage;
+    private bool flowState = false;
 
-    // UI
+    public bool isRunAndHitActive = false;
+    public float runAndHitDamage;
+    public float runAndHitCap;
+    private int runAndHitCurrentStacks;
+    #endregion
+
+    #region Progression & State
+    public int playerMoney = 100;
+    public bool iFrames = false;
+    public int playerXp;
+    public int playerLevel = 1;
+    public int delveLevel = 0;
+    public int augmentsOwed = 0;
+    private string statueStatToMod;
+    private bool abilityInUse = false;
+    #endregion
+
+    #region UI
+    public TextMeshProUGUI playerGold;
     public Slider playerHpBar;
     public Slider playerManaBar;
     public Slider playerXpBar;
@@ -62,17 +155,9 @@ public class PlayerCombat : MonoBehaviour
     public TextMeshProUGUI moneyText;
     public TextMeshProUGUI playerHpBarNumber;
     public TextMeshProUGUI playerManaBarNumber;
+    #endregion
 
-    // State
-    public bool iFrames = false;
-    public int playerXp;
-    public int playerLevel = 1;
-    public int delveLevel = 0;
-    public int augmentsOwed = 0;
-    public bool hpRegenActive = false;
-    public bool rampingRegenActive = false;
-    public bool bloodSoulBarrierActive = false;
-    public int bloodSoulBarrierValue;
+    #region Unity Lifecycle
     void Awake()
     {
         Instance = this;
@@ -86,12 +171,14 @@ public class PlayerCombat : MonoBehaviour
         playerStats.Add("movement speed");
         playerStats.Add("xp gain");
         playerStats.Add("gold gain");
+        playerStats.Add("status resist");
     }
 
     void Start()
     {
+        abilityManager = FindFirstObjectByType<AbilityManager>();
         if (playerGold != null) playerGold.text = ": " + playerMoney;
-        
+
         anim = GetComponent<Animator>();
         playerMovement = FindFirstObjectByType<PlayerMovement>();
         augmentManager = FindFirstObjectByType<AugmentManager>();
@@ -103,7 +190,8 @@ public class PlayerCombat : MonoBehaviour
         playerHpBarNumber.text = currentPlayerHealth + " / " + (int)maxHealth;
         playerManaBarNumber.text = currentPlayerMana + " / " + playerManaBase;
         if (playerManaBar != null) playerManaBar.value = 1.0f;
-        if (playerHpBar != null) playerHpBar.value = 1.0f; 
+        if (playerHpBar != null) playerHpBar.value = 1.0f;
+
     }
 
     private void Update()
@@ -112,16 +200,314 @@ public class PlayerCombat : MonoBehaviour
         {
             StartCoroutine("HpRegen");
         }
+        if (emberSystem.aliveEnemies <= 0 && isRunAndHitActive)
+        {
+            RunAndHit(true);
+        }
         if (playerManaBar != null) playerManaBar.value = currentPlayerMana / playerManaBase;
         if (Input.GetKeyDown(KeyCode.F1))
         {
             transform.position = FindFirstObjectByType<EnemySpawnDetector>().transform.position;
         }
+        if (isDynamicDensityActive)
+        {
+            UpdateDynamicDensity();
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Money1"))
+        {
+
+        }
+    }
+    #endregion
+
+    #region Stat/gold Recalculation
+    public void ModifyStat(string stat, float statmod)
+    {
+        switch (stat)
+        {
+            case "attack":
+                attackBonus += (attackBase * statmod);
+                attack = attackBase + attackBonus;
+                break;
+            case "attack speed":
+                attackSpeedBonus += (attackSpeedBase * statmod);
+                attackSpeed = attackSpeedBase + attackSpeedBonus;
+                break;
+            case "crit chance":
+                critChanceBonus += (int)(statmod*100);
+                critChance = Mathf.Clamp((critChanceBase + critChanceBonus),1,100);
+                break;
+            case "crit damage":
+                critDamageBonus += (critDamageBase * statmod);
+                critDamage = Mathf.Max(critDamageBase + critDamageBonus, 1f);
+                break;
+            case "armor":
+                armorBonus += statmod;
+                armor = armorBase + armorBonus;
+                break;
+            case "dodge":
+                dodgeBonus += (dodgeBase * statmod);
+                dodge = dodgeBase + dodgeBonus;
+                break;
+            case "movement speed":
+                movementSpeedBonus += (movementSpeedBase * statmod);
+                movementSpeed = movementSpeedBase + movementSpeedBonus;
+                break;
+            case "xp gain":
+                xpGainBonus += (xpGainBase * statmod);
+                xpGain = xpGainBase + xpGainBonus;
+                break;
+            case "gold gain":
+                goldGainBonus += (goldGainBase * statmod);
+                goldGain = goldGainBase + goldGainBonus;
+                break;
+            case "max health":
+                int healthChange = (int)(maxHealth * statmod);
+                maxHealth += (maxHealth*statmod);
+                RefreshHpBar(healthChange, "max");
+                if (currentPlayerHealth > maxHealth)
+                {
+                    currentPlayerHealth = (int)maxHealth;
+                }
+                break;
+        }
+        
+    }
+
+    public void FlowState()
+    {
+        ModifyStat("attack", flowStateDamage);
+    }
+
+    public void SurvivorshipBias(int xpAmount)
+    {
+        AddXp(xpAmount);
+    }
+    IEnumerator EvasiveManeuvers()
+    {
+        isEvasiveClimbing = true;
+        while (dodge < 100)
+        {
+            yield return new WaitForSeconds(3f);
+            dodge = Mathf.Min(dodge + evasiveManeuversValue, 100);
+        }
+        isEvasiveClimbing = false;   
+    }
+    public void ModifyGoldValue(string transactionType,int goldValue)
+    {
+        if (transactionType == "shop")
+        {
+            playerMoney -= goldValue;
+            moneyText.text = ": " + playerMoney;
+        }
+        if (transactionType == "pickup")
+        {
+            playerMoney += (int)(Mathf.Floor(goldValue * goldGain));
+            moneyText.text = ": " + playerMoney;
+        }
+    }
+
+    private void UpdateDynamicDensity()
+    {
+        if (currentPlayerHealth / maxHealth >= .75f && !dynamicDensity)
+        {
+            armor += 25;
+            dynamicDensity = true;
+        }
+        else if (currentPlayerHealth / maxHealth < .75f && dynamicDensity)
+        {
+            armor -= 25;
+            dynamicDensity = false;
+        }
+    }
+
+    IEnumerator HitAndRun()
+    {
+        if (!hitandRunBool)
+        {
+            float hitandRunMS = movementSpeed * hitandRunValue;
+            movementSpeed += hitandRunMS;
+            hitandRunBool = true;
+            yield return new WaitForSeconds(hitandRunTime);
+            hitandRunBool = false;
+            ModifyStat("movement speed", 0);
+        }
+    }
+
+    public IEnumerator SovereignImmunity()
+    {
+        isSovereignImmunityActive = false;
+        yield return new WaitForSeconds(sovereignImmunityCooldown);
+        isSovereignImmunityActive = true;
+    }
+    #endregion
+    #region Combat - Damage Dealing
+    public int CalcWeaponDamage(float damage, out bool crit)
+    {
+        int critRoll = Random.Range(0, 101);
+        int processedDamage = 0;
+        if (isFlowStateActive && !flowState && (abilityManager.shadowEchoActive || abilityManager.timeDilation || playerMovement.isDashing))
+        {
+            FlowState();
+            flowState = true;
+        }
+        else if (isFlowStateActive && flowState && (!abilityManager.shadowEchoActive && !abilityManager.timeDilation && !playerMovement.isDashing))
+        {
+            flowState = false;
+            ModifyStat("attack", -flowStateDamage);
+        }
+        if (isRunAndHitActive) RunAndHit(false);
+        if (critRoll < critChance)
+        {
+            processedDamage = (int)(Mathf.Round(damage * attack * critDamage));
+            crit = true;
+        }
+        else
+        {
+            crit = false;
+            processedDamage = (int)(Mathf.Round(damage * attack));
+        }
+        if (emberSystem != null && emberSystem.emberAmount <= 0)
+            processedDamage = (int)(processedDamage * 0.85f);
+        return processedDamage;
+    }
+
+    private void RunAndHit(bool wasHitOrOOC)
+    {
+        if (!wasHitOrOOC)
+        {
+            if (runAndHitCurrentStacks*runAndHitDamage < runAndHitCap)
+            {
+                runAndHitCurrentStacks++;
+                ModifyStat("attack", runAndHitDamage);
+            }
+        }
+        else if (wasHitOrOOC) 
+        {
+            ModifyStat("attack", -(runAndHitCurrentStacks*runAndHitDamage));//what we actually need to put here is the current run and hit value
+            runAndHitCurrentStacks = 0;
+        }
+    }
+
+    public void MADDoctrine(int reflectDamage)
+    {
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        GameObject closestEnemy = null;
+        float closestDistance = Mathf.Infinity;
+        isMADDoctrineActive = false;
+
+        foreach (GameObject enemy in enemies)
+        {
+            float dist = Vector2.Distance(transform.position, enemy.transform.position);
+            if (dist < closestDistance)
+            {
+                closestEnemy = enemy;
+                closestDistance = dist;
+            }
+        }
+
+        if (closestEnemy != null)
+        {
+            closestEnemy.GetComponent<Enemy>().reduceHp(reflectDamage*mADDoctrineReflectDamage);
+            StartCoroutine("MADDoctrineCD");
+        }
+            
+    }
+
+    IEnumerator MADDoctrineCD()
+    {
+        yield return new WaitForSeconds(mADDoctrineCooldown);
+        isMADDoctrineActive = true;
+    }
+
+    IEnumerator HindsightBias(int health, int returnTime)
+    {
+        yield return new WaitForSeconds(returnTime);
+        HealPlayer(health);
+    }
+    #endregion
+
+    #region Combat - Damage Taken
+    public void DamagePlayer(float damageTaken)
+    {
+        int dodgeChance = Random.Range(0, 101);
+        if (dodgeChance <= dodge)
+        {
+            dodge = dodgeBase + dodgeBonus;
+            if (isEvasiveManeuversActive && !isEvasiveClimbing) StartCoroutine(EvasiveManeuvers());
+            if (isSurvivorshipBiasActive) SurvivorshipBias(survivorshipBiasXP);
+            return;
+        }
+        if (isRunAndHitActive) RunAndHit(true);
+        int damageTakenInt = (int)Mathf.Round(damageTaken);
+        if (emberSystem != null && emberSystem.emberAmount <= 0)
+            damageTakenInt = (int)(damageTakenInt * 1.15f);
+        if (iFrames) return;
+        StartCoroutine("IFrames");
+        float reduction = armor / (armor + 100f);
+        int finalDamage = (int)Mathf.Round(damageTakenInt * (1f - reduction));
+        currentPlayerHealth -= finalDamage;
+        playerHpBar.value = currentPlayerHealth / maxHealth;
+        playerHpBarNumber.text = currentPlayerHealth + " / " + maxHealth;
+        if (currentPlayerHealth <= 0)
+        {
+            anim.SetTrigger("Death");
+            GameOver();
+            return;
+        }
+        if (isHindsightBiasActive) StartCoroutine(HindsightBias(hindsightBiasHealthReturn, hindsightBiasReturnTime));
+        if (isMADDoctrineActive)
+        {
+            MADDoctrine(finalDamage);
+        }
+        if (isHitandRunActive)
+        {
+            StartCoroutine("HitAndRun");
+        }
+    }
+
+    IEnumerator IFrames()
+    {
+        iFrames = true;
+        StartCoroutine("IFrameAnimation");
+        yield return new WaitForSeconds(.66f);
+        iFrames = false;
+    }
+
+    IEnumerator IFrameAnimation()
+    {
+        anim.SetTrigger("Hurt");
+        return null;
+    }
+    #endregion
+
+    #region Healing & Regen
+    public void BloodHeal(int damageHealed)
+    {
+        Instantiate(bloodHealPrefab, transform.position, Quaternion.identity);
+        HealPlayer(damageHealed);
+    }
+    public void RefreshHpBar(int healthRegained, string currentOrMaxHealth)
+    {
+        playerHpBarNumber.text = currentPlayerHealth + " / " + maxHealth;
+    }
+    public void HealPlayer(float damageHealed)
+    {
+        if (currentPlayerHealth > 0 && currentPlayerHealth < (int)maxHealth)
+        {
+            int damageHealedInt = (int)Mathf.Round(damageHealed);
+            currentPlayerHealth = Mathf.Min(currentPlayerHealth + damageHealedInt, (int)maxHealth);
+            playerHpBar.value = currentPlayerHealth / maxHealth;
+            playerHpBarNumber.text = currentPlayerHealth + " / " + maxHealth;
+        }
     }
 
     IEnumerator HpRegen()
     {
-
         if (currentPlayerHealth >= maxHealth)
         {
             hpIsRegenning = false;
@@ -145,14 +531,15 @@ public class PlayerCombat : MonoBehaviour
         {
             StartCoroutine("HpRegen");
         }
-        else if (emberSystem.aliveEnemies<=0)
+        else if (emberSystem.aliveEnemies <= 0)
         {
             hpIsRegenning = false;
-            rampingRegenCounter=1;
+            rampingRegenCounter = 1;
         }
     }
+    #endregion
 
-
+    #region Soul Coins - On Kill
     public void OnEnemyKilled()
     {
         if (bloodSoulBarrierActive && currentPlayerHealth < (int)maxHealth)
@@ -176,95 +563,13 @@ public class PlayerCombat : MonoBehaviour
             }
         }
     }
+    #endregion
 
-    public int CalcWeaponDamage(float damage, out bool crit)
+    #region Experience & Leveling
+    public void AddXp(int xpValue)
     {
-        int critRoll = Random.Range(0, 101);
-        int processedDamage = 0;
-       
-
-        if (critRoll < critChance)
-        {
-            processedDamage = (int)(Mathf.Round(damage * attack * critDamage));
-            crit = true;
-        }
-        else
-        {
-            crit = false;
-            processedDamage = (int)(Mathf.Round(damage * attack));
-        }
-        if (emberSystem != null && emberSystem.emberAmount <= 0)
-        processedDamage = (int)(processedDamage * 0.85f);
-        return processedDamage;
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Money1"))
-        {
-            playerMoney++;
-            moneyText.text = ": " + playerMoney;
-        }
-    }
-
-    public void DamagePlayer(float damageTaken)
-    {
-        int dodgeChance = Random.Range(0, 101);
-        if (dodgeChance <= dodge)
-        {
-            return;
-        }
-        int damageTakenInt = (int)Mathf.Round(damageTaken);
-        if (emberSystem != null && emberSystem.emberAmount <= 0)
-            damageTakenInt = (int)(damageTakenInt * 1.15f);
-        if (iFrames) return;
-        StartCoroutine("IFrames");
-        float reduction = armor / (armor + 100f);
-        int finalDamage = (int)Mathf.Round(damageTakenInt * (1f - reduction));
-        currentPlayerHealth -= finalDamage;
-        playerHpBar.value = currentPlayerHealth / maxHealth;
-        playerHpBarNumber.text = currentPlayerHealth + " / " + maxHealth;
-        if (currentPlayerHealth <= 0)
-        {
-            anim.SetTrigger("Death");
-
-            GameOver();
-        }
-    }
-
-    public void BloodHeal(int damageHealed)
-    {
-        Instantiate(bloodHealPrefab, transform.position, Quaternion.identity);
-        HealPlayer(damageHealed);
-    }
-    public void HealPlayer(float damageHealed)
-    {
-        if (currentPlayerHealth > 0 && currentPlayerHealth < (int)maxHealth)
-        {
-            int damageHealedInt = (int)Mathf.Round(damageHealed);
-            currentPlayerHealth = Mathf.Min(currentPlayerHealth + damageHealedInt, (int)maxHealth);
-            playerHpBar.value = currentPlayerHealth / maxHealth;
-            playerHpBarNumber.text = currentPlayerHealth + " / " + maxHealth;
-        }
-    }
-
-    IEnumerator IFrames()
-    {
-        iFrames = true;
-        StartCoroutine("IFrameAnimation");
-        yield return new WaitForSeconds(.66f);
-        iFrames = false;
-    }
-
-    IEnumerator IFrameAnimation()
-    {
-        anim.SetTrigger("Hurt");
-        return null;
-    }
-
-    public void addExp()
-    {
-        playerXp += 1;
+        xpValue = (int)(Mathf.Floor(xpValue*xpGain));
+        playerXp += xpValue;
         playerXpBar.value = playerXp / 100f;
 
         while (playerXp >= 100)
@@ -273,7 +578,7 @@ public class PlayerCombat : MonoBehaviour
             playerXp -= 100;
             augmentsOwed++;
             playerXpBar.value = playerXp / 100f;
-            playerLevelText.text = (""+playerLevel);
+            playerLevelText.text = ("" + playerLevel);
         }
 
         if (augmentsOwed > 0 && Time.timeScale != 0)
@@ -282,7 +587,9 @@ public class PlayerCombat : MonoBehaviour
             augmentManager.RandomAugmentGenerator();
         }
     }
+    #endregion
 
+    #region Augments
     public void ApplyAugment(string selectedAugment)
     {
         if (selectedAugment == "Attack")
@@ -306,53 +613,43 @@ public class PlayerCombat : MonoBehaviour
         else if (selectedAugment == "GoldGain")
             goldGain *= 1.10f;
     }
+    #endregion
 
-    public void GameOver()
-    {
-        PlayerPrefs.DeleteAll();
-        Time.timeScale = 0;
-        gameOverScreen.SetActive(true);
-    }
-    public void ResetGame()
-    {
-        SceneManager.LoadScene("TradingHub");
-        Time.timeScale = 1;
-    }
+    #region Statues
     public void OfferingStatueMods(string statToMod, int goldOffered)
     {
-        playerMoney -= goldOffered;
-        moneyText.text = ": " + playerMoney;
+        ModifyGoldValue("shop", goldOffered);
         switch (statToMod)
         {
             case "attack":
-                attack *= 1.10f;
+                ModifyStat("attack", .1f);
                 break;
             case "attack speed":
-                attackSpeed *= 0.90f;
+                ModifyStat("attack speed", -.1f);
                 break;
             case "crit chance":
-                critChance += 10;
+                ModifyStat("crit chance", .1f);
                 break;
             case "crit damage":
-                critDamage *= 1.10f;
+                ModifyStat("crit damage", .1f);
                 break;
             case "armor":
-                armor += 15f;
+                ModifyStat("armor", 10f);
                 break;
             case "max health":
-                maxHealth *= 1.10f;
+                ModifyStat("max health", .1f);
                 break;
             case "dodge":
-                dodge += 5f;
+                ModifyStat("dodge", .1f);
                 break;
             case "movement speed":
-                movementSpeed *= 1.10f;
+                ModifyStat("movement speed", .1f);
                 break;
             case "xp gain":
-                xpGain *= 1.10f;
+                ModifyStat("xp gain", .1f);
                 break;
             case "gold gain":
-                goldGain *= 1.10f;
+                ModifyStat("gold gain", .1f);
                 break;
         }
     }
@@ -362,67 +659,67 @@ public class PlayerCombat : MonoBehaviour
         switch (blessedStat)
         {
             case "attack":
-                attack *= 1.04f;
+                ModifyStat("attack", .04f);
                 break;
             case "attack speed":
-                attackSpeed *= 0.96f;
+                ModifyStat("attack speed", -0.04f);
                 break;
             case "crit chance":
-                critChance += 4;
+                ModifyStat("crit chance", .04f);
                 break;
             case "crit damage":
-                critDamage *= 1.04f;
+                ModifyStat("crit damage", .04f);
                 break;
             case "armor":
-                armor += 8f;
+                ModifyStat("armor", 8f);
                 break;
             case "max health":
-                maxHealth *= 1.04f;
+                ModifyStat("max health", .04f);
                 break;
             case "dodge":
-                dodge += 2f;
+                ModifyStat("dodge", .04f);
                 break;
             case "movement speed":
-                movementSpeed *= 1.04f;
+                ModifyStat("movement speed", .04f);
                 break;
             case "xp gain":
-                xpGain *= 1.04f;
+                ModifyStat("xp gain", .02f);
                 break;
             case "gold gain":
-                goldGain *= 1.04f;
+                ModifyStat("gold gain", .04f);
                 break;
         }
         switch (cursedStat)
         {
             case "attack":
-                attack *= 0.96f;
+                ModifyStat("attack", -.04f);
                 break;
             case "attack speed":
-                attackSpeed *= 1.04f;
+                ModifyStat("attack speed", 0.96f);
                 break;
             case "crit chance":
-                critChance -= 4;
+                ModifyStat("crit chance", -.04f);
                 break;
             case "crit damage":
-                critDamage *= 0.96f;
+                ModifyStat("crit damage", -.04f);
                 break;
             case "armor":
-                armor += 8f;
+                ModifyStat("armor", -8f);
                 break;
             case "max health":
-                maxHealth *= 0.96f;
+                ModifyStat("max health", -.1f);
                 break;
             case "dodge":
-                dodge -= 2f;
+                ModifyStat("dodge", -.04f);
                 break;
             case "movement speed":
-                movementSpeed *= 0.96f;
+                ModifyStat("movement speed", -.04f);
                 break;
             case "xp gain":
-                xpGain *= 0.96f;
+                ModifyStat("xp gain", -.02f);
                 break;
             case "gold gain":
-                goldGain *= 0.96f;
+                ModifyStat("gold gain", -.04f);
                 break;
         }
     }
@@ -432,35 +729,51 @@ public class PlayerCombat : MonoBehaviour
         switch (statToMod)
         {
             case "attack":
-                attack *= (statMod > 0) ? 1.07f : 0.93f;
+                ModifyStat("attack", (statMod>0) ? .07f : -.07f);
                 break;
             case "attack speed":
-                attackSpeed *= (statMod > 0) ? 0.93f : 1.07f;
+                ModifyStat("attack speed", (statMod > 0) ? -0.07f : .07f);
                 break;
             case "crit chance":
-                critChance += (statMod > 0) ? 7 : -7;
+                ModifyStat("crit chance", (statMod > 0) ? .07f : -.07f);
                 break;
             case "crit damage":
-                critDamage *= (statMod > 0) ? 1.07f : 0.93f;
+                ModifyStat("crit damage",(statMod > 0) ? .07f : -.07f);
                 break;
             case "armor":
-                armor += (statMod > 0) ? 12f : -12f;
+                ModifyStat("armor", (statMod > 0) ? 7f : -7f);
                 break;
             case "max health":
-                maxHealth *= (statMod > 0) ? 1.07f : 0.93f;
+                ModifyStat("max health", (statMod > 0) ? .07f : -.07f);
                 break;
             case "dodge":
-                dodge += (statMod > 0) ? 4f : -4f;
+                ModifyStat("dodge", (statMod > 0) ? .04f : -.04f);
                 break;
             case "movement speed":
-                movementSpeed *= (statMod > 0) ? 1.07f : 0.93f;
+                ModifyStat("movement speed", (statMod > 0) ? .05f : -.05f);
                 break;
             case "xp gain":
-                xpGain *= (statMod > 0) ? 1.07f : 0.93f;
+                ModifyStat("xp gain", (statMod > 0) ? .04f : -.04f);
                 break;
             case "gold gain":
-                goldGain *= (statMod > 0) ? 1.07f : 0.93f;
+                ModifyStat("gold gain", (statMod > 0) ? .05f : -.05f);
                 break;
         }
     }
+    #endregion
+
+    #region Scene / Game Flow
+    public void GameOver()
+    {
+        PlayerPrefs.DeleteAll();
+        Time.timeScale = 0;
+        gameOverScreen.SetActive(true);
+    }
+
+    public void ResetGame()
+    {
+        SceneManager.LoadScene("TradingHub");
+        Time.timeScale = 1;
+    }
+    #endregion
 }

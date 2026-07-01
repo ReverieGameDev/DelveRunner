@@ -13,11 +13,13 @@ public class PlayerStatusEffects : MonoBehaviour
     public GameObject statusSlot;
     public Transform statusHudContainer;
     public Sprite stunIcon;
+    private PlayerCombat playerCombat;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         playerMovement = FindFirstObjectByType<PlayerMovement>();
+        playerCombat = FindFirstObjectByType<PlayerCombat>();
     }
 
     // Update is called once per frame
@@ -38,6 +40,11 @@ public class PlayerStatusEffects : MonoBehaviour
 
     IEnumerator StunPlayer(float duration)
     {
+        if (playerCombat.isSovereignImmunityActive)
+        {
+            playerCombat.StartCoroutine(playerCombat.SovereignImmunity());
+            yield break;
+        }
         if (!isStunned)
         {
             playerMovement.anim.SetFloat("IsMoving", 0);

@@ -169,7 +169,7 @@ public class AbilityManager : MonoBehaviour
         yield return new WaitForSecondsRealtime(cooldown);
         switch (currentAbility)
         {
-            case "TimeDilation":
+            case "Time Dilation":
                 canTimeDilation = true;
                 yield break;
             case "Shadow Echo":

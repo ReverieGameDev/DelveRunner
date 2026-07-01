@@ -6,6 +6,7 @@ public class Money : MonoBehaviour
     private PlayerCombat playerCombat;
     private bool moneyTowardsPlayer = false;
     private int moneySpeed = 6;
+    public int goldValue;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -21,6 +22,7 @@ public class Money : MonoBehaviour
             transform.Translate((playerCombat.transform.position - transform.position).normalized * moneySpeed * Time.deltaTime);
             if (Vector3.Distance(transform.position, playerCombat.transform.position) < 0.5f)
             {
+                playerCombat.ModifyGoldValue("pickup",goldValue);
                 Destroy(gameObject);
             }
         }

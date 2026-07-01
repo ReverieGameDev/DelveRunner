@@ -17,9 +17,11 @@ public class RERCurse : MonoBehaviour
     private string cursedStat;
     private bool playerInRange = false;
     private ParticleSystem ps;
+    private PlayerMovement playerMovement;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        playerMovement = FindFirstObjectByType<PlayerMovement>();
         ps = GetComponent<ParticleSystem>();
         playerCombat = FindFirstObjectByType<PlayerCombat>();
         chosenStat = Random.Range(0, playerCombat.playerStats.Count);
@@ -35,7 +37,9 @@ public class RERCurse : MonoBehaviour
     {
         if (playerInRange && Input.GetKeyDown(KeyCode.E) && !hasAccepted)
         {
+
             Time.timeScale = 0;
+            playerMovement.playerFrozen = true;
             statueDialogue.SetActive(true);
             int randomDialogue = Random.Range(0, 5);
 
@@ -75,6 +79,7 @@ public class RERCurse : MonoBehaviour
     {
         Time.timeScale = 1;
         statueDialogue.SetActive(false);
+        playerMovement.playerFrozen = false;
     }
     public void AcceptButton()
     {
@@ -114,5 +119,6 @@ public class RERCurse : MonoBehaviour
         ps.Stop();
         statueDialogue.SetActive(false);
         GetComponent<SpriteRenderer>().color = new Color(0.3f, 0.3f, 0.3f, 1f);
+        playerMovement.playerFrozen = false;
     }
 }
