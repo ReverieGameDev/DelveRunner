@@ -21,7 +21,7 @@ public class AufburnOnLoad : MonoBehaviour
         }
         else if (firstLoad == 1)
         {
-            playerCombat.playerMoney = PlayerPrefs.GetInt("Gold");
+            playerCombat.playerMoney = PlayerPrefs.GetFloat("Gold");
             playerCombat.playerXp = PlayerPrefs.GetInt("Exp");
             playerCombat.delveLevel = PlayerPrefs.GetInt("DelveLevel");  // Default 0
         }

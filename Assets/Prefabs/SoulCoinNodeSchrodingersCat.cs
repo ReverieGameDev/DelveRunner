@@ -8,8 +8,5 @@ public class SoulCoinNodeSchrodingersCat : SoulCoinNode
     {
         player.isSchrodingersCatActive = true;
         player.schrodingersCatCurrentLevel = currentLevel;
-        player.ModifyStat("consumable effectiveness", -.2f);
-        player.ModifyStat("gold gain", -.2f);
-        player.ModifyStat("xp gain", .25f);
     }
 }

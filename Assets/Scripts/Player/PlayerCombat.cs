@@ -354,7 +354,7 @@ public class PlayerCombat : MonoBehaviour
             {
                 goldValue *= 2;
             }
-            playerMoney += (int)(Mathf.Floor(goldValue * goldGain));
+            playerMoney += (goldValue * goldGain);
             moneyText.text = ": " + (int)playerMoney;
         }
     }
