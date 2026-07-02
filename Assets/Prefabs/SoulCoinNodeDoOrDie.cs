@@ -13,15 +13,15 @@ public class SoulCoinDoOrDie : SoulCoinNode
         {
             case 1:
                 player.doOrDieHpThreshold = .15f;
-                player.doOrDieAS = .3f;
+                player.doOrDieAS = .23f;
                 break;
             case 2:
                 player.doOrDieHpThreshold = .20f;
-                player.doOrDieAS = .45f;
+                player.doOrDieAS = .31f;
                 break;
             case 3:
                 player.doOrDieHpThreshold = .35f;
-                player.doOrDieAS = .65f;
+                player.doOrDieAS = .39f;
                 break;
         }
     }

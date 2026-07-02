@@ -170,6 +170,11 @@ public class PlayerCombat : MonoBehaviour
     public float bloodlustTime;
     public float bloodlustDamage;
     public bool bloodlustIsActive = false;
+
+    public bool lightningStrikesTwiceActive = false;
+    public float lightningStrikesTwiceCritDmgCap = .75f;
+    public float lightningStrikesTwiceDmg = 0.02f;
+    public int lightningStrikesTwiceStacks;
     #endregion
 
     #region Progression & State
@@ -446,11 +451,21 @@ public class PlayerCombat : MonoBehaviour
         }
         if (critRoll < critChance)
         {
-            processedDamage = (int)(Mathf.Round(damage * attack * critDamage));
+            if (lightningStrikesTwiceActive)
+            {
+                lightningStrikesTwiceStacks++;
+                processedDamage = (int)(Mathf.Round(damage * attack * (critDamage+(Mathf.Min(lightningStrikesTwiceCritDmgCap,lightningStrikesTwiceStacks*lightningStrikesTwiceDmg)))));
+            }
+            else if (!lightningStrikesTwiceActive)
+            {
+                processedDamage = (int)(Mathf.Round(damage * attack * critDamage));
+            }
+            
             crit = true;
         }
         else
         {
+            lightningStrikesTwiceStacks = 0;
             crit = false;
             processedDamage = (int)(Mathf.Round(damage * attack));
         }

@@ -33899,6 +33899,9 @@ MonoBehaviour:
   statusResist: 1
   statusResistBonus: 0
   statusResistBase: 1
+  consumableEffectiveness: 1
+  consumableEffectivenessBonus: 0
+  consumableEffectivenessBase: 1
   currentPlayerHealth: 0
   maxHealth: 100
   baseMaxHealth: 100
@@ -33933,6 +33936,36 @@ MonoBehaviour:
   soulSiphonLevel: 0
   isFlowStateActive: 0
   flowStateDamage: 0
+  isRunAndHitActive: 0
+  runAndHitDamage: 0
+  runAndHitCap: 0
+  isSchrodingersCatActive: 0
+  schrodingersCatCurrentLevel: 0
+  isClinicalTrialsActive: 0
+  isInsiderTradingActive: 0
+  insiderTradingPercent: 0
+  insiderTradingGoldAmount: 0
+  packAPunchDamagePerItem: 0
+  packAPunchIsActive: 0
+  bitterPillIsActive: 0
+  bitterPillDamage: 0
+  bitterPillDuration: 0
+  bitterPill: 0
+  bitterPillEndTime: 0
+  achillesHeelChance: 0
+  achillesHeelDamage: 0
+  achillesHeelIsActive: 0
+  doOrDieIsActive: 0
+  doOrDieHpThreshold: 0
+  doOrDieAS: 0
+  doOrDieActivated: 0
+  bloodlustTime: 0
+  bloodlustDamage: 0
+  bloodlustIsActive: 0
+  lightningStrikesTwiceActive: 0
+  lightningStrikesTwiceCritDmgCap: 0.75
+  lightningStrikesTwiceDmg: 0.02
+  lightningStrikesTwiceStacks: 0
   playerMoney: 53
   iFrames: 0
   playerXp: 0

@@ -11,23 +11,23 @@ public class SoulCoinNodeHindsightBias : SoulCoinNode
         {
             case 1:
                 player.hindsightBiasReturnTime = 20;
-                player.hindsightBiasHealthReturn = 1;
+                player.hindsightBiasHealthReturn = 3;
                 break;
             case 2:
                 player.hindsightBiasReturnTime = 18;
-                player.hindsightBiasHealthReturn = 2;
+                player.hindsightBiasHealthReturn = 4;
                 break;
             case 3:
                 player.hindsightBiasReturnTime = 16;
-                player.hindsightBiasHealthReturn = 2;
+                player.hindsightBiasHealthReturn = 5;
                 break;
             case 4:
                 player.hindsightBiasReturnTime = 14;
-                player.hindsightBiasHealthReturn = 3;
+                player.hindsightBiasHealthReturn = 6;
                 break;
             case 5:
                 player.hindsightBiasReturnTime = 10;
-                player.hindsightBiasHealthReturn = 4;
+                player.hindsightBiasHealthReturn = 8;
                 break;
         }
     }

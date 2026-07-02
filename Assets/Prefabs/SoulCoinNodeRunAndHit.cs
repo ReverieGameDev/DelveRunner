@@ -15,11 +15,11 @@ public class SoulCoinNodeRunAndHit : SoulCoinNode
                 break;
             case 2:
                 player.runAndHitDamage = .02f;
-                player.runAndHitCap = 0.24f;
+                player.runAndHitCap = 0.18f;
                 break;
             case 3:
                 player.runAndHitDamage = .03f;
-                player.runAndHitCap = 0.36f;
+                player.runAndHitCap = 0.24f;
                 break;
         }
     }

@@ -12,15 +12,15 @@ public class SoulCoinAchillesHeel : SoulCoinNode
         {
             case 1:
                 player.achillesHeelChance = 5f;
-                player.achillesHeelDamage = 2f;
+                player.achillesHeelDamage = 1.75f;
                 break;
             case 2:
                 player.achillesHeelChance = 8f;
-                player.achillesHeelDamage = 2.25f;
+                player.achillesHeelDamage = 2f;
                 break;
             case 3:
                 player.achillesHeelChance = 10f;
-                player.achillesHeelDamage = 2.75f;
+                player.achillesHeelDamage = 2.25f;
                 break;
         }
     }

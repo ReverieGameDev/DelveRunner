@@ -12,15 +12,15 @@ public class SoulCoinBloodlust: SoulCoinNode
         switch (currentLevel)
         {
             case 1:
-                player.bloodlustDamage = .2f;
-                player.bloodlustTime = 4f;
+                player.bloodlustDamage = .1f;
+                player.bloodlustTime = 6f;
                 break;
             case 2:
-                player.bloodlustDamage = .3f;
-                player.bloodlustTime = 5f;
+                player.bloodlustDamage = .15f;
+                player.bloodlustTime = 6f;
                 break;
             case 3:
-                player.bloodlustDamage = .4f;
+                player.bloodlustDamage = .2f;
                 player.bloodlustTime = 6f;
                 break;
         }
