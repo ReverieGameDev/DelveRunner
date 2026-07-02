@@ -148,6 +148,28 @@ public class PlayerCombat : MonoBehaviour
     public bool isInsiderTradingActive = false;
     public int insiderTradingPercent;
     public int insiderTradingGoldAmount;
+
+    public float packAPunchDamagePerItem;
+    public bool packAPunchIsActive = false;
+
+    public bool bitterPillIsActive = false;
+    public float bitterPillDamage;
+    public float bitterPillDuration;
+    public bool bitterPill = false;
+    public float bitterPillEndTime;
+
+    public float achillesHeelChance;
+    public float achillesHeelDamage;
+    public bool achillesHeelIsActive = false;
+
+    public bool doOrDieIsActive = false;
+    public float doOrDieHpThreshold;
+    public float doOrDieAS;
+    public bool doOrDieActivated = false;
+
+    public float bloodlustTime;
+    public float bloodlustDamage;
+    public bool bloodlustIsActive = false;
     #endregion
 
     #region Progression & State
@@ -398,6 +420,15 @@ public class PlayerCombat : MonoBehaviour
     {
         int critRoll = Random.Range(0, 101);
         int processedDamage = 0;
+
+        if (packAPunchIsActive)
+        {
+            damage *= 1 + Mathf.Min(.35f,(packAPunchDamagePerItem * ItemHotbar.Instance.NumberOfItems()));
+        }
+        if (bitterPill)
+        {
+            damage *= (1 + bitterPillDamage);
+        }
         if (isFlowStateActive && !flowState && (abilityManager.shadowEchoActive || abilityManager.timeDilation || playerMovement.isDashing))
         {
             FlowState();
@@ -409,6 +440,10 @@ public class PlayerCombat : MonoBehaviour
             ModifyStat("attack", -flowStateDamage);
         }
         if (isRunAndHitActive) RunAndHit(false);
+        if (achillesHeelIsActive && Random.Range(1, 101) < achillesHeelChance)
+        {
+            damage *= achillesHeelDamage;
+        }
         if (critRoll < critChance)
         {
             processedDamage = (int)(Mathf.Round(damage * attack * critDamage));
@@ -422,6 +457,20 @@ public class PlayerCombat : MonoBehaviour
         if (emberSystem != null && emberSystem.emberAmount <= 0)
             processedDamage = (int)(processedDamage * 0.85f);
         return processedDamage;
+    }
+
+    public void TriggerBitterPill()
+    {
+        bitterPillEndTime = Time.time + bitterPillDuration;
+        if (!bitterPill) StartCoroutine(BitterPill());
+    }
+
+    public IEnumerator BitterPill()
+    {
+        bitterPill = true;
+        while (Time.time < bitterPillEndTime)
+            yield return null;
+        bitterPill = false;
     }
 
     private void RunAndHit(bool wasHitOrOOC)
@@ -516,6 +565,7 @@ public class PlayerCombat : MonoBehaviour
         {
             StartCoroutine("HitAndRun");
         }
+        if (doOrDieIsActive) DoOrDieToggle();
     }
 
     IEnumerator IFrames()
@@ -551,9 +601,22 @@ public class PlayerCombat : MonoBehaviour
             currentPlayerHealth = Mathf.Min(currentPlayerHealth + damageHealedInt, (int)maxHealth);
             playerHpBar.value = currentPlayerHealth / maxHealth;
             playerHpBarNumber.text = currentPlayerHealth + " / " + maxHealth;
+            if (doOrDieIsActive) DoOrDieToggle();
         }
     }
-
+    public void DoOrDieToggle()
+    {
+        if (currentPlayerHealth/maxHealth <= doOrDieHpThreshold && !doOrDieActivated)
+        {
+            ModifyStat("attack speed", -doOrDieAS);
+            doOrDieActivated = true;
+        }
+        if (currentPlayerHealth / maxHealth >= doOrDieHpThreshold && doOrDieActivated)
+        {
+            ModifyStat("attack speed", doOrDieAS);
+            doOrDieActivated = false;
+        }
+    }
     IEnumerator HpRegen()
     {
         if (currentPlayerHealth >= maxHealth)

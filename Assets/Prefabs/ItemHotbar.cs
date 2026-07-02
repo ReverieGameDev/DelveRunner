@@ -27,8 +27,14 @@ public class ItemHotbar : MonoBehaviour
     public TextMeshProUGUI slot1Count;
     public TextMeshProUGUI slot2Count;
     public TextMeshProUGUI slot3Count;
+    private int itemCount;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
+    public static ItemHotbar Instance;
 
+    void Awake()
+    {
+        Instance = this;
+    }
     void Start()
     {
         itemInventory = FindFirstObjectByType<ItemInventory>();
@@ -60,6 +66,25 @@ public class ItemHotbar : MonoBehaviour
         }
 
     }
+    public int NumberOfItems()
+    {
+        itemCount = 0;
+        foreach (InventorySlot item in itemInventory.inventoryItems)
+        {
+            if (item != emptySlot)
+            {
+                itemCount++;
+            }
+        }
+        foreach (InventorySlot items in hotbarItems)
+        {
+            if (items != emptySlot)
+            {
+                itemCount++;
+            }
+        }
+        return itemCount;
+    }
     public void CompactHotbar()
     {
         List<InventorySlot> tempHotbar = new List<InventorySlot>();
@@ -74,6 +99,10 @@ public class ItemHotbar : MonoBehaviour
     {
         if (hotbarItems[0].item != emptySlotItem)
         {
+            if (PlayerCombat.Instance.bitterPillIsActive)
+            {
+                PlayerCombat.Instance.TriggerBitterPill();
+            }
             hotbarItems[0].count--;
             hotbarItems[0].item.Use(PlayerCombat.Instance);
             if (PlayerCombat.Instance.isSchrodingersCatActive && PlayerCombat.Instance.SchrodingersCat())
