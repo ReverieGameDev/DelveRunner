@@ -60,7 +60,10 @@ public class Enemy : MonoBehaviour
     public void reduceHp(float damageTaken, bool isCrit = false)
     {
         if (enemyHealth <= 0) return;
-
+        if (playerCombat.curtainCallActive && !enemyData.isBoss && isCrit && enemyHealth/maxEnemyHealth <= playerCombat.curtainCallExecute)
+        {
+            damageTaken = 9999f;
+        }
         int damageTakenInt = (int)Mathf.Round(damageTaken);
         enemyHealth -= damageTakenInt;
         hptext.text = (int)enemyHealth + " / " + (int)maxEnemyHealth;

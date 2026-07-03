@@ -175,6 +175,21 @@ public class PlayerCombat : MonoBehaviour
     public float lightningStrikesTwiceCritDmgCap = .75f;
     public float lightningStrikesTwiceDmg = 0.02f;
     public int lightningStrikesTwiceStacks;
+
+    public bool strikeGoldActive = false;
+    public int strikeGoldChance;
+    public int strikeGoldAmount;
+
+    public bool curtainCallActive = false;
+    public float curtainCallExecute = .1f;
+
+    public bool gamblersFallacyActive = false;
+    public float gamblersFallacyPayout;
+
+    public bool jackpotActive = true;
+    public int jackpotChance;
+    public int jackpotCritDamage = 30;
+    public int jackpotGoldCost = 1;
     #endregion
 
     #region Progression & State
@@ -451,16 +466,30 @@ public class PlayerCombat : MonoBehaviour
         }
         if (critRoll < critChance)
         {
-            if (lightningStrikesTwiceActive)
+            float critMult;
+
+            if (jackpotActive && playerMoney >= jackpotGoldCost && Random.Range(1, 1001) < jackpotChance)
+            {
+                critMult = jackpotCritDamage;                 // replaces crit math entirely
+                ModifyGoldValue("shop", jackpotGoldCost);     // "shop" = your subtract path
+                lightningStrikesTwiceStacks = 0;              // jackpot hit isn't a normal crit combo
+            }
+            else if (lightningStrikesTwiceActive)
             {
                 lightningStrikesTwiceStacks++;
-                processedDamage = (int)(Mathf.Round(damage * attack * (critDamage+(Mathf.Min(lightningStrikesTwiceCritDmgCap,lightningStrikesTwiceStacks*lightningStrikesTwiceDmg)))));
+                critMult = critDamage + Mathf.Min(lightningStrikesTwiceCritDmgCap,
+                                                  lightningStrikesTwiceStacks * lightningStrikesTwiceDmg);
             }
-            else if (!lightningStrikesTwiceActive)
+            else
             {
-                processedDamage = (int)(Mathf.Round(damage * attack * critDamage));
+                critMult = critDamage;
             }
-            
+
+            processedDamage = (int)Mathf.Round(damage * attack * critMult);
+
+            if (strikeGoldActive && Random.Range(1, 1001) <= strikeGoldChance)
+                StrikeGold();
+
             crit = true;
         }
         else
@@ -473,7 +502,10 @@ public class PlayerCombat : MonoBehaviour
             processedDamage = (int)(processedDamage * 0.85f);
         return processedDamage;
     }
-
+    private void StrikeGold()
+    {
+        ModifyGoldValue("pickup",strikeGoldAmount);
+    }
     public void TriggerBitterPill()
     {
         bitterPillEndTime = Time.time + bitterPillDuration;
