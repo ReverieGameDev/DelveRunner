@@ -467,7 +467,10 @@ public class PlayerCombat : MonoBehaviour
         if (critRoll < critChance)
         {
             float critMult;
-
+            if (gamblersFallacyActive)
+            {
+                ModifyGoldValue("pickup", gamblersFallacyPayout);
+            }
             if (jackpotActive && playerMoney >= jackpotGoldCost && Random.Range(1, 1001) < jackpotChance)
             {
                 critMult = jackpotCritDamage;                 // replaces crit math entirely
@@ -655,12 +658,12 @@ public class PlayerCombat : MonoBehaviour
     {
         if (currentPlayerHealth/maxHealth <= doOrDieHpThreshold && !doOrDieActivated)
         {
-            ModifyStat("attack speed", -doOrDieAS);
+            ModifyStat("attack speed", doOrDieAS);
             doOrDieActivated = true;
         }
         if (currentPlayerHealth / maxHealth >= doOrDieHpThreshold && doOrDieActivated)
         {
-            ModifyStat("attack speed", doOrDieAS);
+            ModifyStat("attack speed", -doOrDieAS);
             doOrDieActivated = false;
         }
     }

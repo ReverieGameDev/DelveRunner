@@ -33966,6 +33966,17 @@ MonoBehaviour:
   lightningStrikesTwiceCritDmgCap: 0.75
   lightningStrikesTwiceDmg: 0.02
   lightningStrikesTwiceStacks: 0
+  strikeGoldActive: 0
+  strikeGoldChance: 0
+  strikeGoldAmount: 0
+  curtainCallActive: 0
+  curtainCallExecute: 0.1
+  gamblersFallacyActive: 0
+  gamblersFallacyPayout: 0
+  jackpotActive: 1
+  jackpotChance: 0
+  jackpotCritDamage: 30
+  jackpotGoldCost: 1
   playerMoney: 53
   iFrames: 0
   playerXp: 0
