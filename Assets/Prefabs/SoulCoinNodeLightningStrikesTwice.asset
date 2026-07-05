@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b5de499304226e43930c7d59588df9f, type: 3}
+  m_Name: SoulCoinNodeLightningStrikesTwice
+  m_EditorClassIdentifier: 
+  id: lightningStrikesTwice
+  nodeName: Lightning Strikes Twice
+  maxLevel: 5
+  icon: {fileID: -9162930423088269526, guid: ee1bea10ab496384cbe7f57fe415a2e1, type: 3}
+  unlockCost: 3
+  cost: 0300000004000000050000000600000007000000
+  requires:
+  - {fileID: 11400000, guid: 0d357989693ee9848a9995f7ce3b90f6, type: 2}
+  siblings:
+  - {fileID: 11400000, guid: 01e8ff567c741534aa56dda0d4ad1ede, type: 2}

@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb6c7108ec9e3e34093685388b26e934, type: 3}
+  m_Name: SoulCoinNodeGamblersFallacy
+  m_EditorClassIdentifier: 
+  id: gamblersFallacy
+  nodeName: Gambler's Fallacy
+  maxLevel: 1
+  icon: {fileID: 8875115370707609475, guid: 5e4cad5937e3b464f9786b1c16a4b90c, type: 3}
+  unlockCost: 15
+  cost: 0f000000
+  requires:
+  - {fileID: 11400000, guid: 01e8ff567c741534aa56dda0d4ad1ede, type: 2}
+  - {fileID: 11400000, guid: fdff60e046537034bbce4dbba1b28af4, type: 2}
+  siblings:
+  - {fileID: 11400000, guid: 2d4a203e03cf8104aa4bca8e5f403d61, type: 2}
+  - {fileID: 11400000, guid: 76e49c2931a545548b1b0ab371a2c181, type: 2}

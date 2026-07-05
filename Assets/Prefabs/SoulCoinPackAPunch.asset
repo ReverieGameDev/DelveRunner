@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f45f8805b11092c41a79be2c031102c2, type: 3}
+  m_Name: SoulCoinPackAPunch
+  m_EditorClassIdentifier: 
+  id: packAPunch
+  nodeName: Pack a Punch
+  maxLevel: 3
+  icon: {fileID: 6413020478584453356, guid: e4b43f4cbe2460a4f88d2757a8a6ad7e, type: 3}
+  unlockCost: 5
+  cost: 020000000300000006000000
+  requires:
+  - {fileID: 11400000, guid: 0a0f2ee5f2216b442828b8c4087fbf6c, type: 2}
+  siblings:
+  - {fileID: 11400000, guid: 306393b596c770a428859ae55807a574, type: 2}

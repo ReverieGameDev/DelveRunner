@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a738157c8702bf4a8cef8f945bb0b80, type: 3}
+  m_Name: SoulCoinAchillesHeel
+  m_EditorClassIdentifier: 
+  id: achillesHeel
+  nodeName: Achilles Heel
+  maxLevel: 3
+  icon: {fileID: -8587467533394018205, guid: 3789b55cc03aa3147b0cff164880cb00, type: 3}
+  unlockCost: 5
+  cost: 050000000a0000000f000000
+  requires:
+  - {fileID: 11400000, guid: 306393b596c770a428859ae55807a574, type: 2}
+  - {fileID: 11400000, guid: 449906af8559ec04e9c14b0f1d6d7908, type: 2}
+  siblings:
+  - {fileID: 11400000, guid: 5b08dcdf0915e1c4c9dc2baf73fe68ac, type: 2}
+  - {fileID: 11400000, guid: 239fae79036e85d46b1d9530e1d84e83, type: 2}

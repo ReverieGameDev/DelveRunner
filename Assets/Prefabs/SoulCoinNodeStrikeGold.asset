@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d8f699b08006d0499de68c90d78eab8, type: 3}
+  m_Name: SoulCoinNodeStrikeGold
+  m_EditorClassIdentifier: 
+  id: strikeGold
+  nodeName: Strike Gold
+  maxLevel: 5
+  icon: {fileID: 5625402913696602184, guid: 30e5dac9f6208a5498148c1f00a4222b, type: 3}
+  unlockCost: 3
+  cost: 0300000004000000050000000600000007000000
+  requires:
+  - {fileID: 11400000, guid: 0d357989693ee9848a9995f7ce3b90f6, type: 2}
+  siblings:
+  - {fileID: 11400000, guid: fdff60e046537034bbce4dbba1b28af4, type: 2}
+  description: This is a test. for testing purposes, of course.

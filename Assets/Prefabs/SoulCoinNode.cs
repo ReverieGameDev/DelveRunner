@@ -10,6 +10,8 @@ public abstract class SoulCoinNode : ScriptableObject
     public Sprite icon;
     public int unlockCost;
     public List<int> cost = new List<int>();
-    public SoulCoinNode requires;
+    public List<SoulCoinNode> requires = new List<SoulCoinNode>();
+    public List<SoulCoinNode> siblings = new List<SoulCoinNode>();
+    [TextArea] public string description;
     public abstract void Apply(PlayerCombat player, int currentLevel);
 }

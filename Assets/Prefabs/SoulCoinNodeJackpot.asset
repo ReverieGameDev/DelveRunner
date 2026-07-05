@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5dee0bbf1c6a07a4cadf390638d90905, type: 3}
+  m_Name: SoulCoinNodeJackpot
+  m_EditorClassIdentifier: 
+  id: jackpot
+  nodeName: Jackpot
+  maxLevel: 3
+  icon: {fileID: -2880745267144733026, guid: 30e5dac9f6208a5498148c1f00a4222b, type: 3}
+  unlockCost: 5
+  cost: 050000000600000007000000
+  requires:
+  - {fileID: 11400000, guid: 01e8ff567c741534aa56dda0d4ad1ede, type: 2}
+  siblings:
+  - {fileID: 11400000, guid: 2d4a203e03cf8104aa4bca8e5f403d61, type: 2}
+  - {fileID: 11400000, guid: b64c52464c8566c4cb24a74d2599bf30, type: 2}
+  description: 

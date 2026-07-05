@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94e9d2dac298b5142b2f5d16dd94f908, type: 3}
+  m_Name: AttackTree
+  m_EditorClassIdentifier: 
+  treeName: attack
+  nodes:
+  - {fileID: 11400000, guid: 0a0f2ee5f2216b442828b8c4087fbf6c, type: 2}
+  - {fileID: 11400000, guid: 449906af8559ec04e9c14b0f1d6d7908, type: 2}
+  - {fileID: 11400000, guid: 306393b596c770a428859ae55807a574, type: 2}
+  - {fileID: 11400000, guid: 5b08dcdf0915e1c4c9dc2baf73fe68ac, type: 2}
+  - {fileID: 11400000, guid: 86a07c26b7af3ea45a512bd26bd1095b, type: 2}
+  - {fileID: 11400000, guid: 239fae79036e85d46b1d9530e1d84e83, type: 2}
