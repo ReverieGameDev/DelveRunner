@@ -16,11 +16,13 @@ public class SoulCoinManager : MonoBehaviour
     public TextMeshProUGUI flashMessage;
     public GameObject flashMessageBox;
     public CanvasGroup flashGroup;
-    public enum BuyResult { Success, CantAfford, Maxed, PrereqNotMet, SiblingLocked }
+    public enum BuyResult { Success, CantAfford, Maxed, PrereqNotMet, SiblingLocked, UnlockBadReqs, UnlockCantAfford }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         Refresh(selectedTree);   // assign a default tree in the inspector
+        Load();
+        Refresh(selectedTree);
     }
 
     // Update is called once per frame
@@ -34,7 +36,43 @@ public class SoulCoinManager : MonoBehaviour
         ownedLevels.TryGetValue(id, out int level);
         return level;
     }
+    public void Save()
+    {
+        SoulSaveData data = new SoulSaveData();
+        data.soulCoins = soulCoins;
+        foreach (string unlocked in unlockedNodes)
+        {
+            data.unlocked.Add(unlocked);
+        }
+        foreach (var owned in ownedLevels)
+        {
+            data.ownedIds.Add(owned.Key);
+            data.ownedValues.Add(owned.Value);
+        }
+        string json = JsonUtility.ToJson(data);
+        Debug.Log("SAVED: " + json);
+        PlayerPrefs.SetString("SoulSave", json);
+    }
+    public void Load()
+    {
+        ownedLevels.Clear();
+        unlockedNodes.Clear();
+        string json = PlayerPrefs.GetString("SoulSave", "");
+        if (json == "") return;   // nothing saved, bail
 
+        SoulSaveData data = JsonUtility.FromJson<SoulSaveData>(json);
+        soulCoins = data.soulCoins;
+        
+        foreach (string owned in data.unlocked)
+        {
+            unlockedNodes.Add(owned);
+        }
+        for (int i = 0; i < data.ownedIds.Count;i++)
+        {
+            ownedLevels.Add(data.ownedIds[i], data.ownedValues[i]);
+        }
+        Debug.Log("LOADED: " + json);
+    }
     public void Buy(SoulCoinNode node)
     {
         int level = GetLevel(node.id);
@@ -71,9 +109,17 @@ public class SoulCoinManager : MonoBehaviour
     public bool unlock(SoulCoinNode node)
     {
         Debug.Log("UNLOCK called: " + node.id + " | already? " + unlockedNodes.Contains(node.id));
-        if (unlockedNodes.Contains(node.id)) return false;
-        if (!RequirementMet(node)) return false;
-        if (soulCoins < node.unlockCost) return false;
+        if (unlockedNodes.Contains(node.id)) return false;//this one implies we already own the node and we're trying to buy it again, i'll add an error but it shouldnt show.
+        if (!RequirementMet(node)) 
+        {
+            MessageManager(BuyResult.UnlockBadReqs, node);
+            return false; 
+        }
+        if (soulCoins < node.unlockCost)
+        {
+            MessageManager(BuyResult.UnlockCantAfford, node);
+            return false;
+        }
         soulCoins -= node.unlockCost;
         unlockedNodes.Add(node.id);
         return true;
@@ -117,6 +163,8 @@ public class SoulCoinManager : MonoBehaviour
             case BuyResult.Maxed: StartCoroutine(FlashMessage(node.nodeName + " is already max level!")); break;
             case BuyResult.PrereqNotMet: StartCoroutine(FlashMessage("Max the previous node before putting points into " + node.nodeName + ".")); break;
             case BuyResult.SiblingLocked: StartCoroutine(FlashMessage("You can only spec down one path — respec to choose " + node.nodeName + ".")); break;
+            case BuyResult.UnlockBadReqs: StartCoroutine(FlashMessage ("You must unlock and max the previous node to unlock this node.")); break;
+            case BuyResult.UnlockCantAfford: StartCoroutine(FlashMessage("Not enough gold to unlock!")); break;
         }
     }
 }

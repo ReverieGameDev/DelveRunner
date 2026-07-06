@@ -33908,6 +33908,7 @@ MonoBehaviour:
   hpRegen: 0
   playerManaBase: 100
   currentPlayerMana: 100
+  soulCoins: 0
   playerStats: []
   hpRegenActive: 0
   rampingRegenActive: 0
@@ -43666,6 +43667,7 @@ GameObject:
   - component: {fileID: 1937255405}
   - component: {fileID: 1937255406}
   - component: {fileID: 1937255407}
+  - component: {fileID: 1937255408}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -43918,6 +43920,32 @@ MonoBehaviour:
   - {fileID: 32220229}
   noItemInventorySprite: {fileID: 1318520254, guid: 63992cb2772a4b34da648b49cddc0f74, type: 3}
   inventoryCapacity: 6
+--- !u!114 &1937255408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1937255396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed478144b99df5f40a4b5e07e202d446, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  allNodes:
+  - {fileID: 11400000, guid: 86a07c26b7af3ea45a512bd26bd1095b, type: 2}
+  - {fileID: 11400000, guid: 306393b596c770a428859ae55807a574, type: 2}
+  - {fileID: 11400000, guid: 5b08dcdf0915e1c4c9dc2baf73fe68ac, type: 2}
+  - {fileID: 11400000, guid: 239fae79036e85d46b1d9530e1d84e83, type: 2}
+  - {fileID: 11400000, guid: 0a0f2ee5f2216b442828b8c4087fbf6c, type: 2}
+  - {fileID: 11400000, guid: 0d357989693ee9848a9995f7ce3b90f6, type: 2}
+  - {fileID: 11400000, guid: 2d4a203e03cf8104aa4bca8e5f403d61, type: 2}
+  - {fileID: 11400000, guid: b64c52464c8566c4cb24a74d2599bf30, type: 2}
+  - {fileID: 11400000, guid: 76e49c2931a545548b1b0ab371a2c181, type: 2}
+  - {fileID: 11400000, guid: fdff60e046537034bbce4dbba1b28af4, type: 2}
+  - {fileID: 11400000, guid: 7f005be4e1d088c4da89c954fee705aa, type: 2}
+  - {fileID: 11400000, guid: 01e8ff567c741534aa56dda0d4ad1ede, type: 2}
+  - {fileID: 11400000, guid: 449906af8559ec04e9c14b0f1d6d7908, type: 2}
 --- !u!1 &1938558796
 GameObject:
   m_ObjectHideFlags: 0
@@ -44392,7 +44420,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1993950467}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5409f4067f507674484c286fb7c7cefb, type: 3}
   m_Name: 

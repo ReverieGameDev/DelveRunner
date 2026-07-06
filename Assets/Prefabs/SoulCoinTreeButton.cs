@@ -75,7 +75,6 @@ public class SoulCoinTreeButton : MonoBehaviour, IPointerEnterHandler
             GetComponent<Image>().color = Color.clear;
         }
         levelDisplay.text = soulCoinManager.GetLevel(newNode.id) + "/" + newNode.maxLevel;
-        Debug.Log("SetNode: " + newNode.nodeName + " → iconImage is " + (iconImage == null ? "NULL" : "set"));
         iconImage.sprite = node.icon;
     }
     // Update is called once per frame

@@ -87,6 +87,7 @@ public class PlayerCombat : MonoBehaviour
     public float hpRegen;
     public float playerManaBase = 100;
     public float currentPlayerMana = 100f;
+    public int soulCoins = 0;
 
     public List<string> playerStats = new List<string>();
     #endregion
@@ -231,7 +232,22 @@ public class PlayerCombat : MonoBehaviour
         playerStats.Add("status resist");
         playerStats.Add("consumable effectiveness");
     }
+    public void ResetStatBonuses()
+    {
+        attackBonus = 0f; attack = attackBase;
+        attackSpeedBonus = 0f; attackSpeed = attackSpeedBase;
+        critChanceBonus = 0; critChance = critChanceBase;
+        critDamageBonus = 0f; critDamage = critDamageBase;
+        armorBonus = 0f; armor = armorBase;
+        dodgeBonus = 0f; dodge = dodgeBase;
+        movementSpeedBonus = 0f; movementSpeed = movementSpeedBase;
+        xpGainBonus = 0f; xpGain = xpGainBase;
+        goldGainBonus = 0f; goldGain = goldGainBase;
+        statusResistBonus = 0f; statusResist = statusResistBase;
+        consumableEffectivenessBonus = 0f; consumableEffectiveness = consumableEffectivenessBase;
 
+        maxHealth = baseMaxHealth;        // no bonus field — reset to base directly
+    }
     void Start()
     {
         abilityManager = FindFirstObjectByType<AbilityManager>();
@@ -245,8 +261,8 @@ public class PlayerCombat : MonoBehaviour
 
         currentPlayerHealth = (int)maxHealth;
         currentPlayerMana = playerManaBase;
-        playerHpBarNumber.text = currentPlayerHealth + " / " + (int)maxHealth;
-        playerManaBarNumber.text = currentPlayerMana + " / " + playerManaBase;
+        if (playerHpBarNumber != null) playerHpBarNumber.text = currentPlayerHealth + " / " + (int)maxHealth;
+        if (playerHpBarNumber != null) playerManaBarNumber.text = currentPlayerMana + " / " + playerManaBase;
         if (playerManaBar != null) playerManaBar.value = 1.0f;
         if (playerHpBar != null) playerHpBar.value = 1.0f;
 
@@ -254,11 +270,11 @@ public class PlayerCombat : MonoBehaviour
 
     private void Update()
     {
-        if (emberSystem.aliveEnemies > 0 && hpRegenActive && !hpIsRegenning && currentPlayerHealth < maxHealth)
+        if (emberSystem != null && emberSystem.aliveEnemies > 0 && hpRegenActive && !hpIsRegenning && currentPlayerHealth < maxHealth)
         {
             StartCoroutine("HpRegen");
         }
-        if (emberSystem.aliveEnemies <= 0 && isRunAndHitActive)
+        if (emberSystem != null && emberSystem.aliveEnemies <= 0 && isRunAndHitActive)
         {
             RunAndHit(true);
         }

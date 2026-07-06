@@ -7,10 +7,12 @@ public class Teleporter : MonoBehaviour
     public GameObject delveDeeperScreen;
     public string currentAbility;
     private bool playerInRange = false;
+    private SoulCoinManager soulCoinManager;
 
     void Start()
     {
         playerCombat = FindFirstObjectByType<PlayerCombat>();
+        soulCoinManager = FindFirstObjectByType<SoulCoinManager>();
     }
 
     void Update()
@@ -53,6 +55,7 @@ public class Teleporter : MonoBehaviour
         {
             PlayerPrefs.SetString("CurrentAbility", "Dash");
         }
+        soulCoinManager.Save();
         PlayerPrefs.Save();
         SceneManager.LoadScene("SampleScene");
     }
