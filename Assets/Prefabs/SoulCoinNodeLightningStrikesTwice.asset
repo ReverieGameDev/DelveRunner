@@ -22,3 +22,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 0d357989693ee9848a9995f7ce3b90f6, type: 2}
   siblings:
   - {fileID: 11400000, guid: 01e8ff567c741534aa56dda0d4ad1ede, type: 2}
+  description: Consecutive critical strikes empower crit damage (combo wears off
+    after missing a crit, max 75% crit damage)
+  abilityDetails: "Level 1: <color=white>10% hp, 30% base attack speed</color> \nLevel
+    2: <color=white>20% hp, 45% base attack speed</color> \nLevel 3: <color=white>30%
+    hp, 65% base attack speed</color>"
+  levelCost: 

@@ -19,3 +19,9 @@ MonoBehaviour:
   unlockCost: 1
   cost: 0100000002000000030000000400000005000000
   requires: []
+  siblings: []
+  description: Increases base crit (flat increase)
+  abilityDetails: "Level 1: <color=white>+3% crit</color> \nLevel 1: <color=white>+7%
+    crit</color> \nLevel 1: <color=white>+11% crit</color> \nLevel 1: <color=white>+15%
+    crit</color> \nLevel 1: <color=white>+20% crit</color> "
+  levelCost: 

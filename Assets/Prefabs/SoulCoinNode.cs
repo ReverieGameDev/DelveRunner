@@ -13,5 +13,7 @@ public abstract class SoulCoinNode : ScriptableObject
     public List<SoulCoinNode> requires = new List<SoulCoinNode>();
     public List<SoulCoinNode> siblings = new List<SoulCoinNode>();
     [TextArea] public string description;
+    [TextArea] public string abilityDetails;
+    [TextArea] public string levelCost;
     public abstract void Apply(PlayerCombat player, int currentLevel);
 }

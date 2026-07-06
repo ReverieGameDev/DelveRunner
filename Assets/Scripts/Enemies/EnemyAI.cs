@@ -9,14 +9,13 @@ public class EnemyAI : MonoBehaviour
     private float speed = 8f;
     private SpawnManager spawnManager;
     public GameObject assignedSpawnAnchor;
+    private FormationAnchorBehaviour anchorBehaviour;   // cached once, read every tick
     public EnemyRoles role;
     private Animator anim;
     public bool animOverride = false;
 
     // Movement helpers
-    private Vector2 anchorPlayerAngle;
     private Vector2 anchorPos;
-    private float initialAngle;
 
     // Retreat
     private Vector2 directionToRetreat;
@@ -49,8 +48,9 @@ public class EnemyAI : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         player = GameObject.FindWithTag("Player").transform;
         currentState = EnemyState.Attack;
+        anchorBehaviour = assignedSpawnAnchor.GetComponent<FormationAnchorBehaviour>();
         anchorPos = assignedSpawnAnchor.transform.position;
-        if (isBackline) { assignedSpawnAnchor.GetComponent<FormationAnchorBehaviour>().backlineEnemiesLeftAlive++; }
+        if (isBackline) { anchorBehaviour.backlineEnemiesLeftAlive++; }
 
         Vector2 spawnOffset = new Vector2(
             Mathf.Round(transform.position.x - anchorPos.x),
@@ -74,24 +74,21 @@ public class EnemyAI : MonoBehaviour
         }
         originalRingIndex = positionInRingOrder;
         currentRingIndex = positionInRingOrder;
-        Vector2 toPlayer = (Vector2)player.position - anchorPos;
-        initialAngle = Mathf.Atan2(toPlayer.y, toPlayer.x);
     }
 
     public void ReduceFromBackline()
     {
-        assignedSpawnAnchor.GetComponent<FormationAnchorBehaviour>().backlineEnemiesLeftAlive--;
-        if(assignedSpawnAnchor.GetComponent<FormationAnchorBehaviour>().backlineEnemiesLeftAlive == 0)
+        anchorBehaviour.backlineEnemiesLeftAlive--;
+        if (anchorBehaviour.backlineEnemiesLeftAlive == 0)
         {
-            assignedSpawnAnchor.GetComponent<FormationAnchorBehaviour>().canWarriorLeap = true;
+            anchorBehaviour.canWarriorLeap = true;
         }
     }
 
     void FixedUpdate()
     {
-        if (assignedSpawnAnchor == null || assignedSpawnAnchor.GetComponent<FormationAnchorBehaviour>().canWarriorLeap == true) return;
+        if (anchorBehaviour == null || anchorBehaviour.canWarriorLeap == true) return;
         anchorPos = assignedSpawnAnchor.transform.position;
-        anchorPlayerAngle = ((Vector2)player.position - anchorPos).normalized;
 
         switch (currentState)
         {
@@ -115,10 +112,8 @@ public class EnemyAI : MonoBehaviour
             }
             else
             {
-                float currentAngle = Mathf.Atan2(anchorPlayerAngle.y, anchorPlayerAngle.x);
-                float angleDiff = Mathf.DeltaAngle(initialAngle * Mathf.Rad2Deg, currentAngle * Mathf.Rad2Deg);
-                int rotationSteps = Mathf.RoundToInt(angleDiff / 45f);
-                int targetRingIndex = ((originalRingIndex - rotationSteps) % 8 + 8) % 8;
+                // the anchor decides rotation for the whole formation - we just follow it
+                int targetRingIndex = ((originalRingIndex - anchorBehaviour.totalRotationSteps) % 8 + 8) % 8;
 
                 targetPos = anchorPos + ringOrder[currentRingIndex];
 
@@ -204,6 +199,4 @@ public class EnemyAI : MonoBehaviour
             hasStartedRetreating = false;
         }
     }
-
-   
 }

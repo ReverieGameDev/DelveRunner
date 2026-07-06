@@ -23,3 +23,8 @@ MonoBehaviour:
   siblings:
   - {fileID: 11400000, guid: 86a07c26b7af3ea45a512bd26bd1095b, type: 2}
   - {fileID: 11400000, guid: 239fae79036e85d46b1d9530e1d84e83, type: 2}
+  description: Killing an enemy grants a temporary damage boost
+  abilityDetails: "Level 1: <color=white>+10% Base Damage for 6s</color> \nLevel
+    2: <color=white>+15% Base Damage for 6s</color> \nLevel 3: <color=white>+20%
+    Base Damage for 6s</color>"
+  levelCost: 

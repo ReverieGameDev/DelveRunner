@@ -22,3 +22,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 0a0f2ee5f2216b442828b8c4087fbf6c, type: 2}
   siblings:
   - {fileID: 11400000, guid: 449906af8559ec04e9c14b0f1d6d7908, type: 2}
+  description: Consuming an item increases your damage for a period of time
+  abilityDetails: "Level 1: <color=white>+15% Base Damage for 3s</color> \nLevel
+    2: <color=white>+22% Base Damage for 5s</color> \nLevel 3: <color=white>+30%
+    Base Damage for 10s</color>"
+  levelCost: 

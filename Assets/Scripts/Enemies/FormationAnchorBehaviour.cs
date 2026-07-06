@@ -1,52 +1,51 @@
-using NUnit.Framework;
-using System.Collections;
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class FormationAnchorBehaviour : MonoBehaviour
 {
-    private float speed = 4f;
-    private Vector2 chaseDirection;
-    private Vector2 retreatDirection;
-    private Transform player;
-    private List<WarriorSkeleton> warriorsList = new List<WarriorSkeleton>();
-    private float minAngle;
-    private float maxAngle;
-    private PlayerMovement playerMovement;
-    public float angleOffset = 10f;
+    // ===== FACING / ROTATION (the one brain for the whole formation) =====
+    public float facingDeg;                 // direction the head faces right now, always a multiple of 45
+    public int totalRotationSteps;          // net 45-degree steps since spawn. positive = counterclockwise. EnemyAI reads this.
+    public float rotationThreshold = 33f;   // player must drift this far off facing before we rotate
+
+    // ===== EXISTING STATE =====
     public bool chargeAttack;
     public int backlineEnemiesLeftAlive;
     public bool canWarriorLeap = false;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+
+    private Transform player;
+
     void Start()
     {
-        player = GameObject.FindWithTag("Player").transform;
-        playerMovement = FindFirstObjectByType<PlayerMovement>();
+        GameObject p = GameObject.FindWithTag("Player");
+        if (p != null) player = p.transform;
     }
 
-    // Update is called once per frame
     void Update()
     {
+        if (player == null) return;
 
+        Vector2 toPlayer = (Vector2)player.position - (Vector2)transform.position;
+        float playerAngle = Mathf.Atan2(toPlayer.y, toPlayer.x) * Mathf.Rad2Deg;
+
+        float diff = Mathf.DeltaAngle(facingDeg, playerAngle);
+        if (Mathf.Abs(diff) >= rotationThreshold)
+        {
+            int steps = Mathf.RoundToInt(diff / 45f);
+            facingDeg = Mathf.DeltaAngle(0f, facingDeg + steps * 45f);   // stay wrapped in -180..180
+            totalRotationSteps += steps;
+        }
     }
 
+    // SpawnManager calls this right after instantiating the anchor
+    public void SetFacing(float degrees)
+    {
+        facingDeg = Mathf.DeltaAngle(0f, degrees);
+        totalRotationSteps = 0;
+    }
 
     public void DestroyAnchor()
     {
         Destroy(gameObject);
     }
 }
-
-/*
-if (Vector2.Distance((Vector2)transform.position, player.position) >= 25)
-{
-    chaseDirection = new Vector2(player.position.x - transform.position.x, player.position.y - transform.position.y).normalized;
-    transform.position = (Vector2)transform.position + chaseDirection;
-}
-
-else if (Vector2.Distance((Vector2)transform.position, player.position) <= 6)
-{
-    retreatDirection = new Vector2(transform.position.x - player.position.x, transform.position.y - player.position.y).normalized*2;
-    transform.position = (Vector2)transform.position + retreatDirection;
-}*/

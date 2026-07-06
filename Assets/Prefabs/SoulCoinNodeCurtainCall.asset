@@ -23,3 +23,8 @@ MonoBehaviour:
   siblings:
   - {fileID: 11400000, guid: b64c52464c8566c4cb24a74d2599bf30, type: 2}
   - {fileID: 11400000, guid: 76e49c2931a545548b1b0ab371a2c181, type: 2}
+  description: Critting an enemy below a threshold of their health executes them
+    (non-boss enemies)
+  abilityDetails: "Level 1: <color=white>10% health</color> \nLevel 2: <color=white>12.5%
+    health</color> \nLevel 3: <color=white>15% health</color>"
+  levelCost: 

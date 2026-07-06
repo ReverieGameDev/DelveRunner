@@ -23,3 +23,8 @@ MonoBehaviour:
   siblings:
   - {fileID: 11400000, guid: 86a07c26b7af3ea45a512bd26bd1095b, type: 2}
   - {fileID: 11400000, guid: 5b08dcdf0915e1c4c9dc2baf73fe68ac, type: 2}
+  description: When your hp is below a threshold, your attack speed is increased
+  abilityDetails: "Level 1: <color=white>10% hp, 30% base attack speed</color> \nLevel
+    2: <color=white>20% hp, 45% base attack speed</color> \nLevel 3: <color=white>30%
+    hp, 65% base attack speed</color>"
+  levelCost: 

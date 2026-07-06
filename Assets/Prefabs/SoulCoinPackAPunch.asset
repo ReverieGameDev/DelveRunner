@@ -22,3 +22,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 0a0f2ee5f2216b442828b8c4087fbf6c, type: 2}
   siblings:
   - {fileID: 11400000, guid: 306393b596c770a428859ae55807a574, type: 2}
+  description: Deal more damage the more items you carry (including stackable items!)
+  abilityDetails: "Level 1: <color=white>+0.5% Base Damage per item</color> \nLevel
+    2: <color=white>+0.75% Base Damage per item</color> \nLevel 3: <color=white>+1%
+    Base Damage per item</color>"
+  levelCost: 

@@ -1,6 +1,5 @@
 ﻿using System.Collections;
 using TMPro;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.EventSystems;   // needed for the hover interface
 using UnityEngine.UI;
@@ -13,6 +12,11 @@ public class SoulCoinTreeButton : MonoBehaviour, IPointerEnterHandler
     public TextMeshProUGUI levelDisplay;
     public TextMeshProUGUI titleText;
     public TextMeshProUGUI bodyText;
+    public TextMeshProUGUI abilityDetailsText;
+    public TextMeshProUGUI levelCostText;
+    public TextMeshProUGUI levelCostTitleText;
+    private string costPerLevelText;
+    private int counter;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Awake()
@@ -30,16 +34,49 @@ public class SoulCoinTreeButton : MonoBehaviour, IPointerEnterHandler
         {
             bodyText.text = node.description;
             titleText.text = node.nodeName;
+            abilityDetailsText.text = node.abilityDetails;
+            levelCostTitleText.text = "Cost to buy per level:";
+            costPerLevelText = "";
+            counter = 0;
+            for (int i = 0; i < node.cost.Count; i++)
+            {
+                counter++;
+                costPerLevelText += node.cost[i];
+                if (counter != node.cost.Count)
+                {
+                    costPerLevelText += " / ";
+                }
+            }
+            levelCostText.text = costPerLevelText;
         }
         else
         {
             titleText.text = "???";
-            bodyText.text = "Click the node on the skill tree to unlock. " + node.unlockCost + " gold.";
+            bodyText.text = "Click the node on the skill tree to unlock.\nCost: " + node.unlockCost + " Soul Coins.";
+            abilityDetailsText.text = "";
+            levelCostTitleText.text = "";
+            levelCostText.text = "";
+            
         }
     }
     void RefreshDescription()
     {
         bodyText.text = node.description;
+        titleText.text = node.nodeName;
+        abilityDetailsText.text = node.abilityDetails;
+        levelCostTitleText.text = "Cost to buy per level:";
+        costPerLevelText = "";
+        counter = 0;
+        for (int i = 0; i < node.cost.Count; i++)
+        {
+            counter++;
+            costPerLevelText += node.cost[i];
+            if (counter != node.cost.Count)
+            {
+                costPerLevelText += " / ";
+            }
+        }
+        levelCostText.text = costPerLevelText;
         titleText.text = node.nodeName;
     }
     public void OnClick()

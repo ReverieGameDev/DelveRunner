@@ -23,4 +23,9 @@ MonoBehaviour:
   siblings:
   - {fileID: 11400000, guid: 2d4a203e03cf8104aa4bca8e5f403d61, type: 2}
   - {fileID: 11400000, guid: b64c52464c8566c4cb24a74d2599bf30, type: 2}
-  description: 
+  description: Every crit now grants a small chance to massively increase crit damage
+    at the cost of gold.
+  abilityDetails: "Level 1: <color=white>.1% chance, 3000%, 1 gold cost</color> \nLevel
+    2: <color=white>.2% chance, 4000%, 2 gold cost</color> \nLevel 3: <color=white>.4%
+    chance, 8000%, 3 gold cost</color>  \n"
+  levelCost: 

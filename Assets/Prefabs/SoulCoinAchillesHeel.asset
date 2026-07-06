@@ -24,3 +24,8 @@ MonoBehaviour:
   siblings:
   - {fileID: 11400000, guid: 5b08dcdf0915e1c4c9dc2baf73fe68ac, type: 2}
   - {fileID: 11400000, guid: 239fae79036e85d46b1d9530e1d84e83, type: 2}
+  description: You can sometimes hit an enemy's weakspot each time you deal damage.
+  abilityDetails: "Level 1: <color=white>5% Chance, 1.75x Damage</color> \nLevel
+    2: <color=white>8% Chance, 2x Damage</color> \nLevel 3: <color=white>10% Chance,
+    2.25x Damage</color>"
+  levelCost: 5/10/15

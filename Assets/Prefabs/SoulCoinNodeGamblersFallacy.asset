@@ -24,3 +24,6 @@ MonoBehaviour:
   siblings:
   - {fileID: 11400000, guid: 2d4a203e03cf8104aa4bca8e5f403d61, type: 2}
   - {fileID: 11400000, guid: 76e49c2931a545548b1b0ab371a2c181, type: 2}
+  description: Critting an enemy rewards you with gold, scales with crit damage.
+  abilityDetails: "Level 1: <color=white>+0.25 gold per crit</color> \n"
+  levelCost: 

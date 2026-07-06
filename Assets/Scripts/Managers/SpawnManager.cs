@@ -25,7 +25,20 @@ public class SpawnManager : MonoBehaviour
     private List<Vector2> formationDirectionalOffset = new List<Vector2>();
     private Vector2 spawnPosOffset;
     private int randomDirection;
-
+    private List<int> availableDirections = new List<int>();
+    private readonly Vector2[] directionOffsets = new Vector2[]
+{
+        new Vector2(0, 24),             // 0 north
+        new Vector2(16.97f, 16.97f),    // 1 northeast
+        new Vector2(24, 0),             // 2 east
+        new Vector2(16.97f, -16.97f),   // 3 southeast
+        new Vector2(0, -24),            // 4 south
+        new Vector2(-16.97f, -16.97f),  // 5 southwest
+        new Vector2(-24, 0),            // 6 west
+        new Vector2(-16.97f, 16.97f),   // 7 northwest
+};
+    private int chosenDirection;                 // compass id 0-7, stable meaning
+    private float currentFormationFacing;        // degrees the head should face at spawn
     // ===== SPAWN LOCATIONS =====
     public int[,] viableSpawnCenters;  // Filled by MapRenderer, marks valid spawn points
 
@@ -190,22 +203,16 @@ public class SpawnManager : MonoBehaviour
     public void SpawnNextWave()
     {
         Debug.Log("SpawnNextWave called, waveNumber: " + emberSystem.waveNumber);
-        formationDirectionalOffset.Clear();
-        formationDirectionalOffset.Add(new Vector2(0, 24));             // north
-        formationDirectionalOffset.Add(new Vector2(16.97f, 16.97f));    // northeast
-        formationDirectionalOffset.Add(new Vector2(24, 0));             // east
-        formationDirectionalOffset.Add(new Vector2(16.97f, -16.97f));   // southeast
-        formationDirectionalOffset.Add(new Vector2(0, -24));            // south
-        formationDirectionalOffset.Add(new Vector2(-16.97f, -16.97f));  // southwest
-        formationDirectionalOffset.Add(new Vector2(-24, 0));            // west
-        formationDirectionalOffset.Add(new Vector2(-16.97f, 16.97f));   // northwest
+        availableDirections.Clear();
+        for (int i = 0; i < 8; i++) availableDirections.Add(i);
+
         if (emberSystem.waveNumber == 10)
         {
             SpawnBoss();
             return;
         }
-        int amountOfFormations = formationsPerWave[emberSystem.waveNumber-1];
-        for (int i = 0; i< amountOfFormations; i++)
+        int amountOfFormations = formationsPerWave[emberSystem.waveNumber - 1];
+        for (int i = 0; i < amountOfFormations; i++)
         {
             PickfromPossibleWaveFormationPools();
             FormationDirectionOffset();
@@ -220,10 +227,16 @@ public class SpawnManager : MonoBehaviour
 
     private void FormationDirectionOffset()
     {
-        randomDirection = Random.Range(0, formationDirectionalOffset.Count);
-        fightNodeCenterOffsetted = new Vector2(fightNodeCenter.x + formationDirectionalOffset[randomDirection].x, fightNodeCenter.y + formationDirectionalOffset[randomDirection].y);
-        formationDirectionalOffset.RemoveAt(randomDirection);
-        
+        // pick a compass id and remove it - the ID keeps its meaning, unlike a shrinking-list index
+        int pick = Random.Range(0, availableDirections.Count);
+        chosenDirection = availableDirections[pick];
+        availableDirections.RemoveAt(pick);
+
+        Vector2 offset = directionOffsets[chosenDirection];
+        fightNodeCenterOffsetted = new Vector2(fightNodeCenter.x + offset.x, fightNodeCenter.y + offset.y);
+
+        // the head faces back toward the fight node center = opposite of the offset direction
+        currentFormationFacing = Mathf.Atan2(-offset.y, -offset.x) * Mathf.Rad2Deg;
     }
 
     // ===== MAIN SPAWN METHOD =====
@@ -231,39 +244,43 @@ public class SpawnManager : MonoBehaviour
     {
         playerPos = playerCombat.transform.position;
         spawnPosArray = (int[,])formations[waveFormation].Clone();
-        CalculateRotation(fightNodeCenterOffsetted);
+        CalculateRotation();
         RotateSpawnPos();
-        Debug.Log("Final formation: " +
-    spawnPosArray[0, 0] + spawnPosArray[0, 1] + spawnPosArray[0, 2] + " | " +
-    spawnPosArray[1, 0] + spawnPosArray[1, 1] + spawnPosArray[1, 2] + " | " +
-    spawnPosArray[2, 0] + spawnPosArray[2, 1] + spawnPosArray[2, 2]);
         SpawnFormation(new Vector2(fightNodeCenterOffsetted.x, fightNodeCenterOffsetted.y));
     }
-
+    private void CalculateRotation()
+    {
+        switch (chosenDirection)
+        {
+            case 0: rotations = 4; break; // north
+            case 1: rotations = 3; break; // northeast
+            case 2: rotations = 2; break; // east
+            case 3: rotations = 1; break; // southeast
+            case 4: rotations = 0; break; // south
+            case 5: rotations = 7; break; // southwest
+            case 6: rotations = 6; break; // west
+            case 7: rotations = 5; break; // northwest
+        }
+    }
     // ===== SPAWN FORMATION =====
     private void SpawnFormation(Vector2 spawnPos)
     {
         GameObject currentSpawnAnchor = Instantiate(spawnAnchor, new Vector2(spawnPos.x, spawnPos.y), Quaternion.identity);
+        currentSpawnAnchor.GetComponent<FormationAnchorBehaviour>().SetFacing(currentFormationFacing);
+
         for (int row = 0; row < 3; row++)
         {
             for (int col = 0; col < 3; col++)
             {
                 int enemyType = spawnPosArray[row, col];
-
-                // Skip empty slots
                 if (enemyType == 0) continue;
 
-                // Calculate world position offset
-                // col: 0,1,2 becomes -3,0,3
-                // row: 0,1,2 becomes 3,0,-3
                 int offsetX = (col - 1) * 3;
                 int offsetY = (1 - row) * 3;
 
-                // Spawn enemy (enemyType - 1 because array is 0-indexed)
                 Vector3 worldPos = new Vector3(spawnPos.x + offsetX, spawnPos.y + offsetY);
                 Instantiate(EnemyArray[enemyType - 1], worldPos, Quaternion.identity).GetComponent<EnemyAI>().assignedSpawnAnchor = currentSpawnAnchor;
-          
-        }
+            }
         }
     }
 
