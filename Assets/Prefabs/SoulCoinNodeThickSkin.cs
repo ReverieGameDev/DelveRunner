@@ -2,8 +2,8 @@
 using UnityEngine;
 
 // Makes the asset creatable from Project > Right-click > Create > Soul Coins > HP Node
-[CreateAssetMenu(fileName = "ThickSkin", menuName = "Soul Coins/ThickSkin")]
-public class SoulCoinThickSkin : SoulCoinNode   // ← colon = inherits from
+[CreateAssetMenu(fileName = "SoulCoinNodeHP", menuName = "Soul Coins/HP Node")]
+public class SoulCoinNodeHP : SoulCoinNode   // ← colon = inherits from
 {
     public float hpPerLevel = 20f;   // tweak in Inspector per asset
 

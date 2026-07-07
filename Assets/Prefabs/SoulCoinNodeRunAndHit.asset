@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b04c8ab18f45ed449b9b1b75a440655d, type: 3}
+  m_Name: SoulCoinNodeRunAndHit
+  m_EditorClassIdentifier: 
+  id: runAndHit
+  nodeName: Run and Hit
+  maxLevel: 5
+  icon: {fileID: 2073053025343971447, guid: 405850af656d74c409627ed74c0a139a, type: 3}
+  unlockCost: 5
+  cost: 030000000400000005000000
+  requires:
+  - {fileID: 11400000, guid: be03a29277e68c74e9405d2cecd05b85, type: 2}
+  siblings:
+  - {fileID: 11400000, guid: 41b4007aa63a74342bb5d6483e047141, type: 2}
+  - {fileID: 11400000, guid: 6795cefd48479bd42802226ce6693dc2, type: 2}
+  description: Landing hits stacks damage until you're hit or leave combat.
+  abilityDetails: 'Level 1: <color=white>+1% Damage per hit, caps at +12%</color>
+
+    Level
+    2: <color=white>+2% Damage per hit, caps at +18%</color>
+
+    Level 3: <color=white>+3%
+    Damage per hit, caps at +24%</color>'
+  levelCost: 

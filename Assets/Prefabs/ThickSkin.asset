@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12c849e75a84d9b49b0ca234edd303f9, type: 3}
+  m_Name: ThickSkin
+  m_EditorClassIdentifier: 
+  id: thickSkin
+  nodeName: Thick Skin
+  maxLevel: 5
+  icon: {fileID: -1624697952996752385, guid: d18b5dea8f78a3a419ab5fb3906a8e5c, type: 3}
+  unlockCost: 0
+  cost: 0100000002000000030000000400000005000000
+  requires: []
+  siblings: []
+  description: Increases maximum health.
+  abilityDetails: 'Level 1: <color=white>+20 Max Health</color>
+
+    Level 2: <color=white>+40
+    Max Health</color>
+
+    Level 3: <color=white>+60 Max Health</color>
+
+    Level
+    4: <color=white>+80 Max Health</color>
+
+    Level 5: <color=white>+100 Max Health</color>'
+  levelCost: 
+  hpPerLevel: 20

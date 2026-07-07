@@ -9,6 +9,7 @@ public class SendToAufburn : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        
         spawnManager = FindFirstObjectByType<SpawnManager>();
         playerCombat = FindFirstObjectByType<PlayerCombat>();
     }
@@ -24,8 +25,15 @@ public class SendToAufburn : MonoBehaviour
 
     public IEnumerator SendBackToAufburn()
     {
-        
-        PlayerPrefs.SetFloat("Gold", playerCombat.playerMoney);
+        if (playerCombat.soulMixActive)
+        {
+            PlayerPrefs.SetInt("SoulMixTotal",playerCombat.soulMixPreviousTotal + Mathf.Min(playerCombat.soulMixCap,(int)(playerCombat.soulMixPercent*(playerCombat.totalSiphonKills/3))));
+        }
+        else if (!playerCombat.soulMixActive) 
+        {
+            PlayerPrefs.SetInt("SoulMixTotal", playerCombat.soulMixPreviousTotal);
+        }
+            PlayerPrefs.SetFloat("Gold", playerCombat.playerMoney);
         PlayerPrefs.SetInt("Exp", playerCombat.playerXp);
         PlayerPrefs.SetInt("DelveLevel", playerCombat.delveLevel);
         PlayerPrefs.Save();

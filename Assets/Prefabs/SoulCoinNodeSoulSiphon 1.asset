@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa5df51e9ef83a545940a661741f24f0, type: 3}
+  m_Name: SoulCoinNodeSoulSiphon 1
+  m_EditorClassIdentifier: 
+  id: soulSiphon
+  nodeName: Soul Siphon
+  maxLevel: 0
+  icon: {fileID: -2060420742906771452, guid: 7c14ec9e238a4074d975525c2e213ada, type: 3}
+  unlockCost: 5
+  cost: 0f000000
+  requires:
+  - {fileID: 11400000, guid: 6221f138c24c71a40af0b75a7a8bf284, type: 2}
+  siblings:
+  - {fileID: 11400000, guid: 51b00135197cab4449ff6e5f4cba3462, type: 2}
+  description: Every 3 kills, add 1 max health for the duration of this delve.
+  abilityDetails: <color=white>+1 Max Health per 3 kills</color>
+  levelCost: 

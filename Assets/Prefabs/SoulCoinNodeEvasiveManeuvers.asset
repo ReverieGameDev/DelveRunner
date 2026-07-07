@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da6bad7d854030d46906b66c6ac15488, type: 3}
+  m_Name: SoulCoinNodeEvasiveManeuvers
+  m_EditorClassIdentifier: 
+  id: evasiveManeuvers
+  nodeName: Evasive Maneuvers
+  maxLevel: 3
+  icon: {fileID: -5447403752590868552, guid: 639b8a62cffe5ff4e95eabf92a943d90, type: 3}
+  unlockCost: 3
+  cost: 010000000200000003000000
+  requires:
+  - {fileID: 11400000, guid: 7ea241539a6001146a2aa00cfd4f5011, type: 2}
+  siblings:
+  - {fileID: 11400000, guid: be03a29277e68c74e9405d2cecd05b85, type: 2}
+  description: Avoiding damage builds dodge chance over time; resets after a successful
+    dodge. The smith despises this skill, but still made it.
+  abilityDetails: 'Level 1: <color=white>+1% Dodge every 3s</color>
+
+    Level 2:
+    <color=white>+2% Dodge every 3s</color>
+
+    Level 3: <color=white>+3% Dodge
+    every 3s</color>'
+  levelCost: 

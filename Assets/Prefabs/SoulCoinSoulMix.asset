@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d7bbdf277dd0e1408df13c6984d9fc4, type: 3}
+  m_Name: SoulCoinSoulMix
+  m_EditorClassIdentifier: 
+  id: soulMix
+  nodeName: Soul Mix
+  maxLevel: 5
+  icon: {fileID: 5886581002552119292, guid: 9a74e6e516e95904b84d192225af26ca, type: 3}
+  unlockCost: 15
+  cost: 1e000000
+  requires:
+  - {fileID: 11400000, guid: ad3ef85b8debc164ba14f4bc241fce4f, type: 2}
+  siblings:
+  - {fileID: 11400000, guid: 40ced3e179fe61c42975f21968b27514, type: 2}
+  - {fileID: 11400000, guid: a4e9eda36972bc44f9736c761076a31a, type: 2}
+  description: Keep a portion of your Soul Siphon health, stays with you until you
+    lose the run.
+  abilityDetails: 'Level 1: <color=white>Keep 3% of Soul Siphon health, up to 5</color>
+
+    Level
+    2: <color=white>Keep 5% of Soul Siphon health, up to 8</color>
+
+    Level 3:
+    <color=white>Keep 8% of Soul Siphon health, up to 12</color>
+
+    Level 4: <color=white>Keep
+    12% of Soul Siphon health, up to 18</color>
+
+    Level 5: <color=white>Keep
+    20% of Soul Siphon health, up to 30</color>'
+  levelCost: 

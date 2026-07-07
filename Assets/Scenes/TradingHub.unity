@@ -3598,6 +3598,10 @@ MonoBehaviour:
   sovereignImmunityCooldown: 0
   bloodSoulBarrierActive: 0
   bloodSoulBarrierValue: 0
+  soulMixActive: 0
+  soulMixPercent: 0
+  soulMixCap: 0
+  soulMixPreviousTotal: 0
   isMADDoctrineActive: 0
   mADDoctrineCooldown: 0
   mADDoctrineReflectDamage: 0
@@ -20319,6 +20323,7 @@ GameObject:
   - component: {fileID: 645374558}
   - component: {fileID: 645374557}
   - component: {fileID: 645374556}
+  - component: {fileID: 645374559}
   m_Layer: 0
   m_Name: Defense
   m_TagString: Untagged
@@ -20391,7 +20396,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 645374557}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 645374559}
+        m_TargetAssemblyTypeName: SoulCoinTreeSelection, Assembly-CSharp
+        m_MethodName: OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &645374557
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20430,6 +20447,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 645374554}
   m_CullTransparentMesh: 1
+--- !u!114 &645374559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 645374554}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c2f82d4cf8937a45a1c178be98e0181, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tree: {fileID: 11400000, guid: 20951b22b3dfa58449f14a9dfda7eff1, type: 2}
 --- !u!1 &647303410
 GameObject:
   m_ObjectHideFlags: 0
@@ -22355,6 +22385,7 @@ GameObject:
   - component: {fileID: 703898874}
   - component: {fileID: 703898873}
   - component: {fileID: 703898872}
+  - component: {fileID: 703898875}
   m_Layer: 0
   m_Name: Movement
   m_TagString: Untagged
@@ -22427,7 +22458,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 703898873}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 703898875}
+        m_TargetAssemblyTypeName: SoulCoinTreeSelection, Assembly-CSharp
+        m_MethodName: OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &703898873
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22466,6 +22509,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 703898870}
   m_CullTransparentMesh: 1
+--- !u!114 &703898875
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 703898870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c2f82d4cf8937a45a1c178be98e0181, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tree: {fileID: 11400000, guid: 40e451296f88707438fc35b23f42c316, type: 2}
 --- !u!1 &710338059
 GameObject:
   m_ObjectHideFlags: 0
@@ -46794,6 +46850,7 @@ GameObject:
   - component: {fileID: 1314130962}
   - component: {fileID: 1314130961}
   - component: {fileID: 1314130960}
+  - component: {fileID: 1314130963}
   m_Layer: 0
   m_Name: Health
   m_TagString: Untagged
@@ -46866,7 +46923,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1314130961}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1314130963}
+        m_TargetAssemblyTypeName: SoulCoinTreeSelection, Assembly-CSharp
+        m_MethodName: OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1314130961
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46905,6 +46974,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1314130958}
   m_CullTransparentMesh: 1
+--- !u!114 &1314130963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1314130958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c2f82d4cf8937a45a1c178be98e0181, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tree: {fileID: 11400000, guid: 0cbc79edbd056ea488eb72afea5ad7cf, type: 2}
 --- !u!1 &1316660584
 GameObject:
   m_ObjectHideFlags: 0
@@ -101978,6 +102060,7 @@ GameObject:
   - component: {fileID: 1909523968}
   - component: {fileID: 1909523967}
   - component: {fileID: 1909523966}
+  - component: {fileID: 1909523969}
   m_Layer: 0
   m_Name: Fortune
   m_TagString: Untagged
@@ -102050,7 +102133,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1909523967}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1909523969}
+        m_TargetAssemblyTypeName: SoulCoinTreeSelection, Assembly-CSharp
+        m_MethodName: OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1909523967
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -102089,6 +102184,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1909523964}
   m_CullTransparentMesh: 1
+--- !u!114 &1909523969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1909523964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c2f82d4cf8937a45a1c178be98e0181, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tree: {fileID: 11400000, guid: 0a96b5a62e6587b4d8656b054666457e, type: 2}
 --- !u!1 &1910790459
 GameObject:
   m_ObjectHideFlags: 0

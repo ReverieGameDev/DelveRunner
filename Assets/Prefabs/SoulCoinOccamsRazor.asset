@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98db70722f70bd246899072451e6c0e5, type: 3}
+  m_Name: SoulCoinOccamsRazor
+  m_EditorClassIdentifier: 
+  id: occamsRazor
+  nodeName: Occams Razor
+  maxLevel: 1
+  icon: {fileID: 5766357257970455132, guid: d18b5dea8f78a3a419ab5fb3906a8e5c, type: 3}
+  unlockCost: 5
+  cost: 14000000
+  requires:
+  - {fileID: 11400000, guid: 32be3095f5df01445be04e200160ff35, type: 2}
+  siblings:
+  - {fileID: 11400000, guid: 7cfcc9d6b22aebf43ae43b754ef2f75e, type: 2}
+  description: Trade away gold and item power for a big boost to experience.
+  abilityDetails: 'Level 1: <color=white>-20% Gold Gain, -20% Item Effectiveness,
+    +25% XP Gain</color>'
+  levelCost: 

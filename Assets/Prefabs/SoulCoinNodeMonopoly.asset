@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41c71fd62bc53654da0dbd98bdf43b45, type: 3}
+  m_Name: SoulCoinNodeMonopoly
+  m_EditorClassIdentifier: 
+  id: monopoly
+  nodeName: Monopoly
+  maxLevel: 5
+  icon: {fileID: -2207157816902223271, guid: 30e5dac9f6208a5498148c1f00a4222b, type: 3}
+  unlockCost: 1
+  cost: 0100000002000000030000000400000005000000
+  requires: []
+  siblings: []
+  description: Gain extra gold from ALL sources.
+  abilityDetails: 'Level 1: <color=white>+3% Gold</color>
+
+    Level 2: <color=white>+5%
+    Gold</color>
+
+    Level 3: <color=white>+8% Gold</color>
+
+    Level 4: <color=white>+12%
+    Gold</color>
+
+    Level 5: <color=white>+16% Gold</color>'
+  levelCost: 

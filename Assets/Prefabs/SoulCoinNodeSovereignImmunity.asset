@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a73d534b4771c7b42bfedcae6ff37650, type: 3}
+  m_Name: SoulCoinNodeSovereignImmunity
+  m_EditorClassIdentifier: 
+  id: sovereignImmunity
+  nodeName: SovereignImmunity
+  maxLevel: 5
+  icon: {fileID: 7028616704906629411, guid: 2a9cfc4ca43b8ab44861b9e4cf950881, type: 3}
+  unlockCost: 10
+  cost: 0200000003000000040000000500000006000000
+  requires:
+  - {fileID: 11400000, guid: a3c472ac9e141cb4396d03b8ec8daac9, type: 2}
+  siblings:
+  - {fileID: 11400000, guid: 769203931493f0b45b404ae5346615bd, type: 2}
+  - {fileID: 11400000, guid: 6dd52826ee6ba52468762f0a8e80c36e, type: 2}
+  description: Periodically ignore crowd control(CC) on a cooldown (resets when hit
+    with CC).
+  abilityDetails: 'Level 1: <color=white>Cooldown 85s</color>
+
+    Level 2: <color=white>Cooldown
+    75s</color>
+
+    Level 3: <color=white>Cooldown 65s</color>
+
+    Level 4: <color=white>Cooldown
+    55s</color>
+
+    Level 5: <color=white>Cooldown 40s</color>'
+  levelCost: 

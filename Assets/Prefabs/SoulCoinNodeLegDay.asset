@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 259ac4f66a5a69946ab6571df57abe95, type: 3}
+  m_Name: SoulCoinNodeLegDay
+  m_EditorClassIdentifier: 
+  id: legDay
+  nodeName: Leg Day
+  maxLevel: 5
+  icon: {fileID: 8908856499335184979, guid: 30e5dac9f6208a5498148c1f00a4222b, type: 3}
+  unlockCost: 1
+  cost: 0100000001000000020000000200000003000000
+  requires: []
+  siblings: []
+  description: Increases movement speed (flat).
+  abilityDetails: 'Level 1: <color=white>+3% Move Speed</color>
+
+    Level 2: <color=white>+5%
+    Move Speed</color>
+
+    Level 3: <color=white>+8% Move Speed</color>
+
+    Level
+    4: <color=white>+12% Move Speed</color>
+
+    Level 5: <color=white>+16% Move
+    Speed</color>'
+  levelCost: 

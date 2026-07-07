@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4427bda8138a2a043af6934e0c11133e, type: 3}
+  m_Name: SoulCoinNodeMADDoctrine
+  m_EditorClassIdentifier: 
+  id: madDoctrine
+  nodeName: MAD Doctrine
+  maxLevel: 5
+  icon: {fileID: -8607998687822290341, guid: 06344567a507ad14987496fb769cdac9, type: 3}
+  unlockCost: 5
+  cost: 0200000003000000040000000500000006000000
+  requires:
+  - {fileID: 11400000, guid: a3c472ac9e141cb4396d03b8ec8daac9, type: 2}
+  - {fileID: 11400000, guid: e107daae75bd2fd4ea4e1969125fd3f2, type: 2}
+  siblings:
+  - {fileID: 11400000, guid: 6dd52826ee6ba52468762f0a8e80c36e, type: 2}
+  - {fileID: 11400000, guid: edae4e0cf5517794c9ff610bd8b7f442, type: 2}
+  description: Reflect damage taken back at the nearest enemy, on a cooldown.
+  abilityDetails: 'Level 1: <color=white>150% reflected, 15s cooldown</color>
+
+    Level
+    2: <color=white>175% reflected, 13s cooldown</color>
+
+    Level 3: <color=white>200%
+    reflected, 11s cooldown</color>
+
+    Level 4: <color=white>250% reflected, 9s
+    cooldown</color>
+
+    Level 5: <color=white>300% reflected, 7s cooldown</color>'
+  levelCost: 

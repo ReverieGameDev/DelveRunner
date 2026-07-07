@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e7b12f47059d374cb99cea48681a37a, type: 3}
+  m_Name: SoulCoinNodeRampingRegen
+  m_EditorClassIdentifier: 
+  id: rampingRegen
+  nodeName: Ramping Regen
+  maxLevel: 5
+  icon: {fileID: 0}
+  unlockCost: 15
+  cost: 0300000004000000050000000600000007000000
+  requires:
+  - {fileID: 11400000, guid: 51b00135197cab4449ff6e5f4cba3462, type: 2}
+  siblings:
+  - {fileID: 11400000, guid: a4e9eda36972bc44f9736c761076a31a, type: 2}
+  description: Your regen grows the longer it keeps ticking in combat (requires Regenerative).
+  abilityDetails: 'Level 1: <color=white>Regen ramps up over time, rate x1 (max 14/tick)</color>
+
+    Level
+    2: <color=white>Regen ramps up over time, rate x2 (max 14/tick)</color>
+
+    Level
+    3: <color=white>Regen ramps up over time, rate x3 (max 14/tick)</color>
+
+    Level
+    4: <color=white>Regen ramps up over time, rate x4 (max 14/tick)</color>
+
+    Level
+    5: <color=white>Regen ramps up over time, rate x5 (max 14/tick)</color>'
+  levelCost: 

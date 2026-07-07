@@ -10,15 +10,15 @@ public class SoulCoinEvasiveManeuvers : SoulCoinNode
         switch (currentLevel)
         {
             case 1:
-                player.evasiveManeuversValue = .01f;
+                player.evasiveManeuversValue = 1f;
                 player.StartCoroutine("EvasiveManeuvers");
                 break;
             case 2:
-                player.evasiveManeuversValue = .02f;
+                player.evasiveManeuversValue = 2f;
                 player.StartCoroutine("EvasiveManeuvers");
                 break;
             case 3:
-                player.evasiveManeuversValue = .03f;
+                player.evasiveManeuversValue = 3f;
                 player.StartCoroutine("EvasiveManeuvers");
                 break;
         }

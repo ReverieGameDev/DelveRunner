@@ -105,6 +105,11 @@ public class PlayerCombat : MonoBehaviour
     public bool bloodSoulBarrierActive = false;
     public int bloodSoulBarrierValue;
 
+    public bool soulMixActive = false;
+    public float soulMixPercent;
+    public int soulMixCap;
+    public int soulMixPreviousTotal;
+
     public bool isMADDoctrineActive = false;
     public int mADDoctrineCooldown;
     public float mADDoctrineReflectDamage;
@@ -128,7 +133,7 @@ public class PlayerCombat : MonoBehaviour
     public bool isSurvivorshipBiasActive = false;
     public int survivorshipBiasXP;
 
-    public int totalSiphonKills;
+    public int totalSiphonKills = 0;
     public int siphonCounter;
     public int soulSiphonLevel;
 
@@ -250,6 +255,8 @@ public class PlayerCombat : MonoBehaviour
     }
     void Start()
     {
+        soulMixPreviousTotal = PlayerPrefs.GetInt("SoulMixTotal");
+        
         abilityManager = FindFirstObjectByType<AbilityManager>();
         if (playerGold != null) playerGold.text = ": " + (int)playerMoney;
 
@@ -259,6 +266,7 @@ public class PlayerCombat : MonoBehaviour
         attackManager = FindFirstObjectByType<AttackManager>();
         emberSystem = FindFirstObjectByType<EmberSystem>();
 
+        baseMaxHealth += soulMixPreviousTotal;
         currentPlayerHealth = (int)maxHealth;
         currentPlayerMana = playerManaBase;
         if (playerHpBarNumber != null) playerHpBarNumber.text = currentPlayerHealth + " / " + (int)maxHealth;
@@ -273,6 +281,10 @@ public class PlayerCombat : MonoBehaviour
         if (emberSystem != null && emberSystem.aliveEnemies > 0 && hpRegenActive && !hpIsRegenning && currentPlayerHealth < maxHealth)
         {
             StartCoroutine("HpRegen");
+        }
+        if (emberSystem != null && emberSystem.aliveEnemies > 0 && isEvasiveManeuversActive && !isEvasiveClimbing && dodge < 101)
+        {
+            StartCoroutine(EvasiveManeuvers());
         }
         if (emberSystem != null && emberSystem.aliveEnemies <= 0 && isRunAndHitActive)
         {
@@ -391,7 +403,6 @@ public class PlayerCombat : MonoBehaviour
     }
     IEnumerator EvasiveManeuvers()
     {
-        isEvasiveClimbing = true;
         while (dodge < 100)
         {
             yield return new WaitForSeconds(3f);
@@ -601,7 +612,6 @@ public class PlayerCombat : MonoBehaviour
         if (dodgeChance <= dodge)
         {
             dodge = dodgeBase + dodgeBonus;
-            if (isEvasiveManeuversActive && !isEvasiveClimbing) StartCoroutine(EvasiveManeuvers());
             if (isSurvivorshipBiasActive) SurvivorshipBias(survivorshipBiasXP);
             return;
         }
@@ -946,7 +956,13 @@ public class PlayerCombat : MonoBehaviour
     #region Scene / Game Flow
     public void GameOver()
     {
-        PlayerPrefs.DeleteAll();
+        PlayerPrefs.DeleteKey("Gold");
+        PlayerPrefs.DeleteKey("Exp");
+        PlayerPrefs.DeleteKey("DelveLevel");
+        PlayerPrefs.DeleteKey("StartWave");
+        PlayerPrefs.DeleteKey("CurrentAbility");
+        PlayerPrefs.DeleteKey("SoulMixTotal");
+        PlayerPrefs.Save();
         Time.timeScale = 0;
         gameOverScreen.SetActive(true);
     }

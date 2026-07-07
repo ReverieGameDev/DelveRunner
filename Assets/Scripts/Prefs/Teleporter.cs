@@ -8,9 +8,11 @@ public class Teleporter : MonoBehaviour
     public string currentAbility;
     private bool playerInRange = false;
     private SoulCoinManager soulCoinManager;
+    private int soulMixTotal;
 
     void Start()
     {
+        int soulMixTotal = PlayerPrefs.GetInt("SoulMixTotal");
         playerCombat = FindFirstObjectByType<PlayerCombat>();
         soulCoinManager = FindFirstObjectByType<SoulCoinManager>();
     }
@@ -48,9 +50,11 @@ public class Teleporter : MonoBehaviour
     public void DelveDeeper()
     {
         playerCombat.delveLevel++;
+        
         PlayerPrefs.SetInt("DelveLevel", playerCombat.delveLevel);
         PlayerPrefs.SetFloat("Gold", playerCombat.playerMoney);
         PlayerPrefs.SetString("CurrentAbility", currentAbility);
+        PlayerPrefs.SetInt("SoulMixTotal", soulMixTotal);
         if (PlayerPrefs.GetString("CurrentAbility") == "")
         {
             PlayerPrefs.SetString("CurrentAbility", "Dash");

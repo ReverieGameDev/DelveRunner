@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a296ed6a629fbec4a8fd5909a634bf12, type: 3}
+  m_Name: SoulCoinClinicalTrials
+  m_EditorClassIdentifier: 
+  id: clinicalTrials
+  nodeName: Clinical Trials
+  maxLevel: 3
+  icon: {fileID: 3493723927323161911, guid: 30e5dac9f6208a5498148c1f00a4222b, type: 3}
+  unlockCost: 15
+  cost: 050000000600000007000000
+  requires: []
+  siblings: []
+  description: Chance for a pickup or consumable to apply twice.
+  abilityDetails: 'Level 1: <color=white>+1% Chance</color>
+
+    Level 2: <color=white>+2%
+    Chance</color>
+
+    Level 3: <color=white>+3% Chance</color>'
+  levelCost: 

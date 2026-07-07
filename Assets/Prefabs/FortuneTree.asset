@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94e9d2dac298b5142b2f5d16dd94f908, type: 3}
+  m_Name: FortuneTree
+  m_EditorClassIdentifier: 
+  treeName: fortune
+  nodes:
+  - {fileID: 11400000, guid: 32be3095f5df01445be04e200160ff35, type: 2}
+  - {fileID: 11400000, guid: 7cfcc9d6b22aebf43ae43b754ef2f75e, type: 2}
+  - {fileID: 11400000, guid: 12d603be78c9e0b478e862aefec77b8a, type: 2}
+  - {fileID: 11400000, guid: 7d6f39de102cf664e881e7aab9de3120, type: 2}
+  - {fileID: 11400000, guid: c22ca87109d84644689df5d0f6f075d2, type: 2}
+  - {fileID: 11400000, guid: 0fb02f90831d380498966af480d2209f, type: 2}

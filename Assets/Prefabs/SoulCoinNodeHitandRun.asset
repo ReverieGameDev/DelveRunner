@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b188bc1a4fa072419196dfc4fd8ab5e, type: 3}
+  m_Name: SoulCoinNodeHitandRun
+  m_EditorClassIdentifier: 
+  id: hitAndRun
+  nodeName: Hit and Run
+  maxLevel: 3
+  icon: {fileID: 1582928506320793403, guid: 7cfd21720936c224bade3d83f7bfec28, type: 3}
+  unlockCost: 3
+  cost: 010000000200000003000000
+  requires:
+  - {fileID: 11400000, guid: 7ea241539a6001146a2aa00cfd4f5011, type: 2}
+  siblings:
+  - {fileID: 11400000, guid: 0c8a57c48e235b84fb79dddbefb69a5c, type: 2}
+  description: Getting hit grants a temporary speed boost.
+  abilityDetails: 'Level 1: <color=white>+15% Move Speed for 1.1s</color>
+
+    Level
+    2: <color=white>+20% Move Speed for 2.2s</color>
+
+    Level 3: <color=white>+30%
+    Move Speed for 3.3s</color>'
+  levelCost: 
