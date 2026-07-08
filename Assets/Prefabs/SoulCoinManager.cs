@@ -105,28 +105,28 @@ public class SoulCoinManager : MonoBehaviour
         }
         Debug.Log("LOADED: " + json);
     }
-    public void Buy(SoulCoinNode node)
+    public bool Buy(SoulCoinNode node)
     {
         int level = GetLevel(node.id);
         if (level >= node.maxLevel)
         {
             MessageManager(BuyResult.Maxed, node);
-            return;
+            return false;
         }
         if (soulCoins < node.cost[level])
         {
             MessageManager(BuyResult.CantAfford, node);
-            return;
+            return false;
         }
         if (!RequirementMet(node)) 
         { 
-            MessageManager(BuyResult.PrereqNotMet, node); 
-            return;
+            MessageManager(BuyResult.PrereqNotMet, node);
+            return false;
         }
         if (ownedLevels.Count >= 8 && !ownedLevels.ContainsKey(node.id))
         {
             MessageManager(BuyResult.MaxNodes, node);
-            return;
+            return false;
         }
         foreach (SoulCoinNode siblingNodes in node.siblings)
         {
@@ -134,13 +134,14 @@ public class SoulCoinManager : MonoBehaviour
             if (GetLevel(siblingNodes.id) > 0) 
             {
                 MessageManager(BuyResult.SiblingLocked, node);
-                return;
+                return false;
             }
            
         }
         soulCoinsSpent += node.cost[level];
         soulCoins -= node.cost[level];
         ownedLevels[node.id] = level + 1;
+        return true;
     }
 
     public bool unlock(SoulCoinNode node)

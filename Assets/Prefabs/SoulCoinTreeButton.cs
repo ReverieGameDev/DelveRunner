@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;   // needed for the hover interface
 using UnityEngine.UI;
@@ -17,6 +18,7 @@ public class SoulCoinTreeButton : MonoBehaviour, IPointerEnterHandler
     public TextMeshProUGUI levelCostTitleText;
     private string costPerLevelText;
     private int counter;
+    public Image glow;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Awake()
@@ -94,9 +96,8 @@ public class SoulCoinTreeButton : MonoBehaviour, IPointerEnterHandler
         }
         else 
         {
-            soulCoinManager.Buy(node);
-            Image img = transform.parent.GetComponent<Image>();
-            img.material.SetFloat("_t3NodeOnOff", 1f);
+            if (soulCoinManager.Buy(node))
+                glow.enabled = true;
             levelDisplay.text = soulCoinManager.GetLevel(node.id) + "/" + node.maxLevel;
             RefreshDescription();
         }
@@ -115,6 +116,7 @@ public class SoulCoinTreeButton : MonoBehaviour, IPointerEnterHandler
         }
         levelDisplay.text = soulCoinManager.GetLevel(newNode.id) + "/" + newNode.maxLevel;
         iconImage.sprite = node.icon;
+        glow.enabled = soulCoinManager.GetLevel(newNode.id) > 0;
     }
     // Update is called once per frame
     void Update()
