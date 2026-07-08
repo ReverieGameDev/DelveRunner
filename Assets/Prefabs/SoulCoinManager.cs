@@ -2,6 +2,7 @@ using NUnit.Framework;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -16,10 +17,14 @@ public class SoulCoinManager : MonoBehaviour
     public TextMeshProUGUI flashMessage;
     public GameObject flashMessageBox;
     public CanvasGroup flashGroup;
-    public enum BuyResult { Success, CantAfford, Maxed, PrereqNotMet, SiblingLocked, UnlockBadReqs, UnlockCantAfford }
+    public int soulCoinsSpent;
+    public GameObject respecWindow;
+    public GameObject skillTreeWindow;
+    public enum BuyResult { Success, CantAfford, Maxed, PrereqNotMet, SiblingLocked, UnlockBadReqs, UnlockCantAfford, MaxNodes, Respec }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        soulCoinsSpent = PlayerPrefs.GetInt("SoulCoinsSpent");
         Refresh(selectedTree);   // assign a default tree in the inspector
         Load();
         Refresh(selectedTree);
@@ -28,7 +33,30 @@ public class SoulCoinManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.H))
+        {
+            Debug.Log(unlockedNodes.Count);
+        }
+    }
+
+    public void OpenRespecWindow()
+    {
+        respecWindow.SetActive(true);
+    }
+    public void CloseRespecWindow()
+    {
+        respecWindow.SetActive(false);
+    }
+
+    public void Respec()
+    {
+        ownedLevels.Clear();
+        soulCoins += soulCoinsSpent;
+        soulCoinsSpent = 0;
+        Refresh(selectedTree);
+        Save();
+        respecWindow.SetActive(false);
+        MessageManager(BuyResult.Respec,null);
     }
 
     public int GetLevel(string id)
@@ -52,6 +80,10 @@ public class SoulCoinManager : MonoBehaviour
         string json = JsonUtility.ToJson(data);
         Debug.Log("SAVED: " + json);
         PlayerPrefs.SetString("SoulSave", json);
+    }
+    public void ExitMenu()
+    {
+        skillTreeWindow.SetActive(false);
     }
     public void Load()
     {
@@ -91,6 +123,11 @@ public class SoulCoinManager : MonoBehaviour
             MessageManager(BuyResult.PrereqNotMet, node); 
             return;
         }
+        if (ownedLevels.Count >= 8 && !ownedLevels.ContainsKey(node.id))
+        {
+            MessageManager(BuyResult.MaxNodes, node);
+            return;
+        }
         foreach (SoulCoinNode siblingNodes in node.siblings)
         {
 
@@ -101,7 +138,7 @@ public class SoulCoinManager : MonoBehaviour
             }
            
         }
-
+        soulCoinsSpent += node.cost[level];
         soulCoins -= node.cost[level];
         ownedLevels[node.id] = level + 1;
     }
@@ -165,6 +202,8 @@ public class SoulCoinManager : MonoBehaviour
             case BuyResult.SiblingLocked: StartCoroutine(FlashMessage("You can only spec down one path — respec to choose " + node.nodeName + ".")); break;
             case BuyResult.UnlockBadReqs: StartCoroutine(FlashMessage ("You must unlock and max the previous node to unlock this node.")); break;
             case BuyResult.UnlockCantAfford: StartCoroutine(FlashMessage("Not enough gold to unlock!")); break;
+            case BuyResult.MaxNodes: StartCoroutine(FlashMessage("Max 8 skills, respec if you'd like to change your loadout")); break;
+            case BuyResult.Respec: StartCoroutine(FlashMessage("Your Soul Coins have returned and your skills have been reset!")); break;
         }
     }
 }

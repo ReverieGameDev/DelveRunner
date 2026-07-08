@@ -95,6 +95,8 @@ public class SoulCoinTreeButton : MonoBehaviour, IPointerEnterHandler
         else 
         {
             soulCoinManager.Buy(node);
+            Image img = transform.parent.GetComponent<Image>();
+            img.material.SetFloat("_t3NodeOnOff", 1f);
             levelDisplay.text = soulCoinManager.GetLevel(node.id) + "/" + node.maxLevel;
             RefreshDescription();
         }

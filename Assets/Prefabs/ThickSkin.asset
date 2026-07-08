@@ -16,7 +16,7 @@ MonoBehaviour:
   nodeName: Thick Skin
   maxLevel: 5
   icon: {fileID: -1624697952996752385, guid: d18b5dea8f78a3a419ab5fb3906a8e5c, type: 3}
-  unlockCost: 0
+  unlockCost: 1
   cost: 0100000002000000030000000400000005000000
   requires: []
   siblings: []

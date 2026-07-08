@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: soulSiphon
   nodeName: Soul Siphon
-  maxLevel: 0
+  maxLevel: 1
   icon: {fileID: -2060420742906771452, guid: 7c14ec9e238a4074d975525c2e213ada, type: 3}
   unlockCost: 5
   cost: 0f000000

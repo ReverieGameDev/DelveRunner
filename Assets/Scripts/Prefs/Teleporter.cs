@@ -55,6 +55,7 @@ public class Teleporter : MonoBehaviour
         PlayerPrefs.SetFloat("Gold", playerCombat.playerMoney);
         PlayerPrefs.SetString("CurrentAbility", currentAbility);
         PlayerPrefs.SetInt("SoulMixTotal", soulMixTotal);
+        PlayerPrefs.SetInt("SoulCoinsSpent", soulCoinManager.soulCoinsSpent);
         if (PlayerPrefs.GetString("CurrentAbility") == "")
         {
             PlayerPrefs.SetString("CurrentAbility", "Dash");

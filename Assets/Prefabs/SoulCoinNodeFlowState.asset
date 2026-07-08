@@ -14,14 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: flowState
   nodeName: Flow State
-  maxLevel: 5
+  maxLevel: 3
   icon: {fileID: -2273872230930745971, guid: d926af7d8cd1b0c4eada7fdf471e9cf1, type: 3}
   unlockCost: 5
   cost: 040000000500000006000000
   requires:
   - {fileID: 11400000, guid: 0c8a57c48e235b84fb79dddbefb69a5c, type: 2}
   - {fileID: 11400000, guid: be03a29277e68c74e9405d2cecd05b85, type: 2}
-  siblings: []
+  siblings:
+  - {fileID: 11400000, guid: 6795cefd48479bd42802226ce6693dc2, type: 2}
+  - {fileID: 11400000, guid: 130a21dd2b37baf44bca5d73005a10a9, type: 2}
   description: Attacking while an ability is active increases damage.
   abilityDetails: 'Level 1: <color=white>+5% Damage</color>
 

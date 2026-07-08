@@ -19,9 +19,10 @@ MonoBehaviour:
   unlockCost: 5
   cost: 14000000
   requires:
-  - {fileID: 11400000, guid: 32be3095f5df01445be04e200160ff35, type: 2}
+  - {fileID: 11400000, guid: 7cfcc9d6b22aebf43ae43b754ef2f75e, type: 2}
   siblings:
   - {fileID: 11400000, guid: 7cfcc9d6b22aebf43ae43b754ef2f75e, type: 2}
+  - {fileID: 11400000, guid: 0fb02f90831d380498966af480d2209f, type: 2}
   description: Trade away gold and item power for a big boost to experience.
   abilityDetails: 'Level 1: <color=white>-20% Gold Gain, -20% Item Effectiveness,
     +25% XP Gain</color>'

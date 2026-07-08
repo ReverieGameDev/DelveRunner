@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: rampingRegen
   nodeName: Ramping Regen
-  maxLevel: 5
+  maxLevel: 3
   icon: {fileID: -407678735845577461, guid: 30e5dac9f6208a5498148c1f00a4222b, type: 3}
   unlockCost: 15
   cost: 0300000004000000050000000600000007000000
@@ -22,18 +22,14 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 51b00135197cab4449ff6e5f4cba3462, type: 2}
   siblings:
   - {fileID: 11400000, guid: a4e9eda36972bc44f9736c761076a31a, type: 2}
-  description: Your regen grows the longer it keeps ticking in combat (requires Regenerative).
-  abilityDetails: 'Level 1: <color=white>Regen ramps up over time, rate x1 (max 14/tick)</color>
+  - {fileID: 11400000, guid: 6f942cbdebd9cb44883b2b4e19cb023c, type: 2}
+  description: While fighting, your health regen builds the longer you stay in combat,
+    resetting when the fight ends. Caps at 14 per tick.
+  abilityDetails: 'Level 1: <color=white>+1-3 HP/tick as the fight goes on</color>
 
     Level
-    2: <color=white>Regen ramps up over time, rate x2 (max 14/tick)</color>
+    2: <color=white>+2-5 HP/tick as the fight goes on</color>
 
-    Level
-    3: <color=white>Regen ramps up over time, rate x3 (max 14/tick)</color>
-
-    Level
-    4: <color=white>Regen ramps up over time, rate x4 (max 14/tick)</color>
-
-    Level
-    5: <color=white>Regen ramps up over time, rate x5 (max 14/tick)</color>'
+    Level 3: <color=white>+3-8
+    HP/tick as the fight goes on</color>'
   levelCost: 

@@ -23,6 +23,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ad3ef85b8debc164ba14f4bc241fce4f, type: 2}
   siblings:
   - {fileID: 11400000, guid: 40ced3e179fe61c42975f21968b27514, type: 2}
+  - {fileID: 11400000, guid: 6f942cbdebd9cb44883b2b4e19cb023c, type: 2}
   description: Killing an enemy heals you.
   abilityDetails: 'Level 1: <color=white>+1 Health per kill</color>
 

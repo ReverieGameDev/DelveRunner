@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: SoulCoinSchrodingersCat
   m_EditorClassIdentifier: 
   id: 'schrodingersCat '
-  nodeName: "Schr\xF6dinger's Cat "
-  maxLevel: 5
+  nodeName: "Schr\xF6dinger's Cat"
+  maxLevel: 3
   icon: {fileID: 4206670567638280145, guid: 30e5dac9f6208a5498148c1f00a4222b, type: 3}
   unlockCost: 15
   cost: 040000000500000006000000

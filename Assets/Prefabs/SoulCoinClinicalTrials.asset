@@ -18,7 +18,8 @@ MonoBehaviour:
   icon: {fileID: 3493723927323161911, guid: 30e5dac9f6208a5498148c1f00a4222b, type: 3}
   unlockCost: 15
   cost: 050000000600000007000000
-  requires: []
+  requires:
+  - {fileID: 11400000, guid: 32be3095f5df01445be04e200160ff35, type: 2}
   siblings: []
   description: Chance for a pickup or consumable to apply twice.
   abilityDetails: 'Level 1: <color=white>+1% Chance</color>
