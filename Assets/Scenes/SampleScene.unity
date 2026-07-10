@@ -136,7 +136,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &12009134
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1365,7 +1365,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &161889401
 Transform:
   m_ObjectHideFlags: 0
@@ -25698,7 +25698,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1114150045
 Transform:
   m_ObjectHideFlags: 0
@@ -33917,6 +33917,10 @@ MonoBehaviour:
   sovereignImmunityCooldown: 0
   bloodSoulBarrierActive: 0
   bloodSoulBarrierValue: 0
+  soulMixActive: 0
+  soulMixPercent: 0
+  soulMixCap: 0
+  soulMixPreviousTotal: 0
   isMADDoctrineActive: 0
   mADDoctrineCooldown: 0
   mADDoctrineReflectDamage: 0

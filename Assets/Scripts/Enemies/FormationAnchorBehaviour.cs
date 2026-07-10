@@ -12,11 +12,15 @@ public class FormationAnchorBehaviour : MonoBehaviour
     public bool chargeAttack;
     public int backlineEnemiesLeftAlive;
     public bool canWarriorLeap = false;
-
+    public float frontlineTotalHP;
     private Transform player;
 
     void Start()
     {
+        foreach (Enemy enemy in gameObject.GetComponentsInChildren<Enemy>())
+        {
+            frontlineTotalHP += enemy.enemyHealth;
+        }
         GameObject p = GameObject.FindWithTag("Player");
         if (p != null) player = p.transform;
     }

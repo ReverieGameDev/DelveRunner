@@ -687,9 +687,12 @@ MonoBehaviour:
   assignedSpawnAnchor: {fileID: 0}
   role: 1
   animOverride: 0
+  currentMode: 0
   isCharging: 0
   isBackline: 0
   backlineDead: 0
+  isFrontline: 1
+  isDead: 0
 --- !u!114 &-238945722122889938
 MonoBehaviour:
   m_ObjectHideFlags: 0

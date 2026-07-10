@@ -18,7 +18,7 @@ public class Enemy : MonoBehaviour
     public bool isDead = false;
     public GameObject emberPickup;
     private EmberSystem emberSystem;
-    private float maxEnemyHealth;
+    public float maxEnemyHealth;
     public TextMeshProUGUI hptext;
     public GameObject damageText;
 

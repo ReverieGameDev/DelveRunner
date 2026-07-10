@@ -916,6 +916,7 @@ MonoBehaviour:
   isDead: 0
   emberPickup: {fileID: 7187405047775818436, guid: 9041a98763e3eb046a3ba1609185608a, type: 3}
   hptext: {fileID: 4214639786262766968}
+  damageText: {fileID: 0}
 --- !u!50 &5398702058119664678
 Rigidbody2D:
   serializedVersion: 5
@@ -1029,7 +1030,12 @@ MonoBehaviour:
   assignedSpawnAnchor: {fileID: 0}
   role: 0
   animOverride: 0
+  currentMode: 0
   isCharging: 0
+  isBackline: 1
+  backlineDead: 0
+  isFrontline: 0
+  isDead: 0
 --- !u!95 &5868504810225459594
 Animator:
   serializedVersion: 7

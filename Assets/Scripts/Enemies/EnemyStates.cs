@@ -1,9 +1,15 @@
+
+public enum EnemyMode 
+{ 
+    Formation, 
+    Decide, 
+    Environment, 
+    Solo 
+}
 public enum EnemyState
 {
-    Chase,
     Attack,
     Death,
     Reposition,
-    Retreat,
-    Charge
+    Retreat
 }

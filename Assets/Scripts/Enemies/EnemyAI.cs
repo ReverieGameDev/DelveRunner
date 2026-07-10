@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -13,6 +14,8 @@ public class EnemyAI : MonoBehaviour
     public EnemyRoles role;
     private Animator anim;
     public bool animOverride = false;
+    public EnemyMode currentMode = EnemyMode.Formation;
+    
 
     // Movement helpers
     private Vector2 anchorPos;
@@ -24,6 +27,10 @@ public class EnemyAI : MonoBehaviour
     public bool isCharging;
     public bool isBackline = false;
     public bool backlineDead = false;
+    public bool isFrontline = false;
+    public bool isDead = false;
+
+    
 
     // Ring formation
     private int originalRingIndex;
@@ -43,10 +50,16 @@ public class EnemyAI : MonoBehaviour
 
     void Start()
     {
+        
         anim = GetComponent<Animator>();
         spawnManager = FindFirstObjectByType<SpawnManager>();
         rb = GetComponent<Rigidbody2D>();
         player = GameObject.FindWithTag("Player").transform;
+        if (isFrontline)
+        {
+            Enemy enemy = GetComponent<Enemy>();
+            
+        }
         currentState = EnemyState.Attack;
         anchorBehaviour = assignedSpawnAnchor.GetComponent<FormationAnchorBehaviour>();
         anchorPos = assignedSpawnAnchor.transform.position;
@@ -87,25 +100,44 @@ public class EnemyAI : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (anchorBehaviour == null || anchorBehaviour.canWarriorLeap == true) return;
-        anchorPos = assignedSpawnAnchor.transform.position;
 
+        if (currentState == EnemyState.Death && !isDead)
+        {
+            isDead = true;
+            Death();
+            
+        }
+        if (isDead) return;
+
+        switch (currentMode)
+        {
+            case EnemyMode.Formation:
+                FormationMode();
+                break;
+            case EnemyMode.Decide:
+                Decide();
+                return;
+            case EnemyMode.Solo:
+                Solo();
+                break;
+            case EnemyMode.Environment:
+                Environment();
+                break;
+        }
         switch (currentState)
         {
             case EnemyState.Attack:
                 Attack();
                 break;
-            case EnemyState.Death:
-                Death();
-                break;
-            case EnemyState.Retreat:
-                Retreat();
-                break;
         }
+    }
 
-        if (!isCharging)
-        {
-            Vector2 targetPos;
+    private void FormationMode()
+    {
+        
+        if (anchorBehaviour == null || anchorBehaviour.canWarriorLeap == true) return;
+        anchorPos = assignedSpawnAnchor.transform.position;
+        Vector2 targetPos;
             if (isCenter)
             {
                 targetPos = anchorPos;
@@ -138,7 +170,18 @@ public class EnemyAI : MonoBehaviour
                 rb.MovePosition(targetPos);
                 SetWalkAnim(0);
             }
-        }
+    }
+    private void Decide()
+    {
+
+    }
+    private void Environment()
+    {
+
+    }
+    private void Solo()
+    {
+
     }
 
     private void SetWalkAnim(int value)
@@ -161,21 +204,7 @@ public class EnemyAI : MonoBehaviour
 
     private void Attack()
     {
-        switch (role)
-        {
-            case EnemyRoles.Archer:
-                if (Vector2.Distance((Vector2)transform.position, player.position) <= 5f)
-                {
-                    currentState = EnemyState.Retreat;
-                }
-                break;
-            case EnemyRoles.Summoner:
-                if (Vector2.Distance((Vector2)transform.position, player.position) <= 5f)
-                {
-                    currentState = EnemyState.Retreat;
-                }
-                break;
-        }
+
     }
 
     private void Death()
@@ -183,20 +212,4 @@ public class EnemyAI : MonoBehaviour
         speed = 0;
     }
 
-    private void Retreat()
-    {
-        SetWalkAnim(1);
-        if (hasStartedRetreating == false)
-        {
-            retreatStartPos = transform.position;
-            hasStartedRetreating = true;
-        }
-        directionToRetreat = ((Vector2)transform.position - (Vector2)player.position).normalized;
-        rb.MovePosition((Vector2)transform.position + directionToRetreat * speed * Time.fixedDeltaTime);
-        if (Vector2.Distance(retreatStartPos, transform.position) >= 7)
-        {
-            currentState = EnemyState.Attack;
-            hasStartedRetreating = false;
-        }
-    }
 }
