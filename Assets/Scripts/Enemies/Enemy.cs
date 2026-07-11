@@ -3,6 +3,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem.Processors;
 using UnityEngine.UI;
+using static FormationAnchorBehaviour;
 public class Enemy : MonoBehaviour
 {
     public EnemyData enemyData;
@@ -66,6 +67,7 @@ public class Enemy : MonoBehaviour
         }
         int damageTakenInt = (int)Mathf.Round(damageTaken);
         enemyHealth -= damageTakenInt;
+        enemyAI.assignedSpawnAnchorScript.frontlineCurrentHP -= damageTakenInt;
         hptext.text = (int)enemyHealth + " / " + (int)maxEnemyHealth;
         if (enemyHealth <= 0)
         {

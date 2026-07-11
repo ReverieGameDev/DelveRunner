@@ -266,7 +266,8 @@ public class SpawnManager : MonoBehaviour
     private void SpawnFormation(Vector2 spawnPos)
     {
         GameObject currentSpawnAnchor = Instantiate(spawnAnchor, new Vector2(spawnPos.x, spawnPos.y), Quaternion.identity);
-        currentSpawnAnchor.GetComponent<FormationAnchorBehaviour>().SetFacing(currentFormationFacing);
+        FormationAnchorBehaviour currentAnchor = currentSpawnAnchor.GetComponent<FormationAnchorBehaviour>();
+        currentAnchor.SetFacing(currentFormationFacing);
 
         for (int row = 0; row < 3; row++)
         {
@@ -279,9 +280,13 @@ public class SpawnManager : MonoBehaviour
                 int offsetY = (1 - row) * 3;
 
                 Vector3 worldPos = new Vector3(spawnPos.x + offsetX, spawnPos.y + offsetY);
-                Instantiate(EnemyArray[enemyType - 1], worldPos, Quaternion.identity).GetComponent<EnemyAI>().assignedSpawnAnchor = currentSpawnAnchor;
+                GameObject spawned = Instantiate(EnemyArray[enemyType - 1], worldPos, Quaternion.identity);
+                spawned.GetComponent<EnemyAI>().assignedSpawnAnchor = currentSpawnAnchor;
+                spawned.GetComponent<EnemyAI>().assignedSpawnAnchorScript = currentAnchor;
+                currentAnchor.enemiesInFormation.Add(spawned);
             }
         }
+        currentAnchor.FormationAnchorEnemySetup();
     }
 
     // ===== GET RANDOM SPAWN LOCATION =====

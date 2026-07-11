@@ -10,6 +10,7 @@ public class EnemyAI : MonoBehaviour
     private float speed = 8f;
     private SpawnManager spawnManager;
     public GameObject assignedSpawnAnchor;
+    public FormationAnchorBehaviour assignedSpawnAnchorScript;
     private FormationAnchorBehaviour anchorBehaviour;   // cached once, read every tick
     public EnemyRoles role;
     private Animator anim;

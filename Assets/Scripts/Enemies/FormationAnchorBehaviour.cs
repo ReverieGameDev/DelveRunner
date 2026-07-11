@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -13,18 +14,50 @@ public class FormationAnchorBehaviour : MonoBehaviour
     public int backlineEnemiesLeftAlive;
     public bool canWarriorLeap = false;
     public float frontlineTotalHP;
+    public float frontlineCurrentHP;
+    public float backlineTotalHP;
     private Transform player;
+    public bool formationBroken = false;
+    public List<GameObject> enemiesInFormation = new List<GameObject>();
+    public enum FormationCheck
+    {
+        LowFrontline,
+        DeadBackline
+    }
 
     void Start()
     {
-        foreach (Enemy enemy in gameObject.GetComponentsInChildren<Enemy>())
-        {
-            frontlineTotalHP += enemy.enemyHealth;
-        }
+
         GameObject p = GameObject.FindWithTag("Player");
         if (p != null) player = p.transform;
     }
+    public void EvaluateFormationState(FormationCheck formationCheck)
+    {
+        switch(formationCheck)
+        {
+            case FormationCheck.LowFrontline:
+                if (frontlineCurrentHP / frontlineTotalHP <= .25f)
+                {
+                    formationBroken = true;
+                }
+                break;
+        }
 
+    }
+    public void FormationAnchorEnemySetup()
+    {
+        foreach (GameObject enemy in enemiesInFormation)
+        {
+            if (enemy.GetComponent<EnemyAI>().isFrontline)
+            {
+                frontlineTotalHP += enemy.GetComponent<Enemy>().maxEnemyHealth;
+            }
+            else
+            {
+                backlineTotalHP += enemy.GetComponent<Enemy>().maxEnemyHealth;
+            }
+        }
+    }
     void Update()
     {
         if (player == null) return;
