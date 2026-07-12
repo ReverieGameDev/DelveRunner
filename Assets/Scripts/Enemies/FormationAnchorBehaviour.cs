@@ -14,7 +14,7 @@ public class FormationAnchorBehaviour : MonoBehaviour
     public int backlineEnemiesLeftAlive;
     public bool canWarriorLeap = false;
     public float frontlineTotalHP;
-    public float frontlineCurrentHP;
+    public float frontlineCurrentHP = 0;
     public float backlineTotalHP;
     private Transform player;
     public bool formationBroken = false;
@@ -57,6 +57,7 @@ public class FormationAnchorBehaviour : MonoBehaviour
                 backlineTotalHP += enemy.GetComponent<Enemy>().maxEnemyHealth;
             }
         }
+        frontlineCurrentHP = frontlineTotalHP;
     }
     void Update()
     {

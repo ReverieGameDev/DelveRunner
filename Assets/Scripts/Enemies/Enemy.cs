@@ -23,7 +23,19 @@ public class Enemy : MonoBehaviour
     public TextMeshProUGUI hptext;
     public GameObject damageText;
 
-
+    private void Awake()
+    {
+        emberSystem = FindFirstObjectByType<EmberSystem>();
+        if (!enemyData.isREE)
+        {
+            emberSystem.aliveEnemies++;
+        }
+        enemyHealth = enemyData.health;
+        enemyDamage = enemyData.damage;
+        enemySpeed = enemyData.speed;
+        enemyHealth *= Mathf.Pow(1.08f, emberSystem.waveNumber - 1);
+        maxEnemyHealth = enemyHealth;
+    }
     void Start()
     {
         
@@ -57,17 +69,30 @@ public class Enemy : MonoBehaviour
         }
 
     }
+    public void EnemyFrontlineHealth(int damageDealt)
+    {
+        enemyAI.assignedSpawnAnchorScript.frontlineCurrentHP -= damageDealt;
+        enemyAI.assignedSpawnAnchorScript.EvaluateFormationState(FormationCheck.LowFrontline);
+    }
 
     public void reduceHp(float damageTaken, bool isCrit = false)
     {
+
         if (enemyHealth <= 0) return;
         if (playerCombat.curtainCallActive && !enemyData.isBoss && isCrit && enemyHealth/maxEnemyHealth <= playerCombat.curtainCallExecute)
         {
             damageTaken = 9999f;
         }
         int damageTakenInt = (int)Mathf.Round(damageTaken);
-        enemyHealth -= damageTakenInt;
-        enemyAI.assignedSpawnAnchorScript.frontlineCurrentHP -= damageTakenInt;
+        float damageDealt = Mathf.Min(damageTakenInt, enemyHealth);
+
+        enemyHealth = Mathf.Clamp(enemyHealth - damageTakenInt, 0, enemyData.health);
+        if (enemyAI.isFrontline)
+        {
+            EnemyFrontlineHealth((int)damageDealt);
+        }
+        //if (enemyAI.isBackline)
+
         hptext.text = (int)enemyHealth + " / " + (int)maxEnemyHealth;
         if (enemyHealth <= 0)
         {

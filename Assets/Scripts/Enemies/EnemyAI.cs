@@ -16,6 +16,7 @@ public class EnemyAI : MonoBehaviour
     private Animator anim;
     public bool animOverride = false;
     public EnemyMode currentMode = EnemyMode.Formation;
+    private bool isSolo = false;
     
 
     // Movement helpers
@@ -88,6 +89,31 @@ public class EnemyAI : MonoBehaviour
         }
         originalRingIndex = positionInRingOrder;
         currentRingIndex = positionInRingOrder;
+        StartCoroutine(EnemyHeartbeat());
+    }
+    IEnumerator EnemyHeartbeat()
+    {
+        int stableOffset = 2;
+        int decisionOffset = UnityEngine.Random.Range(0, 6);
+
+        if (assignedSpawnAnchorScript.formationBroken && currentMode == EnemyMode.Formation)
+        {
+            yield return new WaitForSeconds(decisionOffset);
+            currentMode = EnemyMode.Solo;
+            //if other conditions are met, then we              currentMode = EnemyMode.Decide; and figure out which we switch to
+        }
+        yield return new WaitForSeconds(stableOffset);
+        if (currentMode != EnemyMode.Solo)
+        {
+            StartCoroutine(EnemyHeartbeat());
+        }
+    }
+
+    IEnumerator EnemySolo()
+    {
+        transform.position = new Vector3(player.position.x , player.position.y+3);
+        yield return new WaitForSeconds(2f);
+
     }
 
     public void ReduceFromBackline()
@@ -137,6 +163,7 @@ public class EnemyAI : MonoBehaviour
     {
         
         if (anchorBehaviour == null || anchorBehaviour.canWarriorLeap == true) return;
+
         anchorPos = assignedSpawnAnchor.transform.position;
         Vector2 targetPos;
             if (isCenter)
@@ -174,7 +201,7 @@ public class EnemyAI : MonoBehaviour
     }
     private void Decide()
     {
-
+        currentMode = EnemyMode.Solo;
     }
     private void Environment()
     {
@@ -182,7 +209,11 @@ public class EnemyAI : MonoBehaviour
     }
     private void Solo()
     {
-
+        if (!isSolo)
+        {
+            StartCoroutine(EnemySolo());
+        }
+        isSolo = true;
     }
 
     private void SetWalkAnim(int value)
