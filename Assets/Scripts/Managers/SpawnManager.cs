@@ -305,7 +305,7 @@ public class SpawnManager : MonoBehaviour
     // ===== GET RANDOM SPAWN LOCATION =====
     public Vector2 GetRandomViableSpawn()
     {
-        soloSquaresRefs = Instantiate(soloSquares, new Vector3(fightNodeCenter.x, fightNodeCenter.y + 5), Quaternion.identity).GetComponentsInChildren<SoloSquares>();
+        
         if (emberSystem.waveNumber == 10)
         {
             for (int i = 0; i < mapGenerator.rooms.Count; i++)

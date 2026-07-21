@@ -68,6 +68,7 @@ public class EnemySpawnDetector : MonoBehaviour
     {
         spawnManager.fightNodeCenter = transform.position;
         Instantiate(barrier, new Vector2(transform.position.x + 4.5f, transform.position.y + 2.5f), Quaternion.identity);
+        spawnManager.soloSquaresRefs = Instantiate(spawnManager.soloSquares, new Vector3(transform.position.x, transform.position.y + 5), Quaternion.identity).GetComponentsInChildren<SoloSquares>();
         spawnManager.SpawnNextWave();
         emberSystem.isFightNodeActive = true;
         Time.timeScale = abilityManager.currentTimeScale;

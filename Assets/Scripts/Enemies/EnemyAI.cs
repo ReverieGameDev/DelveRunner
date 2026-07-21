@@ -20,6 +20,7 @@ public class EnemyAI : MonoBehaviour
     public SoloSquares[] soloSquaresPrefab;
     public EnemySoloState enemySoloState = EnemySoloState.None;
     private SoloSquares bestSquare;
+    private SoloSquares currentSquare;
 
 
     // Movement helpers
@@ -97,38 +98,55 @@ public class EnemyAI : MonoBehaviour
     }
     IEnumerator EnemyHeartbeat()
     {
-        Debug.Log("heartbeat STARTED on " + name);
         // one-time stagger so enemies stay desynced
         yield return new WaitForSeconds(UnityEngine.Random.Range(0f, 6f));
         while (true)
         {
-            Debug.Log("TICK on " + name + " | mode: " + currentMode + " | broken: " + assignedSpawnAnchorScript.formationBroken + " | distToPlayer: " + Vector2.Distance(player.transform.position, transform.position));
-
             if (assignedSpawnAnchorScript.formationBroken && currentMode == EnemyMode.Formation)
             {
                 currentMode = EnemyMode.Solo;
             }
-            if (Vector2.Distance(player.transform.position, transform.position) <= 5 && currentMode == EnemyMode.Solo && (enemySoloState == EnemySoloState.None || enemySoloState == EnemySoloState.soloIsIdle))
+            if (Vector2.Distance(player.transform.position, transform.position) <= 30 && currentMode == EnemyMode.Solo && (enemySoloState == EnemySoloState.None || enemySoloState == EnemySoloState.soloIsIdle))
             {
                 Debug.Log("picker fired, squares: " + soloSquaresPrefab.Length);
                 float currentBestCandidate = Mathf.Infinity;
                 bestSquare = null;
                 foreach (SoloSquares moveableSquare in soloSquaresPrefab)
                 {
-                    if (!moveableSquare.squareOccupied && Vector2.Distance(moveableSquare.transform.position, player.transform.position) > 8)
+                    if (currentSquare == null) //if the formation has just broken, we do not make a "closest best option" move for the enemy
                     {
-                        if (Vector2.Distance(moveableSquare.transform.position, player.transform.position) < currentBestCandidate)
+                        if (!moveableSquare.squareOccupied && Vector2.Distance(moveableSquare.transform.position, player.transform.position) > 15)
                         {
-                            bestSquare = moveableSquare;
-                            currentBestCandidate = Vector2.Distance(moveableSquare.transform.position, player.transform.position);
+                            if (Vector2.Distance(moveableSquare.transform.position, player.transform.position) < currentBestCandidate)
+                            {
+                                bestSquare = moveableSquare;
+                                currentBestCandidate = Vector2.Distance(moveableSquare.transform.position, player.transform.position);
+                            }
                         }
                     }
+                    if (currentSquare != null) //if the enemy's formation has already broken and it has alreayd moved to the square, to prevent the enemy from needlessly moving opposite to the player
+                                               //, we check for the distance betweencurrent and the square in question
+                    {
+                        if (!moveableSquare.squareOccupied && Vector2.Distance(moveableSquare.transform.position, player.transform.position) > 15 && Vector2.Distance(moveableSquare.transform.position, currentSquare.transform.position) < 8f)
+                        {
+                            if (Vector2.Distance(moveableSquare.transform.position, player.transform.position) < currentBestCandidate)
+                            {
+                                bestSquare = moveableSquare;
+                                currentBestCandidate = Vector2.Distance(moveableSquare.transform.position, player.transform.position);
+                            }
+                        }
+                    }
+                }
+                if (bestSquare != currentSquare && currentSquare != null)
+                {
+                    currentSquare.squareOccupied = false;
                 }
                 if (bestSquare != null)
                 {
                     Debug.Log("MOVING " + name + " to: " + bestSquare.transform.position + " from: " + transform.position);
                     transform.position = bestSquare.transform.position;
                     bestSquare.squareOccupied = true;
+                    currentSquare = bestSquare;
                 }
             }
             yield return new WaitForSeconds(TickForMode());
