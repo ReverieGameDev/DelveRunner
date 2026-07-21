@@ -26,6 +26,9 @@ public class SpawnManager : MonoBehaviour
     private Vector2 spawnPosOffset;
     private int randomDirection;
     private List<int> availableDirections = new List<int>();
+    public GameObject soloSquares;
+    public SoloSquares[] soloSquaresRefs;
+    public List<GameObject> spawnedEnemies = new List<GameObject>();
     private readonly Vector2[] directionOffsets = new Vector2[]
 {
         new Vector2(0, 24),             // 0 north
@@ -205,7 +208,7 @@ public class SpawnManager : MonoBehaviour
         Debug.Log("SpawnNextWave called, waveNumber: " + emberSystem.waveNumber);
         availableDirections.Clear();
         for (int i = 0; i < 8; i++) availableDirections.Add(i);
-
+        
         if (emberSystem.waveNumber == 10)
         {
             SpawnBoss();
@@ -218,6 +221,7 @@ public class SpawnManager : MonoBehaviour
             FormationDirectionOffset();
             SpawnWave(oneOf3Waves.ToString());
         }
+        
     }
 
     private void PickfromPossibleWaveFormationPools()
@@ -283,8 +287,17 @@ public class SpawnManager : MonoBehaviour
                 GameObject spawned = Instantiate(EnemyArray[enemyType - 1], worldPos, Quaternion.identity);
                 spawned.GetComponent<EnemyAI>().assignedSpawnAnchor = currentSpawnAnchor;
                 spawned.GetComponent<EnemyAI>().assignedSpawnAnchorScript = currentAnchor;
+                
                 currentAnchor.enemiesInFormation.Add(spawned);
+                spawnedEnemies.Add(spawned);
             }
+        }
+        
+
+
+        foreach (GameObject enemy in spawnedEnemies)
+        {
+            enemy.GetComponent<EnemyAI>().soloSquaresPrefab = soloSquaresRefs;
         }
         currentAnchor.FormationAnchorEnemySetup();
     }
@@ -292,6 +305,7 @@ public class SpawnManager : MonoBehaviour
     // ===== GET RANDOM SPAWN LOCATION =====
     public Vector2 GetRandomViableSpawn()
     {
+        soloSquaresRefs = Instantiate(soloSquares, new Vector3(fightNodeCenter.x, fightNodeCenter.y + 5), Quaternion.identity).GetComponentsInChildren<SoloSquares>();
         if (emberSystem.waveNumber == 10)
         {
             for (int i = 0; i < mapGenerator.rooms.Count; i++)
@@ -336,23 +350,6 @@ public class SpawnManager : MonoBehaviour
     // Determines how many 45-degree rotations needed to face player
     private void CalculateRotation(Vector2 spawnPos)
     {
-        /* 
-        // Get angle from spawn point looking at player
-        float angle = Mathf.Atan2(playerPos.y - spawnPos.y, playerPos.x - spawnPos.x) * Mathf.Rad2Deg;
-
-        Debug.Log("Angle to player: " + angle);
-
-        // 8 directions, 45 degrees each
-        // Formation default faces UP (toward player when angle is 67.5 to 112.5)
-       if (angle >= 67.5f && angle < 112.5f) rotations = 0;  // UP
-        else if (angle >= 22.5f && angle < 67.5f) rotations = 1;  // UP-RIGHT
-        else if (angle >= -22.5f && angle < 22.5f) rotations = 2;  // RIGHT
-        else if (angle >= -67.5f && angle < -22.5f) rotations = 3;  // DOWN-RIGHT
-        else if (angle >= -112.5f && angle < -67.5f) rotations = 4; // DOWN
-        else if (angle >= -157.5f && angle < -112.5f) rotations = 5; // DOWN-LEFT
-        else if (angle >= 157.5f || angle < -157.5f) rotations = 6; // LEFT
-        else if (angle >= 112.5f && angle < 157.5f) rotations = 7;  // UP-LEFT
-       */
         switch (randomDirection)
         {
             case 0: rotations = 4; break; // north

@@ -30,12 +30,12 @@ public class MapGenerator : MonoBehaviour
 
     // Room radii
     public int spawnRadius = 15;
-    public int fightNodeRadius = 22;
+    public int fightNodeRadius = 80;
     public int cacheRadius = 10;
-    public int bossRadius = 30;
+    public int bossRadius = 45;
 
     // Minimum distance from other rooms
-    public int fightNodeMinDistance = 80;
+    public int fightNodeMinDistance = 140;
     public int cacheMinDistance = 10;
     public int bossMinDistance = 40;
 

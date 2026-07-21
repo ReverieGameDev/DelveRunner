@@ -13,3 +13,11 @@ public enum EnemyState
     Reposition,
     Retreat
 }
+
+public enum EnemySoloState
+{
+    None,
+    soloIsMoving,
+    soloIsIdle,
+    soloIsSearching
+}

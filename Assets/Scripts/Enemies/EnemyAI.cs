@@ -17,7 +17,10 @@ public class EnemyAI : MonoBehaviour
     public bool animOverride = false;
     public EnemyMode currentMode = EnemyMode.Formation;
     private bool isSolo = false;
-    
+    public SoloSquares[] soloSquaresPrefab;
+    public EnemySoloState enemySoloState = EnemySoloState.None;
+    private SoloSquares bestSquare;
+
 
     // Movement helpers
     private Vector2 anchorPos;
@@ -32,7 +35,8 @@ public class EnemyAI : MonoBehaviour
     public bool isFrontline = false;
     public bool isDead = false;
 
-    
+    //solo
+    public bool isMovingSolo = false;
 
     // Ring formation
     private int originalRingIndex;
@@ -93,19 +97,53 @@ public class EnemyAI : MonoBehaviour
     }
     IEnumerator EnemyHeartbeat()
     {
-        int stableOffset = 2;
-        int decisionOffset = UnityEngine.Random.Range(0, 6);
+        Debug.Log("heartbeat STARTED on " + name);
+        // one-time stagger so enemies stay desynced
+        yield return new WaitForSeconds(UnityEngine.Random.Range(0f, 6f));
+        while (true)
+        {
+            Debug.Log("TICK on " + name + " | mode: " + currentMode + " | broken: " + assignedSpawnAnchorScript.formationBroken + " | distToPlayer: " + Vector2.Distance(player.transform.position, transform.position));
 
-        if (assignedSpawnAnchorScript.formationBroken && currentMode == EnemyMode.Formation)
-        {
-            yield return new WaitForSeconds(decisionOffset);
-            currentMode = EnemyMode.Solo;
-            //if other conditions are met, then we              currentMode = EnemyMode.Decide; and figure out which we switch to
+            if (assignedSpawnAnchorScript.formationBroken && currentMode == EnemyMode.Formation)
+            {
+                currentMode = EnemyMode.Solo;
+            }
+            if (Vector2.Distance(player.transform.position, transform.position) <= 5 && currentMode == EnemyMode.Solo && (enemySoloState == EnemySoloState.None || enemySoloState == EnemySoloState.soloIsIdle))
+            {
+                Debug.Log("picker fired, squares: " + soloSquaresPrefab.Length);
+                float currentBestCandidate = Mathf.Infinity;
+                bestSquare = null;
+                foreach (SoloSquares moveableSquare in soloSquaresPrefab)
+                {
+                    if (!moveableSquare.squareOccupied && Vector2.Distance(moveableSquare.transform.position, player.transform.position) > 8)
+                    {
+                        if (Vector2.Distance(moveableSquare.transform.position, player.transform.position) < currentBestCandidate)
+                        {
+                            bestSquare = moveableSquare;
+                            currentBestCandidate = Vector2.Distance(moveableSquare.transform.position, player.transform.position);
+                        }
+                    }
+                }
+                if (bestSquare != null)
+                {
+                    Debug.Log("MOVING " + name + " to: " + bestSquare.transform.position + " from: " + transform.position);
+                    transform.position = bestSquare.transform.position;
+                    bestSquare.squareOccupied = true;
+                }
+            }
+            yield return new WaitForSeconds(TickForMode());
         }
-        yield return new WaitForSeconds(stableOffset);
-        if (currentMode != EnemyMode.Solo)
+    }
+
+    float TickForMode()
+    {
+        switch (currentMode)
         {
-            StartCoroutine(EnemyHeartbeat());
+            case EnemyMode.Formation: return 4f;
+            case EnemyMode.Solo: return 2f;
+            case EnemyMode.Environment: return 1f;
+            case EnemyMode.Decide: return 0.5f;
+            default: return 2f;
         }
     }
 
@@ -113,6 +151,7 @@ public class EnemyAI : MonoBehaviour
     {
         transform.position = new Vector3(player.position.x , player.position.y+3);
         yield return new WaitForSeconds(2f);
+
 
     }
 
@@ -209,10 +248,6 @@ public class EnemyAI : MonoBehaviour
     }
     private void Solo()
     {
-        if (!isSolo)
-        {
-            StartCoroutine(EnemySolo());
-        }
         isSolo = true;
     }
 
