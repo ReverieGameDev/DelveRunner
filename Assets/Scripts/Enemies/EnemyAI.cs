@@ -1,6 +1,7 @@
-using System;
+﻿using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Splines.ExtrusionShapes;
 
 public class EnemyAI : MonoBehaviour
 {
@@ -21,6 +22,7 @@ public class EnemyAI : MonoBehaviour
     public EnemySoloState enemySoloState = EnemySoloState.None;
     private SoloSquares bestSquare;
     private SoloSquares currentSquare;
+    private Vector2 soloTarget;
 
 
     // Movement helpers
@@ -35,6 +37,7 @@ public class EnemyAI : MonoBehaviour
     public bool backlineDead = false;
     public bool isFrontline = false;
     public bool isDead = false;
+
 
     //solo
     public bool isMovingSolo = false;
@@ -94,6 +97,7 @@ public class EnemyAI : MonoBehaviour
         }
         originalRingIndex = positionInRingOrder;
         currentRingIndex = positionInRingOrder;
+        soloTarget = transform.position;
         StartCoroutine(EnemyHeartbeat());
     }
     IEnumerator EnemyHeartbeat()
@@ -102,20 +106,22 @@ public class EnemyAI : MonoBehaviour
         yield return new WaitForSeconds(UnityEngine.Random.Range(0f, 6f));
         while (true)
         {
+
             if (assignedSpawnAnchorScript.formationBroken && currentMode == EnemyMode.Formation)
             {
                 currentMode = EnemyMode.Solo;
             }
-            if (Vector2.Distance(player.transform.position, transform.position) <= 30 && currentMode == EnemyMode.Solo && (enemySoloState == EnemySoloState.None || enemySoloState == EnemySoloState.soloIsIdle))
+            if (currentMode == EnemyMode.Solo)
             {
-                Debug.Log("picker fired, squares: " + soloSquaresPrefab.Length);
+                if (Vector2.Distance(player.transform.position, transform.position) <= 20 && currentMode == EnemyMode.Solo && (enemySoloState == EnemySoloState.None || enemySoloState == EnemySoloState.soloIsIdle))
+                {
                 float currentBestCandidate = Mathf.Infinity;
                 bestSquare = null;
                 foreach (SoloSquares moveableSquare in soloSquaresPrefab)
                 {
                     if (currentSquare == null) //if the formation has just broken, we do not make a "closest best option" move for the enemy
                     {
-                        if (!moveableSquare.squareOccupied && Vector2.Distance(moveableSquare.transform.position, player.transform.position) > 15)
+                        if (!moveableSquare.squareOccupied && Vector2.Distance(moveableSquare.transform.position, player.transform.position) > 12f)
                         {
                             if (Vector2.Distance(moveableSquare.transform.position, player.transform.position) < currentBestCandidate)
                             {
@@ -127,7 +133,7 @@ public class EnemyAI : MonoBehaviour
                     if (currentSquare != null) //if the enemy's formation has already broken and it has alreayd moved to the square, to prevent the enemy from needlessly moving opposite to the player
                                                //, we check for the distance betweencurrent and the square in question
                     {
-                        if (!moveableSquare.squareOccupied && Vector2.Distance(moveableSquare.transform.position, player.transform.position) > 15 && Vector2.Distance(moveableSquare.transform.position, currentSquare.transform.position) < 8f)
+                        if (!moveableSquare.squareOccupied && Vector2.Distance(moveableSquare.transform.position, player.transform.position) > 12f && Vector2.Distance(moveableSquare.transform.position, currentSquare.transform.position) < 8f)
                         {
                             if (Vector2.Distance(moveableSquare.transform.position, player.transform.position) < currentBestCandidate)
                             {
@@ -143,12 +149,38 @@ public class EnemyAI : MonoBehaviour
                 }
                 if (bestSquare != null)
                 {
-                    Debug.Log("MOVING " + name + " to: " + bestSquare.transform.position + " from: " + transform.position);
-                    transform.position = bestSquare.transform.position;
                     bestSquare.squareOccupied = true;
+                    soloTarget = bestSquare.transform.position;
                     currentSquare = bestSquare;
                 }
+                if (bestSquare == null) //if the enemy is stuck in a corner/didn't find a square to move to despite being prompted to do so:
+                {
+                    currentBestCandidate = Mathf.Infinity;
+                    foreach (SoloSquares moveableSquare in soloSquaresPrefab)
+                    {
+
+                        if (!moveableSquare.squareOccupied && moveableSquare != currentSquare && Vector2.Distance(moveableSquare.transform.position,currentSquare.transform.position) > 12)
+                        {
+                            float d = Vector2.Distance(moveableSquare.transform.position, currentSquare.transform.position);
+                            if (d < currentBestCandidate)     // ← THIS is what's missing
+                            {
+                                bestSquare = moveableSquare;
+                                currentBestCandidate = d;
+                            }
+                        }
+                    }
+                    if (bestSquare != null)
+                    {
+                        if (currentSquare != null) currentSquare.squareOccupied = false;
+                        bestSquare.squareOccupied = true;
+                        soloTarget = bestSquare.transform.position;
+                        currentSquare = bestSquare;
+                    }
+                }
             }
+
+            }
+            
             yield return new WaitForSeconds(TickForMode());
         }
     }
@@ -158,7 +190,7 @@ public class EnemyAI : MonoBehaviour
         switch (currentMode)
         {
             case EnemyMode.Formation: return 4f;
-            case EnemyMode.Solo: return 2f;
+            case EnemyMode.Solo: return UnityEngine.Random.Range(2,5);
             case EnemyMode.Environment: return 1f;
             case EnemyMode.Decide: return 0.5f;
             default: return 2f;
@@ -202,7 +234,12 @@ public class EnemyAI : MonoBehaviour
                 Decide();
                 return;
             case EnemyMode.Solo:
+                if (Vector2.Distance(transform.position, soloTarget) > .1f) enemySoloState = EnemySoloState.soloIsMoving; // if the enemy has not reached their destination
+                else enemySoloState = EnemySoloState.soloIsIdle; // if the enemy has not reached their destination
+                if (enemySoloState == EnemySoloState.soloIsMoving) SetWalkAnim(1);
+                if (enemySoloState == EnemySoloState.soloIsIdle) SetWalkAnim(0);
                 Solo();
+                rb.MovePosition(Vector2.MoveTowards(rb.position, soloTarget, speed * Time.fixedDeltaTime));
                 break;
             case EnemyMode.Environment:
                 Environment();
