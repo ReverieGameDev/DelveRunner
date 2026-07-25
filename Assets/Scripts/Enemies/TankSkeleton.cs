@@ -20,7 +20,6 @@ public class TankSkeleton : MonoBehaviour
     private bool slashCheckCooldownBool = false;
     private bool regenerationCheckCooldownBool = false;
     public float slashCheckCooldownFloat = 2f;
-    private bool isAttacking = false;
     private EnemyAI enemyAI;
     private float attackSpeed = 4f;
     private bool indicatorActive = false;
@@ -77,7 +76,7 @@ public class TankSkeleton : MonoBehaviour
             DeathSequence();
         }
         if (isDead) return;
-        if (!isAttacking && !isDead && !slashCheckCooldownBool)
+        if (!enemyAI.isAttacking && !isDead && !slashCheckCooldownBool)
         {
             if (Vector2.Distance(transform.position, playerMovement.transform.position) < 4 && !slashCheckCooldownBool)
             {
@@ -86,7 +85,7 @@ public class TankSkeleton : MonoBehaviour
             }
         }
 
-        if (enemyAI.assignedSpawnAnchor.GetComponent<FormationAnchorBehaviour>().canWarriorLeap && !isAttacking && !leapCheckCooldownBool)
+        if (enemyAI.assignedSpawnAnchor.GetComponent<FormationAnchorBehaviour>().canWarriorLeap && !enemyAI.isAttacking && !leapCheckCooldownBool)
         {
             leapCheckCooldownBool = true;
             StartCoroutine("WarriorLeapCheck");
@@ -129,7 +128,7 @@ public class TankSkeleton : MonoBehaviour
         int chanceToAttack = Random.Range(0, 100);
         if (chanceToAttack <= 25)
         {
-            isAttacking = true;
+            enemyAI.isAttacking = true;
             currentAttack = "leap";
             StartCoroutine("WarriorIndicatorActivation");
             yield break;
@@ -146,7 +145,7 @@ public class TankSkeleton : MonoBehaviour
         int chanceToAttack = Random.Range(0, 100);
         if (chanceToAttack <= 30)
         {
-            isAttacking = true;
+            enemyAI.isAttacking = true;
             currentAttack = "slash";
             StartCoroutine("WarriorIndicatorActivation");
             yield break;
@@ -164,7 +163,7 @@ public class TankSkeleton : MonoBehaviour
         int chanceToAttack = Random.Range(0, 100);
         if (chanceToAttack <= 20)
         {
-            isAttacking = true;
+            enemyAI.isAttacking = true;
             currentAttack = "regenerate";
             StartCoroutine("WarriorIndicatorActivation");
             yield break;
@@ -227,7 +226,7 @@ public class TankSkeleton : MonoBehaviour
         indicatorActive = false;
         currentAttack = "";
         enemyAI.animOverride = false;
-        isAttacking = false;
+        enemyAI.isAttacking = false;
         slashCheckCooldownBool = false;
         yield return null;
     }
@@ -263,7 +262,7 @@ public class TankSkeleton : MonoBehaviour
         leapCheckCooldownBool = false;
         anim.SetInteger("WarriorInt", 0);
         anim.speed = 1;
-        isAttacking = false;
+        enemyAI.isAttacking = false;
         Instantiate(leapDust, targetPos, Quaternion.identity);
         GameObject hitbox = Instantiate(leapHitboxPrefab, new Vector2(transform.position.x, transform.position.y - .5f), Quaternion.identity);
         hitbox.GetComponent<WarriorLeap>().owner = this;

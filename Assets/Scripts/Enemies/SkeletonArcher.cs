@@ -35,6 +35,7 @@ public class SkeletonArcher : MonoBehaviour
     private EnemyAI enemyAI;
     private Enemy enemy;
     private bool isDead = false;
+
     
 
     void Start()
@@ -160,12 +161,14 @@ public class SkeletonArcher : MonoBehaviour
             anim.speed = 2.5f;
         }
         if (currentAttack == "arrowRain") { attackWindupTime = .75f; enemyAttackIndicator.SetIndicator(arrowRainIcon, attackWindupTime); }
+        enemyAI.isAttacking = true;
         yield return new WaitForSeconds(attackWindupTime);
         if (currentAttack == "arrowShot") { StartCoroutine("ArrowShot"); }
         if (currentAttack == "arrowVolley") { StartCoroutine("ArrowVolley"); }
         if (currentAttack == "multiShot") { StartCoroutine("MultiShot"); }
         if (currentAttack == "arrowRain") { StartCoroutine("ArrowRain"); }
         yield return new WaitForSeconds(attackSpeed);
+        enemyAI.isAttacking = false;
         isReadyTofire = true;
     }
 

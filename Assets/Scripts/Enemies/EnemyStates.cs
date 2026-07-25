@@ -11,7 +11,8 @@ public enum EnemyState
     Attack,
     Death,
     Reposition,
-    Retreat
+    Retreat,
+    Idle
 }
 
 public enum EnemySoloState

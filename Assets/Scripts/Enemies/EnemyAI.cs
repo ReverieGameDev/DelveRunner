@@ -1,5 +1,7 @@
-﻿using System;
+﻿using NUnit.Framework;
+using System;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Splines.ExtrusionShapes;
 
@@ -23,6 +25,11 @@ public class EnemyAI : MonoBehaviour
     private SoloSquares bestSquare;
     private SoloSquares currentSquare;
     private Vector2 soloTarget;
+    private Enemy enemy;
+    private List<EnemyAI> allEnemies = new List<EnemyAI>();
+    public bool isAttacking = false;
+    public bool walkingToET = false;
+    private EnvironmentThreat environmentThreat;
 
 
     // Movement helpers
@@ -60,7 +67,8 @@ public class EnemyAI : MonoBehaviour
 
     void Start()
     {
-        
+        environmentThreat = FindFirstObjectByType<EnvironmentThreat>();
+        enemy = GetComponent<Enemy>();
         anim = GetComponent<Animator>();
         spawnManager = FindFirstObjectByType<SpawnManager>();
         rb = GetComponent<Rigidbody2D>();
@@ -180,7 +188,13 @@ public class EnemyAI : MonoBehaviour
             }
 
             }
-            
+            if (currentMode == EnemyMode.Environment)
+            {
+                if (!walkingToET)
+                {
+                    //code for animations, chanting.
+                }
+            }
             yield return new WaitForSeconds(TickForMode());
         }
     }
@@ -242,6 +256,18 @@ public class EnemyAI : MonoBehaviour
                 rb.MovePosition(Vector2.MoveTowards(rb.position, soloTarget, speed * Time.fixedDeltaTime));
                 break;
             case EnemyMode.Environment:
+                if (Vector2.Distance(transform.position, environmentThreat.operatorCoords) > .1f) //operator walks towards the destination to begin interacting with environment
+                {
+                    rb.MovePosition(Vector2.MoveTowards(rb.position, environmentThreat.operatorCoords, speed * Time.fixedDeltaTime));
+                    SetWalkAnim(1);
+                }
+                
+                else if (walkingToET) // if the operator reaches the destination, they are no longer walking there.
+                {
+                    walkingToET = false;
+                    environmentThreat.EnvironmentOperator(this);
+                    SetWalkAnim(0); //actually the chant anim, havent made it yet
+                } 
                 Environment();
                 break;
         }

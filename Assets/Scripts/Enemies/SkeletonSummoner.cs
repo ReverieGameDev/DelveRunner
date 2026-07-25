@@ -106,12 +106,14 @@ public class SkeletonSummoner : MonoBehaviour
             StartCoroutine("SkipAttack");
             yield break;
         }
+        enemyAI.isAttacking = true;
         yield return new WaitForSeconds(attackWindupTime);
         if (currentAttack == "homingAttack") { StartCoroutine("HomingAttack"); }
         if (currentAttack == "aoeCircleAttack") { StartCoroutine("AoeCircleAttack"); }
         if (currentAttack == "summonAttack") { StartCoroutine("SummonAttack"); }
 
         yield return new WaitForSeconds(attackSpeed);
+        enemyAI.isAttacking = false;
         isReadyTofire = true;
     }
 
