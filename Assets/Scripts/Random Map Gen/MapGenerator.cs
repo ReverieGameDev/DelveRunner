@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class Room
 {
+    public GameObject nodeInstance;
     public int centerX;
     public int centerY;
     public int radius;
@@ -309,6 +310,7 @@ public class MapGenerator : MonoBehaviour
                 {
                     rooms.Add(lastViableSpawn);
                     CarveRoom(roomX, roomY, fightNodeRadius);
+                    lastViableSpawn.nodeInstance = mapRenderer.RenderFightNodePrefab(new Vector2(roomX, roomY));
                     roomPlaced = true;
                     mapRenderer.RenderFightNodePrefab(new Vector2(roomX, roomY));
                     Debug.Log("Fight node placed at: " + roomX + ", " + roomY);

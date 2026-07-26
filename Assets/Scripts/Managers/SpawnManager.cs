@@ -14,7 +14,6 @@ public class SpawnManager : MonoBehaviour
     private MapGenerator mapGenerator;
     public Vector2 fightNodeCenter;
     private Vector2 fightNodeCenterOffsetted;
-    public GameObject spawnEnemiesDetector;
     private FightNodeIndicator fightNodeIndicator;
     public bool isFightNodeActive = false;
     public GameObject spawnAnchor;
@@ -314,7 +313,7 @@ public class SpawnManager : MonoBehaviour
                 {
                     Vector2 bossSpawnCoords = new Vector2(mapGenerator.rooms[i].centerX, mapGenerator.rooms[i].centerY);
                     fightNodeIndicator.currentActiveFightNodeCoords = bossSpawnCoords;
-                    Instantiate(spawnEnemiesDetector, bossSpawnCoords, Quaternion.identity);
+                    mapGenerator.rooms[i].nodeInstance.GetComponentInChildren<EnemySpawnDetector>().enabled = true;
                     isFightNodeActive = true;
                     return bossSpawnCoords;
                 }
@@ -339,7 +338,7 @@ public class SpawnManager : MonoBehaviour
         int randomIndex = Random.Range(0, listOfFightNodes.Count);
         Vector2 enemySpawnCoords = new Vector2(listOfFightNodes[randomIndex].centerX, listOfFightNodes[randomIndex].centerY);
         fightNodeIndicator.currentActiveFightNodeCoords = enemySpawnCoords;
-        Instantiate(spawnEnemiesDetector, enemySpawnCoords, Quaternion.identity);
+        listOfFightNodes[randomIndex].nodeInstance.GetComponentInChildren<EnemySpawnDetector>().enabled = true;
         lastFNPicked = listOfFightNodes[randomIndex];
         listOfFightNodes.RemoveAt(randomIndex);
         isFightNodeActive = true;

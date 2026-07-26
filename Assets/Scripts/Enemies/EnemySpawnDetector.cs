@@ -48,19 +48,13 @@ public class EnemySpawnDetector : MonoBehaviour
 
     public void AcceptFightNodeButton()
     {
-        StartCoroutine("StartFightNodeSequence");
+        StartFightNodeSequence();
     }
 
-    IEnumerator StartFightNodeSequence()
+    private void StartFightNodeSequence()
     {
+        GetComponent<EnvironmentThreat>().enabled = true;
         fightNodeInterface.SetActive(false);
-        Color color = spriteRenderer.color;
-        for (int i = 0; i < 100; i++)
-        {
-            color.a -= 0.01f;
-            spriteRenderer.color = color;
-            yield return new WaitForSecondsRealtime(.004f);
-        }
         StartFightNode();
     }
 
@@ -72,7 +66,7 @@ public class EnemySpawnDetector : MonoBehaviour
         spawnManager.SpawnNextWave();
         emberSystem.isFightNodeActive = true;
         Time.timeScale = abilityManager.currentTimeScale;
-        Destroy(gameObject);
+
         playerMovement.playerFrozen = false;
     }
 

@@ -29,7 +29,7 @@ public class EnemyAI : MonoBehaviour
     private List<EnemyAI> allEnemies = new List<EnemyAI>();
     public bool isAttacking = false;
     public bool walkingToET = false;
-    private EnvironmentThreat environmentThreat;
+    public EnvironmentThreat environmentThreat;
 
 
     // Movement helpers
@@ -67,7 +67,6 @@ public class EnemyAI : MonoBehaviour
 
     void Start()
     {
-        environmentThreat = FindFirstObjectByType<EnvironmentThreat>();
         enemy = GetComponent<Enemy>();
         anim = GetComponent<Animator>();
         spawnManager = FindFirstObjectByType<SpawnManager>();

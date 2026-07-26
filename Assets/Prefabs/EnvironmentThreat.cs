@@ -17,7 +17,8 @@ public class EnvironmentThreat : MonoBehaviour
     private SpawnManager spawnManager;
     private List<GameObject> validOperators = new List<GameObject>();
     public Vector2 operatorCoords;
-    
+    public Transform barFill;
+    private Vector3 barStartScale;
 
     private float chargeCounter;
     private float stateTimer;
@@ -40,6 +41,7 @@ public class EnvironmentThreat : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        barStartScale = barFill.localScale;
         operatorCoords = transform.position;
         spawnManager = FindFirstObjectByType<SpawnManager>();
         switch (currentEnvironmentThreatName)
@@ -96,6 +98,7 @@ public class EnvironmentThreat : MonoBehaviour
                         environmentState = EnvironmentState.Firing;
                         stateTimer = cooldownAfterFire;
                     }
+                    barFill.localScale = new Vector3(barStartScale.x * EnvironmentChargePercent(), barStartScale.y, barStartScale.z);
                     break;
                 case EnvironmentState.Firing: //ET has reached the total charge, fires.
 
@@ -146,7 +149,7 @@ public class EnvironmentThreat : MonoBehaviour
             Enemy enemy = enemyObject.GetComponent<Enemy>();
             EnemyAI enemyAI = enemyObject.GetComponent<EnemyAI>();
 
-            if (enemy.enemyHealth / enemy.maxEnemyHealth < 0.75f) continue;
+            if (enemy.enemyHealth / enemy.maxEnemyHealth < 0.5f) continue;
             if (enemyAI.isAttacking) continue;
             if (enemyAI.walkingToET) continue;
 
@@ -157,6 +160,7 @@ public class EnvironmentThreat : MonoBehaviour
         walkingOperator = validOperators[Random.Range(0, validOperators.Count)];
         walkingOperator.GetComponent<EnemyAI>().currentMode = EnemyMode.Environment;
         walkingOperator.GetComponent<EnemyAI>().walkingToET = true;
+        walkingOperator.GetComponent<EnemyAI>().environmentThreat = this;
         Debug.Log("Looking for operator, found: " + walkingOperator);
     }
 }
