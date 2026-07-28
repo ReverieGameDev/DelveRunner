@@ -213,7 +213,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 25
   m_Sprite: {fileID: -3658504805710360349, guid: 74cad1b39581c8e4f83f63b37b90964d, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 0.8207547, g: 0.24705882, b: 0.25938943, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -240,7 +240,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &7822394936094908929
 RectTransform:
   m_ObjectHideFlags: 0
@@ -714,7 +714,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5156025908038746979}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: EnemySpawnDetector, Assembly-CSharp
         m_MethodName: AcceptFightNodeButton
         m_Mode: 1
@@ -738,11 +738,11 @@ GameObject:
   - component: {fileID: 1974267171328071935}
   - component: {fileID: 2067687127709702521}
   - component: {fileID: 1987332347174878503}
-  - component: {fileID: 5156025908038746979}
-  - component: {fileID: 4422001656637991562}
+  - component: {fileID: 1868287326795608268}
+  - component: {fileID: 5305812406146290272}
   m_Layer: 0
   m_Name: EZapper
-  m_TagString: Untagged
+  m_TagString: ET
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -856,24 +856,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   operatorCoords: {x: 0, y: 0}
+  barFill: {fileID: 5868396128102469715}
+  zapperDamage: 20
+  healingTotemHeal: 35
+  etColor: {fileID: 0}
   environmentState: 0
-  currentEnvironmentThreatName: 0
---- !u!114 &5156025908038746979
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6967775125399513323}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a8d7a7b7f50b634794b3237d7ce8639, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  barrier: {fileID: 8265273309727059835, guid: e5ccc414ee913954e8e6cde6dfb98846, type: 3}
-  fightNodeInterface: {fileID: 1764524634120762371}
---- !u!58 &4422001656637991562
-CircleCollider2D:
+  currentEnvironmentThreatName: 1
+--- !u!70 &1868287326795608268
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -906,8 +896,36 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.38288194, y: 1.8785123}
-  m_Radius: 5.324845
+  m_Offset: {x: 0.27660066, y: 4.11986}
+  m_Size: {x: 1.4678593, y: 5.1364274}
+  m_Direction: 0
+--- !u!50 &5305812406146290272
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6967775125399513323}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &7628279328204251699
 GameObject:
   m_ObjectHideFlags: 0
@@ -952,6 +970,8 @@ GameObject:
   - component: {fileID: 2687991796566652037}
   - component: {fileID: 2294412083090239462}
   - component: {fileID: 6098711716114468659}
+  - component: {fileID: 1295408112664863086}
+  - component: {fileID: 6200177774619007245}
   m_Layer: 0
   m_Name: EZapper (1)
   m_TagString: Untagged
@@ -1051,6 +1071,67 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1295408112664863086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7771725221984726736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a8d7a7b7f50b634794b3237d7ce8639, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  barrier: {fileID: 8265273309727059835, guid: e5ccc414ee913954e8e6cde6dfb98846, type: 3}
+  fightNodeInterface: {fileID: 1764524634120762371}
+  environmentThreat: {fileID: 1987332347174878503}
+--- !u!61 &6200177774619007245
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7771725221984726736}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0.26204133, y: 1.543128}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 12.444445, y: 12.444445}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 11.978598, y: 9.940502}
+  m_EdgeRadius: 0
 --- !u!1 &7844992563848300312
 GameObject:
   m_ObjectHideFlags: 0
@@ -1228,7 +1309,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 25
+  m_SortingOrder: 26
   m_Sprite: {fileID: -3658504805710360349, guid: 74cad1b39581c8e4f83f63b37b90964d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1361,7 +1442,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5156025908038746979}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: EnemySpawnDetector, Assembly-CSharp
         m_MethodName: DeclineFightNode
         m_Mode: 1

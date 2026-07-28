@@ -7857,7 +7857,6 @@ MonoBehaviour:
   - {fileID: 1890546528678430059, guid: dce9b4758503ad44bbc7cbb92d2d774e, type: 3}
   swarm: {fileID: 1411848040320552327, guid: b69ccae370e8c2145ab3e6bf997fc10b, type: 3}
   fightNodeCenter: {x: 0, y: 0}
-  spawnEnemiesDetector: {fileID: 5981821731822304575, guid: b2a1a343a198bd34bb22aeb5e72366d6, type: 3}
   isFightNodeActive: 0
   spawnAnchor: {fileID: 3805302138129635065, guid: 1ecccea2753af5748a06182bea9f15ec, type: 3}
   soloSquares: {fileID: 3111014250869138679, guid: f6bb4da084f67a14f96e11e191978cc1, type: 3}
@@ -33904,7 +33903,7 @@ MonoBehaviour:
   consumableEffectivenessBonus: 0
   consumableEffectivenessBase: 1
   currentPlayerHealth: 0
-  maxHealth: 100
+  maxHealth: 11111111
   baseMaxHealth: 100
   hpRegen: 0
   playerManaBase: 100

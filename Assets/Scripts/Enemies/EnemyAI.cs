@@ -234,7 +234,7 @@ public class EnemyAI : MonoBehaviour
         {
             isDead = true;
             Death();
-            
+            if (environmentThreat != null) environmentThreat.OperatorHasDied();
         }
         if (isDead) return;
 

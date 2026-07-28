@@ -312,7 +312,6 @@ public class MapGenerator : MonoBehaviour
                     CarveRoom(roomX, roomY, fightNodeRadius);
                     lastViableSpawn.nodeInstance = mapRenderer.RenderFightNodePrefab(new Vector2(roomX, roomY));
                     roomPlaced = true;
-                    mapRenderer.RenderFightNodePrefab(new Vector2(roomX, roomY));
                     Debug.Log("Fight node placed at: " + roomX + ", " + roomY);
                 }
             }

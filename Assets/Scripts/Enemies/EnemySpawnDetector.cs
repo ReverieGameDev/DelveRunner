@@ -11,6 +11,7 @@ public class EnemySpawnDetector : MonoBehaviour
     private AbilityManager abilityManager;
     private SpriteRenderer spriteRenderer;
     private PlayerMovement playerMovement;
+    public EnvironmentThreat environmentThreat;
     void Start()
     {
         playerMovement = FindFirstObjectByType<PlayerMovement>();
@@ -53,7 +54,7 @@ public class EnemySpawnDetector : MonoBehaviour
 
     private void StartFightNodeSequence()
     {
-        GetComponent<EnvironmentThreat>().enabled = true;
+        environmentThreat.enabled = true;
         fightNodeInterface.SetActive(false);
         StartFightNode();
     }

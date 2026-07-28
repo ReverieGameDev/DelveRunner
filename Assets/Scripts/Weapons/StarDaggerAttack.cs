@@ -10,9 +10,11 @@ public class StarDaggerAttack : MonoBehaviour
     private Vector3 trajectory;
     private PlayerCombat playerCombat;
     public float damageMultiplier = 1f;
+    private EmberSystem emberSystem;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        emberSystem = FindFirstObjectByType<EmberSystem>();
         playerCombat = FindFirstObjectByType<PlayerCombat>();
         attackManager = FindFirstObjectByType<AttackManager>();
         trajectory = attackManager.mousePos - attackManager.playerPos;

@@ -75,6 +75,10 @@ public class Enemy : MonoBehaviour
         enemyAI.assignedSpawnAnchorScript.EvaluateFormationState(FormationCheck.LowFrontline);
     }
 
+    public void HealEnemy(float damageHealed)
+    {
+         enemyHealth = Mathf.Min(enemyHealth+damageHealed, maxEnemyHealth);
+    }
     public void reduceHp(float damageTaken, bool isCrit = false)
     {
 

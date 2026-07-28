@@ -1,5 +1,5 @@
-using JetBrains.Annotations;
-using System.Collections;
+
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using static EnvironmentThreat;
@@ -19,6 +19,11 @@ public class EnvironmentThreat : MonoBehaviour
     public Vector2 operatorCoords;
     public Transform barFill;
     private Vector3 barStartScale;
+    private float deathTime;
+    public float zapperDamage = 20f;
+    public float healingTotemHeal = 35f;
+
+    public SpriteRenderer etColor; 
 
     private float chargeCounter;
     private float stateTimer;
@@ -36,11 +41,13 @@ public class EnvironmentThreat : MonoBehaviour
         Idle,
         Charging,
         Firing,
-        Interrupted
+        Interrupted,
+        OperatorDeath
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        etColor = barFill.GetComponent<SpriteRenderer>();
         barStartScale = barFill.localScale;
         operatorCoords = transform.position;
         spawnManager = FindFirstObjectByType<SpawnManager>();
@@ -50,6 +57,7 @@ public class EnvironmentThreat : MonoBehaviour
                     totalChargeTime = 10f;
                     cooldownTime = 4f;
                     interruptPenaltyTime = 2f;
+                    deathTime = 5f;
                 cooldownAfterFire = 4f;
                 needOperator = true;
                 break;
@@ -58,6 +66,7 @@ public class EnvironmentThreat : MonoBehaviour
                     cooldownTime = 5f;
                     interruptPenaltyTime = 5f;
                 cooldownAfterFire = 3f;
+                deathTime = 0f;
                 needOperator = false;
                 break;
             case EnvironmentThreatName.NullObelisk:
@@ -65,6 +74,7 @@ public class EnvironmentThreat : MonoBehaviour
                     cooldownTime = 6f;
                     interruptPenaltyTime = 2f;
                 cooldownAfterFire = 2f;
+                deathTime = 7f;
                 needOperator = true;
                 break;
         }
@@ -73,7 +83,7 @@ public class EnvironmentThreat : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (needOperator && enemyOperator == null && environmentState != EnvironmentState.Idle)
+        if (needOperator && enemyOperator == null && (environmentState == EnvironmentState.Charging || environmentState == EnvironmentState.Firing))
         {
             environmentState = EnvironmentState.Idle;
         }
@@ -95,19 +105,31 @@ public class EnvironmentThreat : MonoBehaviour
                     chargeCounter += Time.deltaTime;
                     if (chargeCounter >= totalChargeTime)
                     {
+                        switch (currentEnvironmentThreatName)
+                        {
+                            case EnvironmentThreatName.Zapper:
+                                EnvironmentThreatZapper();
+
+                                break;
+                            case EnvironmentThreatName.HealingTotem:
+                                EnvironmentThreatHealingTotem();
+                                break;
+                            case EnvironmentThreatName.NullObelisk:
+
+                                break;
+                        }
                         environmentState = EnvironmentState.Firing;
                         stateTimer = cooldownAfterFire;
                     }
                     barFill.localScale = new Vector3(barStartScale.x * EnvironmentChargePercent(), barStartScale.y, barStartScale.z);
                     break;
                 case EnvironmentState.Firing: //ET has reached the total charge, fires.
-
-                    
                     stateTimer -= Time.deltaTime;
                     if (stateTimer <= 0)
                     {
                         environmentState = EnvironmentState.Charging;
                         chargeCounter = 0;
+
                     }
                     break;
                 case EnvironmentState.Interrupted: //ET is interrupted by a stun
@@ -117,8 +139,24 @@ public class EnvironmentThreat : MonoBehaviour
                         environmentState = EnvironmentState.Charging;
                     }
                     break;
+                case EnvironmentState.OperatorDeath: //ET is interrupted by death
+                    stateTimer -= Time.deltaTime;
+                    if (chargeCounter >= 0) chargeCounter -= Time.deltaTime;
+                    barFill.localScale = new Vector3(barStartScale.x * EnvironmentChargePercent(), barStartScale.y, barStartScale.z);
+                    if (stateTimer <= 0)
+                    {
+                        environmentState = EnvironmentState.Idle;
+                    }
+                    break;
             }
         }
+    }
+    public void OperatorHasDied()
+    {
+        environmentState = EnvironmentState.OperatorDeath;
+        stateTimer = deathTime;
+        enemyOperator = null;
+        walkingOperator = null;
     }
     public void InterruptEnvironment()
     {
@@ -150,18 +188,64 @@ public class EnvironmentThreat : MonoBehaviour
             EnemyAI enemyAI = enemyObject.GetComponent<EnemyAI>();
 
             if (enemy.enemyHealth / enemy.maxEnemyHealth < 0.5f) continue;
-            if (enemyAI.isAttacking) continue;
+            //if (enemyAI.isAttacking) continue;
             if (enemyAI.walkingToET) continue;
-
+            if (enemyAI.currentMode != EnemyMode.Solo) continue;
             validOperators.Add(enemyObject);
         }
 
         if (validOperators.Count == 0) return;
-        walkingOperator = validOperators[Random.Range(0, validOperators.Count)];
+        walkingOperator = validOperators[UnityEngine.Random.Range(0, validOperators.Count)];
         walkingOperator.GetComponent<EnemyAI>().currentMode = EnemyMode.Environment;
         walkingOperator.GetComponent<EnemyAI>().walkingToET = true;
         walkingOperator.GetComponent<EnemyAI>().environmentThreat = this;
-        Debug.Log("Looking for operator, found: " + walkingOperator);
+    }
+
+    public void EnvironmentThreatZapper()
+    {
+        PlayerCombat.Instance.DamagePlayer(zapperDamage);
+
+    }
+
+    public void EnvironmentThreatNullField(bool grow)
+    {
+        //make the null field bigger
+    }
+
+    public void EnvironmentThreatHealingTotem()
+    {
+        GameObject[] allEnemies = GameObject.FindGameObjectsWithTag("Enemy");
+
+        foreach (GameObject enemy in allEnemies)
+        {
+            enemy.GetComponent<Enemy>().HealEnemy(healingTotemHeal);
+        }
+    }
+
+    public void EnviromentThreatHealingTotemReduceTime()
+    {
+        if (environmentState == EnvironmentState.Charging)
+        {
+            chargeCounter = Mathf.Max(chargeCounter - 1,0);
+        }
+    }
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Weapon"))
+        {
+            switch (currentEnvironmentThreatName)
+            {
+                case EnvironmentThreatName.Zapper:
+
+                    break;
+                case EnvironmentThreatName.HealingTotem:
+                    EnviromentThreatHealingTotemReduceTime();
+                    break;
+                case EnvironmentThreatName.NullObelisk:
+
+                    break;
+            }
+        }
     }
 }
 
