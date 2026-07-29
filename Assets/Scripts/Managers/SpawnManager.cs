@@ -291,11 +291,12 @@ public class SpawnManager : MonoBehaviour
                 spawnedEnemies.Add(spawned);
             }
         }
-        
+
 
 
         foreach (GameObject enemy in spawnedEnemies)
         {
+            if (enemy == null) continue;
             enemy.GetComponent<EnemyAI>().soloSquaresPrefab = soloSquaresRefs;
         }
         currentAnchor.FormationAnchorEnemySetup();
@@ -338,6 +339,10 @@ public class SpawnManager : MonoBehaviour
         int randomIndex = Random.Range(0, listOfFightNodes.Count);
         Vector2 enemySpawnCoords = new Vector2(listOfFightNodes[randomIndex].centerX, listOfFightNodes[randomIndex].centerY);
         fightNodeIndicator.currentActiveFightNodeCoords = enemySpawnCoords;
+        if (lastFNPicked != null)
+        {
+            lastFNPicked.nodeInstance.GetComponentInChildren<EnemySpawnDetector>().enabled = false;
+        }
         listOfFightNodes[randomIndex].nodeInstance.GetComponentInChildren<EnemySpawnDetector>().enabled = true;
         lastFNPicked = listOfFightNodes[randomIndex];
         listOfFightNodes.RemoveAt(randomIndex);

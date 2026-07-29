@@ -608,6 +608,7 @@ public class PlayerCombat : MonoBehaviour
     #region Combat - Damage Taken
     public void DamagePlayer(float damageTaken)
     {
+        if (iFrames) return;
         int dodgeChance = Random.Range(0, 101);
         if (dodgeChance <= dodge)
         {
@@ -619,7 +620,6 @@ public class PlayerCombat : MonoBehaviour
         int damageTakenInt = (int)Mathf.Round(damageTaken);
         if (emberSystem != null && emberSystem.emberAmount <= 0)
             damageTakenInt = (int)(damageTakenInt * 1.15f);
-        if (iFrames) return;
         StartCoroutine("IFrames");
         float reduction = armor / (armor + 100f);
         int finalDamage = (int)Mathf.Round(damageTakenInt * (1f - reduction));
@@ -643,7 +643,20 @@ public class PlayerCombat : MonoBehaviour
         }
         if (doOrDieIsActive) DoOrDieToggle();
     }
-
+    public void EnvironmentDamagePlayer(float damageTaken)
+    {
+        if (iFrames) return;
+        int damageTakenInt = (int)Mathf.Round(damageTaken);
+        currentPlayerHealth -= damageTakenInt;
+        playerHpBar.value = currentPlayerHealth / maxHealth;
+        playerHpBarNumber.text = currentPlayerHealth + " / " + maxHealth;
+        if (currentPlayerHealth <= 0)
+        {
+            anim.SetTrigger("Death");
+            GameOver();
+            return;
+        }
+    }
     IEnumerator IFrames()
     {
         iFrames = true;

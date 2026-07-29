@@ -36,23 +36,12 @@ public class Enemy : MonoBehaviour
         enemyHealth *= Mathf.Pow(1.08f, emberSystem.waveNumber - 1);
         maxEnemyHealth = enemyHealth;
     }
+
     void Start()
     {
-        
-        emberSystem = FindFirstObjectByType<EmberSystem>();
-        if (!enemyData.isREE)
-        {
-            emberSystem.aliveEnemies++;
-        }
-        
         playerCombat = FindFirstObjectByType<PlayerCombat>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         enemyAI = GetComponent<EnemyAI>();
-        enemyHealth = enemyData.health;
-        enemyDamage = enemyData.damage;
-        enemySpeed = enemyData.speed;
-        enemyHealth *= Mathf.Pow(1.08f, emberSystem.waveNumber - 1);
-        maxEnemyHealth = enemyHealth;
         hpBar = GetComponentInChildren<Slider>();
         if (hpBar != null) hpBar.value = 1f;
     }
@@ -78,6 +67,8 @@ public class Enemy : MonoBehaviour
     public void HealEnemy(float damageHealed)
     {
          enemyHealth = Mathf.Min(enemyHealth+damageHealed, maxEnemyHealth);
+         hptext.text = (int)enemyHealth + " / " + (int)maxEnemyHealth;
+         if (hpBar != null) hpBar.value = enemyHealth / maxEnemyHealth;
     }
     public void reduceHp(float damageTaken, bool isCrit = false)
     {

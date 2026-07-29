@@ -22,6 +22,9 @@ public class EnvironmentThreat : MonoBehaviour
     private float deathTime;
     public float zapperDamage = 20f;
     public float healingTotemHeal = 35f;
+    public GameObject nullCircle;
+    private float hitCooldown;
+
 
     public SpriteRenderer etColor; 
 
@@ -58,6 +61,7 @@ public class EnvironmentThreat : MonoBehaviour
                     cooldownTime = 4f;
                     interruptPenaltyTime = 2f;
                     deathTime = 5f;
+                
                 cooldownAfterFire = 4f;
                 needOperator = true;
                 break;
@@ -67,6 +71,7 @@ public class EnvironmentThreat : MonoBehaviour
                     interruptPenaltyTime = 5f;
                 cooldownAfterFire = 3f;
                 deathTime = 0f;
+                hitCooldown = 1f;
                 needOperator = false;
                 break;
             case EnvironmentThreatName.NullObelisk:
@@ -76,6 +81,7 @@ public class EnvironmentThreat : MonoBehaviour
                 cooldownAfterFire = 2f;
                 deathTime = 7f;
                 needOperator = true;
+                hitCooldown = 1f;
                 break;
         }
     }
@@ -103,6 +109,7 @@ public class EnvironmentThreat : MonoBehaviour
                     break;
                 case EnvironmentState.Charging: //ET is occupied by an enemy, is charging
                     chargeCounter += Time.deltaTime;
+                    hitCooldown = MathF.Max(hitCooldown - Time.deltaTime, 0);
                     if (chargeCounter >= totalChargeTime)
                     {
                         switch (currentEnvironmentThreatName)
@@ -115,7 +122,7 @@ public class EnvironmentThreat : MonoBehaviour
                                 EnvironmentThreatHealingTotem();
                                 break;
                             case EnvironmentThreatName.NullObelisk:
-
+                                EnvironmentThreatNullObelisk();
                                 break;
                         }
                         environmentState = EnvironmentState.Firing;
@@ -204,12 +211,6 @@ public class EnvironmentThreat : MonoBehaviour
     public void EnvironmentThreatZapper()
     {
         PlayerCombat.Instance.DamagePlayer(zapperDamage);
-
-    }
-
-    public void EnvironmentThreatNullField(bool grow)
-    {
-        //make the null field bigger
     }
 
     public void EnvironmentThreatHealingTotem()
@@ -229,6 +230,14 @@ public class EnvironmentThreat : MonoBehaviour
             chargeCounter = Mathf.Max(chargeCounter - 1,0);
         }
     }
+    public void EnvironmentThreatNullObelisk()
+    {
+        nullCircle.transform.localScale += new Vector3(5f, 5f, 0);
+    }
+    public void EnvironmentThreatReduceNullObelisk()
+    {
+        nullCircle.transform.localScale += new Vector3(-1f, -1f, 0);
+    }
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.CompareTag("Weapon"))
@@ -239,10 +248,19 @@ public class EnvironmentThreat : MonoBehaviour
 
                     break;
                 case EnvironmentThreatName.HealingTotem:
-                    EnviromentThreatHealingTotemReduceTime();
+                    if (hitCooldown <= 0)
+                    {
+                        EnviromentThreatHealingTotemReduceTime();
+                        hitCooldown = 1f;
+                    }
                     break;
                 case EnvironmentThreatName.NullObelisk:
-
+                    if (hitCooldown <= 0)
+                    {
+                        EnvironmentThreatReduceNullObelisk();
+                        hitCooldown = 1f;
+                    }
+                    
                     break;
             }
         }

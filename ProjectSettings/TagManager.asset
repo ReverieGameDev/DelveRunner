@@ -15,11 +15,13 @@ TagManager:
   - Barrier
   - Anchor
   - REE
+  - Weapon
+  - ET
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - nullfield
   - Water
   - UI
   - ABOVE UI
