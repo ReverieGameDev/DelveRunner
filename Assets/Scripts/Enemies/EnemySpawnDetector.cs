@@ -13,6 +13,7 @@ public class EnemySpawnDetector : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private PlayerMovement playerMovement;
     public EnvironmentThreat environmentThreat;
+    public GameObject buttonPrompt;
     void Start()
     {
         playerMovement = FindFirstObjectByType<PlayerMovement>();
@@ -36,7 +37,7 @@ public class EnemySpawnDetector : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             playerInRange = true;
-
+            buttonPrompt.SetActive(true);
         }
 
     }
@@ -45,6 +46,7 @@ public class EnemySpawnDetector : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             playerInRange = false;
+            buttonPrompt.SetActive(false);
         }
     }
 
@@ -55,6 +57,7 @@ public class EnemySpawnDetector : MonoBehaviour
 
     private void StartFightNodeSequence()
     {
+        buttonPrompt.SetActive(false);
         environmentThreat.enabled = true;
         fightNodeInterface.SetActive(false);
         StartFightNode();
@@ -63,8 +66,8 @@ public class EnemySpawnDetector : MonoBehaviour
     public void StartFightNode()
     {
         spawnManager.fightNodeCenter = transform.position;
-        Instantiate(barrier, new Vector2(transform.position.x + 4.5f, transform.position.y + 2.5f), Quaternion.identity);
-        GameObject squaresInstance = Instantiate(spawnManager.soloSquares, new Vector3(transform.position.x, transform.position.y + 5), Quaternion.identity);
+        Instantiate(barrier, new Vector2(transform.position.x + 3.5f, transform.position.y -1f), Quaternion.identity);
+        GameObject squaresInstance = Instantiate(spawnManager.soloSquares, new Vector3(transform.position.x -.75f, transform.position.y -1.5f), Quaternion.identity);
         spawnManager.soloSquaresRefs = squaresInstance.GetComponentsInChildren<SoloSquares>();
         spawnManager.currentSoloSquares = squaresInstance;   // store for later destroy
         spawnManager.SpawnNextWave();

@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: ETZap
+  m_Name: HealingTotemBG
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -21,19 +21,21 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: -855298285791758126, guid: 9d7a71fb4bc566a4c9c7338c82f21659, type: 3}
+      value: {fileID: -2156211771392337760, guid: 3963eaa301f2daf4b944173cd4f19f76, type: 3}
     - time: 0.083333336
-      value: {fileID: 6937817954938267909, guid: 035bfcc1ef1ad7f489f7c3c1305eb4b1, type: 3}
+      value: {fileID: -2627111987654619818, guid: 3963eaa301f2daf4b944173cd4f19f76, type: 3}
     - time: 0.16666667
-      value: {fileID: -6470460504253458178, guid: a89d005f744ac4840aa8156acb50f115, type: 3}
+      value: {fileID: -7116205716215880383, guid: 3963eaa301f2daf4b944173cd4f19f76, type: 3}
     - time: 0.25
-      value: {fileID: -4178046375966092550, guid: a82889368e33c314ab59a6b7586f51c9, type: 3}
+      value: {fileID: -5018052544024221565, guid: 3963eaa301f2daf4b944173cd4f19f76, type: 3}
     - time: 0.33333334
-      value: {fileID: 4130640169021434097, guid: 8d0220da6e7f986408a81f2facd94f15, type: 3}
+      value: {fileID: 3044220020421498035, guid: 3963eaa301f2daf4b944173cd4f19f76, type: 3}
     - time: 0.41666666
-      value: {fileID: 3465286685962602723, guid: d8cb6820ad94b0b4c923748f4a73397b, type: 3}
+      value: {fileID: -6706310102288100585, guid: 3963eaa301f2daf4b944173cd4f19f76, type: 3}
     - time: 0.5
-      value: {fileID: 7028616704906629411, guid: 1170ea0cc70775b4ba7037205df7ac45, type: 3}
+      value: {fileID: -285606724376942520, guid: 3963eaa301f2daf4b944173cd4f19f76, type: 3}
+    - time: 0.5833333
+      value: {fileID: 7192278112736668890, guid: 3963eaa301f2daf4b944173cd4f19f76, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -56,19 +58,20 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
-    - {fileID: -855298285791758126, guid: 9d7a71fb4bc566a4c9c7338c82f21659, type: 3}
-    - {fileID: 6937817954938267909, guid: 035bfcc1ef1ad7f489f7c3c1305eb4b1, type: 3}
-    - {fileID: -6470460504253458178, guid: a89d005f744ac4840aa8156acb50f115, type: 3}
-    - {fileID: -4178046375966092550, guid: a82889368e33c314ab59a6b7586f51c9, type: 3}
-    - {fileID: 4130640169021434097, guid: 8d0220da6e7f986408a81f2facd94f15, type: 3}
-    - {fileID: 3465286685962602723, guid: d8cb6820ad94b0b4c923748f4a73397b, type: 3}
-    - {fileID: 7028616704906629411, guid: 1170ea0cc70775b4ba7037205df7ac45, type: 3}
+    - {fileID: -2156211771392337760, guid: 3963eaa301f2daf4b944173cd4f19f76, type: 3}
+    - {fileID: -2627111987654619818, guid: 3963eaa301f2daf4b944173cd4f19f76, type: 3}
+    - {fileID: -7116205716215880383, guid: 3963eaa301f2daf4b944173cd4f19f76, type: 3}
+    - {fileID: -5018052544024221565, guid: 3963eaa301f2daf4b944173cd4f19f76, type: 3}
+    - {fileID: 3044220020421498035, guid: 3963eaa301f2daf4b944173cd4f19f76, type: 3}
+    - {fileID: -6706310102288100585, guid: 3963eaa301f2daf4b944173cd4f19f76, type: 3}
+    - {fileID: -285606724376942520, guid: 3963eaa301f2daf4b944173cd4f19f76, type: 3}
+    - {fileID: 7192278112736668890, guid: 3963eaa301f2daf4b944173cd4f19f76, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.5833333
+    m_StopTime: 0.6666666
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -87,11 +90,4 @@ AnimationClip:
   m_EulerEditorCurves: []
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
-  m_Events:
-  - time: 0.5
-    functionName: DisableOnAnimationFinish
-    data: 
-    objectReferenceParameter: {fileID: 0}
-    floatParameter: 0
-    intParameter: 0
-    messageOptions: 0
+  m_Events: []

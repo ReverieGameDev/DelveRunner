@@ -40,7 +40,6 @@ public class MapRenderer : MonoBehaviour
     public List<GameObject> chests = new List<GameObject>();
 
     public GameObject cachePrefab; //make this into a list later, you need 3 minimum
-    public GameObject fightNodePrefab;//make this into a list later, you need 3 minimum
     public GameObject bossNodePrefab;
 
     public GameObject[] fightNodePrefabs;
@@ -132,7 +131,8 @@ public class MapRenderer : MonoBehaviour
     }
     public GameObject RenderFightNodePrefab(Vector2 fightNodeCenter)
     {
-        return Instantiate(fightNodePrefab, fightNodeCenter, Quaternion.identity);
+        GameObject pick = fightNodePrefabs[Random.Range(0, fightNodePrefabs.Length)];
+        return Instantiate(pick, fightNodeCenter, Quaternion.identity);
     }
 
     public GameObject RenderBossNodePrefab(Vector2 bossNodeCenter)

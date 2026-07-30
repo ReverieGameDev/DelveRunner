@@ -129,9 +129,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 83
-        width: 13
-        height: 13
+        y: 0
+        width: 96
+        height: 96
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -146,99 +146,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: panel-border-000_1
-      rect:
-        serializedVersion: 2
-        x: 3
-        y: 3
-        width: 90
-        height: 90
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 4e8739b3697bf1ec0800000000000000
-      internalID: -3593952121745868572
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: panel-border-000_2
-      rect:
-        serializedVersion: 2
-        x: 83
-        y: 83
-        width: 13
-        height: 13
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 5dda610444733eed0800000000000000
-      internalID: -2386002611303698987
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: panel-border-000_3
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 13
-        height: 13
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: ad1e91b74dda785b0800000000000000
-      internalID: -5366129302878690854
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: panel-border-000_4
-      rect:
-        serializedVersion: 2
-        x: 83
-        y: 0
-        width: 13
-        height: 13
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e2f89bd14403cbbb0800000000000000
-      internalID: -4919003623880814802
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: a0969048e6020a74b9995915c714262d
     internalID: 0
     vertices: []
     indices: 
@@ -249,10 +161,6 @@ TextureImporter:
       entries: []
     nameFileIdTable:
       panel-border-000_0: 485108904590415294
-      panel-border-000_1: -3593952121745868572
-      panel-border-000_2: -2386002611303698987
-      panel-border-000_3: -5366129302878690854
-      panel-border-000_4: -4919003623880814802
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

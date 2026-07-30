@@ -31,14 +31,14 @@ public class SpawnManager : MonoBehaviour
     public GameObject currentSoloSquares;
     private readonly Vector2[] directionOffsets = new Vector2[]
 {
-        new Vector2(0, 24),             // 0 north
-        new Vector2(16.97f, 16.97f),    // 1 northeast
-        new Vector2(24, 0),             // 2 east
-        new Vector2(16.97f, -16.97f),   // 3 southeast
-        new Vector2(0, -24),            // 4 south
-        new Vector2(-16.97f, -16.97f),  // 5 southwest
-        new Vector2(-24, 0),            // 6 west
-        new Vector2(-16.97f, 16.97f),   // 7 northwest
+    new Vector2(0, 22),             // 0 north
+    new Vector2(15.56f, 15.56f),    // 1 northeast
+    new Vector2(22, 0),             // 2 east
+    new Vector2(15.56f, -15.56f),   // 3 southeast
+    new Vector2(0, -22),            // 4 south
+    new Vector2(-15.56f, -15.56f),  // 5 southwest
+    new Vector2(-22, 0),            // 6 west
+    new Vector2(-15.56f, 15.56f),   // 7 northwest
 };
     private int chosenDirection;                 // compass id 0-7, stable meaning
     private float currentFormationFacing;        // degrees the head should face at spawn

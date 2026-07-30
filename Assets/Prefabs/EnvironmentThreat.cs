@@ -1,6 +1,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Net;
 using UnityEngine;
 using static EnvironmentThreat;
 
@@ -24,6 +25,12 @@ public class EnvironmentThreat : MonoBehaviour
     public float healingTotemHeal = 35f;
     public GameObject nullCircle;
     private float hitCooldown;
+    public GameObject zapWindup;
+    public GameObject zap;
+    private bool changeNullCircleSize = false;
+    private Vector3 nullCircleSizeGoal;
+    public float nullCircleChangeSpeed = 2f;
+    public GameObject healingTotemHealPrefab;
 
 
     public SpriteRenderer etColor; 
@@ -89,6 +96,15 @@ public class EnvironmentThreat : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (changeNullCircleSize)
+        {
+            if (Vector2.Distance(nullCircle.transform.localScale, nullCircleSizeGoal) <= 0.1f)
+            {
+                changeNullCircleSize = false;
+                return;
+            }
+            nullCircle.transform.localScale = Vector3.MoveTowards(nullCircle.transform.localScale, nullCircleSizeGoal, nullCircleChangeSpeed * Time.deltaTime);
+        }
         if (needOperator && enemyOperator == null && (environmentState == EnvironmentState.Charging || environmentState == EnvironmentState.Firing))
         {
             environmentState = EnvironmentState.Idle;
@@ -115,8 +131,7 @@ public class EnvironmentThreat : MonoBehaviour
                         switch (currentEnvironmentThreatName)
                         {
                             case EnvironmentThreatName.Zapper:
-                                EnvironmentThreatZapper();
-
+                                zapWindup.SetActive(true);
                                 break;
                             case EnvironmentThreatName.HealingTotem:
                                 EnvironmentThreatHealingTotem();
@@ -210,6 +225,8 @@ public class EnvironmentThreat : MonoBehaviour
 
     public void EnvironmentThreatZapper()
     {
+        zapWindup.SetActive(false);
+        zap.SetActive(true);
         PlayerCombat.Instance.DamagePlayer(zapperDamage);
     }
 
@@ -220,6 +237,7 @@ public class EnvironmentThreat : MonoBehaviour
         foreach (GameObject enemy in allEnemies)
         {
             enemy.GetComponent<Enemy>().HealEnemy(healingTotemHeal);
+            Instantiate(healingTotemHealPrefab, new Vector2(enemy.transform.position.x, enemy.transform.position.y -1.5f), Quaternion.identity);
         }
     }
 
@@ -232,12 +250,19 @@ public class EnvironmentThreat : MonoBehaviour
     }
     public void EnvironmentThreatNullObelisk()
     {
-        nullCircle.transform.localScale += new Vector3(5f, 5f, 0);
+        LerpNullCircle(nullCircle.transform.localScale + new Vector3(1f, 1f, 0));
     }
     public void EnvironmentThreatReduceNullObelisk()
     {
-        nullCircle.transform.localScale += new Vector3(-1f, -1f, 0);
+        LerpNullCircle(nullCircle.transform.localScale + new Vector3(-.5f, -.5f, 0));
     }
+    private void LerpNullCircle(Vector3 sizeChange)
+    {
+        float clamped = Mathf.Clamp(sizeChange.x, 1, 10);
+        nullCircleSizeGoal = new Vector3(clamped, clamped, 0);
+        changeNullCircleSize = true;
+    }
+
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.CompareTag("Weapon"))
