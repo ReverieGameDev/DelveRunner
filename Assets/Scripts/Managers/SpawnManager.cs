@@ -28,6 +28,7 @@ public class SpawnManager : MonoBehaviour
     public GameObject soloSquares;
     public SoloSquares[] soloSquaresRefs;
     public List<GameObject> spawnedEnemies = new List<GameObject>();
+    public GameObject currentSoloSquares;
     private readonly Vector2[] directionOffsets = new Vector2[]
 {
         new Vector2(0, 24),             // 0 north
@@ -332,6 +333,7 @@ public class SpawnManager : MonoBehaviour
             }
             if (lastFNPicked != null)
             {
+
                 listOfFightNodes.Remove(lastFNPicked);
             }
         }
@@ -339,9 +341,13 @@ public class SpawnManager : MonoBehaviour
         int randomIndex = Random.Range(0, listOfFightNodes.Count);
         Vector2 enemySpawnCoords = new Vector2(listOfFightNodes[randomIndex].centerX, listOfFightNodes[randomIndex].centerY);
         fightNodeIndicator.currentActiveFightNodeCoords = enemySpawnCoords;
-        if (lastFNPicked != null)
+        if (lastFNPicked != null && lastFNPicked.nodeInstance != null)
         {
-            lastFNPicked.nodeInstance.GetComponentInChildren<EnemySpawnDetector>().enabled = false;
+            EnemySpawnDetector det = lastFNPicked.nodeInstance.GetComponentInChildren<EnemySpawnDetector>();
+            if (det != null) det.enabled = false;
+            if (currentSoloSquares != null) Destroy(currentSoloSquares);
+            EnvironmentThreat et = lastFNPicked.nodeInstance.GetComponentInChildren<EnvironmentThreat>();
+            if (et != null) et.enabled = false;
         }
         listOfFightNodes[randomIndex].nodeInstance.GetComponentInChildren<EnemySpawnDetector>().enabled = true;
         lastFNPicked = listOfFightNodes[randomIndex];

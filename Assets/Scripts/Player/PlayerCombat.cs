@@ -293,7 +293,9 @@ public class PlayerCombat : MonoBehaviour
         if (playerManaBar != null) playerManaBar.value = currentPlayerMana / playerManaBase;
         if (Input.GetKeyDown(KeyCode.F1))
         {
-            transform.position = FindFirstObjectByType<EnemySpawnDetector>().transform.position;
+            FightNodeIndicator fightNodeIndicator;
+            fightNodeIndicator = FindFirstObjectByType<FightNodeIndicator>();
+            transform.position = fightNodeIndicator.currentActiveFightNodeCoords;
         }
         if (isDynamicDensityActive)
         {

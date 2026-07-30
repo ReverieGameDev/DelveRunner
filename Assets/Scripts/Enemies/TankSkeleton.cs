@@ -85,7 +85,9 @@ public class TankSkeleton : MonoBehaviour
             }
         }
 
-        if (enemyAI.assignedSpawnAnchor.GetComponent<FormationAnchorBehaviour>().canWarriorLeap && !enemyAI.isAttacking && !leapCheckCooldownBool)
+        if (enemyAI.assignedSpawnAnchor != null &&
+    enemyAI.assignedSpawnAnchor.GetComponent<FormationAnchorBehaviour>().canWarriorLeap &&
+    !enemyAI.isAttacking && !leapCheckCooldownBool)
         {
             leapCheckCooldownBool = true;
             StartCoroutine("WarriorLeapCheck");
