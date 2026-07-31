@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: EmptyItem
   m_EditorClassIdentifier: 
   id: EmptySlot
-  icon: {fileID: 4764081960791798808, guid: e4b43f4cbe2460a4f88d2757a8a6ad7e, type: 3}
+  icon: {fileID: 0}
   amount: 1

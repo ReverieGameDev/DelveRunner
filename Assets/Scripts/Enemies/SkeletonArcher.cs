@@ -36,11 +36,8 @@ public class SkeletonArcher : MonoBehaviour
     private Enemy enemy;
     private bool isDead = false;
 
-    
-
     void Start()
     {
-        
         enemy = GetComponentInChildren<Enemy>();
         anim = GetComponentInChildren<Animator>();
         enemyAttackIndicator = GetComponentInChildren<EnemyAttackIndicator>();
@@ -58,13 +55,8 @@ public class SkeletonArcher : MonoBehaviour
         {
             currentAttack = "";
             isReadyTofire = false;
-            for (int i = 0; i < volleyIndicators.Count; i++)
-            {
-                Destroy(volleyIndicators[i]);
-            }
             anim.speed = 1f;
             anim.SetInteger("ArcherInt", 3);
-            Destroy(currentIndicator);
             arrowVolleyList.Clear();
             GetComponent<Collider2D>().enabled = false;
             StopAllCoroutines();
@@ -82,52 +74,6 @@ public class SkeletonArcher : MonoBehaviour
         {
             isReadyTofire = false;
             StartCoroutine("SkeletonArcherAttackCycle");
-        }
-        if (currentAttack == "arrowShot")
-        {
-            if (!indicatorShown)
-            {
-                indicatorShown = true;
-                currentIndicator = Instantiate(arrowTrajectory, transform.position, Quaternion.identity);
-            }
-            currentIndicator.transform.position = transform.position;
-            archerToPlayerAngle = new Vector2(playerMovement.transform.position.x - transform.position.x, playerMovement.transform.position.y - transform.position.y);
-            float angle = Mathf.Rad2Deg * (Mathf.Atan2(archerToPlayerAngle.y, archerToPlayerAngle.x));
-            currentIndicator.transform.rotation = Quaternion.Euler(0, 0, angle - 90);
-        }
-        if (currentAttack == "arrowVolley")
-        {
-            if (!indicatorShown)
-            {
-                indicatorShown = true;
-                for (int i = 0; i < arrowVolleyAmount; i++)
-                {
-                    int offset = 30 - (15 * i);
-                    archerToPlayerAngle = new Vector2(playerMovement.transform.position.x - transform.position.x, playerMovement.transform.position.y - transform.position.y);
-                    float angle = Mathf.Rad2Deg * (Mathf.Atan2(archerToPlayerAngle.y, archerToPlayerAngle.x));
-                    volleyIndicators.Add(Instantiate(arrowTrajectory, transform.position, Quaternion.Euler(0, 0, angle - 90 + offset)));
-                }
-            }
-            for (int i = 0; i < arrowVolleyAmount; i++)
-            {
-                int offset = 30 - (15 * i);
-                archerToPlayerAngle = new Vector2(playerMovement.transform.position.x - transform.position.x, playerMovement.transform.position.y - transform.position.y);
-                float angle = Mathf.Rad2Deg * (Mathf.Atan2(archerToPlayerAngle.y, archerToPlayerAngle.x));
-                volleyIndicators[i].transform.position = new Vector3(transform.position.x, transform.position.y);
-                volleyIndicators[i].transform.rotation = Quaternion.Euler(0, 0, angle - 90 + offset);
-            }
-        }
-        if (currentAttack == "multiShot")
-        {
-            if (!indicatorShown)
-            {
-                indicatorShown = true;
-                currentIndicator = Instantiate(arrowTrajectory, transform.position, Quaternion.identity);
-            }
-            currentIndicator.transform.position = transform.position;
-            archerToPlayerAngle = new Vector2(playerMovement.transform.position.x - transform.position.x, playerMovement.transform.position.y - transform.position.y);
-            float angle = Mathf.Rad2Deg * (Mathf.Atan2(archerToPlayerAngle.y, archerToPlayerAngle.x));
-            currentIndicator.transform.rotation = Quaternion.Euler(0, 0, angle - 90);
         }
     }
 
@@ -184,7 +130,6 @@ public class SkeletonArcher : MonoBehaviour
         ResumeShot();
         currentAttack = "";
         indicatorShown = false;
-        Destroy(currentIndicator);
         isIndicatorActive = false;
         GameObject spawnedArrow = Instantiate(arrow, transform.position, Quaternion.identity);
         spawnedArrow.GetComponent<ArrowBehaviour>().AttackName("arrowShot", 0);
@@ -196,13 +141,7 @@ public class SkeletonArcher : MonoBehaviour
     {
         currentAttack = "";
         ResumeShot();
-        for (int i = 0; i < volleyIndicators.Count; i++)
-        {
-            Destroy(volleyIndicators[i]);
-        }
-        volleyIndicators.Clear();
         indicatorShown = false;
-        Destroy(currentIndicator);
         arrowVolleyList.Clear();
         isIndicatorActive = false;
         for (int i = 0; i < arrowVolleyAmount; i++)
@@ -221,7 +160,6 @@ public class SkeletonArcher : MonoBehaviour
         ResumeShot();
         currentAttack = "";
         indicatorShown = false;
-        Destroy(currentIndicator);
         isIndicatorActive = false;
         GameObject spawnedArrow = Instantiate(arrow, transform.position, Quaternion.identity);
         spawnedArrow.GetComponent<ArrowBehaviour>().AttackName("arrowShot", 0);
@@ -258,13 +196,8 @@ public class SkeletonArcher : MonoBehaviour
         currentAttack = "";
         if (!isREE) enemyAI.animOverride = true;
         isReadyTofire = false;
-        for (int i = 0; i < volleyIndicators.Count; i++)
-        {
-            Destroy(volleyIndicators[i]);
-        }
         anim.speed = 1f;
         anim.SetInteger("ArcherInt", 3);
-        Destroy(currentIndicator);
         arrowVolleyList.Clear();
         GetComponent<Collider2D>().enabled = false;
         StopAllCoroutines();
@@ -279,7 +212,6 @@ public class SkeletonArcher : MonoBehaviour
         {
             anim.speed = 0f;
         }
-       
     }
     public void ResumeShot()
     {
@@ -287,6 +219,5 @@ public class SkeletonArcher : MonoBehaviour
         {
             anim.speed = 1f;
         }
-        
     }
 }

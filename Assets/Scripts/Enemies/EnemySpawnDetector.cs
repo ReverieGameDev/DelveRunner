@@ -33,7 +33,7 @@ public class EnemySpawnDetector : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-
+        if (!enabled) return;
         if (collision.CompareTag("Player"))
         {
             playerInRange = true;
@@ -43,6 +43,7 @@ public class EnemySpawnDetector : MonoBehaviour
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
+        
         if (collision.CompareTag("Player"))
         {
             playerInRange = false;
@@ -57,6 +58,7 @@ public class EnemySpawnDetector : MonoBehaviour
 
     private void StartFightNodeSequence()
     {
+        enabled = false;
         buttonPrompt.SetActive(false);
         environmentThreat.enabled = true;
         fightNodeInterface.SetActive(false);

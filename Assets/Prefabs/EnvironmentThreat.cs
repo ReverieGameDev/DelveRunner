@@ -59,12 +59,12 @@ public class EnvironmentThreat : MonoBehaviour
     {
         etColor = barFill.GetComponent<SpriteRenderer>();
         barStartScale = barFill.localScale;
-        operatorCoords = transform.position;
+        operatorCoords = new Vector3(transform.position.x, transform.position.y - 4f);
         spawnManager = FindFirstObjectByType<SpawnManager>();
         switch (currentEnvironmentThreatName)
         {
             case EnvironmentThreatName.Zapper:
-                    totalChargeTime = 10f;
+                    totalChargeTime = 15f;
                     cooldownTime = 4f;
                     interruptPenaltyTime = 2f;
                     deathTime = 5f;
@@ -226,7 +226,7 @@ public class EnvironmentThreat : MonoBehaviour
     public void EnvironmentThreatZapper()
     {
         zapWindup.SetActive(false);
-        zap.SetActive(true);
+        Instantiate(zap, PlayerCombat.Instance.transform.position, Quaternion.identity);
         PlayerCombat.Instance.DamagePlayer(zapperDamage);
     }
 
