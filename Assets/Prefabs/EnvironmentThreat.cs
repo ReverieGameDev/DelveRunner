@@ -226,7 +226,7 @@ public class EnvironmentThreat : MonoBehaviour
     public void EnvironmentThreatZapper()
     {
         zapWindup.SetActive(false);
-        Instantiate(zap, PlayerCombat.Instance.transform.position, Quaternion.identity);
+        zap.SetActive(true);
         PlayerCombat.Instance.DamagePlayer(zapperDamage);
     }
 

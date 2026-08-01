@@ -6,6 +6,7 @@ public class ETZapLightning : MonoBehaviour
     {
         transform.position = PlayerCombat.Instance.transform.position;
     }
+
     public void DisableOnAnimationFinish()
     {
         gameObject.SetActive(false);
