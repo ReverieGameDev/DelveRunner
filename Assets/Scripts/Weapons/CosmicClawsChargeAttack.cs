@@ -1,6 +1,7 @@
 using UnityEngine;
+using static AttackManager;
 
-public class StarDaggerAttack : MonoBehaviour
+public class CosmicClawsChargeAttack : ChargeAttackBase
 {
     private Enemy enemy;
     private float starDaggerDamage = 38f;
@@ -9,19 +10,24 @@ public class StarDaggerAttack : MonoBehaviour
     private PlayerCombat playerCombat;
     public float damageMultiplier = 1f;
     private EmberSystem emberSystem;
+    public float currentCharge;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public override void Fire(float chargePercent, float chargeTime)   // <-- the required method, on THIS class
+    {
+        DoSwipeHit(chargePercent,chargeTime);
+    }
+    void Awake()
     {
         emberSystem = FindFirstObjectByType<EmberSystem>();
         playerCombat = FindFirstObjectByType<PlayerCombat>();
         attackManager = FindFirstObjectByType<AttackManager>();
         trajectory = attackManager.mousePos - attackManager.playerPos;
         float angle = Mathf.Atan2(trajectory.y, trajectory.x) * Mathf.Rad2Deg;
+        transform.position += trajectory.normalized *1.5f;
         transform.rotation = Quaternion.Euler(0, 0, angle + 90);
-
-        DoSwipeHit();   // capture the hit at the instant of firing
     }
-    private void DoSwipeHit()
+
+    private void DoSwipeHit(float chargeP,float chargeT)
     {
         float radius = 3f;          // swipe reach
         float halfArc = 90f;        // 120° cone total
@@ -40,8 +46,9 @@ public class StarDaggerAttack : MonoBehaviour
 
             // APPLY
             Enemy e = hit.GetComponent<Enemy>();
-            int dmg = playerCombat.CalcWeaponDamage(starDaggerDamage * damageMultiplier, out bool wasCrit);
-            e.reduceHp(dmg,1, wasCrit);
+            float chargeMultiplier = (Mathf.Min(chargeT, chargeP)) / chargeT;
+            int dmg = playerCombat.CalcWeaponDamage((starDaggerDamage * damageMultiplier)* chargeMultiplier, out bool wasCrit);
+            e.reduceHp(dmg, 4, wasCrit);
         }
     }
     // Update is called once per frame

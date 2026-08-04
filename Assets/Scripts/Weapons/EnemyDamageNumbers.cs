@@ -33,6 +33,7 @@ public class EnemyDamageNumbers : MonoBehaviour
 
     public void DamageNumberSetup(int Damage, bool crit)
     {
+        /*
         if (crit == true)
         {
             damageTypeIcon.sprite = critIcon;
@@ -40,7 +41,7 @@ public class EnemyDamageNumbers : MonoBehaviour
         else if (crit == false)
         {
             damageTypeIcon.sprite = regularDamageIcon;
-        }
+        }*/
         damageText.text = ("" + Damage);
     }
 }

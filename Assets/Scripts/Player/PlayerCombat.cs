@@ -588,7 +588,7 @@ public class PlayerCombat : MonoBehaviour
 
         if (closestEnemy != null)
         {
-            closestEnemy.GetComponent<Enemy>().reduceHp(reflectDamage*mADDoctrineReflectDamage);
+            closestEnemy.GetComponent<Enemy>().reduceHp(reflectDamage*mADDoctrineReflectDamage,1);
             StartCoroutine("MADDoctrineCD");
         }
             

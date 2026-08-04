@@ -70,7 +70,7 @@ public class Enemy : MonoBehaviour
          hptext.text = (int)enemyHealth + " / " + (int)maxEnemyHealth;
          if (hpBar != null) hpBar.value = enemyHealth / maxEnemyHealth;
     }
-    public void reduceHp(float damageTaken, bool isCrit = false)
+    public void reduceHp(float damageTaken, int hitCount = 1, bool isCrit = false)
     {
 
         if (enemyHealth <= 0) return;
@@ -128,8 +128,22 @@ public class Enemy : MonoBehaviour
             }
         }
         if (hpBar != null) hpBar.value = enemyHealth / maxEnemyHealth;
-        GameObject popup = Instantiate(damageText, transform.position, Quaternion.identity);
-        popup.GetComponent<EnemyDamageNumbers>().DamageNumberSetup(damageTakenInt, isCrit);
+        if (hitCount > 1) { StartCoroutine(MultipleDamageHits(damageTakenInt, hitCount, isCrit)); }
+        else 
+        {
+            GameObject popup = Instantiate(damageText, transform.position, Quaternion.identity);
+            popup.GetComponent<EnemyDamageNumbers>().DamageNumberSetup(damageTakenInt, isCrit);
+        }
+            
+    }
+    IEnumerator MultipleDamageHits(int damageTaken, int hitCount, bool isCrit)
+    {
+        for (int i = 0; i < hitCount; i++)
+        {
+            GameObject popup = Instantiate(damageText, transform.position, Quaternion.identity);
+            popup.GetComponent<EnemyDamageNumbers>().DamageNumberSetup(damageTaken, isCrit);
+            yield return new WaitForSeconds(.25f);
+        }
     }
     IEnumerator DropEmber()
     {

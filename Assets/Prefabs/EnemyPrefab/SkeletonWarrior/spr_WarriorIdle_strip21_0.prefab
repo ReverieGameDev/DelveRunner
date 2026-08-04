@@ -596,6 +596,7 @@ MonoBehaviour:
   money1: {fileID: 1932543559876745157, guid: 91e32193b603d804c8db355aa0cc2034, type: 3}
   isDead: 0
   emberPickup: {fileID: 7187405047775818436, guid: 9041a98763e3eb046a3ba1609185608a, type: 3}
+  maxEnemyHealth: 0
   hptext: {fileID: 2700340121261321504}
   damageText: {fileID: 3387354775039598578, guid: 50cacda3beffc074fad27b29e0df1126, type: 3}
 --- !u!61 &7394682032219271510
@@ -685,14 +686,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentState: 0
   assignedSpawnAnchor: {fileID: 0}
+  assignedSpawnAnchorScript: {fileID: 0}
   role: 1
   animOverride: 0
   currentMode: 0
+  soloSquaresPrefab: []
+  enemySoloState: 0
+  isAttacking: 0
+  walkingToET: 0
+  environmentThreat: {fileID: 0}
   isCharging: 0
   isBackline: 0
   backlineDead: 0
   isFrontline: 1
   isDead: 0
+  isMovingSolo: 0
 --- !u!114 &-238945722122889938
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -900,8 +908,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 100/100
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 7c442f2b2acb22f4fbc4bfb1de4f8802, type: 2}
+  m_sharedMaterial: {fileID: 2905853236882555531, guid: 7c442f2b2acb22f4fbc4bfb1de4f8802, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -931,7 +939,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 1
+  m_fontStyle: 0
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535

@@ -1,12 +1,14 @@
+
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
-using static AttackManager;
 using UnityEngine.UI;
+using static AttackManager;
 
 public class WeaponManager : MonoBehaviour
 {
     public AttackManager.WeaponType[] heldWeapons;
-    public AttackManager.WeaponType currentWeapon;
+    public WeaponData currentWeapon;
     public int weaponIndex = 0;
     public bool switchingWeapons = false;
     public Sprite twinShadowsIcon;
@@ -15,14 +17,15 @@ public class WeaponManager : MonoBehaviour
     public Image weaponSlot1;
     public Image weaponSlot2;
     public Image weaponSlot3;
-    
+    public List<WeaponData> currentWeapons = new List<WeaponData>();
+
 
     public float weaponSwitchCooldown;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        currentWeapon = heldWeapons[weaponIndex];
-        UpdateWeaponUI();
+        currentWeapon = currentWeapons[0];
+        UpdateWeaponUI(WeaponSwitch.Weapon1);
     }
     private Sprite GetWeaponSprite(WeaponType weapon)
     {
@@ -37,43 +40,66 @@ public class WeaponManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Tab) && switchingWeapons == false)
+        if (Input.GetKeyDown(KeyCode.Alpha1) && switchingWeapons == false)
         {
-            
             switchingWeapons = true;
-            StartCoroutine("SwitchWeapons");
-            
+            StartCoroutine(SwitchWeapons(WeaponSwitch.Weapon1));
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha2) && switchingWeapons == false)
+        {
+            switchingWeapons = true;
+            StartCoroutine(SwitchWeapons(WeaponSwitch.Weapon2));
+
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha3) && switchingWeapons == false)
+        {
+            switchingWeapons = true;
+            StartCoroutine(SwitchWeapons(WeaponSwitch.Weapon3));
         }
     }
 
-    IEnumerator SwitchWeapons()
+    IEnumerator SwitchWeapons(WeaponSwitch weaponSwitch)
     {
-        if (weaponIndex >= 2)
-        {
-            weaponIndex = 0;
-            currentWeapon = heldWeapons[weaponIndex];
-            Debug.Log("Switching weapons" + currentWeapon);
-            UpdateWeaponUI();
-        }
-        else
-        {
-            weaponIndex++;
-            currentWeapon = heldWeapons[weaponIndex];
-            Debug.Log("Switching weapons" + currentWeapon);
-            UpdateWeaponUI();
-        }
+        ResetWeaponUIHighlights();
+        UpdateWeaponUI(weaponSwitch);
         yield return new WaitForSeconds(weaponSwitchCooldown);
         switchingWeapons = false;
     }
 
-    private void UpdateWeaponUI()
+    private void UpdateWeaponUI(WeaponSwitch weaponSwitch)
     {
-        int slot1Index = weaponIndex;
-        int slot2Index = (weaponIndex + 1) % 3;
-        int slot3Index = (weaponIndex + 2) % 3;
+        //this will just highlight the currently selected weapon.
+        switch (weaponSwitch)
+        {
+            case WeaponSwitch.Weapon1:
+                currentWeapon = currentWeapons[0];
+                ColorUtility.TryParseHtmlString("#DBE02E", out Color selectedColor1);
+                weaponSlot1.color = selectedColor1;
+                break;
+            case WeaponSwitch.Weapon2:
+                currentWeapon = currentWeapons[1];
+                ColorUtility.TryParseHtmlString("#DBE02E", out Color selectedColor2);
+                weaponSlot2.color = selectedColor2;
+                break;
+            case WeaponSwitch.Weapon3:
+                currentWeapon = currentWeapons[2];
+                ColorUtility.TryParseHtmlString("#DBE02E", out Color selectedColor3);
+                weaponSlot3.color = selectedColor3;
+                break; 
+        }
+    }
 
-        weaponSlot1.sprite = GetWeaponSprite(heldWeapons[slot1Index]);
-        weaponSlot2.sprite = GetWeaponSprite(heldWeapons[slot2Index]);
-        weaponSlot3.sprite = GetWeaponSprite(heldWeapons[slot3Index]);
+    private void ResetWeaponUIHighlights()
+    {
+        ColorUtility.TryParseHtmlString("#C68A44", out Color selectedColor1);
+        weaponSlot1.color = selectedColor1;
+        ColorUtility.TryParseHtmlString("#C68A44", out Color selectedColor2);
+        weaponSlot2.color = selectedColor2;
+        ColorUtility.TryParseHtmlString("#C68A44", out Color selectedColor3);
+        weaponSlot3.color = selectedColor3;
+    }
+    public enum WeaponSwitch
+    {
+        Weapon1, Weapon2, Weapon3
     }
 }

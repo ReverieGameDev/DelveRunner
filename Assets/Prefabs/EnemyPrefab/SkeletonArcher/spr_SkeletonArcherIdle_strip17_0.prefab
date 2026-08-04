@@ -915,8 +915,9 @@ MonoBehaviour:
   money1: {fileID: 1932543559876745157, guid: 91e32193b603d804c8db355aa0cc2034, type: 3}
   isDead: 0
   emberPickup: {fileID: 7187405047775818436, guid: 9041a98763e3eb046a3ba1609185608a, type: 3}
+  maxEnemyHealth: 0
   hptext: {fileID: 4214639786262766968}
-  damageText: {fileID: 0}
+  damageText: {fileID: 3387354775039598578, guid: 50cacda3beffc074fad27b29e0df1126, type: 3}
 --- !u!50 &5398702058119664678
 Rigidbody2D:
   serializedVersion: 5
@@ -1028,14 +1029,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentState: 0
   assignedSpawnAnchor: {fileID: 0}
+  assignedSpawnAnchorScript: {fileID: 0}
   role: 0
   animOverride: 0
   currentMode: 0
+  soloSquaresPrefab: []
+  enemySoloState: 0
+  isAttacking: 0
+  walkingToET: 0
+  environmentThreat: {fileID: 0}
   isCharging: 0
   isBackline: 1
   backlineDead: 0
   isFrontline: 0
   isDead: 0
+  isMovingSolo: 0
 --- !u!95 &5868504810225459594
 Animator:
   serializedVersion: 7
