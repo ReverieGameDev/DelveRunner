@@ -78,7 +78,7 @@ public class Enemy : MonoBehaviour
         {
             damageTaken = 9999f;
         }
-        int damageTakenInt = (int)Mathf.Round(damageTaken);
+        int damageTakenInt = (int)Mathf.Round(damageTaken)*hitCount;
         float damageDealt = Mathf.Min(damageTakenInt, enemyHealth);
 
         enemyHealth = Mathf.Clamp(enemyHealth - damageTakenInt, 0, enemyData.health);

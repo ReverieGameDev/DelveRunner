@@ -40,6 +40,7 @@ public class CosmicClawsChargeAttack : ChargeAttackBase
         {
             if (!hit.CompareTag("Enemy")) continue;
 
+            Debug.Log("HIT: " + hit.name);
             // NARROW PHASE: only who's inside the arc
             Vector2 dirToEnemy = (hit.transform.position - playerCombat.transform.position).normalized;
             if (Vector2.Angle(aimDir, dirToEnemy) > halfArc) continue;
@@ -49,6 +50,7 @@ public class CosmicClawsChargeAttack : ChargeAttackBase
             float chargeMultiplier = (Mathf.Min(chargeT, chargeP)) / chargeT;
             int dmg = playerCombat.CalcWeaponDamage((starDaggerDamage * damageMultiplier)* chargeMultiplier, out bool wasCrit);
             e.reduceHp(dmg, 4, wasCrit);
+            
         }
     }
     // Update is called once per frame
