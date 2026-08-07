@@ -22,6 +22,8 @@ public class Enemy : MonoBehaviour
     public float maxEnemyHealth;
     public TextMeshProUGUI hptext;
     public GameObject damageText;
+    public bool enfeebled = false;
+    public float enfeebleBonusDamage;
 
     private void Awake()
     {
@@ -78,10 +80,19 @@ public class Enemy : MonoBehaviour
         {
             damageTaken = 9999f;
         }
-        int damageTakenInt = (int)Mathf.Round(damageTaken)*hitCount;
+        int damageTakenInt;
+        if (enfeebled)
+        {
+            damageTakenInt = (int)Mathf.Round((damageTaken) * enfeebleBonusDamage);
+        }
+        else
+        {
+            damageTakenInt = (int)Mathf.Round(damageTaken);
+        }
+        int damageTakenTotal = (int)Mathf.Round((damageTakenInt) * hitCount);
         float damageDealt = Mathf.Min(damageTakenInt, enemyHealth);
 
-        enemyHealth = Mathf.Clamp(enemyHealth - damageTakenInt, 0, enemyData.health);
+        enemyHealth = Mathf.Clamp(enemyHealth - damageTakenTotal, 0, maxEnemyHealth);
         if (enemyAI.isFrontline)
         {
             EnemyFrontlineHealth((int)damageDealt);
@@ -131,16 +142,21 @@ public class Enemy : MonoBehaviour
         if (hitCount > 1) { StartCoroutine(MultipleDamageHits(damageTakenInt, hitCount, isCrit)); }
         else 
         {
+            
             GameObject popup = Instantiate(damageText, transform.position, Quaternion.identity);
             popup.GetComponent<EnemyDamageNumbers>().DamageNumberSetup(damageTakenInt, isCrit);
+            popup.transform.SetAsLastSibling();
         }
             
     }
     IEnumerator MultipleDamageHits(int damageTaken, int hitCount, bool isCrit)
     {
+
         for (int i = 0; i < hitCount; i++)
         {
             GameObject popup = Instantiate(damageText, transform.position, Quaternion.identity);
+            Canvas c = popup.GetComponentInChildren<Canvas>();
+            c.sortingOrder += i;
             popup.GetComponent<EnemyDamageNumbers>().DamageNumberSetup(damageTaken, isCrit);
             yield return new WaitForSeconds(.25f);
         }

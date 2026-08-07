@@ -10,7 +10,7 @@ public class EnemyDamageNumbers : MonoBehaviour
     public Image damageTypeIcon;
     public Sprite critIcon;
     public Sprite regularDamageIcon;
-    private float floatSpeed = 1f;
+    private float floatSpeed = 1.5f;
     private float fadeSpeed = .66f;
     private CanvasGroup visibility;
 

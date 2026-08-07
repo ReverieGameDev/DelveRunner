@@ -118,7 +118,6 @@ public class EnvironmentThreat : MonoBehaviour
                     stateTimer -= Time.deltaTime;
                     if (stateTimer <= 0f && walkingOperator == null && enemyOperator == null)
                     {
-                        Debug.Log("firing find operator");
                         stateTimer = 3f;
                         FindOperator();
                     }

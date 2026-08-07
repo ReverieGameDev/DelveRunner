@@ -29,7 +29,7 @@ public class CosmicClawsChargeAttack : ChargeAttackBase
 
     private void DoSwipeHit(float chargeP,float chargeT)
     {
-        float radius = 3f;          // swipe reach
+        float radius = 4f;          // swipe reach
         float halfArc = 90f;        // 120° cone total
         Vector2 aimDir = trajectory.normalized;
 
@@ -39,8 +39,6 @@ public class CosmicClawsChargeAttack : ChargeAttackBase
         foreach (Collider2D hit in hits)
         {
             if (!hit.CompareTag("Enemy")) continue;
-
-            Debug.Log("HIT: " + hit.name);
             // NARROW PHASE: only who's inside the arc
             Vector2 dirToEnemy = (hit.transform.position - playerCombat.transform.position).normalized;
             if (Vector2.Angle(aimDir, dirToEnemy) > halfArc) continue;
@@ -48,7 +46,7 @@ public class CosmicClawsChargeAttack : ChargeAttackBase
             // APPLY
             Enemy e = hit.GetComponent<Enemy>();
             float chargeMultiplier = (Mathf.Min(chargeT, chargeP)) / chargeT;
-            int dmg = playerCombat.CalcWeaponDamage((starDaggerDamage * damageMultiplier)* chargeMultiplier, out bool wasCrit);
+            int dmg = playerCombat.CalcWeaponDamage((starDaggerDamage * damageMultiplier), out bool wasCrit);
             e.reduceHp(dmg, 4, wasCrit);
             
         }

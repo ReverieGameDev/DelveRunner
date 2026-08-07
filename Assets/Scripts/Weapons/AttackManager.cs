@@ -60,7 +60,8 @@ public class AttackManager : MonoBehaviour
         if (playerStatusEffects.isStunned == false && Input.GetMouseButtonUp(0) && isFiring == false && weaponManager.switchingWeapons == false && !playerMovement.playerFrozen)
         {
             currentWeapon = weaponManager.currentWeapon;
-            if (currentCharge >= currentWeapon.wChargeTime/2)//wont keep it as /2, this will be weapon specific, out of scope for now
+
+            if (currentWeapon.hasChargeAttack && currentCharge >= currentWeapon.wChargeTime/2)//wont keep it as /2, this will be weapon specific, out of scope for now
             {
                 Debug.Log(currentWeapon.wChargeTime + "current charge time");
                 playerCombat.GetComponent<Animator>().SetTrigger("Attack");
@@ -81,11 +82,19 @@ public class AttackManager : MonoBehaviour
     private IEnumerator FireWeapon(bool charged)
     {
 
-        if (!charged) { Instantiate(currentWeapon.wProjectilePrefab, playerCombat.transform.position, Quaternion.identity); }
+        if (!charged) 
+        { 
+            GameObject weaponPrefab = Instantiate(currentWeapon.wProjectilePrefab, playerCombat.transform.position, Quaternion.identity);
+            if (weaponPrefab.TryGetComponent<ProjectileBase>(out ProjectileBase proj))
+            {
+                Vector2 trajectory = (mousePos - playerPos).normalized;
+                proj.WeaponInit(currentWeapon, trajectory);
+            }
+        }
         if (charged) 
         {
-            GameObject go = Instantiate(currentWeapon.wChargeProjectilePrefab, playerCombat.transform.position, Quaternion.identity);
-            go.GetComponent<ChargeAttackBase>().Fire(currentCharge, currentWeapon.wChargeTime);
+            GameObject weaponPrefab = Instantiate(currentWeapon.wChargeProjectilePrefab, playerCombat.transform.position, Quaternion.identity);
+            weaponPrefab.GetComponent<ChargeAttackBase>().Fire(currentCharge, currentWeapon.wChargeTime);
         }
         if (shadowEcho.activeInHierarchy) shadowEcho.GetComponent<ShadowEcho>().ShadowAttack(starDaggerPrefab, "StarDagger"); // ignore this line for now.
         currentCharge = 0;
@@ -94,13 +103,6 @@ public class AttackManager : MonoBehaviour
         isFiring = false;
         if (chargeBar.activeInHierarchy) chargeBar.SetActive(false);
     }
-    /*IEnumerator StarDagger()
-    {
-        Instantiate(starDaggerPrefab, playerCombat.transform.position, Quaternion.identity);
-        if (shadowEcho.activeInHierarchy) shadowEcho.GetComponent<ShadowEcho>().ShadowAttack(starDaggerPrefab, "StarDagger");
-        yield return new WaitForSeconds(starDaggerAS * playerCombat.attackSpeed);
-        isFiring = false;
-    }*/
 
     private void mouseAndPlayerPositionsATOF()
     {

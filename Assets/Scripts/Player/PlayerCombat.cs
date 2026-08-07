@@ -770,6 +770,7 @@ public class PlayerCombat : MonoBehaviour
     #region Experience & Leveling
     public void AddXp(int xpValue)
     {
+        Debug.Log("addxp " + xpValue);
         if (isSchrodingersCatActive && SchrodingersCat() == true)
         {
             xpValue *= 2;

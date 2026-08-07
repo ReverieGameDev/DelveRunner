@@ -491,6 +491,7 @@ GameObject:
   - component: {fileID: 8713251192596382241}
   - component: {fileID: 6291480522068116360}
   - component: {fileID: -173222956756970788}
+  - component: {fileID: 4324157071525154936}
   - component: {fileID: 7394682032219271510}
   - component: {fileID: 5881906253531773848}
   - component: {fileID: 106430299749510927}
@@ -599,6 +600,33 @@ MonoBehaviour:
   maxEnemyHealth: 0
   hptext: {fileID: 2700340121261321504}
   damageText: {fileID: 3387354775039598578, guid: 50cacda3beffc074fad27b29e0df1126, type: 3}
+  enfeebled: 0
+  enfeebleBonusDamage: 0
+--- !u!114 &4324157071525154936
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3157067546353029266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d6c38e3af2d02948b01e7b5925f0361, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activeStatusEffects:
+  - type: 2
+    duration: 3
+    damage: 2
+    tickRate: 0.4
+    tickTimer: 0
+    effectPercentage: 0
+  - type: 4
+    duration: 30
+    damage: 0
+    tickRate: 0
+    tickTimer: 0
+    effectPercentage: 1.15
 --- !u!61 &7394682032219271510
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -633,7 +661,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.117934704, y: 0.0029483438}
+  m_Offset: {x: 0.082737446, y: 0.0029482841}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -643,7 +671,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 2.0352726, y: 2.6977086}
+  m_Size: {x: 1.1670728, y: 2.6977086}
   m_EdgeRadius: 0
 --- !u!50 &5881906253531773848
 Rigidbody2D:

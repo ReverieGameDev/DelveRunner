@@ -1,11 +1,11 @@
 using UnityEngine;
 
-public class DestroyAfterAnimation : MonoBehaviour
+public class DestroyAfterAnim : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-            Destroy(gameObject, GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length);
+        
     }
 
     // Update is called once per frame
@@ -13,5 +13,8 @@ public class DestroyAfterAnimation : MonoBehaviour
     {
         
     }
-
+    public void DestroyAfterAnimation()
+    {
+        Destroy(gameObject);
+    }
 }

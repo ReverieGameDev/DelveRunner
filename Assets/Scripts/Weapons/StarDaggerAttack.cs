@@ -32,7 +32,6 @@ public class StarDaggerAttack : MonoBehaviour
         foreach (Collider2D hit in hits)
         {
             if (!hit.CompareTag("Enemy")) continue;
-            Debug.Log("HIT: " + hit.name);
             // NARROW PHASE: only who's inside the arc
             Vector2 dirToEnemy = (hit.transform.position - playerCombat.transform.position).normalized;
             if (Vector2.Angle(aimDir, dirToEnemy) > halfArc) continue;
