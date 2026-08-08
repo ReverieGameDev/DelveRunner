@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 444233843070401006}
+  - component: {fileID: -1378498474720494221}
   - component: {fileID: 7149671892092534565}
   - component: {fileID: 6582646691239130438}
   - component: {fileID: 3985323690695297811}
@@ -39,6 +40,19 @@ Transform:
   - {fileID: 6920850542106389133}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-1378498474720494221
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1890546528678430059}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d6c38e3af2d02948b01e7b5925f0361, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activeStatusEffects: []
 --- !u!114 &7149671892092534565
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -177,7 +191,11 @@ MonoBehaviour:
   money1: {fileID: 1932543559876745157, guid: 91e32193b603d804c8db355aa0cc2034, type: 3}
   isDead: 0
   emberPickup: {fileID: 0}
+  maxEnemyHealth: 0
   hptext: {fileID: 5436172167935970151}
+  damageText: {fileID: 0}
+  enfeebled: 0
+  enfeebleBonusDamage: 0
 --- !u!50 &3089724247672028427
 Rigidbody2D:
   serializedVersion: 5

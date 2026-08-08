@@ -60,6 +60,14 @@ public class DeathCannon : ProjectileBase
         {
             if (explode) return;
             enemyFirstHit = collision.GetComponent<Enemy>();
+            if (Random.Range(0,100) < wepData.wChargeProcChance)
+            {
+                if (collision.TryGetComponent<EnemyStatusEffects>(out EnemyStatusEffects enemyStatusEffects))
+                {
+                    enemyStatusEffects.ESEEnfeeble(wepData.wStatusEffectDuration, wepData.wStatusEffectPercentage);
+                }
+
+            }
             int dmg = PlayerCombat.Instance.CalcWeaponDamage(wepData.wDamage * damageMultiplier, out bool wasCrit);
             enemyFirstHit.reduceHp(dmg, 1, wasCrit);
             explode = true;

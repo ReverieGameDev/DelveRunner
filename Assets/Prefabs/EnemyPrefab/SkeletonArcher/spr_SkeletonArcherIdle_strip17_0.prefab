@@ -794,6 +794,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1440414263455566461}
   - component: {fileID: 6600858984074119610}
+  - component: {fileID: -7123319444700591084}
   - component: {fileID: 3965854487244671795}
   - component: {fileID: 4342936406153635419}
   - component: {fileID: 5398702058119664678}
@@ -880,6 +881,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &-7123319444700591084
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9031412324747129976}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d6c38e3af2d02948b01e7b5925f0361, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activeStatusEffects: []
 --- !u!114 &3965854487244671795
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -918,6 +932,8 @@ MonoBehaviour:
   maxEnemyHealth: 0
   hptext: {fileID: 4214639786262766968}
   damageText: {fileID: 3387354775039598578, guid: 50cacda3beffc074fad27b29e0df1126, type: 3}
+  enfeebled: 0
+  enfeebleBonusDamage: 0
 --- !u!50 &5398702058119664678
 Rigidbody2D:
   serializedVersion: 5

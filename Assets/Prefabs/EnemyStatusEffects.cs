@@ -1,9 +1,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem.Android;
+using UnityEngine.UI;
 [System.Serializable]
 public class ActiveStatusEffects
 {
+    public GameObject icon;
     public WeaponStatusEffect type;
     public float duration;
     public int damage;
@@ -16,7 +18,11 @@ public class EnemyStatusEffects : MonoBehaviour
 {
     [SerializeField]
     private List<ActiveStatusEffects> activeStatusEffects = new List<ActiveStatusEffects>();
+    [SerializeField]
+    GridLayoutGroup iconGrid;
     private Enemy enemy;
+    public GameObject testIcon;
+    public Sprite enfeebleIcon;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -46,6 +52,7 @@ public class EnemyStatusEffects : MonoBehaviour
                             }
                             if (activeStatusEffects[i].duration <= 0)
                             {
+                                Destroy(activeStatusEffects[i].icon);
                                 activeStatusEffects.RemoveAt(i);
                             }
                         }
@@ -55,7 +62,9 @@ public class EnemyStatusEffects : MonoBehaviour
                         if (activeStatusEffects[i].duration <= 0)
                         {
                             enemy.enfeebled = false;
+                            Destroy(activeStatusEffects[i].icon);
                             activeStatusEffects.RemoveAt(i);
+
                         }
                         break;
                 }
@@ -75,6 +84,7 @@ public class EnemyStatusEffects : MonoBehaviour
     }
     public void ESEEnfeeble(float enfeebleDuration, float enfeebleExtraDmgPercent)
     {
+        Debug.Log(enemy);
         bool enfeebleAlreadyActive = false;
         foreach (ActiveStatusEffects activeStatuses in activeStatusEffects)
         {
@@ -93,6 +103,8 @@ public class EnemyStatusEffects : MonoBehaviour
             enemy.enfeebled = true;
             enemy.enfeebleBonusDamage = enfeebleExtraDmgPercent;
             newEnfeeble.type = WeaponStatusEffect.Enfeeble;
+            newEnfeeble.icon = Instantiate(testIcon, iconGrid.transform, false);
+            newEnfeeble.icon.GetComponent<Image>().sprite = enfeebleIcon;
             newEnfeeble.duration = enfeebleDuration;
             newEnfeeble.effectPercentage = enfeebleExtraDmgPercent;
             activeStatusEffects.Add(newEnfeeble);

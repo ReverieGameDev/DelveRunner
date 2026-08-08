@@ -74,7 +74,7 @@ public class Enemy : MonoBehaviour
     }
     public void reduceHp(float damageTaken, int hitCount = 1, bool isCrit = false)
     {
-
+        Debug.Log(enfeebled + " / " + enfeebleBonusDamage);
         if (enemyHealth <= 0) return;
         if (playerCombat.curtainCallActive && !enemyData.isBoss && isCrit && enemyHealth/maxEnemyHealth <= playerCombat.curtainCallExecute)
         {
@@ -147,7 +147,17 @@ public class Enemy : MonoBehaviour
             popup.GetComponent<EnemyDamageNumbers>().DamageNumberSetup(damageTakenInt, isCrit);
             popup.transform.SetAsLastSibling();
         }
-            
+        StartCoroutine(FlashOnDamage());
+    }
+    IEnumerator FlashOnDamage()
+    {
+        SpriteRenderer sprite = GetComponent<SpriteRenderer>();
+        for (int i = 0; i < 3; i++)
+        {
+            sprite.color = Color.red;
+            yield return new WaitForSeconds(.075f);
+            sprite.color = Color.white;
+        }
     }
     IEnumerator MultipleDamageHits(int damageTaken, int hitCount, bool isCrit)
     {

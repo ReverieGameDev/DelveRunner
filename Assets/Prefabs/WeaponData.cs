@@ -37,6 +37,8 @@ public class WeaponData : ScriptableObject
     public float wChargeProjectileSpeed;
     public WeaponStatusEffect wChargeStatusEffect;
     public float wChargeProcChance;
+    public float wStatusEffectDuration;
+    public float wStatusEffectPercentage;
 
     [Header("Charged AOE")]
     public bool wChargeHasAOE;

@@ -145,6 +145,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 784659921741397178}
+  - component: {fileID: 7627473127760143293}
   - component: {fileID: 4860575806460717071}
   - component: {fileID: 2082499795058945485}
   - component: {fileID: 5545634651613284562}
@@ -177,6 +178,19 @@ Transform:
   - {fileID: 8364574582319658943}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7627473127760143293
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4096997697643789573}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d6c38e3af2d02948b01e7b5925f0361, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activeStatusEffects: []
 --- !u!212 &4860575806460717071
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -254,6 +268,8 @@ MonoBehaviour:
   maxEnemyHealth: 0
   hptext: {fileID: 7633261382856248664}
   damageText: {fileID: 3387354775039598578, guid: 50cacda3beffc074fad27b29e0df1126, type: 3}
+  enfeebled: 0
+  enfeebleBonusDamage: 0
 --- !u!61 &5545634651613284562
 BoxCollider2D:
   m_ObjectHideFlags: 0

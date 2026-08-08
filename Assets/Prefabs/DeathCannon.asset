@@ -36,7 +36,9 @@ MonoBehaviour:
   wChargeProjectileCount: 0
   wChargeProjectileSpeed: 0
   wChargeStatusEffect: 0
-  wChargeProcChance: 0
+  wChargeProcChance: 25
+  wStatusEffectDuration: 10
+  wStatusEffectPercentage: 1.15
   wChargeHasAOE: 0
   wChargeAOERadius: 0
   wChargeAOEDamage: 0
