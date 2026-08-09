@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem.Android;
 using UnityEngine.UI;
@@ -6,6 +7,7 @@ using UnityEngine.UI;
 public class ActiveStatusEffects
 {
     public GameObject icon;
+    public TextMeshProUGUI timerText;
     public WeaponStatusEffect type;
     public float duration;
     public int damage;
@@ -59,12 +61,12 @@ public class EnemyStatusEffects : MonoBehaviour
                         break;
                     case WeaponStatusEffect.Enfeeble:
                         activeStatusEffects[i].duration -= Time.deltaTime;
+                        activeStatusEffects[i].timerText.text = ("" + activeStatusEffects[i].duration.ToString("F1"));
                         if (activeStatusEffects[i].duration <= 0)
                         {
                             enemy.enfeebled = false;
                             Destroy(activeStatusEffects[i].icon);
                             activeStatusEffects.RemoveAt(i);
-
                         }
                         break;
                 }
@@ -104,6 +106,7 @@ public class EnemyStatusEffects : MonoBehaviour
             enemy.enfeebleBonusDamage = enfeebleExtraDmgPercent;
             newEnfeeble.type = WeaponStatusEffect.Enfeeble;
             newEnfeeble.icon = Instantiate(testIcon, iconGrid.transform, false);
+            newEnfeeble.timerText = newEnfeeble.icon.GetComponentInChildren<TextMeshProUGUI>();
             newEnfeeble.icon.GetComponent<Image>().sprite = enfeebleIcon;
             newEnfeeble.duration = enfeebleDuration;
             newEnfeeble.effectPercentage = enfeebleExtraDmgPercent;
