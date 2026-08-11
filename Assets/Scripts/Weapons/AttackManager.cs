@@ -88,13 +88,13 @@ public class AttackManager : MonoBehaviour
             if (weaponPrefab.TryGetComponent<BasicAttackBase>(out BasicAttackBase basicAttackBase))
             {
                 Vector2 trajectory = (mousePos - playerPos).normalized;
-                basicAttackBase.WeaponInit(currentWeapon, trajectory);
+                basicAttackBase.FireBaseAttack(currentWeapon, trajectory);
             }
         }
         if (charged) 
         {
             GameObject weaponPrefab = Instantiate(currentWeapon.wChargeProjectilePrefab, playerCombat.transform.position, Quaternion.identity);
-            weaponPrefab.GetComponent<ChargeAttackBase>().Fire(currentWeapon,currentCharge, currentWeapon.wChargeTime);
+            weaponPrefab.GetComponent<ChargeAttackBase>().FireChargeAttack(currentWeapon,currentCharge, currentWeapon.wChargeTime);
         }
         if (shadowEcho.activeInHierarchy) shadowEcho.GetComponent<ShadowEcho>().ShadowAttack(starDaggerPrefab, "StarDagger"); // ignore this line for now.
         currentCharge = 0;

@@ -12,7 +12,7 @@ public class CosmicClawsChargeAttack : ChargeAttackBase
     private EmberSystem emberSystem;
     public float currentCharge;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    public override void Fire(WeaponData wepData, float chargePercent, float chargeTime)   // <-- the required method, on THIS class
+    public override void FireChargeAttack(WeaponData wepData, float chargePercent, float chargeTime)   // <-- the required method, on THIS class
     {
         DoSwipeHit(chargePercent,chargeTime);
     }
