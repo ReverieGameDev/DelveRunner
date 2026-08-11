@@ -18,7 +18,7 @@ public class DeathCannon : BasicAttackBase
     public int explosionDamage = 10;
     private Enemy enemyFirstHit;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    public override void WeaponInit(WeaponData weaponData, Vector2 direction)
+    public override void FireBaseAttack(WeaponData weaponData, Vector2 direction)
     {
         wepData = weaponData;
         projectileDirection = direction;

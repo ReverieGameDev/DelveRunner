@@ -11,7 +11,7 @@ public class VerdantMawBasic : BasicAttackBase
     private Vector2 projectileDirection;
     private Rigidbody2D rb;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    public override void WeaponInit(WeaponData weaponData, Vector2 direction)
+    public override void FireBaseAttack(WeaponData weaponData, Vector2 direction)
     {
         wepData = weaponData;
         projectileDirection = direction;
@@ -39,7 +39,7 @@ public class VerdantMawBasic : BasicAttackBase
             {
                 if (enemyScript.TryGetComponent<EnemyStatusEffects>(out EnemyStatusEffects enemyStatusEffects))
                 {
-                    enemyStatusEffects.ESEPoison(wepData.wChargeEffectDuration, wepData.wStatusEffectDamage,wepData.wStatusEffectTickRate);
+                    enemyStatusEffects.ESEPoison(wepData.wStatusEffectDuration, wepData.wStatusEffectDamage,wepData.wStatusEffectTickRate);
                 }
             }
         }

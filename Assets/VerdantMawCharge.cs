@@ -9,7 +9,7 @@ public class VerdantMawCharge : ChargeAttackBase
     private float currentCharge;
     private float maxCharge;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    public override void Fire(float secondsHeld, float secondsToMaxCharge)   // <-- the required method, on THIS class
+    public override void FireChargeAttack(WeaponData wepData, float secondsHeld, float secondsToMaxCharge)   // <-- the required method, on THIS class
     {
         currentCharge = secondsHeld;
         maxCharge = secondsToMaxCharge;

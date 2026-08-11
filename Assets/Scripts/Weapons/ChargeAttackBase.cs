@@ -2,5 +2,5 @@ using UnityEngine;
 
 public abstract class ChargeAttackBase : MonoBehaviour
 {
-    public abstract void Fire(float secondsHeld, float secondsToMaxCharge);
+    public abstract void FireChargeAttack(WeaponData weaponData, float secondsHeld, float secondsToMaxCharge);
 }
