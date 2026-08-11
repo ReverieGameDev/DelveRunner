@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class DeathCannon : ProjectileBase
+public class DeathCannon : BasicAttackBase
 
 {
 

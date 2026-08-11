@@ -9,43 +9,31 @@ public class WeaponData : ScriptableObject
     public string wSpecialEffectDescription;
     public int wCost;
 
-    [Header("Targeting")]
-    public WeaponTargetingType weaponTargetingType;
-    public float wRange;
-
     [Header("Normal Attack")]
     public GameObject wProjectilePrefab;
     public float wDamage;
     public float wAS;
-    public float wSwitchCD;
-    public int wProjectileCount;
+    public float wRange;
     public float wProjectileSpeed;
-    public WeaponStatusEffect weaponStatusEffect;
     public float wProcChance;
 
-    [Header("Normal AOE")]
-    public bool wHasAOE;
-    public float wAOERadius;
-    public float wAOEDamage;
+    [Header("Normal Status Effect")]
+    public int wStatusEffectDamage;
+    public float wStatusEffectTickRate;
+    public float wStatusEffectDuration;
+    public float wStatusEffectPercentage;
 
     [Header("Charged Attack")]
     public bool hasChargeAttack;
     public float wChargeTime;
     public GameObject wChargeProjectilePrefab;
-    public float wChargeDamage;
-    public int wChargeProjectileCount;
-    public float wChargeProjectileSpeed;
-    public WeaponStatusEffect wChargeStatusEffect;
     public float wChargeProcChance;
-    public float wStatusEffectDuration;
-    public float wStatusEffectPercentage;
 
-    [Header("Charged AOE")]
-    public bool wChargeHasAOE;
-    public float wChargeAOERadius;
-    public float wChargeAOEDamage;
+    [Header("Charged Status Effect")]
+    public int wChargeEffectDamage;
+    public float wChargeEffectTickRate;
+    public float wChargeEffectDuration;
 }
 
 public enum WeaponStatusEffect { None, Poison, Burn, Stun, Enfeeble }
-
 public enum WeaponTargetingType { Single, NearestEnemy, Cone, Homing, Line }

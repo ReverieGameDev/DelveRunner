@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23faef61eaf11b645b66eea870d38dd8, type: 3}
+  m_Name: VerdantMawCharge
+  m_EditorClassIdentifier: 
+  wIcon: {fileID: 0}
+  wName: 
+  wSpecialEffectDescription: 
+  wCost: 0
+  weaponTargetingType: 0
+  wRange: 0
+  wProjectilePrefab: {fileID: 0}
+  wDamage: 0
+  wAS: 0
+  wSwitchCD: 0
+  wProjectileCount: 0
+  wProjectileSpeed: 0
+  weaponStatusEffect: 0
+  wProcChance: 0
+  wStatusEffectDamage: 0
+  wStatusEffectTickRate: 0
+  wHasAOE: 0
+  wAOERadius: 0
+  wAOEDamage: 0
+  hasChargeAttack: 0
+  wChargeTime: 0
+  wChargeProjectilePrefab: {fileID: 0}
+  wChargeDamage: 0
+  wChargeProjectileCount: 0
+  wChargeProjectileSpeed: 0
+  wChargeStatusEffect: 0
+  wChargeProcChance: 0
+  wChargeEffectDamage: 0
+  wChargeEffectDuration: 0
+  wStatusEffectDuration: 0
+  wStatusEffectPercentage: 0
+  wChargeHasAOE: 0
+  wChargeAOERadius: 0
+  wChargeAOEDamage: 0

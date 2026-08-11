@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.InputSystem.Android;
 using UnityEngine.UI;
 [System.Serializable]
 public class ActiveStatusEffects
@@ -25,6 +24,8 @@ public class EnemyStatusEffects : MonoBehaviour
     private Enemy enemy;
     public GameObject testIcon;
     public Sprite enfeebleIcon;
+    public Sprite poisonIcon;
+    public Sprite burnIcon;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -44,18 +45,20 @@ public class EnemyStatusEffects : MonoBehaviour
                     case WeaponStatusEffect.Burn:
                     case WeaponStatusEffect.Poison:
                         activeStatusEffects[i].tickTimer += Time.deltaTime;
+                        activeStatusEffects[i].duration -= Time.deltaTime;
+                        activeStatusEffects[i].timerText.text = ("" + activeStatusEffects[i].duration.ToString("F1"));
+                        if (activeStatusEffects[i].duration <= 0)
+                        {
+                            Destroy(activeStatusEffects[i].icon);
+                            activeStatusEffects.RemoveAt(i);
+                            continue;
+                        }
                         if (activeStatusEffects[i].tickTimer >= activeStatusEffects[i].tickRate)
                         {
-                            activeStatusEffects[i].duration -= activeStatusEffects[i].tickRate;
                             activeStatusEffects[i].tickTimer = 0;
                             if (activeStatusEffects[i].damage > 0)
                             {
                                 enemy.reduceHp(activeStatusEffects[i].damage, 1, false);
-                            }
-                            if (activeStatusEffects[i].duration <= 0)
-                            {
-                                Destroy(activeStatusEffects[i].icon);
-                                activeStatusEffects.RemoveAt(i);
                             }
                         }
                         break;
@@ -77,16 +80,35 @@ public class EnemyStatusEffects : MonoBehaviour
 
     public void ESEBurn(float burnDuration, int burnDamage, float burnTickRate)
     {
-        ActiveStatusEffects newBurn = new ActiveStatusEffects();
-        newBurn.type = WeaponStatusEffect.Burn;
-        newBurn.duration = burnDuration;
-        newBurn.damage = burnDamage;
-        newBurn.tickRate = burnTickRate;
-        activeStatusEffects.Add(newBurn);
+        {
+            bool burnAlreadyActive = false;
+            foreach (ActiveStatusEffects activeStatuses in activeStatusEffects)
+            {
+                if (activeStatuses.type == WeaponStatusEffect.Burn)
+                {
+                    burnAlreadyActive = true;
+                    if (burnDuration > activeStatuses.duration)
+                    {
+                        activeStatuses.duration = burnDuration;
+                    }
+                }
+            }
+            if (!burnAlreadyActive)
+            {
+                ActiveStatusEffects newBurn = new ActiveStatusEffects();
+                newBurn.type = WeaponStatusEffect.Burn;
+                newBurn.icon = Instantiate(testIcon, iconGrid.transform, false);
+                newBurn.timerText = newBurn.icon.GetComponentInChildren<TextMeshProUGUI>();
+                newBurn.icon.GetComponent<Image>().sprite = burnIcon;
+                newBurn.duration = burnDuration;
+                newBurn.damage = burnDamage;
+                newBurn.tickRate = burnTickRate;
+                activeStatusEffects.Add(newBurn);
+            }
+        }
     }
     public void ESEEnfeeble(float enfeebleDuration, float enfeebleExtraDmgPercent)
     {
-        Debug.Log(enemy);
         bool enfeebleAlreadyActive = false;
         foreach (ActiveStatusEffects activeStatuses in activeStatusEffects)
         {
@@ -119,6 +141,29 @@ public class EnemyStatusEffects : MonoBehaviour
     }
     public void ESEPoison(float poisonDuration, int poisonDamage, float poisonTickRate)
     {
-
+        bool poisonAlreadyActive = false;
+        foreach (ActiveStatusEffects activeStatuses in activeStatusEffects)
+        {
+            if (activeStatuses.type == WeaponStatusEffect.Poison)
+            {
+                poisonAlreadyActive = true;
+                if (poisonDuration > activeStatuses.duration)
+                {
+                    activeStatuses.duration = poisonDuration;
+                }
+            }
+        }
+        if (!poisonAlreadyActive)
+        {
+            ActiveStatusEffects newPoison = new ActiveStatusEffects();
+            newPoison.type = WeaponStatusEffect.Poison;
+            newPoison.icon = Instantiate(testIcon, iconGrid.transform, false);
+            newPoison.timerText = newPoison.icon.GetComponentInChildren<TextMeshProUGUI>();
+            newPoison.icon.GetComponent<Image>().sprite = poisonIcon;
+            newPoison.duration = poisonDuration;
+            newPoison.damage = poisonDamage;
+            newPoison.tickRate = poisonTickRate;
+            activeStatusEffects.Add(newPoison);
+        }
     }
 }

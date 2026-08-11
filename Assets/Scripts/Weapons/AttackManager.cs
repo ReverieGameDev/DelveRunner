@@ -85,10 +85,10 @@ public class AttackManager : MonoBehaviour
         if (!charged) 
         { 
             GameObject weaponPrefab = Instantiate(currentWeapon.wProjectilePrefab, playerCombat.transform.position, Quaternion.identity);
-            if (weaponPrefab.TryGetComponent<ProjectileBase>(out ProjectileBase proj))
+            if (weaponPrefab.TryGetComponent<BasicAttackBase>(out BasicAttackBase basicAttackBase))
             {
                 Vector2 trajectory = (mousePos - playerPos).normalized;
-                proj.WeaponInit(currentWeapon, trajectory);
+                basicAttackBase.WeaponInit(currentWeapon, trajectory);
             }
         }
         if (charged) 

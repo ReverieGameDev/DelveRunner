@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23faef61eaf11b645b66eea870d38dd8, type: 3}
+  m_Name: VerdantMawBasic
+  m_EditorClassIdentifier: 
+  wIcon: {fileID: 8507558683692891129, guid: d24f888f122791248b1d7b37f11d2b77, type: 3}
+  wName: VerdantMaw
+  wSpecialEffectDescription: Poisons
+  wCost: 33
+  weaponTargetingType: 0
+  wRange: 0
+  wProjectilePrefab: {fileID: 485998719081581661, guid: ff51625b416daf440896c52c3b127862, type: 3}
+  wDamage: 15
+  wAS: 2
+  wSwitchCD: 1
+  wProjectileCount: 0
+  wProjectileSpeed: 0
+  weaponStatusEffect: 1
+  wProcChance: 50
+  wStatusEffectDamage: 10
+  wStatusEffectTickRate: 1
+  wHasAOE: 0
+  wAOERadius: 0
+  wAOEDamage: 0
+  hasChargeAttack: 1
+  wChargeTime: 0
+  wChargeProjectilePrefab: {fileID: 0}
+  wChargeDamage: 0
+  wChargeProjectileCount: 0
+  wChargeProjectileSpeed: 0
+  wChargeStatusEffect: 0
+  wChargeProcChance: 0
+  wStatusEffectDuration: 15
+  wStatusEffectPercentage: 0
+  wChargeHasAOE: 0
+  wChargeAOERadius: 0
+  wChargeAOEDamage: 0
