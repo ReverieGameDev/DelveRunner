@@ -145,6 +145,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 784659921741397178}
+  - component: {fileID: 2903925990059337806}
   - component: {fileID: 7627473127760143293}
   - component: {fileID: 4860575806460717071}
   - component: {fileID: 2082499795058945485}
@@ -178,6 +179,19 @@ Transform:
   - {fileID: 8364574582319658943}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2903925990059337806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4096997697643789573}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b838d53ac123b2e4298791c4e9e7d8ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dropTable: {fileID: 11400000, guid: 4d51be693f7e134429acfbe33350c70b, type: 2}
 --- !u!114 &7627473127760143293
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -191,6 +205,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activeStatusEffects: []
+  iconGrid: {fileID: 0}
+  testIcon: {fileID: 0}
+  enfeebleIcon: {fileID: 0}
+  poisonIcon: {fileID: 0}
+  burnIcon: {fileID: 0}
 --- !u!212 &4860575806460717071
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -270,6 +289,7 @@ MonoBehaviour:
   damageText: {fileID: 3387354775039598578, guid: 50cacda3beffc074fad27b29e0df1126, type: 3}
   enfeebled: 0
   enfeebleBonusDamage: 0
+  dropOnDeath: {fileID: 2903925990059337806}
 --- !u!61 &5545634651613284562
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -24,7 +24,7 @@ public class Enemy : MonoBehaviour
     public GameObject damageText;
     public bool enfeebled = false;
     public float enfeebleBonusDamage;
-
+    [SerializeField] private DropOnDeath dropOnDeath;
     private void Awake()
     {
         emberSystem = FindFirstObjectByType<EmberSystem>();
@@ -103,6 +103,8 @@ public class Enemy : MonoBehaviour
         if (enemyHealth <= 0)
         {
             playerCombat.OnEnemyKilled();
+            DropOnDeath drop = GetComponent<DropOnDeath>();
+            drop.DropItems(transform.position);
             if (enemyAI != null)
             {
                 emberSystem.aliveEnemies--;

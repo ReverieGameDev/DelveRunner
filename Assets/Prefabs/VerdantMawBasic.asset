@@ -26,10 +26,10 @@ MonoBehaviour:
   wStatusEffectTickRate: 1
   wStatusEffectDuration: 15
   wStatusEffectPercentage: 0
-  hasChargeAttack: 0
-  wChargeTime: 0
+  hasChargeAttack: 1
+  wChargeTime: 5
   wChargeProjectilePrefab: {fileID: 9015868196912113104, guid: 804ffbb14899f4e43bf4c1435b9a7bae, type: 3}
-  wChargeProcChance: 0
-  wChargeEffectDamage: 0
-  wChargeEffectTickRate: 0
-  wChargeEffectDuration: 0
+  wChargeProcChance: 50
+  wChargeEffectDamage: 15
+  wChargeEffectTickRate: 0.5
+  wChargeEffectDuration: 3

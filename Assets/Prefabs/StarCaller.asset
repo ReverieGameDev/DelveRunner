@@ -10,24 +10,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 23faef61eaf11b645b66eea870d38dd8, type: 3}
-  m_Name: VerdantMawCharge
+  m_Name: StarCaller
   m_EditorClassIdentifier: 
-  wIcon: {fileID: 0}
-  wName: 
-  wSpecialEffectDescription: 
-  wCost: 0
-  wProjectilePrefab: {fileID: 0}
-  wDamage: 0
-  wAS: 0
-  wRange: 0
-  wProjectileSpeed: 0
-  wProcChance: 0
+  wIcon: {fileID: -694885652187321331, guid: cbc413c41dff6104389be38be3995591, type: 3}
+  wName: StarCaller
+  wSpecialEffectDescription: Shoots a star, % chance to get ember back on hit
+  wCost: 33
+  wProjectilePrefab: {fileID: 1453308018842175484, guid: 8ad45f7fc023893458fa7795a5cb01e7, type: 3}
+  wDamage: 4
+  wAS: 0.25
+  wRange: 20
+  wProjectileSpeed: 10
+  wProcChance: 20
   wStatusEffectDamage: 0
   wStatusEffectTickRate: 0
   wStatusEffectDuration: 0
   wStatusEffectPercentage: 0
   hasChargeAttack: 0
-  wChargeTime: 5
+  wChargeTime: 0
   wChargeProjectilePrefab: {fileID: 0}
   wChargeProcChance: 0
   wChargeEffectDamage: 0

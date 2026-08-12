@@ -33,7 +33,7 @@ public class ManaBottleBehaviour : MonoBehaviour
         if (manaTowardsPlayer == true)
         {
             transform.Translate((playerCombat.transform.position - transform.position).normalized * manaSpeed * Time.deltaTime);
-            if (Vector3.Distance(transform.position, playerCombat.transform.position) < 0.5f)
+            if (Vector3.Distance(transform.position, playerCombat.transform.position) < 1.2f)
             {
                 Destroy(gameObject);
                 itemHotbar.AddToHotbar(itemObtained);

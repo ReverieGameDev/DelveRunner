@@ -490,6 +490,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8713251192596382241}
   - component: {fileID: 6291480522068116360}
+  - component: {fileID: 9194726044395035200}
   - component: {fileID: -173222956756970788}
   - component: {fileID: 4324157071525154936}
   - component: {fileID: 7394682032219271510}
@@ -578,6 +579,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &9194726044395035200
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3157067546353029266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b838d53ac123b2e4298791c4e9e7d8ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dropTable: {fileID: 11400000, guid: c4ec3b3594969b14fa234eb02876f701, type: 2}
 --- !u!114 &-173222956756970788
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -602,6 +616,7 @@ MonoBehaviour:
   damageText: {fileID: 3387354775039598578, guid: 50cacda3beffc074fad27b29e0df1126, type: 3}
   enfeebled: 0
   enfeebleBonusDamage: 0
+  dropOnDeath: {fileID: 9194726044395035200}
 --- !u!114 &4324157071525154936
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -618,6 +633,8 @@ MonoBehaviour:
   iconGrid: {fileID: 287239386188508302}
   testIcon: {fileID: 5190207617398983162, guid: ac992f808e74d2a47bf8a7af973c772c, type: 3}
   enfeebleIcon: {fileID: -1239216905605409279, guid: d044dc9c8d3290846827a865759629b4, type: 3}
+  poisonIcon: {fileID: 8422899895724843611, guid: 5b168748d04082845a37e21aa41c87a9, type: 3}
+  burnIcon: {fileID: 2820332756393378350, guid: 8dcbb0eebbd49764e8ad499c41b5c7ec, type: 3}
 --- !u!61 &7394682032219271510
 BoxCollider2D:
   m_ObjectHideFlags: 0
