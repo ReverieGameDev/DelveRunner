@@ -14,6 +14,7 @@ public class EnemySpawnDetector : MonoBehaviour
     private PlayerMovement playerMovement;
     public EnvironmentThreat environmentThreat;
     public GameObject buttonPrompt;
+    public bool isBoss = false;
     void Start()
     {
         playerMovement = FindFirstObjectByType<PlayerMovement>();
@@ -43,7 +44,6 @@ public class EnemySpawnDetector : MonoBehaviour
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        
         if (collision.CompareTag("Player"))
         {
             playerInRange = false;
@@ -60,9 +60,11 @@ public class EnemySpawnDetector : MonoBehaviour
     {
         enabled = false;
         buttonPrompt.SetActive(false);
-        environmentThreat.enabled = true;
+        if (!isBoss) environmentThreat.enabled = true;
+        Debug.Log("interface: " + fightNodeInterface + " / ET: " + environmentThreat + " / isBoss: " + isBoss);
         fightNodeInterface.SetActive(false);
-        StartFightNode();
+        if (!isBoss) StartFightNode();
+        else if (isBoss) StartBossFight();
     }
 
     public void StartFightNode()
@@ -76,6 +78,15 @@ public class EnemySpawnDetector : MonoBehaviour
         emberSystem.isFightNodeActive = true;
         Time.timeScale = abilityManager.currentTimeScale;
 
+        playerMovement.playerFrozen = false;
+    }
+    public void StartBossFight()
+    {
+        spawnManager.fightNodeCenter = transform.position;
+        Instantiate(barrier, new Vector2(transform.position.x + 3.5f, transform.position.y - 1f), Quaternion.identity);
+        spawnManager.SpawnNextWave();
+        emberSystem.isFightNodeActive = true;
+        Time.timeScale = abilityManager.currentTimeScale;
         playerMovement.playerFrozen = false;
     }
 

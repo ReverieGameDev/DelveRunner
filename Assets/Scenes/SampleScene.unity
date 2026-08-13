@@ -45656,7 +45656,7 @@ MonoBehaviour:
   baseEmber: 100
   emberComp: {fileID: 2115633924}
   isEmberActive: 1
-  waveNumber: 1
+  waveNumber: 9
   aliveEnemies: 0
   isFightNodeActive: 0
 --- !u!114 &1937255404

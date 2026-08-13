@@ -132,6 +132,7 @@ public class EnemyAI : MonoBehaviour
                         {
                             if (Vector2.Distance(moveableSquare.transform.position, player.transform.position) < currentBestCandidate)
                             {
+                                if ((moveableSquare == null)) continue;
                                 bestSquare = moveableSquare;
                                 currentBestCandidate = Vector2.Distance(moveableSquare.transform.position, player.transform.position);
                             }

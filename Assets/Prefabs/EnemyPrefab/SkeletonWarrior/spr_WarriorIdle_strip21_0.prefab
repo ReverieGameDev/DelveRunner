@@ -632,9 +632,9 @@ MonoBehaviour:
   activeStatusEffects: []
   iconGrid: {fileID: 287239386188508302}
   testIcon: {fileID: 5190207617398983162, guid: ac992f808e74d2a47bf8a7af973c772c, type: 3}
-  enfeebleIcon: {fileID: -1239216905605409279, guid: d044dc9c8d3290846827a865759629b4, type: 3}
-  poisonIcon: {fileID: 8422899895724843611, guid: 5b168748d04082845a37e21aa41c87a9, type: 3}
-  burnIcon: {fileID: 2820332756393378350, guid: 8dcbb0eebbd49764e8ad499c41b5c7ec, type: 3}
+  enfeebleIcon: {fileID: -812895061178693571, guid: 6caa800b492a2d3468cd972539e2a2e6, type: 3}
+  poisonIcon: {fileID: -4347532159779508366, guid: 07102d8309656a0499ea8e78bd4b4f40, type: 3}
+  burnIcon: {fileID: -3886671547546631027, guid: 58ce4158b8cd07641a7961f491eeb05b, type: 3}
 --- !u!61 &7394682032219271510
 BoxCollider2D:
   m_ObjectHideFlags: 0
