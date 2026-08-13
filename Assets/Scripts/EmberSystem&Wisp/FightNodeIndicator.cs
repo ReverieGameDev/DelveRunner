@@ -48,7 +48,12 @@ public class FightNodeIndicator : MonoBehaviour
             indicatorPosition = ((activeFightNodeCoords - playerMovement.transform.position).normalized * 2) + playerMovement.transform.position;
             Vector3 indicatorDirection = indicatorPosition - playerMovement.transform.position;
             float angle = Mathf.Atan2(indicatorDirection.y, indicatorDirection.x) * Mathf.Rad2Deg;
-            transform.rotation = Quaternion.Euler(0, 0, angle - 90);
+            pointToFNCoords = (activeFightNodeCoords - playerMovement.transform.position).normalized * 4f + playerMovement.transform.position;
+            basePosition = Vector2.Lerp(basePosition, pointToFNCoords, Time.deltaTime * 5f);
+            float xRandomCoord = Mathf.PerlinNoise(Time.time, 0) - 0.5f;
+            float yRandomCoord = (Mathf.PerlinNoise(0, Time.time + 100) - 0.5f);
+            float distanceWobble = (Mathf.PerlinNoise(Time.time + 150f, 0) - 0.5f) * 0.5f;
+            transform.position = new Vector2(basePosition.x + xRandomCoord + distanceWobble, basePosition.y + yRandomCoord);
         }
     }
 

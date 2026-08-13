@@ -74,8 +74,7 @@ public class Enemy : MonoBehaviour
     }
     public void reduceHp(float damageTaken, int hitCount = 1, bool isCrit = false)
     {
-        Debug.Log(enfeebled + " / " + enfeebleBonusDamage);
-        if (enemyHealth <= 0) return;
+        if (enemyHealth <= 0 ) return;
         if (playerCombat.curtainCallActive && !enemyData.isBoss && isCrit && enemyHealth/maxEnemyHealth <= playerCombat.curtainCallExecute)
         {
             damageTaken = 9999f;
@@ -93,7 +92,7 @@ public class Enemy : MonoBehaviour
         float damageDealt = Mathf.Min(damageTakenInt, enemyHealth);
 
         enemyHealth = Mathf.Clamp(enemyHealth - damageTakenTotal, 0, maxEnemyHealth);
-        if (enemyAI.isFrontline)
+        if (enemyAI != null && enemyAI.isFrontline)
         {
             EnemyFrontlineHealth((int)damageDealt);
         }
@@ -115,14 +114,10 @@ public class Enemy : MonoBehaviour
                 isDead = true;
                 enemyAI.currentState = EnemyState.Death;
                 if (enemyAI.isBackline) { enemyAI.ReduceFromBackline(); }
-                StartCoroutine("GoldAndExpRandomizer");
-                StartCoroutine("DropEmber");
             }
             else if (enemyData.isREE)
             {
                 isDead = true;
-                StartCoroutine("GoldAndExpRandomizer");
-                StartCoroutine("DropEmber");
             }
             else if (!enemyData.isBoss)
             {
@@ -137,7 +132,6 @@ public class Enemy : MonoBehaviour
             else
             {
                 emberSystem.aliveEnemies--;
-                GoldRandomizerBoss();
             }
         }
         if (hpBar != null) hpBar.value = enemyHealth / maxEnemyHealth;
@@ -182,41 +176,5 @@ public class Enemy : MonoBehaviour
             Instantiate(emberPickup, transform.position, Quaternion.identity);
         }
         yield break;
-    }
-
-    IEnumerator GoldAndExpRandomizer()
-    {
-        int goldChance = Random.Range(0, 101);
-        int xpRandomizer = Random.Range(1, 5);
-        int goldRandomizer = Random.Range(0, 6);
-        if (goldChance < 40 && money1 != null)
-        {
-            for (int i = 0; i < goldRandomizer; i++)
-            {
-                int randomX = Random.Range(-5, 4);
-                int randomY = Random.Range(-5, 4);
-                Instantiate(money1, new Vector2(transform.position.x + randomX, transform.position.y + randomY), Quaternion.identity);
-            }
-        }
-        if (xpDrop != null)
-        {
-            for (int i = 0; i < xpRandomizer; i++)
-            {
-                int randomX = Random.Range(-5, 4);
-                int randomY = Random.Range(-5, 4);
-                Instantiate(xpDrop, new Vector2(transform.position.x + randomX, transform.position.y + randomY), Quaternion.identity);
-            }
-        }
-        yield break;
-    }
-    public void GoldRandomizerBoss()
-    {
-        int goldRandomizer = Random.Range(0, 6);
-        for (int i = 0; i < goldRandomizer; i++)
-        {
-            int randomX = Random.Range(-5, 4);
-            int randomY = Random.Range(-5, 4);
-            Instantiate(money1, new Vector2(transform.position.x + randomX, transform.position.y + randomY), Quaternion.identity);
-        }
     }
 }
