@@ -7,6 +7,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using static UnityEngine.Rendering.DebugUI;
+using System;
 
 public class PlayerCombat : MonoBehaviour
 {
@@ -23,7 +24,11 @@ public class PlayerCombat : MonoBehaviour
     private Animator anim;
     private EmberSystem emberSystem;
     private GameObject closestEnemy;
+    public event Action<Enemy> OnHitDealt;
+    public event Action<Enemy> OnEnemyKill;
     private AbilityManager abilityManager;
+    public aVulnerableTransfusion testAugment;
+    public aSupplyBox supplyBox;
     #endregion
 
     #region Stats
@@ -256,7 +261,8 @@ public class PlayerCombat : MonoBehaviour
     void Start()
     {
         soulMixPreviousTotal = PlayerPrefs.GetInt("SoulMixTotal");
-        
+        testAugment.Apply(this, 1);
+        supplyBox.Apply(this, 1);
         abilityManager = FindFirstObjectByType<AbilityManager>();
         if (playerGold != null) playerGold.text = ": " + (int)playerMoney;
 
@@ -371,7 +377,7 @@ public class PlayerCombat : MonoBehaviour
     }
     public bool InsiderTrading()
     {
-        int rng = Random.Range(1, 101);
+        int rng = UnityEngine.Random.Range(1, 101);
         if (rng <= insiderTradingPercent)
         {
             return true;
@@ -383,7 +389,7 @@ public class PlayerCombat : MonoBehaviour
     }
     public bool SchrodingersCat()
     {
-        int rng = Random.Range(1, 101);
+        int rng = UnityEngine.Random.Range(1, 101);
         if (rng <= schrodingersCatCurrentLevel)
         {
             return true;
@@ -465,9 +471,17 @@ public class PlayerCombat : MonoBehaviour
     }
     #endregion
     #region Combat - Damage Dealing
+
+    public void DealDamage(Enemy target, float baseDamage, int hitCount = 1)
+    {
+        int dmg = CalcWeaponDamage(baseDamage, out bool crit);
+        target.reduceHp(dmg, hitCount, crit);
+        OnHitDealt?.Invoke(target);
+    }
+
     public int CalcWeaponDamage(float damage, out bool crit)
     {
-        int critRoll = Random.Range(0, 101);
+        int critRoll = UnityEngine.Random.Range(0, 101);
         int processedDamage = 0;
 
         if (packAPunchIsActive)
@@ -489,7 +503,7 @@ public class PlayerCombat : MonoBehaviour
             ModifyStat("attack", -flowStateDamage);
         }
         if (isRunAndHitActive) RunAndHit(false);
-        if (achillesHeelIsActive && Random.Range(1, 101) < achillesHeelChance)
+        if (achillesHeelIsActive && UnityEngine.Random.Range(1, 101) < achillesHeelChance)
         {
             damage *= achillesHeelDamage;
         }
@@ -500,7 +514,7 @@ public class PlayerCombat : MonoBehaviour
             {
                 ModifyGoldValue("pickup", gamblersFallacyPayout);
             }
-            if (jackpotActive && playerMoney >= jackpotGoldCost && Random.Range(1, 1001) < jackpotChance)
+            if (jackpotActive && playerMoney >= jackpotGoldCost && UnityEngine.Random.Range(1, 1001) < jackpotChance)
             {
                 critMult = jackpotCritDamage;                 // replaces crit math entirely
                 ModifyGoldValue("shop", jackpotGoldCost);     // "shop" = your subtract path
@@ -519,7 +533,7 @@ public class PlayerCombat : MonoBehaviour
 
             processedDamage = (int)Mathf.Round(damage * attack * critMult);
 
-            if (strikeGoldActive && Random.Range(1, 1001) <= strikeGoldChance)
+            if (strikeGoldActive && UnityEngine.Random.Range(1, 1001) <= strikeGoldChance)
                 StrikeGold();
 
             crit = true;
@@ -611,7 +625,7 @@ public class PlayerCombat : MonoBehaviour
     public void DamagePlayer(float damageTaken)
     {
         if (iFrames) return;
-        int dodgeChance = Random.Range(0, 101);
+        int dodgeChance = UnityEngine.Random.Range(0, 101);
         if (dodgeChance <= dodge)
         {
             dodge = dodgeBase + dodgeBonus;
@@ -742,8 +756,9 @@ public class PlayerCombat : MonoBehaviour
     #endregion
 
     #region Soul Coins - On Kill
-    public void OnEnemyKilled()
+    public void OnEnemyKilled(Enemy enemy)
     {
+        OnEnemyKill?.Invoke(enemy);
         if (bloodSoulBarrierActive && currentPlayerHealth < (int)maxHealth)
         {
             HealPlayer(bloodSoulBarrierValue);

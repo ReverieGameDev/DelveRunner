@@ -35593,6 +35593,8 @@ MonoBehaviour:
   gameOverScreen: {fileID: 2034009694}
   playerData: {fileID: 11400000, guid: 015cd50e4d403354bafaf27b1a2a2d9e, type: 2}
   attackManager: {fileID: 1509286737}
+  testAugment: {fileID: 11400000, guid: 2c97587038ad66c46afdd5ae59eefeef, type: 2}
+  supplyBox: {fileID: 11400000, guid: 2220cdccca7cc1648899c326a2ac8c46, type: 2}
   attackBase: 1
   attackBonus: 0
   attack: 1
@@ -36272,16 +36274,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9430e42ed5151134ca5e93401c38b041, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Attack: {fileID: -6990874026800643066, guid: d18b5dea8f78a3a419ab5fb3906a8e5c, type: 3}
-  AttackSpeed: {fileID: 2537923225081605586, guid: 45d20237d067d9d41a870ed45c875208, type: 3}
-  CritChance: {fileID: 6655704742877720885, guid: bf485410464d45e47b21fdc0d4df6c1e, type: 3}
-  CritDamage: {fileID: -1199686467875026251, guid: 4e9fb46b973c6d14e86eaf8cd3ca0e18, type: 3}
-  Armor: {fileID: 7847331412250101550, guid: d18b5dea8f78a3a419ab5fb3906a8e5c, type: 3}
-  MaxHealth: {fileID: 691044054056858298, guid: d18b5dea8f78a3a419ab5fb3906a8e5c, type: 3}
-  Dodge: {fileID: -741552557, guid: 707722e6e60ebaa42ad412fcf27708e2, type: 3}
-  MovementSpeed: {fileID: 8908856499335184979, guid: d18b5dea8f78a3a419ab5fb3906a8e5c, type: 3}
-  XPGain: {fileID: 7379903324325002244, guid: d18b5dea8f78a3a419ab5fb3906a8e5c, type: 3}
-  GoldGain: {fileID: -2207157816902223271, guid: d18b5dea8f78a3a419ab5fb3906a8e5c, type: 3}
   augment1: {fileID: 955238365}
   augment2: {fileID: 1661449687}
   augment3: {fileID: 399954387}
@@ -36298,6 +36290,7 @@ MonoBehaviour:
   - {fileID: 1600332547}
   - {fileID: 992020902}
   - {fileID: 1135543964}
+  playerCombat: {fileID: 0}
 --- !u!4 &1599189645
 Transform:
   m_ObjectHideFlags: 0

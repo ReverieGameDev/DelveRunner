@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4293d6468a4973b4995d4f270d746b02, type: 3}
+  m_Name: aKindling
+  m_EditorClassIdentifier: 
+  augmentId: aKindling
+  maxAugmentLevel: 3
+  augmentIcon: {fileID: 358459484289319377, guid: 20262da89d47c3f4fa604e977084c03a, type: 3}
+  augmentTier: 1
+  augmentWeight: 10
+  requiredAugmentWeapon: {fileID: 0}
+  requiredAugmentSoulCoinUpgrade: {fileID: 0}
+  augmentDescriptionName: Kindling
+  augmentDescription: On hit, 30% to burn enemy
+  augmentPerLevelDescription: 'Burn Damage: 2/3/4
+
+    Burn Duration: 4s/7s/10s'

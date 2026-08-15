@@ -101,7 +101,7 @@ public class Enemy : MonoBehaviour
         hptext.text = (int)enemyHealth + " / " + (int)maxEnemyHealth;
         if (enemyHealth <= 0)
         {
-            playerCombat.OnEnemyKilled();
+            playerCombat.OnEnemyKilled(this);
             DropOnDeath drop = GetComponent<DropOnDeath>();
             drop.DropItems(transform.position);
             if (enemyAI != null)

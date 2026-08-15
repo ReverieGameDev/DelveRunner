@@ -17,7 +17,6 @@ public class DropOnDeath : MonoBehaviour
     public void DropItems(Vector2 positionAtDeath)
     {
         if (dropTable == null) return;
-        Debug.Log("Drop Items fired");
         DropManager.Instance.RollDropTable(dropTable, positionAtDeath);
     }
 }

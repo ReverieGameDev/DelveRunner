@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69f72bd9e3ed1b44eb226e9d0d0c2e69, type: 3}
+  m_Name: aSupplyBox
+  m_EditorClassIdentifier: 
+  augmentId: aSupplyBox
+  maxAugmentLevel: 3
+  augmentIcon: {fileID: -2120107037454647771, guid: a8496ef7868a43a40ad001425a269593, type: 3}
+  augmentTier: 1
+  augmentWeight: 10
+  requiredAugmentWeapon: {fileID: 0}
+  requiredAugmentSoulCoinUpgrade: {fileID: 0}
+  augmentDescriptionName: Supply Box
+  augmentDescription: Upon killing an enemy, there's a chance for you to get an extra
+    item.
+  augmentPerLevelDescription: 'Item amount: 1/2/3
+
+    Supply Box chance: 5%/10%/15%'
+  supplyBoxTable: {fileID: 11400000, guid: e74637f1bc77ab649965176343ed527a, type: 2}

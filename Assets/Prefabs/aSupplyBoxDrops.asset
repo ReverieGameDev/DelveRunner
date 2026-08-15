@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: aSupplyBoxDrops
+  m_EditorClassIdentifier: Assembly-CSharp::DropTableData
+  entries:
+  - prefab: {fileID: 6962572676783346201, guid: b2efbf92e10f9554f844d4b2b623a46b, type: 3}
+    weight: 15
+    guaranteedDrop: 0
+    maxRolls: 0
+    itemCount: 0
+    itemExplosionForce: 0
+  - prefab: {fileID: 6815784588403697052, guid: 62bcc355828542348836e9e9970cd462, type: 3}
+    weight: 20
+    guaranteedDrop: 0
+    maxRolls: 0
+    itemCount: 0
+    itemExplosionForce: 0
+  - prefab: {fileID: 1174979173079419666, guid: 01724a226d2e23e418448e7f1a48fd03, type: 3}
+    weight: 20
+    guaranteedDrop: 0
+    maxRolls: 0
+    itemCount: 0
+    itemExplosionForce: 0
+  - prefab: {fileID: 7187405047775818436, guid: 9041a98763e3eb046a3ba1609185608a, type: 3}
+    weight: 10
+    guaranteedDrop: 0
+    maxRolls: 0
+    itemCount: 0
+    itemExplosionForce: 0
+  - prefab: {fileID: 5363937397441303486, guid: a3375cb5ff8a44d448f6e42a5763ea7e, type: 3}
+    weight: 3
+    guaranteedDrop: 0
+    maxRolls: 0
+    itemCount: 0
+    itemExplosionForce: 0
+  - prefab: {fileID: 4668442668006923911, guid: 1931bdfd14e6f964eb2840553918061a, type: 3}
+    weight: 5
+    guaranteedDrop: 0
+    maxRolls: 0
+    itemCount: 0
+    itemExplosionForce: 0
+  rollCount: 1

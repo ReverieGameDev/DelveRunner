@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92c6faa7c97956b4bbf37e2aadc5f6ef, type: 3}
+  m_Name: aVulnerableTransfusion
+  m_EditorClassIdentifier: 
+  augmentId: aVulnerableTransfusion
+  maxAugmentLevel: 3
+  augmentIcon: {fileID: 8060567030184411757, guid: 50ec9b90fb98efa4b90c218234be13a3, type: 3}
+  augmentTier: 1
+  augmentWeight: 5
+  requiredAugmentWeapon: {fileID: 0}
+  requiredAugmentSoulCoinUpgrade: {fileID: 0}
+  augmentDescriptionName: Vulnerable Transfusion
+  augmentDescription: Enemies under a health threshold will have a chance to heal
+    you on hit.
+  augmentPerLevelDescription: 'Threshold 30%, 40%, 50%
+
+    Heal 3, 5, 8'

@@ -46,9 +46,8 @@ public class CosmicClawsChargeAttack : ChargeAttackBase
             // APPLY
             Enemy e = hit.GetComponent<Enemy>();
             float chargeMultiplier = (Mathf.Min(chargeT, chargeP)) / chargeT;
-            int dmg = playerCombat.CalcWeaponDamage((starDaggerDamage * damageMultiplier), out bool wasCrit);
-            e.reduceHp(dmg, 4, wasCrit);
-            
+            PlayerCombat.Instance.DealDamage(e, starDaggerDamage * damageMultiplier, 4);
+
         }
     }
     // Update is called once per frame

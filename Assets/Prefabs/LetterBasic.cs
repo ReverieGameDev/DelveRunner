@@ -25,8 +25,7 @@ public class LetterBasic : BasicAttackBase
     {
         if (!collision.CompareTag("Enemy")) return;
         Enemy enemyScript = collision.GetComponent<Enemy>();
-        int dmg = PlayerCombat.Instance.CalcWeaponDamage(wepData.wDamage * damageMultiplier, out bool wasCrit);
-        enemyScript.reduceHp(dmg, 1, wasCrit);
+        PlayerCombat.Instance.DealDamage(enemyScript, wepData.wDamage * damageMultiplier);
 
     }
 

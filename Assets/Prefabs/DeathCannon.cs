@@ -66,10 +66,8 @@ public class DeathCannon : BasicAttackBase
                 {
                     enemyStatusEffects.ESEEnfeeble(wepData.wStatusEffectDuration, wepData.wStatusEffectPercentage);
                 }
-
             }
-            int dmg = PlayerCombat.Instance.CalcWeaponDamage(wepData.wDamage * damageMultiplier, out bool wasCrit);
-            enemyFirstHit.reduceHp(dmg, 1, wasCrit);
+            PlayerCombat.Instance.DealDamage(enemyFirstHit, wepData.wDamage * damageMultiplier);
             explode = true;
             Explode();
         }
