@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Splines;
 
 public class DropManager : MonoBehaviour
 {
@@ -35,7 +36,8 @@ public class DropManager : MonoBehaviour
             {
                 for (int i = 0; i < dataPoint.itemCount; i++)
                 {
-                    DropItem(enemyPosition, dataPoint.prefab);
+                    
+                    DropItem(enemyPosition, dataPoint.prefab, dataPoint.itemExplosionForce);
                 }
             }
             if (!dataPoint.guaranteedDrop)
@@ -54,7 +56,7 @@ public class DropManager : MonoBehaviour
                         dropEntryWinner = drop;
                         for (int x = 0; x < dropEntryWinner.itemCount; x++)
                         {
-                            DropItem(enemyPosition, dropEntryWinner.prefab);
+                            DropItem(enemyPosition, dropEntryWinner.prefab, drop.itemExplosionForce);
                         }
                         break;
                     }
@@ -63,9 +65,9 @@ public class DropManager : MonoBehaviour
         }
     }
 
-    public void DropItem(Vector2 dropPos, GameObject drop) 
+    public void DropItem(Vector2 dropPos, GameObject drop, float explosionForce) 
     {
-        Debug.Log("Dropped: " + drop);
-        Instantiate(drop, dropPos,Quaternion.identity);
+        GameObject droppedItem = Instantiate(drop, dropPos,Quaternion.identity);
+        droppedItem.GetComponent<ItemDropAnim>().DropItemAnim(explosionForce);
     }
 }

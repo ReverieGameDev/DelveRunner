@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 1135243819387957656}
   - component: {fileID: 2943407308774806976}
   - component: {fileID: 4186404533128651028}
+  - component: {fileID: 7915323364011567717}
+  - component: {fileID: -1316490643411810284}
   m_Layer: 0
   m_Name: SoulCoin
   m_TagString: Untagged
@@ -77,7 +79,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 18
   m_Sprite: {fileID: 8918078860028516627, guid: 30e5dac9f6208a5498148c1f00a4222b, type: 3}
   m_Color: {r: 0.55401725, g: 0.34082413, b: 0.6509434, a: 1}
   m_FlipX: 0
@@ -128,4 +130,51 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 468c889dadbea6241ac11282bc9671d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  force: 18
+--- !u!114 &7915323364011567717
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5363937397441303486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 752c4af505feff642bd1c9af1bb20a42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!58 &-1316490643411810284
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5363937397441303486}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_Radius: 0.6875

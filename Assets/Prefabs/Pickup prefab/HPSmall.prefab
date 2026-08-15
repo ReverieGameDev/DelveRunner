@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 107819667832160076}
   - component: {fileID: 7996439171670218437}
   - component: {fileID: 4467948099939179084}
+  - component: {fileID: -610062553564005638}
+  - component: {fileID: -3090444323221141840}
   m_Layer: 0
   m_Name: HPSmall
   m_TagString: Untagged
@@ -151,3 +153,42 @@ MonoBehaviour:
   hpSmall: {fileID: 11400000, guid: bf23972877a96bf458a5f39cd10614dc, type: 2}
   hpMedium: {fileID: 11400000, guid: 12866d39566abcd498522dbbf6e4260f, type: 2}
   hpLarge: {fileID: 11400000, guid: 9eb83285f564c6f45b7d1f4b8d892760, type: 2}
+--- !u!114 &-610062553564005638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1174979173079419666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 468c889dadbea6241ac11282bc9671d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!50 &-3090444323221141840
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1174979173079419666}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 3
+  m_AngularDamping: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4

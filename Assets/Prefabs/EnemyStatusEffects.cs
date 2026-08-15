@@ -58,7 +58,7 @@ public class EnemyStatusEffects : MonoBehaviour
                             activeStatusEffects[i].tickTimer = 0;
                             if (activeStatusEffects[i].damage > 0)
                             {
-                                enemy.reduceHp(activeStatusEffects[i].damage, 1, false);
+                                enemy.reduceHp(activeStatusEffects[i].damage, 1, false, activeStatusEffects[i].type);
                             }
                         }
                         break;

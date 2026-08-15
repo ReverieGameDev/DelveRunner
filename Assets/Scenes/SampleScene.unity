@@ -45656,7 +45656,7 @@ MonoBehaviour:
   baseEmber: 100
   emberComp: {fileID: 2115633924}
   isEmberActive: 1
-  waveNumber: 8
+  waveNumber: 9
   aliveEnemies: 0
   isFightNodeActive: 0
 --- !u!114 &1937255404
@@ -57533,6 +57533,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -1316490643411810284, guid: a3375cb5ff8a44d448f6e42a5763ea7e, type: 3}
+      propertyPath: m_Radius
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -1316490643411810284, guid: a3375cb5ff8a44d448f6e42a5763ea7e, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4356976658385385222, guid: a3375cb5ff8a44d448f6e42a5763ea7e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 701.9109

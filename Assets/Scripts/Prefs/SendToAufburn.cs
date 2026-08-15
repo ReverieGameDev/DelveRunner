@@ -19,7 +19,7 @@ public class SendToAufburn : MonoBehaviour
     {
        if (Input.GetKeyDown(KeyCode.B))
         {
-            StartCoroutine("SendBackToAufburn");
+            StartCoroutine(SendBackToAufburn());
         }
     }
 
@@ -36,6 +36,10 @@ public class SendToAufburn : MonoBehaviour
             PlayerPrefs.SetFloat("Gold", playerCombat.playerMoney);
         PlayerPrefs.SetInt("Exp", playerCombat.playerXp);
         PlayerPrefs.SetInt("DelveLevel", playerCombat.delveLevel);
+        string json = PlayerPrefs.GetString("SoulSave", "");
+        SoulSaveData data = json == "" ? new SoulSaveData() : JsonUtility.FromJson<SoulSaveData>(json);
+        data.soulCoins = playerCombat.soulCoins;
+        PlayerPrefs.SetString("SoulSave", JsonUtility.ToJson(data));
         PlayerPrefs.Save();
         yield return new WaitForSeconds(1.5f);
         SceneManager.LoadScene("TradingHub");

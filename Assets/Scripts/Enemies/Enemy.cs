@@ -72,7 +72,7 @@ public class Enemy : MonoBehaviour
          hptext.text = (int)enemyHealth + " / " + (int)maxEnemyHealth;
          if (hpBar != null) hpBar.value = enemyHealth / maxEnemyHealth;
     }
-    public void reduceHp(float damageTaken, int hitCount = 1, bool isCrit = false)
+    public void reduceHp(float damageTaken, int hitCount = 1, bool isCrit = false, WeaponStatusEffect type = WeaponStatusEffect.None)
     {
         if (enemyHealth <= 0 ) return;
         if (playerCombat.curtainCallActive && !enemyData.isBoss && isCrit && enemyHealth/maxEnemyHealth <= playerCombat.curtainCallExecute)
@@ -140,7 +140,7 @@ public class Enemy : MonoBehaviour
         {
             
             GameObject popup = Instantiate(damageText, transform.position, Quaternion.identity);
-            popup.GetComponent<EnemyDamageNumbers>().DamageNumberSetup(damageTakenInt, isCrit);
+            popup.GetComponent<EnemyDamageNumbers>().DamageNumberSetup(damageTakenInt, isCrit,type,enfeebled);
             popup.transform.SetAsLastSibling();
         }
         StartCoroutine(FlashOnDamage());
@@ -163,18 +163,9 @@ public class Enemy : MonoBehaviour
             GameObject popup = Instantiate(damageText, transform.position, Quaternion.identity);
             Canvas c = popup.GetComponentInChildren<Canvas>();
             c.sortingOrder += i;
-            popup.GetComponent<EnemyDamageNumbers>().DamageNumberSetup(damageTaken, isCrit);
+            popup.GetComponent<EnemyDamageNumbers>().DamageNumberSetup(damageTaken, isCrit, WeaponStatusEffect.None, enfeebled);
             yield return new WaitForSeconds(.25f);
         }
     }
-    IEnumerator DropEmber()
-    {
-        if (emberPickup == null) yield break;
-        int emberChance = Random.Range(0, 101);
-        if (emberChance < 20)
-        {
-            Instantiate(emberPickup, transform.position, Quaternion.identity);
-        }
-        yield break;
-    }
+
 }

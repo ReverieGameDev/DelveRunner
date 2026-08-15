@@ -18,14 +18,11 @@ MonoBehaviour:
     guaranteedDrop: 0
     maxRolls: 10
     itemCount: 1
+    itemExplosionForce: 20
   - prefab: {fileID: 5363937397441303486, guid: a3375cb5ff8a44d448f6e42a5763ea7e, type: 3}
     weight: 20
     guaranteedDrop: 0
     maxRolls: 0
     itemCount: 1
-  - prefab: {fileID: 0}
-    weight: 0
-    guaranteedDrop: 0
-    maxRolls: 0
-    itemCount: 0
+    itemExplosionForce: 1
   rollCount: 6

@@ -1,4 +1,4 @@
-using Unity.VisualScripting;
+
 using UnityEngine;
 using UnityEngine.SceneManagement;
 public class Teleporter : MonoBehaviour
@@ -12,7 +12,7 @@ public class Teleporter : MonoBehaviour
 
     void Start()
     {
-        int soulMixTotal = PlayerPrefs.GetInt("SoulMixTotal");
+        soulMixTotal = PlayerPrefs.GetInt("SoulMixTotal");
         playerCombat = FindFirstObjectByType<PlayerCombat>();
         soulCoinManager = FindFirstObjectByType<SoulCoinManager>();
     }

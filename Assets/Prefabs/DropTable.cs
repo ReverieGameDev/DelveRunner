@@ -9,6 +9,7 @@ public class DropEntry
     public bool guaranteedDrop;
     public int maxRolls = 99;
     public int itemCount = 1;
+    public float itemExplosionForce = 1;
 }
 
 [CreateAssetMenu]

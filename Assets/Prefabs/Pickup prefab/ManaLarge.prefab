@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 6381962953453933709}
   - component: {fileID: 2963532279535269848}
   - component: {fileID: 8111563869707015615}
+  - component: {fileID: 4353086769053908677}
+  - component: {fileID: -4094452507806979986}
   m_Layer: 0
   m_Name: ManaLarge
   m_TagString: Untagged
@@ -151,3 +153,42 @@ MonoBehaviour:
   manaSmall: {fileID: 11400000, guid: 8cccbdbed348109409bd2fcefab703c4, type: 2}
   manaMedium: {fileID: 11400000, guid: d8704c07609b3a049b7c8db0a08d8c51, type: 2}
   manaLarge: {fileID: 11400000, guid: 2e40f9fd28d824843809c1f468d12ef6, type: 2}
+--- !u!114 &4353086769053908677
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4668442668006923911}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 468c889dadbea6241ac11282bc9671d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!50 &-4094452507806979986
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4668442668006923911}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 3
+  m_AngularDamping: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
