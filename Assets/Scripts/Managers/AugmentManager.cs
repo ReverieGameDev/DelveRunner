@@ -24,7 +24,7 @@ public class AugmentManager : MonoBehaviour
     [SerializeField] private PlayerCombat playerCombat;
 
     private Dictionary<AugmentData, int> augmentDictionary = new Dictionary<AugmentData, int>();
-    private List<AugmentData> augmentPool = new List<AugmentData>();
+    public List<AugmentData> augmentPool = new List<AugmentData>();
 
     private AugmentData augmentHold1;
     private AugmentData augmentHold2;

@@ -36290,7 +36290,11 @@ MonoBehaviour:
   - {fileID: 1600332547}
   - {fileID: 992020902}
   - {fileID: 1135543964}
-  playerCombat: {fileID: 0}
+  playerCombat: {fileID: 1509286736}
+  augmentPool:
+  - {fileID: 11400000, guid: 0932cef2a7719fd4cacb7ec95ec6ea57, type: 2}
+  - {fileID: 11400000, guid: 2220cdccca7cc1648899c326a2ac8c46, type: 2}
+  - {fileID: 11400000, guid: 2c97587038ad66c46afdd5ae59eefeef, type: 2}
 --- !u!4 &1599189645
 Transform:
   m_ObjectHideFlags: 0
