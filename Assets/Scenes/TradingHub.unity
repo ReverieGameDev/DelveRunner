@@ -3775,6 +3775,8 @@ MonoBehaviour:
   gameOverScreen: {fileID: 0}
   playerData: {fileID: 11400000, guid: 015cd50e4d403354bafaf27b1a2a2d9e, type: 2}
   attackManager: {fileID: 0}
+  testAugment: {fileID: 0}
+  supplyBox: {fileID: 0}
   attackBase: 1
   attackBonus: 0
   attack: 1
@@ -4073,7 +4075,7 @@ BoxCollider2D:
   m_Offset: {x: -0.17616332, y: -0.12918484}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0.57, y: 0.34}
     oldSize: {x: 2.909091, y: 2.909091}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5

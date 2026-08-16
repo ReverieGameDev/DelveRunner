@@ -30887,6 +30887,14 @@ PrefabInstance:
       propertyPath: buttonPrompt
       value: 
       objectReference: {fileID: 6218504554444128440}
+    - target: {fileID: 2294412083090239462, guid: 493054708e12c754fb589dc1b5d70f9e, type: 3}
+      propertyPath: m_Size.x
+      value: 12.444445
+      objectReference: {fileID: 0}
+    - target: {fileID: 2294412083090239462, guid: 493054708e12c754fb589dc1b5d70f9e, type: 3}
+      propertyPath: m_Size.y
+      value: 12.444445
+      objectReference: {fileID: 0}
     - target: {fileID: 3563027934878126107, guid: 493054708e12c754fb589dc1b5d70f9e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.35
@@ -30926,6 +30934,26 @@ PrefabInstance:
     - target: {fileID: 3563027934878126107, guid: 493054708e12c754fb589dc1b5d70f9e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6098711716114468659, guid: 493054708e12c754fb589dc1b5d70f9e, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6200177774619007245, guid: 493054708e12c754fb589dc1b5d70f9e, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.x
+      value: 12.444445
+      objectReference: {fileID: 0}
+    - target: {fileID: 6200177774619007245, guid: 493054708e12c754fb589dc1b5d70f9e, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.y
+      value: 12.444445
+      objectReference: {fileID: 0}
+    - target: {fileID: 6200177774619007245, guid: 493054708e12c754fb589dc1b5d70f9e, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 12.444445
+      objectReference: {fileID: 0}
+    - target: {fileID: 6200177774619007245, guid: 493054708e12c754fb589dc1b5d70f9e, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 12.444445
       objectReference: {fileID: 0}
     - target: {fileID: 6967775125399513323, guid: 493054708e12c754fb589dc1b5d70f9e, type: 3}
       propertyPath: m_Name

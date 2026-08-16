@@ -1,7 +1,10 @@
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEngine;
+using UnityEngine.InputSystem.Android;
 using UnityEngine.UI;
+using static UnityEngine.Rendering.HableCurve;
 
 public class AugmentManager : MonoBehaviour
 {
@@ -26,7 +29,7 @@ public class AugmentManager : MonoBehaviour
     public TextMeshProUGUI augment3AbilityDetails;
 
     public GameObject augmentSelect;
-    public List<Button> augmentDisplaySlots;
+    
 
     [SerializeField] private PlayerCombat playerCombat;
 
@@ -35,6 +38,8 @@ public class AugmentManager : MonoBehaviour
     private List<AugmentData> augmentSelection = new List<AugmentData>();
 
     private List<AugmentData> augmentSlots = new List<AugmentData>();
+    public List<Button> augmentDisplaySlots;
+    public List<TextMeshProUGUI> augmentDisplayLevels;
     private int maxAugmentCount = 3;
 
     private int currentSlotIndex = 0;
@@ -52,7 +57,7 @@ public class AugmentManager : MonoBehaviour
         
         foreach (AugmentData augment in augmentPool)
         {
-            if (augment.augmentTier == tier) //check if tier is correct 
+            if (augment.augmentTier == tier && !augmentDictionary.ContainsKey(augment)) //check if tier is correct 
             {
                 augmentSelection.Add(augment); //we simply add all of the available augments to this list
             }
@@ -64,7 +69,15 @@ public class AugmentManager : MonoBehaviour
             augmentSlots.Add(augmentSelection[pick]);
             augmentSelection.RemoveAt(pick);
         }
-        AddAugmentToUI();
+        List<AugmentData> levelable = augmentDictionary.Where(pair => pair.Value < pair.Key.maxAugmentLevel).Select(pair => pair.Key).ToList();
+        if (levelable.Count > 0)
+        {
+            int RandomPoolReplacement = Random.Range(0,augmentSlots.Count);
+            int RandomPick = Random.Range(0, levelable.Count);
+            augmentSlots[RandomPoolReplacement] = levelable[RandomPick];
+        }
+        
+        DisplayAvailableAugments();
     }
 
     public void SelectAugment1() 
@@ -84,11 +97,17 @@ public class AugmentManager : MonoBehaviour
         {
             augmentDictionary[picked] = 1;
         }
-
+        picked.Apply(playerCombat, augmentDictionary[picked]);
         if (playerCombat.augmentsOwed > 0)
         {
             Time.timeScale = 0;
+            AugmentSelectionStart();
         }
+        else
+        {
+            Time.timeScale = 1;
+        }
+            RefreshAvailableAugments();
     }
 
     public void SelectAugment2()
@@ -107,10 +126,17 @@ public class AugmentManager : MonoBehaviour
         {
             augmentDictionary[picked] = 1;
         }
+        picked.Apply(playerCombat, augmentDictionary[picked]);
         if (playerCombat.augmentsOwed > 0)
         {
             Time.timeScale = 0;
+            AugmentSelectionStart();
         }
+        else
+        {
+            Time.timeScale = 1;
+        }
+        RefreshAvailableAugments();
     }
 
     public void SelectAugment3()
@@ -128,14 +154,22 @@ public class AugmentManager : MonoBehaviour
         else
         {
             augmentDictionary[picked] = 1;
+            
         }
+        picked.Apply(playerCombat, augmentDictionary[picked]);
         if (playerCombat.augmentsOwed > 0)
         {
             Time.timeScale = 0;
+            AugmentSelectionStart();
         }
+        else
+        {
+            Time.timeScale = 1;
+        }
+        RefreshAvailableAugments();
     }
 
-    public void AddAugmentToUI()
+    public void DisplayAvailableAugments()
     {
 
         augment1Icon.sprite = augmentSlots[0].augmentIcon;
@@ -153,5 +187,16 @@ public class AugmentManager : MonoBehaviour
         augment1AbilityDetails.text = augmentSlots[0].augmentPerLevelDescription;
         augment2AbilityDetails.text = augmentSlots[1].augmentPerLevelDescription;
         augment3AbilityDetails.text = augmentSlots[2].augmentPerLevelDescription;
+    }
+
+    public void RefreshAvailableAugments()
+    {
+        int counter = 0;
+        foreach (KeyValuePair<AugmentData, int> pair in augmentDictionary)
+        {
+            augmentDisplaySlots[counter].GetComponent<Image>().sprite = pair.Key.augmentIcon;
+            augmentDisplayLevels[counter].text = (pair.Value.ToString());
+            counter++;
+        }
     }
 }
