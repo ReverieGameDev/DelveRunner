@@ -805,8 +805,7 @@ public class PlayerCombat : MonoBehaviour
 
         if (augmentsOwed > 0 && Time.timeScale != 0)
         {
-            Time.timeScale = 0;
-            augmentManager.RandomAugmentGenerator();
+            augmentManager.AugmentSelectionStart();
         }
     }
     #endregion
