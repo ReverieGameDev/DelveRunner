@@ -8,15 +8,31 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using static UnityEngine.Rendering.DebugUI;
 using System;
+using JetBrains.Annotations;
 
 public class PlayerCombat : MonoBehaviour
 {
+    public bool barterSoulPaid = false;
+    public bool barteredSoulActive;
+    public int barteredSoulLevel;
+    public GameObject emberGainPrefab;
+    public float burningSoulMaxDamage;
+    public bool burningSoulActive = false;
+    public int burningSoulLevel;
+    public bool blightedSoulActive = false;
+    public bool cullTheMeekActive = false;
+    public float cullTheMeekBonusDmg;
+    public bool isRekindleActive;
+    public int rekindleEmberPerKill;
+    public DropManager dropManager;
     #region References
+    public DropTableData scholarDropTable;
     public static PlayerCombat Instance;
-
+    public float statusDurationMultiplier = 1;
     public GameObject bloodHealPrefab;
     public GameObject gameOverScreen;
-
+    public int scholarXPAmount;
+    public bool scholarActive = false;
     public PlayerData playerData;
     private PlayerMovement playerMovement;
     private AugmentManager augmentManager;
@@ -30,7 +46,9 @@ public class PlayerCombat : MonoBehaviour
     public aVulnerableTransfusion testAugment;
     public aSupplyBox supplyBox;
     #endregion
-
+    public int harvestChance;
+    public int harvestHeal;
+    public bool harvestActive = false;
     #region Stats
     // Attack
     public float attackBase = 1f;
@@ -483,7 +501,10 @@ public class PlayerCombat : MonoBehaviour
     {
         int critRoll = UnityEngine.Random.Range(0, 101);
         int processedDamage = 0;
-
+        if (cullTheMeekActive && emberSystem.aliveEnemies < 5)
+        {
+            damage *= cullTheMeekBonusDmg;
+        }
         if (packAPunchIsActive)
         {
             damage *= 1 + Mathf.Min(.35f,(packAPunchDamagePerItem * ItemHotbar.Instance.NumberOfItems()));
@@ -543,6 +564,20 @@ public class PlayerCombat : MonoBehaviour
             lightningStrikesTwiceStacks = 0;
             crit = false;
             processedDamage = (int)(Mathf.Round(damage * attack));
+        }
+        if (blightedSoulActive)
+        {
+            processedDamage = (int)(processedDamage*.6f);
+        }
+        if (burningSoulActive)
+        {
+            float emberPercent = emberSystem.emberAmount/ emberSystem.baseEmber;
+            damage *= Mathf.LerpUnclamped(0.5f, burningSoulMaxDamage, emberPercent);
+        }
+
+        if (barteredSoulActive)
+        {
+            damage *= 0.25f + (playerMoney / (4 - barteredSoulLevel)) * 0.01f;
         }
         if (emberSystem != null && emberSystem.emberAmount <= 0)
             processedDamage = (int)(processedDamage * 0.85f);
@@ -759,6 +794,20 @@ public class PlayerCombat : MonoBehaviour
     public void OnEnemyKilled(Enemy enemy)
     {
         OnEnemyKill?.Invoke(enemy);
+        if (enemy.GetComponent<EnemyStatusEffects>().activeStatusEffects.Count > 0)
+        {
+            if (scholarActive)
+            {
+                for (int i = 0; i < scholarXPAmount; i++)
+                {
+                    DropManager.Instance.RollDropTable(scholarDropTable, enemy.transform.position);
+                }
+            }
+            if (isRekindleActive)
+            {
+                emberSystem.AddEmber(10 * rekindleEmberPerKill);
+            }
+        }
         if (bloodSoulBarrierActive && currentPlayerHealth < (int)maxHealth)
         {
             HealPlayer(bloodSoulBarrierValue);

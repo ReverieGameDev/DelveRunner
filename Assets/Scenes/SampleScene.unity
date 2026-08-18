@@ -41289,12 +41289,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38f10b667e7184f4bbf0e601a0fb6633, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  blightedSoulActive: 0
+  cullTheMeekActive: 0
+  cullTheMeekBonusDmg: 0
+  isRekindleActive: 0
+  rekindleEmberPerKill: 0
+  dropManager: {fileID: 0}
+  scholarDropTable: {fileID: 11400000, guid: 087d35978a680a749845cb8a457c47e3, type: 2}
+  statusDurationMultiplier: 1
   bloodHealPrefab: {fileID: 7694661731509628778, guid: 8defe4cb77e38674a99ba399bf18e8a8, type: 3}
   gameOverScreen: {fileID: 2034009694}
+  scholarXPAmount: 0
+  scholarActive: 0
   playerData: {fileID: 11400000, guid: 015cd50e4d403354bafaf27b1a2a2d9e, type: 2}
   attackManager: {fileID: 1509286737}
   testAugment: {fileID: 11400000, guid: 2c97587038ad66c46afdd5ae59eefeef, type: 2}
   supplyBox: {fileID: 11400000, guid: 2220cdccca7cc1648899c326a2ac8c46, type: 2}
+  harvestChance: 0
+  harvestHeal: 0
+  harvestActive: 0
   attackBase: 1
   attackBonus: 0
   attack: 1
@@ -42470,9 +42483,14 @@ MonoBehaviour:
   augmentSelect: {fileID: 575009761}
   playerCombat: {fileID: 1509286736}
   augmentPool:
+  - {fileID: 11400000, guid: 91a48c7430aba554e84ba7d6d1bb0b21, type: 2}
   - {fileID: 11400000, guid: 0932cef2a7719fd4cacb7ec95ec6ea57, type: 2}
   - {fileID: 11400000, guid: 2220cdccca7cc1648899c326a2ac8c46, type: 2}
   - {fileID: 11400000, guid: 2c97587038ad66c46afdd5ae59eefeef, type: 2}
+  - {fileID: 11400000, guid: 40e703cd66a7b9d4b85bb0ff45330718, type: 2}
+  - {fileID: 11400000, guid: fc86402404b3b0749a198cdebe961914, type: 2}
+  - {fileID: 11400000, guid: ab07a00a8704f4d449a4437454418f35, type: 2}
+  - {fileID: 11400000, guid: d5882420ad0929540a93dee925d91c75, type: 2}
   augmentDisplaySlots:
   - {fileID: 2140734053}
   - {fileID: 1183760949}

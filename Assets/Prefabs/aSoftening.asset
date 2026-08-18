@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3784e1b8ad524a4fbb183322b754900, type: 3}
+  m_Name: aSoftening
+  m_EditorClassIdentifier: 
+  augmentId: aSoftening
+  maxAugmentLevel: 3
+  augmentIcon: {fileID: -8735191144257061397, guid: d18b5dea8f78a3a419ab5fb3906a8e5c, type: 3}
+  augmentTier: 1
+  augmentWeight: 1
+  requiredAugmentWeapon: {fileID: 0}
+  requiredAugmentSoulCoinUpgrade: {fileID: 0}
+  augmentDescriptionName: Softening
+  augmentDescription: 'On hit, a chance to enfeeble the enemy.
+
+    Enfeeble: Enemy
+    takes more damage from all sources'
+  augmentPerLevelDescription: 'Enfeeble chance: 15%/25%/35%
+
+    Bonus damage taken:
+    10%/15%/20%
+
+    Duration: 4s/5s/6s'

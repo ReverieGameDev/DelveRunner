@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -13,12 +14,13 @@ public class ActiveStatusEffects
     public float tickRate;
     public float tickTimer;
     public float effectPercentage;
+    public int poisonStacks = 1;
 }
 
 public class EnemyStatusEffects : MonoBehaviour
 {
     [SerializeField]
-    private List<ActiveStatusEffects> activeStatusEffects = new List<ActiveStatusEffects>();
+    public List<ActiveStatusEffects> activeStatusEffects = new List<ActiveStatusEffects>();
     [SerializeField]
     GridLayoutGroup iconGrid;
     private Enemy enemy;
@@ -58,7 +60,11 @@ public class EnemyStatusEffects : MonoBehaviour
                             activeStatusEffects[i].tickTimer = 0;
                             if (activeStatusEffects[i].damage > 0)
                             {
-                                enemy.reduceHp(activeStatusEffects[i].damage, 1, false, activeStatusEffects[i].type);
+                                if (PlayerCombat.Instance.harvestActive && Random.Range(0, 101) <= PlayerCombat.Instance.harvestChance)
+                                {
+                                    PlayerCombat.Instance.HealPlayer(PlayerCombat.Instance.harvestHeal);
+                                }
+                                enemy.reduceHp(activeStatusEffects[i].damage * activeStatusEffects[i].poisonStacks, 1, false, activeStatusEffects[i].type);
                             }
                         }
                         break;
@@ -100,7 +106,7 @@ public class EnemyStatusEffects : MonoBehaviour
                 newBurn.icon = Instantiate(testIcon, iconGrid.transform, false);
                 newBurn.timerText = newBurn.icon.GetComponentInChildren<TextMeshProUGUI>();
                 newBurn.icon.GetComponent<Image>().sprite = burnIcon;
-                newBurn.duration = burnDuration;
+                newBurn.duration = burnDuration * PlayerCombat.Instance.statusDurationMultiplier;
                 newBurn.damage = burnDamage;
                 newBurn.tickRate = burnTickRate;
                 activeStatusEffects.Add(newBurn);
@@ -130,7 +136,7 @@ public class EnemyStatusEffects : MonoBehaviour
             newEnfeeble.icon = Instantiate(testIcon, iconGrid.transform, false);
             newEnfeeble.timerText = newEnfeeble.icon.GetComponentInChildren<TextMeshProUGUI>();
             newEnfeeble.icon.GetComponent<Image>().sprite = enfeebleIcon;
-            newEnfeeble.duration = enfeebleDuration;
+            newEnfeeble.duration = enfeebleDuration * PlayerCombat.Instance.statusDurationMultiplier;
             newEnfeeble.effectPercentage = enfeebleExtraDmgPercent;
             activeStatusEffects.Add(newEnfeeble);
         }
@@ -142,11 +148,17 @@ public class EnemyStatusEffects : MonoBehaviour
     public void ESEPoison(float poisonDuration, int poisonDamage, float poisonTickRate)
     {
         bool poisonAlreadyActive = false;
+
         foreach (ActiveStatusEffects activeStatuses in activeStatusEffects)
         {
             if (activeStatuses.type == WeaponStatusEffect.Poison)
             {
+                activeStatuses.damage = Mathf.Max(activeStatuses.damage, poisonDamage);
                 poisonAlreadyActive = true;
+                if (PlayerCombat.Instance.blightedSoulActive || activeStatuses.poisonStacks < 5)
+                {
+                    activeStatuses.poisonStacks++;
+                }
                 if (poisonDuration > activeStatuses.duration)
                 {
                     activeStatuses.duration = poisonDuration;
@@ -160,7 +172,7 @@ public class EnemyStatusEffects : MonoBehaviour
             newPoison.icon = Instantiate(testIcon, iconGrid.transform, false);
             newPoison.timerText = newPoison.icon.GetComponentInChildren<TextMeshProUGUI>();
             newPoison.icon.GetComponent<Image>().sprite = poisonIcon;
-            newPoison.duration = poisonDuration;
+            newPoison.duration = poisonDuration * PlayerCombat.Instance.statusDurationMultiplier;
             newPoison.damage = poisonDamage;
             newPoison.tickRate = poisonTickRate;
             activeStatusEffects.Add(newPoison);

@@ -104,6 +104,7 @@ public class Enemy : MonoBehaviour
             playerCombat.OnEnemyKilled(this);
             DropOnDeath drop = GetComponent<DropOnDeath>();
             drop.DropItems(transform.position);
+            
             if (enemyAI != null)
             {
                 emberSystem.aliveEnemies--;

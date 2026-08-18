@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca02f8c6747875643a732e3961e34883, type: 3}
+  m_Name: aCullTheMeek
+  m_EditorClassIdentifier: 
+  augmentId: aCullTheMeek
+  maxAugmentLevel: 2
+  augmentIcon: {fileID: 9023498741084242239, guid: 18072171b72997d4aba8f6cc772dd318, type: 3}
+  augmentTier: 2
+  augmentWeight: 1
+  requiredAugmentWeapon: {fileID: 0}
+  requiredAugmentSoulCoinUpgrade: {fileID: 0}
+  augmentDescriptionName: Cull the Meek
+  augmentDescription: Deal bonus damage while fewer than 5 enemies remain.
+  augmentPerLevelDescription: 'Bonus damage: 15%/25%'

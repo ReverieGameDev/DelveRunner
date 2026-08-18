@@ -6,6 +6,7 @@ using UnityEngine.Rendering.Universal;
 
 public class EmberSystem : MonoBehaviour
 {
+    public static EmberSystem Instance;
     public float emberAmount = 100;
     public int baseEmber = 100;
     private PlayerMovement playerMovement;
@@ -21,6 +22,7 @@ public class EmberSystem : MonoBehaviour
 
     void Start()
     {
+        Instance = this;
         spawnManager = FindFirstObjectByType<SpawnManager>();
         playerMovement = FindFirstObjectByType<PlayerMovement>();
         //emberComp = playerMovement.GetComponent<Light2D>();
