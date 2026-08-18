@@ -83,7 +83,14 @@ public class EnemyStatusEffects : MonoBehaviour
             }
         }
     }
-
+    private float DurationChange(float durationToMod)
+    {
+        if (PlayerCombat.Instance.aEmberWickActive && EmberSystem.Instance.emberAmount / EmberSystem.Instance.baseEmber > .5f)
+        {
+            durationToMod = PlayerCombat.Instance.aEmberWickStatusExtend * durationToMod;
+        }
+        return durationToMod * PlayerCombat.Instance.statusDurationMultiplier;
+    }
     public void ESEBurn(float burnDuration, int burnDamage, float burnTickRate)
     {
         {
@@ -93,9 +100,9 @@ public class EnemyStatusEffects : MonoBehaviour
                 if (activeStatuses.type == WeaponStatusEffect.Burn)
                 {
                     burnAlreadyActive = true;
-                    if (burnDuration > activeStatuses.duration)
+                    if (DurationChange(burnDuration) > activeStatuses.duration)
                     {
-                        activeStatuses.duration = burnDuration;
+                        activeStatuses.duration = DurationChange(burnDuration);
                     }
                 }
             }
@@ -106,7 +113,7 @@ public class EnemyStatusEffects : MonoBehaviour
                 newBurn.icon = Instantiate(testIcon, iconGrid.transform, false);
                 newBurn.timerText = newBurn.icon.GetComponentInChildren<TextMeshProUGUI>();
                 newBurn.icon.GetComponent<Image>().sprite = burnIcon;
-                newBurn.duration = burnDuration * PlayerCombat.Instance.statusDurationMultiplier;
+                newBurn.duration = DurationChange(burnDuration);
                 newBurn.damage = burnDamage;
                 newBurn.tickRate = burnTickRate;
                 activeStatusEffects.Add(newBurn);
@@ -121,9 +128,9 @@ public class EnemyStatusEffects : MonoBehaviour
             if (activeStatuses.type == WeaponStatusEffect.Enfeeble)
             {
                 enfeebleAlreadyActive = true;
-                if (enfeebleDuration > activeStatuses.duration)
+                if (DurationChange(enfeebleDuration) > activeStatuses.duration)
                 {
-                    activeStatuses.duration = enfeebleDuration;
+                    activeStatuses.duration = DurationChange(enfeebleDuration);
                 }
             }
         }
@@ -136,7 +143,7 @@ public class EnemyStatusEffects : MonoBehaviour
             newEnfeeble.icon = Instantiate(testIcon, iconGrid.transform, false);
             newEnfeeble.timerText = newEnfeeble.icon.GetComponentInChildren<TextMeshProUGUI>();
             newEnfeeble.icon.GetComponent<Image>().sprite = enfeebleIcon;
-            newEnfeeble.duration = enfeebleDuration * PlayerCombat.Instance.statusDurationMultiplier;
+            newEnfeeble.duration = DurationChange(enfeebleDuration);
             newEnfeeble.effectPercentage = enfeebleExtraDmgPercent;
             activeStatusEffects.Add(newEnfeeble);
         }
@@ -159,9 +166,9 @@ public class EnemyStatusEffects : MonoBehaviour
                 {
                     activeStatuses.poisonStacks++;
                 }
-                if (poisonDuration > activeStatuses.duration)
+                if (DurationChange(poisonDuration) > activeStatuses.duration)
                 {
-                    activeStatuses.duration = poisonDuration;
+                    activeStatuses.duration = DurationChange(poisonDuration);
                 }
             }
         }
@@ -172,7 +179,7 @@ public class EnemyStatusEffects : MonoBehaviour
             newPoison.icon = Instantiate(testIcon, iconGrid.transform, false);
             newPoison.timerText = newPoison.icon.GetComponentInChildren<TextMeshProUGUI>();
             newPoison.icon.GetComponent<Image>().sprite = poisonIcon;
-            newPoison.duration = poisonDuration * PlayerCombat.Instance.statusDurationMultiplier;
+            newPoison.duration = DurationChange(poisonDuration);
             newPoison.damage = poisonDamage;
             newPoison.tickRate = poisonTickRate;
             activeStatusEffects.Add(newPoison);

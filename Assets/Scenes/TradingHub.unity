@@ -3771,12 +3771,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38f10b667e7184f4bbf0e601a0fb6633, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  aBloodMoneyActive: 0
+  aBloodMoneyHeal: 0
+  aProspectorActive: 0
+  aProspectorChance: 0
+  barterSoulPaid: 0
+  barteredSoulActive: 0
+  barteredSoulLevel: 0
+  emberGainPrefab: {fileID: 0}
+  burningSoulMaxDamage: 0
+  burningSoulActive: 0
+  burningSoulLevel: 0
+  blightedSoulActive: 0
+  cullTheMeekActive: 0
+  cullTheMeekBonusDmg: 0
+  isRekindleActive: 0
+  rekindleEmberPerKill: 0
+  dropManager: {fileID: 0}
+  scholarDropTable: {fileID: 0}
+  statusDurationMultiplier: 1
   bloodHealPrefab: {fileID: 0}
   gameOverScreen: {fileID: 0}
+  scholarXPAmount: 0
+  scholarActive: 0
   playerData: {fileID: 11400000, guid: 015cd50e4d403354bafaf27b1a2a2d9e, type: 2}
   attackManager: {fileID: 0}
   testAugment: {fileID: 0}
   supplyBox: {fileID: 0}
+  harvestChance: 0
+  harvestHeal: 0
+  harvestActive: 0
+  aEmberWickActive: 0
+  aEmberWickStatusExtend: 0
+  critSplosionPrefab: {fileID: 0}
   attackBase: 1
   attackBonus: 0
   attack: 1

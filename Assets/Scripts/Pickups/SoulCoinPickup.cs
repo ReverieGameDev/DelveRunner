@@ -18,7 +18,14 @@ public class SoulCoinPickup : MonoBehaviour
             transform.Translate((PlayerCombat.Instance.transform.position - transform.position).normalized * xpSpeed * Time.deltaTime);
             if (Vector3.Distance(transform.position, PlayerCombat.Instance.transform.position) < 0.5f)
             {
-                PlayerCombat.Instance.soulCoins++; 
+                if (PlayerCombat.Instance.aProspectorActive && Random.Range(1, 101) <= PlayerCombat.Instance.aProspectorChance)
+                {
+                    PlayerCombat.Instance.soulCoins+=2;
+                }
+                else
+                {
+                    PlayerCombat.Instance.soulCoins++;
+                }
                 Destroy(gameObject);
             }
         }

@@ -25,6 +25,7 @@ public class Enemy : MonoBehaviour
     public bool enfeebled = false;
     public float enfeebleBonusDamage;
     [SerializeField] private DropOnDeath dropOnDeath;
+    public bool diedToCrit = false;
     private void Awake()
     {
         emberSystem = FindFirstObjectByType<EmberSystem>();
@@ -101,6 +102,7 @@ public class Enemy : MonoBehaviour
         hptext.text = (int)enemyHealth + " / " + (int)maxEnemyHealth;
         if (enemyHealth <= 0)
         {
+            if (isCrit) diedToCrit = true;
             playerCombat.OnEnemyKilled(this);
             DropOnDeath drop = GetComponent<DropOnDeath>();
             drop.DropItems(transform.position);

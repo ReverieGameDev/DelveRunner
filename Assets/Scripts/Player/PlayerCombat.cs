@@ -12,6 +12,10 @@ using JetBrains.Annotations;
 
 public class PlayerCombat : MonoBehaviour
 {
+    public bool aBloodMoneyActive = false;
+    public int aBloodMoneyHeal;
+    public bool aProspectorActive = false;
+    public int aProspectorChance;
     public bool barterSoulPaid = false;
     public bool barteredSoulActive;
     public int barteredSoulLevel;
@@ -49,6 +53,10 @@ public class PlayerCombat : MonoBehaviour
     public int harvestChance;
     public int harvestHeal;
     public bool harvestActive = false;
+    public bool aEmberWickActive = false;
+    public float aEmberWickStatusExtend;
+
+    public GameObject critSplosionPrefab;
     #region Stats
     // Attack
     public float attackBase = 1f;

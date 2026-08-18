@@ -22,6 +22,10 @@ public class Money : MonoBehaviour
             transform.Translate((playerCombat.transform.position - transform.position).normalized * moneySpeed * Time.deltaTime);
             if (Vector3.Distance(transform.position, playerCombat.transform.position) < 0.5f)
             {
+                if (PlayerCombat.Instance.aBloodMoneyActive)
+                {
+                    PlayerCombat.Instance.HealPlayer(PlayerCombat.Instance.aBloodMoneyHeal);
+                }
                 playerCombat.ModifyGoldValue("pickup",goldValue);
                 Destroy(gameObject);
             }
