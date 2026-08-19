@@ -519,14 +519,14 @@ public class PlayerCombat : MonoBehaviour
     {
         if (blitzSoulActive)
         {
-            if (currentPlayerMana > blitzManaCost && blitzSoulToggle)
+            if (currentPlayerMana >= blitzManaCost && blitzSoulToggle)
             {
                 currentPlayerMana -= blitzManaCost;
                 target.GetComponent<EnemyStatusEffects>().ESEShock(blitzShockDuration, blitzShockDamage, blitzShockTickRate, blitzMaxStacks);
             }
             else
             {
-                baseDamage *= .5f;
+                baseDamage *= blitzWeakAutoMult;
             }
         }
         int dmg = CalcWeaponDamage(baseDamage, out bool crit);
@@ -535,7 +535,7 @@ public class PlayerCombat : MonoBehaviour
     }
     public void BlitzSoulToggle()
     {
-        blitzSoulToggle = !blitzSoulToggle;
+        blitzToggledOn = !blitzToggledOn;
     }
     public int CalcWeaponDamage(float damage, out bool crit)
     {
