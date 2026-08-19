@@ -12,6 +12,19 @@ using JetBrains.Annotations;
 
 public class PlayerCombat : MonoBehaviour
 {
+    public bool blitzSoulToggle = false;
+    public bool blitzSoulActive = false;
+    public bool blitzToggledOn = true;
+    public int blitzManaCost;
+    public int blitzShockDamage;
+    public float blitzShockDuration;
+    public float blitzShockTickRate;
+    public int blitzMaxStacks;
+    public float blitzWeakAutoMult;
+    public bool aStarCallerNovaActive = true;
+    public float aStarCallerNovaDamageMult;
+    public int aStarCallerNovaCinderChance;
+    public int aStarCallerNovaEmberCost;
     public bool aBloodMoneyActive = false;
     public int aBloodMoneyHeal;
     public bool aProspectorActive = false;
@@ -310,6 +323,10 @@ public class PlayerCombat : MonoBehaviour
 
     private void Update()
     {
+        if (blitzSoulActive && Input.GetKeyDown(KeyCode.G))
+        {
+            BlitzSoulToggle();
+        }
         if (emberSystem != null && emberSystem.aliveEnemies > 0 && hpRegenActive && !hpIsRegenning && currentPlayerHealth < maxHealth)
         {
             StartCoroutine("HpRegen");
@@ -500,11 +517,26 @@ public class PlayerCombat : MonoBehaviour
 
     public void DealDamage(Enemy target, float baseDamage, int hitCount = 1)
     {
+        if (blitzSoulActive)
+        {
+            if (currentPlayerMana > blitzManaCost && blitzSoulToggle)
+            {
+                currentPlayerMana -= blitzManaCost;
+                target.GetComponent<EnemyStatusEffects>().ESEShock(blitzShockDuration, blitzShockDamage, blitzShockTickRate, blitzMaxStacks);
+            }
+            else
+            {
+                baseDamage *= .5f;
+            }
+        }
         int dmg = CalcWeaponDamage(baseDamage, out bool crit);
         target.reduceHp(dmg, hitCount, crit);
         OnHitDealt?.Invoke(target);
     }
-
+    public void BlitzSoulToggle()
+    {
+        blitzSoulToggle = !blitzSoulToggle;
+    }
     public int CalcWeaponDamage(float damage, out bool crit)
     {
         int critRoll = UnityEngine.Random.Range(0, 101);

@@ -45,7 +45,7 @@ public class AbilityManager : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.LeftShift) && !playerMovement.playerFrozen && !playerStatusEffects.isStunned)
+        if (Input.GetKeyDown(KeyCode.LeftShift) && !playerMovement.playerFrozen && !playerStatusEffects.isStunned && !PlayerCombat.Instance.blitzSoulActive)
         {
             switch (currentAbility)
             {

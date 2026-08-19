@@ -43,13 +43,26 @@ public class StarCallerBasic : BasicAttackBase
     {
         if (!collision.CompareTag("Enemy")) return;
         Enemy enemyScript = collision.GetComponent<Enemy>();
-        PlayerCombat.Instance.DealDamage(enemyScript,wepData.wDamage * damageMultiplier);
-        
-        if (UnityEngine.Random.Range(0, 100) < wepData.wProcChance)
+        if (PlayerCombat.Instance.aStarCallerNovaActive && EmberSystem.Instance.emberAmount >= PlayerCombat.Instance.aStarCallerNovaEmberCost)
         {
-            emberSystem.AddEmber(5);
-            Instantiate(starcallerEmberProcPrefab, PlayerCombat.Instance.transform, false);
+            EmberSystem.Instance.emberAmount -= PlayerCombat.Instance.aStarCallerNovaEmberCost;
+            if (UnityEngine.Random.Range(0, 100) < PlayerCombat.Instance.aStarCallerNovaCinderChance)
+            {
+                enemyScript.GetComponent<EnemyStatusEffects>().ESECinder(4, 8, 1, 2);
+            }
+            PlayerCombat.Instance.DealDamage(enemyScript, wepData.wDamage * damageMultiplier * PlayerCombat.Instance.aStarCallerNovaDamageMult);
         }
+        else
+        {
+            PlayerCombat.Instance.DealDamage(enemyScript, wepData.wDamage * damageMultiplier);
+
+            if (!PlayerCombat.Instance.aStarCallerNovaActive && UnityEngine.Random.Range(0, 100) < wepData.wProcChance)
+            {
+                emberSystem.AddEmber(5);
+                Instantiate(starcallerEmberProcPrefab, PlayerCombat.Instance.transform, false);
+            }
+        }
+
         
         Destroy(gameObject);
     }

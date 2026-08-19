@@ -21,10 +21,7 @@ public class aCritsplosion : AugmentData
         float radius = aCritsplosionCurrentLevel * 2 + 3;
 
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
-        List<GameObject> enemiesInRange = enemies
-            .Where(inRange => inRange != enemy.gameObject
-                && Vector2.Distance(inRange.transform.position, enemy.transform.position) <= radius)
-            .ToList();
+        List<GameObject> enemiesInRange = enemies.Where(inRange => inRange != enemy.gameObject && Vector2.Distance(inRange.transform.position, enemy.transform.position) <= radius).ToList();
 
         List<ActiveStatusEffects> statusSpreader =
             enemy.GetComponent<EnemyStatusEffects>().activeStatusEffects.ToList();

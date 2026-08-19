@@ -35,5 +35,5 @@ public class WeaponData : ScriptableObject
     public float wChargeEffectDuration;
 }
 
-public enum WeaponStatusEffect { None, Poison, Burn, Stun, Enfeeble }
+public enum WeaponStatusEffect { None, Poison, Burn, Stun, Enfeeble, Cinder, Shock }
 public enum WeaponTargetingType { Single, NearestEnemy, Cone, Homing, Line }

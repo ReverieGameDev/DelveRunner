@@ -20,7 +20,7 @@ MonoBehaviour:
   requiredAugmentWeapon: {fileID: 0}
   requiredAugmentSoulCoinUpgrade: {fileID: 0}
   augmentDescriptionName: Kindling
-  augmentDescription: On hit, 30% to burn enemy
-  augmentPerLevelDescription: 'Burn Damage: 2/3/4
-
-    Burn Duration: 4s/7s/10s'
+  augmentDescription: Every few hits sets an enemy alight with Cinder, which burns
+    them and returns ember to you as it smoulders.
+  augmentPerLevelDescription: "Hits per proc: 5/4/3\nCinder damage: 4/6/8 \nDuration:
+    4s/5s/6s \nEmber per tick: 1/2/3"

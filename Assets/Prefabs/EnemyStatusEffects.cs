@@ -15,6 +15,9 @@ public class ActiveStatusEffects
     public float tickTimer;
     public float effectPercentage;
     public int poisonStacks = 1;
+    public int emberGain;
+    public int currentShockStacks = 1;
+    public int maxShockStacks = 3;
 }
 
 public class EnemyStatusEffects : MonoBehaviour
@@ -28,6 +31,9 @@ public class EnemyStatusEffects : MonoBehaviour
     public Sprite enfeebleIcon;
     public Sprite poisonIcon;
     public Sprite burnIcon;
+    public Sprite cinderIcon;
+    public Sprite shockIcon;
+    public GameObject shockArcPrefab;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -45,6 +51,8 @@ public class EnemyStatusEffects : MonoBehaviour
                 switch (activeStatusEffects[i].type)
                 {
                     case WeaponStatusEffect.Burn:
+                    case WeaponStatusEffect.Cinder:
+                    case WeaponStatusEffect.Shock:
                     case WeaponStatusEffect.Poison:
                         activeStatusEffects[i].tickTimer += Time.deltaTime;
                         activeStatusEffects[i].duration -= Time.deltaTime;
@@ -65,9 +73,12 @@ public class EnemyStatusEffects : MonoBehaviour
                                     PlayerCombat.Instance.HealPlayer(PlayerCombat.Instance.harvestHeal);
                                 }
                                 enemy.reduceHp(activeStatusEffects[i].damage * activeStatusEffects[i].poisonStacks, 1, false, activeStatusEffects[i].type);
+                                if (activeStatusEffects[i].type == WeaponStatusEffect.Cinder) EmberSystem.Instance.AddEmber(activeStatusEffects[i].emberGain);
+                                if (activeStatusEffects[i].type == WeaponStatusEffect.Shock) RelayShock(activeStatusEffects[i].currentShockStacks);
                             }
                         }
                         break;
+
                     case WeaponStatusEffect.Enfeeble:
                         activeStatusEffects[i].duration -= Time.deltaTime;
                         activeStatusEffects[i].timerText.text = ("" + activeStatusEffects[i].duration.ToString("F1"));
@@ -183,6 +194,83 @@ public class EnemyStatusEffects : MonoBehaviour
             newPoison.damage = poisonDamage;
             newPoison.tickRate = poisonTickRate;
             activeStatusEffects.Add(newPoison);
+        }
+    }
+    public void ESECinder(float cinderDuration, int cinderDamage, float cinderTickRate, int emberAmount = 1)
+    {
+        {
+            bool cinderAlreadyActive = false;
+            foreach (ActiveStatusEffects activeStatuses in activeStatusEffects)
+            {
+                if (activeStatuses.type == WeaponStatusEffect.Cinder)
+                {
+                    cinderAlreadyActive = true;
+                    if (DurationChange(cinderDuration) > activeStatuses.duration)
+                    {
+                        activeStatuses.duration = DurationChange(cinderDuration);
+                    }
+                }
+            }
+            if (!cinderAlreadyActive)
+            {
+                ActiveStatusEffects newCinder = new ActiveStatusEffects();
+                newCinder.type = WeaponStatusEffect.Cinder;
+                newCinder.icon = Instantiate(testIcon, iconGrid.transform, false);
+                newCinder.timerText = newCinder.icon.GetComponentInChildren<TextMeshProUGUI>();
+                newCinder.icon.GetComponent<Image>().sprite = cinderIcon;
+                newCinder.duration = DurationChange(cinderDuration);
+                newCinder.damage = cinderDamage;
+                newCinder.emberGain = emberAmount;
+                newCinder.tickRate = cinderTickRate;
+                activeStatusEffects.Add(newCinder);
+            }
+        }
+    }
+    public void ESEShock(float shockDuration, int shockDamage, float shockTickRate, int shockMaxStacks = 3)
+    {
+        bool shockAlreadyActive = false;
+
+        foreach (ActiveStatusEffects activeStatuses in activeStatusEffects)
+        {
+            if (activeStatuses.type == WeaponStatusEffect.Shock)
+            {
+                activeStatuses.damage = Mathf.Max(activeStatuses.damage, shockDamage);
+                shockAlreadyActive = true;
+                if (activeStatuses.currentShockStacks < shockMaxStacks)
+                {
+                    activeStatuses.currentShockStacks++;
+                }
+                if (DurationChange(shockDuration) > activeStatuses.duration)
+                {
+                    activeStatuses.duration = DurationChange(shockDuration);
+                }
+            }
+        }
+        if (!shockAlreadyActive)
+        {
+            ActiveStatusEffects newShock = new ActiveStatusEffects();
+            newShock.type = WeaponStatusEffect.Shock;
+            newShock.icon = Instantiate(testIcon, iconGrid.transform, false);
+            newShock.timerText = newShock.icon.GetComponentInChildren<TextMeshProUGUI>();
+            newShock.icon.GetComponent<Image>().sprite = shockIcon;
+            newShock.duration = DurationChange(shockDuration);
+            newShock.damage = shockDamage;
+            newShock.tickRate = shockTickRate;
+            activeStatusEffects.Add(newShock);
+        }
+    }
+
+    public void RelayShock(int currentStacks)
+    {
+        List<GameObject> enemies = GameObject.FindGameObjectsWithTag("Enemy").ToList();
+        enemies = enemies.Where(inRange=> inRange != enemy.gameObject && Vector2.Distance(inRange.transform.position, enemy.transform.position) <= 10).ToList();
+        for (int i = 0; i < currentStacks; i++)
+        {
+            if (enemies.Count == 0) break;
+            int enemyHit = (Random.Range(0, enemies.Count));
+            enemies[enemyHit].GetComponent<Enemy>().reduceHp(enemies[enemyHit].GetComponent<Enemy>().enemyHealth * 0.03f, 1, false, WeaponStatusEffect.Shock);
+            Instantiate(shockArcPrefab, enemies[enemyHit].transform.position,Quaternion.identity);
+            enemies.RemoveAt(enemyHit);
         }
     }
 }
