@@ -66,7 +66,10 @@ public class Enemy : MonoBehaviour
         enemyAI.assignedSpawnAnchorScript.frontlineCurrentHP -= damageDealt;
         enemyAI.assignedSpawnAnchorScript.EvaluateFormationState(FormationCheck.LowFrontline);
     }
-
+    public void EnemyDropCoin()
+    {
+        DropManager.Instance.DropItem(transform.position, money1, 10);
+    }
     public void HealEnemy(float damageHealed)
     {
          enemyHealth = Mathf.Min(enemyHealth+damageHealed, maxEnemyHealth);

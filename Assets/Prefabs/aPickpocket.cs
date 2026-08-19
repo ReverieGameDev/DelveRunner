@@ -14,7 +14,8 @@ public class aPickpocket : AugmentData
     {
         if (Random.Range(1,101)< (8 * currentPickpocketLevel) + 2)
         {
-            PlayerCombat.Instance.ModifyGoldValue("pickup", Random.Range(1, 4));
+            enemy.EnemyDropCoin();
+            PlayerCombat.Instance.StartCoroutine(PlayerCombat.Instance.PlayerTempSpeedBoost((5 + (currentPickpocketLevel * 10)) / 100f, 1.5f));
         }
     }
 }

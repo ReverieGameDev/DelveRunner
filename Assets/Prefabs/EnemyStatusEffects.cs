@@ -73,8 +73,10 @@ public class EnemyStatusEffects : MonoBehaviour
                                     PlayerCombat.Instance.HealPlayer(PlayerCombat.Instance.harvestHeal);
                                 }
                                 enemy.reduceHp(activeStatusEffects[i].damage * activeStatusEffects[i].poisonStacks, 1, false, activeStatusEffects[i].type);
+                                if (activeStatusEffects[i].type == WeaponStatusEffect.Shock && PlayerCombat.Instance.aConductionActive) PlayerCombat.Instance.AddManaPlayer(PlayerCombat.Instance.aConductionManaPerTick);
                                 if (activeStatusEffects[i].type == WeaponStatusEffect.Cinder) EmberSystem.Instance.AddEmber(activeStatusEffects[i].emberGain);
                                 if (activeStatusEffects[i].type == WeaponStatusEffect.Shock) RelayShock(activeStatusEffects[i].currentShockStacks);
+                                
                             }
                         }
                         break;
@@ -269,7 +271,30 @@ public class EnemyStatusEffects : MonoBehaviour
             if (enemies.Count == 0) break;
             int enemyHit = (Random.Range(0, enemies.Count));
             enemies[enemyHit].GetComponent<Enemy>().reduceHp(enemies[enemyHit].GetComponent<Enemy>().enemyHealth * 0.03f, 1, false, WeaponStatusEffect.Shock);
-            Instantiate(shockArcPrefab, enemies[enemyHit].transform.position,Quaternion.identity);
+            Instantiate(shockArcPrefab, enemies[enemyHit].transform.position, Quaternion.identity);
+            if (PlayerCombat.Instance.aStaticCarrierActive)
+            {
+                if (Random.Range(0, 101) < PlayerCombat.Instance.aStaticCarrierChance)
+                {
+                    EnemyStatusEffects targetEse = enemies[enemyHit].GetComponent<EnemyStatusEffects>();
+                    int randomStatus = Random.Range(0, 4);
+                    switch (randomStatus)
+                    {
+                        case 0:
+                            targetEse.ESEBurn(4f, 3, 1f);
+                            break;
+                        case 1:
+                            targetEse.ESEPoison(5f, 2, 1f);
+                            break;
+                        case 2:
+                            targetEse.ESEEnfeeble(4f, 0.1f);
+                            break;
+                        case 3:
+                            targetEse.ESECinder(4f, 3, 1f, 1);
+                            break;
+                    }
+                }
+            }
             enemies.RemoveAt(enemyHit);
         }
     }

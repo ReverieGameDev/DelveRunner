@@ -83,7 +83,8 @@ public class AttackManager : MonoBehaviour
     {
 
         if (!charged) 
-        { 
+        {
+            PlayerCombat.Instance.chargeAttackFired = false;
             GameObject weaponPrefab = Instantiate(currentWeapon.wProjectilePrefab, playerCombat.transform.position, Quaternion.identity);
             if (weaponPrefab.TryGetComponent<BasicAttackBase>(out BasicAttackBase basicAttackBase))
             {
@@ -95,6 +96,7 @@ public class AttackManager : MonoBehaviour
         {
             GameObject weaponPrefab = Instantiate(currentWeapon.wChargeProjectilePrefab, playerCombat.transform.position, Quaternion.identity);
             weaponPrefab.GetComponent<ChargeAttackBase>().FireChargeAttack(currentWeapon,currentCharge, currentWeapon.wChargeTime);
+            PlayerCombat.Instance.chargeAttackFired = true;
         }
         if (shadowEcho.activeInHierarchy) shadowEcho.GetComponent<ShadowEcho>().ShadowAttack(starDaggerPrefab, "StarDagger"); // ignore this line for now.
         currentCharge = 0;

@@ -12,13 +12,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd3f4b1a2cc3e8e43aadc7a39a070e00, type: 3}
   m_Name: aBlitzSoul
   m_EditorClassIdentifier: 
-  augmentId: 
-  maxAugmentLevel: 0
-  augmentIcon: {fileID: 0}
-  augmentTier: 1
-  augmentWeight: 0
+  augmentId: aBlitzSoul
+  maxAugmentLevel: 1
+  augmentIcon: {fileID: -6155198190271476649, guid: ef195b444f74c744c890adf33f440162, type: 3}
+  augmentTier: 3
+  augmentWeight: 1
   requiredAugmentWeapon: {fileID: 0}
   requiredAugmentSoulCoinUpgrade: {fileID: 0}
-  augmentDescriptionName: 
-  augmentDescription: 
-  augmentPerLevelDescription: 
+  augmentDescriptionName: Blitz Soul
+  augmentDescription: "You lose your ability. Your attacks cost mana and apply Shock,
+    which arcs to nearby enemies \u2014 one for every stack. Toggle it off with G
+    to attack normally at reduced power."
+  augmentPerLevelDescription: 'Mana per attack: 6
+
+    Shock: 15s, arcs every 3s
+
+    Max
+    stacks: 10
+
+    Damage without Blitz: 50%'

@@ -12,7 +12,20 @@ using JetBrains.Annotations;
 
 public class PlayerCombat : MonoBehaviour
 {
-    public bool blitzSoulToggle = false;
+    public bool chargeAttackFired = false;
+    public bool aOverchargeActive = false;
+    public bool aConductionActive = false;
+    public int aConductionManaPerTick;
+    public bool aStaticCarrierActive = false;
+    public int aStaticCarrierChance;
+    public float lastHitTime;
+    public int currentBackstabbersStacks = 0;
+    public int backstabbersSoulFlatCrit;
+    public bool backstabbersSoulActive = false;
+    public float backstabbersSoulDamageMult;
+    public int backstabbersSoulCritGain;
+    public float backstabbersSoulCritDamageGain;
+    public int backstabbersSoulMaxStacks = 25;
     public bool blitzSoulActive = false;
     public bool blitzToggledOn = true;
     public int blitzManaCost;
@@ -21,7 +34,7 @@ public class PlayerCombat : MonoBehaviour
     public float blitzShockTickRate;
     public int blitzMaxStacks;
     public float blitzWeakAutoMult;
-    public bool aStarCallerNovaActive = true;
+    public bool aStarCallerNovaActive = false;
     public float aStarCallerNovaDamageMult;
     public int aStarCallerNovaCinderChance;
     public int aStarCallerNovaEmberCost;
@@ -60,8 +73,6 @@ public class PlayerCombat : MonoBehaviour
     public event Action<Enemy> OnHitDealt;
     public event Action<Enemy> OnEnemyKill;
     private AbilityManager abilityManager;
-    public aVulnerableTransfusion testAugment;
-    public aSupplyBox supplyBox;
     #endregion
     public int harvestChance;
     public int harvestHeal;
@@ -300,8 +311,6 @@ public class PlayerCombat : MonoBehaviour
     void Start()
     {
         soulMixPreviousTotal = PlayerPrefs.GetInt("SoulMixTotal");
-        testAugment.Apply(this, 1);
-        supplyBox.Apply(this, 1);
         abilityManager = FindFirstObjectByType<AbilityManager>();
         if (playerGold != null) playerGold.text = ": " + (int)playerMoney;
 
@@ -515,11 +524,16 @@ public class PlayerCombat : MonoBehaviour
     #endregion
     #region Combat - Damage Dealing
 
-    public void DealDamage(Enemy target, float baseDamage, int hitCount = 1)
+    public void DealDamage(Enemy target, float baseDamage, int hitCount = 1, bool maxCharge = false)
     {
+        if (aOverchargeActive && chargeAttackFired)
+        {
+            target.GetComponent<EnemyStatusEffects>().ESEShock(8f, 3, 3f, 2);
+            
+        }
         if (blitzSoulActive)
         {
-            if (currentPlayerMana >= blitzManaCost && blitzSoulToggle)
+            if (currentPlayerMana >= blitzManaCost && blitzToggledOn)
             {
                 currentPlayerMana -= blitzManaCost;
                 target.GetComponent<EnemyStatusEffects>().ESEShock(blitzShockDuration, blitzShockDamage, blitzShockTickRate, blitzMaxStacks);
@@ -529,6 +543,7 @@ public class PlayerCombat : MonoBehaviour
                 baseDamage *= blitzWeakAutoMult;
             }
         }
+
         int dmg = CalcWeaponDamage(baseDamage, out bool crit);
         target.reduceHp(dmg, hitCount, crit);
         OnHitDealt?.Invoke(target);
@@ -537,13 +552,46 @@ public class PlayerCombat : MonoBehaviour
     {
         blitzToggledOn = !blitzToggledOn;
     }
+    public IEnumerator PlayerTempSpeedBoost(float speedBoost, float time)
+    {
+        ModifyStat("movement speed", speedBoost);
+        yield return new WaitForSeconds(time);
+        ModifyStat("movement speed", -speedBoost);
+    }
     public int CalcWeaponDamage(float damage, out bool crit)
     {
         int critRoll = UnityEngine.Random.Range(0, 101);
         int processedDamage = 0;
+
+        int effectiveCritChance = critChance;
+        float effectiveCritDamage = critDamage;
+
+        if (backstabbersSoulActive)
+        {
+            if (Time.time - lastHitTime > 2f)
+            {
+                currentBackstabbersStacks = 0;
+            }
+
+            damage *= backstabbersSoulDamageMult;
+
+            effectiveCritChance += backstabbersSoulFlatCrit + (currentBackstabbersStacks * backstabbersSoulCritGain);
+            effectiveCritDamage += currentBackstabbersStacks * backstabbersSoulCritDamageGain;
+            effectiveCritChance = Mathf.Min(effectiveCritChance, 100);
+        }
         if (cullTheMeekActive && emberSystem.aliveEnemies < 5)
         {
             damage *= cullTheMeekBonusDmg;
+        }
+        if (burningSoulActive)
+        {
+            float emberPercent = emberSystem.emberAmount / emberSystem.baseEmber;
+            damage *= Mathf.LerpUnclamped(0.5f, burningSoulMaxDamage, emberPercent);
+        }
+
+        if (barteredSoulActive)
+        {
+            damage *= 0.25f + (playerMoney / (4 - barteredSoulLevel)) * 0.01f;
         }
         if (packAPunchIsActive)
         {
@@ -568,7 +616,7 @@ public class PlayerCombat : MonoBehaviour
         {
             damage *= achillesHeelDamage;
         }
-        if (critRoll < critChance)
+        if (critRoll < effectiveCritChance)
         {
             float critMult;
             if (gamblersFallacyActive)
@@ -584,12 +632,11 @@ public class PlayerCombat : MonoBehaviour
             else if (lightningStrikesTwiceActive)
             {
                 lightningStrikesTwiceStacks++;
-                critMult = critDamage + Mathf.Min(lightningStrikesTwiceCritDmgCap,
-                                                  lightningStrikesTwiceStacks * lightningStrikesTwiceDmg);
+                critMult = effectiveCritDamage + Mathf.Min(lightningStrikesTwiceCritDmgCap,lightningStrikesTwiceStacks * lightningStrikesTwiceDmg);
             }
             else
             {
-                critMult = critDamage;
+                critMult = effectiveCritDamage;
             }
 
             processedDamage = (int)Mathf.Round(damage * attack * critMult);
@@ -608,16 +655,6 @@ public class PlayerCombat : MonoBehaviour
         if (blightedSoulActive)
         {
             processedDamage = (int)(processedDamage*.6f);
-        }
-        if (burningSoulActive)
-        {
-            float emberPercent = emberSystem.emberAmount/ emberSystem.baseEmber;
-            damage *= Mathf.LerpUnclamped(0.5f, burningSoulMaxDamage, emberPercent);
-        }
-
-        if (barteredSoulActive)
-        {
-            damage *= 0.25f + (playerMoney / (4 - barteredSoulLevel)) * 0.01f;
         }
         if (emberSystem != null && emberSystem.emberAmount <= 0)
             processedDamage = (int)(processedDamage * 0.85f);
@@ -700,6 +737,7 @@ public class PlayerCombat : MonoBehaviour
     public void DamagePlayer(float damageTaken)
     {
         if (iFrames) return;
+        
         int dodgeChance = UnityEngine.Random.Range(0, 101);
         if (dodgeChance <= dodge)
         {
@@ -707,6 +745,7 @@ public class PlayerCombat : MonoBehaviour
             if (isSurvivorshipBiasActive) SurvivorshipBias(survivorshipBiasXP);
             return;
         }
+        currentBackstabbersStacks = 0;
         if (isRunAndHitActive) RunAndHit(true);
         int damageTakenInt = (int)Mathf.Round(damageTaken);
         if (emberSystem != null && emberSystem.emberAmount <= 0)
@@ -782,6 +821,17 @@ public class PlayerCombat : MonoBehaviour
             playerHpBar.value = currentPlayerHealth / maxHealth;
             playerHpBarNumber.text = currentPlayerHealth + " / " + maxHealth;
             if (doOrDieIsActive) DoOrDieToggle();
+        }
+    }
+
+    public void AddManaPlayer(float manaRestored)
+    {
+        if (currentPlayerMana < (int)playerManaBase)
+        {
+            int manaRegainedInt = (int)Mathf.Round(manaRestored);
+            currentPlayerMana = Mathf.Min(currentPlayerMana + manaRegainedInt, (int)playerManaBase);
+            playerManaBar.value = currentPlayerMana / playerManaBase;
+            playerManaBarNumber.text = currentPlayerMana + " / " + playerManaBase;
         }
     }
     public void DoOrDieToggle()
