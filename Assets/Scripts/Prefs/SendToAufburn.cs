@@ -27,7 +27,7 @@ public class SendToAufburn : MonoBehaviour
     {
         if (playerCombat.soulMixActive)
         {
-            PlayerPrefs.SetInt("SoulMixTotal",playerCombat.soulMixPreviousTotal + Mathf.Min(playerCombat.soulMixCap,(int)(playerCombat.soulMixPercent*(playerCombat.totalSiphonKills/3))));
+            PlayerPrefs.SetInt("SoulMixTotal",playerCombat.soulMixPreviousTotal + Mathf.Min(playerCombat.soulMixCap,(int)(playerCombat.soulMixPercent*(playerCombat.totalSiphonKills))));
         }
         else if (!playerCombat.soulMixActive) 
         {

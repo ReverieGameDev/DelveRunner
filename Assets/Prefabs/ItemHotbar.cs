@@ -71,16 +71,16 @@ public class ItemHotbar : MonoBehaviour
         itemCount = 0;
         foreach (InventorySlot item in itemInventory.inventoryItems)
         {
-            if (item != emptySlot)
+            if (item.item.id != "emptySlot")
             {
-                itemCount++;
+                itemCount += item.count;
             }
         }
         foreach (InventorySlot items in hotbarItems)
         {
-            if (items != emptySlot)
+            if (items.item.id != "emptySlot")
             {
-                itemCount++;
+                itemCount += items.count;
             }
         }
         return itemCount;

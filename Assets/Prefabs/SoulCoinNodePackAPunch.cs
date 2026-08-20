@@ -14,10 +14,10 @@ public class SoulCoinNodePackAPunch : SoulCoinNode
                 player.packAPunchDamagePerItem = .0025f;
                 break;
             case 2:
-                player.packAPunchDamagePerItem = .0075f;
+                player.packAPunchDamagePerItem = .005f;
                 break;
             case 3:
-                player.packAPunchDamagePerItem = 0.015f;
+                player.packAPunchDamagePerItem = .0075f;
                 break;
         }
     }

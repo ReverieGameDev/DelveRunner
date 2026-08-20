@@ -1,4 +1,4 @@
-using NUnit.Framework;
+﻿using NUnit.Framework;
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
@@ -12,6 +12,8 @@ using JetBrains.Annotations;
 
 public class PlayerCombat : MonoBehaviour
 {
+    public GameObject pausePanel;
+    [SerializeField] private TextMeshProUGUI statsText;
     public bool chargeAttackFired = false;
     public bool aOverchargeActive = false;
     public bool aConductionActive = false;
@@ -73,6 +75,7 @@ public class PlayerCombat : MonoBehaviour
     public event Action<Enemy> OnHitDealt;
     public event Action<Enemy> OnEnemyKill;
     private AbilityManager abilityManager;
+    public float bloodlustRemaining;
     #endregion
     public int harvestChance;
     public int harvestHeal;
@@ -275,6 +278,7 @@ public class PlayerCombat : MonoBehaviour
     public TextMeshProUGUI playerManaBarNumber;
     #endregion
 
+    private bool gamePaused = false;
     #region Unity Lifecycle
     void Awake()
     {
@@ -306,7 +310,7 @@ public class PlayerCombat : MonoBehaviour
         statusResistBonus = 0f; statusResist = statusResistBase;
         consumableEffectivenessBonus = 0f; consumableEffectiveness = consumableEffectivenessBase;
 
-        maxHealth = baseMaxHealth;        // no bonus field � reset to base directly
+        maxHealth = baseMaxHealth;        // no bonus field — reset to base directly
     }
     void Start()
     {
@@ -332,6 +336,20 @@ public class PlayerCombat : MonoBehaviour
 
     private void Update()
     {
+        if (bloodlustIsActive)
+        {
+            if (bloodlustRemaining > 0)
+            {
+                bloodlustRemaining -= Time.deltaTime;
+            }
+        }
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            gamePaused = !gamePaused;
+            Time.timeScale = gamePaused ? 0f : 1f;
+            pausePanel.SetActive(gamePaused);
+            if (gamePaused) RefreshStats();
+        }
         if (blitzSoulActive && Input.GetKeyDown(KeyCode.G))
         {
             BlitzSoulToggle();
@@ -342,6 +360,7 @@ public class PlayerCombat : MonoBehaviour
         }
         if (emberSystem != null && emberSystem.aliveEnemies > 0 && isEvasiveManeuversActive && !isEvasiveClimbing && dodge < 101)
         {
+            isEvasiveClimbing = true;
             StartCoroutine(EvasiveManeuvers());
         }
         if (emberSystem != null && emberSystem.aliveEnemies <= 0 && isRunAndHitActive)
@@ -597,6 +616,10 @@ public class PlayerCombat : MonoBehaviour
         {
             damage *= 1 + Mathf.Min(.35f,(packAPunchDamagePerItem * ItemHotbar.Instance.NumberOfItems()));
         }
+        if (bloodlustIsActive && bloodlustRemaining > 0)
+        {
+            damage *= 1 + bloodlustDamage;
+        }
         if (bitterPill)
         {
             damage *= (1 + bitterPillDamage);
@@ -787,6 +810,23 @@ public class PlayerCombat : MonoBehaviour
             return;
         }
     }
+    public void RefreshStats()
+    {
+        statsText.text =
+        $"Attack        {attackBase:F2} + {attackBonus:F2} = {attack:F2}\n" +
+        $"Attack Speed  {attackSpeedBase:F2} + {attackSpeedBonus:F2} = {attackSpeed:F2}\n" +
+        $"Crit Chance   {critChanceBase} + {critChanceBonus} = {critChance}\n" +
+        $"Crit Damage   {critDamageBase:F2} + {critDamageBonus:F2} = {critDamage:F2}\n" +
+        $"Armor         {armorBase:F2} + {armorBonus:F2} = {armor:F2}\n" +
+        $"Dodge         {dodgeBase:F2} + {dodgeBonus:F2} = {dodge:F2}\n" +
+        $"Move Speed    {movementSpeedBase:F2} + {movementSpeedBonus:F2} = {movementSpeed:F2}\n" +
+        $"XP Gain       {xpGainBase:F2} + {xpGainBonus:F2} = {xpGain:F2}\n" +
+        $"Gold Gain     {goldGainBase:F2} + {goldGainBonus:F2} = {goldGain:F2}\n" +
+        $"Status Resist {statusResistBase:F2} + {statusResistBonus:F2} = {statusResist:F2}\n" +
+        $"Consumable    {consumableEffectivenessBase:F2} + {consumableEffectivenessBonus:F2} = {consumableEffectiveness:F2}\n" +
+        $"Max Health    {baseMaxHealth:F0} → {maxHealth:F0}\n" +
+        $"Soul Mix Bank {soulMixPreviousTotal}";
+    }
     IEnumerator IFrames()
     {
         iFrames = true;
@@ -949,31 +989,7 @@ public class PlayerCombat : MonoBehaviour
     }
     #endregion
 
-    #region Augments
-    public void ApplyAugment(string selectedAugment)
-    {
-        if (selectedAugment == "Attack")
-            attack *= 1.05f;
-        else if (selectedAugment == "AttackSpeed")
-            attackSpeed *= 0.95f;
-        else if (selectedAugment == "CritChance")
-            critChance += 10;
-        else if (selectedAugment == "CritDamage")
-            critDamage *= 1.10f;
-        else if (selectedAugment == "Armor")
-            armor += 10f;
-        else if (selectedAugment == "MaxHealth")
-            maxHealth *= 1.05f;
-        else if (selectedAugment == "Dodge")
-            dodge += 4f;
-        else if (selectedAugment == "MovementSpeed")
-            movementSpeed *= 1.05f;
-        else if (selectedAugment == "XPGain")
-            xpGain *= 1.05f;
-        else if (selectedAugment == "GoldGain")
-            goldGain *= 1.10f;
-    }
-    #endregion
+
 
     #region Statues
     public void OfferingStatueMods(string statToMod, int goldOffered)
