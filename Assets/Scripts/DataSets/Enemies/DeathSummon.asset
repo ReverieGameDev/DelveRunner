@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7337d422b75799143ae4d07615c3b36c, type: 3}
   m_Name: DeathSummon
   m_EditorClassIdentifier: 
-  health: 10
-  speed: 15
+  health: 50
+  speed: 12
   damage: 20
   mobName: DeathSummon
   isREE: 0

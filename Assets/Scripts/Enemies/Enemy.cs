@@ -34,6 +34,7 @@ public class Enemy : MonoBehaviour
             emberSystem.aliveEnemies++;
         }
         enemyHealth = enemyData.health;
+        maxEnemyHealth = enemyData.health;
         enemyDamage = enemyData.damage;
         enemySpeed = enemyData.speed;
         enemyHealth *= Mathf.Pow(1.08f, emberSystem.waveNumber - 1);
@@ -78,6 +79,7 @@ public class Enemy : MonoBehaviour
     }
     public void reduceHp(float damageTaken, int hitCount = 1, bool isCrit = false, WeaponStatusEffect type = WeaponStatusEffect.None)
     {
+        Debug.Log(enemyHealth + " / " + maxEnemyHealth + " on " + gameObject.name);
         if (enemyHealth <= 0 ) return;
         if (playerCombat.curtainCallActive && !enemyData.isBoss && isCrit && enemyHealth/maxEnemyHealth <= playerCombat.curtainCallExecute)
         {

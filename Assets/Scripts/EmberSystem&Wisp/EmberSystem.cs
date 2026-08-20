@@ -1,6 +1,7 @@
 using NUnit.Framework;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 
@@ -19,7 +20,7 @@ public class EmberSystem : MonoBehaviour
     private bool swarmSpawning = false;
     private float swarmSpawnFreq = .75f;
     public bool isFightNodeActive = false;
-
+    private int swarmCap = 20;
     void Start()
     {
         Instance = this;
@@ -38,12 +39,8 @@ public class EmberSystem : MonoBehaviour
         }
         if (emberAmount == 0)
         {
-            
-            if (!swarmSpawning)
-            {
-                swarmSpawning = true;
-                StartCoroutine("SpawnSwarm");
-            }
+            int swarmCount = FindObjectsByType<Enemy>(FindObjectsSortMode.None).Count(e => e.enemyData.mobName == "DeathSummon");
+            if (swarmCount < swarmCap) spawnManager.SpawnSwarm();
         }
         emberComp.pointLightOuterRadius = ((float)emberAmount / baseEmber) * lightRadius;
     }
@@ -107,17 +104,12 @@ public class EmberSystem : MonoBehaviour
 
     IEnumerator SpawnSwarm()
     {
-        if (!isEmberActive)
+        while (emberAmount <= 0)
         {
             spawnManager.SpawnSwarm();
             yield return new WaitForSeconds(swarmSpawnFreq);
-            StartCoroutine("SpawnSwarm");
         }
-        else
-        {
-            swarmSpawning = false;
-            yield break;
-        }
+        swarmSpawning = false;
     }
 
     public void ClearREEs()

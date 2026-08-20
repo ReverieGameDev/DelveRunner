@@ -1,4 +1,4 @@
-﻿using Unity.VisualScripting;
+﻿
 using UnityEngine;
 
 // Makes the asset creatable from Project > Right-click > Create > Soul Coins > HP Node
