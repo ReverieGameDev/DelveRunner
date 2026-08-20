@@ -1,0 +1,520 @@
+fileFormatVersion: 2
+guid: 35423c0b7291ecf499ac1952339dcf15
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -281704222708429525
+    second: statusfx_evading_sheet_0
+  - first:
+      213: 2865387126089566267
+    second: statusfx_evading_sheet_1
+  - first:
+      213: 2453798189224347890
+    second: statusfx_evading_sheet_2
+  - first:
+      213: -1429668093822778932
+    second: statusfx_evading_sheet_3
+  - first:
+      213: -5770037978434946817
+    second: statusfx_evading_sheet_4
+  - first:
+      213: 3040339926029955390
+    second: statusfx_evading_sheet_5
+  - first:
+      213: 5239606588694672847
+    second: statusfx_evading_sheet_6
+  - first:
+      213: -5652749084333066393
+    second: statusfx_evading_sheet_7
+  - first:
+      213: -37006813677623242
+    second: statusfx_evading_sheet_8
+  - first:
+      213: -9217322886488996065
+    second: statusfx_evading_sheet_9
+  - first:
+      213: 4536135510406544934
+    second: statusfx_evading_sheet_10
+  - first:
+      213: -1615989536308304247
+    second: statusfx_evading_sheet_11
+  - first:
+      213: -1444125540926281860
+    second: statusfx_evading_sheet_12
+  - first:
+      213: 4847752542440060991
+    second: statusfx_evading_sheet_13
+  - first:
+      213: -6630442308830603571
+    second: statusfx_evading_sheet_14
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 26
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: statusfx_evading_sheet_0
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 26
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b2d8cb1808f271cf0800000000000000
+      internalID: -281704222708429525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_evading_sheet_1
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 14
+        width: 15
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b38cb82e866e3c720800000000000000
+      internalID: 2865387126089566267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_evading_sheet_2
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 19
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f8c63bc374ad0220800000000000000
+      internalID: 2453798189224347890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_evading_sheet_3
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 12
+        width: 13
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cc1cbf0817cc82ce0800000000000000
+      internalID: -1429668093822778932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_evading_sheet_4
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 13
+        width: 13
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff83fd29705bcefa0800000000000000
+      internalID: -5770037978434946817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_evading_sheet_5
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 13
+        width: 13
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e31f377ed05713a20800000000000000
+      internalID: 3040339926029955390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_evading_sheet_6
+      rect:
+        serializedVersion: 2
+        x: 318
+        y: 12
+        width: 13
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fc531f98e62d6b840800000000000000
+      internalID: 5239606588694672847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_evading_sheet_7
+      rect:
+        serializedVersion: 2
+        x: 366
+        y: 13
+        width: 15
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 767b9e748a66d81b0800000000000000
+      internalID: -5652749084333066393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_evading_sheet_8
+      rect:
+        serializedVersion: 2
+        x: 418
+        y: 13
+        width: 13
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 638e970cf768c7ff0800000000000000
+      internalID: -37006813677623242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_evading_sheet_9
+      rect:
+        serializedVersion: 2
+        x: 467
+        y: 12
+        width: 15
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f17ceb29bad751080800000000000000
+      internalID: -9217322886488996065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_evading_sheet_10
+      rect:
+        serializedVersion: 2
+        x: 515
+        y: 13
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 62e31d6963793fe30800000000000000
+      internalID: 4536135510406544934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_evading_sheet_11
+      rect:
+        serializedVersion: 2
+        x: 567
+        y: 13
+        width: 14
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 986689f141ad299e0800000000000000
+      internalID: -1615989536308304247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_evading_sheet_12
+      rect:
+        serializedVersion: 2
+        x: 617
+        y: 13
+        width: 14
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c77250ac87f65fbe0800000000000000
+      internalID: -1444125540926281860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_evading_sheet_13
+      rect:
+        serializedVersion: 2
+        x: 669
+        y: 14
+        width: 12
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f38f22bb04da64340800000000000000
+      internalID: 4847752542440060991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_evading_sheet_14
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 13
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc65e6689dfebf3a0800000000000000
+      internalID: -6630442308830603571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      statusfx_evading_sheet_0: -281704222708429525
+      statusfx_evading_sheet_1: 2865387126089566267
+      statusfx_evading_sheet_10: 4536135510406544934
+      statusfx_evading_sheet_11: -1615989536308304247
+      statusfx_evading_sheet_12: -1444125540926281860
+      statusfx_evading_sheet_13: 4847752542440060991
+      statusfx_evading_sheet_14: -6630442308830603571
+      statusfx_evading_sheet_2: 2453798189224347890
+      statusfx_evading_sheet_3: -1429668093822778932
+      statusfx_evading_sheet_4: -5770037978434946817
+      statusfx_evading_sheet_5: 3040339926029955390
+      statusfx_evading_sheet_6: 5239606588694672847
+      statusfx_evading_sheet_7: -5652749084333066393
+      statusfx_evading_sheet_8: -37006813677623242
+      statusfx_evading_sheet_9: -9217322886488996065
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

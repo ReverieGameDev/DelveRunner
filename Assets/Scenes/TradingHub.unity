@@ -3771,6 +3771,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38f10b667e7184f4bbf0e601a0fb6633, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  madDoctrineReady: 1
+  pausePanel: {fileID: 0}
+  statsText: {fileID: 0}
+  chargeAttackFired: 0
+  aOverchargeActive: 0
+  aConductionActive: 0
+  aConductionManaPerTick: 0
+  aStaticCarrierActive: 0
+  aStaticCarrierChance: 0
+  lastHitTime: 0
+  currentBackstabbersStacks: 0
+  backstabbersSoulFlatCrit: 0
+  backstabbersSoulActive: 0
+  backstabbersSoulDamageMult: 0
+  backstabbersSoulCritGain: 0
+  backstabbersSoulCritDamageGain: 0
+  backstabbersSoulMaxStacks: 25
+  blitzSoulActive: 0
+  blitzToggledOn: 1
+  blitzManaCost: 0
+  blitzShockDamage: 0
+  blitzShockDuration: 0
+  blitzShockTickRate: 0
+  blitzMaxStacks: 0
+  blitzWeakAutoMult: 0
+  aStarCallerNovaActive: 0
+  aStarCallerNovaDamageMult: 0
+  aStarCallerNovaCinderChance: 0
+  aStarCallerNovaEmberCost: 0
   aBloodMoneyActive: 0
   aBloodMoneyHeal: 0
   aProspectorActive: 0
@@ -3796,8 +3825,7 @@ MonoBehaviour:
   scholarActive: 0
   playerData: {fileID: 11400000, guid: 015cd50e4d403354bafaf27b1a2a2d9e, type: 2}
   attackManager: {fileID: 0}
-  testAugment: {fileID: 0}
-  supplyBox: {fileID: 0}
+  bloodlustRemaining: 0
   harvestChance: 0
   harvestHeal: 0
   harvestActive: 0

@@ -24,7 +24,6 @@ public class DropManager : MonoBehaviour
 
     public void RollDropTable(DropTableData dropTableData, Vector2 enemyPosition)
     {
-        Debug.Log("Rolling drop table now");
         if (dropTableData == null) return;
         int totalWeight = 0;
         int randomDropWeight;

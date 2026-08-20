@@ -126,7 +126,6 @@ public class MapRenderer : MonoBehaviour
     }
     public void RenderCachePrefab(Vector2 cacheCenter)
     {
-        Debug.Log("Rendering Caches");
         Instantiate(cachePrefab, cacheCenter, Quaternion.identity);
     }
     public GameObject RenderFightNodePrefab(Vector2 fightNodeCenter)

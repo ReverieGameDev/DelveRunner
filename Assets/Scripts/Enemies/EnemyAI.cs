@@ -113,80 +113,63 @@ public class EnemyAI : MonoBehaviour
         yield return new WaitForSeconds(UnityEngine.Random.Range(0f, 6f));
         while (true)
         {
-
             if (assignedSpawnAnchorScript.formationBroken && currentMode == EnemyMode.Formation)
             {
                 currentMode = EnemyMode.Solo;
             }
             if (currentMode == EnemyMode.Solo)
             {
-                if (Vector2.Distance(player.transform.position, transform.position) <= 20 && currentMode == EnemyMode.Solo && (enemySoloState == EnemySoloState.None || enemySoloState == EnemySoloState.soloIsIdle))
+                if (Vector2.Distance(player.transform.position, transform.position) <= 20 && (enemySoloState == EnemySoloState.None || enemySoloState == EnemySoloState.soloIsIdle))
                 {
-                float currentBestCandidate = Mathf.Infinity;
-                bestSquare = null;
-                foreach (SoloSquares moveableSquare in soloSquaresPrefab)
-                {
-                    if (currentSquare == null) //if the formation has just broken, we do not make a "closest best option" move for the enemy
-                    {
-                        if (!moveableSquare.squareOccupied && Vector2.Distance(moveableSquare.transform.position, player.transform.position) > 12f)
-                        {
-                            if (Vector2.Distance(moveableSquare.transform.position, player.transform.position) < currentBestCandidate)
-                            {
-                                if ((moveableSquare == null)) continue;
-                                bestSquare = moveableSquare;
-                                currentBestCandidate = Vector2.Distance(moveableSquare.transform.position, player.transform.position);
-                            }
-                        }
-                    }
-                    if (currentSquare != null) //if the enemy's formation has already broken and it has alreayd moved to the square, to prevent the enemy from needlessly moving opposite to the player
-                                               //, we check for the distance betweencurrent and the square in question
-                    {
-                        if (!moveableSquare.squareOccupied && Vector2.Distance(moveableSquare.transform.position, player.transform.position) > 12f && Vector2.Distance(moveableSquare.transform.position, currentSquare.transform.position) < 8f)
-                        {
-                            if (Vector2.Distance(moveableSquare.transform.position, player.transform.position) < currentBestCandidate)
-                            {
-                                bestSquare = moveableSquare;
-                                currentBestCandidate = Vector2.Distance(moveableSquare.transform.position, player.transform.position);
-                            }
-                        }
-                    }
-                }
-                if (bestSquare != currentSquare && currentSquare != null)
-                {
-                    currentSquare.squareOccupied = false;
-                }
-                if (bestSquare != null)
-                {
-                    bestSquare.squareOccupied = true;
-                    soloTarget = bestSquare.transform.position;
-                    currentSquare = bestSquare;
-                }
-                if (bestSquare == null) //if the enemy is stuck in a corner/didn't find a square to move to despite being prompted to do so:
-                {
-                    currentBestCandidate = Mathf.Infinity;
+                    float currentBestCandidate = Mathf.Infinity;
+                    bestSquare = null;
+
                     foreach (SoloSquares moveableSquare in soloSquaresPrefab)
                     {
+                        if (moveableSquare == null) continue;
+                        if (moveableSquare.squareOccupied) continue;
+                        if (Vector2.Distance(moveableSquare.transform.position, player.transform.position) <= 12f) continue;
 
-                        if (!moveableSquare.squareOccupied && moveableSquare != currentSquare && Vector2.Distance(moveableSquare.transform.position,currentSquare.transform.position) > 12)
+                        // if the enemy has already moved to a square, don't let it run to the far side of the arena
+                        if (currentSquare != null &&
+                            Vector2.Distance(moveableSquare.transform.position, currentSquare.transform.position) >= 8f) continue;
+
+                        float distToPlayer = Vector2.Distance(moveableSquare.transform.position, player.transform.position);
+                        if (distToPlayer < currentBestCandidate)
                         {
+                            bestSquare = moveableSquare;
+                            currentBestCandidate = distToPlayer;
+                        }
+                    }
+
+                    if (bestSquare == null && currentSquare != null) // stuck in a corner - widen the search
+                    {
+                        currentBestCandidate = Mathf.Infinity;
+
+                        foreach (SoloSquares moveableSquare in soloSquaresPrefab)
+                        {
+                            if (moveableSquare == null) continue;
+                            if (moveableSquare.squareOccupied) continue;
+                            if (moveableSquare == currentSquare) continue;
+                            if (Vector2.Distance(moveableSquare.transform.position, currentSquare.transform.position) <= 12f) continue;
+
                             float d = Vector2.Distance(moveableSquare.transform.position, currentSquare.transform.position);
-                            if (d < currentBestCandidate)     // ← THIS is what's missing
+                            if (d < currentBestCandidate)
                             {
                                 bestSquare = moveableSquare;
                                 currentBestCandidate = d;
                             }
                         }
                     }
+
                     if (bestSquare != null)
                     {
-                        if (currentSquare != null) currentSquare.squareOccupied = false;
+                        if (currentSquare != null && currentSquare != bestSquare) currentSquare.squareOccupied = false;
                         bestSquare.squareOccupied = true;
                         soloTarget = bestSquare.transform.position;
                         currentSquare = bestSquare;
                     }
                 }
-            }
-
             }
             if (currentMode == EnemyMode.Environment)
             {

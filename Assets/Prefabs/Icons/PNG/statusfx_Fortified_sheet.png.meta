@@ -1,0 +1,1066 @@
+fileFormatVersion: 2
+guid: bb49282ba9c1e254a8ef671bcb3a86c0
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8090668432080889020
+    second: statusfx_Fortified_sheet_0
+  - first:
+      213: -1438813006936164542
+    second: statusfx_Fortified_sheet_1
+  - first:
+      213: -224379254278552304
+    second: statusfx_Fortified_sheet_2
+  - first:
+      213: 9077144111548252497
+    second: statusfx_Fortified_sheet_3
+  - first:
+      213: 3212104538387135122
+    second: statusfx_Fortified_sheet_4
+  - first:
+      213: -1723070641528665719
+    second: statusfx_Fortified_sheet_5
+  - first:
+      213: -2425449820653278007
+    second: statusfx_Fortified_sheet_6
+  - first:
+      213: 3685909746574610499
+    second: statusfx_Fortified_sheet_7
+  - first:
+      213: -7585912900203333530
+    second: statusfx_Fortified_sheet_8
+  - first:
+      213: 5770075591789453318
+    second: statusfx_Fortified_sheet_9
+  - first:
+      213: -7479730771937193989
+    second: statusfx_Fortified_sheet_10
+  - first:
+      213: -230764853771514805
+    second: statusfx_Fortified_sheet_11
+  - first:
+      213: 125739773493894410
+    second: statusfx_Fortified_sheet_12
+  - first:
+      213: -4439120543117107739
+    second: statusfx_Fortified_sheet_13
+  - first:
+      213: -4530276323063068178
+    second: statusfx_Fortified_sheet_14
+  - first:
+      213: 423410182117122824
+    second: statusfx_Fortified_sheet_15
+  - first:
+      213: 6473380044491203926
+    second: statusfx_Fortified_sheet_16
+  - first:
+      213: 8530658054725437602
+    second: statusfx_Fortified_sheet_17
+  - first:
+      213: 2446014092460763387
+    second: statusfx_Fortified_sheet_18
+  - first:
+      213: -6173758398851461692
+    second: statusfx_Fortified_sheet_19
+  - first:
+      213: -2456106319769229860
+    second: statusfx_Fortified_sheet_20
+  - first:
+      213: 4231916018331485892
+    second: statusfx_Fortified_sheet_21
+  - first:
+      213: 4778935083651996703
+    second: statusfx_Fortified_sheet_22
+  - first:
+      213: 1773910371941372694
+    second: statusfx_Fortified_sheet_23
+  - first:
+      213: 4714868181949976331
+    second: statusfx_Fortified_sheet_24
+  - first:
+      213: -7106815741753827988
+    second: statusfx_Fortified_sheet_25
+  - first:
+      213: 6327627559223963057
+    second: statusfx_Fortified_sheet_26
+  - first:
+      213: -5534487674043292775
+    second: statusfx_Fortified_sheet_27
+  - first:
+      213: 8559167263280680101
+    second: statusfx_Fortified_sheet_28
+  - first:
+      213: 1050234247220017465
+    second: statusfx_Fortified_sheet_29
+  - first:
+      213: -2601046816774100919
+    second: statusfx_Fortified_sheet_30
+  - first:
+      213: 4635026349797854528
+    second: statusfx_Fortified_sheet_31
+  - first:
+      213: -7931932901312683685
+    second: statusfx_Fortified_sheet_32
+  - first:
+      213: 8414675162083176880
+    second: statusfx_Fortified_sheet_33
+  - first:
+      213: -1771340564185078055
+    second: statusfx_Fortified_sheet_34
+  - first:
+      213: -142057015925473736
+    second: statusfx_Fortified_sheet_35
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 26
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: statusfx_Fortified_sheet_0
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 13
+        width: 106
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb4e5a1a214d74070800000000000000
+      internalID: 8090668432080889020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_Fortified_sheet_1
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 30
+        width: 11
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 247bb5f713f480ce0800000000000000
+      internalID: -1438813006936164542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_Fortified_sheet_2
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 24
+        width: 11
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 01582cdc148d2ecf0800000000000000
+      internalID: -224379254278552304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_Fortified_sheet_3
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 30
+        width: 11
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 151ccd70a7e78fd70800000000000000
+      internalID: 9077144111548252497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_Fortified_sheet_4
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 24
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 29a3cf72f00b39c20800000000000000
+      internalID: 3212104538387135122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_Fortified_sheet_5
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 24
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 98987c8716c6618e0800000000000000
+      internalID: -1723070641528665719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_Fortified_sheet_6
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 30
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9cc2d6b1d32175ed0800000000000000
+      internalID: -2425449820653278007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_Fortified_sheet_7
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 24
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 340dabeb26bf62330800000000000000
+      internalID: 3685909746574610499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_Fortified_sheet_8
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 30
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 668b35eb86c69b690800000000000000
+      internalID: -7585912900203333530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_Fortified_sheet_9
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 24
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60023c7fd2d631050800000000000000
+      internalID: 5770075591789453318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_Fortified_sheet_10
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 13
+        width: 23
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bff00230e78a23890800000000000000
+      internalID: -7479730771937193989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_Fortified_sheet_11
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 29
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4ccd4096982cccf0800000000000000
+      internalID: -230764853771514805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_Fortified_sheet_12
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 29
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a0ddd3568a7beb100800000000000000
+      internalID: 125739773493894410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_Fortified_sheet_13
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 15
+        width: 25
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ed9d50b2631562c0800000000000000
+      internalID: -4439120543117107739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_Fortified_sheet_14
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 15
+        width: 25
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee98675cfa93121c0800000000000000
+      internalID: -4530276323063068178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_Fortified_sheet_15
+      rect:
+        serializedVersion: 2
+        x: 362
+        y: 15
+        width: 25
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 803ef5b315140e500800000000000000
+      internalID: 423410182117122824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_Fortified_sheet_16
+      rect:
+        serializedVersion: 2
+        x: 412
+        y: 15
+        width: 25
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 65520006ad016d950800000000000000
+      internalID: 6473380044491203926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_Fortified_sheet_17
+      rect:
+        serializedVersion: 2
+        x: 462
+        y: 15
+        width: 25
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a80c3cad4cf26670800000000000000
+      internalID: 8530658054725437602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_Fortified_sheet_18
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 15
+        width: 25
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf829b88bdcf1f120800000000000000
+      internalID: 2446014092460763387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_Fortified_sheet_19
+      rect:
+        serializedVersion: 2
+        x: 562
+        y: 15
+        width: 25
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4cdcf5b3277625aa0800000000000000
+      internalID: -6173758398851461692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_Fortified_sheet_20
+      rect:
+        serializedVersion: 2
+        x: 612
+        y: 15
+        width: 25
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd5209fa0582aedd0800000000000000
+      internalID: -2456106319769229860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_Fortified_sheet_21
+      rect:
+        serializedVersion: 2
+        x: 662
+        y: 15
+        width: 25
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c60fef6239caba30800000000000000
+      internalID: 4231916018331485892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_Fortified_sheet_22
+      rect:
+        serializedVersion: 2
+        x: 712
+        y: 15
+        width: 25
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1c9ab18320325240800000000000000
+      internalID: 4778935083651996703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_Fortified_sheet_23
+      rect:
+        serializedVersion: 2
+        x: 762
+        y: 15
+        width: 25
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 61352fea5123e9810800000000000000
+      internalID: 1773910371941372694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_Fortified_sheet_24
+      rect:
+        serializedVersion: 2
+        x: 812
+        y: 15
+        width: 25
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b0f8beb81a39e6140800000000000000
+      internalID: 4714868181949976331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_Fortified_sheet_25
+      rect:
+        serializedVersion: 2
+        x: 862
+        y: 15
+        width: 123
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c6ddb948cb48f5d90800000000000000
+      internalID: -7106815741753827988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_Fortified_sheet_26
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 12
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1bd248a6dbf30d750800000000000000
+      internalID: 6327627559223963057
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_Fortified_sheet_27
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 18
+        width: 11
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9932fde88cc8133b0800000000000000
+      internalID: -5534487674043292775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_Fortified_sheet_28
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 12
+        width: 11
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ac4ffc074548c670800000000000000
+      internalID: 8559167263280680101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_Fortified_sheet_29
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 18
+        width: 11
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 939bf74cb7e239e00800000000000000
+      internalID: 1050234247220017465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_Fortified_sheet_30
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 12
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 948e40a73b937ebd0800000000000000
+      internalID: -2601046816774100919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_Fortified_sheet_31
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 12
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 04dc64068ebe25040800000000000000
+      internalID: 4635026349797854528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_Fortified_sheet_32
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 18
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b51260b2d0d1ce190800000000000000
+      internalID: -7931932901312683685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_Fortified_sheet_33
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 12
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b135402a7ee6c470800000000000000
+      internalID: 8414675162083176880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_Fortified_sheet_34
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 18
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d6228f442fea67e0800000000000000
+      internalID: -1771340564185078055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_Fortified_sheet_35
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 12
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 83ef8eb85ef470ef0800000000000000
+      internalID: -142057015925473736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      statusfx_Fortified_sheet_0: 8090668432080889020
+      statusfx_Fortified_sheet_1: -1438813006936164542
+      statusfx_Fortified_sheet_10: -7479730771937193989
+      statusfx_Fortified_sheet_11: -230764853771514805
+      statusfx_Fortified_sheet_12: 125739773493894410
+      statusfx_Fortified_sheet_13: -4439120543117107739
+      statusfx_Fortified_sheet_14: -4530276323063068178
+      statusfx_Fortified_sheet_15: 423410182117122824
+      statusfx_Fortified_sheet_16: 6473380044491203926
+      statusfx_Fortified_sheet_17: 8530658054725437602
+      statusfx_Fortified_sheet_18: 2446014092460763387
+      statusfx_Fortified_sheet_19: -6173758398851461692
+      statusfx_Fortified_sheet_2: -224379254278552304
+      statusfx_Fortified_sheet_20: -2456106319769229860
+      statusfx_Fortified_sheet_21: 4231916018331485892
+      statusfx_Fortified_sheet_22: 4778935083651996703
+      statusfx_Fortified_sheet_23: 1773910371941372694
+      statusfx_Fortified_sheet_24: 4714868181949976331
+      statusfx_Fortified_sheet_25: -7106815741753827988
+      statusfx_Fortified_sheet_26: 6327627559223963057
+      statusfx_Fortified_sheet_27: -5534487674043292775
+      statusfx_Fortified_sheet_28: 8559167263280680101
+      statusfx_Fortified_sheet_29: 1050234247220017465
+      statusfx_Fortified_sheet_3: 9077144111548252497
+      statusfx_Fortified_sheet_30: -2601046816774100919
+      statusfx_Fortified_sheet_31: 4635026349797854528
+      statusfx_Fortified_sheet_32: -7931932901312683685
+      statusfx_Fortified_sheet_33: 8414675162083176880
+      statusfx_Fortified_sheet_34: -1771340564185078055
+      statusfx_Fortified_sheet_35: -142057015925473736
+      statusfx_Fortified_sheet_4: 3212104538387135122
+      statusfx_Fortified_sheet_5: -1723070641528665719
+      statusfx_Fortified_sheet_6: -2425449820653278007
+      statusfx_Fortified_sheet_7: 3685909746574610499
+      statusfx_Fortified_sheet_8: -7585912900203333530
+      statusfx_Fortified_sheet_9: 5770075591789453318
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

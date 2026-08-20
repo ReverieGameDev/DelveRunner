@@ -1,0 +1,910 @@
+fileFormatVersion: 2
+guid: 513147b49552e8b4cae5529556072856
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8312685470989903496
+    second: statusfx_confused_sheet_0
+  - first:
+      213: 6421190818881855448
+    second: statusfx_confused_sheet_1
+  - first:
+      213: 5906192857621951871
+    second: statusfx_confused_sheet_2
+  - first:
+      213: 980670183855237524
+    second: statusfx_confused_sheet_3
+  - first:
+      213: 984302078704790515
+    second: statusfx_confused_sheet_4
+  - first:
+      213: 6167647574403634982
+    second: statusfx_confused_sheet_5
+  - first:
+      213: -3131907406914473463
+    second: statusfx_confused_sheet_6
+  - first:
+      213: 3720504869328823530
+    second: statusfx_confused_sheet_7
+  - first:
+      213: 9038593428272044292
+    second: statusfx_confused_sheet_8
+  - first:
+      213: -5195031333541486097
+    second: statusfx_confused_sheet_9
+  - first:
+      213: -7120203214927967638
+    second: statusfx_confused_sheet_10
+  - first:
+      213: 2133340046328845793
+    second: statusfx_confused_sheet_11
+  - first:
+      213: -895593531642210369
+    second: statusfx_confused_sheet_12
+  - first:
+      213: -4195750836782577457
+    second: statusfx_confused_sheet_13
+  - first:
+      213: 1792156149558611715
+    second: statusfx_confused_sheet_14
+  - first:
+      213: -3866247676231659202
+    second: statusfx_confused_sheet_15
+  - first:
+      213: -6500637317042403953
+    second: statusfx_confused_sheet_16
+  - first:
+      213: -8664387378798356844
+    second: statusfx_confused_sheet_17
+  - first:
+      213: 8434387625116508591
+    second: statusfx_confused_sheet_18
+  - first:
+      213: -8996108592586779228
+    second: statusfx_confused_sheet_19
+  - first:
+      213: -5406676774091919934
+    second: statusfx_confused_sheet_20
+  - first:
+      213: -4230031204820634983
+    second: statusfx_confused_sheet_21
+  - first:
+      213: 6544038044853470737
+    second: statusfx_confused_sheet_22
+  - first:
+      213: -4657690695375103628
+    second: statusfx_confused_sheet_23
+  - first:
+      213: 1865706387767869915
+    second: statusfx_confused_sheet_24
+  - first:
+      213: 473107780695424530
+    second: statusfx_confused_sheet_25
+  - first:
+      213: -5241038909795634036
+    second: statusfx_confused_sheet_26
+  - first:
+      213: 8479734082469443178
+    second: statusfx_confused_sheet_27
+  - first:
+      213: 2091243496367122278
+    second: statusfx_confused_sheet_28
+  - first:
+      213: -6281235758081245807
+    second: statusfx_confused_sheet_29
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 26
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: statusfx_confused_sheet_0
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 16
+        width: 7
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 879981c4b9863ac80800000000000000
+      internalID: -8312685470989903496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_confused_sheet_1
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 16
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8dfd3726707ac1950800000000000000
+      internalID: 6421190818881855448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_confused_sheet_2
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 20
+        width: 9
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f7571859c1307f150800000000000000
+      internalID: 5906192857621951871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_confused_sheet_3
+      rect:
+        serializedVersion: 2
+        x: 221
+        y: 18
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 499228e165a0c9d00800000000000000
+      internalID: 980670183855237524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_confused_sheet_4
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 20
+        width: 9
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3fba0e88681f8ad00800000000000000
+      internalID: 984302078704790515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_confused_sheet_5
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 20
+        width: 7
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 627d0249ac2e79550800000000000000
+      internalID: 6167647574403634982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_confused_sheet_6
+      rect:
+        serializedVersion: 2
+        x: 313
+        y: 20
+        width: 9
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 902b2759eca3984d0800000000000000
+      internalID: -3131907406914473463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_confused_sheet_7
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 12
+        width: 14
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae4a4717773e1a330800000000000000
+      internalID: 3720504869328823530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_confused_sheet_8
+      rect:
+        serializedVersion: 2
+        x: 363
+        y: 20
+        width: 9
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 409d551a5d88f6d70800000000000000
+      internalID: 9038593428272044292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_confused_sheet_9
+      rect:
+        serializedVersion: 2
+        x: 371
+        y: 24
+        width: 9
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe16c3fc68a87e7b0800000000000000
+      internalID: -5195031333541486097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_confused_sheet_10
+      rect:
+        serializedVersion: 2
+        x: 413
+        y: 20
+        width: 9
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a6acf9586e4ff2d90800000000000000
+      internalID: -7120203214927967638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_confused_sheet_11
+      rect:
+        serializedVersion: 2
+        x: 421
+        y: 24
+        width: 9
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e5db8e18752b9d10800000000000000
+      internalID: 2133340046328845793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_confused_sheet_12
+      rect:
+        serializedVersion: 2
+        x: 428
+        y: 16
+        width: 7
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb714539d663293f0800000000000000
+      internalID: -895593531642210369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_confused_sheet_13
+      rect:
+        serializedVersion: 2
+        x: 463
+        y: 20
+        width: 9
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fc8c68f08d2b5c5c0800000000000000
+      internalID: -4195750836782577457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_confused_sheet_14
+      rect:
+        serializedVersion: 2
+        x: 471
+        y: 24
+        width: 9
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 30f0974d5840fd810800000000000000
+      internalID: 1792156149558611715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_confused_sheet_15
+      rect:
+        serializedVersion: 2
+        x: 478
+        y: 19
+        width: 8
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e3158840934585ac0800000000000000
+      internalID: -3866247676231659202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_confused_sheet_16
+      rect:
+        serializedVersion: 2
+        x: 513
+        y: 20
+        width: 9
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f850a005dc819c5a0800000000000000
+      internalID: -6500637317042403953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_confused_sheet_17
+      rect:
+        serializedVersion: 2
+        x: 521
+        y: 24
+        width: 9
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 496985ab599e1c780800000000000000
+      internalID: -8664387378798356844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_confused_sheet_18
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 20
+        width: 9
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa125059bd6fc0570800000000000000
+      internalID: 8434387625116508591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_confused_sheet_19
+      rect:
+        serializedVersion: 2
+        x: 563
+        y: 20
+        width: 9
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a5960206e6672380800000000000000
+      internalID: -8996108592586779228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_confused_sheet_20
+      rect:
+        serializedVersion: 2
+        x: 571
+        y: 24
+        width: 9
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2cd65e8ae10a7f4b0800000000000000
+      internalID: -5406676774091919934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_confused_sheet_21
+      rect:
+        serializedVersion: 2
+        x: 578
+        y: 20
+        width: 9
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 99239d7e709eb45c0800000000000000
+      internalID: -4230031204820634983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_confused_sheet_22
+      rect:
+        serializedVersion: 2
+        x: 613
+        y: 20
+        width: 9
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 11602241ee711da50800000000000000
+      internalID: 6544038044853470737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_confused_sheet_23
+      rect:
+        serializedVersion: 2
+        x: 621
+        y: 24
+        width: 9
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47956847dfe8c5fb0800000000000000
+      internalID: -4657690695375103628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_confused_sheet_24
+      rect:
+        serializedVersion: 2
+        x: 628
+        y: 20
+        width: 9
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd1c412231254e910800000000000000
+      internalID: 1865706387767869915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_confused_sheet_25
+      rect:
+        serializedVersion: 2
+        x: 664
+        y: 22
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 21ef2d81501d09600800000000000000
+      internalID: 473107780695424530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_confused_sheet_26
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 25
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c8471a731e61447b0800000000000000
+      internalID: -5241038909795634036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_confused_sheet_27
+      rect:
+        serializedVersion: 2
+        x: 679
+        y: 22
+        width: 57
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a663d5f68311ea570800000000000000
+      internalID: 8479734082469443178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_confused_sheet_28
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 12
+        width: 56
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 667eecb41e6950d10800000000000000
+      internalID: 2091243496367122278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_confused_sheet_29
+      rect:
+        serializedVersion: 2
+        x: 378
+        y: 14
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 19df5118b5194d8a0800000000000000
+      internalID: -6281235758081245807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      statusfx_confused_sheet_0: -8312685470989903496
+      statusfx_confused_sheet_1: 6421190818881855448
+      statusfx_confused_sheet_10: -7120203214927967638
+      statusfx_confused_sheet_11: 2133340046328845793
+      statusfx_confused_sheet_12: -895593531642210369
+      statusfx_confused_sheet_13: -4195750836782577457
+      statusfx_confused_sheet_14: 1792156149558611715
+      statusfx_confused_sheet_15: -3866247676231659202
+      statusfx_confused_sheet_16: -6500637317042403953
+      statusfx_confused_sheet_17: -8664387378798356844
+      statusfx_confused_sheet_18: 8434387625116508591
+      statusfx_confused_sheet_19: -8996108592586779228
+      statusfx_confused_sheet_2: 5906192857621951871
+      statusfx_confused_sheet_20: -5406676774091919934
+      statusfx_confused_sheet_21: -4230031204820634983
+      statusfx_confused_sheet_22: 6544038044853470737
+      statusfx_confused_sheet_23: -4657690695375103628
+      statusfx_confused_sheet_24: 1865706387767869915
+      statusfx_confused_sheet_25: 473107780695424530
+      statusfx_confused_sheet_26: -5241038909795634036
+      statusfx_confused_sheet_27: 8479734082469443178
+      statusfx_confused_sheet_28: 2091243496367122278
+      statusfx_confused_sheet_29: -6281235758081245807
+      statusfx_confused_sheet_3: 980670183855237524
+      statusfx_confused_sheet_4: 984302078704790515
+      statusfx_confused_sheet_5: 6167647574403634982
+      statusfx_confused_sheet_6: -3131907406914473463
+      statusfx_confused_sheet_7: 3720504869328823530
+      statusfx_confused_sheet_8: 9038593428272044292
+      statusfx_confused_sheet_9: -5195031333541486097
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

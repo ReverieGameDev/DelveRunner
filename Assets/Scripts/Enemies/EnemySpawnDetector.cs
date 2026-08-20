@@ -61,7 +61,6 @@ public class EnemySpawnDetector : MonoBehaviour
         enabled = false;
         buttonPrompt.SetActive(false);
         if (!isBoss) environmentThreat.enabled = true;
-        Debug.Log("interface: " + fightNodeInterface + " / ET: " + environmentThreat + " / isBoss: " + isBoss);
         fightNodeInterface.SetActive(false);
         if (!isBoss) StartFightNode();
         else if (isBoss) StartBossFight();

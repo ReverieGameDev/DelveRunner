@@ -32,10 +32,7 @@ public class SoulCoinManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.H))
-        {
-            Debug.Log(unlockedNodes.Count);
-        }
+
     }
 
     public void OpenRespecWindow()
@@ -77,7 +74,6 @@ public class SoulCoinManager : MonoBehaviour
             data.ownedValues.Add(owned.Value);
         }
         string json = JsonUtility.ToJson(data);
-        Debug.Log("SAVED: " + json);
         PlayerPrefs.SetString("SoulSave", json);
     }
     public void ExitMenu()
@@ -102,7 +98,6 @@ public class SoulCoinManager : MonoBehaviour
         {
             ownedLevels.Add(data.ownedIds[i], data.ownedValues[i]);
         }
-        Debug.Log("LOADED: " + json);
     }
     public bool Buy(SoulCoinNode node)
     {
@@ -145,7 +140,6 @@ public class SoulCoinManager : MonoBehaviour
 
     public bool unlock(SoulCoinNode node)
     {
-        Debug.Log("UNLOCK called: " + node.id + " | already? " + unlockedNodes.Contains(node.id));
         if (unlockedNodes.Contains(node.id)) return false;//this one implies we already own the node and we're trying to buy it again, i'll add an error but it shouldnt show.
         if (!RequirementMet(node)) 
         {
@@ -175,7 +169,6 @@ public class SoulCoinManager : MonoBehaviour
         for (int i = 0; i < slots.Count; i++)
         {
             slots[i].GetComponent<SoulCoinTreeButton>().SetNode(tree.nodes[i]);
-            Debug.Log(i + " slot:" + (slots[i] == null) + " node:" + (tree.nodes[i] == null));
         }
     }
     public IEnumerator FlashMessage(string message)

@@ -15,6 +15,8 @@ GameObject:
   - component: {fileID: 7400723877833091085}
   - component: {fileID: 572399731234804683}
   - component: {fileID: 1912229163997882199}
+  - component: {fileID: 1759222256498128645}
+  - component: {fileID: 7127752440390205546}
   m_Layer: 9
   m_Name: DeathSummon
   m_TagString: Enemy
@@ -188,7 +190,13 @@ MonoBehaviour:
   money1: {fileID: 2517676888375216185, guid: b5857fb1df128854db517b05f69aa774, type: 3}
   isDead: 0
   emberPickup: {fileID: 0}
+  maxEnemyHealth: 0
   hptext: {fileID: 6249263539235151525}
+  damageText: {fileID: 0}
+  enfeebled: 0
+  enfeebleBonusDamage: 0
+  dropOnDeath: {fileID: 0}
+  diedToCrit: 0
 --- !u!95 &1912229163997882199
 Animator:
   serializedVersion: 7
@@ -211,6 +219,48 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1759222256498128645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1411848040320552327}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d6c38e3af2d02948b01e7b5925f0361, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activeStatusEffects: []
+  iconGrid: {fileID: 0}
+  testIcon: {fileID: 0}
+  enfeebleIcon: []
+  poisonIcon: []
+  burnIcon: []
+  cinderIcon: []
+  shockIcon: []
+  shockArcPrefab: {fileID: 0}
+--- !u!114 &7127752440390205546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1411848040320552327}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d6c38e3af2d02948b01e7b5925f0361, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activeStatusEffects: []
+  iconGrid: {fileID: 0}
+  testIcon: {fileID: 0}
+  enfeebleIcon: []
+  poisonIcon: []
+  burnIcon: []
+  cinderIcon: []
+  shockIcon: []
+  shockArcPrefab: {fileID: 0}
 --- !u!1 &1932812040698477333
 GameObject:
   m_ObjectHideFlags: 0
@@ -242,6 +292,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 2178746146602849956}
   - {fileID: 1940191527055139741}
   m_Father: {fileID: 951864275847431433}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -313,6 +364,66 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!1 &4268069077389439540
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2178746146602849956}
+  - component: {fileID: 5659867601913452975}
+  m_Layer: 9
+  m_Name: StatusEffects
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2178746146602849956
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4268069077389439540}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.25, y: 0.25, z: 0}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2982418082776445397}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -0.14, y: 2.39}
+  m_SizeDelta: {x: 11.1039, y: 5.9876}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &5659867601913452975
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4268069077389439540}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a8695521f0d02e499659fee002a26c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Padding:
+    m_Left: 0
+    m_Right: 0
+    m_Top: 0
+    m_Bottom: 0
+  m_ChildAlignment: 6
+  m_StartCorner: 0
+  m_StartAxis: 0
+  m_CellSize: {x: 8, y: 8}
+  m_Spacing: {x: 4, y: 4}
+  m_Constraint: 0
+  m_ConstraintCount: 2
 --- !u!1 &4689268003289531091
 GameObject:
   m_ObjectHideFlags: 0

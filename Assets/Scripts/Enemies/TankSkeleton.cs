@@ -97,7 +97,6 @@ public class TankSkeleton : MonoBehaviour
         {
             if (!attackIndicator)
             {
-                Debug.Log("indicator spawned");
                 attackIndicator = true;
                 tempAttackIndicator = Instantiate(slashAttackIndicator, transform.position, Quaternion.identity);
             }

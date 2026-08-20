@@ -1,0 +1,832 @@
+fileFormatVersion: 2
+guid: bd02a804eba645547a033598960a120f
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7991553897254379786
+    second: statusfx_chilled_sheet_0
+  - first:
+      213: -9157193508398160263
+    second: statusfx_chilled_sheet_1
+  - first:
+      213: -2940200441481047192
+    second: statusfx_chilled_sheet_2
+  - first:
+      213: 3455680606281670793
+    second: statusfx_chilled_sheet_3
+  - first:
+      213: 4375706185787509996
+    second: statusfx_chilled_sheet_4
+  - first:
+      213: 428131891951392513
+    second: statusfx_chilled_sheet_5
+  - first:
+      213: 5596055699915597234
+    second: statusfx_chilled_sheet_6
+  - first:
+      213: -7721333019917698231
+    second: statusfx_chilled_sheet_7
+  - first:
+      213: -6544827288034766991
+    second: statusfx_chilled_sheet_8
+  - first:
+      213: 3331465668230877023
+    second: statusfx_chilled_sheet_9
+  - first:
+      213: -7516523822655019396
+    second: statusfx_chilled_sheet_10
+  - first:
+      213: -2250118736823846640
+    second: statusfx_chilled_sheet_11
+  - first:
+      213: 1290915011586278171
+    second: statusfx_chilled_sheet_12
+  - first:
+      213: 3571843121991407512
+    second: statusfx_chilled_sheet_13
+  - first:
+      213: -2643324298819985809
+    second: statusfx_chilled_sheet_14
+  - first:
+      213: 4164149012659015992
+    second: statusfx_chilled_sheet_15
+  - first:
+      213: 7514637817974500931
+    second: statusfx_chilled_sheet_16
+  - first:
+      213: -4018398160995584100
+    second: statusfx_chilled_sheet_17
+  - first:
+      213: -6301177527846170021
+    second: statusfx_chilled_sheet_18
+  - first:
+      213: -6887904079538253135
+    second: statusfx_chilled_sheet_19
+  - first:
+      213: -4952876566802318919
+    second: statusfx_chilled_sheet_20
+  - first:
+      213: 1651680935498675249
+    second: statusfx_chilled_sheet_21
+  - first:
+      213: 1410596165030119438
+    second: statusfx_chilled_sheet_22
+  - first:
+      213: -1884052853663396249
+    second: statusfx_chilled_sheet_23
+  - first:
+      213: 5654484355552494179
+    second: statusfx_chilled_sheet_24
+  - first:
+      213: -6968691795192012280
+    second: statusfx_chilled_sheet_25
+  - first:
+      213: -1651647922025559454
+    second: statusfx_chilled_sheet_26
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 26
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: statusfx_chilled_sheet_0
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 23
+        width: 60
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a016c31bde3b7ee60800000000000000
+      internalID: 7991553897254379786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_chilled_sheet_1
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 24
+        width: 13
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9762a60650d1be080800000000000000
+      internalID: -9157193508398160263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_chilled_sheet_2
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 19
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 863531db64f4237d0800000000000000
+      internalID: -2940200441481047192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_chilled_sheet_3
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 14
+        width: 9
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 98020a2d33b05ff20800000000000000
+      internalID: 3455680606281670793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_chilled_sheet_4
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 25
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cec085da791a9bc30800000000000000
+      internalID: 4375706185787509996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_chilled_sheet_5
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 15
+        width: 13
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 10757c8ffa701f500800000000000000
+      internalID: 428131891951392513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_chilled_sheet_6
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 25
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b5e4c8820f29ad40800000000000000
+      internalID: 5596055699915597234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_chilled_sheet_7
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 16
+        width: 21
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94bbf4b178058d490800000000000000
+      internalID: -7721333019917698231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_chilled_sheet_8
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 25
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 17f876ce14a1c25a0800000000000000
+      internalID: -6544827288034766991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_chilled_sheet_9
+      rect:
+        serializedVersion: 2
+        x: 365
+        y: 16
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f5f8f48df5ebb3e20800000000000000
+      internalID: 3331465668230877023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_chilled_sheet_10
+      rect:
+        serializedVersion: 2
+        x: 370
+        y: 25
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c76e2e45861ffa790800000000000000
+      internalID: -7516523822655019396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_chilled_sheet_11
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 12
+        width: 9
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 019f9253ee8f5c0e0800000000000000
+      internalID: -2250118736823846640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_chilled_sheet_12
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 16
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b13c1dc0d504ae110800000000000000
+      internalID: 1290915011586278171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_chilled_sheet_13
+      rect:
+        serializedVersion: 2
+        x: 419
+        y: 24
+        width: 13
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 89758bf156cb19130800000000000000
+      internalID: 3571843121991407512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_chilled_sheet_14
+      rect:
+        serializedVersion: 2
+        x: 465
+        y: 16
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f6e1dae1e86015bd0800000000000000
+      internalID: -2643324298819985809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_chilled_sheet_15
+      rect:
+        serializedVersion: 2
+        x: 471
+        y: 27
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8319553e6770ac930800000000000000
+      internalID: 4164149012659015992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_chilled_sheet_16
+      rect:
+        serializedVersion: 2
+        x: 515
+        y: 16
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 34e261cf74b594860800000000000000
+      internalID: 7514637817974500931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_chilled_sheet_17
+      rect:
+        serializedVersion: 2
+        x: 564
+        y: 15
+        width: 13
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9776c7b928cb38c0800000000000000
+      internalID: -4018398160995584100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_chilled_sheet_18
+      rect:
+        serializedVersion: 2
+        x: 424
+        y: 13
+        width: 13
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b521e0a6c68bd88a0800000000000000
+      internalID: -6301177527846170021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_chilled_sheet_19
+      rect:
+        serializedVersion: 2
+        x: 475
+        y: 14
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b2982cbbbf3960a0800000000000000
+      internalID: -6887904079538253135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_chilled_sheet_20
+      rect:
+        serializedVersion: 2
+        x: 525
+        y: 14
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b934630109d34bb0800000000000000
+      internalID: -4952876566802318919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_chilled_sheet_21
+      rect:
+        serializedVersion: 2
+        x: 575
+        y: 14
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 134fea25f03fbe610800000000000000
+      internalID: 1651680935498675249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_chilled_sheet_22
+      rect:
+        serializedVersion: 2
+        x: 616
+        y: 18
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e08062a0db1739310800000000000000
+      internalID: 1410596165030119438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_chilled_sheet_23
+      rect:
+        serializedVersion: 2
+        x: 625
+        y: 14
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 76e055769ef7ad5e0800000000000000
+      internalID: -1884052853663396249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_chilled_sheet_24
+      rect:
+        serializedVersion: 2
+        x: 675
+        y: 14
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 362c5b80093c87e40800000000000000
+      internalID: 5654484355552494179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_chilled_sheet_25
+      rect:
+        serializedVersion: 2
+        x: 724
+        y: 13
+        width: 13
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 802a666ebbb3a4f90800000000000000
+      internalID: -6968691795192012280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_chilled_sheet_26
+      rect:
+        serializedVersion: 2
+        x: 776
+        y: 16
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26a87a937fa2419e0800000000000000
+      internalID: -1651647922025559454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      statusfx_chilled_sheet_0: 7991553897254379786
+      statusfx_chilled_sheet_1: -9157193508398160263
+      statusfx_chilled_sheet_10: -7516523822655019396
+      statusfx_chilled_sheet_11: -2250118736823846640
+      statusfx_chilled_sheet_12: 1290915011586278171
+      statusfx_chilled_sheet_13: 3571843121991407512
+      statusfx_chilled_sheet_14: -2643324298819985809
+      statusfx_chilled_sheet_15: 4164149012659015992
+      statusfx_chilled_sheet_16: 7514637817974500931
+      statusfx_chilled_sheet_17: -4018398160995584100
+      statusfx_chilled_sheet_18: -6301177527846170021
+      statusfx_chilled_sheet_19: -6887904079538253135
+      statusfx_chilled_sheet_2: -2940200441481047192
+      statusfx_chilled_sheet_20: -4952876566802318919
+      statusfx_chilled_sheet_21: 1651680935498675249
+      statusfx_chilled_sheet_22: 1410596165030119438
+      statusfx_chilled_sheet_23: -1884052853663396249
+      statusfx_chilled_sheet_24: 5654484355552494179
+      statusfx_chilled_sheet_25: -6968691795192012280
+      statusfx_chilled_sheet_26: -1651647922025559454
+      statusfx_chilled_sheet_3: 3455680606281670793
+      statusfx_chilled_sheet_4: 4375706185787509996
+      statusfx_chilled_sheet_5: 428131891951392513
+      statusfx_chilled_sheet_6: 5596055699915597234
+      statusfx_chilled_sheet_7: -7721333019917698231
+      statusfx_chilled_sheet_8: -6544827288034766991
+      statusfx_chilled_sheet_9: 3331465668230877023
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

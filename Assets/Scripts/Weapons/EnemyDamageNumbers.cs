@@ -45,12 +45,17 @@ public class EnemyDamageNumbers : MonoBehaviour
                 if (!crit)
                 damageText.color = Color.red;
                 break;
-
             case WeaponStatusEffect.Poison:
                 damageText.color = new Color32(0, 175, 0, 255);
                 break;
             case WeaponStatusEffect.Burn:
                 damageText.color = new Color32(255, 90, 0, 255);
+                break;
+            case WeaponStatusEffect.Cinder:
+                damageText.color = new Color32(255, 170, 40, 255);
+                break;
+            case WeaponStatusEffect.Shock:
+                damageText.color = new Color32(120, 200, 255, 255);
                 break;
         }
     }

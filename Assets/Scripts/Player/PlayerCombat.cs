@@ -1,17 +1,15 @@
-﻿using NUnit.Framework;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-using static UnityEngine.Rendering.DebugUI;
 using System;
-using JetBrains.Annotations;
 
 public class PlayerCombat : MonoBehaviour
 {
+    public bool madDoctrineReady = true;
     public GameObject pausePanel;
     [SerializeField] private TextMeshProUGUI statsText;
     public bool chargeAttackFired = false;
@@ -251,7 +249,7 @@ public class PlayerCombat : MonoBehaviour
     public bool gamblersFallacyActive = false;
     public float gamblersFallacyPayout;
 
-    public bool jackpotActive = true;
+    public bool jackpotActive = false;
     public int jackpotChance;
     public int jackpotCritDamage = 30;
     public int jackpotGoldCost = 1;
@@ -299,7 +297,9 @@ public class PlayerCombat : MonoBehaviour
     }
     public void ResetStatBonuses()
     {
+        runAndHitCurrentStacks = 0;
         lightningStrikesTwiceApplied = 0f;
+        flowState = false;
         attackBonus = 0f; attack = attackBase;
         attackSpeedBonus = 0f; attackSpeed = attackSpeedBase;
         critChanceBonus = 0; critChance = critChanceBase;
@@ -513,12 +513,12 @@ public class PlayerCombat : MonoBehaviour
     {
         if (currentPlayerHealth / maxHealth >= .75f && !dynamicDensity)
         {
-            armor += 25;
+            ModifyStat("armor", 25);
             dynamicDensity = true;
         }
         else if (currentPlayerHealth / maxHealth < .75f && dynamicDensity)
         {
-            armor -= 25;
+            ModifyStat("armor", -25);
             dynamicDensity = false;
         }
     }
@@ -527,12 +527,11 @@ public class PlayerCombat : MonoBehaviour
     {
         if (!hitandRunBool)
         {
-            float hitandRunMS = movementSpeed * hitandRunValue;
-            movementSpeed += hitandRunMS;
             hitandRunBool = true;
+            ModifyStat("movement speed", hitandRunValue);
             yield return new WaitForSeconds(hitandRunTime);
+            ModifyStat("movement speed", -hitandRunValue);
             hitandRunBool = false;
-            ModifyStat("movement speed", 0);
         }
     }
 
@@ -650,6 +649,8 @@ public class PlayerCombat : MonoBehaviour
             }
             if (jackpotActive && playerMoney >= jackpotGoldCost && UnityEngine.Random.Range(1, 1001) < jackpotChance)
             {
+                critMult = jackpotCritDamage;
+                ModifyGoldValue("shop", jackpotGoldCost);
                 critDamageBonus -= lightningStrikesTwiceApplied;
                 lightningStrikesTwiceApplied = 0f;
                 critDamage = Mathf.Max(critDamageBase + critDamageBonus, 1f);
@@ -678,6 +679,9 @@ public class PlayerCombat : MonoBehaviour
         }
         else
         {
+            critDamageBonus -= lightningStrikesTwiceApplied;
+            lightningStrikesTwiceApplied = 0f;
+            critDamage = Mathf.Max(critDamageBase + critDamageBonus, 1f);
             lightningStrikesTwiceStacks = 0;
             crit = false;
             processedDamage = (int)(Mathf.Round(damage * attack));
@@ -730,7 +734,6 @@ public class PlayerCombat : MonoBehaviour
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
         GameObject closestEnemy = null;
         float closestDistance = Mathf.Infinity;
-        isMADDoctrineActive = false;
 
         foreach (GameObject enemy in enemies)
         {
@@ -741,19 +744,18 @@ public class PlayerCombat : MonoBehaviour
                 closestDistance = dist;
             }
         }
-
         if (closestEnemy != null)
         {
-            closestEnemy.GetComponent<Enemy>().reduceHp(reflectDamage*mADDoctrineReflectDamage,1);
-            StartCoroutine("MADDoctrineCD");
+            madDoctrineReady = false;
+            closestEnemy.GetComponent<Enemy>().reduceHp(reflectDamage * mADDoctrineReflectDamage, 1);
+            StartCoroutine(MADDoctrineCD());
         }
-            
     }
 
     IEnumerator MADDoctrineCD()
     {
         yield return new WaitForSeconds(mADDoctrineCooldown);
-        isMADDoctrineActive = true;
+        madDoctrineReady = true;
     }
 
     IEnumerator HindsightBias(int health, int returnTime)
@@ -768,7 +770,7 @@ public class PlayerCombat : MonoBehaviour
     {
         if (iFrames) return;
         
-        int dodgeChance = UnityEngine.Random.Range(0, 101);
+        int dodgeChance = UnityEngine.Random.Range(1, 101);
         if (dodgeChance <= dodge)
         {
             dodge = dodgeBase + dodgeBonus;
@@ -793,7 +795,7 @@ public class PlayerCombat : MonoBehaviour
             return;
         }
         if (isHindsightBiasActive) StartCoroutine(HindsightBias(hindsightBiasHealthReturn, hindsightBiasReturnTime));
-        if (isMADDoctrineActive)
+        if (isMADDoctrineActive && madDoctrineReady) 
         {
             MADDoctrine(finalDamage);
         }
@@ -857,7 +859,8 @@ public class PlayerCombat : MonoBehaviour
     }
     public void RefreshHpBar(int healthRegained, string currentOrMaxHealth)
     {
-        playerHpBarNumber.text = currentPlayerHealth + " / " + maxHealth;
+        playerHpBar.value = currentPlayerHealth / maxHealth;
+        playerHpBarNumber.text = currentPlayerHealth + " / " + (int)maxHealth;
     }
     public void HealPlayer(float damageHealed)
     {
@@ -930,7 +933,7 @@ public class PlayerCombat : MonoBehaviour
 
     public void RefreshHPUI()
     {
-        playerHpBar.value = currentPlayerHealth / (int)maxHealth;
+        playerHpBar.value = currentPlayerHealth / maxHealth;
         playerHpBarNumber.text = currentPlayerHealth + " / " + (int)maxHealth;
     }
     #endregion
@@ -969,7 +972,6 @@ public class PlayerCombat : MonoBehaviour
                 totalSiphonKills++;
                 maxHealth++;
                 currentPlayerHealth++;
-                Debug.Log("health should be added, soul siphon level: " + soulSiphonLevel);
                 playerHpBarNumber.text = currentPlayerHealth + " / " + maxHealth;
             }
         }
@@ -979,7 +981,6 @@ public class PlayerCombat : MonoBehaviour
     #region Experience & Leveling
     public void AddXp(int xpValue)
     {
-        Debug.Log("addxp " + xpValue);
         if (isSchrodingersCatActive && SchrodingersCat() == true)
         {
             xpValue *= 2;
@@ -1086,7 +1087,7 @@ public class PlayerCombat : MonoBehaviour
                 ModifyStat("attack", -.04f);
                 break;
             case "attack speed":
-                ModifyStat("attack speed", 0.96f);
+                ModifyStat("attack speed", 0.04f);
                 break;
             case "crit chance":
                 ModifyStat("crit chance", -.04f);

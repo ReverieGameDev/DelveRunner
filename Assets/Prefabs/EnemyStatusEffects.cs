@@ -28,11 +28,11 @@ public class EnemyStatusEffects : MonoBehaviour
     GridLayoutGroup iconGrid;
     private Enemy enemy;
     public GameObject testIcon;
-    public Sprite enfeebleIcon;
-    public Sprite poisonIcon;
-    public Sprite burnIcon;
-    public Sprite cinderIcon;
-    public Sprite shockIcon;
+    public Sprite[] enfeebleIcon;
+    public Sprite[] poisonIcon;
+    public Sprite[] burnIcon;
+    public Sprite[] cinderIcon;
+    public Sprite[] shockIcon;
     public GameObject shockArcPrefab;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -125,7 +125,7 @@ public class EnemyStatusEffects : MonoBehaviour
                 newBurn.type = WeaponStatusEffect.Burn;
                 newBurn.icon = Instantiate(testIcon, iconGrid.transform, false);
                 newBurn.timerText = newBurn.icon.GetComponentInChildren<TextMeshProUGUI>();
-                newBurn.icon.GetComponent<Image>().sprite = burnIcon;
+                newBurn.icon.GetComponent<StatusIconAnimator>().frames = burnIcon;
                 newBurn.duration = DurationChange(burnDuration);
                 newBurn.damage = burnDamage;
                 newBurn.tickRate = burnTickRate;
@@ -155,7 +155,7 @@ public class EnemyStatusEffects : MonoBehaviour
             newEnfeeble.type = WeaponStatusEffect.Enfeeble;
             newEnfeeble.icon = Instantiate(testIcon, iconGrid.transform, false);
             newEnfeeble.timerText = newEnfeeble.icon.GetComponentInChildren<TextMeshProUGUI>();
-            newEnfeeble.icon.GetComponent<Image>().sprite = enfeebleIcon;
+            newEnfeeble.icon.GetComponent<StatusIconAnimator>().frames = enfeebleIcon;
             newEnfeeble.duration = DurationChange(enfeebleDuration);
             newEnfeeble.effectPercentage = enfeebleExtraDmgPercent;
             activeStatusEffects.Add(newEnfeeble);
@@ -191,7 +191,7 @@ public class EnemyStatusEffects : MonoBehaviour
             newPoison.type = WeaponStatusEffect.Poison;
             newPoison.icon = Instantiate(testIcon, iconGrid.transform, false);
             newPoison.timerText = newPoison.icon.GetComponentInChildren<TextMeshProUGUI>();
-            newPoison.icon.GetComponent<Image>().sprite = poisonIcon;
+            newPoison.icon.GetComponent<StatusIconAnimator>().frames = poisonIcon;
             newPoison.duration = DurationChange(poisonDuration);
             newPoison.damage = poisonDamage;
             newPoison.tickRate = poisonTickRate;
@@ -219,7 +219,7 @@ public class EnemyStatusEffects : MonoBehaviour
                 newCinder.type = WeaponStatusEffect.Cinder;
                 newCinder.icon = Instantiate(testIcon, iconGrid.transform, false);
                 newCinder.timerText = newCinder.icon.GetComponentInChildren<TextMeshProUGUI>();
-                newCinder.icon.GetComponent<Image>().sprite = cinderIcon;
+                newCinder.icon.GetComponent<StatusIconAnimator>().frames = cinderIcon;
                 newCinder.duration = DurationChange(cinderDuration);
                 newCinder.damage = cinderDamage;
                 newCinder.emberGain = emberAmount;
@@ -254,7 +254,7 @@ public class EnemyStatusEffects : MonoBehaviour
             newShock.type = WeaponStatusEffect.Shock;
             newShock.icon = Instantiate(testIcon, iconGrid.transform, false);
             newShock.timerText = newShock.icon.GetComponentInChildren<TextMeshProUGUI>();
-            newShock.icon.GetComponent<Image>().sprite = shockIcon;
+            newShock.icon.GetComponent<StatusIconAnimator>().frames = shockIcon;
             newShock.duration = DurationChange(shockDuration);
             newShock.damage = shockDamage;
             newShock.tickRate = shockTickRate;

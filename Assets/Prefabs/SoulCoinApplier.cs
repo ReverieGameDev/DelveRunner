@@ -31,7 +31,6 @@ public class SoulCoinApplier : MonoBehaviour
                 if (allNodes[i].id == data.ownedIds[x])
                 {
                     allNodes[i].Apply(PlayerCombat.Instance, data.ownedValues[x]);
-                    Debug.Log("Applied: " + allNodes[i].id);
                 }
             }
         }

@@ -11,15 +11,12 @@ public class SoulCoinEvasiveManeuvers : SoulCoinNode
         {
             case 1:
                 player.evasiveManeuversValue = 1f;
-                player.StartCoroutine("EvasiveManeuvers");
                 break;
             case 2:
                 player.evasiveManeuversValue = 2f;
-                player.StartCoroutine("EvasiveManeuvers");
                 break;
             case 3:
                 player.evasiveManeuversValue = 3f;
-                player.StartCoroutine("EvasiveManeuvers");
                 break;
         }
     }

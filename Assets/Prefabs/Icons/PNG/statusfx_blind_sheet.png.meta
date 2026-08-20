@@ -1,0 +1,494 @@
+fileFormatVersion: 2
+guid: 1eeaac1eb7c532a48a6c0eafef0cb878
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8430856722184280184
+    second: statusfx_blind_sheet_0
+  - first:
+      213: -1186018100879642541
+    second: statusfx_blind_sheet_1
+  - first:
+      213: -630675296217105150
+    second: statusfx_blind_sheet_2
+  - first:
+      213: 7731408030484708583
+    second: statusfx_blind_sheet_3
+  - first:
+      213: 7228852953842658741
+    second: statusfx_blind_sheet_4
+  - first:
+      213: 8021176270758038007
+    second: statusfx_blind_sheet_5
+  - first:
+      213: -6867234089444206894
+    second: statusfx_blind_sheet_6
+  - first:
+      213: 4481731610614127579
+    second: statusfx_blind_sheet_7
+  - first:
+      213: -6828122962564874519
+    second: statusfx_blind_sheet_8
+  - first:
+      213: 8460789704445940783
+    second: statusfx_blind_sheet_9
+  - first:
+      213: 4340376659910406685
+    second: statusfx_blind_sheet_10
+  - first:
+      213: 3979921075301675886
+    second: statusfx_blind_sheet_11
+  - first:
+      213: -70217338673778031
+    second: statusfx_blind_sheet_12
+  - first:
+      213: 9009981238734798220
+    second: statusfx_blind_sheet_13
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 26
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: statusfx_blind_sheet_0
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 17
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 878120e258b600570800000000000000
+      internalID: 8430856722184280184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_blind_sheet_1
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 18
+        width: 19
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 350b2ef22da6a8fe0800000000000000
+      internalID: -1186018100879642541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_blind_sheet_2
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 16
+        width: 17
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20d7d58d8246f37f0800000000000000
+      internalID: -630675296217105150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_blind_sheet_3
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 16
+        width: 17
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ecb4a614aa7b4b60800000000000000
+      internalID: 7731408030484708583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_blind_sheet_4
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 16
+        width: 19
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5bd235f167b025460800000000000000
+      internalID: 7228852953842658741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_blind_sheet_5
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 16
+        width: 19
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f9435bf151f05f60800000000000000
+      internalID: 8021176270758038007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_blind_sheet_6
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 16
+        width: 19
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d69935dafea2b0a0800000000000000
+      internalID: -6867234089444206894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_blind_sheet_7
+      rect:
+        serializedVersion: 2
+        x: 365
+        y: 16
+        width: 19
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bdb5b45972f423e30800000000000000
+      internalID: 4481731610614127579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_blind_sheet_8
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 16
+        width: 19
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9eef1ada752ad31a0800000000000000
+      internalID: -6828122962564874519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_blind_sheet_9
+      rect:
+        serializedVersion: 2
+        x: 465
+        y: 13
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f2458c4b863ca6570800000000000000
+      internalID: 8460789704445940783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_blind_sheet_10
+      rect:
+        serializedVersion: 2
+        x: 515
+        y: 11
+        width: 19
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d123b5d639d1c3c30800000000000000
+      internalID: 4340376659910406685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_blind_sheet_11
+      rect:
+        serializedVersion: 2
+        x: 564
+        y: 10
+        width: 21
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e637277a1258b3730800000000000000
+      internalID: 3979921075301675886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_blind_sheet_12
+      rect:
+        serializedVersion: 2
+        x: 615
+        y: 11
+        width: 19
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 192b647d3b9860ff0800000000000000
+      internalID: -70217338673778031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_blind_sheet_13
+      rect:
+        serializedVersion: 2
+        x: 668
+        y: 15
+        width: 66
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c8db8bf1332e90d70800000000000000
+      internalID: 9009981238734798220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      statusfx_blind_sheet_0: 8430856722184280184
+      statusfx_blind_sheet_1: -1186018100879642541
+      statusfx_blind_sheet_10: 4340376659910406685
+      statusfx_blind_sheet_11: 3979921075301675886
+      statusfx_blind_sheet_12: -70217338673778031
+      statusfx_blind_sheet_13: 9009981238734798220
+      statusfx_blind_sheet_2: -630675296217105150
+      statusfx_blind_sheet_3: 7731408030484708583
+      statusfx_blind_sheet_4: 7228852953842658741
+      statusfx_blind_sheet_5: 8021176270758038007
+      statusfx_blind_sheet_6: -6867234089444206894
+      statusfx_blind_sheet_7: 4481731610614127579
+      statusfx_blind_sheet_8: -6828122962564874519
+      statusfx_blind_sheet_9: 8460789704445940783
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

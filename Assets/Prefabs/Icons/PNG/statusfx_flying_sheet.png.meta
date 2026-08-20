@@ -1,0 +1,988 @@
+fileFormatVersion: 2
+guid: a87bda714f054d14995d781800b6c7b1
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5943991490894771360
+    second: statusfx_flying_sheet_0
+  - first:
+      213: -316330520243896770
+    second: statusfx_flying_sheet_1
+  - first:
+      213: -7818195717035748073
+    second: statusfx_flying_sheet_2
+  - first:
+      213: -8322771938575434080
+    second: statusfx_flying_sheet_3
+  - first:
+      213: 8931091613938830174
+    second: statusfx_flying_sheet_4
+  - first:
+      213: 826764136617376349
+    second: statusfx_flying_sheet_5
+  - first:
+      213: -1801977350498615104
+    second: statusfx_flying_sheet_6
+  - first:
+      213: 5708633498815901452
+    second: statusfx_flying_sheet_7
+  - first:
+      213: -4302468468485913674
+    second: statusfx_flying_sheet_8
+  - first:
+      213: 9202471636127872673
+    second: statusfx_flying_sheet_9
+  - first:
+      213: -5214506755797084298
+    second: statusfx_flying_sheet_10
+  - first:
+      213: 5071470380014335023
+    second: statusfx_flying_sheet_11
+  - first:
+      213: 8917368677781787806
+    second: statusfx_flying_sheet_12
+  - first:
+      213: -3541184923829455674
+    second: statusfx_flying_sheet_13
+  - first:
+      213: -7763225246874934563
+    second: statusfx_flying_sheet_14
+  - first:
+      213: -3655508573098586858
+    second: statusfx_flying_sheet_15
+  - first:
+      213: -1494845242001582263
+    second: statusfx_flying_sheet_16
+  - first:
+      213: 1825889609443642402
+    second: statusfx_flying_sheet_17
+  - first:
+      213: -223363365980270911
+    second: statusfx_flying_sheet_18
+  - first:
+      213: -4423020247272908501
+    second: statusfx_flying_sheet_19
+  - first:
+      213: -7913286087085615974
+    second: statusfx_flying_sheet_20
+  - first:
+      213: 500972439485026401
+    second: statusfx_flying_sheet_21
+  - first:
+      213: 2291606674806457801
+    second: statusfx_flying_sheet_22
+  - first:
+      213: -9182924004327551524
+    second: statusfx_flying_sheet_23
+  - first:
+      213: -8489612702156920336
+    second: statusfx_flying_sheet_24
+  - first:
+      213: 4196387767613486890
+    second: statusfx_flying_sheet_25
+  - first:
+      213: -1243657745103654560
+    second: statusfx_flying_sheet_26
+  - first:
+      213: -6291755646605790463
+    second: statusfx_flying_sheet_27
+  - first:
+      213: 337323606190366813
+    second: statusfx_flying_sheet_28
+  - first:
+      213: -1348156569259183242
+    second: statusfx_flying_sheet_29
+  - first:
+      213: 8970803207676883313
+    second: statusfx_flying_sheet_30
+  - first:
+      213: -2605929328814229181
+    second: statusfx_flying_sheet_31
+  - first:
+      213: 6826522345188916495
+    second: statusfx_flying_sheet_32
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 26
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: statusfx_flying_sheet_0
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 17
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 06bc54d4b33b28da0800000000000000
+      internalID: -5943991490894771360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_flying_sheet_1
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 17
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e3e7f3d511b2c9bf0800000000000000
+      internalID: -316330520243896770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_flying_sheet_2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 20
+        width: 11
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7159a9dfa60308390800000000000000
+      internalID: -7818195717035748073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_flying_sheet_3
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 20
+        width: 11
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ae3f9e84039f7c80800000000000000
+      internalID: -8322771938575434080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_flying_sheet_4
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 21
+        width: 13
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e5b4b41018c91fb70800000000000000
+      internalID: 8931091613938830174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_flying_sheet_5
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 21
+        width: 13
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d5a7c141a91497b00800000000000000
+      internalID: 826764136617376349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_flying_sheet_6
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 22
+        width: 12
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c00b32a5271ef6e0800000000000000
+      internalID: -1801977350498615104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_flying_sheet_7
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 22
+        width: 12
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0f21d9ebe3293f40800000000000000
+      internalID: 5708633498815901452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_flying_sheet_8
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 17
+        width: 13
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b3049e29bf8a44c0800000000000000
+      internalID: -4302468468485913674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_flying_sheet_9
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 17
+        width: 13
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a6720f323fb5bf70800000000000000
+      internalID: 9202471636127872673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_flying_sheet_10
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 12
+        width: 11
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 67717d5bbb952a7b0800000000000000
+      internalID: -5214506755797084298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_flying_sheet_11
+      rect:
+        serializedVersion: 2
+        x: 275
+        y: 12
+        width: 11
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f247ba9d07b716640800000000000000
+      internalID: 5071470380014335023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_flying_sheet_12
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 21
+        width: 13
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e94d062f09bd0cb70800000000000000
+      internalID: 8917368677781787806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_flying_sheet_13
+      rect:
+        serializedVersion: 2
+        x: 325
+        y: 21
+        width: 13
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c43d23e21f2bdec0800000000000000
+      internalID: -3541184923829455674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_flying_sheet_14
+      rect:
+        serializedVersion: 2
+        x: 363
+        y: 22
+        width: 12
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd2eca0f4cb734490800000000000000
+      internalID: -7763225246874934563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_flying_sheet_15
+      rect:
+        serializedVersion: 2
+        x: 375
+        y: 22
+        width: 12
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 61d401b0256054dc0800000000000000
+      internalID: -3655508573098586858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_flying_sheet_16
+      rect:
+        serializedVersion: 2
+        x: 412
+        y: 17
+        width: 13
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94710542c2e314be0800000000000000
+      internalID: -1494845242001582263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_flying_sheet_17
+      rect:
+        serializedVersion: 2
+        x: 425
+        y: 17
+        width: 13
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22c07f10decd65910800000000000000
+      internalID: 1825889609443642402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_flying_sheet_18
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 12
+        width: 11
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ce09eab33476ecf0800000000000000
+      internalID: -223363365980270911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_flying_sheet_19
+      rect:
+        serializedVersion: 2
+        x: 475
+        y: 12
+        width: 11
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b2910fee4864e92c0800000000000000
+      internalID: -4423020247272908501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_flying_sheet_20
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 21
+        width: 13
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a94983dea3c5e2290800000000000000
+      internalID: -7913286087085615974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_flying_sheet_21
+      rect:
+        serializedVersion: 2
+        x: 525
+        y: 21
+        width: 13
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 16014c987cfc3f600800000000000000
+      internalID: 500972439485026401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_flying_sheet_22
+      rect:
+        serializedVersion: 2
+        x: 563
+        y: 22
+        width: 12
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c5c0c8112c6dcf10800000000000000
+      internalID: 2291606674806457801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_flying_sheet_23
+      rect:
+        serializedVersion: 2
+        x: 575
+        y: 22
+        width: 12
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cdd06a27543bf8080800000000000000
+      internalID: -9182924004327551524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_flying_sheet_24
+      rect:
+        serializedVersion: 2
+        x: 612
+        y: 21
+        width: 26
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f9ea4f2a36de2a80800000000000000
+      internalID: -8489612702156920336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_flying_sheet_25
+      rect:
+        serializedVersion: 2
+        x: 662
+        y: 20
+        width: 13
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a277564f0709c3a30800000000000000
+      internalID: 4196387767613486890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_flying_sheet_26
+      rect:
+        serializedVersion: 2
+        x: 675
+        y: 20
+        width: 13
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 061fee8bed3adbee0800000000000000
+      internalID: -1243657745103654560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_flying_sheet_27
+      rect:
+        serializedVersion: 2
+        x: 713
+        y: 18
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 103f08613913fa8a0800000000000000
+      internalID: -6291755646605790463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_flying_sheet_28
+      rect:
+        serializedVersion: 2
+        x: 725
+        y: 18
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d50a459580a6ea400800000000000000
+      internalID: 337323606190366813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_flying_sheet_29
+      rect:
+        serializedVersion: 2
+        x: 765
+        y: 13
+        width: 10
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 67372bb3eb26a4de0800000000000000
+      internalID: -1348156569259183242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_flying_sheet_30
+      rect:
+        serializedVersion: 2
+        x: 775
+        y: 13
+        width: 10
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 171f38fecf1be7c70800000000000000
+      internalID: 8970803207676883313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_flying_sheet_31
+      rect:
+        serializedVersion: 2
+        x: 819
+        y: 18
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 349714e0511e5dbd0800000000000000
+      internalID: -2605929328814229181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_flying_sheet_32
+      rect:
+        serializedVersion: 2
+        x: 825
+        y: 18
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f0d704c87edacbe50800000000000000
+      internalID: 6826522345188916495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      statusfx_flying_sheet_0: -5943991490894771360
+      statusfx_flying_sheet_1: -316330520243896770
+      statusfx_flying_sheet_10: -5214506755797084298
+      statusfx_flying_sheet_11: 5071470380014335023
+      statusfx_flying_sheet_12: 8917368677781787806
+      statusfx_flying_sheet_13: -3541184923829455674
+      statusfx_flying_sheet_14: -7763225246874934563
+      statusfx_flying_sheet_15: -3655508573098586858
+      statusfx_flying_sheet_16: -1494845242001582263
+      statusfx_flying_sheet_17: 1825889609443642402
+      statusfx_flying_sheet_18: -223363365980270911
+      statusfx_flying_sheet_19: -4423020247272908501
+      statusfx_flying_sheet_2: -7818195717035748073
+      statusfx_flying_sheet_20: -7913286087085615974
+      statusfx_flying_sheet_21: 500972439485026401
+      statusfx_flying_sheet_22: 2291606674806457801
+      statusfx_flying_sheet_23: -9182924004327551524
+      statusfx_flying_sheet_24: -8489612702156920336
+      statusfx_flying_sheet_25: 4196387767613486890
+      statusfx_flying_sheet_26: -1243657745103654560
+      statusfx_flying_sheet_27: -6291755646605790463
+      statusfx_flying_sheet_28: 337323606190366813
+      statusfx_flying_sheet_29: -1348156569259183242
+      statusfx_flying_sheet_3: -8322771938575434080
+      statusfx_flying_sheet_30: 8970803207676883313
+      statusfx_flying_sheet_31: -2605929328814229181
+      statusfx_flying_sheet_32: 6826522345188916495
+      statusfx_flying_sheet_4: 8931091613938830174
+      statusfx_flying_sheet_5: 826764136617376349
+      statusfx_flying_sheet_6: -1801977350498615104
+      statusfx_flying_sheet_7: 5708633498815901452
+      statusfx_flying_sheet_8: -4302468468485913674
+      statusfx_flying_sheet_9: 9202471636127872673
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

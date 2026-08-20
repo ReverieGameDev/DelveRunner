@@ -205,7 +205,6 @@ public class SpawnManager : MonoBehaviour
 
     public void SpawnNextWave()
     {
-        Debug.Log("SpawnNextWave called, waveNumber: " + emberSystem.waveNumber);
         availableDirections.Clear();
         for (int i = 0; i < 8; i++) availableDirections.Add(i);
         

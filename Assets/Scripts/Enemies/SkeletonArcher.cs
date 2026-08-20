@@ -64,7 +64,6 @@ public class SkeletonArcher : MonoBehaviour
         }
         if (enemy.isDead && !isDead)
         {
-            Debug.Log(gameObject.name + " DeathSequence fired");
             anim.speed = 1f;
             enemy.isDead = true;
             isDead = true;

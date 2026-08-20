@@ -12,12 +12,10 @@ public class aSupplyBox : AugmentData
     }
     private void OnKill(Enemy enemy)
     {
-        Debug.Log("ONKILL FIRING");
         if (Random.Range(1,101)<99)
         {
             for (int i = 0; i<augmentCurrentLevel; i++)
             {
-                Debug.Log("DROPPING EXTRA ITEM");
                 DropManager.Instance.RollDropTable(supplyBoxTable, enemy.transform.position);
             }
         }

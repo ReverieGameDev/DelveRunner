@@ -1,0 +1,572 @@
+fileFormatVersion: 2
+guid: aeb0b8281c3810a48b2b2bc8c7fedf66
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1053298301362571138
+    second: statusfx_wet_sheet_0
+  - first:
+      213: 5995162702999640196
+    second: statusfx_wet_sheet_1
+  - first:
+      213: 1519453582468847168
+    second: statusfx_wet_sheet_2
+  - first:
+      213: -8189467371296885347
+    second: statusfx_wet_sheet_3
+  - first:
+      213: -5773904909691799915
+    second: statusfx_wet_sheet_4
+  - first:
+      213: 1804540631124499002
+    second: statusfx_wet_sheet_5
+  - first:
+      213: 7117200816595309585
+    second: statusfx_wet_sheet_6
+  - first:
+      213: 3343932395392590119
+    second: statusfx_wet_sheet_7
+  - first:
+      213: 5850484936579270172
+    second: statusfx_wet_sheet_8
+  - first:
+      213: 7681200254618333859
+    second: statusfx_wet_sheet_9
+  - first:
+      213: 4806717385193152942
+    second: statusfx_wet_sheet_10
+  - first:
+      213: -6041721085765514421
+    second: statusfx_wet_sheet_11
+  - first:
+      213: -2147016400295588310
+    second: statusfx_wet_sheet_12
+  - first:
+      213: 4749064487711315429
+    second: statusfx_wet_sheet_13
+  - first:
+      213: 5313577533615019483
+    second: statusfx_wet_sheet_14
+  - first:
+      213: 2799174228474026112
+    second: statusfx_wet_sheet_15
+  - first:
+      213: -6387315072798736387
+    second: statusfx_wet_sheet_16
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 26
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: statusfx_wet_sheet_0
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 15
+        width: 6
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e78f2c886cee161f0800000000000000
+      internalID: -1053298301362571138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_wet_sheet_1
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 19
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 488d6f2f6b8133350800000000000000
+      internalID: 5995162702999640196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_wet_sheet_2
+      rect:
+        serializedVersion: 2
+        x: 269
+        y: 25
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 04610cb9bfe261510800000000000000
+      internalID: 1519453582468847168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_wet_sheet_3
+      rect:
+        serializedVersion: 2
+        x: 319
+        y: 22
+        width: 12
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d957232c0da295e80800000000000000
+      internalID: -8189467371296885347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_wet_sheet_4
+      rect:
+        serializedVersion: 2
+        x: 370
+        y: 22
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 596bfea7318fedfa0800000000000000
+      internalID: -5773904909691799915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_wet_sheet_5
+      rect:
+        serializedVersion: 2
+        x: 419
+        y: 21
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a3a5fe4a4240b0910800000000000000
+      internalID: 1804540631124499002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_wet_sheet_6
+      rect:
+        serializedVersion: 2
+        x: 467
+        y: 21
+        width: 16
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 11498442f6065c260800000000000000
+      internalID: 7117200816595309585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_wet_sheet_7
+      rect:
+        serializedVersion: 2
+        x: 516
+        y: 21
+        width: 10
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 721eb44fbc8086e20800000000000000
+      internalID: 3343932395392590119
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_wet_sheet_8
+      rect:
+        serializedVersion: 2
+        x: 522
+        y: 20
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c16c4987d09113150800000000000000
+      internalID: 5850484936579270172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_wet_sheet_9
+      rect:
+        serializedVersion: 2
+        x: 527
+        y: 21
+        width: 8
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a27a215fea199a60800000000000000
+      internalID: 7681200254618333859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_wet_sheet_10
+      rect:
+        serializedVersion: 2
+        x: 564
+        y: 18
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea1e128aef3e4b240800000000000000
+      internalID: 4806717385193152942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_wet_sheet_11
+      rect:
+        serializedVersion: 2
+        x: 572
+        y: 17
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4b85f2deae772ca0800000000000000
+      internalID: -6041721085765514421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_wet_sheet_12
+      rect:
+        serializedVersion: 2
+        x: 579
+        y: 18
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a2e817595f34432e0800000000000000
+      internalID: -2147016400295588310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_wet_sheet_13
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 12
+        width: 110
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e5947d6df018e140800000000000000
+      internalID: 4749064487711315429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_wet_sheet_14
+      rect:
+        serializedVersion: 2
+        x: 613
+        y: 14
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd59e914d9e9db940800000000000000
+      internalID: 5313577533615019483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_wet_sheet_15
+      rect:
+        serializedVersion: 2
+        x: 622
+        y: 13
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0885f90512aa8d620800000000000000
+      internalID: 2799174228474026112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_wet_sheet_16
+      rect:
+        serializedVersion: 2
+        x: 631
+        y: 13
+        width: 55
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dff355168c2bb57a0800000000000000
+      internalID: -6387315072798736387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      statusfx_wet_sheet_0: -1053298301362571138
+      statusfx_wet_sheet_1: 5995162702999640196
+      statusfx_wet_sheet_10: 4806717385193152942
+      statusfx_wet_sheet_11: -6041721085765514421
+      statusfx_wet_sheet_12: -2147016400295588310
+      statusfx_wet_sheet_13: 4749064487711315429
+      statusfx_wet_sheet_14: 5313577533615019483
+      statusfx_wet_sheet_15: 2799174228474026112
+      statusfx_wet_sheet_16: -6387315072798736387
+      statusfx_wet_sheet_2: 1519453582468847168
+      statusfx_wet_sheet_3: -8189467371296885347
+      statusfx_wet_sheet_4: -5773904909691799915
+      statusfx_wet_sheet_5: 1804540631124499002
+      statusfx_wet_sheet_6: 7117200816595309585
+      statusfx_wet_sheet_7: 3343932395392590119
+      statusfx_wet_sheet_8: 5850484936579270172
+      statusfx_wet_sheet_9: 7681200254618333859
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

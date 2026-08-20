@@ -284,7 +284,6 @@ public class MapGenerator : MonoBehaviour
         Room spawnRoom = new Room { centerX = spawnX, centerY = spawnY, radius = spawnRadius, roomType = "spawn" };
         rooms.Add(spawnRoom);
         CarveRoom(spawnX, spawnY, spawnRadius);
-        Debug.Log("Spawn room placed at: " + spawnX + ", " + spawnY);
 
         for (int i = 0; i < Random.Range(fightNodeMin, fightNodeMax); i++)
         {
@@ -312,7 +311,6 @@ public class MapGenerator : MonoBehaviour
                     CarveRoom(roomX, roomY, fightNodeRadius);
                     lastViableSpawn.nodeInstance = mapRenderer.RenderFightNodePrefab(new Vector2(roomX, roomY));
                     roomPlaced = true;
-                    Debug.Log("Fight node placed at: " + roomX + ", " + roomY);
                 }
             }
             while (!roomPlaced);
@@ -343,7 +341,6 @@ public class MapGenerator : MonoBehaviour
                     roomPlaced = true;
                     mapRenderer.RenderChests(new Vector2(roomX, roomY));
                     mapRenderer.RenderCachePrefab(new Vector2(roomX, roomY));
-                    Debug.Log("Cache placed at: " + roomX + ", " + roomY);
                 }
             }
             while (!roomPlaced);
@@ -371,12 +368,10 @@ public class MapGenerator : MonoBehaviour
                 CarveRoom(roomX, roomY, bossRadius);
                 bossRoom.nodeInstance = mapRenderer.RenderBossNodePrefab(new Vector2(roomX - 5, roomY - 6));
                 bossPlaced = true;
-                Debug.Log("Boss room placed at: " + roomX + ", " + roomY);
             }
         }
         while (!bossPlaced);
 
-        Debug.Log("Total rooms placed: " + rooms.Count);
     }
 
     public void CarveRoom(int centerX, int centerY, int radius)

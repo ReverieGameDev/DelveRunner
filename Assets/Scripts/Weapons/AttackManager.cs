@@ -63,7 +63,6 @@ public class AttackManager : MonoBehaviour
 
             if (currentWeapon.hasChargeAttack && currentCharge >= currentWeapon.wChargeTime/2)//wont keep it as /2, this will be weapon specific, out of scope for now
             {
-                Debug.Log(currentWeapon.wChargeTime + "current charge time");
                 playerCombat.GetComponent<Animator>().SetTrigger("Attack");
                 isFiring = true;
                 mouseAndPlayerPositionsATOF();

@@ -41884,6 +41884,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38f10b667e7184f4bbf0e601a0fb6633, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  madDoctrineReady: 1
   pausePanel: {fileID: 1322632774}
   statsText: {fileID: 1711142105}
   chargeAttackFired: 0
@@ -41937,6 +41938,7 @@ MonoBehaviour:
   scholarActive: 0
   playerData: {fileID: 11400000, guid: 015cd50e4d403354bafaf27b1a2a2d9e, type: 2}
   attackManager: {fileID: 1509286737}
+  bloodlustRemaining: 0
   harvestChance: 0
   harvestHeal: 0
   harvestActive: 0
@@ -53204,7 +53206,7 @@ MonoBehaviour:
   baseEmber: 100
   emberComp: {fileID: 2115633924}
   isEmberActive: 1
-  waveNumber: 2
+  waveNumber: 9
   aliveEnemies: 0
   isFightNodeActive: 0
 --- !u!114 &1937255404

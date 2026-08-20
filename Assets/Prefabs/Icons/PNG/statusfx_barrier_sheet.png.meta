@@ -1,0 +1,624 @@
+fileFormatVersion: 2
+guid: d7417f6c00ce24c449b20fa230e51855
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -433646261725164882
+    second: statusfx_barrier_sheet_0
+  - first:
+      213: 1651618075083444281
+    second: statusfx_barrier_sheet_1
+  - first:
+      213: 1553528103541660246
+    second: statusfx_barrier_sheet_2
+  - first:
+      213: -9069102944456062671
+    second: statusfx_barrier_sheet_3
+  - first:
+      213: 7572950326715899310
+    second: statusfx_barrier_sheet_4
+  - first:
+      213: 6478072694353765051
+    second: statusfx_barrier_sheet_5
+  - first:
+      213: 5651981257029729638
+    second: statusfx_barrier_sheet_6
+  - first:
+      213: -2905837707083407484
+    second: statusfx_barrier_sheet_7
+  - first:
+      213: 3981599599489508831
+    second: statusfx_barrier_sheet_8
+  - first:
+      213: 850405993818376380
+    second: statusfx_barrier_sheet_9
+  - first:
+      213: 3129375847731806424
+    second: statusfx_barrier_sheet_10
+  - first:
+      213: 2157112774086212318
+    second: statusfx_barrier_sheet_11
+  - first:
+      213: 6441401071834410029
+    second: statusfx_barrier_sheet_12
+  - first:
+      213: 3713664475903145861
+    second: statusfx_barrier_sheet_13
+  - first:
+      213: 6800331794364815033
+    second: statusfx_barrier_sheet_14
+  - first:
+      213: 6862688315720457531
+    second: statusfx_barrier_sheet_15
+  - first:
+      213: 5509955461290162228
+    second: statusfx_barrier_sheet_16
+  - first:
+      213: -6949499049047372290
+    second: statusfx_barrier_sheet_17
+  - first:
+      213: -8762242667582502198
+    second: statusfx_barrier_sheet_18
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 26
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: statusfx_barrier_sheet_0
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 27
+        width: 113
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eaa02b3c5016bf9f0800000000000000
+      internalID: -433646261725164882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_barrier_sheet_1
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 23
+        width: 24
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93096fd73e9bbe610800000000000000
+      internalID: 1651618075083444281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_barrier_sheet_2
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 17
+        width: 24
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 65adf28449d3f8510800000000000000
+      internalID: 1553528103541660246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_barrier_sheet_3
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 13
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1394f341ce2142280800000000000000
+      internalID: -9069102944456062671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_barrier_sheet_4
+      rect:
+        serializedVersion: 2
+        x: 313
+        y: 13
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ead549de236881960800000000000000
+      internalID: 7572950326715899310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_barrier_sheet_5
+      rect:
+        serializedVersion: 2
+        x: 363
+        y: 13
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb22d101bccb6e950800000000000000
+      internalID: 6478072694353765051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_barrier_sheet_6
+      rect:
+        serializedVersion: 2
+        x: 413
+        y: 13
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66d3c6ef10fdf6e40800000000000000
+      internalID: 5651981257029729638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_barrier_sheet_7
+      rect:
+        serializedVersion: 2
+        x: 463
+        y: 13
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48f9b5e40046ca7d0800000000000000
+      internalID: -2905837707083407484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_barrier_sheet_8
+      rect:
+        serializedVersion: 2
+        x: 513
+        y: 13
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd5e8658dbb714730800000000000000
+      internalID: 3981599599489508831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_barrier_sheet_9
+      rect:
+        serializedVersion: 2
+        x: 563
+        y: 13
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb84868eebf3dcb00800000000000000
+      internalID: 850405993818376380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_barrier_sheet_10
+      rect:
+        serializedVersion: 2
+        x: 613
+        y: 13
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d0cdbcd0c6cd6b20800000000000000
+      internalID: 3129375847731806424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_barrier_sheet_11
+      rect:
+        serializedVersion: 2
+        x: 663
+        y: 13
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: edabddf93aa9fed10800000000000000
+      internalID: 2157112774086212318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_barrier_sheet_12
+      rect:
+        serializedVersion: 2
+        x: 713
+        y: 13
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d2ca2869524746950800000000000000
+      internalID: 6441401071834410029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_barrier_sheet_13
+      rect:
+        serializedVersion: 2
+        x: 763
+        y: 13
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 587b13d3a26998330800000000000000
+      internalID: 3713664475903145861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_barrier_sheet_14
+      rect:
+        serializedVersion: 2
+        x: 813
+        y: 13
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b6d8edbcb1af5e50800000000000000
+      internalID: 6800331794364815033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_barrier_sheet_15
+      rect:
+        serializedVersion: 2
+        x: 863
+        y: 13
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b3dddbeb9aa2d3f50800000000000000
+      internalID: 6862688315720457531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_barrier_sheet_16
+      rect:
+        serializedVersion: 2
+        x: 913
+        y: 17
+        width: 24
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4387c6e8c4b477c40800000000000000
+      internalID: 5509955461290162228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_barrier_sheet_17
+      rect:
+        serializedVersion: 2
+        x: 963
+        y: 23
+        width: 24
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: efdcd965f6b6e8f90800000000000000
+      internalID: -6949499049047372290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: statusfx_barrier_sheet_18
+      rect:
+        serializedVersion: 2
+        x: 1016
+        y: 28
+        width: 65
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aca49fad7b2466680800000000000000
+      internalID: -8762242667582502198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      statusfx_barrier_sheet_0: -433646261725164882
+      statusfx_barrier_sheet_1: 1651618075083444281
+      statusfx_barrier_sheet_10: 3129375847731806424
+      statusfx_barrier_sheet_11: 2157112774086212318
+      statusfx_barrier_sheet_12: 6441401071834410029
+      statusfx_barrier_sheet_13: 3713664475903145861
+      statusfx_barrier_sheet_14: 6800331794364815033
+      statusfx_barrier_sheet_15: 6862688315720457531
+      statusfx_barrier_sheet_16: 5509955461290162228
+      statusfx_barrier_sheet_17: -6949499049047372290
+      statusfx_barrier_sheet_18: -8762242667582502198
+      statusfx_barrier_sheet_2: 1553528103541660246
+      statusfx_barrier_sheet_3: -9069102944456062671
+      statusfx_barrier_sheet_4: 7572950326715899310
+      statusfx_barrier_sheet_5: 6478072694353765051
+      statusfx_barrier_sheet_6: 5651981257029729638
+      statusfx_barrier_sheet_7: -2905837707083407484
+      statusfx_barrier_sheet_8: 3981599599489508831
+      statusfx_barrier_sheet_9: 850405993818376380
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
