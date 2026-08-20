@@ -110,6 +110,7 @@ public class Enemy : MonoBehaviour
             if (isCrit) diedToCrit = true;
             playerCombat.OnEnemyKilled(this);
             DropOnDeath drop = GetComponent<DropOnDeath>();
+            if (drop != null) drop.DropItems(transform.position);
             drop.DropItems(transform.position);
             
             if (enemyAI != null)
@@ -126,6 +127,7 @@ public class Enemy : MonoBehaviour
             else if (enemyData.isREE)
             {
                 isDead = true;
+                Destroy(gameObject);
             }
             else if (!enemyData.isBoss)
             {

@@ -16,7 +16,7 @@ MonoBehaviour:
   speed: 12
   damage: 20
   mobName: DeathSummon
-  isREE: 0
+  isREE: 1
   isBoss: 0
   goldValue: 0
   xpValue: 0
