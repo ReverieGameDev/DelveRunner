@@ -239,6 +239,7 @@ public class PlayerCombat : MonoBehaviour
     public float lightningStrikesTwiceCritDmgCap = .75f;
     public float lightningStrikesTwiceDmg = 0.02f;
     public int lightningStrikesTwiceStacks;
+    private float lightningStrikesTwiceApplied = 0f;
 
     public bool strikeGoldActive = false;
     public int strikeGoldChance;
@@ -298,6 +299,7 @@ public class PlayerCombat : MonoBehaviour
     }
     public void ResetStatBonuses()
     {
+        lightningStrikesTwiceApplied = 0f;
         attackBonus = 0f; attack = attackBase;
         attackSpeedBonus = 0f; attackSpeed = attackSpeedBase;
         critChanceBonus = 0; critChance = critChanceBase;
@@ -635,27 +637,32 @@ public class PlayerCombat : MonoBehaviour
             ModifyStat("attack", -flowStateDamage);
         }
         if (isRunAndHitActive) RunAndHit(false);
-        if (achillesHeelIsActive && UnityEngine.Random.Range(1, 101) < achillesHeelChance)
+        if (achillesHeelIsActive && UnityEngine.Random.Range(1, 101) <= achillesHeelChance)
         {
             damage *= achillesHeelDamage;
         }
         if (critRoll < effectiveCritChance)
         {
-            float critMult;
+            float critMult = effectiveCritDamage;
             if (gamblersFallacyActive)
             {
                 ModifyGoldValue("pickup", gamblersFallacyPayout);
             }
             if (jackpotActive && playerMoney >= jackpotGoldCost && UnityEngine.Random.Range(1, 1001) < jackpotChance)
             {
-                critMult = jackpotCritDamage;                 // replaces crit math entirely
-                ModifyGoldValue("shop", jackpotGoldCost);     // "shop" = your subtract path
-                lightningStrikesTwiceStacks = 0;              // jackpot hit isn't a normal crit combo
+                critDamageBonus -= lightningStrikesTwiceApplied;
+                lightningStrikesTwiceApplied = 0f;
+                critDamage = Mathf.Max(critDamageBase + critDamageBonus, 1f);
+                lightningStrikesTwiceStacks = 0;
             }
             else if (lightningStrikesTwiceActive)
             {
                 lightningStrikesTwiceStacks++;
-                critMult = effectiveCritDamage + Mathf.Min(lightningStrikesTwiceCritDmgCap,lightningStrikesTwiceStacks * lightningStrikesTwiceDmg);
+                float target = Mathf.Min(lightningStrikesTwiceCritDmgCap, lightningStrikesTwiceStacks * lightningStrikesTwiceDmg);
+                critMult = effectiveCritDamage + (target - lightningStrikesTwiceApplied);
+                critDamageBonus += target - lightningStrikesTwiceApplied;
+                lightningStrikesTwiceApplied = target;
+                critDamage = Mathf.Max(critDamageBase + critDamageBonus, 1f);
             }
             else
             {
@@ -878,12 +885,12 @@ public class PlayerCombat : MonoBehaviour
     {
         if (currentPlayerHealth/maxHealth <= doOrDieHpThreshold && !doOrDieActivated)
         {
-            ModifyStat("attack speed", doOrDieAS);
+            ModifyStat("attack speed", -doOrDieAS);
             doOrDieActivated = true;
         }
         if (currentPlayerHealth / maxHealth >= doOrDieHpThreshold && doOrDieActivated)
         {
-            ModifyStat("attack speed", -doOrDieAS);
+            ModifyStat("attack speed", doOrDieAS);
             doOrDieActivated = false;
         }
     }
@@ -900,23 +907,31 @@ public class PlayerCombat : MonoBehaviour
         {
             int healAmount = (int)hpRegen + (int)(rampingRegenValue * Mathf.Sqrt(rampingRegenCounter) / 2f);
             healAmount = Mathf.Min(healAmount, 14);
-            currentPlayerHealth += healAmount;
+            currentPlayerHealth = Mathf.Min(currentPlayerHealth + healAmount, (int)maxHealth);
+            RefreshHPUI();
         }
         else if (!rampingRegenActive)
         {
-            currentPlayerHealth += (int)hpRegen;
+            currentPlayerHealth = Mathf.Min(currentPlayerHealth + (int)hpRegen, (int)maxHealth);
+            RefreshHPUI();
         }
         yield return new WaitForSeconds(5f);
         rampingRegenCounter++;
         if (emberSystem.aliveEnemies > 0 && hpRegenActive)
         {
-            StartCoroutine("HpRegen");
+            StartCoroutine(HpRegen());
         }
-        else if (emberSystem.aliveEnemies <= 0)
+        else
         {
             hpIsRegenning = false;
             rampingRegenCounter = 1;
         }
+    }
+
+    public void RefreshHPUI()
+    {
+        playerHpBar.value = currentPlayerHealth / (int)maxHealth;
+        playerHpBarNumber.text = currentPlayerHealth + " / " + (int)maxHealth;
     }
     #endregion
 
@@ -940,7 +955,7 @@ public class PlayerCombat : MonoBehaviour
         }
         if (bloodSoulBarrierActive && currentPlayerHealth < (int)maxHealth)
         {
-            HealPlayer(bloodSoulBarrierValue);
+            BloodHeal(bloodSoulBarrierValue);
         }
         if (soulSiphonLevel > 0)
         {
