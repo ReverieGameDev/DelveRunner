@@ -17,15 +17,14 @@ public class REEManager : MonoBehaviour
     {
         yield return null;
         MapGenerator mapGen = FindFirstObjectByType<MapGenerator>();
-        availableSpawnPoints = new List<Vector2>(mapGen.corridorMidpoints);
         SelectAndSpawnEncounters();
     }
 
     private void SelectAndSpawnEncounters()
     {
         MapGenerator mapGen = FindFirstObjectByType<MapGenerator>();
-        availableSpawnPoints = new List<Vector2>(mapGen.corridorMidpoints);
-        for (int i = 0; i < 6; i++)
+        availableSpawnPoints = new List<Vector2>(new HashSet<Vector2>(mapGen.corridorMidpoints));
+        for (int i = 0; i < Mathf.Min(6, availableSpawnPoints.Count); i++)
         {
             int randomIndex = Random.Range(0, availableSpawnPoints.Count);
             activeSpawnPoints.Add(availableSpawnPoints[randomIndex]);

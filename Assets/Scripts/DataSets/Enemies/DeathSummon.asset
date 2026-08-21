@@ -20,3 +20,4 @@ MonoBehaviour:
   isBoss: 0
   goldValue: 0
   xpValue: 0
+  isSpawn: 1

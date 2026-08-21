@@ -26,8 +26,10 @@ public class Enemy : MonoBehaviour
     public float enfeebleBonusDamage;
     [SerializeField] private DropOnDeath dropOnDeath;
     public bool diedToCrit = false;
+    private Animator anim;
     private void Awake()
     {
+        anim = GetComponent<Animator>();
         emberSystem = FindFirstObjectByType<EmberSystem>();
         if (!enemyData.isREE)
         {
@@ -111,7 +113,6 @@ public class Enemy : MonoBehaviour
             playerCombat.OnEnemyKilled(this);
             DropOnDeath drop = GetComponent<DropOnDeath>();
             if (drop != null) drop.DropItems(transform.position);
-            drop.DropItems(transform.position);
             
             if (enemyAI != null)
             {
@@ -127,7 +128,12 @@ public class Enemy : MonoBehaviour
             else if (enemyData.isREE)
             {
                 isDead = true;
-                Destroy(gameObject);
+                StartCoroutine(REEDeath());
+            }
+            else if (enemyData.isSpawn)
+            {
+                isDead = true;
+                StartCoroutine(SpawnDeath());
             }
             else if (!enemyData.isBoss)
             {
@@ -154,6 +160,18 @@ public class Enemy : MonoBehaviour
             popup.transform.SetAsLastSibling();
         }
         StartCoroutine(FlashOnDamage());
+    }
+    IEnumerator REEDeath()
+    {
+        anim.SetInteger("ArcherInt", 3);
+        GetComponent<Collider2D>().enabled = false;
+        yield return new WaitForSeconds(2f);
+    }
+    IEnumerator SpawnDeath()
+    {
+        anim.SetInteger("EnemyState", 3);
+        GetComponent<Collider2D>().enabled = false;
+        yield return new WaitForSeconds(1f);
     }
     IEnumerator FlashOnDamage()
     {

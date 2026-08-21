@@ -106,14 +106,14 @@ public class SkeletonArcher : MonoBehaviour
             anim.speed = 2.5f;
         }
         if (currentAttack == "arrowRain") { attackWindupTime = .75f; enemyAttackIndicator.SetIndicator(arrowRainIcon, attackWindupTime); }
-        enemyAI.isAttacking = true;
+        if (!isREE) enemyAI.isAttacking = true;
         yield return new WaitForSeconds(attackWindupTime);
         if (currentAttack == "arrowShot") { StartCoroutine("ArrowShot"); }
         if (currentAttack == "arrowVolley") { StartCoroutine("ArrowVolley"); }
         if (currentAttack == "multiShot") { StartCoroutine("MultiShot"); }
         if (currentAttack == "arrowRain") { StartCoroutine("ArrowRain"); }
         yield return new WaitForSeconds(attackSpeed);
-        enemyAI.isAttacking = false;
+        if (!isREE) enemyAI.isAttacking = false;
         isReadyTofire = true;
     }
 

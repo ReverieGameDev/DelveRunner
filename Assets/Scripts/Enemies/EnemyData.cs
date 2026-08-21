@@ -11,4 +11,5 @@ public class EnemyData : ScriptableObject
     public bool isBoss;
     public int goldValue;
     public int xpValue;
+    public bool isSpawn;
 }

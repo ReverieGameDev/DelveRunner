@@ -515,6 +515,7 @@ GameObject:
   - component: {fileID: -7949400207083938196}
   - component: {fileID: 7966408393520302267}
   - component: {fileID: 372038558406224739}
+  - component: {fileID: 6598819082917953392}
   m_Layer: 0
   m_Name: REE skeletonArcher
   m_TagString: Enemy
@@ -631,7 +632,7 @@ MonoBehaviour:
   emberPickup: {fileID: 7187405047775818436, guid: 9041a98763e3eb046a3ba1609185608a, type: 3}
   maxEnemyHealth: 0
   hptext: {fileID: 2245165792071000526}
-  damageText: {fileID: 0}
+  damageText: {fileID: 3387354775039598578, guid: 50cacda3beffc074fad27b29e0df1126, type: 3}
   enfeebled: 0
   enfeebleBonusDamage: 0
   dropOnDeath: {fileID: 0}
@@ -841,6 +842,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dropTable: {fileID: 11400000, guid: 493decd74a45cf54e9b8fde4136027e9, type: 2}
+--- !u!114 &6598819082917953392
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3207597751485716074}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db6a28425dce1494dbb24b038911a2c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3532946075077959240
 GameObject:
   m_ObjectHideFlags: 0
