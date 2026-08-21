@@ -18,7 +18,7 @@ public class EmberSystem : MonoBehaviour
     private SpawnManager spawnManager;
     public int aliveEnemies;
     private bool swarmSpawning = false;
-    private float swarmSpawnFreq = .75f;
+    public float swarmSpawnFreq = 5f;
     public bool isFightNodeActive = false;
     public int swarmCount = 0;
     public int swarmCap = 10;
@@ -37,11 +37,6 @@ public class EmberSystem : MonoBehaviour
         if (emberAmount > baseEmber)
         {
             emberAmount = baseEmber;
-        }
-        if (emberAmount == 0)
-        {
-            int swarmCount = FindObjectsByType<Enemy>(FindObjectsSortMode.None).Count(e => e.enemyData.mobName == "DeathSummon");
-            if (swarmCount < swarmCap) spawnManager.SpawnSwarm();
         }
         emberComp.pointLightOuterRadius = ((float)emberAmount / baseEmber) * lightRadius;
     }
