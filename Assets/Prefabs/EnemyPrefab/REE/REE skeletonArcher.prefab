@@ -513,6 +513,8 @@ GameObject:
   - component: {fileID: 1447173515182137328}
   - component: {fileID: 8494414992028959590}
   - component: {fileID: -7949400207083938196}
+  - component: {fileID: 7966408393520302267}
+  - component: {fileID: 372038558406224739}
   m_Layer: 0
   m_Name: REE skeletonArcher
   m_TagString: Enemy
@@ -627,7 +629,13 @@ MonoBehaviour:
   money1: {fileID: 1932543559876745157, guid: 91e32193b603d804c8db355aa0cc2034, type: 3}
   isDead: 0
   emberPickup: {fileID: 7187405047775818436, guid: 9041a98763e3eb046a3ba1609185608a, type: 3}
+  maxEnemyHealth: 0
   hptext: {fileID: 2245165792071000526}
+  damageText: {fileID: 0}
+  enfeebled: 0
+  enfeebleBonusDamage: 0
+  dropOnDeath: {fileID: 0}
+  diedToCrit: 0
 --- !u!50 &4771121501443939898
 Rigidbody2D:
   serializedVersion: 5
@@ -685,7 +693,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -747,6 +755,92 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &7966408393520302267
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3207597751485716074}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d6c38e3af2d02948b01e7b5925f0361, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activeStatusEffects: []
+  iconGrid: {fileID: 3239386419402765956, guid: 205bf72d5c214bf4587e09e935fb777b, type: 3}
+  testIcon: {fileID: 5190207617398983162, guid: ac992f808e74d2a47bf8a7af973c772c, type: 3}
+  enfeebleIcon:
+  - {fileID: 6998498517016682191, guid: ee9a0ef90420f69469b28002bcef6b11, type: 3}
+  - {fileID: 2295266956967483577, guid: ee9a0ef90420f69469b28002bcef6b11, type: 3}
+  - {fileID: -8246194034554851850, guid: ee9a0ef90420f69469b28002bcef6b11, type: 3}
+  - {fileID: 6791488183434351651, guid: ee9a0ef90420f69469b28002bcef6b11, type: 3}
+  - {fileID: -6922824611504708507, guid: ee9a0ef90420f69469b28002bcef6b11, type: 3}
+  - {fileID: -445149134930858826, guid: ee9a0ef90420f69469b28002bcef6b11, type: 3}
+  - {fileID: -280123232155073963, guid: ee9a0ef90420f69469b28002bcef6b11, type: 3}
+  - {fileID: -6615739977609474518, guid: ee9a0ef90420f69469b28002bcef6b11, type: 3}
+  - {fileID: 981666579568315656, guid: ee9a0ef90420f69469b28002bcef6b11, type: 3}
+  - {fileID: -7571237060108917149, guid: ee9a0ef90420f69469b28002bcef6b11, type: 3}
+  - {fileID: 3257863958088838138, guid: ee9a0ef90420f69469b28002bcef6b11, type: 3}
+  - {fileID: 2720564173285571276, guid: ee9a0ef90420f69469b28002bcef6b11, type: 3}
+  - {fileID: -1773327695067396669, guid: ee9a0ef90420f69469b28002bcef6b11, type: 3}
+  - {fileID: -8051703320904270141, guid: ee9a0ef90420f69469b28002bcef6b11, type: 3}
+  - {fileID: -1168602048430222612, guid: ee9a0ef90420f69469b28002bcef6b11, type: 3}
+  poisonIcon:
+  - {fileID: -7281360336788188098, guid: e35de086b8f81ed4aa75527844bae6b3, type: 3}
+  - {fileID: -8600498110742003430, guid: e35de086b8f81ed4aa75527844bae6b3, type: 3}
+  - {fileID: -5444929966823233306, guid: e35de086b8f81ed4aa75527844bae6b3, type: 3}
+  - {fileID: 8067159215264294552, guid: e35de086b8f81ed4aa75527844bae6b3, type: 3}
+  - {fileID: 833090700740290749, guid: e35de086b8f81ed4aa75527844bae6b3, type: 3}
+  - {fileID: 833090700740290749, guid: e35de086b8f81ed4aa75527844bae6b3, type: 3}
+  - {fileID: -6050291069212422602, guid: e35de086b8f81ed4aa75527844bae6b3, type: 3}
+  - {fileID: 7411397333280118462, guid: e35de086b8f81ed4aa75527844bae6b3, type: 3}
+  burnIcon:
+  - {fileID: -253817593597142684, guid: ce16bccd99db25642a24bc11385e72d2, type: 3}
+  - {fileID: -2456495555900872960, guid: ce16bccd99db25642a24bc11385e72d2, type: 3}
+  - {fileID: 2411173785219672254, guid: ce16bccd99db25642a24bc11385e72d2, type: 3}
+  - {fileID: 7841855670036646169, guid: ce16bccd99db25642a24bc11385e72d2, type: 3}
+  - {fileID: -2182226083147113301, guid: ce16bccd99db25642a24bc11385e72d2, type: 3}
+  - {fileID: -1104502388, guid: ce16bccd99db25642a24bc11385e72d2, type: 3}
+  - {fileID: -1156489080, guid: ce16bccd99db25642a24bc11385e72d2, type: 3}
+  - {fileID: 1331890192, guid: ce16bccd99db25642a24bc11385e72d2, type: 3}
+  cinderIcon:
+  - {fileID: 1160579610086430406, guid: 5d56d8ad5741c6e43979dbf296db8d06, type: 3}
+  - {fileID: 4187108522880517994, guid: 5d56d8ad5741c6e43979dbf296db8d06, type: 3}
+  - {fileID: 3884199759963286028, guid: 5d56d8ad5741c6e43979dbf296db8d06, type: 3}
+  - {fileID: 7128280860616395255, guid: 5d56d8ad5741c6e43979dbf296db8d06, type: 3}
+  - {fileID: -8522338661196074499, guid: 5d56d8ad5741c6e43979dbf296db8d06, type: 3}
+  - {fileID: -6061034536996653221, guid: 5d56d8ad5741c6e43979dbf296db8d06, type: 3}
+  - {fileID: 909228855263473017, guid: 5d56d8ad5741c6e43979dbf296db8d06, type: 3}
+  - {fileID: -6434055967439342569, guid: 5d56d8ad5741c6e43979dbf296db8d06, type: 3}
+  - {fileID: 6451135518619962576, guid: 5d56d8ad5741c6e43979dbf296db8d06, type: 3}
+  - {fileID: 4494945222410977087, guid: 5d56d8ad5741c6e43979dbf296db8d06, type: 3}
+  - {fileID: 5082369451931819720, guid: 5d56d8ad5741c6e43979dbf296db8d06, type: 3}
+  - {fileID: -8281213591042976923, guid: 5d56d8ad5741c6e43979dbf296db8d06, type: 3}
+  - {fileID: -8728747465719416299, guid: 5d56d8ad5741c6e43979dbf296db8d06, type: 3}
+  - {fileID: -2693034593524913808, guid: 5d56d8ad5741c6e43979dbf296db8d06, type: 3}
+  - {fileID: -466574916627691768, guid: 5d56d8ad5741c6e43979dbf296db8d06, type: 3}
+  shockIcon:
+  - {fileID: 7668337168036636885, guid: 1711f027fb904ba4eb78700ed0900241, type: 3}
+  - {fileID: 2374733091868893032, guid: 1711f027fb904ba4eb78700ed0900241, type: 3}
+  - {fileID: -5571530360428339175, guid: 1711f027fb904ba4eb78700ed0900241, type: 3}
+  - {fileID: 1020678963672152283, guid: 1711f027fb904ba4eb78700ed0900241, type: 3}
+  - {fileID: 4721980452045604344, guid: 1711f027fb904ba4eb78700ed0900241, type: 3}
+  - {fileID: 3071692701319462449, guid: 1711f027fb904ba4eb78700ed0900241, type: 3}
+  shockArcPrefab: {fileID: 0}
+--- !u!114 &372038558406224739
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3207597751485716074}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b838d53ac123b2e4298791c4e9e7d8ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dropTable: {fileID: 11400000, guid: 493decd74a45cf54e9b8fde4136027e9, type: 2}
 --- !u!1 &3532946075077959240
 GameObject:
   m_ObjectHideFlags: 0
