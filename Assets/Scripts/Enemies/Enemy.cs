@@ -81,7 +81,6 @@ public class Enemy : MonoBehaviour
     }
     public void reduceHp(float damageTaken, int hitCount = 1, bool isCrit = false, WeaponStatusEffect type = WeaponStatusEffect.None)
     {
-        Debug.Log(enemyHealth + " / " + maxEnemyHealth + " on " + gameObject.name);
         if (enemyHealth <= 0 ) return;
         if (playerCombat.curtainCallActive && !enemyData.isBoss && isCrit && enemyHealth/maxEnemyHealth <= playerCombat.curtainCallExecute)
         {
@@ -107,6 +106,7 @@ public class Enemy : MonoBehaviour
         //if (enemyAI.isBackline)
 
         hptext.text = (int)enemyHealth + " / " + (int)maxEnemyHealth;
+        if (hpBar != null) hpBar.value = enemyHealth / maxEnemyHealth;
         if (enemyHealth <= 0)
         {
             if (isCrit) diedToCrit = true;
@@ -163,12 +163,14 @@ public class Enemy : MonoBehaviour
     }
     IEnumerator REEDeath()
     {
+        
         anim.SetInteger("ArcherInt", 3);
         GetComponent<Collider2D>().enabled = false;
         yield return new WaitForSeconds(2f);
     }
     IEnumerator SpawnDeath()
     {
+        emberSystem.swarmCount--;
         anim.SetInteger("EnemyState", 3);
         GetComponent<Collider2D>().enabled = false;
         yield return new WaitForSeconds(1f);

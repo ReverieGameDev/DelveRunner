@@ -20,7 +20,8 @@ public class EmberSystem : MonoBehaviour
     private bool swarmSpawning = false;
     private float swarmSpawnFreq = .75f;
     public bool isFightNodeActive = false;
-    private int swarmCap = 20;
+    public int swarmCount = 0;
+    public int swarmCap = 10;
     void Start()
     {
         Instance = this;
@@ -106,7 +107,11 @@ public class EmberSystem : MonoBehaviour
     {
         while (emberAmount <= 0)
         {
-            spawnManager.SpawnSwarm();
+            if (swarmCount < swarmCap)
+            {
+                spawnManager.SpawnSwarm();
+                swarmCount++;
+            }
             yield return new WaitForSeconds(swarmSpawnFreq);
         }
         swarmSpawning = false;
