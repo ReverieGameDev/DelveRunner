@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using TMPro;
+using UnityEditor.Rendering;
 using UnityEngine;
 using UnityEngine.InputSystem.Android;
 using UnityEngine.UI;
@@ -29,7 +30,8 @@ public class AugmentManager : MonoBehaviour
     public TextMeshProUGUI augment3AbilityDetails;
 
     public GameObject augmentSelect;
-    
+    public int augmentTierMaxRoll = 4;
+    private int tierRandomizer;
 
     [SerializeField] private PlayerCombat playerCombat;
 
@@ -49,7 +51,7 @@ public class AugmentManager : MonoBehaviour
         Time.timeScale = 0;//we stop time for augment selection
         augmentSlots.Clear();// clear the currently held augment slots
         augmentSelection.Clear();// clear the previous tiers pool
-        int tierRandomizer = Random.Range(1,4);//picks a tier from tier 1-3
+        tierRandomizer = Random.Range(1, augmentTierMaxRoll);//picks a tier from tier 1-3
         RandomAugmentGenerator(tierRandomizer);//pick out 3 augments
     }
     public void RandomAugmentGenerator(int tier)
@@ -76,7 +78,7 @@ public class AugmentManager : MonoBehaviour
             int RandomPick = Random.Range(0, levelable.Count);
             augmentSlots[RandomPoolReplacement] = levelable[RandomPick];
         }
-        
+        if (tierRandomizer == 3) augmentTierMaxRoll--;
         DisplayAvailableAugments();
     }
 

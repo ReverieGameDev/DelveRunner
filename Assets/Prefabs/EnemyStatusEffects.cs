@@ -18,6 +18,7 @@ public class ActiveStatusEffects
     public int emberGain;
     public int currentShockStacks = 1;
     public int maxShockStacks = 3;
+    public int bleedStacks = 1;
 }
 
 public class EnemyStatusEffects : MonoBehaviour
@@ -32,8 +33,10 @@ public class EnemyStatusEffects : MonoBehaviour
     public Sprite[] poisonIcon;
     public Sprite[] burnIcon;
     public Sprite[] cinderIcon;
+    public Sprite[] bleedIcon;
     public Sprite[] shockIcon;
-    public GameObject shockArcPrefab;
+    public GameObject shockPrefab;
+    public GameObject shockboltPrefab;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -53,6 +56,7 @@ public class EnemyStatusEffects : MonoBehaviour
                     case WeaponStatusEffect.Burn:
                     case WeaponStatusEffect.Cinder:
                     case WeaponStatusEffect.Shock:
+                    case WeaponStatusEffect.Bleed:
                     case WeaponStatusEffect.Poison:
                         activeStatusEffects[i].tickTimer += Time.deltaTime;
                         activeStatusEffects[i].duration -= Time.deltaTime;
@@ -72,10 +76,14 @@ public class EnemyStatusEffects : MonoBehaviour
                                 {
                                     PlayerCombat.Instance.HealPlayer(PlayerCombat.Instance.harvestHeal);
                                 }
-                                enemy.reduceHp(activeStatusEffects[i].damage * activeStatusEffects[i].poisonStacks, 1, false, activeStatusEffects[i].type);
+                                enemy.reduceHp(activeStatusEffects[i].damage * activeStatusEffects[i].poisonStacks * activeStatusEffects[i].bleedStacks, 1, false, activeStatusEffects[i].type);
                                 if (activeStatusEffects[i].type == WeaponStatusEffect.Shock && PlayerCombat.Instance.aConductionActive) PlayerCombat.Instance.AddManaPlayer(PlayerCombat.Instance.aConductionManaPerTick);
                                 if (activeStatusEffects[i].type == WeaponStatusEffect.Cinder) EmberSystem.Instance.AddEmber(activeStatusEffects[i].emberGain);
-                                if (activeStatusEffects[i].type == WeaponStatusEffect.Shock) RelayShock(activeStatusEffects[i].currentShockStacks);
+                                if (activeStatusEffects[i].type == WeaponStatusEffect.Shock)
+                                { 
+                                    Instantiate(shockPrefab,transform.position, Quaternion.identity);
+                                    RelayShock(activeStatusEffects[i].currentShockStacks); 
+                                }
                                 
                             }
                         }
@@ -198,6 +206,39 @@ public class EnemyStatusEffects : MonoBehaviour
             activeStatusEffects.Add(newPoison);
         }
     }
+    public void ESEBleed(float bleedDuration, int bleedDamage, float bleedTickRate)
+    {
+        bool bleedAlreadyActive = false;
+
+        foreach (ActiveStatusEffects activeStatuses in activeStatusEffects)
+        {
+            if (activeStatuses.type == WeaponStatusEffect.Bleed)
+            {
+                activeStatuses.damage = Mathf.Max(activeStatuses.damage, bleedDamage);
+                bleedAlreadyActive = true;
+                if (activeStatuses.bleedStacks < 5)
+                {
+                    activeStatuses.bleedStacks++;
+                }
+                if (DurationChange(bleedDuration) > activeStatuses.duration)
+                {
+                    activeStatuses.duration = DurationChange(bleedDuration);
+                }
+            }
+        }
+        if (!bleedAlreadyActive)
+        {
+            ActiveStatusEffects newBleed = new ActiveStatusEffects();
+            newBleed.type = WeaponStatusEffect.Bleed;
+            newBleed.icon = Instantiate(testIcon, iconGrid.transform, false);
+            newBleed.timerText = newBleed.icon.GetComponentInChildren<TextMeshProUGUI>();
+            newBleed.icon.GetComponent<StatusIconAnimator>().frames = bleedIcon;
+            newBleed.duration = DurationChange(bleedDuration);
+            newBleed.damage = bleedDamage;
+            newBleed.tickRate = bleedTickRate;
+            activeStatusEffects.Add(newBleed);
+        }
+    }
     public void ESECinder(float cinderDuration, int cinderDamage, float cinderTickRate, int emberAmount = 1)
     {
         {
@@ -264,37 +305,16 @@ public class EnemyStatusEffects : MonoBehaviour
 
     public void RelayShock(int currentStacks)
     {
+        
         List<GameObject> enemies = GameObject.FindGameObjectsWithTag("Enemy").ToList();
         enemies = enemies.Where(inRange=> inRange != enemy.gameObject && Vector2.Distance(inRange.transform.position, enemy.transform.position) <= 10).ToList();
         for (int i = 0; i < currentStacks; i++)
         {
             if (enemies.Count == 0) break;
             int enemyHit = (Random.Range(0, enemies.Count));
-            enemies[enemyHit].GetComponent<Enemy>().reduceHp(enemies[enemyHit].GetComponent<Enemy>().enemyHealth * 0.03f, 1, false, WeaponStatusEffect.Shock);
-            Instantiate(shockArcPrefab, enemies[enemyHit].transform.position, Quaternion.identity);
-            if (PlayerCombat.Instance.aStaticCarrierActive)
-            {
-                if (Random.Range(0, 101) < PlayerCombat.Instance.aStaticCarrierChance)
-                {
-                    EnemyStatusEffects targetEse = enemies[enemyHit].GetComponent<EnemyStatusEffects>();
-                    int randomStatus = Random.Range(0, 4);
-                    switch (randomStatus)
-                    {
-                        case 0:
-                            targetEse.ESEBurn(4f, 3, 1f);
-                            break;
-                        case 1:
-                            targetEse.ESEPoison(5f, 2, 1f);
-                            break;
-                        case 2:
-                            targetEse.ESEEnfeeble(4f, 0.1f);
-                            break;
-                        case 3:
-                            targetEse.ESECinder(4f, 3, 1f, 1);
-                            break;
-                    }
-                }
-            }
+            GameObject shockbolt = Instantiate(shockboltPrefab, transform.position, Quaternion.identity);
+            ShockboltCarrier shockboltScript = shockbolt.GetComponent<ShockboltCarrier>();
+            shockboltScript.enemyGameObjectHit = enemies[enemyHit];
             enemies.RemoveAt(enemyHit);
         }
     }

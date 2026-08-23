@@ -316,6 +316,15 @@ MonoBehaviour:
   - {fileID: -8728747465719416299, guid: 5d56d8ad5741c6e43979dbf296db8d06, type: 3}
   - {fileID: -2693034593524913808, guid: 5d56d8ad5741c6e43979dbf296db8d06, type: 3}
   - {fileID: -466574916627691768, guid: 5d56d8ad5741c6e43979dbf296db8d06, type: 3}
+  bleedIcon:
+  - {fileID: 1314696570579959667, guid: d5b1ca5cdccab804e9935c262f8600cc, type: 3}
+  - {fileID: -5218342071716530049, guid: d5b1ca5cdccab804e9935c262f8600cc, type: 3}
+  - {fileID: 6666878905337823910, guid: d5b1ca5cdccab804e9935c262f8600cc, type: 3}
+  - {fileID: 2632576387410542129, guid: d5b1ca5cdccab804e9935c262f8600cc, type: 3}
+  - {fileID: 4244463069866653960, guid: d5b1ca5cdccab804e9935c262f8600cc, type: 3}
+  - {fileID: 6088158663018571535, guid: d5b1ca5cdccab804e9935c262f8600cc, type: 3}
+  - {fileID: 4936086976558185963, guid: d5b1ca5cdccab804e9935c262f8600cc, type: 3}
+  - {fileID: 845986689902787024, guid: d5b1ca5cdccab804e9935c262f8600cc, type: 3}
   shockIcon:
   - {fileID: 7668337168036636885, guid: 1711f027fb904ba4eb78700ed0900241, type: 3}
   - {fileID: 2374733091868893032, guid: 1711f027fb904ba4eb78700ed0900241, type: 3}
@@ -323,7 +332,8 @@ MonoBehaviour:
   - {fileID: 1020678963672152283, guid: 1711f027fb904ba4eb78700ed0900241, type: 3}
   - {fileID: 4721980452045604344, guid: 1711f027fb904ba4eb78700ed0900241, type: 3}
   - {fileID: 3071692701319462449, guid: 1711f027fb904ba4eb78700ed0900241, type: 3}
-  shockArcPrefab: {fileID: 0}
+  shockPrefab: {fileID: 8861653601698211415, guid: 2bf989fd63fd5ae4e8e76a62ddf8edf8, type: 3}
+  shockboltPrefab: {fileID: 8633060714365672165, guid: f9d99c2c09b01684ab01acb732c73dff, type: 3}
 --- !u!212 &4860575806460717071
 SpriteRenderer:
   m_ObjectHideFlags: 0

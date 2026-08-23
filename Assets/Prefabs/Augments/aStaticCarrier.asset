@@ -16,7 +16,7 @@ MonoBehaviour:
   maxAugmentLevel: 3
   augmentIcon: {fileID: 6127216783419180935, guid: d31d2118351484f44aec81c7baaf2eaf, type: 3}
   augmentTier: 2
-  augmentWeight: 1
+  augmentWeight: 99
   requiredAugmentWeapon: {fileID: 0}
   requiredAugmentSoulCoinUpgrade: {fileID: 0}
   augmentDescriptionName: Static Carrier
