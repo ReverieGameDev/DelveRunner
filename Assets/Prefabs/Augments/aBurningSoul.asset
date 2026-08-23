@@ -9,21 +9,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 509965c6ba757964c9cb40be63357168, type: 3}
+  m_Script: {fileID: 11500000, guid: 5b3232097c1ab0543b77ee67971fc7a3, type: 3}
   m_Name: aBurningSoul
   m_EditorClassIdentifier: 
   augmentId: aBurningSoul
   maxAugmentLevel: 3
-  augmentIcon: {fileID: -3886671547546631027, guid: 58ce4158b8cd07641a7961f491eeb05b, type: 3}
+  augmentIcon: {fileID: -8009923492573040185, guid: 17219aa2eaa96384c96cd5f2f42adeaa, type: 3}
   augmentTier: 1
-  augmentWeight: 0
+  augmentWeight: 1
   requiredAugmentWeapon: {fileID: 0}
   requiredAugmentSoulCoinUpgrade: {fileID: 0}
   augmentDescriptionName: Burning Soul
-  augmentDescription: 'SOUL STONE
+  augmentDescription: 'Your damage scales with your current ember.
 
-    Your damage scales with your current ember. '
-  augmentPerLevelDescription: 'Damage at full ember: 150%/175%/200%
+    Empty ember:
+    50% damage. Full ember: up to 200%.'
+  augmentPerLevelDescription: 'Max Damage at full ember:
 
-    Damage at
-    0 ember: 50%'
+    150%/175%/200%'

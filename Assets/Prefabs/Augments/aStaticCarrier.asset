@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0513085582e95cc4ebddec815e518a5c, type: 3}
+  m_Name: aStaticCarrier
+  m_EditorClassIdentifier: 
+  augmentId: aStaticCarrier
+  maxAugmentLevel: 3
+  augmentIcon: {fileID: 6127216783419180935, guid: d31d2118351484f44aec81c7baaf2eaf, type: 3}
+  augmentTier: 2
+  augmentWeight: 1
+  requiredAugmentWeapon: {fileID: 0}
+  requiredAugmentSoulCoinUpgrade: {fileID: 0}
+  augmentDescriptionName: Static Carrier
+  augmentDescription: Your attacks carry an unstable charge that Shocks enemies on
+    contact. The arc has a chance to drag your other status effects along with it,
+    spreading them through the current.
+  augmentPerLevelDescription: 'Shock chance: 20%/30%/40%
+
+    Arcs carry a random
+    status effect 25%/40%/55%'

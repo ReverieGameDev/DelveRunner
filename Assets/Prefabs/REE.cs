@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class REE : MonoBehaviour
 {
+    private bool triggered = false;
     private EmberSystem emberSystem;
     public List<GameObject> reeEncounterList = new List<GameObject>();
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -19,8 +20,10 @@ public class REE : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (triggered) return;
         if (collision.CompareTag("Player") && !emberSystem.isFightNodeActive)
         {
+            triggered = true;
             int randomEnemy = Random.Range(0, reeEncounterList.Count);
             Instantiate(reeEncounterList[randomEnemy], transform.position, Quaternion.identity);
             Destroy(gameObject);

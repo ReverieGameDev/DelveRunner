@@ -244,12 +244,12 @@ public class EnvironmentThreat : MonoBehaviour
     {
         if (environmentState == EnvironmentState.Charging)
         {
-            chargeCounter = Mathf.Max(chargeCounter - 1,0);
+            chargeCounter = Mathf.Max(chargeCounter - totalChargeTime, 0);
         }
     }
     public void EnvironmentThreatNullObelisk()
     {
-        LerpNullCircle(nullCircle.transform.localScale + new Vector3(1f, 1f, 0));
+        LerpNullCircle(nullCircle.transform.localScale + new Vector3(2.25f, 2.25f, 0));
     }
     public void EnvironmentThreatReduceNullObelisk()
     {
@@ -262,7 +262,7 @@ public class EnvironmentThreat : MonoBehaviour
         changeNullCircleSize = true;
     }
 
-    private void OnTriggerStay2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Weapon"))
         {

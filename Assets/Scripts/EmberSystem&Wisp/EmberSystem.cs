@@ -34,6 +34,14 @@ public class EmberSystem : MonoBehaviour
 
     void Update()
     {
+        if (emberAmount == 0)
+        {
+            if (!swarmSpawning)
+            {
+                swarmSpawning = true;
+                StartCoroutine("SpawnSwarm");
+            }
+        }
         if (emberAmount > baseEmber)
         {
             emberAmount = baseEmber;
@@ -63,14 +71,13 @@ public class EmberSystem : MonoBehaviour
 
     public void AddEmber(int emberToAdd)
     {
-        isEmberActive = true;
-        if (emberAmount == 0)
-        {
-            StartCoroutine("DepleteEmber");
-        }
-
         emberAmount += emberToAdd;
         if (emberAmount > baseEmber) emberAmount = baseEmber;
+        if (!isEmberActive)
+        {
+            isEmberActive = true;
+            StartCoroutine("DepleteEmber");
+        }
     }
 
     public void NewWave()

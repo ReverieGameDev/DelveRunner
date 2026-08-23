@@ -9,17 +9,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56b73ec2e15ae134a831d50ce77e00e7, type: 3}
-  m_Name: aScholar
+  m_Script: {fileID: 11500000, guid: 1f73b763e8e71804e826da9e633daa28, type: 3}
+  m_Name: aEmberWick
   m_EditorClassIdentifier: 
-  augmentId: aScholar
+  augmentId: aEmberWick
   maxAugmentLevel: 2
-  augmentIcon: {fileID: 3396138015713303654, guid: dd825c79750297547ad4c48e6b73813e, type: 3}
-  augmentTier: 2
+  augmentIcon: {fileID: -2270010837763053826, guid: 43dc4e9dcc842354ea3ca86bbb7a1a47, type: 3}
+  augmentTier: 1
   augmentWeight: 1
   requiredAugmentWeapon: {fileID: 0}
   requiredAugmentSoulCoinUpgrade: {fileID: 0}
-  augmentDescriptionName: Scholar
-  augmentDescription: Enemies killed while afflicted by your status effects grant
-    bonus XP.
-  augmentPerLevelDescription: 'Bonus XP Drops: 1/2'
+  augmentDescriptionName: Ember Wick
+  augmentDescription: While your ember burns above half, your status effects last
+    longer.
+  augmentPerLevelDescription: 'Duration: +30%/+50%'

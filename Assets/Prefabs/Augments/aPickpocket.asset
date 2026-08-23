@@ -9,16 +9,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b2015e960f3c784489639e9e0f14b4a3, type: 3}
-  m_Name: aRekindle
+  m_Script: {fileID: 11500000, guid: 81f2835c94c70454284370ea09bc234c, type: 3}
+  m_Name: aPickpocket
   m_EditorClassIdentifier: 
-  augmentId: aRekindle
+  augmentId: aPickpocket
   maxAugmentLevel: 2
-  augmentIcon: {fileID: 0}
+  augmentIcon: {fileID: -5757391796715666730, guid: b56f8240ff9720e4e964c694dbcad147, type: 3}
   augmentTier: 2
   augmentWeight: 1
   requiredAugmentWeapon: {fileID: 0}
   requiredAugmentSoulCoinUpgrade: {fileID: 0}
-  augmentDescriptionName: Rekindle
-  augmentDescription: Killing an enemy afflicted by your status effects grants ember.
-  augmentPerLevelDescription: 'Ember gained: 5/10'
+  augmentDescriptionName: Pickpocket
+  augmentDescription: On-hit, chance to knock coins loose from an enemy.
+  augmentPerLevelDescription: 'Chance: 10%/18%
+
+    Gold: 1-3'

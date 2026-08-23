@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: aBlightedSoul
   m_EditorClassIdentifier: 
   augmentId: aBlightedSoul
-  maxAugmentLevel: 0
+  maxAugmentLevel: 1
   augmentIcon: {fileID: -3062665138650254500, guid: 6d7ce37e6198a5e46bcc750e870aa0d0, type: 3}
   augmentTier: 1
-  augmentWeight: 0
+  augmentWeight: 1
   requiredAugmentWeapon: {fileID: 0}
   requiredAugmentSoulCoinUpgrade: {fileID: 0}
   augmentDescriptionName: Blighted Soul

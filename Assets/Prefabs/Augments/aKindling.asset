@@ -16,7 +16,7 @@ MonoBehaviour:
   maxAugmentLevel: 3
   augmentIcon: {fileID: 358459484289319377, guid: 20262da89d47c3f4fa604e977084c03a, type: 3}
   augmentTier: 1
-  augmentWeight: 10
+  augmentWeight: 1
   requiredAugmentWeapon: {fileID: 0}
   requiredAugmentSoulCoinUpgrade: {fileID: 0}
   augmentDescriptionName: Kindling

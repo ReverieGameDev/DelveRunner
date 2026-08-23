@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f781c4e5519acd45b73a6d81ba3c33c, type: 3}
+  m_Name: aConduction
+  m_EditorClassIdentifier: 
+  augmentId: aConduction
+  maxAugmentLevel: 3
+  augmentIcon: {fileID: 824002333867631345, guid: 095b68c178a728246bf0b4b264ddd47f, type: 3}
+  augmentTier: 1
+  augmentWeight: 1
+  requiredAugmentWeapon: {fileID: 0}
+  requiredAugmentSoulCoinUpgrade: {fileID: 0}
+  augmentDescriptionName: Conduction
+  augmentDescription: Your Shocks restore your mana.
+  augmentPerLevelDescription: 'Mana refunded per Shock tick: 2/4/6'
