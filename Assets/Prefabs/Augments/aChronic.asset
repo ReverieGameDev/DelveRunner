@@ -9,16 +9,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 153889451b4cf2049b745821c32e16b9, type: 3}
+  m_Script: {fileID: 11500000, guid: a5f7e421790c6684081e55a619aeba2f, type: 3}
   m_Name: aChronic
   m_EditorClassIdentifier: 
-  augmentId: achronic
+  augmentId: aChronic
   maxAugmentLevel: 3
-  augmentIcon: {fileID: -5252977781323943493, guid: 9321d40d763c2af478887d9885445b7d, type: 3}
+  augmentIcon: {fileID: -5655927028324287619, guid: ef93703838d6bc84585fb1b2cf2dc584, type: 3}
   augmentTier: 1
   augmentWeight: 1
   requiredAugmentWeapon: {fileID: 0}
   requiredAugmentSoulCoinUpgrade: {fileID: 0}
   augmentDescriptionName: Chronic
-  augmentDescription: Your status effects last longer.
-  augmentPerLevelDescription: 'Duration: +25%/+40%/+60%'
+  augmentDescription: Your status effects last longer on enemies.
+  augmentPerLevelDescription: 'Status effect duration: +30%/+40%/+50%'

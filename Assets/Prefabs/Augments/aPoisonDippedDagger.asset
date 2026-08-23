@@ -15,7 +15,7 @@ MonoBehaviour:
   augmentId: aPoisonDippedDagger
   maxAugmentLevel: 3
   augmentIcon: {fileID: 7411671237444888201, guid: d18b5dea8f78a3a419ab5fb3906a8e5c, type: 3}
-  augmentTier: 1
+  augmentTier: 2
   augmentWeight: 1
   requiredAugmentWeapon: {fileID: 0}
   requiredAugmentSoulCoinUpgrade: {fileID: 0}

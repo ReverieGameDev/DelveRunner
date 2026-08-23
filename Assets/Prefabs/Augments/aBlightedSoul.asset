@@ -16,7 +16,7 @@ MonoBehaviour:
   maxAugmentLevel: 1
   augmentIcon: {fileID: -3062665138650254500, guid: 6d7ce37e6198a5e46bcc750e870aa0d0, type: 3}
   augmentTier: 1
-  augmentWeight: 1
+  augmentWeight: 3
   requiredAugmentWeapon: {fileID: 0}
   requiredAugmentSoulCoinUpgrade: {fileID: 0}
   augmentDescriptionName: Blighted Soul

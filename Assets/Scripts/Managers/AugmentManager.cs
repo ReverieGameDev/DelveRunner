@@ -50,7 +50,7 @@ public class AugmentManager : MonoBehaviour
         augmentSlots.Clear();// clear the currently held augment slots
         augmentSelection.Clear();// clear the previous tiers pool
         int tierRandomizer = Random.Range(1,4);//picks a tier from tier 1-3
-        RandomAugmentGenerator(1);//pick out 3 augments
+        RandomAugmentGenerator(tierRandomizer);//pick out 3 augments
     }
     public void RandomAugmentGenerator(int tier)
     {

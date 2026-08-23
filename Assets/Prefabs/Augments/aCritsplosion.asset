@@ -15,7 +15,7 @@ MonoBehaviour:
   augmentId: aCritsplosion
   maxAugmentLevel: 1
   augmentIcon: {fileID: -7559640090927240418, guid: d94432bcbd138e747858ce00ad0b7d3c, type: 3}
-  augmentTier: 3
+  augmentTier: 2
   augmentWeight: 1
   requiredAugmentWeapon: {fileID: 0}
   requiredAugmentSoulCoinUpgrade: {fileID: 0}

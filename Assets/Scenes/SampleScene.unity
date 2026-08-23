@@ -19129,14 +19129,29 @@ MonoBehaviour:
   augmentSelect: {fileID: 575009761}
   playerCombat: {fileID: 1509286736}
   augmentPool:
-  - {fileID: 11400000, guid: 91a48c7430aba554e84ba7d6d1bb0b21, type: 2}
+  - {fileID: 11400000, guid: 2c1ad1666e1e5be4687c2598c0c9cb1a, type: 2}
+  - {fileID: 11400000, guid: e31cfbdfdf824e340abae4fb57007d81, type: 2}
+  - {fileID: 11400000, guid: aaf71654044749a42a1fabba2b2499d0, type: 2}
+  - {fileID: 11400000, guid: c911ee307ad1cdd4f866ecd9f7a83d2f, type: 2}
+  - {fileID: 11400000, guid: 361caa6cb4ed7a449b519c3317e79757, type: 2}
+  - {fileID: 11400000, guid: 2720ef4e753a6b349a5b761f363c612b, type: 2}
+  - {fileID: 11400000, guid: 2b5b09cf0f9d9594db1274bf87ad46f5, type: 2}
+  - {fileID: 11400000, guid: cdd5344644e0ff040a52806749d13ea1, type: 2}
+  - {fileID: 11400000, guid: 6c623f0b993e65b42a4bf916909f2cb4, type: 2}
+  - {fileID: 11400000, guid: 15798626149c63b48a62fedf272c6f7f, type: 2}
+  - {fileID: 11400000, guid: d5882420ad0929540a93dee925d91c75, type: 2}
   - {fileID: 11400000, guid: 0932cef2a7719fd4cacb7ec95ec6ea57, type: 2}
+  - {fileID: 11400000, guid: 91cccac8de1511a4f93b3af703f8ba19, type: 2}
+  - {fileID: 11400000, guid: 0fae8045c78f49944b398c9e692892e9, type: 2}
+  - {fileID: 11400000, guid: 40e703cd66a7b9d4b85bb0ff45330718, type: 2}
+  - {fileID: 11400000, guid: 36be46c31a3dff04da6f031ff4f8e84d, type: 2}
+  - {fileID: 11400000, guid: 91a48c7430aba554e84ba7d6d1bb0b21, type: 2}
+  - {fileID: 11400000, guid: fc86402404b3b0749a198cdebe961914, type: 2}
+  - {fileID: 11400000, guid: 34f08b25315f35240928c833e050f013, type: 2}
   - {fileID: 11400000, guid: 2220cdccca7cc1648899c326a2ac8c46, type: 2}
   - {fileID: 11400000, guid: 2c97587038ad66c46afdd5ae59eefeef, type: 2}
-  - {fileID: 11400000, guid: 40e703cd66a7b9d4b85bb0ff45330718, type: 2}
-  - {fileID: 11400000, guid: fc86402404b3b0749a198cdebe961914, type: 2}
-  - {fileID: 11400000, guid: ab07a00a8704f4d449a4437454418f35, type: 2}
-  - {fileID: 11400000, guid: d5882420ad0929540a93dee925d91c75, type: 2}
+  - {fileID: 11400000, guid: 6c30fb42a40152345b77de9b351dc61c, type: 2}
+  - {fileID: 11400000, guid: 142c5697e93e899419a36a46de5b6288, type: 2}
   augmentDisplaySlots:
   - {fileID: 2140734053}
   - {fileID: 1183760949}

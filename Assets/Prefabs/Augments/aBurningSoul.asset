@@ -15,7 +15,7 @@ MonoBehaviour:
   augmentId: aBurningSoul
   maxAugmentLevel: 3
   augmentIcon: {fileID: -8009923492573040185, guid: 17219aa2eaa96384c96cd5f2f42adeaa, type: 3}
-  augmentTier: 1
+  augmentTier: 3
   augmentWeight: 1
   requiredAugmentWeapon: {fileID: 0}
   requiredAugmentSoulCoinUpgrade: {fileID: 0}
