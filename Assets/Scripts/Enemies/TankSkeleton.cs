@@ -10,7 +10,6 @@ public class TankSkeleton : MonoBehaviour
     public GameObject slashAttackPrefab;
     public GameObject slashAttackIndicator;
     public Sprite slashIcon;
-    public Sprite regenerateIcon;
     public Sprite chargeIcon;
     private EnemyAttackIndicator enemyAttackIndicator;
     private List<string> attackList = new List<string>();
@@ -59,7 +58,6 @@ public class TankSkeleton : MonoBehaviour
         anim = GetComponentInChildren<Animator>();
         rb = GetComponent<Rigidbody2D>();
         attackList.Add("slash");
-        attackList.Add("regenerate");
         attackList.Add("charge");
         attackList.Add("leap");
         enemyAttackIndicator = GetComponentInChildren<EnemyAttackIndicator>();
@@ -159,20 +157,6 @@ public class TankSkeleton : MonoBehaviour
             
     }
 
-    IEnumerator WarriorRegenerationCheck()
-    {
-        int chanceToAttack = Random.Range(0, 100);
-        if (chanceToAttack <= 20)
-        {
-            enemyAI.isAttacking = true;
-            currentAttack = "regenerate";
-            StartCoroutine("WarriorIndicatorActivation");
-            yield break;
-        }
-        yield return new WaitForSeconds(slashCheckCooldownFloat);
-        regenerationCheckCooldownBool = false;
-    }
-
     IEnumerator WarriorIndicatorActivation()
     {
         if (currentAttack == "slash")
@@ -181,12 +165,6 @@ public class TankSkeleton : MonoBehaviour
             anim.SetInteger("WarriorInt", 2);
             attackWindupTime = .75f;
             enemyAttackIndicator.SetIndicator(slashIcon, attackWindupTime);
-            indicatorActive = true;
-        }
-        if (currentAttack == "regenerate")
-        {
-            attackWindupTime = 3f;
-            enemyAttackIndicator.SetIndicator(regenerateIcon, attackWindupTime);
             indicatorActive = true;
         }
         if (currentAttack == "charge")
@@ -211,7 +189,6 @@ public class TankSkeleton : MonoBehaviour
 
         if (currentAttack == "slash") { StartCoroutine("SlashAttack"); }
         if (currentAttack == "leap") { StartCoroutine("WarriorLeap"); }
-        if (currentAttack == "regenerate") { StartCoroutine("RegenerateAttack"); }
         if (currentAttack == "charge") { StartCoroutine("ChargeAttack"); }
         Destroy(tempAttackIndicator);
         yield return new WaitForSeconds(attackSpeed);
@@ -276,12 +253,6 @@ public class TankSkeleton : MonoBehaviour
     public void UnpauseWarriorLeap()
     {
         anim.speed = 1;
-    }
-    IEnumerator RegenerateAttack()
-    {
-        indicatorActive = false;
-        currentAttack = "";
-        yield return null;
     }
 
     IEnumerator ChargeAttack()
