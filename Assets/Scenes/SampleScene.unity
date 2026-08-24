@@ -36105,6 +36105,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38f10b667e7184f4bbf0e601a0fb6633, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bloodletterActive: 0
   madDoctrineReady: 1
   pausePanel: {fileID: 1322632774}
   statsText: {fileID: 1711142105}
@@ -37857,6 +37858,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 142c5697e93e899419a36a46de5b6288, type: 2}
   - {fileID: 11400000, guid: a2a7f6be03c383c4089fa0ff42f1b0bc, type: 2}
   - {fileID: 11400000, guid: efab40ce0f1ced8418f2769060f3d9f8, type: 2}
+  - {fileID: 11400000, guid: 14553099a2927b245a99d28127e36192, type: 2}
   augmentDisplaySlots:
   - {fileID: 2140734053}
   - {fileID: 1183760949}

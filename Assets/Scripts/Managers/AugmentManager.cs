@@ -61,7 +61,20 @@ public class AugmentManager : MonoBehaviour
         {
             if (augment.augmentTier == tier && !augmentDictionary.ContainsKey(augment)) //check if tier is correct 
             {
-                augmentSelection.Add(augment); //we simply add all of the available augments to this list
+                if (augment.requiredAugmentWeapon == null)
+                {
+                    augmentSelection.Add(augment); //we simply add all of the available augments to this list
+                }
+                if (augment.requiredAugmentWeapon != null)
+                {
+                    foreach (WeaponData weapon in WeaponManager.Instance.currentWeapons)
+                    {
+                        if (augment.requiredAugmentWeapon.wName == weapon.wName)
+                        {
+                            augmentSelection.Add(augment);
+                        }
+                    }
+                }
             }
         }
         augmentSelect.SetActive(true);//turn on the augment select screen.

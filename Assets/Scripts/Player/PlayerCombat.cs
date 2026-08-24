@@ -8,6 +8,7 @@ using System;
 
 public class PlayerCombat : MonoBehaviour
 {
+    public bool bloodletterActive = false;
     public bool madDoctrineReady = true;
     public GameObject pausePanel;
     [SerializeField] private TextMeshProUGUI statsText;

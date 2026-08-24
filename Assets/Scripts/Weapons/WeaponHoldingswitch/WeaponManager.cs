@@ -7,6 +7,7 @@ using static AttackManager;
 
 public class WeaponManager : MonoBehaviour
 {
+    public static WeaponManager Instance;
     public AttackManager.WeaponType[] heldWeapons;
     public WeaponData currentWeapon;
     public int weaponIndex = 0;
@@ -24,6 +25,7 @@ public class WeaponManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        Instance = this;
         currentWeapon = currentWeapons[0];
         UpdateWeaponUI(WeaponSwitch.Weapon1);
     }

@@ -6,7 +6,6 @@ public class LetterBasic : BasicAttackBase
     public float damageMultiplier = 1f;
     private WeaponData wepData;
     private Vector2 projectileDirection;
-    public bool bloodletterActive = false;
     public int bloodletterChance = 40;
     public GameObject bloodletterPrefab;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -29,7 +28,7 @@ public class LetterBasic : BasicAttackBase
         if (!collision.CompareTag("Enemy")) return;
         Enemy enemyScript = collision.GetComponent<Enemy>();
         PlayerCombat.Instance.DealDamage(enemyScript, wepData.wDamage * damageMultiplier);
-        if (bloodletterActive && Random.Range(1, 101) < bloodletterChance)
+        if (PlayerCombat.Instance.bloodletterActive && Random.Range(1, 101) < bloodletterChance)
         {
             collision.GetComponent<EnemyStatusEffects>().ESEBleed(4f, 4, 1f);
             Instantiate(bloodletterPrefab,collision.transform.position, Quaternion.identity);

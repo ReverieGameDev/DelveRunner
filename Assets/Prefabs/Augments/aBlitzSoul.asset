@@ -16,7 +16,7 @@ MonoBehaviour:
   maxAugmentLevel: 1
   augmentIcon: {fileID: -6155198190271476649, guid: ef195b444f74c744c890adf33f440162, type: 3}
   augmentTier: 3
-  augmentWeight: 99
+  augmentWeight: 1
   requiredAugmentWeapon: {fileID: 0}
   requiredAugmentSoulCoinUpgrade: {fileID: 0}
   augmentDescriptionName: Blitz Soul

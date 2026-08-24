@@ -76,7 +76,10 @@ public class EnemyStatusEffects : MonoBehaviour
                                 {
                                     PlayerCombat.Instance.HealPlayer(PlayerCombat.Instance.harvestHeal);
                                 }
-                                enemy.reduceHp(activeStatusEffects[i].damage * activeStatusEffects[i].poisonStacks * activeStatusEffects[i].bleedStacks, 1, false, activeStatusEffects[i].type);
+                                int mult = 1;
+                                if (activeStatusEffects[i].type == WeaponStatusEffect.Poison) mult = activeStatusEffects[i].poisonStacks;
+                                else if (activeStatusEffects[i].type == WeaponStatusEffect.Bleed) mult = activeStatusEffects[i].bleedStacks;
+                                enemy.reduceHp(activeStatusEffects[i].damage * mult, 1, false, activeStatusEffects[i].type);
                                 if (activeStatusEffects[i].type == WeaponStatusEffect.Shock && PlayerCombat.Instance.aConductionActive) PlayerCombat.Instance.AddManaPlayer(PlayerCombat.Instance.aConductionManaPerTick);
                                 if (activeStatusEffects[i].type == WeaponStatusEffect.Cinder) EmberSystem.Instance.AddEmber(activeStatusEffects[i].emberGain);
                                 if (activeStatusEffects[i].type == WeaponStatusEffect.Shock)

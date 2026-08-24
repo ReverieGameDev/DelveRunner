@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4150145008068648543}
   - component: {fileID: 1611904318971774520}
   - component: {fileID: 7165161812931724960}
+  - component: {fileID: 8624843194070309453}
   m_Layer: 0
   m_Name: bloodletterProc
   m_TagString: Untagged
@@ -76,7 +77,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 33
   m_Sprite: {fileID: 352373648438892133, guid: 1948e2820231446489e7410fd0822618, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -110,3 +111,15 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &8624843194070309453
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6077560605563530718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db6a28425dce1494dbb24b038911a2c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
