@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: 265605845aee5ac4bb36ffc9497981fe
+guid: dbad37a57f82efc4da068313ea41ed2b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7214228694299435577
-    second: divider-fade-001_0
-  - first:
-      213: -1632856806738208443
-    second: divider-fade-001_1
+      213: -5971894502665703180
+    second: AugmentCardBaseFG_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -75,7 +72,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 16384
+    maxTextureSize: 8192
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -116,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: divider-fade-001_0
+      name: AugmentCardBaseFG_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 192
-        height: 44
+        x: 4
+        y: 5
+        width: 92
+        height: 145
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 932e52c56c61e1460800000000000000
-      internalID: 7214228694299435577
+      spriteID: 4f0b08c17919f1da0800000000000000
+      internalID: -5971894502665703180
       vertices: []
       indices: 
       edges: []
@@ -141,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 49ebf9b8bf4f55f459855ef7de9df320
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -151,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      divider-fade-001_0: 7214228694299435577
+      AugmentCardBaseFG_0: -5971894502665703180
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

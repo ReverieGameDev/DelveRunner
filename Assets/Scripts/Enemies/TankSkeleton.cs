@@ -17,7 +17,6 @@ public class TankSkeleton : MonoBehaviour
     private string currentAttack;
     private float attackWindupTime;
     private bool slashCheckCooldownBool = false;
-    private bool regenerationCheckCooldownBool = false;
     public float slashCheckCooldownFloat = 2f;
     private EnemyAI enemyAI;
     private float attackSpeed = 4f;
@@ -48,17 +47,15 @@ public class TankSkeleton : MonoBehaviour
     public float leapDamage = 15f;
     public bool canLeapDamage = false;
     public GameObject leapHitboxPrefab;
-    private PlayerStatusEffects playerStatusEffects;
+
 
 
     void Start()
     {
-        playerStatusEffects = FindFirstObjectByType<PlayerStatusEffects>();
         enemy = GetComponentInChildren<Enemy>();
         anim = GetComponentInChildren<Animator>();
         rb = GetComponent<Rigidbody2D>();
         attackList.Add("slash");
-        attackList.Add("charge");
         attackList.Add("leap");
         enemyAttackIndicator = GetComponentInChildren<EnemyAttackIndicator>();
         enemyAI = GetComponentInChildren<EnemyAI>();

@@ -31,7 +31,6 @@ public class EnemyAI : MonoBehaviour
     public bool walkingToET = false;
     public EnvironmentThreat environmentThreat;
 
-
     // Movement helpers
     private Vector2 anchorPos;
 
@@ -198,10 +197,12 @@ public class EnemyAI : MonoBehaviour
     {
         transform.position = new Vector3(player.position.x , player.position.y+3);
         yield return new WaitForSeconds(2f);
-
-
     }
 
+    IEnumerator EnemyFree()
+    {
+        yield break;
+    }
     public void ReduceFromBackline()
     {
         anchorBehaviour.backlineEnemiesLeftAlive--;
@@ -231,12 +232,15 @@ public class EnemyAI : MonoBehaviour
                 Decide();
                 return;
             case EnemyMode.Solo:
-                if (Vector2.Distance(transform.position, soloTarget) > .1f) enemySoloState = EnemySoloState.soloIsMoving; // if the enemy has not reached their destination
-                else enemySoloState = EnemySoloState.soloIsIdle; // if the enemy has not reached their destination
-                if (enemySoloState == EnemySoloState.soloIsMoving) SetWalkAnim(1);
-                if (enemySoloState == EnemySoloState.soloIsIdle) SetWalkAnim(0);
+                if (!isAttacking)
+                {
+                    if (Vector2.Distance(transform.position, soloTarget) > .1f) enemySoloState = EnemySoloState.soloIsMoving;
+                    else enemySoloState = EnemySoloState.soloIsIdle;
+                    if (enemySoloState == EnemySoloState.soloIsMoving) SetWalkAnim(1);
+                    if (enemySoloState == EnemySoloState.soloIsIdle) SetWalkAnim(0);
+                    rb.MovePosition(Vector2.MoveTowards(rb.position, soloTarget, speed * Time.fixedDeltaTime));
+                }
                 Solo();
-                rb.MovePosition(Vector2.MoveTowards(rb.position, soloTarget, speed * Time.fixedDeltaTime));
                 break;
             case EnemyMode.Environment:
                 if (Vector2.Distance(transform.position, environmentThreat.operatorCoords) > .1f) //operator walks towards the destination to begin interacting with environment
@@ -251,20 +255,21 @@ public class EnemyAI : MonoBehaviour
                     environmentThreat.EnvironmentOperator(this);
                     SetWalkAnim(0); //actually the chant anim, havent made it yet
                 } 
-                Environment();
+                
                 break;
         }
         switch (currentState)
         {
             case EnemyState.Attack:
-                Attack();
                 break;
         }
     }
-
+    public void ResetSoloTarget()
+    {
+        soloTarget = transform.position;
+    }
     private void FormationMode()
     {
-        
         if (anchorBehaviour == null || anchorBehaviour.canWarriorLeap == true) return;
 
         anchorPos = assignedSpawnAnchor.transform.position;
@@ -306,10 +311,6 @@ public class EnemyAI : MonoBehaviour
     {
         currentMode = EnemyMode.Solo;
     }
-    private void Environment()
-    {
-
-    }
     private void Solo()
     {
         isSolo = true;
@@ -331,11 +332,6 @@ public class EnemyAI : MonoBehaviour
                 anim.SetInteger("NecromancerInt", value);
                 break;
         }
-    }
-
-    private void Attack()
-    {
-
     }
 
     private void Death()

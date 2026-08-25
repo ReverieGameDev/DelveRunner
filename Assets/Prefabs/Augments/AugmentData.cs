@@ -7,6 +7,7 @@ public abstract class AugmentData : ScriptableObject
     public int maxAugmentLevel;
     public Sprite augmentIcon;
     public int augmentTier = 1;
+    public Color TierColor => AugmentColors.TierColor(augmentTier);
     public int augmentWeight = 0;
     public WeaponData requiredAugmentWeapon;
     public SoulCoinNode requiredAugmentSoulCoinUpgrade;

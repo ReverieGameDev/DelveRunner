@@ -20,7 +20,7 @@ public class SkeletonArcher : MonoBehaviour
     public Sprite arrowRainIcon;
     public GameObject arrowTrajectory;
     public float attackWindupTime;
-    private float attackSpeed = 1f;
+    private float attackSpeed = 3f;
     private bool isIndicatorActive = false;
     private string currentAttack;
     private Vector2 archerToPlayerAngle;
@@ -108,12 +108,12 @@ public class SkeletonArcher : MonoBehaviour
         if (currentAttack == "arrowRain") { attackWindupTime = .75f; enemyAttackIndicator.SetIndicator(arrowRainIcon, attackWindupTime); }
         if (!isREE) enemyAI.isAttacking = true;
         yield return new WaitForSeconds(attackWindupTime);
+        if (!isREE) enemyAI.isAttacking = false;
         if (currentAttack == "arrowShot") { StartCoroutine("ArrowShot"); }
         if (currentAttack == "arrowVolley") { StartCoroutine("ArrowVolley"); }
         if (currentAttack == "multiShot") { StartCoroutine("MultiShot"); }
         if (currentAttack == "arrowRain") { StartCoroutine("ArrowRain"); }
         yield return new WaitForSeconds(attackSpeed);
-        if (!isREE) enemyAI.isAttacking = false;
         isReadyTofire = true;
     }
 

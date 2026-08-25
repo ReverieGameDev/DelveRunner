@@ -39,11 +39,15 @@ public class AugmentManager : MonoBehaviour
     public List<AugmentData> augmentPool = new List<AugmentData>();
     private List<AugmentData> augmentSelection = new List<AugmentData>();
 
+    public List<LevelsRow> cardLevels = new List<LevelsRow>();
     private List<AugmentData> augmentSlots = new List<AugmentData>();
     public List<Button> augmentDisplaySlots;
     public List<TextMeshProUGUI> augmentDisplayLevels;
     private int maxAugmentCount = 3;
-
+    public List<GameObject> levelupIndicatorList = new List<GameObject>();
+    public List<GameObject> augmentTierBorderColorList = new List<GameObject>();
+    public List<GameObject> augmentIconBorderColorList = new List<GameObject>();
+    public List<GameObject> augmentDividerColorList = new List<GameObject>();
     private int currentSlotIndex = 0;
 
     public void AugmentSelectionStart()
@@ -186,7 +190,7 @@ public class AugmentManager : MonoBehaviour
 
     public void DisplayAvailableAugments()
     {
-
+        AssignColorsAndLevelsToAugmentCards();
         augment1Icon.sprite = augmentSlots[0].augmentIcon;
         augment2Icon.sprite = augmentSlots[1].augmentIcon;
         augment3Icon.sprite = augmentSlots[2].augmentIcon;
@@ -207,11 +211,47 @@ public class AugmentManager : MonoBehaviour
     public void RefreshAvailableAugments()
     {
         int counter = 0;
+
         foreach (KeyValuePair<AugmentData, int> pair in augmentDictionary)
         {
+            if (counter >= augmentDisplaySlots.Count) break;
             augmentDisplaySlots[counter].GetComponent<Image>().sprite = pair.Key.augmentIcon;
             augmentDisplayLevels[counter].text = (pair.Value.ToString());
             counter++;
         }
+    }
+
+    private void AssignColorsAndLevelsToAugmentCards()
+    {
+        for (int i = 0; i < maxAugmentCount; i++)
+        {
+            Color c = AugmentColors.TierColor(augmentSlots[i].augmentTier);
+            augmentTierBorderColorList[i].GetComponent<Image>().color = c;
+            augmentIconBorderColorList[i].GetComponent<Image>().color = c;
+            augmentDividerColorList[i].GetComponent<Image>().color = c;
+        }
+        for (int i = 0; i < maxAugmentCount; i++)
+        {
+            augmentDictionary.TryGetValue(augmentSlots[i], out int currentLevel);
+            for (int x = 0; x < cardLevels[i].level.Count; x++)
+            {
+                cardLevels[i].level[x].SetActive(x < augmentSlots[i].maxAugmentLevel);
+                if (currentLevel < x)
+                {
+                    ColorUtility.TryParseHtmlString("#FF9900", out Color c);
+                    cardLevels[i].level[x].GetComponent<Image>().color = c;
+                }
+                else
+                {
+                    ColorUtility.TryParseHtmlString("#242424", out Color c);
+                    cardLevels[i].level[x].GetComponent<Image>().color = c;
+                }
+            }
+        }
+    }
+    [System.Serializable]
+    public class LevelsRow
+    {
+        public List<GameObject> level;
     }
 }

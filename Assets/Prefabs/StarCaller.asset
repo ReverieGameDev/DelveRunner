@@ -17,7 +17,7 @@ MonoBehaviour:
   wSpecialEffectDescription: Shoots a star, % chance to get ember back on hit
   wCost: 33
   wProjectilePrefab: {fileID: 1453308018842175484, guid: 8ad45f7fc023893458fa7795a5cb01e7, type: 3}
-  wDamage: 400
+  wDamage: 100
   wAS: 0.25
   wRange: 20
   wProjectileSpeed: 10

@@ -4,7 +4,8 @@ public enum EnemyMode
     Formation, 
     Decide, 
     Environment, 
-    Solo 
+    Solo,
+    Free
 }
 public enum EnemyState
 {
