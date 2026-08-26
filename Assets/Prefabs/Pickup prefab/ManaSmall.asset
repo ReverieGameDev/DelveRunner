@@ -15,3 +15,5 @@ MonoBehaviour:
   id: ManaSmall
   icon: {fileID: -7890147230178770464, guid: d18b5dea8f78a3a419ab5fb3906a8e5c, type: 3}
   amount: 15
+  itemName: Small Mana Potion
+  itemDescription: Restores 15 mana on use.

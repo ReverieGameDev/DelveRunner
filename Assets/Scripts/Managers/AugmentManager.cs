@@ -44,14 +44,51 @@ public class AugmentManager : MonoBehaviour
     public List<Button> augmentDisplaySlots;
     public List<TextMeshProUGUI> augmentDisplayLevels;
     private int maxAugmentCount = 3;
-    public List<GameObject> levelupIndicatorList = new List<GameObject>();
+    public List<GameObject> augmentLevelUpTrim = new List<GameObject>();
     public List<GameObject> augmentTierBorderColorList = new List<GameObject>();
     public List<GameObject> augmentIconBorderColorList = new List<GameObject>();
     public List<GameObject> augmentDividerColorList = new List<GameObject>();
+    public GameObject augmentSelectionScreen;
     private int currentSlotIndex = 0;
+    private bool augmentAnimScreenActive = false;
+    private float currentX;
+    private float currentY;
 
+    private void Start()
+    {
+        
+    }
+    private void Update()
+    {
+        if (augmentAnimScreenActive)
+        {
+            currentX += Time.unscaledDeltaTime*2;
+            augmentSelectionScreen.transform.localScale = new Vector2(currentX, currentX);
+            augmentAnimScreenActive = (currentX <= 1);
+            if (!augmentAnimScreenActive)
+            {
+                EndAugmentScreenAnim();
+            }
+        }
+    }
+    private void BeginAugmentScreenAnim()
+    {
+        currentX = 0;
+        currentY = 0;
+        augmentAnimScreenActive = true;
+        augment1.interactable = false;
+        augment2.interactable = false;
+        augment3.interactable = false;
+    }
+    private void EndAugmentScreenAnim()
+    {
+        augment1.interactable = true;
+        augment2.interactable = true;
+        augment3.interactable = true;
+    }
     public void AugmentSelectionStart()
     {
+        BeginAugmentScreenAnim();
         Time.timeScale = 0;//we stop time for augment selection
         augmentSlots.Clear();// clear the currently held augment slots
         augmentSelection.Clear();// clear the previous tiers pool
@@ -215,6 +252,10 @@ public class AugmentManager : MonoBehaviour
         foreach (KeyValuePair<AugmentData, int> pair in augmentDictionary)
         {
             if (counter >= augmentDisplaySlots.Count) break;
+            TooltipTrigger t = augmentDisplaySlots[counter].GetComponent<TooltipTrigger>();
+            t.title = pair.Key.augmentDescriptionName;
+            t.body = pair.Key.augmentDescription;
+            t.secondary = pair.Key.augmentPerLevelDescription;
             augmentDisplaySlots[counter].GetComponent<Image>().sprite = pair.Key.augmentIcon;
             augmentDisplayLevels[counter].text = (pair.Value.ToString());
             counter++;
@@ -233,20 +274,23 @@ public class AugmentManager : MonoBehaviour
         for (int i = 0; i < maxAugmentCount; i++)
         {
             augmentDictionary.TryGetValue(augmentSlots[i], out int currentLevel);
+            augmentLevelUpTrim[i].SetActive(currentLevel > 0);
             for (int x = 0; x < cardLevels[i].level.Count; x++)
-            {
-                cardLevels[i].level[x].SetActive(x < augmentSlots[i].maxAugmentLevel);
-                if (currentLevel < x)
                 {
-                    ColorUtility.TryParseHtmlString("#FF9900", out Color c);
-                    cardLevels[i].level[x].GetComponent<Image>().color = c;
+                    cardLevels[i].level[x].SetActive(x < augmentSlots[i].maxAugmentLevel);
+                    if (currentLevel <= x)
+                    {
+                        ColorUtility.TryParseHtmlString("#242424", out Color c);
+                        cardLevels[i].level[x].GetComponent<Image>().color = c;
+
+                    }
+                    else
+                    {
+                        ColorUtility.TryParseHtmlString("#FF9900", out Color c);
+                        cardLevels[i].level[x].GetComponent<Image>().color = c;
+                    }
+
                 }
-                else
-                {
-                    ColorUtility.TryParseHtmlString("#242424", out Color c);
-                    cardLevels[i].level[x].GetComponent<Image>().color = c;
-                }
-            }
         }
     }
     [System.Serializable]

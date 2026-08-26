@@ -2,7 +2,10 @@ using System;
 using System.Collections.Generic;
 using UnityEditor.Rendering;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using static UnityEditor.Experimental.AssetDatabaseExperimental.AssetDatabaseCounters;
+
 
 public class ItemInventory : MonoBehaviour
 {
@@ -11,7 +14,8 @@ public class ItemInventory : MonoBehaviour
     public List<InventorySlot> inventoryItems = new List<InventorySlot>();
     public List<GameObject> inventorySlots = new List<GameObject>();
     public Sprite noItemInventorySprite;
-    
+
+
     public int inventoryCapacity = 6;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -48,12 +52,19 @@ public class ItemInventory : MonoBehaviour
             if (i < inventoryItems.Count)
             {
                 inventorySlots[i].GetComponent<Image>().sprite = inventoryItems[i].item.icon;
+                TooltipTrigger t = inventorySlots[i].GetComponent<TooltipTrigger>();
+                t.title = inventoryItems[i].item.itemName;
+                t.body = inventoryItems[i].item.itemDescription;
+                t.secondary = "";
             }
             else
             {
                 inventorySlots[i].GetComponent<Image>().sprite = noItemInventorySprite;
             }
+
+
         }
+
     }
 
     public void AddToInventory(InventoryItemData itemAdded)

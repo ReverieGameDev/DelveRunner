@@ -15,3 +15,5 @@ MonoBehaviour:
   id: HPSmall
   icon: {fileID: 31348426900958772, guid: d18b5dea8f78a3a419ab5fb3906a8e5c, type: 3}
   amount: 15
+  itemName: Small Health Potion
+  itemDescription: Heals 15 health on use.

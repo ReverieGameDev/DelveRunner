@@ -15,3 +15,5 @@ MonoBehaviour:
   id: HPLarge
   icon: {fileID: 7232801843294237118, guid: d18b5dea8f78a3a419ab5fb3906a8e5c, type: 3}
   amount: 40
+  itemName: Large Health Potion
+  itemDescription: Heals 40 health on use.
