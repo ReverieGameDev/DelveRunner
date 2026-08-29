@@ -13,5 +13,7 @@ MonoBehaviour:
   m_Name: EmptySlot
   m_EditorClassIdentifier: 
   id: emptySlot
-  icon: {fileID: 2443832866915164383, guid: ff8377b482877a84788099a5e7e686fd, type: 3}
+  icon: {fileID: 2955983761155546030, guid: 1f96d608bc60f4a429a089967057f0bc, type: 3}
   amount: 1
+  itemName: 
+  itemDescription: 

@@ -288,4 +288,9 @@ public class ShopManager : MonoBehaviour
                 break;
         }
     }
+
+    public void UnfreezePlayer()
+    {
+        PlayerMovement.Instance.playerFrozen = false;
+    }
 }

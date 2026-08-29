@@ -20,7 +20,7 @@ public class LetterBasic : BasicAttackBase
         float angle = Mathf.Atan2(projectileDirection.y, projectileDirection.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0, 0, angle);
         if (angle > 90 || angle < -90)
-            transform.localScale = new Vector3(1, -2, 1);
+            transform.localScale = new Vector3(2, -1, 1);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

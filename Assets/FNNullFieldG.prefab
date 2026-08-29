@@ -30820,6 +30820,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FNButtonPressIndicator
       objectReference: {fileID: 0}
+    - target: {fileID: 7100439369647094061, guid: 6a44830d27163fa459efd066562e316f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8619072261154972904, guid: 6a44830d27163fa459efd066562e316f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.31

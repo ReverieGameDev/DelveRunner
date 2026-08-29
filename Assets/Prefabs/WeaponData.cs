@@ -6,6 +6,7 @@ public class WeaponData : ScriptableObject
     [Header("Identity")]
     public Sprite wIcon;
     public string wName;
+    public string wDescription;
     public string wSpecialEffectDescription;
     public int wCost;
 

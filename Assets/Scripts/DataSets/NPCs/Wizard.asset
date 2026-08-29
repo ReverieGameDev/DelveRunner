@@ -15,4 +15,4 @@ MonoBehaviour:
   npcName: Wizard
   portrait: {fileID: 845960445147644969, guid: d3cd6cbbf2120c64baeb1b63ae06b393, type: 3}
   lines:
-  - Welcome! I've got fresh new abilities just for you, straight from the runeforge!
+  - Hi pick an ability or else

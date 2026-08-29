@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: dbad37a57f82efc4da068313ea41ed2b
+guid: 1f96d608bc60f4a429a089967057f0bc
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5971894502665703180
-    second: AugmentCardBaseFG_0
+      213: 2955983761155546030
+    second: EmptyItem_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,23 +113,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: AugmentCardBaseFG_0
+      name: EmptyItem_0
       rect:
         serializedVersion: 2
-        x: 5
-        y: 6
-        width: 89
-        height: 141
+        x: 0
+        y: 0
+        width: 250
+        height: 250
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 12, y: 11, z: 12, w: 13}
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4f0b08c17919f1da0800000000000000
-      internalID: -5971894502665703180
+      spriteID: eabdf7db193c50920800000000000000
+      internalID: 2955983761155546030
       vertices: []
       indices: 
       edges: []
@@ -138,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: b950e7598394f4641ac2d2f096ebeead
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      AugmentCardBaseFG_0: -5971894502665703180
+      EmptyItem_0: 2955983761155546030
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

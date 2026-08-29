@@ -15,5 +15,4 @@ MonoBehaviour:
   npcName: Skill Master
   portrait: {fileID: -4668749935094595677, guid: a0566f16b70cd9a43bf6b1744bca078d, type: 3}
   lines:
-  - I've got a few new bounties, want to try your luck?
-  - One quest per delve, that's the rule.
+  - Spend your soul coins here, Solen!

@@ -7,7 +7,7 @@ public class PlayerMovement : MonoBehaviour
     public float yInput;
     public float knockback = 10f;
     public Vector2 playerPosition;
-    
+    public static PlayerMovement Instance;
     private Rigidbody2D playerRb;
     private PlayerCombat playerCombat;
     private SpriteRenderer spriteRenderer;
@@ -28,6 +28,7 @@ public class PlayerMovement : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        Instance = this;
         anim = GetComponent<Animator>();
         dialogueManager = FindFirstObjectByType<DialogueManager>();
         spriteRenderer = GetComponent<SpriteRenderer>();

@@ -116,6 +116,7 @@ public class DialogueManager : MonoBehaviour
         }
         if (npcTag == "Wizard")
         {
+            PlayerMovement.Instance.playerFrozen = true;
             shopManager.OpenWizardShop();
         }
         if (npcTag == "QuestBoard")
@@ -123,4 +124,5 @@ public class DialogueManager : MonoBehaviour
             shopManager.OpenQuestBoard();
         }
     }
+
 }

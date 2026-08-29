@@ -103,8 +103,9 @@ public class SoulCoinTreeButton : MonoBehaviour, IPointerEnterHandler
         }
     }
 
-    public void SetNode(SoulCoinNode newNode)
+    public void SetNode(SoulCoinNode newNode, SoulCoinManager manager)
     {
+        soulCoinManager = manager;
         node = newNode;
         if (!soulCoinManager.unlockedNodes.Contains(newNode.id))
         {

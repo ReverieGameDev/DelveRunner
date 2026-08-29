@@ -30794,9 +30794,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8840003892649394226}
     m_Modifications:
+    - target: {fileID: 3239215303585567976, guid: 6a44830d27163fa459efd066562e316f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7100439369647094061, guid: 6a44830d27163fa459efd066562e316f, type: 3}
       propertyPath: m_Name
       value: FNButtonPressIndicator
+      objectReference: {fileID: 0}
+    - target: {fileID: 7100439369647094061, guid: 6a44830d27163fa459efd066562e316f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8619072261154972904, guid: 6a44830d27163fa459efd066562e316f, type: 3}
       propertyPath: m_LocalPosition.x

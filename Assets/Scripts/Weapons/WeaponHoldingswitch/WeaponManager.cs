@@ -1,26 +1,16 @@
-
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using static AttackManager;
 
 public class WeaponManager : MonoBehaviour
 {
     public static WeaponManager Instance;
-    public AttackManager.WeaponType[] heldWeapons;
     public WeaponData currentWeapon;
-    public int weaponIndex = 0;
     public bool switchingWeapons = false;
-    public Sprite twinShadowsIcon;
-    public Sprite starDaggerIcon;
-    public Sprite bloodMaceIcon;
-    public Image weaponSlot1;
-    public Image weaponSlot2;
-    public Image weaponSlot3;
+
+    public List<Image> weaponSlotImages = new List<Image>();
     public List<WeaponData> currentWeapons = new List<WeaponData>();
-
-
     public float weaponSwitchCooldown;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -28,16 +18,6 @@ public class WeaponManager : MonoBehaviour
         Instance = this;
         currentWeapon = currentWeapons[0];
         UpdateWeaponUI(WeaponSwitch.Weapon1);
-    }
-    private Sprite GetWeaponSprite(WeaponType weapon)
-    {
-        switch (weapon)
-        {
-            case WeaponType.TwinShadows: return twinShadowsIcon;
-            case WeaponType.StarDagger: return starDaggerIcon;
-            case WeaponType.BloodMace: return bloodMaceIcon;
-            default: return null;
-        }
     }
     // Update is called once per frame
     void Update()
@@ -75,30 +55,38 @@ public class WeaponManager : MonoBehaviour
         {
             case WeaponSwitch.Weapon1:
                 currentWeapon = currentWeapons[0];
-                ColorUtility.TryParseHtmlString("#DBE02E", out Color selectedColor1);
-                weaponSlot1.color = selectedColor1;
+                UnityEngine.ColorUtility.TryParseHtmlString("#DBE02E", out Color selectedColor1);
+                weaponSlotImages[0].color = selectedColor1;
                 break;
             case WeaponSwitch.Weapon2:
                 currentWeapon = currentWeapons[1];
-                ColorUtility.TryParseHtmlString("#DBE02E", out Color selectedColor2);
-                weaponSlot2.color = selectedColor2;
+                UnityEngine.ColorUtility.TryParseHtmlString("#DBE02E", out Color selectedColor2);
+                weaponSlotImages[1].color = selectedColor2;
                 break;
             case WeaponSwitch.Weapon3:
                 currentWeapon = currentWeapons[2];
-                ColorUtility.TryParseHtmlString("#DBE02E", out Color selectedColor3);
-                weaponSlot3.color = selectedColor3;
+                UnityEngine.ColorUtility.TryParseHtmlString("#DBE02E", out Color selectedColor3);
+                weaponSlotImages[2].color = selectedColor3;
                 break; 
+        }
+        for (int i = 0; i < currentWeapons.Count; i++)
+        {
+            weaponSlotImages[i].sprite = currentWeapons[i].wIcon;
+            TooltipTrigger wep1 = weaponSlotImages[i].GetComponent<TooltipTrigger>();
+            wep1.title = currentWeapons[i].wName;
+            wep1.body = currentWeapons[i].wDescription;
+            wep1.secondary = currentWeapons[i].wSpecialEffectDescription;
         }
     }
 
     private void ResetWeaponUIHighlights()
     {
-        ColorUtility.TryParseHtmlString("#C68A44", out Color selectedColor1);
-        weaponSlot1.color = selectedColor1;
-        ColorUtility.TryParseHtmlString("#C68A44", out Color selectedColor2);
-        weaponSlot2.color = selectedColor2;
-        ColorUtility.TryParseHtmlString("#C68A44", out Color selectedColor3);
-        weaponSlot3.color = selectedColor3;
+        UnityEngine.ColorUtility.TryParseHtmlString("#C68A44", out Color selectedColor1);
+        weaponSlotImages[0].color = selectedColor1;
+        UnityEngine.ColorUtility.TryParseHtmlString("#C68A44", out Color selectedColor2);
+        weaponSlotImages[1].color = selectedColor2;
+        UnityEngine.ColorUtility.TryParseHtmlString("#C68A44", out Color selectedColor3);
+        weaponSlotImages[2].color = selectedColor3;
     }
     public enum WeaponSwitch
     {

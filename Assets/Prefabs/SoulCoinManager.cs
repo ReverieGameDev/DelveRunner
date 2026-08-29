@@ -168,7 +168,7 @@ public class SoulCoinManager : MonoBehaviour
     {
         for (int i = 0; i < slots.Count; i++)
         {
-            slots[i].GetComponent<SoulCoinTreeButton>().SetNode(tree.nodes[i]);
+            slots[i].GetComponent<SoulCoinTreeButton>().SetNode(tree.nodes[i], this);
         }
     }
     public IEnumerator FlashMessage(string message)

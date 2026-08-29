@@ -52,10 +52,7 @@ public class ItemInventory : MonoBehaviour
             if (i < inventoryItems.Count)
             {
                 inventorySlots[i].GetComponent<Image>().sprite = inventoryItems[i].item.icon;
-                TooltipTrigger t = inventorySlots[i].GetComponent<TooltipTrigger>();
-                t.title = inventoryItems[i].item.itemName;
-                t.body = inventoryItems[i].item.itemDescription;
-                t.secondary = "";
+
             }
             else
             {

@@ -1,4 +1,5 @@
 
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 public class Teleporter : MonoBehaviour
@@ -50,7 +51,7 @@ public class Teleporter : MonoBehaviour
     public void DelveDeeper()
     {
         playerCombat.delveLevel++;
-        
+        //PlayerPrefs.SetInt("SelectedLoadout", index);
         PlayerPrefs.SetInt("DelveLevel", playerCombat.delveLevel);
         PlayerPrefs.SetFloat("Gold", playerCombat.playerMoney);
         PlayerPrefs.SetString("CurrentAbility", currentAbility);

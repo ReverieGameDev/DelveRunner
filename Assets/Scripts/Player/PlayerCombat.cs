@@ -822,19 +822,18 @@ public class PlayerCombat : MonoBehaviour
     public void RefreshStats()
     {
         statsText.text =
-        $"Attack        {attackBase:F2} + {attackBonus:F2} = {attack:F2}\n" +
-        $"Attack Speed  {attackSpeedBase:F2} + {attackSpeedBonus:F2} = {attackSpeed:F2}\n" +
-        $"Crit Chance   {critChanceBase} + {critChanceBonus} = {critChance}\n" +
-        $"Crit Damage   {critDamageBase:F2} + {critDamageBonus:F2} = {critDamage:F2}\n" +
-        $"Armor         {armorBase:F2} + {armorBonus:F2} = {armor:F2}\n" +
-        $"Dodge         {dodgeBase:F2} + {dodgeBonus:F2} = {dodge:F2}\n" +
-        $"Move Speed    {movementSpeedBase:F2} + {movementSpeedBonus:F2} = {movementSpeed:F2}\n" +
-        $"XP Gain       {xpGainBase:F2} + {xpGainBonus:F2} = {xpGain:F2}\n" +
-        $"Gold Gain     {goldGainBase:F2} + {goldGainBonus:F2} = {goldGain:F2}\n" +
-        $"Status Resist {statusResistBase:F2} + {statusResistBonus:F2} = {statusResist:F2}\n" +
-        $"Consumable    {consumableEffectivenessBase:F2} + {consumableEffectivenessBonus:F2} = {consumableEffectiveness:F2}\n" +
-        $"Max Health    {baseMaxHealth:F0} → {maxHealth:F0}\n" +
-        $"Soul Mix Bank {soulMixPreviousTotal}";
+        $"Attack<pos=60%>{attack:F2}\n" +
+        $"Attack Speed<pos=60%>{attackSpeed:F2}\n" +
+        $"Crit Chance<pos=60%>{critChance}\n" +
+        $"Crit Damage<pos=60%>{critDamage:F2}\n" +
+        $"Armor<pos=60%>{armor:F2}\n" +
+        $"Dodge<pos=60%>{dodge:F2}\n" +
+        $"Move Speed<pos=60%>{movementSpeed:F2}\n" +
+        $"XP Gain<pos=60%>{xpGain:F2}\n" +
+        $"Gold Gain<pos=60%>{goldGain:F2}\n" +
+        $"Status Resist<pos=60%>{statusResist:F2}\n" +
+        $"Consumable<pos=60%>{consumableEffectiveness:F2}\n" +
+        $"Max Health<pos=60%>{maxHealth:F0}\n";
     }
     IEnumerator IFrames()
     {

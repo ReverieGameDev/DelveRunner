@@ -131,6 +131,10 @@ public class ItemHotbar : MonoBehaviour
             if (i < hotbarItems.Count)
             {
                 hotbarSlots[i].GetComponent<Image>().sprite = hotbarItems[i].item.icon;
+                TooltipTrigger t = hotbarSlots[i].GetComponent<TooltipTrigger>();
+                t.title = hotbarItems[i].item.itemName;
+                t.body = hotbarItems[i].item.itemDescription;
+                t.secondary = "";
             }
             else
             {
