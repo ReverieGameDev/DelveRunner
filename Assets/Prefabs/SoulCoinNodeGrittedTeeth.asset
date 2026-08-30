@@ -20,7 +20,8 @@ MonoBehaviour:
   cost: 0100000002000000030000000400000005000000
   requires: []
   siblings: []
-  description: 'Level 1: <color=white>+1 Armor</color>
+  description: Increases armor. Grit your teeth
+  abilityDetails: 'Level 1: <color=white>+1 Armor</color>
 
     Level 2: <color=white>+2
     Armor</color>
@@ -31,5 +32,4 @@ MonoBehaviour:
     Armor</color>
 
     Level 5: <color=white>+10 Armor</color>'
-  abilityDetails: Increases armor. Grit your teeth!
-  levelCost: 
+  levelCost: 1/2/3/4/5
