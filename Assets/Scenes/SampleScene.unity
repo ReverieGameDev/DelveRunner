@@ -32658,6 +32658,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentWeapon: {fileID: 0}
   switchingWeapons: 0
+  listOfWeapons:
+  - {fileID: 11400000, guid: 469ae2e8e9f58964e9dbe399fab41019, type: 2}
+  - {fileID: 11400000, guid: 44d4e6ae87ddcb3408ad8f0075d571fb, type: 2}
+  - {fileID: 11400000, guid: b1b01dec31583524aae9a41f11b201ee, type: 2}
+  - {fileID: 11400000, guid: 2535913ab9c4fc64d982e79bbce6a888, type: 2}
+  - {fileID: 11400000, guid: 2a8a9ecad2cf95948a0487b061f26255, type: 2}
   weaponSlotImages:
   - {fileID: 1527187685}
   - {fileID: 1780597747}

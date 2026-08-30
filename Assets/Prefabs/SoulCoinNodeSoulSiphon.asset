@@ -23,5 +23,5 @@ MonoBehaviour:
   siblings:
   - {fileID: 11400000, guid: 51b00135197cab4449ff6e5f4cba3462, type: 2}
   description: Every 3 kills, add 1 max health for the duration of this delve.
-  abilityDetails: <color=white>+1 Max Health per 3 kills</color>
+  abilityDetails: 'Level 1: <color=white>+1 Max Health per 3 kills</color>'
   levelCost: 

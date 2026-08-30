@@ -8,14 +8,43 @@ public class WeaponManager : MonoBehaviour
     public static WeaponManager Instance;
     public WeaponData currentWeapon;
     public bool switchingWeapons = false;
+    public List<WeaponData> listOfWeapons = new List<WeaponData>();
 
     public List<Image> weaponSlotImages = new List<Image>();
     public List<WeaponData> currentWeapons = new List<WeaponData>();
     public float weaponSwitchCooldown;
+    
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         Instance = this;
+
+        int loadout = PlayerPrefs.GetInt("SelectedLoadout", 0);
+        currentWeapons.Clear();
+        switch (loadout)
+        {
+            case 0: // Balanced
+                currentWeapons.Add(listOfWeapons[0]);
+                currentWeapons.Add(listOfWeapons[1]);
+                currentWeapons.Add(listOfWeapons[2]);
+                break;
+            case 1: // High DPS
+                currentWeapons.Add(listOfWeapons[0]);
+                currentWeapons.Add(listOfWeapons[2]);
+                currentWeapons.Add(listOfWeapons[4]);
+                break;
+            case 2: // Status Effects
+                currentWeapons.Add(listOfWeapons[1]);
+                currentWeapons.Add(listOfWeapons[0]);
+                currentWeapons.Add(listOfWeapons[4]);
+                break;
+            case 3: // Scaling/Ramp
+                currentWeapons.Add(listOfWeapons[0]);
+                currentWeapons.Add(listOfWeapons[2]);
+                currentWeapons.Add(listOfWeapons[3]);
+                break;
+        }
         currentWeapon = currentWeapons[0];
         UpdateWeaponUI(WeaponSwitch.Weapon1);
     }

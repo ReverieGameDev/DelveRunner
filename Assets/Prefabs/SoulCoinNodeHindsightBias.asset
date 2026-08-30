@@ -23,7 +23,8 @@ MonoBehaviour:
   siblings:
   - {fileID: 11400000, guid: 769203931493f0b45b404ae5346615bd, type: 2}
   - {fileID: 11400000, guid: edae4e0cf5517794c9ff610bd8b7f442, type: 2}
-  description: 'Level 1: <color=white>Heal 3 after 20s</color>
+  description: Return some health a short time after taking damage.
+  abilityDetails: 'Level 1: <color=white>Heal 3 after 20s</color>
 
     Level 2: <color=white>Heal
     4 after 18s</color>
@@ -35,5 +36,4 @@ MonoBehaviour:
 
     Level 5: <color=white>Heal 8 after
     10s</color>'
-  abilityDetails: Return some health a short time after taking damage.
   levelCost: 
