@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   augmentId: aConduction
   maxAugmentLevel: 3
-  augmentIcon: {fileID: 824002333867631345, guid: 095b68c178a728246bf0b4b264ddd47f, type: 3}
+  augmentIcon: {fileID: 21300000, guid: c506badf3909819409e8a1b6857286c8, type: 3}
   augmentTier: 1
   augmentWeight: 1
   requiredAugmentWeapon: {fileID: 0}

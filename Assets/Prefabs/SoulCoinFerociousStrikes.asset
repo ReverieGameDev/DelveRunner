@@ -15,7 +15,7 @@ MonoBehaviour:
   id: ferociousStrikes
   nodeName: Ferocious Strikes
   maxLevel: 5
-  icon: {fileID: 7028038252356802152, guid: 8277e1dc213a23f4588fbddf93c22b42, type: 3}
+  icon: {fileID: 6075611446304447812, guid: 8bba09110dc909e449fdce60c0517850, type: 3}
   unlockCost: 3
   cost: 0100000002000000030000000400000005000000
   requires: []

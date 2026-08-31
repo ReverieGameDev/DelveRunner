@@ -15,7 +15,7 @@ MonoBehaviour:
   id: jackpot
   nodeName: Jackpot
   maxLevel: 3
-  icon: {fileID: -2880745267144733026, guid: 30e5dac9f6208a5498148c1f00a4222b, type: 3}
+  icon: {fileID: 6644352324944172732, guid: 1d856a86d800647428b0094642dbe256, type: 3}
   unlockCost: 5
   cost: 050000000600000007000000
   requires:

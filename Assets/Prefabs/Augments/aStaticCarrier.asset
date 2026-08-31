@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   augmentId: aStaticCarrier
   maxAugmentLevel: 3
-  augmentIcon: {fileID: 6127216783419180935, guid: d31d2118351484f44aec81c7baaf2eaf, type: 3}
+  augmentIcon: {fileID: 21300000, guid: b8b44b6208bdd2b40a5a79e15e46f8cc, type: 3}
   augmentTier: 2
   augmentWeight: 99
   requiredAugmentWeapon: {fileID: 0}

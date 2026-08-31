@@ -12,20 +12,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23faef61eaf11b645b66eea870d38dd8, type: 3}
   m_Name: CosmicClaws
   m_EditorClassIdentifier: 
-  wIcon: {fileID: 4631006647033748224, guid: f8f1bcc78c8927049b86feb8ca40ea0f, type: 3}
-  wName: StarDagger
+  wIcon: {fileID: 21300000, guid: 98a2da957ac23514383faf3fe8d88d7a, type: 3}
+  wName: Cosmic Claws
+  wDescription: 
+  wSpecialEffectDescription: 'Charge: Unleashes a flurry of cosmic slashes'
+  wCost: 30
   wProjectilePrefab: {fileID: 7252702842100024630, guid: 1f34bc44a1599ef40b152bdaeb5c845e, type: 3}
-  wChargeProjectilePrefab: {fileID: 8865256399399366526, guid: de437016b3d0457439ee51265ebb6bec, type: 3}
   wDamage: 15
   wAS: 1
   wRange: 2
-  wSwitchCD: 1
-  weaponTargetingType: 0
-  weaponStatusEffect: 4
+  wProjectileSpeed: 0
   wProcChance: 10
-  wProjectileCount: 1
+  wStatusEffectDamage: 0
+  wStatusEffectTickRate: 0
+  wStatusEffectDuration: 0
+  wStatusEffectPercentage: 0
   hasChargeAttack: 1
-  chargeTime: 0.75
-  wSpecialEffectDescription: 'Charge: Unleashes a flurry of cosmic slashes'
-  wCost: 30
   wChargeTime: 1
+  wChargeProjectilePrefab: {fileID: 8865256399399366526, guid: de437016b3d0457439ee51265ebb6bec, type: 3}
+  wChargeProcChance: 0
+  wChargeEffectDamage: 0
+  wChargeEffectTickRate: 0
+  wChargeEffectDuration: 0

@@ -15,7 +15,7 @@ MonoBehaviour:
   id: insiderTrading
   nodeName: Insider Trading
   maxLevel: 3
-  icon: {fileID: -1526501506010576648, guid: 487a194eff86f2242b5a2d2549cf4158, type: 3}
+  icon: {fileID: -8175947561716053214, guid: fa2bb4a90277f0a4d9ba444e62b2a5cc, type: 3}
   unlockCost: 15
   cost: 040000000500000006000000
   requires:

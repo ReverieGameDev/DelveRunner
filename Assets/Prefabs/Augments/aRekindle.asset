@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   augmentId: aRekindle
   maxAugmentLevel: 2
-  augmentIcon: {fileID: 7267575232434478030, guid: 44e7fa78ae338c94d84f94f3eda9ed2b, type: 3}
+  augmentIcon: {fileID: 21300000, guid: f9da53e9bf83c844a86ff2b028290c5a, type: 3}
   augmentTier: 2
   augmentWeight: 1
   requiredAugmentWeapon: {fileID: 0}

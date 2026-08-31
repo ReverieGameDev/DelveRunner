@@ -15,7 +15,7 @@ MonoBehaviour:
   id: bitterPill
   nodeName: Bitter Pill
   maxLevel: 3
-  icon: {fileID: 1004408849091905174, guid: 487a194eff86f2242b5a2d2549cf4158, type: 3}
+  icon: {fileID: 6886280487820559463, guid: b8fcbc8935bbaf24bb81b90e74d9cbf9, type: 3}
   unlockCost: 3
   cost: 020000000300000006000000
   requires:

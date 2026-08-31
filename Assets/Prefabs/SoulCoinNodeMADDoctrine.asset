@@ -15,7 +15,7 @@ MonoBehaviour:
   id: madDoctrine
   nodeName: MAD Doctrine
   maxLevel: 5
-  icon: {fileID: -8607998687822290341, guid: 06344567a507ad14987496fb769cdac9, type: 3}
+  icon: {fileID: -8469814779787157109, guid: 06e795367ebc5484fbc99ad07825434d, type: 3}
   unlockCost: 5
   cost: 0200000003000000040000000500000006000000
   requires:

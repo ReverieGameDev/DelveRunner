@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   augmentId: aBurningSoul
   maxAugmentLevel: 3
-  augmentIcon: {fileID: -8009923492573040185, guid: 17219aa2eaa96384c96cd5f2f42adeaa, type: 3}
+  augmentIcon: {fileID: 21300000, guid: b8cdce267af246b438d62cd592315aeb, type: 3}
   augmentTier: 3
   augmentWeight: 1
   requiredAugmentWeapon: {fileID: 0}

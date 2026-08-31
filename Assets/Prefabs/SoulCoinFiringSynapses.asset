@@ -15,7 +15,7 @@ MonoBehaviour:
   id: firingSynapses
   nodeName: Firing Synapses
   maxLevel: 1
-  icon: {fileID: -2681809406195053031, guid: 3373f748dbbf131418b38fa01491a54c, type: 3}
+  icon: {fileID: 95255871399135787, guid: cb8b406f675955a41a6ab451368c6f06, type: 3}
   unlockCost: 5
   cost: 14000000
   requires:

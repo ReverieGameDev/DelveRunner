@@ -15,7 +15,7 @@ MonoBehaviour:
   id: hindsightBias
   nodeName: Hindsight Bias
   maxLevel: 5
-  icon: {fileID: 457387863454852933, guid: e9b0551045b85ab41896b6eb4139f35f, type: 3}
+  icon: {fileID: -2011723653278789963, guid: 4d7aeb0874a1c6d4c8ac3f2d9a14870e, type: 3}
   unlockCost: 5
   cost: 0200000003000000040000000500000006000000
   requires:

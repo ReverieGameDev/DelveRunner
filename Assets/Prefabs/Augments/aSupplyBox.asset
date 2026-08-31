@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   augmentId: aSupplyBox
   maxAugmentLevel: 3
-  augmentIcon: {fileID: -2120107037454647771, guid: a8496ef7868a43a40ad001425a269593, type: 3}
+  augmentIcon: {fileID: 21300000, guid: 541e254ae43c36841953cffa87514439, type: 3}
   augmentTier: 1
   augmentWeight: 10
   requiredAugmentWeapon: {fileID: 0}

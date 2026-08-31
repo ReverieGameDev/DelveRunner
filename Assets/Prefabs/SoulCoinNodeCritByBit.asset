@@ -15,7 +15,7 @@ MonoBehaviour:
   id: critByBit
   nodeName: Crit by Bit
   maxLevel: 5
-  icon: {fileID: 6655704742877720885, guid: bf485410464d45e47b21fdc0d4df6c1e, type: 3}
+  icon: {fileID: -4453743730957399991, guid: 463fb0eef0f404b44a6288255f2cd6a6, type: 3}
   unlockCost: 1
   cost: 0100000002000000030000000400000005000000
   requires: []

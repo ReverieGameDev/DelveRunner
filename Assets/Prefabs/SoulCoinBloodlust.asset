@@ -15,7 +15,7 @@ MonoBehaviour:
   id: bloodlust
   nodeName: Bloodlust
   maxLevel: 3
-  icon: {fileID: 5782074597677038422, guid: f7853b2c0265f1b4f94c7972cbf9e3a9, type: 3}
+  icon: {fileID: -5968816761868360690, guid: de61567bca38e05479d0e26126df1b25, type: 3}
   unlockCost: 10
   cost: 050000000a0000000f000000
   requires:

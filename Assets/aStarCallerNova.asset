@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   augmentId: aStarCallerNova
   maxAugmentLevel: 2
-  augmentIcon: {fileID: -6466806440633818635, guid: 519e4e4c7a8a53c4fa50bf2951dd7fca, type: 3}
+  augmentIcon: {fileID: 21300000, guid: c99177de3e7357c4f805939dab14cdd2, type: 3}
   augmentTier: 2
   augmentWeight: 1
   requiredAugmentWeapon: {fileID: 11400000, guid: 2535913ab9c4fc64d982e79bbce6a888, type: 2}

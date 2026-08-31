@@ -14,14 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   augmentId: aBarteredSoul
   maxAugmentLevel: 3
-  augmentIcon: {fileID: 4343170400286451165, guid: d18b5dea8f78a3a419ab5fb3906a8e5c, type: 3}
+  augmentIcon: {fileID: 21300000, guid: 69be45f6d580d4e42bc88ba79ced76a5, type: 3}
   augmentTier: 3
   augmentWeight: 1
   requiredAugmentWeapon: {fileID: 0}
   requiredAugmentSoulCoinUpgrade: {fileID: 0}
   augmentDescriptionName: Bartered Soul
-  augmentDescription: Taking this augment resets your money to 0 and your damage
-    is set to 25%. Gaining gold grants you damage.
-  augmentPerLevelDescription: 'Damage at 0 gold: 25%
-
-    Gold per +1% damage: 3/2/1'
+  augmentDescription: Your <color=#C9922E>gold</color> is set to 0 and your <color=#A56B4E>damage</color>
+    drops to 25%. Gaining <color=#C9922E>gold</color> raises your <color=#A56B4E>damage</color>.
+  augmentPerLevelDescription: '<color=#A56B4E>Damage</color> increase per 10 <color=#C9922E>gold</color>:
+    3%/5%/10%'

@@ -15,7 +15,7 @@ MonoBehaviour:
   id: lightningStrikesTwice
   nodeName: Lightning Strikes Twice
   maxLevel: 5
-  icon: {fileID: -9162930423088269526, guid: ee1bea10ab496384cbe7f57fe415a2e1, type: 3}
+  icon: {fileID: 996408834781862921, guid: 7b0f7c4d007dc1e46b139d16dfc35ffa, type: 3}
   unlockCost: 3
   cost: 0300000004000000050000000600000007000000
   requires:

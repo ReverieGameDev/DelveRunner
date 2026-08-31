@@ -15,7 +15,7 @@ MonoBehaviour:
   id: curtainCall
   nodeName: Curtain Call
   maxLevel: 3
-  icon: {fileID: 8393304176582402197, guid: 30e5dac9f6208a5498148c1f00a4222b, type: 3}
+  icon: {fileID: -4437474228050442737, guid: 8a29d6c2f1daa294aaa1b5a99444dc69, type: 3}
   unlockCost: 5
   cost: 0500000006000000070000000800000009000000
   requires:

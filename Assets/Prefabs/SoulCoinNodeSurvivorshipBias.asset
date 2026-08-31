@@ -15,7 +15,7 @@ MonoBehaviour:
   id: survivorshipBias
   nodeName: Survivorship Bias
   maxLevel: 3
-  icon: {fileID: -3884682147568381077, guid: 3e3554f3897283d48b6ae85ae96514c2, type: 3}
+  icon: {fileID: -2197447949036612536, guid: 1fa23b070f4fcd5459e93981c1a529fc, type: 3}
   unlockCost: 5
   cost: 050000000600000007000000
   requires:

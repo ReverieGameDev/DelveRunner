@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   augmentId: aEmberWick
   maxAugmentLevel: 2
-  augmentIcon: {fileID: -2270010837763053826, guid: 43dc4e9dcc842354ea3ca86bbb7a1a47, type: 3}
+  augmentIcon: {fileID: 21300000, guid: 61db1fc9959e5924db844b35d2bdd87d, type: 3}
   augmentTier: 1
   augmentWeight: 1
   requiredAugmentWeapon: {fileID: 0}

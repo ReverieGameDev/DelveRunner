@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   augmentId: aVulnerableTransfusion
   maxAugmentLevel: 3
-  augmentIcon: {fileID: 8060567030184411757, guid: 50ec9b90fb98efa4b90c218234be13a3, type: 3}
+  augmentIcon: {fileID: 21300000, guid: 6c5fabdb4484b6647a55f94543e788a3, type: 3}
   augmentTier: 1
   augmentWeight: 5
   requiredAugmentWeapon: {fileID: 0}

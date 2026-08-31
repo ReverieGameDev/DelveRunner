@@ -15,7 +15,7 @@ MonoBehaviour:
   id: monopoly
   nodeName: Monopoly
   maxLevel: 5
-  icon: {fileID: -2207157816902223271, guid: 30e5dac9f6208a5498148c1f00a4222b, type: 3}
+  icon: {fileID: -5643837360356588970, guid: 9e8bbadc302402540bed5d7c07e9f236, type: 3}
   unlockCost: 1
   cost: 0100000002000000030000000400000005000000
   requires: []

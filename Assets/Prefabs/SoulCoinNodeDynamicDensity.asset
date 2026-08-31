@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: SoulCoinNodeDynamicDensity
   m_EditorClassIdentifier: 
   id: dynamicDensity
-  nodeName: DynamicDensity
+  nodeName: Dynamic Density
   maxLevel: 1
-  icon: {fileID: -407678735845577461, guid: 30e5dac9f6208a5498148c1f00a4222b, type: 3}
+  icon: {fileID: -6557944938753243911, guid: a4f39e35be17ad04d9090ee218d53ef9, type: 3}
   unlockCost: 5
   cost: 05000000
   requires:

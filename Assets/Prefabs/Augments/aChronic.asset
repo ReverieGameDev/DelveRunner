@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   augmentId: aChronic
   maxAugmentLevel: 3
-  augmentIcon: {fileID: -5655927028324287619, guid: ef93703838d6bc84585fb1b2cf2dc584, type: 3}
+  augmentIcon: {fileID: 21300000, guid: 599feb753a63fa443904962f11157f54, type: 3}
   augmentTier: 1
   augmentWeight: 1
   requiredAugmentWeapon: {fileID: 0}

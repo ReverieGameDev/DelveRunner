@@ -15,7 +15,7 @@ MonoBehaviour:
   id: legDay
   nodeName: Leg Day
   maxLevel: 5
-  icon: {fileID: 8908856499335184979, guid: 30e5dac9f6208a5498148c1f00a4222b, type: 3}
+  icon: {fileID: 8757183625830692746, guid: 12d4225c49f05454882d95f88dbd4c58, type: 3}
   unlockCost: 1
   cost: 0100000001000000020000000200000003000000
   requires: []

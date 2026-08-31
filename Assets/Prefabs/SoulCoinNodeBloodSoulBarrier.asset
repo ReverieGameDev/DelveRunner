@@ -15,7 +15,7 @@ MonoBehaviour:
   id: bloodSoulBarrier
   nodeName: Blood Soul Barrier
   maxLevel: 5
-  icon: {fileID: -6906005824109098051, guid: 3d80eaefd2f3fe343ab22ed21d2f9ed9, type: 3}
+  icon: {fileID: 374060830634841331, guid: fc70de6c756f0934b81c5132848b3308, type: 3}
   unlockCost: 5
   cost: 0300000004000000050000000600000007000000
   requires:

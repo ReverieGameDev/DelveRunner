@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   augmentId: aCullTheMeek
   maxAugmentLevel: 2
-  augmentIcon: {fileID: 9023498741084242239, guid: 18072171b72997d4aba8f6cc772dd318, type: 3}
+  augmentIcon: {fileID: 21300000, guid: 5bb0f301115ed02488c59728db2e2640, type: 3}
   augmentTier: 2
   augmentWeight: 1
   requiredAugmentWeapon: {fileID: 0}

@@ -15,7 +15,7 @@ MonoBehaviour:
   id: doOrDie
   nodeName: Do or Die
   maxLevel: 3
-  icon: {fileID: 994186309471565929, guid: dd467d32b6d40ba46a83e0473600421f, type: 3}
+  icon: {fileID: 6161739836190056529, guid: 26484041d91867b4ab83dd6afb657e6e, type: 3}
   unlockCost: 5
   cost: 050000000a0000000f000000
   requires:

@@ -12,33 +12,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23faef61eaf11b645b66eea870d38dd8, type: 3}
   m_Name: DeathCannon
   m_EditorClassIdentifier: 
-  wIcon: {fileID: -3988586098559631296, guid: 23562684ef42b144eb5aaecfd722642a, type: 3}
+  wIcon: {fileID: 21300000, guid: f8a728c8d623ea347bd7875c69dc89f6, type: 3}
   wName: DeathCannon
+  wDescription: 
   wSpecialEffectDescription: 
   wCost: 40
-  weaponTargetingType: 0
-  wRange: 20
   wProjectilePrefab: {fileID: 8918661588787021599, guid: 5bff2da944cc74644b8af21a91612f5f, type: 3}
   wDamage: 25
   wAS: 2.5
-  wSwitchCD: 2
-  wProjectileCount: 1
+  wRange: 20
   wProjectileSpeed: 25
-  weaponStatusEffect: 0
   wProcChance: 0
-  wHasAOE: 1
-  wAOERadius: 6
-  wAOEDamage: 10
+  wStatusEffectDamage: 0
+  wStatusEffectTickRate: 0
+  wStatusEffectDuration: 10
+  wStatusEffectPercentage: 1.15
   hasChargeAttack: 0
   wChargeTime: 0
   wChargeProjectilePrefab: {fileID: 0}
-  wChargeDamage: 0
-  wChargeProjectileCount: 0
-  wChargeProjectileSpeed: 0
-  wChargeStatusEffect: 0
   wChargeProcChance: 25
-  wStatusEffectDuration: 10
-  wStatusEffectPercentage: 1.15
-  wChargeHasAOE: 0
-  wChargeAOERadius: 0
-  wChargeAOEDamage: 0
+  wChargeEffectDamage: 0
+  wChargeEffectTickRate: 0
+  wChargeEffectDuration: 0

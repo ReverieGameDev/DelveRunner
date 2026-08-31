@@ -15,7 +15,7 @@ MonoBehaviour:
   id: flowState
   nodeName: Flow State
   maxLevel: 3
-  icon: {fileID: -2273872230930745971, guid: d926af7d8cd1b0c4eada7fdf471e9cf1, type: 3}
+  icon: {fileID: -7717339533292788518, guid: 050e77bf5a0911d4e9a9cc4fc4512358, type: 3}
   unlockCost: 5
   cost: 040000000500000006000000
   requires:

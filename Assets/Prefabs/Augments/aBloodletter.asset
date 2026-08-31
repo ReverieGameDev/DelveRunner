@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   augmentId: aBloodletter
   maxAugmentLevel: 1
-  augmentIcon: {fileID: -2860418259070468520, guid: 70a6ee95ab2287c49815858a14151faa, type: 3}
+  augmentIcon: {fileID: 21300000, guid: 86e13ba1ea87dde4eb55977cb6a87266, type: 3}
   augmentTier: 1
   augmentWeight: 1
   requiredAugmentWeapon: {fileID: 11400000, guid: 469ae2e8e9f58964e9dbe399fab41019, type: 2}

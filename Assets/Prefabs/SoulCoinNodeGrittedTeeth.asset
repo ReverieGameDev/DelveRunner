@@ -15,7 +15,7 @@ MonoBehaviour:
   id: grittedTeeth
   nodeName: Gritted Teeth
   maxLevel: 5
-  icon: {fileID: -7413694855104807856, guid: d18b5dea8f78a3a419ab5fb3906a8e5c, type: 3}
+  icon: {fileID: -4064201951803164179, guid: 5950cd676c19452448c044684307da76, type: 3}
   unlockCost: 1
   cost: 0100000002000000030000000400000005000000
   requires: []

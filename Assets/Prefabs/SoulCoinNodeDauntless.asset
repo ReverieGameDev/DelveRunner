@@ -15,7 +15,7 @@ MonoBehaviour:
   id: dauntless
   nodeName: Dauntless
   maxLevel: 1
-  icon: {fileID: -5592498925989617042, guid: e9b0551045b85ab41896b6eb4139f35f, type: 3}
+  icon: {fileID: 2153037084569852312, guid: 347fedd10b3722c41b9dec789fcc166d, type: 3}
   unlockCost: 5
   cost: 05000000
   requires:

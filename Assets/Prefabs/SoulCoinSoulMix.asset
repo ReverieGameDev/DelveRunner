@@ -15,7 +15,7 @@ MonoBehaviour:
   id: soulMix
   nodeName: Soul Mix
   maxLevel: 5
-  icon: {fileID: 5886581002552119292, guid: 9a74e6e516e95904b84d192225af26ca, type: 3}
+  icon: {fileID: -8358652929693681839, guid: 75e276ec117d70f4b8ebd70e65bc4435, type: 3}
   unlockCost: 15
   cost: 0500000006000000070000000800000009000000
   requires:

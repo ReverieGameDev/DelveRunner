@@ -15,7 +15,7 @@ MonoBehaviour:
   id: hitAndRun
   nodeName: Hit and Run
   maxLevel: 3
-  icon: {fileID: 1582928506320793403, guid: 7cfd21720936c224bade3d83f7bfec28, type: 3}
+  icon: {fileID: -4628921078666452169, guid: 76aca9737083b034cb6b67f64114f4fe, type: 3}
   unlockCost: 3
   cost: 010000000200000003000000
   requires:

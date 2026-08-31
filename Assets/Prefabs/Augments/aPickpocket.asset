@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   augmentId: aPickpocket
   maxAugmentLevel: 2
-  augmentIcon: {fileID: -5757391796715666730, guid: b56f8240ff9720e4e964c694dbcad147, type: 3}
+  augmentIcon: {fileID: 21300000, guid: 0e77e1e1bd135f346b0879b616f33408, type: 3}
   augmentTier: 2
   augmentWeight: 1
   requiredAugmentWeapon: {fileID: 0}

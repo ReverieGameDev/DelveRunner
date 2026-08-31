@@ -15,7 +15,7 @@ MonoBehaviour:
   id: regenerative
   nodeName: Regenerative
   maxLevel: 1
-  icon: {fileID: -6352087550775983927, guid: 30e5dac9f6208a5498148c1f00a4222b, type: 3}
+  icon: {fileID: 6929152775272667414, guid: aa7343e845825c546a42203a0c50afa5, type: 3}
   unlockCost: 15
   cost: 0f000000
   requires:

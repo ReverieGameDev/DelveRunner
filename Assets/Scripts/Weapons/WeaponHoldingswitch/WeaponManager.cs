@@ -13,13 +13,14 @@ public class WeaponManager : MonoBehaviour
     public List<Image> weaponSlotImages = new List<Image>();
     public List<WeaponData> currentWeapons = new List<WeaponData>();
     public float weaponSwitchCooldown;
+    public List<Image> weaponBorders = new List<Image>();
     
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         Instance = this;
-
+        SwitchBorderColors(0);
         int loadout = PlayerPrefs.GetInt("SelectedLoadout", 0);
         currentWeapons.Clear();
         switch (loadout)
@@ -55,28 +56,39 @@ public class WeaponManager : MonoBehaviour
         {
             switchingWeapons = true;
             StartCoroutine(SwitchWeapons(WeaponSwitch.Weapon1));
+            SwitchBorderColors(0);
         }
         if (Input.GetKeyDown(KeyCode.Alpha2) && switchingWeapons == false)
         {
             switchingWeapons = true;
             StartCoroutine(SwitchWeapons(WeaponSwitch.Weapon2));
-
+            SwitchBorderColors(1);
         }
         if (Input.GetKeyDown(KeyCode.Alpha3) && switchingWeapons == false)
         {
             switchingWeapons = true;
             StartCoroutine(SwitchWeapons(WeaponSwitch.Weapon3));
+            SwitchBorderColors(2);
         }
     }
 
     IEnumerator SwitchWeapons(WeaponSwitch weaponSwitch)
     {
-        ResetWeaponUIHighlights();
         UpdateWeaponUI(weaponSwitch);
         yield return new WaitForSeconds(weaponSwitchCooldown);
         switchingWeapons = false;
     }
 
+    private void SwitchBorderColors(int borderToSwitch)
+    {
+        foreach (Image border in weaponBorders)
+        {
+            UnityEngine.ColorUtility.TryParseHtmlString("#ADADAD", out Color defaultBorderColor);
+            border.color = defaultBorderColor; 
+        }
+        UnityEngine.ColorUtility.TryParseHtmlString("#FFFF00", out Color colorHighlight);
+        weaponBorders[borderToSwitch].color = colorHighlight;
+    }
     private void UpdateWeaponUI(WeaponSwitch weaponSwitch)
     {
         //this will just highlight the currently selected weapon.
@@ -84,18 +96,12 @@ public class WeaponManager : MonoBehaviour
         {
             case WeaponSwitch.Weapon1:
                 currentWeapon = currentWeapons[0];
-                UnityEngine.ColorUtility.TryParseHtmlString("#DBE02E", out Color selectedColor1);
-                weaponSlotImages[0].color = selectedColor1;
                 break;
             case WeaponSwitch.Weapon2:
                 currentWeapon = currentWeapons[1];
-                UnityEngine.ColorUtility.TryParseHtmlString("#DBE02E", out Color selectedColor2);
-                weaponSlotImages[1].color = selectedColor2;
                 break;
             case WeaponSwitch.Weapon3:
                 currentWeapon = currentWeapons[2];
-                UnityEngine.ColorUtility.TryParseHtmlString("#DBE02E", out Color selectedColor3);
-                weaponSlotImages[2].color = selectedColor3;
                 break; 
         }
         for (int i = 0; i < currentWeapons.Count; i++)
@@ -108,15 +114,6 @@ public class WeaponManager : MonoBehaviour
         }
     }
 
-    private void ResetWeaponUIHighlights()
-    {
-        UnityEngine.ColorUtility.TryParseHtmlString("#C68A44", out Color selectedColor1);
-        weaponSlotImages[0].color = selectedColor1;
-        UnityEngine.ColorUtility.TryParseHtmlString("#C68A44", out Color selectedColor2);
-        weaponSlotImages[1].color = selectedColor2;
-        UnityEngine.ColorUtility.TryParseHtmlString("#C68A44", out Color selectedColor3);
-        weaponSlotImages[2].color = selectedColor3;
-    }
     public enum WeaponSwitch
     {
         Weapon1, Weapon2, Weapon3

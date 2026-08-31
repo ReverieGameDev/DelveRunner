@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   augmentId: aSoftening
   maxAugmentLevel: 3
-  augmentIcon: {fileID: -7583454654839933109, guid: c38f5e7961880f94a94022d598234eda, type: 3}
+  augmentIcon: {fileID: 21300000, guid: 1cb0b51ad504e754f8078c677c8256f8, type: 3}
   augmentTier: 1
   augmentWeight: 1
   requiredAugmentWeapon: {fileID: 0}

@@ -15,7 +15,7 @@ MonoBehaviour:
   id: achillesHeel
   nodeName: Achilles Heel
   maxLevel: 3
-  icon: {fileID: -8587467533394018205, guid: 3789b55cc03aa3147b0cff164880cb00, type: 3}
+  icon: {fileID: -8343652376101404288, guid: d1a770ad6a852aa4dbd892ef7bbfe21c, type: 3}
   unlockCost: 5
   cost: 050000000a0000000f000000
   requires:

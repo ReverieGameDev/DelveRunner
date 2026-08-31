@@ -15,7 +15,7 @@ MonoBehaviour:
   id: strikeGold
   nodeName: Strike Gold
   maxLevel: 5
-  icon: {fileID: 5625402913696602184, guid: 30e5dac9f6208a5498148c1f00a4222b, type: 3}
+  icon: {fileID: -7057622138681851761, guid: 7aa58d3f26ce92e49a6ed731f0b63a22, type: 3}
   unlockCost: 3
   cost: 0300000004000000050000000600000007000000
   requires:

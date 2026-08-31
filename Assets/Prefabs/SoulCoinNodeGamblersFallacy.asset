@@ -15,7 +15,7 @@ MonoBehaviour:
   id: gamblersFallacy
   nodeName: Gambler's Fallacy
   maxLevel: 1
-  icon: {fileID: 8875115370707609475, guid: 5e4cad5937e3b464f9786b1c16a4b90c, type: 3}
+  icon: {fileID: -3572863270978561376, guid: 744b96a8f486d8a48bcad8c7b165a920, type: 3}
   unlockCost: 15
   cost: 0f000000
   requires:

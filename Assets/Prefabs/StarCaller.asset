@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23faef61eaf11b645b66eea870d38dd8, type: 3}
   m_Name: StarCaller
   m_EditorClassIdentifier: 
-  wIcon: {fileID: -694885652187321331, guid: cbc413c41dff6104389be38be3995591, type: 3}
+  wIcon: {fileID: -3888430198375616105, guid: 1921469f30fc26b45ba34534e0290e0b, type: 3}
   wName: StarCaller
+  wDescription: 
   wSpecialEffectDescription: Shoots a star, % chance to get ember back on hit
   wCost: 33
   wProjectilePrefab: {fileID: 1453308018842175484, guid: 8ad45f7fc023893458fa7795a5cb01e7, type: 3}

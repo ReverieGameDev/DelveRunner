@@ -15,7 +15,7 @@ MonoBehaviour:
   id: packAPunch
   nodeName: Pack a Punch
   maxLevel: 3
-  icon: {fileID: 6413020478584453356, guid: e4b43f4cbe2460a4f88d2757a8a6ad7e, type: 3}
+  icon: {fileID: -3381117501498205301, guid: d47b6973ebbf3ec47a42e972ad11cdaf, type: 3}
   unlockCost: 5
   cost: 020000000300000006000000
   requires:

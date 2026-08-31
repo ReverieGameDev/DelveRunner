@@ -15,7 +15,7 @@ MonoBehaviour:
   id: rampingRegen
   nodeName: Ramping Regen
   maxLevel: 3
-  icon: {fileID: -407678735845577461, guid: 30e5dac9f6208a5498148c1f00a4222b, type: 3}
+  icon: {fileID: 7090809033082765676, guid: bcb90ec815a169644949173e53601e57, type: 3}
   unlockCost: 15
   cost: 0300000004000000050000000600000007000000
   requires:

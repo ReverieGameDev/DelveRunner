@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   augmentId: aBloodMoney
   maxAugmentLevel: 2
-  augmentIcon: {fileID: 0}
+  augmentIcon: {fileID: 21300000, guid: 3a4bded0b33fd5545b94b0bdde9dd789, type: 3}
   augmentTier: 1
   augmentWeight: 1
   requiredAugmentWeapon: {fileID: 0}

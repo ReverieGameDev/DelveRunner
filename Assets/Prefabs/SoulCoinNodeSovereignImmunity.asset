@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: SoulCoinNodeSovereignImmunity
   m_EditorClassIdentifier: 
   id: sovereignImmunity
-  nodeName: SovereignImmunity
+  nodeName: Sovereign Immunity
   maxLevel: 5
-  icon: {fileID: 7028616704906629411, guid: 2a9cfc4ca43b8ab44861b9e4cf950881, type: 3}
+  icon: {fileID: -1327354411158130341, guid: 86340ef0bc16e4846ad302e236067feb, type: 3}
   unlockCost: 10
   cost: 0200000003000000040000000500000006000000
   requires:

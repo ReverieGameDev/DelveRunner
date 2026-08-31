@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: SoulCoinOccamsRazor
   m_EditorClassIdentifier: 
   id: occamsRazor
-  nodeName: Occams Razor
+  nodeName: Occam's Razor
   maxLevel: 1
-  icon: {fileID: 5766357257970455132, guid: d18b5dea8f78a3a419ab5fb3906a8e5c, type: 3}
+  icon: {fileID: 7691097755166809993, guid: f4ea1230ca2bbc2409be79a66f4db070, type: 3}
   unlockCost: 5
   cost: 14000000
   requires:

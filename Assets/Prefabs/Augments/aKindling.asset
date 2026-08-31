@@ -21,6 +21,6 @@ MonoBehaviour:
   requiredAugmentSoulCoinUpgrade: {fileID: 0}
   augmentDescriptionName: Kindling
   augmentDescription: Every few hits sets an enemy alight with Cinder, which burns
-    them and returns ember to you as it smoulders.
+    them and returns Ember to you as it smoulders.
   augmentPerLevelDescription: "Hits per proc: 5/4/3\nCinder damage: 4/6/8 \nDuration:
     4s/5s/6s \nEmber per tick: 1/2/3"

@@ -15,7 +15,7 @@ MonoBehaviour:
   id: clinicalTrials
   nodeName: Clinical Trials
   maxLevel: 1
-  icon: {fileID: 3493723927323161911, guid: 30e5dac9f6208a5498148c1f00a4222b, type: 3}
+  icon: {fileID: 8905719961753941833, guid: ac486efb858e33b49b290680b4c85cf1, type: 3}
   unlockCost: 15
   cost: 05000000
   requires:

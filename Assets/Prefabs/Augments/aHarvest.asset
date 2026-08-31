@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   augmentId: aHarvest
   maxAugmentLevel: 3
-  augmentIcon: {fileID: 7058804149173540107, guid: d18b5dea8f78a3a419ab5fb3906a8e5c, type: 3}
+  augmentIcon: {fileID: 21300000, guid: 961b4443c35dfc547806639f6cc41511, type: 3}
   augmentTier: 2
   augmentWeight: 1
   requiredAugmentWeapon: {fileID: 0}
