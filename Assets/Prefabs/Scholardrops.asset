@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: fcd84a1ef9324d24d991c051c789f2eb, type: 3}
   m_Name: Scholardrops
   m_EditorClassIdentifier: Assembly-CSharp::DropTableData
   entries: []

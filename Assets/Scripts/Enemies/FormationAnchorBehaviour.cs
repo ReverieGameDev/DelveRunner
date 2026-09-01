@@ -33,16 +33,23 @@ public class FormationAnchorBehaviour : MonoBehaviour
     }
     public void EvaluateFormationState(FormationCheck formationCheck)
     {
-        switch(formationCheck)
+        if (formationBroken) return;
+
+        if (frontlineTotalHP <= 75f)
         {
-            case FormationCheck.LowFrontline:
-                if (frontlineCurrentHP / frontlineTotalHP <= .25f)
-                {
-                    formationBroken = true;
-                }
-                break;
+            formationBroken = true;
+            return;
         }
 
+        switch (formationCheck)
+        {
+            case FormationCheck.LowFrontline:
+                if (frontlineCurrentHP / frontlineTotalHP <= .25f) formationBroken = true;
+                break;
+            case FormationCheck.DeadBackline:
+                if (backlineEnemiesLeftAlive <= 0) formationBroken = true;
+                break;
+        }
     }
     public void FormationAnchorEnemySetup()
     {

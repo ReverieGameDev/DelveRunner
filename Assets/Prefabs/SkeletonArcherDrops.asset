@@ -9,38 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: fcd84a1ef9324d24d991c051c789f2eb, type: 3}
   m_Name: SkeletonArcherDrops
   m_EditorClassIdentifier: Assembly-CSharp::DropTableData
-  entries:
-  - prefab: {fileID: 6543931991655820351, guid: 5b9655144a33a914ebe295848830ccb6, type: 3}
-    weight: 0
-    guaranteedDrop: 1
-    maxRolls: 1
-    itemCount: 1
-    itemExplosionForce: 10
-  - prefab: {fileID: 7187405047775818436, guid: 9041a98763e3eb046a3ba1609185608a, type: 3}
-    weight: 35
-    guaranteedDrop: 0
-    maxRolls: 1
-    itemCount: 1
-    itemExplosionForce: 10
-  - prefab: {fileID: 1932543559876745157, guid: 91e32193b603d804c8db355aa0cc2034, type: 3}
-    weight: 35
-    guaranteedDrop: 0
-    maxRolls: 2
-    itemCount: 1
-    itemExplosionForce: 10
-  - prefab: {fileID: 1174979173079419666, guid: 01724a226d2e23e418448e7f1a48fd03, type: 3}
-    weight: 20
-    guaranteedDrop: 0
-    maxRolls: 1
-    itemCount: 1
-    itemExplosionForce: 10
-  - prefab: {fileID: 7089921964735620010, guid: 7f7c4d9b7d35dd44193b5aaf1713ce6d, type: 3}
-    weight: 20
-    guaranteedDrop: 0
-    maxRolls: 0
-    itemCount: 1
-    itemExplosionForce: 10
+  entries: []
   rollCount: 1

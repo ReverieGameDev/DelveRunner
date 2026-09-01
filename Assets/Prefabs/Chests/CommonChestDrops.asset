@@ -9,44 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: fcd84a1ef9324d24d991c051c789f2eb, type: 3}
   m_Name: CommonChestDrops
   m_EditorClassIdentifier: Assembly-CSharp::DropTableData
-  entries:
-  - prefab: {fileID: 1174979173079419666, guid: 01724a226d2e23e418448e7f1a48fd03, type: 3}
-    weight: 30
-    guaranteedDrop: 0
-    maxRolls: 1
-    itemCount: 1
-    itemExplosionForce: 6
-  - prefab: {fileID: 6815784588403697052, guid: 62bcc355828542348836e9e9970cd462, type: 3}
-    weight: 15
-    guaranteedDrop: 0
-    maxRolls: 1
-    itemCount: 1
-    itemExplosionForce: 6
-  - prefab: {fileID: 6962572676783346201, guid: b2efbf92e10f9554f844d4b2b623a46b, type: 3}
-    weight: 5
-    guaranteedDrop: 0
-    maxRolls: 1
-    itemCount: 1
-    itemExplosionForce: 6
-  - prefab: {fileID: 7089921964735620010, guid: 7f7c4d9b7d35dd44193b5aaf1713ce6d, type: 3}
-    weight: 8
-    guaranteedDrop: 0
-    maxRolls: 8
-    itemCount: 1
-    itemExplosionForce: 6
-  - prefab: {fileID: 2965613941820029836, guid: d92de53a7f3e66747aea801a7b924a3c, type: 3}
-    weight: 4
-    guaranteedDrop: 0
-    maxRolls: 1
-    itemCount: 1
-    itemExplosionForce: 6
-  - prefab: {fileID: 5363937397441303486, guid: a3375cb5ff8a44d448f6e42a5763ea7e, type: 3}
-    weight: 1
-    guaranteedDrop: 0
-    maxRolls: 1
-    itemCount: 1
-    itemExplosionForce: 6
+  entries: []
   rollCount: 1
