@@ -1,5 +1,5 @@
 using UnityEngine;
-using static UnityEditor.Experimental.GraphView.GraphView;
+
 
 
 [CreateAssetMenu(fileName = "SoulCoinDoOrDie", menuName = "Soul Coins/DoOrDie")]

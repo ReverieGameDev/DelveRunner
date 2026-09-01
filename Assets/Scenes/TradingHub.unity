@@ -4352,7 +4352,6 @@ GameObject:
   - component: {fileID: 120251743}
   - component: {fileID: 120251741}
   - component: {fileID: 120251739}
-  - component: {fileID: 120251738}
   - component: {fileID: 120251751}
   - component: {fileID: 120251752}
   m_Layer: 10
@@ -4362,18 +4361,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &120251738
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 120251737}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f3d42fa77cf1ea9428d953a3f0fc6020, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!95 &120251739
 Animator:
   serializedVersion: 7
@@ -4408,6 +4395,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38f10b667e7184f4bbf0e601a0fb6633, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  blitzSoulUI: {fileID: 0}
+  blitzBorder: {fileID: 0}
   bloodletterActive: 0
   madDoctrineReady: 1
   pausePanel: {fileID: 0}
@@ -7859,7 +7848,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 241674166}
-  - component: {fileID: 241674167}
   m_Layer: 0
   m_Name: Frosted Glass
   m_TagString: Untagged
@@ -7889,18 +7877,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &241674167
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 241674165}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 91b8ba3d52e041fab2d0e0f169855539, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &245913862
 GameObject:
   m_ObjectHideFlags: 0
@@ -16420,7 +16396,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 462806783}
-  - component: {fileID: 462806784}
   m_Layer: 0
   m_Name: Frosted Glass
   m_TagString: Untagged
@@ -16450,18 +16425,6 @@ RectTransform:
   m_AnchoredPosition: {x: -1269, y: 74.999985}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &462806784
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 462806782}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 91b8ba3d52e041fab2d0e0f169855539, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &463393960
 GameObject:
   m_ObjectHideFlags: 0
@@ -109530,7 +109493,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1852195455}
-  - component: {fileID: 1852195456}
   m_Layer: 0
   m_Name: Frosted Glass
   m_TagString: Untagged
@@ -109560,18 +109522,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1852195456
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1852195454}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 91b8ba3d52e041fab2d0e0f169855539, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1853826934
 GameObject:
   m_ObjectHideFlags: 0
