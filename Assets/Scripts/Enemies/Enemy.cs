@@ -51,6 +51,8 @@ public class Enemy : MonoBehaviour
         enemyAI = GetComponent<EnemyAI>();
         hpBar = GetComponentInChildren<Slider>();
         if (hpBar != null) hpBar.value = 1f;
+        hptext.text = (int)enemyHealth + " / " + (int)maxEnemyHealth;
+        if (hpBar != null) hpBar.value = enemyHealth / maxEnemyHealth;
     }
     private void Update()
     {
@@ -82,6 +84,7 @@ public class Enemy : MonoBehaviour
     }
     public void reduceHp(float damageTaken, int hitCount = 1, bool isCrit = false, WeaponStatusEffect type = WeaponStatusEffect.None)
     {
+        Debug.Log($"REDUCEHP in:{damageTaken} hits:{hitCount} crit:{isCrit} type:{type}");
         if (enemyHealth <= 0 ) return;
         if (playerCombat.curtainCallActive && !enemyData.isBoss && isCrit && enemyHealth/maxEnemyHealth <= playerCombat.curtainCallExecute)
         {
@@ -90,7 +93,7 @@ public class Enemy : MonoBehaviour
         int damageTakenInt;
         if (enfeebled)
         {
-            damageTakenInt = (int)Mathf.Round((damageTaken) * enfeebleBonusDamage);
+            damageTakenInt = (int)Mathf.Round(damageTaken * (1f + enfeebleBonusDamage / 100f));
         }
         else
         {
@@ -157,6 +160,7 @@ public class Enemy : MonoBehaviour
         {
             
             GameObject popup = Instantiate(damageText, transform.position, Quaternion.identity);
+            
             popup.GetComponent<EnemyDamageNumbers>().DamageNumberSetup(damageTakenInt, isCrit,type,enfeebled);
             popup.transform.SetAsLastSibling();
         }

@@ -19,6 +19,7 @@ public class InventorySlotUI : MonoBehaviour, IBeginDragHandler, IDragHandler, I
         if (dragItemImageRef != null) dragItemImage = dragItemImageRef;
         itemInventory = FindFirstObjectByType<ItemInventory>();
         itemHotbar = FindFirstObjectByType<ItemHotbar>();
+
     }
 
     public void OnBeginDrag(PointerEventData eventData)

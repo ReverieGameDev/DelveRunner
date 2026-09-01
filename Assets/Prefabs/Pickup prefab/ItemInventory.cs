@@ -1,11 +1,8 @@
 using System;
 using System.Collections.Generic;
-using UnityEditor.Rendering;
+using TMPro;
 using UnityEngine;
-using UnityEngine.EventSystems;
 using UnityEngine.UI;
-using static UnityEditor.Experimental.AssetDatabaseExperimental.AssetDatabaseCounters;
-
 
 public class ItemInventory : MonoBehaviour
 {
@@ -14,13 +11,23 @@ public class ItemInventory : MonoBehaviour
     public List<InventorySlot> inventoryItems = new List<InventorySlot>();
     public List<GameObject> inventorySlots = new List<GameObject>();
     public Sprite noItemInventorySprite;
+    private ItemHotbar itemHotbar;
+    public List<TextMeshProUGUI> itemAmounts = new List<TextMeshProUGUI>();
 
 
     public int inventoryCapacity = 6;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        itemHotbar = FindFirstObjectByType<ItemHotbar>();
+        for (int i = 0; i < inventoryCapacity; i++)
+        {
+            InventorySlot slot = new InventorySlot();
+            slot.item = itemHotbar.emptySlotItem;
+            slot.count = 0;
+            inventoryItems.Add(slot);
+        }
+        InitialInventorySetup();
     }
 
     // Update is called once per frame
@@ -44,7 +51,15 @@ public class ItemInventory : MonoBehaviour
             
         }
     }
-
+    public void InitialCountInventorySetup()
+    {
+        for (int i = 0; i < inventoryCapacity; i++)
+        {
+            itemAmounts[i].text = inventoryItems[i].item.id != "emptySlot"
+                ? "" + inventoryItems[i].count
+                : "";
+        }
+    }
     public void InitialInventorySetup()
     {
         for (int i = 0; i < inventoryCapacity; i++)
@@ -61,7 +76,7 @@ public class ItemInventory : MonoBehaviour
 
 
         }
-
+        InitialCountInventorySetup();
     }
 
     public void AddToInventory(InventoryItemData itemAdded)
@@ -77,11 +92,18 @@ public class ItemInventory : MonoBehaviour
 
         }
 
-        if (inventoryItems.Count < inventoryCapacity && !itemAddedToInventory)
+        if (!itemAddedToInventory)
         {
-            InventorySlot newItem = new InventorySlot { item = itemAdded, count = 1 };
-            inventoryItems.Add(newItem);
-            itemAddedToInventory = true;
+            for (int i = 0; i < inventoryItems.Count; i++)
+            {
+                if (inventoryItems[i].item.id == "emptySlot")
+                {
+                    inventoryItems[i].item = itemAdded;
+                    inventoryItems[i].count = 1;
+                    itemAddedToInventory = true;
+                    break;
+                }
+            }
         }
         if (inventoryItems.Count == inventoryCapacity && !itemAddedToInventory)
         {

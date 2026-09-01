@@ -161,9 +161,10 @@ public class AbilityManager : MonoBehaviour
     IEnumerator ManaConsume(float manaActivateCost)
     {
         PlayerCombat.Instance.currentPlayerMana -= manaActivateCost;
+        PlayerCombat.Instance.ManaUIRefresh();
         yield break;
     }
-
+    
     IEnumerator Cooldown(float cooldown)
     {
         yield return new WaitForSecondsRealtime(cooldown);

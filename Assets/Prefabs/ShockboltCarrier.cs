@@ -47,7 +47,7 @@ public class ShockboltCarrier : MonoBehaviour
                         targetEse.ESEPoison(5f, 2, 1f);
                         break;
                     case 2:
-                        targetEse.ESEEnfeeble(4f, 0.1f);
+                        targetEse.ESEEnfeeble(4f, 10f);
                         break;
                     case 3:
                         targetEse.ESECinder(4f, 3, 1f, 1);

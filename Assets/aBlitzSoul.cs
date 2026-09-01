@@ -13,5 +13,6 @@ public class aBlitzSoul : AugmentData
         playerCombat.blitzShockTickRate = 3f;
         playerCombat.blitzMaxStacks = 10;
         playerCombat.blitzWeakAutoMult = 0.5f;
+        playerCombat.blitzSoulUI.SetActive(true);
     }
 }

@@ -40,22 +40,22 @@ public class EnemyDamageNumbers : MonoBehaviour
         switch (type)
         {
             case WeaponStatusEffect.None:
-                if (crit)
-                damageText.color = Color.white;
-                if (!crit)
-                damageText.color = Color.red;
+                damageText.color = crit ? new Color32(240, 198, 74, 255) : new Color32(201, 196, 184, 255);
                 break;
             case WeaponStatusEffect.Poison:
-                damageText.color = new Color32(0, 175, 0, 255);
+                damageText.color = new Color32(102, 179, 76, 255);
                 break;
             case WeaponStatusEffect.Burn:
-                damageText.color = new Color32(255, 90, 0, 255);
+                damageText.color = new Color32(224, 112, 44, 255);
                 break;
             case WeaponStatusEffect.Cinder:
-                damageText.color = new Color32(255, 170, 40, 255);
+                damageText.color = new Color32(232, 220, 168, 255);
                 break;
             case WeaponStatusEffect.Shock:
-                damageText.color = new Color32(120, 200, 255, 255);
+                damageText.color = new Color32(61, 220, 255, 255);
+                break;
+            case WeaponStatusEffect.Bleed:
+                damageText.color = new Color32(232, 86, 74, 255);
                 break;
         }
     }

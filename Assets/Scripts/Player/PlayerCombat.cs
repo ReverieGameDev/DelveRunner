@@ -8,6 +8,8 @@ using System;
 
 public class PlayerCombat : MonoBehaviour
 {
+    public GameObject blitzSoulUI;
+    public Image blitzBorder;
     public bool bloodletterActive = false;
     public bool madDoctrineReady = true;
     public GameObject pausePanel;
@@ -556,6 +558,7 @@ public class PlayerCombat : MonoBehaviour
             if (currentPlayerMana >= blitzManaCost && blitzToggledOn)
             {
                 currentPlayerMana -= blitzManaCost;
+                ManaUIRefresh();
                 target.GetComponent<EnemyStatusEffects>().ESEShock(blitzShockDuration, blitzShockDamage, blitzShockTickRate, blitzMaxStacks);
             }
             else
@@ -563,14 +566,21 @@ public class PlayerCombat : MonoBehaviour
                 baseDamage *= blitzWeakAutoMult;
             }
         }
-
+        Debug.Log($"HIT {baseDamage} from {target.name}");
         int dmg = CalcWeaponDamage(baseDamage, out bool crit);
         target.reduceHp(dmg, hitCount, crit);
         OnHitDealt?.Invoke(target);
     }
+    public void ManaUIRefresh()
+    {
+        playerManaBar.value = currentPlayerMana / playerManaBase;
+        playerManaBarNumber.text = currentPlayerMana + " / " + (int)playerManaBase;
+    }
     public void BlitzSoulToggle()
     {
         blitzToggledOn = !blitzToggledOn;
+        ColorUtility.TryParseHtmlString(blitzToggledOn ? "#3DDCFF" : "#ADADAD", out Color c);
+        blitzBorder.color = c;
     }
     public IEnumerator PlayerTempSpeedBoost(float speedBoost, float time)
     {

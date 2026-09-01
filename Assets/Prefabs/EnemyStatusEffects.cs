@@ -80,6 +80,7 @@ public class EnemyStatusEffects : MonoBehaviour
                                 if (activeStatusEffects[i].type == WeaponStatusEffect.Poison) mult = activeStatusEffects[i].poisonStacks;
                                 else if (activeStatusEffects[i].type == WeaponStatusEffect.Bleed) mult = activeStatusEffects[i].bleedStacks;
                                 enemy.reduceHp(activeStatusEffects[i].damage * mult, 1, false, activeStatusEffects[i].type);
+                                Debug.Log($"{activeStatusEffects[i].type} damage: {activeStatusEffects[i].damage} Mult {mult}");
                                 if (activeStatusEffects[i].type == WeaponStatusEffect.Shock && PlayerCombat.Instance.aConductionActive) PlayerCombat.Instance.AddManaPlayer(PlayerCombat.Instance.aConductionManaPerTick);
                                 if (activeStatusEffects[i].type == WeaponStatusEffect.Cinder) EmberSystem.Instance.AddEmber(activeStatusEffects[i].emberGain);
                                 if (activeStatusEffects[i].type == WeaponStatusEffect.Shock)

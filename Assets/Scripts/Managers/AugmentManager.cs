@@ -38,6 +38,7 @@ public class AugmentManager : MonoBehaviour
     private Dictionary<AugmentData, int> augmentDictionary = new Dictionary<AugmentData, int>();
     public List<AugmentData> augmentPool = new List<AugmentData>();
     private List<AugmentData> augmentSelection = new List<AugmentData>();
+    public List<GameObject> cardList = new List<GameObject>();
 
     public List<LevelsRow> cardLevels = new List<LevelsRow>();
     private List<AugmentData> augmentSlots = new List<AugmentData>();
@@ -97,27 +98,29 @@ public class AugmentManager : MonoBehaviour
     }
     public void RandomAugmentGenerator(int tier)
     {
-        
-        foreach (AugmentData augment in augmentPool)
+        List<AugmentData> levelableAugs = augmentDictionary.Where(pair => pair.Value < pair.Key.maxAugmentLevel).Select(pair => pair.Key).ToList();
+        if (augmentDictionary.Count < 5)
         {
-            if (augment.augmentTier == tier && !augmentDictionary.ContainsKey(augment)) //check if tier is correct 
+            foreach (AugmentData augment in augmentPool)
             {
-                if (augment.requiredAugmentWeapon == null)
+                if (augment.augmentTier == tier && !augmentDictionary.ContainsKey(augment)) //check if tier is correct 
                 {
-                    augmentSelection.Add(augment); //we simply add all of the available augments to this list
-                }
-                if (augment.requiredAugmentWeapon != null)
-                {
-                    foreach (WeaponData weapon in WeaponManager.Instance.currentWeapons)
+                    if (augment.requiredAugmentWeapon == null)
                     {
-                        if (augment.requiredAugmentWeapon.wName == weapon.wName)
+                        augmentSelection.Add(augment); //we simply add all of the available augments to this list
+                    }
+                    if (augment.requiredAugmentWeapon != null)
+                    {
+                        foreach (WeaponData weapon in WeaponManager.Instance.currentWeapons)
                         {
-                            augmentSelection.Add(augment);
+                            if (augment.requiredAugmentWeapon.wName == weapon.wName)
+                            {
+                                augmentSelection.Add(augment);
+                            }
                         }
                     }
                 }
             }
-        }
         augmentSelect.SetActive(true);//turn on the augment select screen.
         for (int i = 0; i < maxAugmentCount; i++)
         {
@@ -134,8 +137,74 @@ public class AugmentManager : MonoBehaviour
         }
         if (tierRandomizer == 3) augmentTierMaxRoll--;
         DisplayAvailableAugments();
+        }
+        else if (levelableAugs.Count > 0 && augmentDictionary.Count >= 5)
+        {
+            augmentSelect.SetActive(true);//turn on the augment select screen.
+            int cardCount = Mathf.Min(3, levelableAugs.Count);
+            for (int i = 0; i < cardCount; i++)
+            {
+                int randomAug = Random.Range(0, levelableAugs.Count);
+                augmentSlots.Add(levelableAugs[randomAug]);
+                levelableAugs.RemoveAt(randomAug);
+            }
+            DisplayLevelableAugments(cardCount);
+        }
+        else
+        {
+            playerCombat.augmentsOwed=0;
+            Time.timeScale = 1;
+        }
     }
+    private void DisplayLevelableAugments(int displayedCardNumber)
+    {
+        for (int i = 0; i < cardList.Count; i++)
+        {
+            cardList[i].SetActive(true);
+        }
+        AssignColorsAndLevelsToAugmentCards(displayedCardNumber);
+        for (int i = 0; i < cardList.Count; i++)
+        {
+            cardList[i].SetActive(i < displayedCardNumber);
+        }
+        switch (displayedCardNumber)
+        {
+            case 1:
+                augment1Icon.sprite = augmentSlots[0].augmentIcon;
+                augment1DisplayName.text = augmentSlots[0].augmentDescriptionName;
+                augment1Description.text = augmentSlots[0].augmentDescription;
+                augment1AbilityDetails.text = augmentSlots[0].augmentPerLevelDescription;
+                break;
+            case 2:
+                augment1Icon.sprite = augmentSlots[0].augmentIcon;
+                augment2Icon.sprite = augmentSlots[1].augmentIcon;
+                augment1DisplayName.text = augmentSlots[0].augmentDescriptionName;
+                augment2DisplayName.text = augmentSlots[1].augmentDescriptionName;
+                augment1Description.text = augmentSlots[0].augmentDescription;
+                augment2Description.text = augmentSlots[1].augmentDescription;
+                augment1AbilityDetails.text = augmentSlots[0].augmentPerLevelDescription;
+                augment2AbilityDetails.text = augmentSlots[1].augmentPerLevelDescription;
+                break;
+            case 3:
+                augment1Icon.sprite = augmentSlots[0].augmentIcon;
+                augment2Icon.sprite = augmentSlots[1].augmentIcon;
+                augment3Icon.sprite = augmentSlots[2].augmentIcon;
 
+                augment1DisplayName.text = augmentSlots[0].augmentDescriptionName;
+                augment2DisplayName.text = augmentSlots[1].augmentDescriptionName;
+                augment3DisplayName.text = augmentSlots[2].augmentDescriptionName;
+
+                augment1Description.text = augmentSlots[0].augmentDescription;
+                augment2Description.text = augmentSlots[1].augmentDescription;
+                augment3Description.text = augmentSlots[2].augmentDescription;
+
+                augment1AbilityDetails.text = augmentSlots[0].augmentPerLevelDescription;
+                augment2AbilityDetails.text = augmentSlots[1].augmentPerLevelDescription;
+                augment3AbilityDetails.text = augmentSlots[2].augmentPerLevelDescription;
+                break;
+        }
+
+    }
     public void SelectAugment1() 
     {
         Time.timeScale = 1;
@@ -262,35 +331,33 @@ public class AugmentManager : MonoBehaviour
         }
     }
 
-    private void AssignColorsAndLevelsToAugmentCards()
+    private void AssignColorsAndLevelsToAugmentCards(int cardCount = 3)
     {
-        for (int i = 0; i < maxAugmentCount; i++)
+        for (int i = 0; i < cardCount; i++)
         {
             Color c = AugmentColors.TierColor(augmentSlots[i].augmentTier);
             augmentTierBorderColorList[i].GetComponent<Image>().color = c;
             augmentIconBorderColorList[i].GetComponent<Image>().color = c;
             augmentDividerColorList[i].GetComponent<Image>().color = c;
         }
-        for (int i = 0; i < maxAugmentCount; i++)
+        for (int i = 0; i < cardCount; i++)
         {
             augmentDictionary.TryGetValue(augmentSlots[i], out int currentLevel);
             augmentLevelUpTrim[i].SetActive(currentLevel > 0);
             for (int x = 0; x < cardLevels[i].level.Count; x++)
+            {
+                cardLevels[i].level[x].SetActive(x < augmentSlots[i].maxAugmentLevel);
+                if (currentLevel <= x)
                 {
-                    cardLevels[i].level[x].SetActive(x < augmentSlots[i].maxAugmentLevel);
-                    if (currentLevel <= x)
-                    {
-                        ColorUtility.TryParseHtmlString("#242424", out Color c);
-                        cardLevels[i].level[x].GetComponent<Image>().color = c;
-
-                    }
-                    else
-                    {
-                        ColorUtility.TryParseHtmlString("#FF9900", out Color c);
-                        cardLevels[i].level[x].GetComponent<Image>().color = c;
-                    }
-
+                    ColorUtility.TryParseHtmlString("#242424", out Color c);
+                    cardLevels[i].level[x].GetComponent<Image>().color = c;
                 }
+                else
+                {
+                    ColorUtility.TryParseHtmlString("#FF9900", out Color c);
+                    cardLevels[i].level[x].GetComponent<Image>().color = c;
+                }
+            }
         }
     }
     [System.Serializable]
