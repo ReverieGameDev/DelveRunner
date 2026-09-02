@@ -12,11 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7337d422b75799143ae4d07615c3b36c, type: 3}
   m_Name: SkeletonSummoner
   m_EditorClassIdentifier: 
-  health: 150
+  health: 35
   speed: 2
-  damage: 40
+  damage: 8
   mobName: SkeletonSummoner
   isREE: 0
   isBoss: 0
   goldValue: 0
   xpValue: 0
+  isSpawn: 0

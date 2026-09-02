@@ -18,19 +18,19 @@ MonoBehaviour:
   wSpecialEffectDescription: 
   wCost: 40
   wProjectilePrefab: {fileID: 8918661588787021599, guid: 5bff2da944cc74644b8af21a91612f5f, type: 3}
-  wDamage: 25
-  wAS: 2.5
+  wDamage: 20
+  wAS: 3
   wRange: 20
   wProjectileSpeed: 25
   wProcChance: 0
   wStatusEffectDamage: 0
   wStatusEffectTickRate: 0
   wStatusEffectDuration: 10
-  wStatusEffectPercentage: 1.15
+  wStatusEffectPercentage: 15
   hasChargeAttack: 0
   wChargeTime: 0
   wChargeProjectilePrefab: {fileID: 0}
-  wChargeProcChance: 25
+  wChargeProcChance: 15
   wChargeEffectDamage: 0
   wChargeEffectTickRate: 0
   wChargeEffectDuration: 0

@@ -18,7 +18,7 @@ MonoBehaviour:
   wSpecialEffectDescription: 'Charge: Unleashes a flurry of cosmic slashes'
   wCost: 30
   wProjectilePrefab: {fileID: 7252702842100024630, guid: 1f34bc44a1599ef40b152bdaeb5c845e, type: 3}
-  wDamage: 15
+  wDamage: 8
   wAS: 1
   wRange: 2
   wProjectileSpeed: 0

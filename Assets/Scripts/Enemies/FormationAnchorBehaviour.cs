@@ -35,7 +35,7 @@ public class FormationAnchorBehaviour : MonoBehaviour
     {
         if (formationBroken) return;
 
-        if (frontlineTotalHP <= 75f)
+        if (frontlineTotalHP <= 30f)
         {
             formationBroken = true;
             return;

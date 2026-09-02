@@ -44725,7 +44725,7 @@ MonoBehaviour:
   baseEmber: 100
   emberComp: {fileID: 2115633924}
   isEmberActive: 1
-  waveNumber: 2
+  waveNumber: 0
   aliveEnemies: 0
   swarmSpawnFreq: 5
   isFightNodeActive: 0

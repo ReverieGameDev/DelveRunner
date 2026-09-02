@@ -18,19 +18,19 @@ MonoBehaviour:
   wSpecialEffectDescription: Poisons
   wCost: 33
   wProjectilePrefab: {fileID: 485998719081581661, guid: ff51625b416daf440896c52c3b127862, type: 3}
-  wDamage: 15
-  wAS: 2
+  wDamage: 4
+  wAS: 1.5
   wRange: 0
   wProjectileSpeed: 0
   wProcChance: 50
-  wStatusEffectDamage: 10
+  wStatusEffectDamage: 1
   wStatusEffectTickRate: 1
   wStatusEffectDuration: 15
   wStatusEffectPercentage: 0
   hasChargeAttack: 1
-  wChargeTime: 5
+  wChargeTime: 3
   wChargeProjectilePrefab: {fileID: 9015868196912113104, guid: 804ffbb14899f4e43bf4c1435b9a7bae, type: 3}
-  wChargeProcChance: 50
-  wChargeEffectDamage: 15
+  wChargeProcChance: 100
+  wChargeEffectDamage: 5
   wChargeEffectTickRate: 0.5
   wChargeEffectDuration: 3

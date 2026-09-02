@@ -20,7 +20,7 @@ public class SkeletonArcher : MonoBehaviour
     public Sprite arrowRainIcon;
     public GameObject arrowTrajectory;
     public float attackWindupTime;
-    private float attackSpeed = 3f;
+    private float attackSpeed = 4.5f;
     private bool isIndicatorActive = false;
     private string currentAttack;
     private Vector2 archerToPlayerAngle;

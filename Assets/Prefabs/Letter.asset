@@ -19,7 +19,7 @@ MonoBehaviour:
     with it. Why's it called letter?
   wCost: 10
   wProjectilePrefab: {fileID: 9109081668341026317, guid: ee46e31d94766f744956d19e92f1902c, type: 3}
-  wDamage: 15
+  wDamage: 5
   wAS: 0.75
   wRange: 0
   wProjectileSpeed: 0

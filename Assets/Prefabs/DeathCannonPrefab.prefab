@@ -106,7 +106,7 @@ MonoBehaviour:
   damageMultiplier: 1
   explosionRadius: 5
   DeathCannonExplosionPrefab: {fileID: 3462000024437263560, guid: 64da5539546cc0d42aa674cf8b6aa464, type: 3}
-  explosionDamage: 10
+  explosionDamage: 6
 --- !u!95 &8198538433208713686
 Animator:
   serializedVersion: 7

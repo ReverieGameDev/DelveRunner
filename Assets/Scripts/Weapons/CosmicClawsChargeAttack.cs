@@ -4,7 +4,7 @@ using static AttackManager;
 public class CosmicClawsChargeAttack : ChargeAttackBase
 {
     private Enemy enemy;
-    private float starDaggerDamage = 38f;
+    private float starDaggerDamage = 9f;
     private AttackManager attackManager;
     private Vector3 trajectory;
     private PlayerCombat playerCombat;
