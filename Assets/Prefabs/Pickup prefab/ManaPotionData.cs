@@ -6,5 +6,6 @@ public class ManaPotionData : InventoryItemData
     public override void Use(PlayerCombat player)
     {
         player.currentPlayerMana = Mathf.Min(player.currentPlayerMana + amount, player.playerManaBase);
+        player.ManaUIRefresh();
     }
 }

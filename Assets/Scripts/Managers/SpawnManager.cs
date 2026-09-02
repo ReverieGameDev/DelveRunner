@@ -279,8 +279,8 @@ public class SpawnManager : MonoBehaviour
                 int enemyType = spawnPosArray[row, col];
                 if (enemyType == 0) continue;
 
-                int offsetX = (col - 1) * 3;
-                int offsetY = (1 - row) * 3;
+                int offsetX = (col - 1) * 4;
+                int offsetY = (1 - row) * 4;
 
                 Vector3 worldPos = new Vector3(spawnPos.x + offsetX, spawnPos.y + offsetY);
                 GameObject spawned = Instantiate(EnemyArray[enemyType - 1], worldPos, Quaternion.identity);

@@ -155,6 +155,7 @@ public class AbilityManager : MonoBehaviour
             }
         }
         PlayerCombat.Instance.currentPlayerMana -= persistManaCost;
+        PlayerCombat.Instance.ManaUIRefresh();
         StartCoroutine(ManaDrainAbility(activateManaCost, persistManaCost, manaTickRate));
     }
 

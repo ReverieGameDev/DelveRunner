@@ -54,15 +54,15 @@ public class EnemyAI : MonoBehaviour
     private int positionInRingOrder;
     private bool isCenter = false;
     private Vector2[] ringOrder = {
-        new Vector2(-3,3),
-        new Vector2(0,3),
-        new Vector2(3,3),
-        new Vector2(3,0),
-        new Vector2(3,-3),
-        new Vector2(0,-3),
-        new Vector2(-3,-3),
-        new Vector2(-3,0)
-    };
+    new Vector2(-4,4),
+    new Vector2(0,4),
+    new Vector2(4,4),
+    new Vector2(4,0),
+    new Vector2(4,-4),
+    new Vector2(0,-4),
+    new Vector2(-4,-4),
+    new Vector2(-4,0)
+};
 
     void Start()
     {
@@ -210,6 +210,7 @@ public class EnemyAI : MonoBehaviour
         {
             anchorBehaviour.canWarriorLeap = true;
         }
+        anchorBehaviour.EvaluateFormationState(FormationAnchorBehaviour.FormationCheck.DeadBackline);
     }
 
     void FixedUpdate()

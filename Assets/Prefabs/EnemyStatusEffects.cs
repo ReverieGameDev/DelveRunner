@@ -187,7 +187,8 @@ public class EnemyStatusEffects : MonoBehaviour
             {
                 activeStatuses.damage = Mathf.Max(activeStatuses.damage, poisonDamage);
                 poisonAlreadyActive = true;
-                if (PlayerCombat.Instance.blightedSoulActive || activeStatuses.poisonStacks < 5)
+                int poisonCap = PlayerCombat.Instance.blightedSoulActive ? 15 : 5;
+                if (activeStatuses.poisonStacks < poisonCap)
                 {
                     activeStatuses.poisonStacks++;
                 }

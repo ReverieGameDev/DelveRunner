@@ -889,8 +889,7 @@ public class PlayerCombat : MonoBehaviour
         {
             int manaRegainedInt = (int)Mathf.Round(manaRestored);
             currentPlayerMana = Mathf.Min(currentPlayerMana + manaRegainedInt, (int)playerManaBase);
-            playerManaBar.value = currentPlayerMana / playerManaBase;
-            playerManaBarNumber.text = currentPlayerMana + " / " + playerManaBase;
+            ManaUIRefresh();
         }
     }
     public void DoOrDieToggle()

@@ -31,7 +31,7 @@ public class Enemy : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         emberSystem = FindFirstObjectByType<EmberSystem>();
-        if (!enemyData.isREE)
+        if (!enemyData.isREE && !enemyData.isSpawn)
         {
             emberSystem.aliveEnemies++;
         }
