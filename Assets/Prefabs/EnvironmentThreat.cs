@@ -96,6 +96,7 @@ public class EnvironmentThreat : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        hitCooldown = MathF.Max(hitCooldown - Time.deltaTime, 0);
         if (changeNullCircleSize)
         {
             if (Vector2.Distance(nullCircle.transform.localScale, nullCircleSizeGoal) <= 0.1f)
@@ -111,6 +112,7 @@ public class EnvironmentThreat : MonoBehaviour
         }
         else
         {
+            hitCooldown = MathF.Max(hitCooldown - Time.deltaTime, 0);
             switch (environmentState)
             {
                 case EnvironmentState.Idle: //ET is unoccupied, idle.
@@ -124,7 +126,6 @@ public class EnvironmentThreat : MonoBehaviour
                     break;
                 case EnvironmentState.Charging: //ET is occupied by an enemy, is charging
                     chargeCounter += Time.deltaTime;
-                    hitCooldown = MathF.Max(hitCooldown - Time.deltaTime, 0);
                     if (chargeCounter >= totalChargeTime)
                     {
                         switch (currentEnvironmentThreatName)

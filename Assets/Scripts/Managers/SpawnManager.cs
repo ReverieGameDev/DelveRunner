@@ -31,14 +31,14 @@ public class SpawnManager : MonoBehaviour
     public GameObject currentSoloSquares;
     private readonly Vector2[] directionOffsets = new Vector2[]
 {
-    new Vector2(0, 22),             // 0 north
-    new Vector2(15.56f, 15.56f),    // 1 northeast
-    new Vector2(22, 0),             // 2 east
-    new Vector2(15.56f, -15.56f),   // 3 southeast
-    new Vector2(0, -22),            // 4 south
-    new Vector2(-15.56f, -15.56f),  // 5 southwest
-    new Vector2(-22, 0),            // 6 west
-    new Vector2(-15.56f, 15.56f),   // 7 northwest
+    new Vector2(0, 18),             // 0 north
+    new Vector2(12.73f, 12.73f),    // 1 northeast
+    new Vector2(18, 0),             // 2 east
+    new Vector2(12.73f, -12.73f),   // 3 southeast
+    new Vector2(0, -18),            // 4 south
+    new Vector2(-12.73f, -12.73f),  // 5 southwest
+    new Vector2(-18, 0),            // 6 west
+    new Vector2(-12.73f, 18)        // 7 northwest
 };
     private int chosenDirection;                 // compass id 0-7, stable meaning
     private float currentFormationFacing;        // degrees the head should face at spawn
@@ -51,122 +51,122 @@ public class SpawnManager : MonoBehaviour
     private Dictionary<string, int[,]> formations = new Dictionary<string, int[,]>()
 {
     // === WAVE 1 — 1 formation ===
-    { "1", new int[,] {          // Standard: 1w 2a
+    { "1", new int[,] {          // 2w 2a
+        { 2, 0, 2 },
+        { 0, 0, 0 },
+        { 1, 0, 1 } } },
+    { "2", new int[,] {          // 1w 1s 1a
+        { 0, 2, 0 },
+        { 0, 0, 0 },
+        { 1, 0, 4 } } },
+    { "3", new int[,] {          // 2w 1s 1a
+        { 2, 0, 2 },
+        { 0, 0, 0 },
+        { 1, 0, 4 } } },
+    // === WAVE 2 — 2 formations ===
+    { "4", new int[,] {          // 1w 2a
         { 0, 2, 0 },
         { 0, 0, 0 },
         { 1, 0, 1 } } },
-    { "2", new int[,] {          // Wall: 2w
-        { 2, 0, 2 },
+    { "5", new int[,] {          // 3a, no frontline
         { 0, 0, 0 },
-        { 0, 0, 0 } } },
-    { "3", new int[,] {          // Coven: 1w 1s
-        { 0, 2, 0 },
-        { 0, 4, 0 },
-        { 0, 0, 0 } } },
-    // === WAVE 2 — 2 formations ===
-    { "4", new int[,] {          // Pair: 1w 1a
+        { 0, 0, 0 },
+        { 1, 1, 1 } } },
+    { "6", new int[,] {          // 1w 1s 1a
         { 0, 2, 0 },
         { 0, 0, 0 },
-        { 0, 1, 0 } } },
-    { "5", new int[,] {          // Skirmish: 3a, no frontline
-        { 0, 0, 0 },
-        { 1, 0, 1 },
-        { 0, 1, 0 } } },
-    { "6", new int[,] {          // Pair: 1w 1a
-        { 2, 0, 0 },
-        { 0, 0, 1 },
-        { 0, 0, 0 } } },
+        { 4, 0, 1 } } },
     // === WAVE 3 — 2 formations ===
-    { "7", new int[,] {          // Standard: 1w 2a
-        { 0, 2, 0 },
-        { 1, 0, 1 },
-        { 0, 0, 0 } } },
-    { "8", new int[,] {          // Coven: 1w 1s
+    { "7", new int[,] {          // 2w 2a
+        { 2, 0, 2 },
+        { 0, 0, 0 },
+        { 1, 0, 1 } } },
+    { "8", new int[,] {          // 1w 1s 1a
         { 0, 2, 0 },
         { 0, 0, 0 },
-        { 0, 4, 0 } } },
-    { "9", new int[,] {          // Nest: 1s 2a, no frontline
+        { 1, 4, 0 } } },
+    { "9", new int[,] {          // 1s 2a, no frontline
         { 0, 0, 0 },
-        { 1, 4, 1 },
-        { 0, 0, 0 } } },
+        { 0, 0, 0 },
+        { 1, 4, 1 } } },
     // === WAVE 4 — 3 formations ===
-    { "10", new int[,] {         // Pair: 1w 1a
+    { "10", new int[,] {         // 1w 2a
         { 0, 2, 0 },
         { 0, 0, 0 },
-        { 0, 1, 0 } } },
-    { "11", new int[,] {         // Nest: 1s 2a, no frontline
-        { 0, 0, 0 },
-        { 4, 0, 1 },
-        { 0, 1, 0 } } },
-    { "12", new int[,] {         // Coven: 1w 1s
-        { 0, 2, 0 },
-        { 4, 0, 0 },
-        { 0, 0, 0 } } },
-    // === WAVE 5 — 3 formations ===
-    { "13", new int[,] {         // Battery: 1w 1s 1a
-        { 0, 2, 0 },
-        { 0, 4, 0 },
-        { 0, 1, 0 } } },
-    { "14", new int[,] {         // Wall: 2w
+        { 1, 0, 1 } } },
+    { "11", new int[,] {         // 2w 1s
         { 2, 0, 2 },
         { 0, 0, 0 },
-        { 0, 0, 0 } } },
-    { "15", new int[,] {         // Standard: 1w 2a
-        { 0, 2, 0 },
-        { 1, 0, 0 },
-        { 0, 0, 1 } } },
-    // === WAVE 6 — 4 formations ===
-    { "16", new int[,] {         // Pair: 1w 1a
-        { 0, 2, 0 },
-        { 0, 1, 0 },
-        { 0, 0, 0 } } },
-    { "17", new int[,] {         // Nest: 1s 2a, no frontline
-        { 0, 0, 0 },
-        { 1, 0, 1 },
         { 0, 4, 0 } } },
-    { "18", new int[,] {         // Coven: 1w 1s
-        { 0, 0, 2 },
-        { 0, 4, 0 },
-        { 0, 0, 0 } } },
-    // === WAVE 7 — 4 formations ===
-    { "19", new int[,] {         // Battery: 1w 1s 1a
+    { "12", new int[,] {         // 1w 1s 1a
         { 0, 2, 0 },
-        { 4, 0, 1 },
-        { 0, 0, 0 } } },
-    { "20", new int[,] {         // Standard: 1w 2a
-        { 0, 2, 0 },
-        { 1, 0, 1 },
-        { 0, 0, 0 } } },
-    { "21", new int[,] {         // Wall: 2w
-        { 2, 2, 0 },
         { 0, 0, 0 },
-        { 0, 0, 0 } } },
-    // === WAVE 8 — 5 formations ===
-    { "22", new int[,] {         // Battery: 1w 1s 1a
-        { 0, 2, 0 },
-        { 0, 4, 0 },
-        { 1, 0, 0 } } },
-    { "23", new int[,] {         // Standard: 1w 2a
-        { 2, 0, 0 },
-        { 0, 1, 0 },
-        { 0, 0, 1 } } },
-    { "24", new int[,] {         // Nest: 1s 2a, no frontline
-        { 0, 0, 0 },
-        { 4, 1, 0 },
-        { 0, 0, 1 } } },
-    // === WAVE 9 — 5 formations ===
-    { "25", new int[,] {         // Battery: 1w 1s 1a
-        { 0, 2, 0 },
-        { 4, 0, 1 },
-        { 0, 0, 0 } } },
-    { "26", new int[,] {         // Vanguard: 2w 1a
+        { 4, 0, 1 } } },
+    // === WAVE 5 — 3 formations ===
+    { "13", new int[,] {         // 2w 2a
         { 2, 0, 2 },
         { 0, 0, 0 },
-        { 0, 1, 0 } } },
-    { "27", new int[,] {         // Hive: 1s 3a, no frontline
+        { 1, 0, 1 } } },
+    { "14", new int[,] {         // 1w 1s 1a
+        { 0, 2, 0 },
         { 0, 0, 0 },
-        { 1, 4, 1 },
-        { 0, 1, 0 } } },
+        { 1, 4, 0 } } },
+    { "15", new int[,] {         // 1s 2a, no frontline
+        { 0, 0, 0 },
+        { 0, 0, 0 },
+        { 1, 4, 1 } } },
+    // === WAVE 6 — 4 formations ===
+    { "16", new int[,] {         // 1w 2a
+        { 0, 2, 0 },
+        { 0, 0, 0 },
+        { 1, 0, 1 } } },
+    { "17", new int[,] {         // 2w 1s
+        { 2, 0, 2 },
+        { 0, 0, 0 },
+        { 0, 4, 0 } } },
+    { "18", new int[,] {         // 1w 1s 1a
+        { 0, 2, 0 },
+        { 0, 0, 0 },
+        { 4, 0, 1 } } },
+    // === WAVE 7 — 4 formations ===
+    { "19", new int[,] {         // 2w 2a
+        { 2, 0, 2 },
+        { 0, 0, 0 },
+        { 1, 0, 1 } } },
+    { "20", new int[,] {         // 2w 1s 1a
+        { 2, 0, 2 },
+        { 0, 0, 0 },
+        { 1, 4, 0 } } },
+    { "21", new int[,] {         // 1s 3a, no frontline
+        { 0, 0, 0 },
+        { 1, 0, 0 },
+        { 1, 4, 1 } } },
+    // === WAVE 8 — 5 formations ===
+    { "22", new int[,] {         // 1w 1s 1a
+        { 0, 2, 0 },
+        { 0, 0, 0 },
+        { 1, 4, 0 } } },
+    { "23", new int[,] {         // 2w 2a
+        { 2, 0, 2 },
+        { 0, 0, 0 },
+        { 1, 0, 1 } } },
+    { "24", new int[,] {         // 2w 1s
+        { 2, 0, 2 },
+        { 0, 0, 0 },
+        { 0, 4, 0 } } },
+    // === WAVE 9 — 5 formations ===
+    { "25", new int[,] {         // 2w 1s 1a
+        { 2, 0, 2 },
+        { 0, 0, 0 },
+        { 1, 4, 0 } } },
+    { "26", new int[,] {         // 3w 1s
+        { 2, 2, 2 },
+        { 0, 0, 0 },
+        { 0, 4, 0 } } },
+    { "27", new int[,] {         // 2w 1s 2a
+        { 2, 0, 2 },
+        { 0, 0, 0 },
+        { 1, 4, 1 } } },
 };
 
     // ===== ROTATION =====

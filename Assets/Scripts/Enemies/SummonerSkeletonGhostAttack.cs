@@ -5,7 +5,7 @@ public class SummonerSkeletonGhostAttack : MonoBehaviour
 {
     private PlayerMovement playerMovement;
     private Rigidbody2D rb;
-    private float missleSpeed = 10f;
+    private float missleSpeed = 7f;
     private Vector2 missleToPlayerAngle;
     private float missleAngle;
     private float missleDuration = 4f;

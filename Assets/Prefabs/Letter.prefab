@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3097032838904604144}
   m_Layer: 0
   m_Name: Letter
-  m_TagString: Untagged
+  m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -171,6 +171,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageMultiplier: 1
-  bloodletterActive: 1
   bloodletterChance: 40
   bloodletterPrefab: {fileID: 6077560605563530718, guid: 2d6678d4af545554c80eda68fe6f6162, type: 3}

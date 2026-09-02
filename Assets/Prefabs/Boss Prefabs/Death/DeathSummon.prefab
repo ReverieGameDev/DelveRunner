@@ -200,7 +200,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyData: {fileID: 11400000, guid: 0f92042a6c419b947889c11d866dd25f, type: 2}
   xpDrop: {fileID: 973232368389669265, guid: e939688fb00fdb14aa988b97c7aa5c5b, type: 3}
-  enemyHealth: 50
+  enemyHealth: 1
   enemySpeed: 3
   money1: {fileID: 2517676888375216185, guid: b5857fb1df128854db517b05f69aa774, type: 3}
   isDead: 0
