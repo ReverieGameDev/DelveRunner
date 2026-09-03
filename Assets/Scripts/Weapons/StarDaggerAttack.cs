@@ -3,7 +3,7 @@ using UnityEngine;
 public class StarDaggerAttack : MonoBehaviour
 {
     private Enemy enemy;
-    private float starDaggerDamage = 38f;
+    private float starDaggerDamage = 12f;
     private AttackManager attackManager;
     private Vector3 trajectory;
     private PlayerCombat playerCombat;

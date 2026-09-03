@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wIcon: {fileID: 21300000, guid: 2f39c0f05708868428b4f981d63a3182, type: 3}
   wName: Letter
-  wDescription: 
-  wSpecialEffectDescription: Regular sword, you're strong enough to send a shockwave
-    with it. Why's it called letter?
+  wDescription: A projectile slash that hits every enemy it passes through. <color=#A56B4E>5
+    damage</color>, <color=#6E7A82>0.75s</color> between attacks.
+  wSpecialEffectDescription: No special effect.. maybe something could change that..?
   wCost: 10
   wProjectilePrefab: {fileID: 9109081668341026317, guid: ee46e31d94766f744956d19e92f1902c, type: 3}
   wDamage: 5

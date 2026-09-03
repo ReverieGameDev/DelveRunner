@@ -14,8 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wIcon: {fileID: 21300000, guid: 1c5384919a0097f4586d6d6ae75f01e9, type: 3}
   wName: VerdantMaw
-  wDescription: 
-  wSpecialEffectDescription: Poisons
+  wDescription: A medium-range strike. <color=#A56B4E>4 damage</color>, <color=#6E7A82>1.5s</color>
+    between attacks.
+  wSpecialEffectDescription: 50% chance to apply <color=#66B34C>Poison</color> on
+    hit. Charge for <color=#6E7A82>3s</color> to <color=#66B34C>Poison</color> every
+    enemy hit.
   wCost: 33
   wProjectilePrefab: {fileID: 485998719081581661, guid: ff51625b416daf440896c52c3b127862, type: 3}
   wDamage: 4

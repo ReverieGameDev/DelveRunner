@@ -7,7 +7,7 @@ public class aBlitzSoul : AugmentData
     {
         playerCombat.blitzSoulActive = true;
         playerCombat.blitzToggledOn = true;
-        playerCombat.blitzManaCost = 6;
+        playerCombat.blitzManaCost = 3;
         playerCombat.blitzShockDamage = 4;
         playerCombat.blitzShockDuration = 15f;
         playerCombat.blitzShockTickRate = 3f;

@@ -14,8 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wIcon: {fileID: -3888430198375616105, guid: 1921469f30fc26b45ba34534e0290e0b, type: 3}
   wName: StarCaller
-  wDescription: 
-  wSpecialEffectDescription: Shoots a star, % chance to get ember back on hit
+  wDescription: A long-range shot. <color=#A56B4E>8 damage</color>, <color=#6E7A82>2.0s</color>
+    between attacks.
+  wSpecialEffectDescription: 20% chance to return <color=#E8DCA8>Ember</color> on
+    hit.
   wCost: 33
   wProjectilePrefab: {fileID: 1453308018842175484, guid: 8ad45f7fc023893458fa7795a5cb01e7, type: 3}
   wDamage: 8
