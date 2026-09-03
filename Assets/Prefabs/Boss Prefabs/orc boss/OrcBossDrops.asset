@@ -12,5 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcd84a1ef9324d24d991c051c789f2eb, type: 3}
   m_Name: OrcBossDrops
   m_EditorClassIdentifier: Assembly-CSharp::DropTableData
-  entries: []
-  rollCount: 1
+  entries:
+  - prefab: {fileID: 5363937397441303486, guid: a3375cb5ff8a44d448f6e42a5763ea7e, type: 3}
+    weight: 0
+    guaranteedDrop: 1
+    maxRolls: 0
+    itemCount: 3
+    itemExplosionForce: 45
+  - prefab: {fileID: 1932543559876745157, guid: 91e32193b603d804c8db355aa0cc2034, type: 3}
+    weight: 0
+    guaranteedDrop: 1
+    maxRolls: 0
+    itemCount: 1
+    itemExplosionForce: 45
+  rollCount: 5

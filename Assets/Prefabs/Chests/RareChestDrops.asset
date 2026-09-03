@@ -12,5 +12,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcd84a1ef9324d24d991c051c789f2eb, type: 3}
   m_Name: RareChestDrops
   m_EditorClassIdentifier: Assembly-CSharp::DropTableData
-  entries: []
-  rollCount: 1
+  entries:
+  - prefab: {fileID: 1932543559876745157, guid: 91e32193b603d804c8db355aa0cc2034, type: 3}
+    weight: 45
+    guaranteedDrop: 0
+    maxRolls: 0
+    itemCount: 1
+    itemExplosionForce: 20
+  - prefab: {fileID: 6962572676783346201, guid: b2efbf92e10f9554f844d4b2b623a46b, type: 3}
+    weight: 35
+    guaranteedDrop: 0
+    maxRolls: 0
+    itemCount: 1
+    itemExplosionForce: 20
+  - prefab: {fileID: 6815784588403697052, guid: 62bcc355828542348836e9e9970cd462, type: 3}
+    weight: 30
+    guaranteedDrop: 0
+    maxRolls: 0
+    itemCount: 1
+    itemExplosionForce: 20
+  - prefab: {fileID: 4668442668006923911, guid: 1931bdfd14e6f964eb2840553918061a, type: 3}
+    weight: 28
+    guaranteedDrop: 0
+    maxRolls: 0
+    itemCount: 1
+    itemExplosionForce: 20
+  - prefab: {fileID: 7187405047775818436, guid: 9041a98763e3eb046a3ba1609185608a, type: 3}
+    weight: 25
+    guaranteedDrop: 0
+    maxRolls: 0
+    itemCount: 1
+    itemExplosionForce: 20
+  - prefab: {fileID: 5363937397441303486, guid: a3375cb5ff8a44d448f6e42a5763ea7e, type: 3}
+    weight: 25
+    guaranteedDrop: 1
+    maxRolls: 0
+    itemCount: 2
+    itemExplosionForce: 20
+  rollCount: 3

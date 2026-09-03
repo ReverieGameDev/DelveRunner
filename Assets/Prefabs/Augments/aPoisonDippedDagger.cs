@@ -17,7 +17,7 @@ public class aPoisonDippedDagger : AugmentData
         if (Random.Range(1, 101) <= poisonChance)
         {
             
-            enemy.GetComponent<EnemyStatusEffects>().ESEPoison(4+ currentAugmentLevel, 2+ currentAugmentLevel, 1);
+            enemy.GetComponent<EnemyStatusEffects>().ESEPoison(4+ currentAugmentLevel, currentAugmentLevel, 1);
         }
     }
 }

@@ -12,5 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcd84a1ef9324d24d991c051c789f2eb, type: 3}
   m_Name: Scholardrops
   m_EditorClassIdentifier: Assembly-CSharp::DropTableData
-  entries: []
+  entries:
+  - prefab: {fileID: 6543931991655820351, guid: 5b9655144a33a914ebe295848830ccb6, type: 3}
+    weight: 0
+    guaranteedDrop: 1
+    maxRolls: 0
+    itemCount: 1
+    itemExplosionForce: 20
   rollCount: 1

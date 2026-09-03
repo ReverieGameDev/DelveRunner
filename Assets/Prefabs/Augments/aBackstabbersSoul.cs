@@ -12,7 +12,7 @@ public class aBackstabbersSoul : AugmentData
         playerCombat.backstabbersSoulActive = true;
         playerCombat.backstabbersSoulDamageMult = .7f;
         playerCombat.backstabbersSoulCritGain = 1;
-        playerCombat.backstabbersSoulCritDamageGain = .3f;
+        playerCombat.backstabbersSoulCritDamageGain = .125f;
         playerCombat.backstabbersSoulFlatCrit = 25;
         playerCombat.OnHitDealt += OnHit;
     }

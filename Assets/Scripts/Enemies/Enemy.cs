@@ -40,7 +40,8 @@ public class Enemy : MonoBehaviour
         enemyDamage = enemyData.damage;
         enemySpeed = enemyData.speed;
         if (!enemyData.isBoss)
-            enemyHealth *= Mathf.Pow(1.08f, emberSystem.waveNumber - 1);
+            enemyHealth *= Mathf.Pow(1.20f, emberSystem.waveNumber - 1);
+        enemyHealth = Mathf.Round(enemyHealth);
         maxEnemyHealth = enemyHealth;
     }
 
@@ -78,7 +79,8 @@ public class Enemy : MonoBehaviour
     }
     public void HealEnemy(float damageHealed)
     {
-         enemyHealth = Mathf.Min(enemyHealth+damageHealed, maxEnemyHealth);
+        if (isDead) return;
+        enemyHealth = Mathf.Min(enemyHealth+damageHealed, maxEnemyHealth);
          hptext.text = (int)enemyHealth + " / " + (int)maxEnemyHealth;
          if (hpBar != null) hpBar.value = enemyHealth / maxEnemyHealth;
     }

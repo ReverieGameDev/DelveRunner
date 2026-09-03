@@ -18,7 +18,7 @@ public class aKindling : AugmentData
         currentHitsCounter++;
         if (currentHitsCounter >= kindlingCounter)
         {
-            enemy.GetComponent<EnemyStatusEffects>().ESECinder(3+currentKindlingLevel, 2+2*currentKindlingLevel,1, currentKindlingLevel);
+            enemy.GetComponent<EnemyStatusEffects>().ESECinder(3+currentKindlingLevel, 1+ currentKindlingLevel,1, currentKindlingLevel);
             currentHitsCounter = 0;
         }
     }

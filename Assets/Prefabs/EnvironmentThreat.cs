@@ -22,7 +22,7 @@ public class EnvironmentThreat : MonoBehaviour
     private Vector3 barStartScale;
     private float deathTime;
     public float zapperDamage = 20f;
-    public float healingTotemHeal = 35f;
+    public float healingTotemHeal = 12f;
     public GameObject nullCircle;
     private float hitCooldown;
     public GameObject zapWindup;

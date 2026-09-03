@@ -12,5 +12,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcd84a1ef9324d24d991c051c789f2eb, type: 3}
   m_Name: aSupplyBoxDrops
   m_EditorClassIdentifier: Assembly-CSharp::DropTableData
-  entries: []
-  rollCount: 1
+  entries:
+  - prefab: {fileID: 6815784588403697052, guid: 62bcc355828542348836e9e9970cd462, type: 3}
+    weight: 40
+    guaranteedDrop: 0
+    maxRolls: 0
+    itemCount: 1
+    itemExplosionForce: 0
+  - prefab: {fileID: 2965613941820029836, guid: d92de53a7f3e66747aea801a7b924a3c, type: 3}
+    weight: 32
+    guaranteedDrop: 0
+    maxRolls: 0
+    itemCount: 1
+    itemExplosionForce: 20
+  - prefab: {fileID: 7187405047775818436, guid: 9041a98763e3eb046a3ba1609185608a, type: 3}
+    weight: 35
+    guaranteedDrop: 0
+    maxRolls: 0
+    itemCount: 1
+    itemExplosionForce: 20
+  - prefab: {fileID: 1932543559876745157, guid: 91e32193b603d804c8db355aa0cc2034, type: 3}
+    weight: 30
+    guaranteedDrop: 0
+    maxRolls: 0
+    itemCount: 1
+    itemExplosionForce: 20
+  rollCount: 2

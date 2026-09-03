@@ -103,7 +103,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4af4e7b30912621488d98195996c1a4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  goldValue: 1
+  goldValue: 15
 --- !u!61 &9077943643476082248
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -162,7 +162,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 468c889dadbea6241ac11282bc9671d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  force: 18
 --- !u!50 &4361553495176958278
 Rigidbody2D:
   serializedVersion: 5
