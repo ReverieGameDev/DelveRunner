@@ -318,7 +318,7 @@ public class PlayerCombat : MonoBehaviour
     }
     void Start()
     {
-        playerLevelText.text = "" + playerLevel;
+        if (playerLevelText != null) playerLevelText.text = "" + playerLevel;
         soulMixPreviousTotal = PlayerPrefs.GetInt("SoulMixTotal");
         abilityManager = FindFirstObjectByType<AbilityManager>();
         if (playerGold != null) playerGold.text = ": " + (int)playerMoney;

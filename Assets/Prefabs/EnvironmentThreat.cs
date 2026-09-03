@@ -73,7 +73,7 @@ public class EnvironmentThreat : MonoBehaviour
                 needOperator = true;
                 break;
             case EnvironmentThreatName.HealingTotem:
-                    totalChargeTime = 5f;
+                    totalChargeTime = 8f;
                     cooldownTime = 5f;
                     interruptPenaltyTime = 5f;
                 cooldownAfterFire = 3f;
@@ -82,7 +82,7 @@ public class EnvironmentThreat : MonoBehaviour
                 needOperator = false;
                 break;
             case EnvironmentThreatName.NullObelisk:
-                    totalChargeTime = 8f;
+                    totalChargeTime = 5f;
                     cooldownTime = 6f;
                     interruptPenaltyTime = 2f;
                 cooldownAfterFire = 2f;
@@ -245,12 +245,12 @@ public class EnvironmentThreat : MonoBehaviour
     {
         if (environmentState == EnvironmentState.Charging)
         {
-            chargeCounter = Mathf.Max(chargeCounter - totalChargeTime, 0);
+            chargeCounter = Mathf.Max(chargeCounter - 3f, 0);
         }
     }
     public void EnvironmentThreatNullObelisk()
     {
-        LerpNullCircle(nullCircle.transform.localScale + new Vector3(2.25f, 2.25f, 0));
+        LerpNullCircle(nullCircle.transform.localScale + new Vector3(3f, 3f, 0));
     }
     public void EnvironmentThreatReduceNullObelisk()
     {

@@ -173,7 +173,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 468c889dadbea6241ac11282bc9671d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  force: 18
 --- !u!61 &4280561934068461813
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -218,7 +217,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 8, y: 8}
   m_EdgeRadius: 0
 --- !u!114 &5338396201659148168
 MonoBehaviour:

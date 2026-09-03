@@ -5,7 +5,7 @@ public class Money : MonoBehaviour
 {
     private PlayerCombat playerCombat;
     private bool moneyTowardsPlayer = false;
-    private int moneySpeed = 6;
+    private int moneySpeed = 15;
     public int goldValue;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
