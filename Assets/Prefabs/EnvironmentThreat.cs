@@ -73,9 +73,9 @@ public class EnvironmentThreat : MonoBehaviour
                 needOperator = true;
                 break;
             case EnvironmentThreatName.HealingTotem:
-                    totalChargeTime = 8f;
+                    totalChargeTime = 12f;
                     cooldownTime = 5f;
-                    interruptPenaltyTime = 5f;
+                    interruptPenaltyTime = 12f;
                 cooldownAfterFire = 3f;
                 deathTime = 0f;
                 hitCooldown = 1f;
