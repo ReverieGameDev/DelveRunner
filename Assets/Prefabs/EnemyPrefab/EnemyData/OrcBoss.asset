@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7337d422b75799143ae4d07615c3b36c, type: 3}
   m_Name: OrcBoss
   m_EditorClassIdentifier: 
-  health: 2000
+  health: 750
   speed: 0
   damage: 40
   mobName: 
@@ -20,3 +20,4 @@ MonoBehaviour:
   isBoss: 1
   goldValue: 0
   xpValue: 0
+  isSpawn: 0

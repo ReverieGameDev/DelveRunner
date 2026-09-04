@@ -110,7 +110,6 @@ public class EmberSystem : MonoBehaviour
             REEManager reeManager = FindFirstObjectByType<REEManager>();
             reeManager.StartCoroutine("InitializeSpawnPoints");
         }
-
         isFightNodeActive = false;
     }
 

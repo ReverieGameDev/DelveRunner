@@ -20,7 +20,7 @@ public class SpawnManager : MonoBehaviour
     private List<Room> listOfFightNodes = new List<Room>();
     private Room lastFNPicked;
     private int oneOf3Waves;
-    private int[] formationsPerWave = { 2, 2, 2, 2, 3, 3, 3, 3, 4 };
+    private int[] formationsPerWave = { 1, 2, 2, 3, 3, 4, 4, 4, 4 };
     private List<Vector2> formationDirectionalOffset = new List<Vector2>();
     private Vector2 spawnPosOffset;
     private int randomDirection;

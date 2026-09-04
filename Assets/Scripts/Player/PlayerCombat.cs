@@ -567,7 +567,6 @@ public class PlayerCombat : MonoBehaviour
                 baseDamage *= blitzWeakAutoMult;
             }
         }
-        Debug.Log($"HIT {baseDamage} from {target.name}");
         int dmg = CalcWeaponDamage(baseDamage, out bool crit);
         target.reduceHp(dmg, hitCount, crit);
         OnHitDealt?.Invoke(target);
