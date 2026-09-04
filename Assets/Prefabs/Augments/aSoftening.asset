@@ -20,13 +20,12 @@ MonoBehaviour:
   requiredAugmentWeapon: {fileID: 0}
   requiredAugmentSoulCoinUpgrade: {fileID: 0}
   augmentDescriptionName: Softening
-  augmentDescription: 'On hit, a chance to enfeeble the enemy.
+  augmentDescription: Your hits have a chance to <color=#9B8BC4>Enfeeble</color>
+    the enemy. <color=#9B8BC4>Enfeebled</color> enemies take more <color=#A56B4E>damage</color>
+    from all sources.
+  augmentPerLevelDescription: '<color=#9B8BC4>Enfeeble</color> chance on hit: 15%/25%/35%
 
-    Enfeeble: Enemy
-    takes more damage from all sources'
-  augmentPerLevelDescription: 'Enfeeble chance: 15%/25%/35%
+    Bonus
+    <color=#A56B4E>Damage</color> taken: 10%/15%/20%
 
-    Bonus damage taken:
-    10%/15%/20%
-
-    Duration: 4s/5s/6s'
+    Duration: <color=#6E7A82>4s/5s/6s</color>'

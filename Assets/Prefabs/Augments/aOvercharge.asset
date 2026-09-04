@@ -20,6 +20,6 @@ MonoBehaviour:
   requiredAugmentWeapon: {fileID: 0}
   requiredAugmentSoulCoinUpgrade: {fileID: 0}
   augmentDescriptionName: Overcharge
-  augmentDescription: Your charged weapon attacks (hold left mouse button for weapons
-    with a charge attack) shock enemies hit.
-  augmentPerLevelDescription: Charge attacks apply Shock
+  augmentDescription: Your charged attacks apply <color=#3DDCFF>Shock</color>. Hold
+    left mouse to charge weapons that have one.
+  augmentPerLevelDescription: Charged attacks apply <color=#3DDCFF>Shock</color>

@@ -20,6 +20,6 @@ MonoBehaviour:
   requiredAugmentWeapon: {fileID: 0}
   requiredAugmentSoulCoinUpgrade: {fileID: 0}
   augmentDescriptionName: Scholar
-  augmentDescription: Enemies killed while afflicted by your status effects grant
-    bonus XP.
-  augmentPerLevelDescription: 'Bonus XP Drops: 1/2'
+  augmentDescription: Killing an enemy afflicted by your status effects drops extra
+    <color=#5A78D8>XP</color>.
+  augmentPerLevelDescription: 'Extra <color=#5A78D8>XP</color> drops: 1/2'

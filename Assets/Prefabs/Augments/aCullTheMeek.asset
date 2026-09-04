@@ -20,5 +20,7 @@ MonoBehaviour:
   requiredAugmentWeapon: {fileID: 0}
   requiredAugmentSoulCoinUpgrade: {fileID: 0}
   augmentDescriptionName: Cull the Meek
-  augmentDescription: Deal bonus damage while fewer than 5 enemies remain.
-  augmentPerLevelDescription: 'Bonus damage: 15%/25%'
+  augmentDescription: You deal bonus <color=#A56B4E>damage</color> while fewer than
+    5 enemies remain.
+  augmentPerLevelDescription: 'Bonus <color=#A56B4E>Damage</color> under 5 enemies:
+    15%/25%'

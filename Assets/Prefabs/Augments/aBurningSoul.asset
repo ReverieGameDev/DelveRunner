@@ -20,10 +20,9 @@ MonoBehaviour:
   requiredAugmentWeapon: {fileID: 0}
   requiredAugmentSoulCoinUpgrade: {fileID: 0}
   augmentDescriptionName: Burning Soul
-  augmentDescription: 'Your damage scales with your current ember.
+  augmentDescription: Your <color=#A56B4E>damage</color> scales with your current
+    <color=#E8DCA8>ember</color>. Empty burns weak, full burns hardest.
+  augmentPerLevelDescription: 'Empty <color=#E8DCA8>Ember</color>: 50% <color=#A56B4E>Damage</color>
 
-    Empty ember:
-    50% damage. Full ember: up to 200%.'
-  augmentPerLevelDescription: 'Max Damage at full ember:
-
-    150%/175%/200%'
+    Full
+    <color=#E8DCA8>Ember</color>: 150%/175%/200%'

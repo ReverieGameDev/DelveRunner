@@ -20,12 +20,20 @@ MonoBehaviour:
   requiredAugmentWeapon: {fileID: 0}
   requiredAugmentSoulCoinUpgrade: {fileID: 0}
   augmentDescriptionName: Blighted Soul
-  augmentDescription: Your attacks deal <color=#A56B4E>40% less damage</color>, but
+  augmentDescription: Your attacks deal 40% less <color=#A56B4E>damage</color>, but
     every hit applies <color=#66B34C>Poison</color>. <color=#66B34C>Poison</color>
     stacks without limit.
-  augmentPerLevelDescription: '<color=#A56B4E>Weapon damage</color>: -40%
+  augmentPerLevelDescription: '-40% <color=#A56B4E>Weapon Damage</color>
+
+    Every
+    hit applies <color=#66B34C>Poison</color>
+
+    
 
     <color=#66B34C>Poison</color>
-    per stack: 4/6/8
+    per stack: 1
 
-    <color=#6E7A82>Duration: 5s/6s/7s</color>'
+    Duration: <color=#6E7A82>5s</color>
+
+    No poison stack
+    limit'

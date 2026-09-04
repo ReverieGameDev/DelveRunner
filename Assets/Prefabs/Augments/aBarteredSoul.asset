@@ -22,5 +22,12 @@ MonoBehaviour:
   augmentDescriptionName: Bartered Soul
   augmentDescription: Your <color=#C9922E>gold</color> is set to 0 and your <color=#A56B4E>damage</color>
     drops to 25%. Gaining <color=#C9922E>gold</color> raises your <color=#A56B4E>damage</color>.
-  augmentPerLevelDescription: '<color=#A56B4E>Damage</color> increase per 10 <color=#C9922E>gold</color>:
-    3%/5%/10%'
+  augmentPerLevelDescription: '<color=#C9922E>Gold</color> set to 0
+
+    <color=#A56B4E>Damage</color>
+    drops to 25%
+
+
+    Per 10 <color=#C9922E>Gold</color>:
+
+    +3.3%/5%/10% <color=#A56B4E>Damage</color>'

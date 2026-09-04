@@ -6,7 +6,7 @@ public class aStarCallerNova : AugmentData
     public override void Apply(PlayerCombat playerCombat, int currentLevel)
     {
         playerCombat.aStarCallerNovaActive = true;
-        playerCombat.aStarCallerNovaDamageMult = (1.5f*currentLevel) + 1;
+        playerCombat.aStarCallerNovaDamageMult = (3f * currentLevel) + 2f;
         playerCombat.aStarCallerNovaCinderChance = currentLevel * 20 + 10;
         playerCombat.aStarCallerNovaEmberCost = 10;
     }

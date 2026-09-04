@@ -14,13 +14,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   augmentId: aKindling
   maxAugmentLevel: 3
-  augmentIcon: {fileID: 358459484289319377, guid: 20262da89d47c3f4fa604e977084c03a, type: 3}
+  augmentIcon: {fileID: 21300000, guid: d4747379aff706645a9e85ece632dbb2, type: 3}
   augmentTier: 2
   augmentWeight: 1
   requiredAugmentWeapon: {fileID: 0}
   requiredAugmentSoulCoinUpgrade: {fileID: 0}
   augmentDescriptionName: Kindling
-  augmentDescription: Every few hits sets an enemy alight with Cinder, which burns
-    them and returns Ember to you as it smoulders.
-  augmentPerLevelDescription: "Hits per proc: 5/4/3\nCinder damage: 4/6/8 \nDuration:
-    4s/5s/6s \nEmber per tick: 1/2/3"
+  augmentDescription: Every few hits applies <color=#E8DCA8>Cinder</color>, which
+    burns the enemy and returns <color=#E8DCA8>ember</color> to you each tick.
+  augmentPerLevelDescription: 'Hits per proc: 5/4/3
+
+    
+
+    <color=#E8DCA8>Cinder</color>
+    damage: 2/3/4
+
+    Duration: <color=#6E7A82>4s/5s/6s</color>
+
+    <color=#E8DCA8>Ember</color>
+    per tick: 1/2/3'

@@ -20,14 +20,17 @@ MonoBehaviour:
   requiredAugmentWeapon: {fileID: 0}
   requiredAugmentSoulCoinUpgrade: {fileID: 0}
   augmentDescriptionName: Blitz Soul
-  augmentDescription: "You lose your ability. Your attacks cost mana and apply Shock,
-    which arcs to nearby enemies \u2014 one for every stack. Toggle it off with G
-    to attack normally at reduced power."
-  augmentPerLevelDescription: 'Mana per attack: 6
+  augmentDescription: You lose your ability. Your attacks cost <color=#1C96C3>mana</color>
+    and apply <color=#3DDCFF>Shock</color>, which arcs to one nearby enemy per stack.
+    Press G to attack normally at reduced power.
+  augmentPerLevelDescription: '<color=#1C96C3>Mana</color> per attack: 6
 
-    Shock: 15s, arcs every 3s
+    <color=#3DDCFF>Shock</color>
+    arcs to 1 enemy per stack
 
-    Max
-    stacks: 10
+    
 
-    Damage without Blitz: 50%'
+    <color=#3DDCFF>Shock</color>: <color=#6E7A82>15s</color>,
+    arcs every <color=#6E7A82>3s</color>
+
+    Max stacks: 10'

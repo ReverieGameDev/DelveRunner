@@ -20,5 +20,5 @@ MonoBehaviour:
   requiredAugmentWeapon: {fileID: 0}
   requiredAugmentSoulCoinUpgrade: {fileID: 0}
   augmentDescriptionName: Prospector
-  augmentDescription: Soul coins you find have a chance to count twice.
-  augmentPerLevelDescription: 'Chance: 25%/40%'
+  augmentDescription: Soul coins you collect have a chance to count twice.
+  augmentPerLevelDescription: 'Double count chance: 25%/40%'

@@ -20,12 +20,12 @@ MonoBehaviour:
   requiredAugmentWeapon: {fileID: 11400000, guid: 2535913ab9c4fc64d982e79bbce6a888, type: 2}
   requiredAugmentSoulCoinUpgrade: {fileID: 0}
   augmentDescriptionName: 'Starcaller: Nova'
-  augmentDescription: 'Starcaller''s attacks consume ember to detonate on impact,
-    with a chance to leave Cinder behind. If ember is at less than the cost of Starcaller:
-    Nova, attacks revert to Starcaller'
-  augmentPerLevelDescription: 'Ember cost: 10
+  augmentDescription: Starcaller's attacks consume <color=#E8DCA8>ember</color> to
+    detonate on impact, with a chance to leave <color=#E8DCA8>Cinder</color>. Below
+    the <color=#E8DCA8>ember</color> cost, attacks fire as normal.
+  augmentPerLevelDescription: '<color=#E8DCA8>Ember</color> cost: 10
 
-    Nova damage: 250%/400%
+    Nova <color=#A56B4E>Damage</color>:
+    250%/400%
 
-    Cinder
-    chance: 30%/50%'
+    <color=#E8DCA8>Cinder</color> chance: 30%/50%'

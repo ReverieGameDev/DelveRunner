@@ -20,10 +20,9 @@ MonoBehaviour:
   requiredAugmentWeapon: {fileID: 0}
   requiredAugmentSoulCoinUpgrade: {fileID: 0}
   augmentDescriptionName: Static Carrier
-  augmentDescription: Your attacks carry an unstable charge that Shocks enemies on
-    contact. The arc has a chance to drag your other status effects along with it,
-    spreading them through the current.
-  augmentPerLevelDescription: 'Shock chance: 20%/30%/40%
+  augmentDescription: Your attacks have a chance to apply <color=#3DDCFF>Shock</color>.
+    The arc has a chance to carry one of your other status effects with it.
+  augmentPerLevelDescription: '<color=#3DDCFF>Shock</color> chance on hit: 20%/30%/40%
 
-    Arcs carry a random
-    status effect 25%/40%/55%'
+    Arc
+    carries a status effect: 25%/40%/55%'

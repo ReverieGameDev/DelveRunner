@@ -20,9 +20,9 @@ MonoBehaviour:
   requiredAugmentWeapon: {fileID: 0}
   requiredAugmentSoulCoinUpgrade: {fileID: 0}
   augmentDescriptionName: Supply Box
-  augmentDescription: Upon killing an enemy, there's a chance for you to get an extra
-    item.
-  augmentPerLevelDescription: 'Item amount: 1/2/3
+  augmentDescription: Killing an enemy has a chance to drop an extra <color=#C4A87A>item</color>.
+  augmentPerLevelDescription: 'Extra <color=#C4A87A>item</color> chance: 5%/10%/15%
 
-    Supply Box chance: 5%/10%/15%'
+    <color=#C4A87A>Items</color>:
+    1/2/3'
   supplyBoxTable: {fileID: 11400000, guid: e74637f1bc77ab649965176343ed527a, type: 2}

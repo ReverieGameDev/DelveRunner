@@ -20,7 +20,9 @@ MonoBehaviour:
   requiredAugmentWeapon: {fileID: 0}
   requiredAugmentSoulCoinUpgrade: {fileID: 0}
   augmentDescriptionName: Pickpocket
-  augmentDescription: On-hit, chance to knock coins loose from an enemy.
-  augmentPerLevelDescription: 'Chance: 10%/18%
+  augmentDescription: Your hits have a chance to knock <color=#C9922E>gold</color>
+    loose from an enemy.
+  augmentPerLevelDescription: 'Chance on hit: 10%/18%
 
-    Gold: 1-3'
+    <color=#C9922E>Gold</color>:
+    1-3'

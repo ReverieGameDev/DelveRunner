@@ -20,5 +20,6 @@ MonoBehaviour:
   requiredAugmentWeapon: {fileID: 0}
   requiredAugmentSoulCoinUpgrade: {fileID: 0}
   augmentDescriptionName: Conduction
-  augmentDescription: Your Shocks restore your mana.
-  augmentPerLevelDescription: 'Mana refunded per Shock tick: 2/4/6'
+  augmentDescription: Every <color=#3DDCFF>Shock</color> tick restores <color=#1C96C3>mana</color>.
+  augmentPerLevelDescription: '<color=#1C96C3>Mana</color> per <color=#3DDCFF>Shock</color>
+    tick: 2/4/6'

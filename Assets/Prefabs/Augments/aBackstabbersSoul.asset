@@ -20,8 +20,8 @@ MonoBehaviour:
   requiredAugmentWeapon: {fileID: 0}
   requiredAugmentSoulCoinUpgrade: {fileID: 0}
   augmentDescriptionName: Backstabber's Soul
-  augmentDescription: Lose <color=#A34A42>Max Health</color> and <color=#A56B4E>damage</color>.
-    Each hit raises <color=#F0C64A>Crit Chance</color> and <color=#F0C64A>Crit Damage</color>.
+  augmentDescription: Trade your <color=#A34A42>max health</color> for <color=#F0C64A>crit
+    chance/damage</color>. Stay on the attack to keep your stacks!
   augmentPerLevelDescription: "<color=#A34A42>-40% Max Health</color>, <color=#A56B4E>-30%
     Base Damage</color>\r\n<color=#F0C64A>+25% Crit Chance</color>\r\nEach hit: <color=#F0C64A>+1%
     Crit Chance</color>, <color=#F0C64A>+3% Crit Damage</color>\r\n<color=#6E7A82>Stacks

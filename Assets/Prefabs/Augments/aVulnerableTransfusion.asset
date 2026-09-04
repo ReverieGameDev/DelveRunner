@@ -20,8 +20,9 @@ MonoBehaviour:
   requiredAugmentWeapon: {fileID: 0}
   requiredAugmentSoulCoinUpgrade: {fileID: 0}
   augmentDescriptionName: Vulnerable Transfusion
-  augmentDescription: Enemies under a health threshold will have a chance to heal
-    you on hit.
-  augmentPerLevelDescription: 'Threshold 30%, 40%, 50%
+  augmentDescription: Hitting an enemy below a <color=#A34A42>health</color> threshold
+    has a chance to <color=#5FD98A>heal</color> you.
+  augmentPerLevelDescription: '<color=#A34A42>Health</color> threshold: 30%/40%/50%
 
-    Heal 3, 5, 8'
+    <color=#5FD98A>Heal</color>:
+    5'

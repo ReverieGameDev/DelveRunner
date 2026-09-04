@@ -20,10 +20,10 @@ MonoBehaviour:
   requiredAugmentWeapon: {fileID: 0}
   requiredAugmentSoulCoinUpgrade: {fileID: 0}
   augmentDescriptionName: Poison-Dipped Dagger
-  augmentDescription: On hit, a chance to poison the enemy.
-  augmentPerLevelDescription: 'Poison chance: 15%/25%/35%
+  augmentDescription: Your hits have a chance to apply <color=#66B34C>Poison</color>.
+  augmentPerLevelDescription: '<color=#66B34C>Poison</color> chance on hit: 15%/25%/35%
 
-    Poison damage: 2/3/4
+    <color=#66B34C>Poison</color>
+    damage: 1/2/3
 
-    Duration:
-    4s/5s/6s'
+    Duration: <color=#6E7A82>5s/6s/7s</color>'

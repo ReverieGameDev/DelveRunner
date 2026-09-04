@@ -20,5 +20,5 @@ MonoBehaviour:
   requiredAugmentWeapon: {fileID: 11400000, guid: 469ae2e8e9f58964e9dbe399fab41019, type: 2}
   requiredAugmentSoulCoinUpgrade: {fileID: 0}
   augmentDescriptionName: Bloodletter
-  augmentDescription: Transforms Letter into Bloodletter.
-  augmentPerLevelDescription: Attacks now have a 40% chance to cause bleed.
+  augmentDescription: Letter's attacks gain a chance to apply <color=#E8564A>Bleed</color>.
+  augmentPerLevelDescription: '<color=#E8564A>Bleed</color> chance on hit: 50%'

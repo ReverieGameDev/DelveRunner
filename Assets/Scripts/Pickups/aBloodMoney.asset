@@ -20,5 +20,6 @@ MonoBehaviour:
   requiredAugmentWeapon: {fileID: 0}
   requiredAugmentSoulCoinUpgrade: {fileID: 0}
   augmentDescriptionName: Blood Money
-  augmentDescription: Every coin you collect restores a little health.
-  augmentPerLevelDescription: 'Heal per coin: 1/2'
+  augmentDescription: Every coin you collect <color=#5FD98A>heals</color> you.
+  augmentPerLevelDescription: '<color=#5FD98A>Heal</color> per <color=#C9922E>Gold</color>:
+    1/2'

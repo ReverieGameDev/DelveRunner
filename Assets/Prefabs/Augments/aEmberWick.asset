@@ -20,6 +20,9 @@ MonoBehaviour:
   requiredAugmentWeapon: {fileID: 0}
   requiredAugmentSoulCoinUpgrade: {fileID: 0}
   augmentDescriptionName: Ember Wick
-  augmentDescription: While your ember burns above half, your status effects last
-    longer.
-  augmentPerLevelDescription: 'Duration: +30%/+50%'
+  augmentDescription: While your <color=#E8DCA8>ember</color> is above half, your
+    status effects last longer.
+  augmentPerLevelDescription: 'Above half <color=#E8DCA8>Ember</color>:
+
+    Status
+    duration +30%/+50%'

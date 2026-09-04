@@ -20,8 +20,9 @@ MonoBehaviour:
   requiredAugmentWeapon: {fileID: 0}
   requiredAugmentSoulCoinUpgrade: {fileID: 0}
   augmentDescriptionName: Harvest
-  augmentDescription: Your damaging status effects have a chance to heal you every
-    time they deal damage.
-  augmentPerLevelDescription: 'Heal chance: 10%/15%/20%
+  augmentDescription: Every time your status effects deal damage, they have a chance
+    to <color=#5FD98A>heal</color> you.
+  augmentPerLevelDescription: '<color=#5FD98A>Heal</color> chance per tick: 10%/15%/20%
 
-    Heal: 1/2/3'
+    <color=#5FD98A>Heal</color>:
+    1/2/3'

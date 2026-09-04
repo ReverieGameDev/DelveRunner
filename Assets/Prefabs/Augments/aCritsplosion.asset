@@ -20,8 +20,8 @@ MonoBehaviour:
   requiredAugmentWeapon: {fileID: 0}
   requiredAugmentSoulCoinUpgrade: {fileID: 0}
   augmentDescriptionName: Critsplosion
-  augmentDescription: Killing an enemy with a critical strike makes it explode, spreading
-    its status effects to everything nearby.
-  augmentPerLevelDescription: 'Radius: 5/7 units
+  augmentDescription: Killing an enemy with a <color=#F0C64A>crit</color> spreads
+    its status effects to nearby enemies. The blast deals no <color=#A56B4E>damage</color>.
+  augmentPerLevelDescription: 'Radius: 5 units
 
-    Status duration retained: 50%'
+    Status duration kept: 50%'

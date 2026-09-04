@@ -13,7 +13,7 @@ public class aVulnerableTransfusion : AugmentData
     {
         if (enemy.enemyHealth/ enemy.enemyData.health  < threshold)
         {
-            PlayerCombat.Instance.BloodHeal(5);
+            PlayerCombat.Instance.BloodHeal(augmentCurrentLevel);
         }
     }
 }
