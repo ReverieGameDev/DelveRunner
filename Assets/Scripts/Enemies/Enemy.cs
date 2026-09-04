@@ -40,7 +40,7 @@ public class Enemy : MonoBehaviour
         enemyDamage = enemyData.damage;
         enemySpeed = enemyData.speed;
         if (!enemyData.isBoss)
-            enemyHealth *= Mathf.Pow(1.20f, emberSystem.waveNumber - 1);
+            enemyHealth *= Mathf.Pow(1.08f, emberSystem.waveNumber - 1);
         enemyHealth = Mathf.Round(enemyHealth);
         maxEnemyHealth = enemyHealth;
     }

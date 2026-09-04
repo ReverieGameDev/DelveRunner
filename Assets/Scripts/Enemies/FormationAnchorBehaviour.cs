@@ -44,10 +44,18 @@ public class FormationAnchorBehaviour : MonoBehaviour
         switch (formationCheck)
         {
             case FormationCheck.LowFrontline:
-                if (frontlineCurrentHP / frontlineTotalHP <= .25f) formationBroken = true;
+                if (frontlineCurrentHP / frontlineTotalHP <= .25f)
+                {
+                    formationBroken = true;
+                    canWarriorLeap = true;
+                }
                 break;
             case FormationCheck.DeadBackline:
-                if (backlineEnemiesLeftAlive <= 0) formationBroken = true;
+                if (backlineEnemiesLeftAlive <= 0)
+                {
+                    formationBroken = true;
+                    canWarriorLeap = true;
+                }
                 break;
         }
     }

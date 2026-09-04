@@ -962,7 +962,7 @@ public class PlayerCombat : MonoBehaviour
             }
             if (isRekindleActive)
             {
-                emberSystem.AddEmber(10 * rekindleEmberPerKill);
+                emberSystem.AddEmber(3 * rekindleEmberPerKill);
             }
         }
         if (bloodSoulBarrierActive && currentPlayerHealth < (int)maxHealth)

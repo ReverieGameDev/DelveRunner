@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2371561413056960898}
   - component: {fileID: -4305937177382891899}
   - component: {fileID: 4279423436267785451}
-  - component: {fileID: -7901148392788643948}
+  - component: {fileID: 9044039577787373884}
   m_Layer: 0
   m_Name: SkeletonArcherArrow_0
   m_TagString: Untagged
@@ -131,8 +131,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!61 &-7901148392788643948
-BoxCollider2D:
+--- !u!60 &9044039577787373884
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -175,5 +175,19 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 2.2, y: 0.5777778}
-  m_EdgeRadius: 0
+  m_Points:
+    m_Paths:
+    - - {x: 1.0514443, y: -0.0054522157}
+      - {x: 1.0524876, y: 0.0012210459}
+      - {x: 0.7624973, y: 0.21525148}
+      - {x: 0.7840936, y: 0.06770997}
+      - {x: 0.66190034, y: 0.066071585}
+      - {x: 0.14835867, y: 0.06970072}
+      - {x: 0.11881535, y: 0.004639119}
+      - {x: 0.13252568, y: -0.053608805}
+      - {x: 0.11388636, y: -0.05822718}
+      - {x: 0.12030661, y: -0.072206676}
+      - {x: 0.14503473, y: -0.074360564}
+      - {x: 0.7697215, y: -0.073832445}
+      - {x: 0.7709558, y: -0.2364613}
+  m_UseDelaunayMesh: 0

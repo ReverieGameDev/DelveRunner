@@ -21,7 +21,7 @@ MonoBehaviour:
     hit for <color=#6E7A82>10s</color>.
   wCost: 40
   wProjectilePrefab: {fileID: 8918661588787021599, guid: 5bff2da944cc74644b8af21a91612f5f, type: 3}
-  wDamage: 15
+  wDamage: 24
   wAS: 3
   wRange: 20
   wProjectileSpeed: 25

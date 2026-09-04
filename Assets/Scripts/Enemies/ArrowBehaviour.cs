@@ -9,7 +9,7 @@ public class ArrowBehaviour : MonoBehaviour
     private PlayerMovement playerMovement;
     private Rigidbody2D rb;
     private Vector2 currentPos;
-    private float speed = 17f;
+    private float speed = 13f;
     public int arrowOffset;
     private float arrowAngle;
     private bool isReadyToFire = false;

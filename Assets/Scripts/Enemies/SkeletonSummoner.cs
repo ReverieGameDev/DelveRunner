@@ -17,7 +17,7 @@ public class SkeletonSummoner : MonoBehaviour
     public Sprite aoeCircleIcon;
     public Sprite summonIcon;
     public float attackWindupTime;
-    private float attackSpeed = 2.5f;
+    private float attackSpeed = 6f;
     private bool isIndicatorActive = false;
     private string currentAttack;
     public float indicatorLength = 20f;

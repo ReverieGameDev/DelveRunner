@@ -23,7 +23,7 @@ public class StarDaggerAttack : MonoBehaviour
     }
     private void DoSwipeHit()
     {
-        float radius = 3f;          // swipe reach
+        float radius = 4.5f;          // swipe reach
         float halfArc = 90f;        // 120° cone total
         Vector2 aimDir = trajectory.normalized;
 

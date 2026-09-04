@@ -796,7 +796,7 @@ MonoBehaviour:
   attackWindupTime: 0
   indicatorLength: 20
   arrowVolleyList: []
-  arrowVolleyAmount: 5
+  arrowVolleyAmount: 3
 --- !u!95 &-7949400207083938196
 Animator:
   serializedVersion: 7

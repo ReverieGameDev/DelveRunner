@@ -6,7 +6,7 @@ public class LetterBasic : BasicAttackBase
     public float damageMultiplier = 1f;
     private WeaponData wepData;
     private Vector2 projectileDirection;
-    public int bloodletterChance = 40;
+    public int bloodletterChance = 50;
     public GameObject bloodletterPrefab;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public override void FireBaseAttack(WeaponData weaponData, Vector2 direction)

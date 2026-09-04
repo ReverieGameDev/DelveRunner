@@ -2,6 +2,7 @@ using NUnit.Framework;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 
@@ -22,6 +23,7 @@ public class EmberSystem : MonoBehaviour
     public bool isFightNodeActive = false;
     public int swarmCount = 0;
     public int swarmCap = 10;
+    public TextMeshProUGUI emberText;
     void Start()
     {
         Instance = this;
@@ -57,8 +59,9 @@ public class EmberSystem : MonoBehaviour
             {
                 
                 yield return new WaitForSeconds(.1f);
-                emberAmount -= .1f;
+                emberAmount -= .06f;
                 if (emberAmount < 0) emberAmount = 0;
+                UpdateEmberText();
             }
             else
             {
@@ -67,8 +70,12 @@ public class EmberSystem : MonoBehaviour
             }
         }
         emberComp.pointLightOuterRadius = 0;
+        
     }
-
+    public void UpdateEmberText()
+    {
+        emberText.text = ((int)emberAmount).ToString();
+    }
     public void AddEmber(int emberToAdd)
     {
         emberAmount += emberToAdd;
@@ -78,6 +85,7 @@ public class EmberSystem : MonoBehaviour
             isEmberActive = true;
             StartCoroutine("DepleteEmber");
         }
+        UpdateEmberText();
     }
 
     public void NewWave()
@@ -85,6 +93,7 @@ public class EmberSystem : MonoBehaviour
         waveNumber++;
         if (waveNumber > 1)
         {
+            AddEmber(35);
             foreach (GameObject barrier in GameObject.FindGameObjectsWithTag("Barrier"))
             {
                 barrier.GetComponent<BarrierBehaviour>().RetractSpikesBarrierAnim();
