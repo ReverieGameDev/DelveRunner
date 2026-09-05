@@ -22,7 +22,7 @@ MonoBehaviour:
   augmentDescriptionName: Vulnerable Transfusion
   augmentDescription: Hitting an enemy below a <color=#A34A42>health</color> threshold
     has a chance to <color=#5FD98A>heal</color> you.
-  augmentPerLevelDescription: '<color=#A34A42>Health</color> threshold: 30%/40%/50%
+  augmentPerLevelDescription: '<color=#A34A42>Health</color> threshold: 10%/20%/30%
 
     <color=#5FD98A>Heal</color>:
-    5'
+    1'

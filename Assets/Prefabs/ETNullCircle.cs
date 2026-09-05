@@ -4,7 +4,7 @@ public class ETNullCircle : MonoBehaviour
 {
     private float tickTimer;
     private bool playerInNullCircle = false;
-    public float tickInterval = 4f;
+    public float tickInterval = 2f;
     public float nullDamage = 6f;
     void Update()
     {

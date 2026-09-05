@@ -7,6 +7,11 @@ public class aBarteredSoul : AugmentData
     {
         playerCombat.barteredSoulActive = true;
         playerCombat.barteredSoulLevel = currentLevel;
-        if (currentLevel == 1) playerCombat.playerMoney = 0;
+
+        if (currentLevel == 1)
+        {
+            playerCombat.moneyText.text = ": 0";
+            playerCombat.playerMoney = 0;
+        }
     }
 }

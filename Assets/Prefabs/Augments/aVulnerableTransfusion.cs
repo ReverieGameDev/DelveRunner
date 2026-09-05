@@ -2,7 +2,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "aVulnerableTransfusion", menuName = "Augments/VulnerableTransfusion", order = 1)]
 public class aVulnerableTransfusion : AugmentData
 {
-    float threshold = .45f;
+    private float threshold => 0.10f * augmentCurrentLevel;
     int augmentCurrentLevel;
     public override void Apply(PlayerCombat playerCombat, int currentLevel)
     {
@@ -11,9 +11,9 @@ public class aVulnerableTransfusion : AugmentData
     }
     private void OnHit(Enemy enemy)
     {
-        if (enemy.enemyHealth/ enemy.enemyData.health  < threshold)
+        if (enemy.enemyHealth / enemy.maxEnemyHealth < threshold)
         {
-            PlayerCombat.Instance.BloodHeal(augmentCurrentLevel);
+            PlayerCombat.Instance.BloodHeal(1);
         }
     }
 }
